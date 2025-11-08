@@ -1175,176 +1175,82 @@
         </div>
     </section>
 
-    <!-- Comparison Section: 補習校 vs サクセスアカデミー -->
+
+    <!-- お悩みセクション（スライダー形式） -->
     <section style="padding: 100px 20px; background: linear-gradient(135deg, #667eea 0%, #764ba2 100%); position: relative; overflow: hidden;">
         <!-- 背景の装飾 -->
         <div style="position: absolute; top: -50px; right: -50px; width: 300px; height: 300px; background: rgba(255,255,255,0.1); border-radius: 50%; filter: blur(80px);"></div>
         <div style="position: absolute; bottom: -100px; left: -100px; width: 400px; height: 400px; background: rgba(255,255,255,0.08); border-radius: 50%; filter: blur(100px);"></div>
         
-        <div class="container" style="max-width: 1200px; margin: 0 auto; position: relative; z-index: 1; padding: 0;">
-            <h2 class="section-title" style="color: white; text-align: center; margin-bottom: 20px; font-size: 2.5rem;">補習校、こんなお悩み<br>ありませんか？</h2>
-            <p style="text-align: center; color: rgba(255,255,255,0.9); font-size: 1.1rem; margin-bottom: 60px;">多くのご家庭が抱える、補習校の課題</p>
+        <div style="position: relative; z-index: 1; text-align: center;">
+            <h2 style="color: white; font-size: 2.5rem; font-weight: 900; margin-bottom: 20px;">補習校、こんなお悩み<br>ありませんか？</h2>
+            <p style="color: rgba(255,255,255,0.9); font-size: 1.1rem; margin-bottom: 40px;">多くのご家庭が抱える、補習校の課題</p>
             
-            <div style="display: grid; grid-template-columns: repeat(2, 1fr); gap: 30px; margin: 0 auto 80px; max-width: 900px; text-align: center; padding: 0 20px; box-sizing: border-box;">
-                <!-- デメリット1 -->
-                <div style="background: white; padding: 40px; border-radius: 20px; box-shadow: 0 20px 60px rgba(0,0,0,0.2); transition: transform 0.3s ease, box-shadow 0.3s ease; border-top: 4px solid #ff6b6b;">
-                    <div style="font-size: 3rem; margin-bottom: 10px;">😰</div>
+            
+            <!-- スライダーコンテナ -->
+            <div class="problems-slider" style="display: flex; justify-content: center; flex-wrap: wrap; gap: 20px; max-width: 1200px; margin: 0 auto; padding: 20px;">
+                
+                <!-- カード1 -->
+                <div style="width: 280px; background: white; padding: 40px 30px; border-radius: 20px; box-shadow: 0 20px 60px rgba(0,0,0,0.2); border-top: 4px solid #ff6b6b; text-align: center;">
+                    <div style="font-size: 3rem; margin-bottom: 15px;">😰</div>
                     <h3 style="font-size: 1.3rem; font-weight: bold; margin-bottom: 15px; color: #333;">毎週の送迎が大変</h3>
                     <p style="color: #666; line-height: 1.6; font-size: 1rem;">土日の貴重な時間が送迎で消えていく。家族の時間が取れない...</p>
                 </div>
                 
-                <!-- デメリット2 -->
-                <div style="background: white; padding: 40px; border-radius: 20px; box-shadow: 0 20px 60px rgba(0,0,0,0.2); transition: transform 0.3s ease, box-shadow 0.3s ease; border-top: 4px solid #feca57;">
-                    <div style="font-size: 3rem; margin-bottom: 10px;">💸</div>
+                <!-- カード2 -->
+                <div style="width: 280px; background: white; padding: 40px 30px; border-radius: 20px; box-shadow: 0 20px 60px rgba(0,0,0,0.2); border-top: 4px solid #feca57;  text-align: center;">
+                    <div style="font-size: 3rem; margin-bottom: 15px;">💸</div>
                     <h3 style="font-size: 1.3rem; font-weight: bold; margin-bottom: 15px; color: #333;">費用が高い</h3>
                     <p style="color: #666; line-height: 1.6; font-size: 1rem;">年間数十万円の授業料、教材費、施設費...家計への負担が重い。</p>
                 </div>
                 
-                <!-- デメリット3 -->
-                <div style="background: white; padding: 40px; border-radius: 20px; box-shadow: 0 20px 60px rgba(0,0,0,0.2); transition: transform 0.3s ease, box-shadow 0.3s ease; border-top: 4px solid #5f27cd;">
-                    <div style="font-size: 3rem; margin-bottom: 10px;">📚</div>
+                <!-- カード3 -->
+                <div style="width: 280px; background: white; padding: 40px 30px; border-radius: 20px; box-shadow: 0 20px 60px rgba(0,0,0,0.2); border-top: 4px solid #5f27cd;  text-align: center;">
+                    <div style="font-size: 3rem; margin-bottom: 15px;">📚</div>
                     <h3 style="font-size: 1.3rem; font-weight: bold; margin-bottom: 15px; color: #333;">宿題が多すぎる</h3>
                     <p style="color: #666; line-height: 1.6; font-size: 1rem;">大量の宿題で親子でストレス。現地校との両立が難しい...</p>
                 </div>
                 
-                <!-- デメリット4 -->
-                <div style="background: white; padding: 40px; border-radius: 20px; box-shadow: 0 20px 60px rgba(0,0,0,0.2); transition: transform 0.3s ease, box-shadow 0.3s ease; border-top: 4px solid #1dd1a1;">
-                    <div style="font-size: 3rem; margin-bottom: 10px;">😓</div>
+                <!-- カード4 -->
+                <div style="width: 280px; background: white; padding: 40px 30px; border-radius: 20px; box-shadow: 0 20px 60px rgba(0,0,0,0.2); border-top: 4px solid #1dd1a1;  text-align: center;">
+                    <div style="font-size: 3rem; margin-bottom: 15px;">😓</div>
                     <h3 style="font-size: 1.3rem; font-weight: bold; margin-bottom: 15px; color: #333;">学年が上がると難しい</h3>
                     <p style="color: #666; line-height: 1.6; font-size: 1rem;">学年相応の内容についていけず、子どもの自信を失わせてしまう...</p>
                 </div>
             </div>
-            
-            <style>
-                /* ===== モバイル中央寄せ・右寄り解消パッチ ===== */
-                @media (max-width: 768px) {
-
-                  /* 2カラム → 1カラム + 中央揃え */
-                  div[style*="grid-template-columns: repeat(2, 1fr)"] {
-                    display: grid !important;
-                    grid-template-columns: 1fr !important;
-                    justify-items: center !important;   /* 子要素の横位置 */
-                    align-items: start !important;
-                  }
-                  div[style*="grid-template-columns: repeat(2, 1fr)"] > * {
-                    justify-self: center !important;    /* 念のため子要素も中央 */
-                    margin-left: 0 !important;          /* 左autoで寄っている場合を打ち消し */
-                    margin-right: 0 !important;
-                  }
-                  /* 左右autoで固定されている要素の右寄りを打ち消し */
-                  div[style*="grid-template-columns: repeat(2, 1fr)"] [style*="margin-left:auto"] {
-                    margin-left: 0 !important;
-                  }
-
-                  /* グラデセクションの .container をボックス中央に */
-                  section[style*="linear-gradient(135deg, #667eea 0%, #764ba2 100%)"] .container {
-                    box-sizing: border-box !important;
-                    max-width: 100% !important;
-                    width: 100% !important;
-                    padding-left: 10px !important;
-                    padding-right: 10px !important;
-                    margin-left: auto !important;
-                    margin-right: auto !important;
-                    text-align: center; /* テキスト系なら中央寄せ */
-                  }
-
-                  /* 親がflexで右寄せしているケースの保険 */
-                  section[style*="linear-gradient(135deg, #667eea 0%, #764ba2 100%)"] .container[style*="display:flex"],
-                  section[style*="linear-gradient(135deg, #667eea 0%, #764ba2 100%)"] .container.flex,
-                  section[style*="linear-gradient(135deg, #667eea 0%, #764ba2 100%)"] [style*="display:flex"] {
-                    justify-content: center !important;
-                    align-items: center !important;
-                  }
-                  
-                  /* 固定幅要素の対応 */
-                  .container *[style*="width:"] { 
-                    max-width: 100% !important; 
-                  }
-                }
-            </style>
-            
-            <!-- 矢印 -->
-            <div style="text-align: center; margin: 30px 0 40px;">
-                <div style="display: inline-flex; flex-direction: column; align-items: center; gap: 15px;">
-                    <div style="font-size: 3.5rem; animation: bounce 2s ease-in-out infinite;">⬇️</div>
-                    <div style="background: white; padding: 15px 35px; border-radius: 50px; box-shadow: 0 10px 30px rgba(0,0,0,0.2);">
-                        <p style="color: #667eea; font-size: 1.4rem; font-weight: bold; margin: 0; word-break: keep-all;">サクセスアカデミーなら、<br>これらの悩みを解決！</p>
-                    </div>
-                </div>
-            </div>
-            
-            <style>
-                @keyframes bounce {
-                    0%, 100% { transform: translateY(0); }
-                    50% { transform: translateY(-15px); }
-                }
-            </style>
-            
-            <!-- 比較表 -->
-            <div style="background: white; border-radius: 25px; padding: 50px; box-shadow: 0 30px 80px rgba(0,0,0,0.25); overflow-x: auto; border: 3px solid rgba(255,255,255,0.8);">
-                <h3 style="text-align: center; font-size: 1.8rem; font-weight: bold; margin-bottom: 40px; color: #333;">
-                    📊 徹底比較：補習校 vs サクセスアカデミー
-                </h3>
-                
-                <table style="width: 100%; border-collapse: separate; border-spacing: 0; min-width: 450px;">
-                    <thead>
-                        <tr>
-                            <th style="padding: 25px 20px; text-align: left; font-size: 1.15rem; background: linear-gradient(135deg, #f8f9fa 0%, #e9ecef 100%); border-radius: 15px 0 0 0; border-bottom: 3px solid #667eea;"></th>
-                            <th style="padding: 25px 20px; text-align: center; font-size: 1.15rem; color: #999; background: linear-gradient(135deg, #f8f9fa 0%, #e9ecef 100%); border-bottom: 3px solid #ddd; position: relative;">
-                                <div>補習校</div>
-                                <div style="position: absolute; top: 5px; right: 10px; font-size: 1.5rem;">😰</div>
-                            </th>
-                            <th style="padding: 25px 20px; text-align: center; font-size: 1.15rem; background: linear-gradient(135deg, #667eea 0%, #764ba2 100%); color: white; font-weight: bold; border-radius: 0 15px 0 0; position: relative;">
-                                <div>サクセスアカデミー</div>
-                                <div style="position: absolute; top: 5px; right: 10px; font-size: 1.5rem;">✨</div>
-                            </th>
-                        </tr>
-                    </thead>
-                    <tbody>
-                        <tr style="background: #fafafa;">
-                            <td style="padding: 25px 20px; font-weight: bold; font-size: 1.05rem; border-bottom: 2px solid #f0f0f0;">💰 費用</td>
-                            <td style="padding: 25px 20px; text-align: center; color: #666; border-bottom: 2px solid #f0f0f0; font-size: 1.05rem;">年間数十万円</td>
-                            <td style="padding: 25px 20px; text-align: center; background: linear-gradient(135deg, rgba(102, 126, 234, 0.1) 0%, rgba(118, 75, 162, 0.1) 100%); border-bottom: 2px solid #f0f0f0;">
-                                <div style="color: #667eea; font-weight: bold; font-size: 1.15rem;">月50ドル〜</div>
-                                <div style="font-size: 0.85rem; color: #888; margin-top: 5px;">💵 お財布に優しい</div>
-                            </td>
-                        </tr>
-                        <tr>
-                            <td style="padding: 25px 20px; font-weight: bold; font-size: 1.05rem; border-bottom: 2px solid #f0f0f0;">🚗 送迎</td>
-                            <td style="padding: 25px 20px; text-align: center; color: #666; border-bottom: 2px solid #f0f0f0; font-size: 1.05rem;">毎週必要</td>
-                            <td style="padding: 25px 20px; text-align: center; background: linear-gradient(135deg, rgba(102, 126, 234, 0.05) 0%, rgba(118, 75, 162, 0.05) 100%); border-bottom: 2px solid #f0f0f0;">
-                                <div style="color: #667eea; font-weight: bold; font-size: 1.15rem;">自宅から受講OK</div>
-                                <div style="font-size: 0.85rem; color: #888; margin-top: 5px;">🏠 送迎不要</div>
-                            </td>
-                        </tr>
-                        <tr style="background: #fafafa;">
-                            <td style="padding: 25px 20px; font-weight: bold; font-size: 1.05rem; border-bottom: 2px solid #f0f0f0;">⏰ 授業時間</td>
-                            <td style="padding: 25px 20px; text-align: center; color: #666; border-bottom: 2px solid #f0f0f0; font-size: 1.05rem;">土日が潰れる</td>
-                            <td style="padding: 25px 20px; text-align: center; background: linear-gradient(135deg, rgba(102, 126, 234, 0.1) 0%, rgba(118, 75, 162, 0.1) 100%); border-bottom: 2px solid #f0f0f0;">
-                                <div style="color: #667eea; font-weight: bold; font-size: 1.15rem;">1コマ25分</div>
-                                <div style="font-size: 0.85rem; color: #888; margin-top: 5px;">⚡ 短時間で集中</div>
-                            </td>
-                        </tr>
-                        <tr>
-                            <td style="padding: 25px 20px; font-weight: bold; font-size: 1.05rem; border-bottom: 2px solid #f0f0f0;">📚 宿題</td>
-                            <td style="padding: 25px 20px; text-align: center; color: #666; border-bottom: 2px solid #f0f0f0; font-size: 1.05rem;">大量</td>
-                            <td style="padding: 25px 20px; text-align: center; background: linear-gradient(135deg, rgba(102, 126, 234, 0.05) 0%, rgba(118, 75, 162, 0.05) 100%); border-bottom: 2px solid #f0f0f0;">
-                                <div style="color: #667eea; font-weight: bold; font-size: 1.15rem;">宿題なしで完結</div>
-                                <div style="font-size: 0.85rem; color: #888; margin-top: 5px;">😊 ストレスフリー</div>
-                            </td>
-                        </tr>
-                        <tr style="background: #fafafa;">
-                            <td style="padding: 25px 20px; font-weight: bold; font-size: 1.05rem; border-radius: 0 0 0 15px;">📖 学習レベル</td>
-                            <td style="padding: 25px 20px; text-align: center; color: #666; font-size: 1.05rem;">学年固定</td>
-                            <td style="padding: 25px 20px; text-align: center; background: linear-gradient(135deg, rgba(102, 126, 234, 0.1) 0%, rgba(118, 75, 162, 0.1) 100%); border-radius: 0 0 15px 0;">
-                                <div style="color: #667eea; font-weight: bold; font-size: 1.15rem;">学年フリーで復習OK</div>
-                                <div style="font-size: 0.85rem; color: #888; margin-top: 5px;">🎯 レベルに合わせて</div>
-                            </td>
-                        </tr>
-                    </tbody>
-                </table>
-            </div>
         </div>
+        
+        <style>
+            @keyframes swipeHint {
+                0%, 100% { transform: translateX(0); }
+                25% { transform: translateX(-10px); }
+                75% { transform: translateX(10px); }
+            }
+            
+            /* スマホではスライダーに */
+            @media (max-width: 768px) {
+                .problems-slider {
+                    flex-wrap: nowrap !important;
+                    overflow-x: auto !important;
+                    overflow-y: hidden !important;
+                    -webkit-overflow-scrolling: touch !important;
+                    scroll-snap-type: x mandatory !important;
+                    justify-content: flex-start !important;
+                    padding: 20px !important;
+                    margin: 0 -20px !important;
+                    scrollbar-width: none !important;
+                }
+                
+                .problems-slider::-webkit-scrollbar {
+                    display: none;
+                }
+                
+                .problems-slider > div {
+                    scroll-snap-align: center !important;
+                    flex-shrink: 0 !important;
+                }
+            }
+        </style>
     </section>
 
     <!-- Solution Section -->
@@ -1405,7 +1311,7 @@
         <div class="container">
             <div class="stats-content">
                 <div class="stats-text">
-                    <h2 style="font-size: 2.0rem;">92%の継続率が証明する、"子どもが続けたくなる学び"。</h2>
+                    <h2 style="font-size: 1.85rem; word-break: keep-all; overflow-wrap: normal;"><span style="white-space: nowrap;">92%の継続率が</span>証明する、"子どもが続けたくなる学び"。</h2>
                     <div class="testimonial-quote">
                         <p>「終わったあとでも友達と遊べるので帰ってすぐ授業に参加し始めるように。」</p>
                         <p style="font-size: 0.9rem; color: #666; margin-top: 10px;">— アメリカ在住・Mさん（8歳ママ）</p>
@@ -1434,9 +1340,6 @@
             
             <div style="overflow: hidden; margin: 60px auto; max-width: 1200px;">
                 <!-- スマホ用スクロールヒント -->
-                <div class="scroll-hint" style="display: none; text-align: center; margin-bottom: 20px; color: #667eea; font-size: 0.9rem; font-weight: bold;">
-                    👉 横にスワイプしてください 👈
-                </div>
                 
                 <div class="influencer-scroll" style="display: flex; gap: 40px; animation: scrollInfinite 40s linear infinite;">
                     <div class="influencer-card">
@@ -1519,7 +1422,7 @@
                 .influencer-card {
                     min-width: 320px;
                     max-width: 320px;
-                    flex-shrink: 0;
+                    
                 }
                 
                 @keyframes scrollInfinite {
