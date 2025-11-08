@@ -59,6 +59,19 @@
             background: linear-gradient(135deg, #f5f7fa 0%, #ffffff 100%);
             padding: 100px 20px;
             position: relative;
+            overflow: hidden;
+        }
+        
+        .hero::before {
+            content: '';
+            position: absolute;
+            top: -50%;
+            right: -10%;
+            width: 500px;
+            height: 500px;
+            background: radial-gradient(circle, rgba(102, 126, 234, 0.1) 0%, transparent 70%);
+            border-radius: 50%;
+            pointer-events: none;
         }
         
         .hero-content {
@@ -98,7 +111,13 @@
             max-width: 500px;
             height: auto;
             border-radius: 30px;
-            box-shadow: 0 20px 60px rgba(0,0,0,0.1);
+            box-shadow: 0 20px 60px rgba(0,0,0,0.15), 0 10px 20px rgba(0,0,0,0.1);
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+        
+        .hero-image img:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 25px 70px rgba(0,0,0,0.2), 0 15px 30px rgba(0,0,0,0.15);
         }
         
         /* Campaign Banner */
@@ -370,12 +389,11 @@
             font-size: 4rem;
             margin-bottom: 25px;
             display: inline-block;
-            animation: float 3s ease-in-out infinite;
+            transition: transform 0.3s ease;
         }
         
-        @keyframes float {
-            0%, 100% { transform: translateY(0); }
-            50% { transform: translateY(-10px); }
+        .feature-card:hover .feature-icon {
+            transform: translateY(-5px);
         }
         
         .feature-card h3 {
@@ -1177,48 +1195,216 @@
     </section>
 
 
-    <!-- お悩みセクション（スライダー形式） -->
-    <section style="padding: 100px 20px; background: linear-gradient(135deg, #667eea 0%, #764ba2 100%); position: relative; overflow: hidden;">
-        <!-- 背景の装飾 -->
-        <div style="position: absolute; top: -50px; right: -50px; width: 300px; height: 300px; background: rgba(255,255,255,0.1); border-radius: 50%; filter: blur(80px);"></div>
-        <div style="position: absolute; bottom: -100px; left: -100px; width: 400px; height: 400px; background: rgba(255,255,255,0.08); border-radius: 50%; filter: blur(100px);"></div>
+    <!-- お悩みセクション（超超カッコいい比較表） -->
+    <section style="padding: 120px 20px; background: linear-gradient(135deg, #1e3c72 0%, #2a5298 50%, #7e22ce 100%); position: relative; overflow: hidden;">
+        <!-- 背景の装飾 - 超強化版 -->
+        <div style="position: absolute; top: -150px; right: -150px; width: 600px; height: 600px; background: radial-gradient(circle, rgba(139, 92, 246, 0.3) 0%, transparent 70%); border-radius: 50%; animation: float 8s ease-in-out infinite;"></div>
+        <div style="position: absolute; bottom: -200px; left: -200px; width: 700px; height: 700px; background: radial-gradient(circle, rgba(59, 130, 246, 0.25) 0%, transparent 70%); border-radius: 50%; animation: float 10s ease-in-out infinite reverse;"></div>
+        <div style="position: absolute; top: 30%; right: 10%; width: 400px; height: 400px; background: radial-gradient(circle, rgba(236, 72, 153, 0.2) 0%, transparent 70%); border-radius: 50%; animation: pulse 6s ease-in-out infinite;"></div>
+        
+        <!-- キラキラパーティクル効果 -->
+        <div style="position: absolute; top: 20%; left: 15%; width: 4px; height: 4px; background: white; border-radius: 50%; box-shadow: 0 0 20px rgba(255,255,255,0.8); animation: twinkle 3s infinite;"></div>
+        <div style="position: absolute; top: 60%; right: 20%; width: 3px; height: 3px; background: white; border-radius: 50%; box-shadow: 0 0 15px rgba(255,255,255,0.8); animation: twinkle 2.5s infinite 0.5s;"></div>
+        <div style="position: absolute; bottom: 30%; left: 25%; width: 5px; height: 5px; background: white; border-radius: 50%; box-shadow: 0 0 25px rgba(255,255,255,0.8); animation: twinkle 3.5s infinite 1s;"></div>
         
         <div style="position: relative; z-index: 1; text-align: center;">
-            <h2 style="color: white; font-size: 2.0rem; font-weight: 900; margin-bottom: 20px;">補習校、こんなお悩み<br>ありませんか？</h2>
-            <p style="color: rgba(255,255,255,0.9); font-size: 1.1rem; margin-bottom: 40px;">多くのご家庭が抱える、補習校の課題</p>
-            
-            
-            <!-- スライダーコンテナ -->
-            <div class="problems-slider" style="display: flex; justify-content: center; flex-wrap: wrap; gap: 20px; max-width: 1200px; margin: 0 auto; padding: 20px;">
-                
-                <!-- カード1 -->
-                <div style="width: 280px; background: white; padding: 40px 30px; border-radius: 20px; box-shadow: 0 20px 60px rgba(0,0,0,0.2); border-top: 4px solid #ff6b6b; text-align: center;">
-                    <div style="font-size: 3rem; margin-bottom: 15px;">😰</div>
-                    <h3 style="font-size: 1.3rem; font-weight: bold; margin-bottom: 15px; color: #333;">毎週の送迎が大変</h3>
-                    <p style="color: #666; line-height: 1.6; font-size: 1rem;">土日の貴重な時間が送迎で消えていく。家族の時間が取れない...</p>
-                </div>
-                
-                <!-- カード2 -->
-                <div style="width: 280px; background: white; padding: 40px 30px; border-radius: 20px; box-shadow: 0 20px 60px rgba(0,0,0,0.2); border-top: 4px solid #feca57;  text-align: center;">
-                    <div style="font-size: 3rem; margin-bottom: 15px;">💸</div>
-                    <h3 style="font-size: 1.3rem; font-weight: bold; margin-bottom: 15px; color: #333;">費用が高い</h3>
-                    <p style="color: #666; line-height: 1.6; font-size: 1rem;">年間数十万円の授業料、教材費、施設費...家計への負担が重い。</p>
-                </div>
-                
-                <!-- カード3 -->
-                <div style="width: 280px; background: white; padding: 40px 30px; border-radius: 20px; box-shadow: 0 20px 60px rgba(0,0,0,0.2); border-top: 4px solid #5f27cd;  text-align: center;">
-                    <div style="font-size: 3rem; margin-bottom: 15px;">📚</div>
-                    <h3 style="font-size: 1.3rem; font-weight: bold; margin-bottom: 15px; color: #333;">宿題が多すぎる</h3>
-                    <p style="color: #666; line-height: 1.6; font-size: 1rem;">大量の宿題で親子でストレス。現地校との両立が難しい...</p>
-                </div>
-                
-                <!-- カード4 -->
-                <div style="width: 280px; background: white; padding: 40px 30px; border-radius: 20px; box-shadow: 0 20px 60px rgba(0,0,0,0.2); border-top: 4px solid #1dd1a1;  text-align: center;">
-                    <div style="font-size: 3rem; margin-bottom: 15px;">😓</div>
-                    <h3 style="font-size: 1.3rem; font-weight: bold; margin-bottom: 15px; color: #333;">学年が上がると難しい</h3>
-                    <p style="color: #666; line-height: 1.6; font-size: 1rem;">学年相応の内容についていけず、子どもの自信を失わせてしまう...</p>
-                </div>
+            <!-- タイトル - 超カッコよく -->
+            <div style="display: inline-block; background: linear-gradient(135deg, rgba(255,255,255,0.15) 0%, rgba(255,255,255,0.25) 100%); padding: 12px 35px; border-radius: 50px; margin-bottom: 30px; backdrop-filter: blur(20px); border: 2px solid rgba(255,255,255,0.4); box-shadow: 0 8px 32px rgba(0,0,0,0.2), inset 0 1px 0 rgba(255,255,255,0.3);">
+                <span style="background: linear-gradient(135deg, #fbbf24 0%, #f59e0b 100%); -webkit-background-clip: text; -webkit-text-fill-color: transparent; background-clip: text; font-size: 1.1rem; font-weight: 900;">⚡ 徹底比較</span>
             </div>
+            
+            <h2 style="color: white; font-size: 3.2rem; font-weight: 900; margin-bottom: 20px; text-shadow: 0 4px 30px rgba(0,0,0,0.5), 0 2px 10px rgba(139, 92, 246, 0.5); line-height: 1.3; letter-spacing: -0.02em;">補習校のお悩み、<br>サクセスなら<span style="background: linear-gradient(135deg, #fbbf24 0%, #f59e0b 100%); -webkit-background-clip: text; -webkit-text-fill-color: transparent; background-clip: text;">全て解決！</span></h2>
+            <p style="color: rgba(255,255,255,0.95); font-size: 1.4rem; margin-bottom: 70px; text-shadow: 0 2px 15px rgba(0,0,0,0.3); font-weight: 500;">一目で分かる、圧倒的な違い</p>
+            
+            <!-- スマホ用スクロールヒント -->
+            <div class="scroll-hint" style="display: none; background: rgba(255,255,255,0.2); color: white; font-size: 0.95rem; padding: 10px 25px; border-radius: 25px; margin: 0 auto 30px; max-width: 300px; backdrop-filter: blur(10px); border: 1px solid rgba(255,255,255,0.3); animation: slideHint 2s infinite;">
+                👉 横にスライドして比較できます
+            </div>
+            
+            <!-- 比較表 - 超超強化版 + スマホ対応 -->
+            <div class="table-container" style="max-width: 1200px; margin: 0 auto; overflow-x: auto; padding: 0 20px; -webkit-overflow-scrolling: touch; scroll-behavior: smooth;">
+                <table style="width: 100%; min-width: 850px; background: rgba(255,255,255,0.98); border-radius: 30px; overflow: hidden; box-shadow: 0 50px 120px rgba(0,0,0,0.5), 0 20px 60px rgba(0,0,0,0.3); border-collapse: separate; border-spacing: 0; animation: slideUp 0.8s ease-out; backdrop-filter: blur(10px);">
+                    <thead>
+                        <tr>
+                            <th style="background: linear-gradient(135deg, #1e293b 0%, #334155 100%); padding: 40px 25px; text-align: center; font-size: 1.4rem; font-weight: 900; color: white; width: 28%; box-shadow: inset 0 -3px 0 rgba(255,255,255,0.1), 0 2px 10px rgba(0,0,0,0.1);">
+                                <div style="display: flex; align-items: center; justify-content: center; gap: 12px;">
+                                    <span style="font-size: 2rem; filter: drop-shadow(0 2px 4px rgba(0,0,0,0.3));">📋</span>
+                                    <span style="text-shadow: 0 2px 8px rgba(0,0,0,0.3);">比較項目</span>
+                                </div>
+                            </th>
+                            <th style="background: linear-gradient(135deg, #64748b 0%, #475569 100%); padding: 40px 25px; text-align: center; font-size: 1.4rem; font-weight: 900; color: white; width: 36%; position: relative; box-shadow: inset 0 -3px 0 rgba(0,0,0,0.2), 0 2px 10px rgba(0,0,0,0.1);">
+                                <div style="position: absolute; top: 10px; right: 20px; font-size: 2.2rem; animation: shake 2.5s ease-in-out infinite; filter: drop-shadow(0 2px 4px rgba(0,0,0,0.3));">😰</div>
+                                <div style="display: flex; align-items: center; justify-content: center; gap: 12px;">
+                                    <span style="font-size: 2rem; filter: drop-shadow(0 2px 4px rgba(0,0,0,0.3));">⚠️</span>
+                                    <span style="text-shadow: 0 2px 8px rgba(0,0,0,0.3);">補習校の課題</span>
+                                </div>
+                            </th>
+                            <th style="background: linear-gradient(135deg, #10b981 0%, #059669 100%); padding: 40px 25px; text-align: center; font-size: 1.4rem; font-weight: 900; color: white; width: 36%; position: relative; box-shadow: inset 0 -3px 0 rgba(255,255,255,0.2), 0 2px 10px rgba(0,0,0,0.1);">
+                                <div style="position: absolute; top: 10px; right: 20px; font-size: 2.2rem; animation: sparkle 2s ease-in-out infinite; filter: drop-shadow(0 2px 4px rgba(0,0,0,0.3));">✨</div>
+                                <div style="display: flex; align-items: center; justify-content: center; gap: 12px;">
+                                    <span style="font-size: 2rem; filter: drop-shadow(0 2px 4px rgba(0,0,0,0.3));">✅</span>
+                                    <span style="text-shadow: 0 2px 8px rgba(0,0,0,0.3);">サクセスの解決策</span>
+                                </div>
+                            </th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <!-- Row 1: 送迎 -->
+                        <tr style="border-bottom: 3px solid #e5e7eb; transition: all 0.3s ease;" onmouseover="this.style.background='linear-gradient(135deg, #f9fafb 0%, #f3f4f6 100%)'; this.style.transform='scale(1.01)'" onmouseout="this.style.background='white'; this.style.transform='scale(1)'">
+                            <td style="padding: 40px 25px; text-align: center; font-weight: 900; font-size: 1.35rem; color: #1e293b; background: linear-gradient(135deg, #f8fafc 0%, #f1f5f9 100%); border-right: 3px solid #e5e7eb;">
+                                <div style="font-size: 2.8rem; margin-bottom: 15px; filter: drop-shadow(0 2px 6px rgba(0,0,0,0.1));">🚗</div>
+                                <div style="letter-spacing: 0.02em;">送迎</div>
+                            </td>
+                            <td style="padding: 40px 25px; text-align: center; background: linear-gradient(135deg, #f8fafc 0%, #f1f5f9 100%); border-right: 3px solid #e5e7eb;">
+                                <div style="font-size: 1.25rem; font-weight: 900; color: #475569; margin-bottom: 15px; text-shadow: 0 1px 2px rgba(0,0,0,0.05);">毎週の送迎が大変</div>
+                                <div style="font-size: 1.05rem; color: #64748b; line-height: 1.8; font-weight: 500;">土日の貴重な時間が<br>送迎で消えていく...</div>
+                            </td>
+                            <td style="padding: 40px 25px; text-align: center; background: linear-gradient(135deg, #ecfdf5 0%, #d1fae5 100%);">
+                                <div style="font-size: 1.25rem; font-weight: 900; color: #059669; margin-bottom: 15px; text-shadow: 0 1px 2px rgba(5, 150, 105, 0.2);">🏠 送迎完全不要！</div>
+                                <div style="font-size: 1.05rem; color: #047857; line-height: 1.8; font-weight: 600;">自宅からオンラインで参加<br>移動時間ゼロ</div>
+                            </td>
+                        </tr>
+                        
+                        <!-- Row 2: 費用 -->
+                        <tr style="border-bottom: 3px solid #e5e7eb; transition: all 0.3s ease;" onmouseover="this.style.background='linear-gradient(135deg, #f9fafb 0%, #f3f4f6 100%)'; this.style.transform='scale(1.01)'" onmouseout="this.style.background='white'; this.style.transform='scale(1)'">
+                            <td style="padding: 40px 25px; text-align: center; font-weight: 900; font-size: 1.35rem; color: #1e293b; background: linear-gradient(135deg, #f8fafc 0%, #f1f5f9 100%); border-right: 3px solid #e5e7eb;">
+                                <div style="font-size: 2.8rem; margin-bottom: 15px; filter: drop-shadow(0 2px 6px rgba(0,0,0,0.1));">💰</div>
+                                <div style="letter-spacing: 0.02em;">費用</div>
+                            </td>
+                            <td style="padding: 40px 25px; text-align: center; background: linear-gradient(135deg, #f8fafc 0%, #f1f5f9 100%); border-right: 3px solid #e5e7eb;">
+                                <div style="font-size: 1.25rem; font-weight: 900; color: #475569; margin-bottom: 15px; text-shadow: 0 1px 2px rgba(0,0,0,0.05);">年間数十万円</div>
+                                <div style="font-size: 1.05rem; color: #64748b; line-height: 1.8; font-weight: 500;">授業料・教材費・施設費で<br>家計への負担が重い</div>
+                            </td>
+                            <td style="padding: 40px 25px; text-align: center; background: linear-gradient(135deg, #ecfdf5 0%, #d1fae5 100%);">
+                                <div style="font-size: 1.25rem; font-weight: 900; color: #059669; margin-bottom: 15px; text-shadow: 0 1px 2px rgba(5, 150, 105, 0.2);">💵 月額50USD～</div>
+                                <div style="font-size: 1.05rem; color: #047857; line-height: 1.8; font-weight: 600;">補習校の1/3以下の価格で<br>週5日学び放題</div>
+                            </td>
+                        </tr>
+                        
+                        <!-- Row 3: 宿題 -->
+                        <tr style="border-bottom: 3px solid #e5e7eb; transition: all 0.3s ease;" onmouseover="this.style.background='linear-gradient(135deg, #f9fafb 0%, #f3f4f6 100%)'; this.style.transform='scale(1.01)'" onmouseout="this.style.background='white'; this.style.transform='scale(1)'">
+                            <td style="padding: 40px 25px; text-align: center; font-weight: 900; font-size: 1.35rem; color: #1e293b; background: linear-gradient(135deg, #f8fafc 0%, #f1f5f9 100%); border-right: 3px solid #e5e7eb;">
+                                <div style="font-size: 2.8rem; margin-bottom: 15px; filter: drop-shadow(0 2px 6px rgba(0,0,0,0.1));">📚</div>
+                                <div style="letter-spacing: 0.02em;">宿題</div>
+                            </td>
+                            <td style="padding: 40px 25px; text-align: center; background: linear-gradient(135deg, #f8fafc 0%, #f1f5f9 100%); border-right: 3px solid #e5e7eb;">
+                                <div style="font-size: 1.25rem; font-weight: 900; color: #475569; margin-bottom: 15px; text-shadow: 0 1px 2px rgba(0,0,0,0.05);">宿題が多すぎる</div>
+                                <div style="font-size: 1.05rem; color: #64748b; line-height: 1.8; font-weight: 500;">大量の宿題で親子でストレス<br>現地校との両立が困難</div>
+                            </td>
+                            <td style="padding: 40px 25px; text-align: center; background: linear-gradient(135deg, #ecfdf5 0%, #d1fae5 100%);">
+                                <div style="font-size: 1.25rem; font-weight: 900; color: #059669; margin-bottom: 15px; text-shadow: 0 1px 2px rgba(5, 150, 105, 0.2);">⏱️ 25分で完結</div>
+                                <div style="font-size: 1.05rem; color: #047857; line-height: 1.8; font-weight: 600;">宿題なし！授業内で完結<br>現地校との両立も楽々</div>
+                            </td>
+                        </tr>
+                        
+                        <!-- Row 4: レベル -->
+                        <tr style="transition: all 0.3s ease;" onmouseover="this.style.background='linear-gradient(135deg, #f9fafb 0%, #f3f4f6 100%)'; this.style.transform='scale(1.01)'" onmouseout="this.style.background='white'; this.style.transform='scale(1)'">
+                            <td style="padding: 40px 25px; text-align: center; font-weight: 900; font-size: 1.35rem; color: #1e293b; background: linear-gradient(135deg, #f8fafc 0%, #f1f5f9 100%); border-right: 3px solid #e5e7eb; border-bottom-left-radius: 30px;">
+                                <div style="font-size: 2.8rem; margin-bottom: 15px; filter: drop-shadow(0 2px 6px rgba(0,0,0,0.1));">📖</div>
+                                <div style="letter-spacing: 0.02em;">レベル</div>
+                            </td>
+                            <td style="padding: 40px 25px; text-align: center; background: linear-gradient(135deg, #f8fafc 0%, #f1f5f9 100%); border-right: 3px solid #e5e7eb;">
+                                <div style="font-size: 1.25rem; font-weight: 900; color: #475569; margin-bottom: 15px; text-shadow: 0 1px 2px rgba(0,0,0,0.05);">学年が上がると難しい</div>
+                                <div style="font-size: 1.05rem; color: #64748b; line-height: 1.8; font-weight: 500;">学年相応の内容に<br>ついていけず自信を失う</div>
+                            </td>
+                            <td style="padding: 40px 25px; text-align: center; background: linear-gradient(135deg, #ecfdf5 0%, #d1fae5 100%); border-bottom-right-radius: 30px;">
+                                <div style="font-size: 1.25rem; font-weight: 900; color: #059669; margin-bottom: 15px; text-shadow: 0 1px 2px rgba(5, 150, 105, 0.2);">🎯 レベル別クラス</div>
+                                <div style="font-size: 1.05rem; color: #047857; line-height: 1.8; font-weight: 600;">お子様に合った学年で学べる<br>「できた！」を増やす</div>
+                            </td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+            
+            <!-- 表の下のCTA - 超超強化版 -->
+            <div style="margin-top: 90px;">
+                <div style="background: linear-gradient(135deg, rgba(255,255,255,0.2) 0%, rgba(255,255,255,0.1) 100%); padding: 45px; border-radius: 30px; backdrop-filter: blur(20px); border: 2px solid rgba(255,255,255,0.4); max-width: 750px; margin: 0 auto 50px; box-shadow: 0 20px 60px rgba(0,0,0,0.3), inset 0 1px 0 rgba(255,255,255,0.3);">
+                    <p style="color: white; font-size: 1.6rem; font-weight: 900; margin-bottom: 18px; text-shadow: 0 3px 15px rgba(0,0,0,0.3); letter-spacing: -0.01em;">🎁 今なら30日間無料でお試し！</p>
+                    <p style="color: rgba(255,255,255,0.95); font-size: 1.15rem; font-weight: 500; text-shadow: 0 2px 10px rgba(0,0,0,0.2);">一切のリスクなし、いつでもキャンセルOK</p>
+                </div>
+                
+                <button onclick="window.open('https://lin.ee/JVV8msS', '_blank')" style="background: linear-gradient(135deg, #ffffff 0%, #f8f9fa 100%); color: #1e3c72; border: none; padding: 28px 70px; border-radius: 50px; font-size: 1.35rem; font-weight: 900; cursor: pointer; box-shadow: 0 25px 70px rgba(0,0,0,0.5), 0 10px 30px rgba(0,0,0,0.3); transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1); position: relative; overflow: hidden; letter-spacing: 0.02em;" onmouseover="this.style.transform='translateY(-8px) scale(1.05)'; this.style.boxShadow='0 35px 90px rgba(0,0,0,0.6), 0 15px 40px rgba(0,0,0,0.4)'" onmouseout="this.style.transform='translateY(0) scale(1)'; this.style.boxShadow='0 25px 70px rgba(0,0,0,0.5), 0 10px 30px rgba(0,0,0,0.3)'">
+                    <span style="font-size: 1.6rem; margin-right: 15px;">💬</span>今すぐLINEで無料相談する
+                </button>
+            </div>
+        </div>
+        
+        <!-- アニメーション定義 -->
+        <style>
+            @keyframes float {
+                0%, 100% { transform: translate(0, 0) scale(1); }
+                33% { transform: translate(40px, -40px) scale(1.1); }
+                66% { transform: translate(-30px, 30px) scale(0.9); }
+            }
+            
+            @keyframes pulse {
+                0%, 100% { transform: translate(-50%, -50%) scale(1); opacity: 0.6; }
+                50% { transform: translate(-50%, -50%) scale(1.3); opacity: 0.3; }
+            }
+            
+            @keyframes shake {
+                0%, 100% { transform: rotate(0deg) translateY(0); }
+                25% { transform: rotate(-12deg) translateY(-2px); }
+                75% { transform: rotate(12deg) translateY(-2px); }
+            }
+            
+            @keyframes sparkle {
+                0%, 100% { transform: scale(1) rotate(0deg); opacity: 1; }
+                50% { transform: scale(1.3) rotate(180deg); opacity: 0.7; }
+            }
+            
+            @keyframes slideUp {
+                from {
+                    opacity: 0;
+                    transform: translateY(60px);
+                }
+                to {
+                    opacity: 1;
+                    transform: translateY(0);
+                }
+            }
+            
+            @keyframes slideHint {
+                0%, 100% { transform: translateX(0); }
+                50% { transform: translateX(12px); }
+            }
+            
+            @keyframes twinkle {
+                0%, 100% { opacity: 0; transform: scale(0); }
+                50% { opacity: 1; transform: scale(1.5); }
+            }
+            
+            /* スマホ対応 */
+            @media (max-width: 768px) {
+                .scroll-hint {
+                    display: block !important;
+                }
+                
+                .table-container {
+                    padding: 0 10px !important;
+                }
+                
+                .table-container::-webkit-scrollbar {
+                    height: 10px;
+                }
+                
+                .table-container::-webkit-scrollbar-track {
+                    background: rgba(255,255,255,0.15);
+                    border-radius: 10px;
+                }
+                
+                .table-container::-webkit-scrollbar-thumb {
+                    background: linear-gradient(135deg, rgba(255,255,255,0.6) 0%, rgba(255,255,255,0.4) 100%);
+                    border-radius: 10px;
+                    border: 2px solid rgba(255,255,255,0.2);
+                }
+                
+                .table-container::-webkit-scrollbar-thumb:hover {
+                    background: linear-gradient(135deg, rgba(255,255,255,0.8) 0%, rgba(255,255,255,0.6) 100%);
+                }
+            }
+        </style>
+        
         </div>
         
         <style>
@@ -1582,18 +1768,37 @@
     (function () {
       var btn1 = document.getElementById('lineRegButton');
       var btn2 = document.getElementById('lineRegButton2');
+      var clickProcessed = false; // 重複発火を防ぐフラグ
       
       function handleClick() {
+        // 既にクリック処理中なら何もしない
+        if (clickProcessed) {
+          return;
+        }
+        clickProcessed = true;
+        
         var lineUrl = 'https://line.me/R/ti/p/@359fnsdb';
         
+        // ✅ Metaピクセル: Leadイベント(標準イベント)に変更
         if (typeof fbq === 'function') {
-          fbq('trackCustom', 'LineRegistrationClick_EN', {
+          fbq('track', 'Lead', {
             content_name: 'LINE公式アカウント登録',
-            country: 'Japan',
+            content_category: 'Free Trial Registration',
             currency: 'USD',
             value: 0.00
           });
-          console.log('✅ LineRegistrationClick_EN 発火');
+          console.log('✅ Meta Pixel Lead イベント発火');
+        } else {
+          console.warn('⚠️ fbq が定義されていません');
+        }
+        
+        // Google Analytics イベント
+        if (typeof gtag === 'function') {
+          gtag('event', 'line_registration_click', {
+            'event_category': 'engagement',
+            'event_label': 'LINE Registration Button'
+          });
+          console.log('✅ GA4 イベント発火');
         }
         
         try { window.parent && window.parent.postMessage('LineButtonClicked', '*'); } catch (e) {}
@@ -1603,6 +1808,10 @@
           if (!w || w.closed || typeof w.closed === 'undefined') {
             window.location.href = lineUrl;
           }
+          // 3秒後にフラグをリセット
+          setTimeout(function() {
+            clickProcessed = false;
+          }, 3000);
         }, 300);
       }
       
@@ -1615,13 +1824,13 @@
     window.addEventListener('message', function (event) {
       if (event && event.data === 'LineButtonClicked') {
         if (typeof fbq === 'function') {
-          fbq('trackCustom', 'LineRegistrationClick_EN', {
+          fbq('track', 'Lead', {
             content_name: 'LINE公式アカウント登録',
-            country: 'Japan',
+            content_category: 'Free Trial Registration',
             currency: 'USD',
             value: 0.00
           });
-          console.log('✅ 親フレームで LineRegistrationClick_EN 発火');
+          console.log('✅ 親フレームで Meta Pixel Lead イベント発火');
         } else {
           console.warn('⚠️ 親フレームに fbq がありません');
         }
