@@ -857,14 +857,25 @@
             section[style*="linear-gradient(135deg, #667eea"] .container {
                 padding-left: 0 !important;
                 padding-right: 0 !important;
+                margin-left: 0 !important;
+                margin-right: 0 !important;
+                width: 100% !important;
+            }
+            
+            /* お悩みカードのグリッド全体を中央に */
+            section[style*="linear-gradient(135deg, #667eea"] div[style*="grid-template-columns"] {
+                padding-left: 20px !important;
+                padding-right: 20px !important;
+                margin-left: auto !important;
+                margin-right: auto !important;
             }
             
             /* お悩みカード自体を中央寄せ（スマホ） */
             div[style*="border-top: 4px solid"] {
                 text-align: center !important;
                 max-width: 100% !important;
-                margin-left: 0 !important;
-                margin-right: 0 !important;
+                margin-left: auto !important;
+                margin-right: auto !important;
             }
             
             div[style*="border-top: 4px solid"] p {
