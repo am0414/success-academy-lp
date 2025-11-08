@@ -43,7 +43,7 @@
         
         body {
             font-family: 'Hiragino Kaku Gothic ProN', 'Hiragino Sans', Meiryo, sans-serif;
-            line-height: 1.8;
+            line-height: 1.6;
             color: #333;
             overflow-x: hidden;
         }
@@ -182,7 +182,7 @@
         
         .problem-text {
             font-size: 1.3rem;
-            line-height: 2.2;
+            line-height: 1.6;
             margin-bottom: 30px;
         }
         
@@ -273,7 +273,7 @@
         
         .solution-text p {
             font-size: 1.3rem;
-            line-height: 2.2;
+            line-height: 1.6;
             margin: 25px 0;
         }
         
@@ -387,7 +387,7 @@
         
         .feature-card p {
             font-size: 1rem;
-            line-height: 1.9;
+            line-height: 1.6;
             color: #555;
         }
         
@@ -513,7 +513,7 @@
         }
         
         .cta-title {
-            font-size: 3rem;
+            font-size: 2rem;
             font-weight: 900;
             margin-bottom: 30px;
             line-height: 1.4;
@@ -579,7 +579,7 @@
         .cta-bottom-text {
             margin-top: 60px;
             font-size: 1.3rem;
-            line-height: 2.2;
+            line-height: 1.6;
         }
         
         /* Pricing Section */
@@ -706,7 +706,7 @@
         .pricing-details {
             font-size: 0.9rem;
             color: #666;
-            line-height: 1.7;
+            line-height: 1.5;
         }
         
         .entry-fee {
@@ -785,8 +785,9 @@
         @media (max-width: 768px) {
             /* 基本設定 */
             .hero-title {
-                font-size: 2.2rem !important;
-                line-height: 1.4 !important;
+                font-size: 2.5rem !important;
+                line-height: 1.3 !important;
+                margin-bottom: 20px !important;
             }
             
             .section-title {
@@ -799,13 +800,34 @@
             }
             
             /* ヒーローセクション */
+            .hero {
+                padding: 60px 20px 80px !important;
+            }
+            
             .hero-content {
                 flex-direction: column !important;
-                gap: 30px !important;
+                gap: 25px !important;
+            }
+            
+            .hero-text {
+                text-align: center !important;
+                margin-bottom: 20px !important;
             }
             
             .hero-subtitle {
                 font-size: 1.1rem !important;
+                line-height: 1.6 !important;
+            }
+            
+            .hero-cta-button {
+                width: 100% !important;
+                font-size: 1.2rem !important;
+                padding: 20px 30px !important;
+            }
+            
+            .hero-image img {
+                max-width: 100% !important;
+                border-radius: 20px !important;
             }
             
             /* キャンペーンバナー */
@@ -826,6 +848,31 @@
             div[style*="grid-template-columns: repeat(2, 1fr)"] {
                 grid-template-columns: 1fr !important;
                 gap: 20px !important;
+                justify-items: center !important;
+                padding-left: 0 !important;
+                padding-right: 0 !important;
+            }
+            
+            /* 比較セクションのコンテナ */
+            section[style*="linear-gradient(135deg, #667eea"] .container {
+                padding-left: 0 !important;
+                padding-right: 0 !important;
+            }
+            
+            /* お悩みカード自体を中央寄せ（スマホ） */
+            div[style*="border-top: 4px solid"] {
+                text-align: center !important;
+                max-width: 100% !important;
+                margin-left: 0 !important;
+                margin-right: 0 !important;
+            }
+            
+            div[style*="border-top: 4px solid"] p {
+                text-align: center !important;
+            }
+            
+            div[style*="border-top: 4px solid"] h3 {
+                text-align: center !important;
             }
             
             /* 比較表 - サイズを小さく */
@@ -877,8 +924,18 @@
             }
             
             .cta-title {
-                font-size: 1.8rem !important;
+                font-size: 1.5rem !important;
                 line-height: 1.4 !important;
+            }
+            
+            /* 92%の継続率タイトル（スマホ専用） */
+            .stats-text h2 {
+                font-size: 1.65rem !important;
+            }
+            
+            /* インフルエンサータイトル（スマホ専用） */
+            .influencer-section .section-title {
+                font-size: 1.5rem !important;
             }
             
             .cta-subtitle {
@@ -945,6 +1002,24 @@
                 display: none;
             }
             
+            /* 比較セクションのタイトルは改行を保持 */
+            .comparison-title br {
+                display: block !important;
+            }
+            
+            /* 不自然な改行を防ぐ */
+            p, h1, h2, h3, h4, h5, h6 {
+                word-break: keep-all !important;
+                overflow-wrap: break-word !important;
+            }
+            
+            /* 長い単語は改行OK */
+            .hero-title,
+            .section-title,
+            .campaign-banner h3 {
+                word-break: normal !important;
+            }
+            
             /* インフルエンサースクロール */
             .influencer-scroll {
                 animation: none !important;
@@ -973,26 +1048,106 @@
 </head>
 <body>
 
+    <!-- Header -->
+    <header style="background: white; padding: 20px 0; box-shadow: 0 2px 10px rgba(0,0,0,0.05);">
+        <div class="container" style="max-width: 1200px; margin: 0 auto; padding: 0 20px;">
+            <div style="display: flex; justify-content: center; align-items: center;">
+                <h1 style="font-size: 1.8rem; font-weight: 900; background: linear-gradient(135deg, #667eea 0%, #764ba2 100%); -webkit-background-clip: text; -webkit-text-fill-color: transparent; background-clip: text; margin: 0;">
+                    Success Academy
+                </h1>
+            </div>
+        </div>
+    </header>
+
     <!-- Hero Section -->
-    <section class="hero" style="position: relative; overflow: hidden;">
-        <!-- 背景装飾 -->
-        <div style="position: absolute; top: -100px; right: -100px; width: 500px; height: 500px; background: radial-gradient(circle, rgba(102, 126, 234, 0.1) 0%, transparent 70%); border-radius: 50%;"></div>
-        <div style="position: absolute; bottom: -150px; left: -150px; width: 600px; height: 600px; background: radial-gradient(circle, rgba(118, 75, 162, 0.08) 0%, transparent 70%); border-radius: 50%;"></div>
+    <section class="hero" style="position: relative; overflow: hidden; background: linear-gradient(135deg, #f8f9ff 0%, #fff5f8 100%); padding: 80px 20px 100px;">
+        <!-- 背景装飾 - シンプル版 -->
+        <div style="position: absolute; top: -150px; right: -100px; width: 600px; height: 600px; background: radial-gradient(circle, rgba(102, 126, 234, 0.15) 0%, transparent 70%); border-radius: 50%;"></div>
+        <div style="position: absolute; bottom: -200px; left: -150px; width: 700px; height: 700px; background: radial-gradient(circle, rgba(118, 75, 162, 0.12) 0%, transparent 70%); border-radius: 50%;"></div>
         
         <div class="container" style="position: relative; z-index: 1;">
             <div class="hero-content">
-                <div class="hero-text">
-                    <div style="display: inline-block; background: linear-gradient(135deg, #667eea 0%, #764ba2 100%); color: white; padding: 8px 20px; border-radius: 50px; font-size: 0.9rem; font-weight: bold; margin-bottom: 25px;">
+                <div class="hero-text" style="text-align: center; margin-bottom: 30px;">
+                    <!-- バッジ -->
+                    <div class="hero-badge" style="display: inline-block; background: linear-gradient(135deg, #667eea 0%, #764ba2 100%); color: white; padding: 10px 25px; border-radius: 50px; font-size: 0.95rem; font-weight: bold; margin-bottom: 30px; box-shadow: 0 8px 25px rgba(102, 126, 234, 0.3);">
                         🌍 海外在住ファミリー向け
                     </div>
-                    <h1 class="hero-title" style="line-height: 1.3; margin-bottom: 25px;">毎日の25分が<br>「できた！」と<br>笑顔を生む時間に</h1>
-                    <p class="hero-subtitle" style="font-size: 1.3rem; color: #555; font-weight: 500; margin-bottom: 35px;">続かない家庭学習にサヨナラ</p>
+                    
+                    <!-- メインタイトル - スマホで大きく -->
+                    <h1 class="hero-title" style="font-size: 2.5rem; line-height: 1.3; margin-bottom: 25px; background: linear-gradient(135deg, #667eea 0%, #764ba2 100%); -webkit-background-clip: text; -webkit-text-fill-color: transparent; background-clip: text; font-weight: 900; text-shadow: 0 4px 20px rgba(102, 126, 234, 0.2);">
+                        毎日の25分が<br>「できた！」と<br>笑顔を生む時間に
+                    </h1>
+                    
+                    <!-- サブタイトル -->
+                    <p class="hero-subtitle" style="font-size: 1.2rem; color: #666; font-weight: 500; margin-bottom: 40px; line-height: 1.6;">
+                        続かない家庭学習にサヨナラ<br>
+                        <span style="font-size: 0.95rem; color: #888;">オンラインで楽しく日本語を学ぶ</span>
+                    </p>
+                    
+                    <!-- CTAボタン -->
+                    <button class="hero-cta-button" onclick="window.open('https://lin.ee/JVV8msS', '_blank')" style="background: linear-gradient(135deg, #06c755 0%, #00b300 100%); color: white; border: none; padding: 18px 40px; border-radius: 50px; font-size: 1.15rem; font-weight: bold; cursor: pointer; box-shadow: 0 12px 35px rgba(6, 199, 85, 0.4); transition: all 0.3s ease; display: inline-flex; align-items: center; gap: 10px;">
+                        <span>💬</span>
+                        <span>今すぐLINEで無料相談</span>
+                    </button>
                 </div>
-                <div class="hero-image">
-                    <img src="https://i.imgur.com/l48QbXM.png" alt="親子で学ぶイメージ" style="width: 100%; max-width: 600px; height: auto; border-radius: 30px; box-shadow: 0 30px 80px rgba(102, 126, 234, 0.3);">
+                
+                <!-- 画像 -->
+                <div class="hero-image" style="text-align: center;">
+                    <img src="https://i.imgur.com/l48QbXM.png" alt="親子で学ぶイメージ" style="width: 100%; max-width: 600px; height: auto; border-radius: 30px; box-shadow: 0 30px 80px rgba(102, 126, 234, 0.3); transition: transform 0.3s ease;">
                 </div>
             </div>
         </div>
+        
+        <!-- アニメーション定義 -->
+        <style>
+            /* フェードインアニメーション */
+            @keyframes fadeInUp {
+                from {
+                    opacity: 0;
+                    transform: translateY(30px);
+                }
+                to {
+                    opacity: 1;
+                    transform: translateY(0);
+                }
+            }
+            
+            /* タイトルのアニメーション */
+            .hero-title {
+                animation: fadeInUp 0.8s ease-out;
+            }
+            
+            /* バッジのアニメーション */
+            .hero-badge {
+                animation: fadeInUp 0.6s ease-out;
+            }
+            
+            /* サブタイトルのアニメーション */
+            .hero-subtitle {
+                animation: fadeInUp 1s ease-out;
+            }
+            
+            /* ボタンのアニメーション */
+            .hero-cta-button {
+                animation: fadeInUp 1.2s ease-out;
+            }
+            
+            /* 画像のアニメーション */
+            .hero-image {
+                animation: fadeInUp 1.4s ease-out;
+            }
+            
+            /* ボタンホバー */
+            .hero-cta-button:hover {
+                transform: translateY(-3px);
+                box-shadow: 0 15px 40px rgba(6, 199, 85, 0.5);
+            }
+            
+            /* 画像ホバー */
+            .hero-image img:hover {
+                transform: translateY(-10px);
+            }
+        </style>
     </section>
 
     <!-- Campaign Banner -->
@@ -1005,7 +1160,7 @@
                 <span style="font-size: 1rem; font-weight: bold;">⏰ 期間限定キャンペーン</span>
             </div>
             
-            <h3 style="font-size: 2.3rem; font-weight: 900; margin-bottom: 15px; text-shadow: 0 2px 10px rgba(0,0,0,0.1);">今だけ たっぷり30日間 無料体験延長！</h3>
+            <h3 style="font-size: 2.3rem; font-weight: 900; margin-bottom: 15px; text-shadow: 0 2px 10px rgba(0,0,0,0.1);">今だけ たっぷり30日間<br>無料体験延長！</h3>
             <p style="font-size: 1.1rem; margin-bottom: 10px; opacity: 0.9;">（通常は14日間の無料体験）</p>
             <p style="font-size: 1.2rem; margin-bottom: 40px; opacity: 0.95;">📅 期間限定：11.1(土) ▶ 11.30(日)</p>
             
@@ -1019,7 +1174,7 @@
                       <span style="position: relative; z-index: 1;">今すぐ特典をゲット 🎯</span>
                     </button>
                     
-                    <p style="font-size: 0.95rem; color: #666; line-height: 1.7; margin-top: 20px;">✨ 授業スケジュールや無料体験の情報も全てLINEから</p>
+                    <p style="font-size: 0.95rem; color: #666; line-height: 1.5; margin-top: 20px;">授業スケジュールや無料体験の情報も全てLINEから</p>
                 </div>
             </div>
         </div>
@@ -1044,7 +1199,7 @@
                         <p class="problem-text" style="font-size: 1.2rem;">その小さな成功が、「日本語って楽しい！」に変わります。</p>
                         
                         <div style="background: white; padding: 30px; border-radius: 20px; margin-top: 40px; box-shadow: 0 10px 30px rgba(0,0,0,0.08);">
-                            <h3 style="font-size: 1.5rem; font-weight: 900; margin-bottom: 20px; color: #1a1a1a;">多くのご家庭が感じています。</h3>
+                            <h3 style="font-size: 1.5rem; font-weight: 900; margin-bottom: 20px; color: #1a1a1a; word-break: keep-all;">多くのご家庭が<br>感じています。</h3>
                             <ul style="list-style: none; padding: 0; margin: 0;">
                                 <li style="padding: 12px 0; font-size: 1.1rem; color: #333; border-bottom: 1px solid #f0f0f0;">• 日本語を話さなくなってきた</li>
                                 <li style="padding: 12px 0; font-size: 1.1rem; color: #333; border-bottom: 1px solid #f0f0f0;">• 補習校の宿題も嫌がる</li>
@@ -1067,36 +1222,36 @@
         <div style="position: absolute; bottom: -100px; left: -100px; width: 400px; height: 400px; background: rgba(255,255,255,0.08); border-radius: 50%; filter: blur(100px);"></div>
         
         <div class="container" style="max-width: 1200px; margin: 0 auto; position: relative; z-index: 1;">
-            <h2 class="section-title" style="color: white; text-align: center; margin-bottom: 20px; font-size: 2.5rem;">補習校、こんなお悩みありませんか？</h2>
+            <h2 class="section-title comparison-title" style="color: white; text-align: center; margin-bottom: 20px; font-size: 2.5rem;">補習校、こんなお悩み<br>ありませんか？</h2>
             <p style="text-align: center; color: rgba(255,255,255,0.9); font-size: 1.1rem; margin-bottom: 60px;">多くのご家庭が抱える、補習校の課題</p>
             
-            <div style="display: grid; grid-template-columns: repeat(2, 1fr); gap: 30px; margin-bottom: 80px; max-width: 900px; margin-left: auto; margin-right: auto;">
+            <div style="display: grid; grid-template-columns: repeat(2, 1fr); gap: 30px; margin-bottom: 80px; max-width: 900px; margin-left: auto; margin-right: auto; text-align: center;">
                 <!-- デメリット1 -->
                 <div style="background: white; padding: 40px; border-radius: 20px; box-shadow: 0 20px 60px rgba(0,0,0,0.2); transition: transform 0.3s ease, box-shadow 0.3s ease; border-top: 4px solid #ff6b6b;">
-                    <div style="font-size: 3rem; margin-bottom: 20px;">😰</div>
+                    <div style="font-size: 3rem; margin-bottom: 10px;">😰</div>
                     <h3 style="font-size: 1.3rem; font-weight: bold; margin-bottom: 15px; color: #333;">毎週の送迎が大変</h3>
-                    <p style="color: #666; line-height: 1.8; font-size: 1rem;">土日の貴重な時間が送迎で消えていく。家族の時間が取れない...</p>
+                    <p style="color: #666; line-height: 1.6; font-size: 1rem;">土日の貴重な時間が送迎で消えていく。家族の時間が取れない...</p>
                 </div>
                 
                 <!-- デメリット2 -->
                 <div style="background: white; padding: 40px; border-radius: 20px; box-shadow: 0 20px 60px rgba(0,0,0,0.2); transition: transform 0.3s ease, box-shadow 0.3s ease; border-top: 4px solid #feca57;">
-                    <div style="font-size: 3rem; margin-bottom: 20px;">💸</div>
+                    <div style="font-size: 3rem; margin-bottom: 10px;">💸</div>
                     <h3 style="font-size: 1.3rem; font-weight: bold; margin-bottom: 15px; color: #333;">費用が高い</h3>
-                    <p style="color: #666; line-height: 1.8; font-size: 1rem;">年間数十万円の授業料、教材費、施設費...家計への負担が重い。</p>
+                    <p style="color: #666; line-height: 1.6; font-size: 1rem;">年間数十万円の授業料、教材費、施設費...家計への負担が重い。</p>
                 </div>
                 
                 <!-- デメリット3 -->
                 <div style="background: white; padding: 40px; border-radius: 20px; box-shadow: 0 20px 60px rgba(0,0,0,0.2); transition: transform 0.3s ease, box-shadow 0.3s ease; border-top: 4px solid #5f27cd;">
-                    <div style="font-size: 3rem; margin-bottom: 20px;">📚</div>
+                    <div style="font-size: 3rem; margin-bottom: 10px;">📚</div>
                     <h3 style="font-size: 1.3rem; font-weight: bold; margin-bottom: 15px; color: #333;">宿題が多すぎる</h3>
-                    <p style="color: #666; line-height: 1.8; font-size: 1rem;">大量の宿題で親子でストレス。現地校との両立が難しい...</p>
+                    <p style="color: #666; line-height: 1.6; font-size: 1rem;">大量の宿題で親子でストレス。現地校との両立が難しい...</p>
                 </div>
                 
                 <!-- デメリット4 -->
                 <div style="background: white; padding: 40px; border-radius: 20px; box-shadow: 0 20px 60px rgba(0,0,0,0.2); transition: transform 0.3s ease, box-shadow 0.3s ease; border-top: 4px solid #1dd1a1;">
-                    <div style="font-size: 3rem; margin-bottom: 20px;">😓</div>
+                    <div style="font-size: 3rem; margin-bottom: 10px;">😓</div>
                     <h3 style="font-size: 1.3rem; font-weight: bold; margin-bottom: 15px; color: #333;">学年が上がると難しい</h3>
-                    <p style="color: #666; line-height: 1.8; font-size: 1rem;">学年相応の内容についていけず、子どもの自信を失わせてしまう...</p>
+                    <p style="color: #666; line-height: 1.6; font-size: 1rem;">学年相応の内容についていけず、子どもの自信を失わせてしまう...</p>
                 </div>
             </div>
             
@@ -1109,11 +1264,11 @@
             </style>
             
             <!-- 矢印 -->
-            <div style="text-align: center; margin: 80px 0 60px;">
+            <div style="text-align: center; margin: 10px 0 30px;">
                 <div style="display: inline-flex; flex-direction: column; align-items: center; gap: 15px;">
                     <div style="font-size: 3.5rem; animation: bounce 2s ease-in-out infinite;">⬇️</div>
                     <div style="background: white; padding: 15px 35px; border-radius: 50px; box-shadow: 0 10px 30px rgba(0,0,0,0.2);">
-                        <p style="color: #667eea; font-size: 1.4rem; font-weight: bold; margin: 0;">サクセスアカデミーなら、これらの悩みを解決！</p>
+                        <p style="color: #667eea; font-size: 1.4rem; font-weight: bold; margin: 0; word-break: keep-all;">サクセスアカデミーなら、<br>これらの悩みを解決！</p>
                     </div>
                 </div>
             </div>
@@ -1198,9 +1353,9 @@
             <div class="solution-content">
                 <div class="solution-text">
                     <h2 style="font-size: 1.8rem;">日本語を"教えられる"から、<br>"使いたい"へ。</h2>
-                    <p>送り迎えも、準備もいりません。<br>パソコンを開くだけで、<br>日本語の時間が始まります。</p>
-                    <p>たった25分だから、<br>どんな日でも無理なく続けられる。</p>
-                    <p>小さな「できた！」を積み重ねるには、<br>手軽で、続けやすい環境がいちばん大切です。</p>
+                    <p style="font-size: 0.95rem;">送り迎えも、準備もいりません。<br>パソコンを開くだけで、<br>日本語の時間が始まります。</p>
+                    <p style="font-size: 0.95rem;">たった25分だから、<br>どんな日でも無理なく続けられる。</p>
+                    <p style="font-size: 0.95rem;">小さな「できた！」を積み重ねるには、<br>手軽で、続けやすい環境がいちばん大切です。</p>
                     <p class="solution-highlight">サクセスアカデミーは、<br>その"続けられる仕組み"をデザインしています。</p>
                 </div>
                 <div class="solution-image">
@@ -1250,7 +1405,7 @@
         <div class="container">
             <div class="stats-content">
                 <div class="stats-text">
-                    <h2 style="font-size: 2.0rem;">92%の継続率が証明する、"子どもが続けたくなる学び"。</h2>
+                    <h2 style="font-size: 1.85rem; word-break: keep-all; overflow-wrap: normal;"><span style="white-space: nowrap;">92%の</span>継続率が証明する、"子どもが続けたくなる学び"。</h2>
                     <div class="testimonial-quote">
                         <p>「終わったあとでも友達と遊べるので帰ってすぐ授業に参加し始めるように。」</p>
                         <p style="font-size: 0.9rem; color: #666; margin-top: 10px;">— アメリカ在住・Mさん（8歳ママ）</p>
@@ -1263,7 +1418,7 @@
                         <p>「4歳の娘が小学校入学前に引き算・足し算ができるようになった。」</p>
                         <p style="font-size: 0.9rem; color: #666; margin-top: 10px;">— ドイツ在住・Rさん（6歳のママ）</p>
                     </div>
-                    <p class="stat-highlight" style="font-size: 1.4rem;">無理せず気がついたら<br>月500分以上、自宅で勉強するお子様に成長する。</p>
+                    <p class="stat-highlight" style="font-size: 1.4rem;">無理せず気がついたら月500分以上、自宅で勉強するお子様に成長する。</p>
                 </div>
                 <div class="solution-image">
                     <img src="https://i.imgur.com/tiP4hQv.png" alt="学習する子供イメージ" style="width: 100%; max-width: 450px; height: auto; border-radius: 30px; box-shadow: 0 20px 60px rgba(0,0,0,0.1);">
@@ -1275,13 +1430,21 @@
     <!-- Influencer Section -->
     <section class="influencer-section">
         <div class="container">
-            <h2 class="section-title">海外で活躍するインフルエンサーが<br>自信を持っておすすめ</h2>
+            <h2 class="section-title" style="font-size: 1.6rem;">海外で活躍するインフルエンサーが<br>自信を持っておすすめ</h2>
             
             <div style="overflow: hidden; margin: 60px auto; max-width: 1200px;">
                 <!-- スマホ用スクロールヒント -->
-                <div class="scroll-hint" style="display: none; text-align: center; margin-bottom: 20px; color: #667eea; font-size: 0.9rem; font-weight: bold;">
+                <div class="scroll-hint" style="display: none; text-align: center; margin-bottom: 20px; color: #667eea; font-size: 0.9rem; font-weight: bold; animation: swipeHint 2s ease-in-out infinite;">
                     👉 横にスワイプしてください 👈
                 </div>
+                
+                <style>
+                    @keyframes swipeHint {
+                        0%, 100% { transform: translateX(0); }
+                        25% { transform: translateX(-10px); }
+                        75% { transform: translateX(10px); }
+                    }
+                </style>
                 
                 <div class="influencer-scroll" style="display: flex; gap: 40px; animation: scrollInfinite 40s linear infinite;">
                     <div class="influencer-card">
@@ -1290,7 +1453,7 @@
                         <p class="influencer-details">YouTube登録者数 16.4万人 | アメリカ在住</p>
                         <div style="text-align: left; background: #f8f9fa; padding: 20px; border-radius: 10px; margin-top: 15px;">
                             <h4 style="margin-bottom: 10px; font-size: 1rem; color: #0066cc;">日本滞在中や移動中でも学べる柔軟さ</h4>
-                            <p style="font-size: 0.9rem; line-height: 1.7; color: #555;">最初は集中が難しかった算数も、今では楽しんで取り組めています。先生が丁寧に教えてくれるので安心です。ネット環境があれば日本滞在中や移動中でも受講でき、25分の短い授業で子どもは遊ぶ時間も確保可能。親も送り迎え不要で家事をしながら見守れるのが便利です。</p>
+                            <p style="font-size: 0.9rem; line-height: 1.5; color: #555;">最初は集中が難しかった算数も、今では楽しんで取り組めています。先生が丁寧に教えてくれるので安心です。ネット環境があれば日本滞在中や移動中でも受講でき、25分の短い授業で子どもは遊ぶ時間も確保可能。親も送り迎え不要で家事をしながら見守れるのが便利です。</p>
                         </div>
                     </div>
                     <div class="influencer-card">
@@ -1299,7 +1462,7 @@
                         <p class="influencer-details">YouTube 1.03万人登録者 | アメリカ在住</p>
                         <div style="text-align: left; background: #f8f9fa; padding: 20px; border-radius: 10px; margin-top: 15px;">
                             <h4 style="margin-bottom: 10px; font-size: 1rem; color: #0066cc;">学びとコミュニケーションが同時に育つ場</h4>
-                            <p style="font-size: 0.9rem; line-height: 1.7; color: #555;">子どもは楽しそうに参加しており、特に偉人のクラスは親子の会話を広げてくれます。送迎不要で自宅から安心して受講でき、先生の丁寧な指導や日本語でのコミュニケーションにも満足しています。引っ越し直後でも、人とつながれる場があるのはとてもありがたいです。</p>
+                            <p style="font-size: 0.9rem; line-height: 1.5; color: #555;">子どもは楽しそうに参加しており、特に偉人のクラスは親子の会話を広げてくれます。送迎不要で自宅から安心して受講でき、先生の丁寧な指導や日本語でのコミュニケーションにも満足しています。引っ越し直後でも、人とつながれる場があるのはとてもありがたいです。</p>
                         </div>
                     </div>
                     <div class="influencer-card">
@@ -1308,7 +1471,7 @@
                         <p class="influencer-details">YouTube 3.75万人登録者 | ドイツ在住</p>
                         <div style="text-align: left; background: #f8f9fa; padding: 20px; border-radius: 10px; margin-top: 15px;">
                             <h4 style="margin-bottom: 10px; font-size: 1rem; color: #0066cc;">送迎不要で親も子も大満足</h4>
-                            <p style="font-size: 0.9rem; line-height: 1.7; color: #555;">子どもは楽しんで受講しており、特に偉人のクラスはとても気に入っています。送迎が不要で、親としても安心して利用できる点が大変助かります。レッスンやお問い合わせへの対応もとてもスムーズで、安心して続けられる環境だと感じています。</p>
+                            <p style="font-size: 0.9rem; line-height: 1.5; color: #555;">子どもは楽しんで受講しており、特に偉人のクラスはとても気に入っています。送迎が不要で、親としても安心して利用できる点が大変助かります。レッスンやお問い合わせへの対応もとてもスムーズで、安心して続けられる環境だと感じています。</p>
                         </div>
                     </div>
                     <div class="influencer-card">
@@ -1317,7 +1480,7 @@
                         <p class="influencer-details">Instagram 2.9万人フォロワー | イギリス在住</p>
                         <div style="text-align: left; background: #f8f9fa; padding: 20px; border-radius: 10px; margin-top: 15px;">
                             <h4 style="margin-bottom: 10px; font-size: 1rem; color: #0066cc;">国語も算数も少しずつ自信に</h4>
-                            <p style="font-size: 0.9rem; line-height: 1.7; color: #555;">7月から受講を始め、夏休みは午前の同じ時間帯で継続しています。発言が苦手な長女も国語や偉人クラスを楽しめるようになり、次女は計算が速くなり、さくらんぼ計算にも慣れてきました。先生が性格に合わせて丁寧に対応してくださるおかげで、少しずつ場に慣れ、練習すれば伸びるという手応えを感じています。</p>
+                            <p style="font-size: 0.9rem; line-height: 1.5; color: #555;">7月から受講を始め、夏休みは午前の同じ時間帯で継続しています。発言が苦手な長女も国語や偉人クラスを楽しめるようになり、次女は計算が速くなり、さくらんぼ計算にも慣れてきました。先生が性格に合わせて丁寧に対応してくださるおかげで、少しずつ場に慣れ、練習すれば伸びるという手応えを感じています。</p>
                         </div>
                     </div>
                     <!-- 複製してループ -->
@@ -1327,7 +1490,7 @@
                         <p class="influencer-details">YouTube登録者数 16.4万人 | アメリカ在住</p>
                         <div style="text-align: left; background: #f8f9fa; padding: 20px; border-radius: 10px; margin-top: 15px;">
                             <h4 style="margin-bottom: 10px; font-size: 1rem; color: #0066cc;">日本滞在中や移動中でも学べる柔軟さ</h4>
-                            <p style="font-size: 0.9rem; line-height: 1.7; color: #555;">最初は集中が難しかった算数も、今では楽しんで取り組めています。先生が丁寧に教えてくれるので安心です。ネット環境があれば日本滞在中や移動中でも受講でき、25分の短い授業で子どもは遊ぶ時間も確保可能。親も送り迎え不要で家事をしながら見守れるのが便利です。</p>
+                            <p style="font-size: 0.9rem; line-height: 1.5; color: #555;">最初は集中が難しかった算数も、今では楽しんで取り組めています。先生が丁寧に教えてくれるので安心です。ネット環境があれば日本滞在中や移動中でも受講でき、25分の短い授業で子どもは遊ぶ時間も確保可能。親も送り迎え不要で家事をしながら見守れるのが便利です。</p>
                         </div>
                     </div>
                     <div class="influencer-card">
@@ -1336,7 +1499,7 @@
                         <p class="influencer-details">YouTube 1.03万人登録者 | アメリカ在住</p>
                         <div style="text-align: left; background: #f8f9fa; padding: 20px; border-radius: 10px; margin-top: 15px;">
                             <h4 style="margin-bottom: 10px; font-size: 1rem; color: #0066cc;">学びとコミュニケーションが同時に育つ場</h4>
-                            <p style="font-size: 0.9rem; line-height: 1.7; color: #555;">子どもは楽しそうに参加しており、特に偉人のクラスは親子の会話を広げてくれます。送迎不要で自宅から安心して受講でき、先生の丁寧な指導や日本語でのコミュニケーションにも満足しています。引っ越し直後でも、人とつながれる場があるのはとてもありがたいです。</p>
+                            <p style="font-size: 0.9rem; line-height: 1.5; color: #555;">子どもは楽しそうに参加しており、特に偉人のクラスは親子の会話を広げてくれます。送迎不要で自宅から安心して受講でき、先生の丁寧な指導や日本語でのコミュニケーションにも満足しています。引っ越し直後でも、人とつながれる場があるのはとてもありがたいです。</p>
                         </div>
                     </div>
                     <div class="influencer-card">
@@ -1345,7 +1508,7 @@
                         <p class="influencer-details">YouTube 3.75万人登録者 | ドイツ在住</p>
                         <div style="text-align: left; background: #f8f9fa; padding: 20px; border-radius: 10px; margin-top: 15px;">
                             <h4 style="margin-bottom: 10px; font-size: 1rem; color: #0066cc;">送迎不要で親も子も大満足</h4>
-                            <p style="font-size: 0.9rem; line-height: 1.7; color: #555;">子どもは楽しんで受講しており、特に偉人のクラスはとても気に入っています。送迎が不要で、親としても安心して利用できる点が大変助かります。レッスンやお問い合わせへの対応もとてもスムーズで、安心して続けられる環境だと感じています。</p>
+                            <p style="font-size: 0.9rem; line-height: 1.5; color: #555;">子どもは楽しんで受講しており、特に偉人のクラスはとても気に入っています。送迎が不要で、親としても安心して利用できる点が大変助かります。レッスンやお問い合わせへの対応もとてもスムーズで、安心して続けられる環境だと感じています。</p>
                         </div>
                     </div>
                     <div class="influencer-card">
@@ -1354,7 +1517,7 @@
                         <p class="influencer-details">Instagram 2.9万人フォロワー | イギリス在住</p>
                         <div style="text-align: left; background: #f8f9fa; padding: 20px; border-radius: 10px; margin-top: 15px;">
                             <h4 style="margin-bottom: 10px; font-size: 1rem; color: #0066cc;">国語も算数も少しずつ自信に</h4>
-                            <p style="font-size: 0.9rem; line-height: 1.7; color: #555;">7月から受講を始め、夏休みは午前の同じ時間帯で継続しています。発言が苦手な長女も国語や偉人クラスを楽しめるようになり、次女は計算が速くなり、さくらんぼ計算にも慣れてきました。先生が性格に合わせて丁寧に対応してくださるおかげで、少しずつ場に慣れ、練習すれば伸びるという手応えを感じています。</p>
+                            <p style="font-size: 0.9rem; line-height: 1.5; color: #555;">7月から受講を始め、夏休みは午前の同じ時間帯で継続しています。発言が苦手な長女も国語や偉人クラスを楽しめるようになり、次女は計算が速くなり、さくらんぼ計算にも慣れてきました。先生が性格に合わせて丁寧に対応してくださるおかげで、少しずつ場に慣れ、練習すれば伸びるという手応えを感じています。</p>
                         </div>
                     </div>
                 </div>
@@ -1402,8 +1565,8 @@
                 <div style="display: inline-block; background: rgba(255,255,255,0.2); padding: 10px 25px; border-radius: 50px; margin-bottom: 20px; backdrop-filter: blur(10px);">
                     <span style="font-size: 1rem; font-weight: bold;">⏰ 今だけの特別オファー</span>
                 </div>
-                <h2 class="cta-title" style="font-size: 2.5rem; line-height: 1.4; text-shadow: 0 2px 10px rgba(0,0,0,0.2); margin: 0 auto;">1年後、「あのとき始めておけば...」<br>と思う前に。</h2>
-                <p class="cta-subtitle" style="font-size: 1.3rem; margin-top: 20px; opacity: 0.95;">まずは無料で、"できた！"を体験してください。</p>
+                <h2 class="cta-title" style="line-height: 1.4; text-shadow: 0 2px 10px rgba(0,0,0,0.2); margin: 0 auto;">1年後、「あのとき始めておけば...」<br>と思う前に。</h2>
+                <p class="cta-subtitle" style="font-size: 1.2rem; margin-top: 20px; opacity: 0.95;">まずは無料で、"できた！"を体験してください。</p>
             </div>
             
             <!-- 派手なLINE登録ボックス -->
@@ -1452,15 +1615,15 @@
                         
                         <!-- 補足情報 -->
                         <div style="background: white; padding: 20px 25px; border-radius: 15px; box-shadow: 0 10px 30px rgba(0,0,0,0.2);">
-                            <p style="font-size: 1rem; color: #0066cc; line-height: 1.8; margin: 0; font-weight: 500;">✨ 授業スケジュールや無料体験の情報も全てLINEから</p>
+                            <p style="font-size: 1rem; color: #0066cc; line-height: 1.6; margin: 0; font-weight: 500;">授業スケジュールや無料体験の情報も全てLINEから</p>
                         </div>
                     </div>
                 </div>
             </div>
             
             <div style="text-align: center; margin-top: 60px; max-width: 800px; margin-left: auto; margin-right: auto;">
-                <p style="font-size: 1.2rem; line-height: 1.8; opacity: 0.95; margin: 0 auto;">子どもの「できた！」は、早ければ早いほど自信に変わります。</p>
-                <p style="font-size: 1.2rem; line-height: 1.8; margin-top: 15px; opacity: 0.95;">まずは無料で、その変化を感じてください。</p>
+                <p style="font-size: 1.1rem; line-height: 1.6; opacity: 0.95; margin: 0 auto;">子どもの「できた！」は、早ければ早いほど自信に変わります。</p>
+                <p style="font-size: 1.1rem; line-height: 1.6; margin-top: 15px; opacity: 0.95;">まずは無料で、その変化を感じてください。</p>
                 <div style="background: linear-gradient(135deg, rgba(255,235,59,0.2) 0%, rgba(255,193,7,0.2) 100%); padding: 25px 35px; border-radius: 20px; margin: 40px auto 0; border: 2px solid rgba(255,235,59,0.4); backdrop-filter: blur(10px); display: inline-block; max-width: 100%;">
                     <p style="font-size: 1.7rem; font-weight: 900; color: #ffeb3b; text-shadow: 2px 2px 6px rgba(0,0,0,0.3); margin: 0; line-height: 1.4;">💯 30日間以内のキャンセルは<br>一切の料金が発生しません</p>
                 </div>
@@ -1575,7 +1738,7 @@
         <div class="container" style="max-width: 1200px; margin: 0 auto; text-align: center;">
             <!-- 会社名 -->
             <h3 style="font-size: 1.3rem; font-weight: bold; margin-bottom: 20px; color: #333;">サクセスアカデミー</h3>
-            <p style="color: #666; line-height: 1.8; font-size: 1rem; margin-bottom: 30px;">
+            <p style="color: #666; line-height: 1.6; font-size: 1rem; margin-bottom: 30px;">
                 海外在住のご家族向けに、<br>
                 オンラインで日本語教育を提供しています。
             </p>
@@ -1593,6 +1756,30 @@
             </div>
         </div>
     </footer>
+
+    <!-- 固定CTA（下部） -->
+    <div style="position: fixed; bottom: 0; left: 0; right: 0; background: linear-gradient(135deg, #667eea 0%, #764ba2 100%); padding: 15px 20px; box-shadow: 0 -5px 20px rgba(0,0,0,0.2); z-index: 1000; display: flex; justify-content: center; align-items: center; animation: slideUp 0.5s ease-out;">
+        <a href="https://line.me/R/ti/p/@518rdshc" target="_blank" style="text-decoration: none; width: 100%; max-width: 500px;">
+            <button style="width: 100%; background: linear-gradient(135deg, #00b300 0%, #00e600 100%); color: white; border: none; padding: 18px 40px; border-radius: 50px; font-size: 1.2rem; font-weight: bold; cursor: pointer; box-shadow: 0 8px 25px rgba(0, 179, 0, 0.4); transition: all 0.3s ease; position: relative; overflow: hidden;" onmouseover="this.style.transform='scale(1.05)'; this.style.boxShadow='0 12px 35px rgba(0, 179, 0, 0.6)';" onmouseout="this.style.transform='scale(1)'; this.style.boxShadow='0 8px 25px rgba(0, 179, 0, 0.4)';">
+                <span style="position: relative; z-index: 1; display: flex; align-items: center; justify-content: center; gap: 10px;">
+                    🎁 今すぐ特典をゲット
+                </span>
+            </button>
+        </a>
+    </div>
+    
+    <style>
+        @keyframes slideUp {
+            from {
+                transform: translateY(100%);
+                opacity: 0;
+            }
+            to {
+                transform: translateY(0);
+                opacity: 1;
+            }
+        }
+    </style>
 
 </body>
 </html>
