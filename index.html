@@ -1520,7 +1520,9 @@
         if (typeof fbq === 'function') {
           fbq('trackCustom', 'LineRegistrationClick_EN', {
             content_name: 'LINE公式アカウント登録',
-            country: 'Japan'
+            country: 'Japan',
+            currency: 'USD',
+            value: 0.00
           });
           console.log('✅ LineRegistrationClick_EN 発火');
         }
@@ -1546,7 +1548,9 @@
         if (typeof fbq === 'function') {
           fbq('trackCustom', 'LineRegistrationClick_EN', {
             content_name: 'LINE公式アカウント登録',
-            country: 'Japan'
+            country: 'Japan',
+            currency: 'USD',
+            value: 0.00
           });
           console.log('✅ 親フレームで LineRegistrationClick_EN 発火');
         } else {
