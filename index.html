@@ -1216,16 +1216,50 @@
             </div>
             
             <style>
+                /* ===== モバイル中央寄せ・右寄り解消パッチ ===== */
                 @media (max-width: 768px) {
-                    div[style*="grid-template-columns: repeat(2, 1fr)"] {
-                        grid-template-columns: 1fr !important;
-                    }
-                    
-                    /* このセクションのcontainerのpaddingを小さく */
-                    section[style*="linear-gradient(135deg, #667eea 0%, #764ba2 100%)"] .container {
-                        padding-left: 10px !important;
-                        padding-right: 10px !important;
-                    }
+
+                  /* 2カラム → 1カラム + 中央揃え */
+                  div[style*="grid-template-columns: repeat(2, 1fr)"] {
+                    display: grid !important;
+                    grid-template-columns: 1fr !important;
+                    justify-items: center !important;   /* 子要素の横位置 */
+                    align-items: start !important;
+                  }
+                  div[style*="grid-template-columns: repeat(2, 1fr)"] > * {
+                    justify-self: center !important;    /* 念のため子要素も中央 */
+                    margin-left: 0 !important;          /* 左autoで寄っている場合を打ち消し */
+                    margin-right: 0 !important;
+                  }
+                  /* 左右autoで固定されている要素の右寄りを打ち消し */
+                  div[style*="grid-template-columns: repeat(2, 1fr)"] [style*="margin-left:auto"] {
+                    margin-left: 0 !important;
+                  }
+
+                  /* グラデセクションの .container をボックス中央に */
+                  section[style*="linear-gradient(135deg, #667eea 0%, #764ba2 100%)"] .container {
+                    box-sizing: border-box !important;
+                    max-width: 100% !important;
+                    width: 100% !important;
+                    padding-left: 10px !important;
+                    padding-right: 10px !important;
+                    margin-left: auto !important;
+                    margin-right: auto !important;
+                    text-align: center; /* テキスト系なら中央寄せ */
+                  }
+
+                  /* 親がflexで右寄せしているケースの保険 */
+                  section[style*="linear-gradient(135deg, #667eea 0%, #764ba2 100%)"] .container[style*="display:flex"],
+                  section[style*="linear-gradient(135deg, #667eea 0%, #764ba2 100%)"] .container.flex,
+                  section[style*="linear-gradient(135deg, #667eea 0%, #764ba2 100%)"] [style*="display:flex"] {
+                    justify-content: center !important;
+                    align-items: center !important;
+                  }
+                  
+                  /* 固定幅要素の対応 */
+                  .container *[style*="width:"] { 
+                    max-width: 100% !important; 
+                  }
                 }
             </style>
             
