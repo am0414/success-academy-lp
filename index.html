@@ -848,65 +848,16 @@
             div[style*="grid-template-columns: repeat(2, 1fr)"] {
                 grid-template-columns: 1fr !important;
                 gap: 20px !important;
-                justify-items: center !important;
+                padding: 0 !important;
+                max-width: 90% !important;
+                margin-left: auto !important;
+                margin-right: auto !important;
+            }
+            
+            /* お悩みセクションのコンテナ調整 */
+            section[style*="linear-gradient(135deg, #667eea"] .container {
                 padding-left: 0 !important;
                 padding-right: 0 !important;
-            }
-            
-            /* IDでグリッドを直接指定 */
-            #problems-grid {
-                padding: 0 20px !important;
-                margin-left: 0 !important;
-                margin-right: 0 !important;
-                max-width: 100% !important;
-                width: 100% !important;
-            }
-            
-            /* 補習校セクション全体 */
-            .comparison-problems-section {
-                padding: 60px 0 !important;
-            }
-            
-            /* 補習校セクションのコンテナ */
-            #problems-container {
-                padding: 0 !important;
-                margin: 0 auto !important;
-                width: 100% !important;
-                max-width: 100% !important;
-            }
-            
-            /* 比較セクションのコンテナ */
-            section[style*="linear-gradient(135deg, #667eea"] .container {
-                padding-left: 20px !important;
-                padding-right: 20px !important;
-                margin-left: 0 !important;
-                margin-right: 0 !important;
-                width: 100% !important;
-                max-width: 100% !important;
-            }
-            
-            /* お悩みカードのグリッド全体を中央に */
-            section[style*="linear-gradient(135deg, #667eea"] div[style*="grid-template-columns"] {
-                padding-left: 20px !important;
-                padding-right: 20px !important;
-                margin-left: auto !important;
-                margin-right: auto !important;
-            }
-            
-            /* お悩みカード自体を中央寄せ（スマホ） */
-            div[style*="border-top: 4px solid"] {
-                text-align: center !important;
-                max-width: 100% !important;
-                margin-left: auto !important;
-                margin-right: auto !important;
-            }
-            
-            div[style*="border-top: 4px solid"] p {
-                text-align: center !important;
-            }
-            
-            div[style*="border-top: 4px solid"] h3 {
-                text-align: center !important;
             }
             
             /* 比較表 - サイズを小さく */
@@ -1288,14 +1239,6 @@
                     <p style="color: #666; line-height: 1.6; font-size: 1rem;">学年相応の内容についていけず、子どもの自信を失わせてしまう...</p>
                 </div>
             </div>
-            
-            <style>
-                @media (max-width: 768px) {
-                    div[style*="grid-template-columns: repeat(2, 1fr)"] {
-                        grid-template-columns: 1fr !important;
-                    }
-                }
-            </style>
             
             <!-- 矢印 -->
             <div style="text-align: center; margin: 10px 0 30px;">
