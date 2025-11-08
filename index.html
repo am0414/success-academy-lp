@@ -1,0 +1,1584 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>サクセスアカデミー | 海外在住のご家族向けオンライン教育プログラム</title>
+    
+    <!-- Meta Pixel Code -->
+    <script>
+    !function(f,b,e,v,n,t,s)
+    {if(f.fbq)return;n=f.fbq=function(){n.callMethod?
+    n.callMethod.apply(n,arguments):n.queue.push(arguments)};
+    if(!f._fbq)f._fbq=n;n.push=n;n.loaded=!0;n.version='2.0';
+    n.queue=[];t=b.createElement(e);t.async=!0;
+    t.src=v;s=b.getElementsByTagName(e)[0];
+    s.parentNode.insertBefore(t,s)}(window, document,'script',
+    'https://connect.facebook.net/en_US/fbevents.js');
+    fbq('init', '1014262833889321');
+    fbq('track', 'PageView');
+    </script>
+    <noscript>
+      <img height="1" width="1" style="display:none"
+           src="https://www.facebook.com/tr?id=1014262833889321&ev=PageView&noscript=1"/>
+    </noscript>
+    <!-- End Meta Pixel Code -->
+    
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        body {
+            font-family: 'Hiragino Kaku Gothic ProN', 'Hiragino Sans', Meiryo, sans-serif;
+            line-height: 1.8;
+            color: #333;
+            overflow-x: hidden;
+        }
+        
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+        
+        /* Hero Section */
+        .hero {
+            background: linear-gradient(135deg, #f5f7fa 0%, #ffffff 100%);
+            padding: 100px 20px;
+            position: relative;
+        }
+        
+        .hero-content {
+            display: flex;
+            align-items: center;
+            gap: 80px;
+            flex-wrap: wrap;
+        }
+        
+        .hero-text {
+            flex: 1;
+            min-width: 300px;
+        }
+        
+        .hero-title {
+            font-size: 3.5rem;
+            font-weight: 900;
+            line-height: 1.3;
+            margin-bottom: 30px;
+            color: #1a1a1a;
+        }
+        
+        .hero-subtitle {
+            font-size: 1.3rem;
+            color: #666;
+            font-weight: 500;
+        }
+        
+        .hero-image {
+            flex: 1;
+            min-width: 300px;
+            text-align: center;
+        }
+        
+        .hero-image img {
+            width: 100%;
+            max-width: 500px;
+            height: auto;
+            border-radius: 30px;
+            box-shadow: 0 20px 60px rgba(0,0,0,0.1);
+        }
+        
+        /* Campaign Banner */
+        .campaign-banner {
+            background: linear-gradient(135deg, #0066cc 0%, #00b4d8 100%);
+            color: white;
+            padding: 80px 20px;
+            text-align: center;
+            position: relative;
+            overflow: hidden;
+        }
+        
+        .campaign-banner::before {
+            content: '';
+            position: absolute;
+            top: -50%;
+            left: -50%;
+            width: 200%;
+            height: 200%;
+            background: repeating-linear-gradient(
+                45deg,
+                transparent,
+                transparent 10px,
+                rgba(255,255,255,0.05) 10px,
+                rgba(255,255,255,0.05) 20px
+            );
+        }
+        
+        .campaign-content {
+            position: relative;
+            z-index: 1;
+        }
+        
+        .campaign-flex {
+            display: flex;
+            gap: 50px;
+            justify-content: center;
+            align-items: center;
+            flex-wrap: wrap;
+            margin-top: 40px;
+        }
+        
+        .campaign-left {
+            flex: 1;
+            min-width: 300px;
+            max-width: 500px;
+        }
+        
+        .campaign-right {
+            flex: 1;
+            min-width: 320px;
+            max-width: 500px;
+            background: white;
+            color: #333;
+            padding: 40px;
+            border-radius: 25px;
+            border: 4px solid #06c755;
+            box-shadow: 0 20px 60px rgba(0,0,0,0.3);
+        }
+        
+        /* Problem Section */
+        .problem-section {
+            padding: 100px 20px;
+            background: #f8f9fa;
+        }
+        
+        .section-title {
+            font-size: 3rem;
+            font-weight: 900;
+            text-align: center;
+            margin-bottom: 60px;
+            color: #1a1a1a;
+            line-height: 1.4;
+        }
+        
+        .problem-content {
+            max-width: 900px;
+            margin: 0 auto;
+            text-align: center;
+        }
+        
+        .problem-text {
+            font-size: 1.3rem;
+            line-height: 2.2;
+            margin-bottom: 30px;
+        }
+        
+        .highlight-red {
+            color: #e74c3c;
+            font-weight: bold;
+        }
+        
+        .problem-list-title {
+            text-align: center;
+            margin: 70px 0 40px;
+        }
+        
+        .problem-list-title h3 {
+            font-size: 2.2rem;
+            font-weight: 900;
+            color: #1a1a1a;
+            margin-bottom: 20px;
+        }
+        
+        .problem-list-title .underline {
+            width: 100px;
+            height: 5px;
+            background: linear-gradient(90deg, #667eea, #764ba2);
+            margin: 0 auto;
+            border-radius: 10px;
+        }
+        
+        .problem-list {
+            list-style: none;
+            margin: 40px 0;
+            max-width: 700px;
+            margin-left: auto;
+            margin-right: auto;
+        }
+        
+        .problem-list li {
+            padding: 25px 30px;
+            margin: 20px 0;
+            background: white;
+            border-left: 6px solid #667eea;
+            border-radius: 15px;
+            font-size: 1.2rem;
+            box-shadow: 0 8px 25px rgba(0,0,0,0.08);
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+        
+        .problem-list li:hover {
+            transform: translateX(10px);
+            box-shadow: 0 12px 35px rgba(102,126,234,0.2);
+        }
+        
+        .bottom-text {
+            text-align: center;
+            margin-top: 60px;
+            font-size: 1.5rem;
+            color: #0066cc;
+            font-weight: bold;
+        }
+        
+        /* Solution Section */
+        .solution-section {
+            padding: 100px 20px;
+            background: white;
+        }
+        
+        .solution-content {
+            display: flex;
+            gap: 60px;
+            align-items: center;
+            flex-wrap: wrap;
+            max-width: 1100px;
+            margin: 0 auto;
+        }
+        
+        .solution-text {
+            flex: 1;
+            min-width: 300px;
+        }
+        
+        .solution-text h2 {
+            font-size: 2.8rem;
+            font-weight: 900;
+            margin-bottom: 40px;
+            line-height: 1.5;
+            color: #1a1a1a;
+        }
+        
+        .solution-text p {
+            font-size: 1.3rem;
+            line-height: 2.2;
+            margin: 25px 0;
+        }
+        
+        .solution-highlight {
+            color: #0066cc;
+            font-weight: bold;
+            font-size: 1.2rem;
+            margin-top: 50px;
+        }
+        
+        .solution-image {
+            flex: 1;
+            min-width: 300px;
+            text-align: center;
+        }
+        
+        .solution-image-placeholder {
+            width: 100%;
+            max-width: 450px;
+            height: 450px;
+            background: linear-gradient(135deg, #a8edea 0%, #fed6e3 100%);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin: 0 auto;
+            box-shadow: 0 20px 60px rgba(0,0,0,0.1);
+        }
+        
+        /* Features Section - SUPER MODERN */
+        .features-section {
+            padding: 120px 20px;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            position: relative;
+            overflow: hidden;
+        }
+        
+        .features-section::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: url('data:image/svg+xml,<svg width="100" height="100" xmlns="http://www.w3.org/2000/svg"><rect fill="rgba(255,255,255,0.03)" width="50" height="50"/></svg>');
+            opacity: 0.5;
+        }
+        
+        .features-section .section-title {
+            color: white;
+            position: relative;
+            z-index: 1;
+        }
+        
+        .features-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 30px;
+            margin: 60px auto;
+            max-width: 1300px;
+            position: relative;
+            z-index: 1;
+        }
+        
+        .feature-card {
+            background: rgba(255,255,255,0.95);
+            backdrop-filter: blur(10px);
+            color: #333;
+            padding: 50px 35px;
+            border-radius: 25px;
+            text-align: center;
+            box-shadow: 0 20px 60px rgba(0,0,0,0.2);
+            transition: all 0.4s ease;
+            position: relative;
+            overflow: hidden;
+        }
+        
+        .feature-card::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            height: 5px;
+            background: linear-gradient(90deg, #667eea, #764ba2);
+        }
+        
+        .feature-card:hover {
+            transform: translateY(-15px) scale(1.02);
+            box-shadow: 0 30px 80px rgba(0,0,0,0.3);
+        }
+        
+        .feature-icon {
+            font-size: 4rem;
+            margin-bottom: 25px;
+            display: inline-block;
+            animation: float 3s ease-in-out infinite;
+        }
+        
+        @keyframes float {
+            0%, 100% { transform: translateY(0); }
+            50% { transform: translateY(-10px); }
+        }
+        
+        .feature-card h3 {
+            font-size: 1.5rem;
+            font-weight: 900;
+            margin-bottom: 20px;
+            color: #667eea;
+        }
+        
+        .feature-card p {
+            font-size: 1rem;
+            line-height: 1.9;
+            color: #555;
+        }
+        
+        .third-place {
+            text-align: center;
+            margin-top: 80px;
+            font-size: 2rem;
+            color: white;
+            font-weight: 900;
+            position: relative;
+            z-index: 1;
+        }
+        
+        /* Stats Section */
+        .stats-section {
+            padding: 100px 20px;
+            background: white;
+        }
+        
+        .stats-content {
+            display: flex;
+            gap: 60px;
+            align-items: center;
+            flex-wrap: wrap;
+            max-width: 1100px;
+            margin: 0 auto;
+        }
+        
+        .stats-text {
+            flex: 1;
+            min-width: 300px;
+        }
+        
+        .stats-text h2 {
+            font-size: 2.5rem;
+            font-weight: 900;
+            margin-bottom: 40px;
+            line-height: 1.6;
+            color: #1a1a1a;
+        }
+        
+        .testimonial-quote {
+            background: #f8f9fa;
+            padding: 25px;
+            border-radius: 15px;
+            margin: 25px 0;
+            border-left: 5px solid #0066cc;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.05);
+        }
+        
+        .stat-highlight {
+            text-align: center;
+            margin-top: 50px;
+            font-size: 1.2rem;
+            color: #0066cc;
+            font-weight: bold;
+        }
+        
+        /* Influencer Section */
+        .influencer-section {
+            padding: 100px 20px;
+            background: #f8f9fa;
+        }
+        
+        .influencer-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 40px;
+            margin-top: 60px;
+            max-width: 1200px;
+            margin-left: auto;
+            margin-right: auto;
+        }
+        
+        .influencer-card {
+            background: white;
+            padding: 40px 30px;
+            border-radius: 20px;
+            text-align: center;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+            transition: transform 0.3s ease;
+        }
+        
+        .influencer-card:hover {
+            transform: translateY(-10px);
+        }
+        
+        .influencer-image {
+            width: 140px;
+            height: 140px;
+            border-radius: 50%;
+            margin: 0 auto 25px;
+            background-size: cover;
+            background-position: center;
+        }
+        
+        .influencer-name {
+            font-weight: bold;
+            margin-bottom: 10px;
+            font-size: 1.2rem;
+        }
+        
+        .influencer-details {
+            font-size: 0.9rem;
+            color: #666;
+            margin-bottom: 15px;
+        }
+        
+        .anniversary-text {
+            text-align: center;
+            margin-top: 80px;
+            font-size: 2rem;
+            color: #0066cc;
+            font-weight: 900;
+        }
+        
+        /* CTA Section */
+        .cta-section {
+            padding: 100px 20px;
+            background: linear-gradient(135deg, #0066cc 0%, #00b4d8 100%);
+            color: white;
+            text-align: center;
+        }
+        
+        .cta-title {
+            font-size: 3rem;
+            font-weight: 900;
+            margin-bottom: 30px;
+            line-height: 1.4;
+        }
+        
+        .cta-subtitle {
+            font-size: 1.4rem;
+            margin-bottom: 60px;
+        }
+        
+        .cta-boxes {
+            display: flex;
+            gap: 50px;
+            justify-content: center;
+            align-items: stretch;
+            flex-wrap: wrap;
+            max-width: 1100px;
+            margin: 0 auto 60px;
+        }
+        
+        .cta-campaign {
+            flex: 1;
+            min-width: 300px;
+            max-width: 500px;
+        }
+        
+        .cta-line-box {
+            flex: 1;
+            min-width: 320px;
+            max-width: 500px;
+            background: white;
+            color: #333;
+            padding: 50px 40px;
+            border-radius: 25px;
+            border: 5px solid #06c755;
+            box-shadow: 0 20px 60px rgba(0,0,0,0.3);
+        }
+        
+        .line-box-header {
+            margin-bottom: 30px;
+        }
+        
+        .line-box-date {
+            font-size: 1rem;
+            color: #666;
+            margin-bottom: 15px;
+        }
+        
+        .line-box-title {
+            font-size: 1.8rem;
+            font-weight: 900;
+            color: #667eea;
+        }
+        
+        .line-box-divider {
+            width: 80px;
+            height: 4px;
+            background: linear-gradient(90deg, #667eea, #764ba2);
+            margin: 20px auto;
+            border-radius: 10px;
+        }
+        
+        .cta-bottom-text {
+            margin-top: 60px;
+            font-size: 1.3rem;
+            line-height: 2.2;
+        }
+        
+        /* Pricing Section */
+        .pricing-section {
+            padding: 100px 20px;
+            background: linear-gradient(135deg, #f8f9fa 0%, #e9ecef 100%);
+        }
+        
+        .pricing-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 25px;
+            margin-top: 50px;
+            max-width: 1100px;
+            margin-left: auto;
+            margin-right: auto;
+        }
+        
+        .pricing-card {
+            background: white;
+            border: 2px solid #e0e0e0;
+            border-radius: 20px;
+            padding: 35px 25px;
+            text-align: center;
+            position: relative;
+            transition: all 0.3s ease;
+            box-shadow: 0 5px 20px rgba(0,0,0,0.08);
+        }
+        
+        .pricing-card:hover {
+            transform: translateY(-8px);
+            box-shadow: 0 15px 40px rgba(0,0,0,0.12);
+        }
+        
+        .pricing-card.popular {
+            border-color: #0066cc;
+            border-width: 3px;
+            transform: scale(1.03);
+            box-shadow: 0 10px 40px rgba(0,102,204,0.15);
+        }
+        
+        .pricing-card.popular:hover {
+            transform: scale(1.03) translateY(-8px);
+        }
+        
+        .pricing-badge {
+            background: linear-gradient(135deg, #0066cc 0%, #0052a3 100%);
+            color: white;
+            padding: 6px 20px;
+            border-radius: 20px;
+            display: inline-block;
+            margin-bottom: 15px;
+            font-weight: bold;
+            font-size: 0.85rem;
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+        }
+        
+        .pricing-badge.orange {
+            background: linear-gradient(135deg, #ffa500 0%, #ff8c00 100%);
+        }
+        
+        .pricing-badge.gold {
+            background: linear-gradient(135deg, #d4a76a 0%, #b8935a 100%);
+        }
+        
+        .popular-crown {
+            position: absolute;
+            top: -25px;
+            left: 50%;
+            transform: translateX(-50%);
+            font-size: 2.5rem;
+            filter: drop-shadow(0 5px 10px rgba(0,0,0,0.2));
+        }
+        
+        .pricing-name {
+            font-size: 1.4rem;
+            font-weight: 900;
+            margin: 15px 0 10px;
+            color: #1a1a1a;
+        }
+        
+        .pricing-target {
+            font-size: 0.8rem;
+            color: #999;
+            margin-bottom: 12px;
+        }
+        
+        .pricing-description {
+            font-size: 0.9rem;
+            color: #666;
+            margin-bottom: 20px;
+            min-height: 45px;
+            line-height: 1.6;
+        }
+        
+        .pricing-price {
+            font-size: 2.8rem;
+            font-weight: 900;
+            color: #0066cc;
+            margin: 20px 0;
+            line-height: 1;
+        }
+        
+        .pricing-trial {
+            background: linear-gradient(135deg, #0066cc 0%, #0052a3 100%);
+            color: white;
+            padding: 8px 20px;
+            border-radius: 20px;
+            display: inline-block;
+            font-size: 0.85rem;
+            margin-bottom: 20px;
+            font-weight: bold;
+        }
+        
+        .pricing-trial.orange {
+            background: linear-gradient(135deg, #ffa500 0%, #ff8c00 100%);
+        }
+        
+        .pricing-trial.gold {
+            background: linear-gradient(135deg, #d4a76a 0%, #b8935a 100%);
+        }
+        
+        .pricing-details {
+            font-size: 0.9rem;
+            color: #666;
+            line-height: 1.7;
+        }
+        
+        .entry-fee {
+            background: white;
+            border: 3px dashed #0066cc;
+            padding: 25px;
+            border-radius: 20px;
+            margin-top: 50px;
+            text-align: center;
+            font-size: 1.6rem;
+            font-weight: 900;
+            box-shadow: 0 10px 30px rgba(0,102,204,0.1);
+        }
+        
+        /* LINE Button Animation */
+        .line-button {
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            background-color: #06C755;
+            color: white;
+            padding: 18px 45px;
+            font-size: 1.3rem;
+            font-weight: bold;
+            border: none;
+            border-radius: 60px;
+            cursor: pointer;
+            box-shadow: 0 10px 30px rgba(6, 199, 85, 0.4);
+            transition: all 0.3s ease;
+            margin-bottom: 20px;
+            animation: pulse 2s infinite;
+            position: relative;
+            overflow: hidden;
+        }
+        
+        .line-button:hover {
+            transform: scale(1.05);
+            box-shadow: 0 15px 40px rgba(6, 199, 85, 0.6);
+            animation: none;
+        }
+        
+        .line-button::before {
+            content: '';
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            width: 0;
+            height: 0;
+            border-radius: 50%;
+            background: rgba(255, 255, 255, 0.3);
+            transform: translate(-50%, -50%);
+            transition: width 0.6s, height 0.6s;
+        }
+        
+        .line-button:hover::before {
+            width: 300px;
+            height: 300px;
+        }
+        
+        @keyframes pulse {
+            0% {
+                transform: scale(1);
+                box-shadow: 0 10px 30px rgba(6, 199, 85, 0.4);
+            }
+            50% {
+                transform: scale(1.05);
+                box-shadow: 0 15px 40px rgba(6, 199, 85, 0.6);
+            }
+            100% {
+                transform: scale(1);
+                box-shadow: 0 10px 30px rgba(6, 199, 85, 0.4);
+            }
+        }
+        
+        /* Responsive */
+        @media (max-width: 768px) {
+            /* 基本設定 */
+            .hero-title {
+                font-size: 2.2rem !important;
+                line-height: 1.4 !important;
+            }
+            
+            .section-title {
+                font-size: 1.6rem !important;
+                line-height: 1.3 !important;
+            }
+            
+            .pricing-card.popular {
+                transform: scale(1);
+            }
+            
+            /* ヒーローセクション */
+            .hero-content {
+                flex-direction: column !important;
+                gap: 30px !important;
+            }
+            
+            .hero-subtitle {
+                font-size: 1.1rem !important;
+            }
+            
+            /* キャンペーンバナー */
+            .campaign-banner {
+                padding: 50px 20px !important;
+            }
+            
+            .campaign-banner h3 {
+                font-size: 1.8rem !important;
+                line-height: 1.4 !important;
+            }
+            
+            .campaign-banner p {
+                font-size: 1rem !important;
+            }
+            
+            /* 補習校デメリットカード */
+            div[style*="grid-template-columns: repeat(2, 1fr)"] {
+                grid-template-columns: 1fr !important;
+                gap: 20px !important;
+            }
+            
+            /* 比較表 - サイズを小さく */
+            div[style*="徹底比較"] h3 {
+                font-size: 1.2rem !important;
+            }
+            
+            /* 比較表のコンテナ */
+            div[style*="overflow-x: auto"] {
+                padding: 25px 15px !important;
+            }
+            
+            table {
+                font-size: 0.75rem !important;
+                min-width: 350px !important;
+            }
+            
+            table th {
+                padding: 10px 5px !important;
+                font-size: 0.8rem !important;
+            }
+            
+            table td {
+                padding: 10px 5px !important;
+                font-size: 0.75rem !important;
+            }
+            
+            /* 比較表の絵文字 */
+            table th div[style*="position: absolute"] {
+                font-size: 1.2rem !important;
+                top: 3px !important;
+                right: 5px !important;
+            }
+            
+            /* 比較表のメインテキスト */
+            table td > div:first-child {
+                font-size: 0.85rem !important;
+            }
+            
+            /* 比較表のサブテキスト */
+            table td div[style*="font-size: 0.85rem"] {
+                font-size: 0.65rem !important;
+                margin-top: 3px !important;
+            }
+            
+            /* CTAセクション */
+            .cta-section {
+                padding: 60px 20px !important;
+            }
+            
+            .cta-title {
+                font-size: 1.8rem !important;
+                line-height: 1.4 !important;
+            }
+            
+            .cta-subtitle {
+                font-size: 1.1rem !important;
+            }
+            
+            /* 最後のCTAボックス */
+            .cta-section [style*="max-width: 700px"] {
+                max-width: 100% !important;
+            }
+            
+            .cta-section [style*="padding: 60px 50px"] {
+                padding: 40px 25px !important;
+            }
+            
+            .cta-section h3 {
+                font-size: 1.8rem !important;
+                line-height: 1.3 !important;
+            }
+            
+            /* ボタン */
+            .line-button {
+                padding: 18px 25px !important;
+                font-size: 1.15rem !important;
+            }
+            
+            /* 画像 */
+            .hero-image img,
+            .solution-image img {
+                max-width: 100% !important;
+                height: auto !important;
+            }
+            
+            /* 余白調整 */
+            section {
+                padding: 60px 20px !important;
+            }
+            
+            .hero {
+                padding: 50px 20px !important;
+                margin-top: 0 !important;
+            }
+            
+            /* 本文を左寄せ */
+            .problem-content,
+            .solution-text,
+            .stats-text,
+            .cta-subtitle,
+            .cta-bottom-text {
+                text-align: left !important;
+            }
+            
+            .problem-text,
+            .solution-text p,
+            .stats-text p,
+            .bottom-text {
+                text-align: left !important;
+            }
+            
+            /* 改行を削除 */
+            .problem-text br,
+            .solution-text br,
+            .section-title br {
+                display: none;
+            }
+            
+            /* インフルエンサースクロール */
+            .influencer-scroll {
+                animation: none !important;
+                overflow-x: auto !important;
+                -webkit-overflow-scrolling: touch;
+                scroll-snap-type: x mandatory;
+            }
+            
+            .influencer-card {
+                scroll-snap-align: start;
+                min-width: 280px !important;
+            }
+            
+            /* スクロールヒント */
+            .scroll-hint {
+                display: block !important;
+                animation: bounce 2s infinite;
+            }
+            
+            @keyframes bounce {
+                0%, 100% { transform: translateX(0); }
+                50% { transform: translateX(10px); }
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <!-- Hero Section -->
+    <section class="hero" style="position: relative; overflow: hidden;">
+        <!-- 背景装飾 -->
+        <div style="position: absolute; top: -100px; right: -100px; width: 500px; height: 500px; background: radial-gradient(circle, rgba(102, 126, 234, 0.1) 0%, transparent 70%); border-radius: 50%;"></div>
+        <div style="position: absolute; bottom: -150px; left: -150px; width: 600px; height: 600px; background: radial-gradient(circle, rgba(118, 75, 162, 0.08) 0%, transparent 70%); border-radius: 50%;"></div>
+        
+        <div class="container" style="position: relative; z-index: 1;">
+            <div class="hero-content">
+                <div class="hero-text">
+                    <div style="display: inline-block; background: linear-gradient(135deg, #667eea 0%, #764ba2 100%); color: white; padding: 8px 20px; border-radius: 50px; font-size: 0.9rem; font-weight: bold; margin-bottom: 25px;">
+                        🌍 海外在住ファミリー向け
+                    </div>
+                    <h1 class="hero-title" style="line-height: 1.3; margin-bottom: 25px;">毎日の25分が<br>「できた！」と<br>笑顔を生む時間に</h1>
+                    <p class="hero-subtitle" style="font-size: 1.3rem; color: #555; font-weight: 500; margin-bottom: 35px;">続かない家庭学習にサヨナラ</p>
+                </div>
+                <div class="hero-image">
+                    <img src="https://i.imgur.com/l48QbXM.png" alt="親子で学ぶイメージ" style="width: 100%; max-width: 600px; height: auto; border-radius: 30px; box-shadow: 0 30px 80px rgba(102, 126, 234, 0.3);">
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Campaign Banner -->
+    <section class="campaign-banner" style="position: relative; overflow: hidden;">
+        <!-- 背景パターン -->
+        <div style="position: absolute; top: 0; left: 0; right: 0; bottom: 0; opacity: 0.05; background-image: repeating-linear-gradient(45deg, transparent, transparent 35px, rgba(255,255,255,.5) 35px, rgba(255,255,255,.5) 70px);"></div>
+        
+        <div class="campaign-content" style="position: relative; z-index: 1;">
+            <div style="display: inline-block; background: rgba(255,255,255,0.3); padding: 8px 20px; border-radius: 50px; margin-bottom: 20px; backdrop-filter: blur(10px);">
+                <span style="font-size: 1rem; font-weight: bold;">⏰ 期間限定キャンペーン</span>
+            </div>
+            
+            <h3 style="font-size: 2.3rem; font-weight: 900; margin-bottom: 15px; text-shadow: 0 2px 10px rgba(0,0,0,0.1);">今だけ たっぷり30日間 無料体験延長！</h3>
+            <p style="font-size: 1.1rem; margin-bottom: 10px; opacity: 0.9;">（通常は14日間の無料体験）</p>
+            <p style="font-size: 1.2rem; margin-bottom: 40px; opacity: 0.95;">📅 期間限定：11.1(土) ▶ 11.30(日)</p>
+            
+            <div style="max-width: 550px; margin: 0 auto;">
+                <div class="cta-line-box" style="padding: 40px 35px; background: white; border-radius: 25px; box-shadow: 0 20px 60px rgba(0,0,0,0.15); border: 3px solid rgba(255,255,255,0.8);">
+                    <div style="display: inline-block; background: linear-gradient(135deg, #667eea 0%, #764ba2 100%); color: white; padding: 8px 20px; border-radius: 50px; font-size: 0.95rem; font-weight: bold; margin-bottom: 20px;">
+                        🎁 公式LINE登録者限定
+                    </div>
+                    
+                    <button id="lineRegButton" class="line-button" style="width: 100%; padding: 20px; font-size: 1.2rem; position: relative; overflow: hidden;">
+                      <span style="position: relative; z-index: 1;">今すぐ特典をゲット 🎯</span>
+                    </button>
+                    
+                    <p style="font-size: 0.95rem; color: #666; line-height: 1.7; margin-top: 20px;">✨ 授業スケジュールや無料体験の情報も全てLINEから</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Problem Section -->
+    <section class="problem-section">
+        <div class="container">
+            <h2 class="section-title">気づけば、日本語で話す時間が<br>減っていませんか？</h2>
+            
+            <div style="display: flex; gap: 60px; align-items: center; flex-wrap: wrap; max-width: 1100px; margin: 0 auto;">
+                <!-- 左側：画像 -->
+                <div style="flex: 1; min-width: 300px;">
+                    <img src="https://i.imgur.com/orOzHda.png" alt="親子イメージ" style="width: 100%; max-width: 450px; border-radius: 30px; box-shadow: 0 20px 60px rgba(0,0,0,0.1);">
+                </div>
+                
+                <!-- 右側：テキスト -->
+                <div style="flex: 1; min-width: 300px;">
+                    <div class="problem-content" style="text-align: left;">
+                        <p class="problem-text" style="font-size: 1.2rem;">「私がもっと日本語を教えなきゃ…」<br>そう思っても、うまくいかないのは、<span class="highlight-red">あなただけではありません</span>。</p>
+                        <p class="problem-text" style="font-size: 1.2rem;">でも、<span class="highlight-red">子どもに本当に足りないのは、<br>"勉強"ではなく、"できた！"の経験。</span></p>
+                        <p class="problem-text" style="font-size: 1.2rem;">その小さな成功が、「日本語って楽しい！」に変わります。</p>
+                        
+                        <div style="background: white; padding: 30px; border-radius: 20px; margin-top: 40px; box-shadow: 0 10px 30px rgba(0,0,0,0.08);">
+                            <h3 style="font-size: 1.5rem; font-weight: 900; margin-bottom: 20px; color: #1a1a1a;">多くのご家庭が感じています。</h3>
+                            <ul style="list-style: none; padding: 0; margin: 0;">
+                                <li style="padding: 12px 0; font-size: 1.1rem; color: #333; border-bottom: 1px solid #f0f0f0;">• 日本語を話さなくなってきた</li>
+                                <li style="padding: 12px 0; font-size: 1.1rem; color: #333; border-bottom: 1px solid #f0f0f0;">• 補習校の宿題も嫌がる</li>
+                                <li style="padding: 12px 0; font-size: 1.1rem; color: #333;">• 親が教えようとしてもケンカになる</li>
+                            </ul>
+                        </div>
+                        
+                        <p class="problem-text" style="margin-top: 40px; font-size: 1.15rem;">けれど本当の理由は、<br>「勉強が難しいから」ではありません。</p>
+                        <p class="bottom-text" style="text-align: left; margin-top: 20px;">「できた！」という成功体験が足りていないだけ。</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Comparison Section: 補習校 vs サクセスアカデミー -->
+    <section style="padding: 100px 20px; background: linear-gradient(135deg, #667eea 0%, #764ba2 100%); position: relative; overflow: hidden;">
+        <!-- 背景の装飾 -->
+        <div style="position: absolute; top: -50px; right: -50px; width: 300px; height: 300px; background: rgba(255,255,255,0.1); border-radius: 50%; filter: blur(80px);"></div>
+        <div style="position: absolute; bottom: -100px; left: -100px; width: 400px; height: 400px; background: rgba(255,255,255,0.08); border-radius: 50%; filter: blur(100px);"></div>
+        
+        <div class="container" style="max-width: 1200px; margin: 0 auto; position: relative; z-index: 1;">
+            <h2 class="section-title" style="color: white; text-align: center; margin-bottom: 20px; font-size: 2.5rem;">補習校、こんなお悩みありませんか？</h2>
+            <p style="text-align: center; color: rgba(255,255,255,0.9); font-size: 1.1rem; margin-bottom: 60px;">多くのご家庭が抱える、補習校の課題</p>
+            
+            <div style="display: grid; grid-template-columns: repeat(2, 1fr); gap: 30px; margin-bottom: 80px; max-width: 900px; margin-left: auto; margin-right: auto;">
+                <!-- デメリット1 -->
+                <div style="background: white; padding: 40px; border-radius: 20px; box-shadow: 0 20px 60px rgba(0,0,0,0.2); transition: transform 0.3s ease, box-shadow 0.3s ease; border-top: 4px solid #ff6b6b;">
+                    <div style="font-size: 3rem; margin-bottom: 20px;">😰</div>
+                    <h3 style="font-size: 1.3rem; font-weight: bold; margin-bottom: 15px; color: #333;">毎週の送迎が大変</h3>
+                    <p style="color: #666; line-height: 1.8; font-size: 1rem;">土日の貴重な時間が送迎で消えていく。家族の時間が取れない...</p>
+                </div>
+                
+                <!-- デメリット2 -->
+                <div style="background: white; padding: 40px; border-radius: 20px; box-shadow: 0 20px 60px rgba(0,0,0,0.2); transition: transform 0.3s ease, box-shadow 0.3s ease; border-top: 4px solid #feca57;">
+                    <div style="font-size: 3rem; margin-bottom: 20px;">💸</div>
+                    <h3 style="font-size: 1.3rem; font-weight: bold; margin-bottom: 15px; color: #333;">費用が高い</h3>
+                    <p style="color: #666; line-height: 1.8; font-size: 1rem;">年間数十万円の授業料、教材費、施設費...家計への負担が重い。</p>
+                </div>
+                
+                <!-- デメリット3 -->
+                <div style="background: white; padding: 40px; border-radius: 20px; box-shadow: 0 20px 60px rgba(0,0,0,0.2); transition: transform 0.3s ease, box-shadow 0.3s ease; border-top: 4px solid #5f27cd;">
+                    <div style="font-size: 3rem; margin-bottom: 20px;">📚</div>
+                    <h3 style="font-size: 1.3rem; font-weight: bold; margin-bottom: 15px; color: #333;">宿題が多すぎる</h3>
+                    <p style="color: #666; line-height: 1.8; font-size: 1rem;">大量の宿題で親子でストレス。現地校との両立が難しい...</p>
+                </div>
+                
+                <!-- デメリット4 -->
+                <div style="background: white; padding: 40px; border-radius: 20px; box-shadow: 0 20px 60px rgba(0,0,0,0.2); transition: transform 0.3s ease, box-shadow 0.3s ease; border-top: 4px solid #1dd1a1;">
+                    <div style="font-size: 3rem; margin-bottom: 20px;">😓</div>
+                    <h3 style="font-size: 1.3rem; font-weight: bold; margin-bottom: 15px; color: #333;">学年が上がると難しい</h3>
+                    <p style="color: #666; line-height: 1.8; font-size: 1rem;">学年相応の内容についていけず、子どもの自信を失わせてしまう...</p>
+                </div>
+            </div>
+            
+            <style>
+                @media (max-width: 768px) {
+                    div[style*="grid-template-columns: repeat(2, 1fr)"] {
+                        grid-template-columns: 1fr !important;
+                    }
+                }
+            </style>
+            
+            <!-- 矢印 -->
+            <div style="text-align: center; margin: 80px 0 60px;">
+                <div style="display: inline-flex; flex-direction: column; align-items: center; gap: 15px;">
+                    <div style="font-size: 3.5rem; animation: bounce 2s ease-in-out infinite;">⬇️</div>
+                    <div style="background: white; padding: 15px 35px; border-radius: 50px; box-shadow: 0 10px 30px rgba(0,0,0,0.2);">
+                        <p style="color: #667eea; font-size: 1.4rem; font-weight: bold; margin: 0;">サクセスアカデミーなら、これらの悩みを解決！</p>
+                    </div>
+                </div>
+            </div>
+            
+            <style>
+                @keyframes bounce {
+                    0%, 100% { transform: translateY(0); }
+                    50% { transform: translateY(-15px); }
+                }
+            </style>
+            
+            <!-- 比較表 -->
+            <div style="background: white; border-radius: 25px; padding: 50px; box-shadow: 0 30px 80px rgba(0,0,0,0.25); overflow-x: auto; border: 3px solid rgba(255,255,255,0.8);">
+                <h3 style="text-align: center; font-size: 1.8rem; font-weight: bold; margin-bottom: 40px; color: #333;">
+                    📊 徹底比較：補習校 vs サクセスアカデミー
+                </h3>
+                
+                <table style="width: 100%; border-collapse: separate; border-spacing: 0; min-width: 450px;">
+                    <thead>
+                        <tr>
+                            <th style="padding: 25px 20px; text-align: left; font-size: 1.15rem; background: linear-gradient(135deg, #f8f9fa 0%, #e9ecef 100%); border-radius: 15px 0 0 0; border-bottom: 3px solid #667eea;"></th>
+                            <th style="padding: 25px 20px; text-align: center; font-size: 1.15rem; color: #999; background: linear-gradient(135deg, #f8f9fa 0%, #e9ecef 100%); border-bottom: 3px solid #ddd; position: relative;">
+                                <div>補習校</div>
+                                <div style="position: absolute; top: 5px; right: 10px; font-size: 1.5rem;">😰</div>
+                            </th>
+                            <th style="padding: 25px 20px; text-align: center; font-size: 1.15rem; background: linear-gradient(135deg, #667eea 0%, #764ba2 100%); color: white; font-weight: bold; border-radius: 0 15px 0 0; position: relative;">
+                                <div>サクセスアカデミー</div>
+                                <div style="position: absolute; top: 5px; right: 10px; font-size: 1.5rem;">✨</div>
+                            </th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr style="background: #fafafa;">
+                            <td style="padding: 25px 20px; font-weight: bold; font-size: 1.05rem; border-bottom: 2px solid #f0f0f0;">💰 費用</td>
+                            <td style="padding: 25px 20px; text-align: center; color: #666; border-bottom: 2px solid #f0f0f0; font-size: 1.05rem;">年間数十万円</td>
+                            <td style="padding: 25px 20px; text-align: center; background: linear-gradient(135deg, rgba(102, 126, 234, 0.1) 0%, rgba(118, 75, 162, 0.1) 100%); border-bottom: 2px solid #f0f0f0;">
+                                <div style="color: #667eea; font-weight: bold; font-size: 1.15rem;">月50ドル〜</div>
+                                <div style="font-size: 0.85rem; color: #888; margin-top: 5px;">💵 お財布に優しい</div>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td style="padding: 25px 20px; font-weight: bold; font-size: 1.05rem; border-bottom: 2px solid #f0f0f0;">🚗 送迎</td>
+                            <td style="padding: 25px 20px; text-align: center; color: #666; border-bottom: 2px solid #f0f0f0; font-size: 1.05rem;">毎週必要</td>
+                            <td style="padding: 25px 20px; text-align: center; background: linear-gradient(135deg, rgba(102, 126, 234, 0.05) 0%, rgba(118, 75, 162, 0.05) 100%); border-bottom: 2px solid #f0f0f0;">
+                                <div style="color: #667eea; font-weight: bold; font-size: 1.15rem;">自宅から受講OK</div>
+                                <div style="font-size: 0.85rem; color: #888; margin-top: 5px;">🏠 送迎不要</div>
+                            </td>
+                        </tr>
+                        <tr style="background: #fafafa;">
+                            <td style="padding: 25px 20px; font-weight: bold; font-size: 1.05rem; border-bottom: 2px solid #f0f0f0;">⏰ 授業時間</td>
+                            <td style="padding: 25px 20px; text-align: center; color: #666; border-bottom: 2px solid #f0f0f0; font-size: 1.05rem;">土日が潰れる</td>
+                            <td style="padding: 25px 20px; text-align: center; background: linear-gradient(135deg, rgba(102, 126, 234, 0.1) 0%, rgba(118, 75, 162, 0.1) 100%); border-bottom: 2px solid #f0f0f0;">
+                                <div style="color: #667eea; font-weight: bold; font-size: 1.15rem;">1コマ25分</div>
+                                <div style="font-size: 0.85rem; color: #888; margin-top: 5px;">⚡ 短時間で集中</div>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td style="padding: 25px 20px; font-weight: bold; font-size: 1.05rem; border-bottom: 2px solid #f0f0f0;">📚 宿題</td>
+                            <td style="padding: 25px 20px; text-align: center; color: #666; border-bottom: 2px solid #f0f0f0; font-size: 1.05rem;">大量</td>
+                            <td style="padding: 25px 20px; text-align: center; background: linear-gradient(135deg, rgba(102, 126, 234, 0.05) 0%, rgba(118, 75, 162, 0.05) 100%); border-bottom: 2px solid #f0f0f0;">
+                                <div style="color: #667eea; font-weight: bold; font-size: 1.15rem;">宿題なしで完結</div>
+                                <div style="font-size: 0.85rem; color: #888; margin-top: 5px;">😊 ストレスフリー</div>
+                            </td>
+                        </tr>
+                        <tr style="background: #fafafa;">
+                            <td style="padding: 25px 20px; font-weight: bold; font-size: 1.05rem; border-radius: 0 0 0 15px;">📖 学習レベル</td>
+                            <td style="padding: 25px 20px; text-align: center; color: #666; font-size: 1.05rem;">学年固定</td>
+                            <td style="padding: 25px 20px; text-align: center; background: linear-gradient(135deg, rgba(102, 126, 234, 0.1) 0%, rgba(118, 75, 162, 0.1) 100%); border-radius: 0 0 15px 0;">
+                                <div style="color: #667eea; font-weight: bold; font-size: 1.15rem;">学年フリーで復習OK</div>
+                                <div style="font-size: 0.85rem; color: #888; margin-top: 5px;">🎯 レベルに合わせて</div>
+                            </td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+        </div>
+    </section>
+
+    <!-- Solution Section -->
+    <section class="solution-section">
+        <div class="container">
+            <div class="solution-content">
+                <div class="solution-text">
+                    <h2 style="font-size: 1.8rem;">日本語を"教えられる"から、<br>"使いたい"へ。</h2>
+                    <p>送り迎えも、準備もいりません。<br>パソコンを開くだけで、<br>日本語の時間が始まります。</p>
+                    <p>たった25分だから、<br>どんな日でも無理なく続けられる。</p>
+                    <p>小さな「できた！」を積み重ねるには、<br>手軽で、続けやすい環境がいちばん大切です。</p>
+                    <p class="solution-highlight">サクセスアカデミーは、<br>その"続けられる仕組み"をデザインしています。</p>
+                </div>
+                <div class="solution-image">
+                    <img src="https://i.imgur.com/k1xTmNg.png" alt="オンライン学習イメージ" style="width: 100%; max-width: 450px; height: auto; border-radius: 30px; box-shadow: 0 20px 60px rgba(0,0,0,0.1);">
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Features Section -->
+    <section class="features-section">
+        <div class="container">
+            <h2 class="section-title">世界中で選ばれる理由</h2>
+            <div class="features-grid">
+                <div class="feature-card">
+                    <div class="feature-icon">🌍</div>
+                    <h3>世界19カ国の生徒</h3>
+                    <p>4つのタイムラインで毎日授業を行います。世界中の同志と参加できます。</p>
+                </div>
+                <div class="feature-card">
+                    <div class="feature-icon">👨‍🏫</div>
+                    <h3>有資格講師が多数在籍</h3>
+                    <p>日本国内教員免許、小学校教員資格など、有資格の講師が高品質の授業を行います。</p>
+                </div>
+                <div class="feature-card">
+                    <div class="feature-icon">📚</div>
+                    <h3>学年を超えて料金は一律</h3>
+                    <p>得意苦手は十人十色。業界では異例、同数は追加の料金なしでお子様のレベルに合った学年の授業に自由に参加可能。</p>
+                </div>
+                <div class="feature-card">
+                    <div class="feature-icon">🚗</div>
+                    <h3>送迎は一切不要</h3>
+                    <p>全クラスオンライン授業。保護者の皆様のご負担を少なくするために、いつでもLINEで担当の先生と連絡を取ることが可能です。</p>
+                </div>
+                <div class="feature-card">
+                    <div class="feature-icon">⏰</div>
+                    <h3>25分×平日5日</h3>
+                    <p>時差に対応した授業時間。後定時に25分のレッスンだからお友達と遊ぶ時間も必要です。ゆっくりご家族での時間もこしいただけます。</p>
+                </div>
+            </div>
+            <p class="third-place" style="font-size: 1.5rem;">家でもなく、学校でもない。<br>子どもが"自分から学びたくなる"第3の場所。</p>
+        </div>
+    </section>
+
+    <!-- Stats/Testimonial Section -->
+    <section class="stats-section">
+        <div class="container">
+            <div class="stats-content">
+                <div class="stats-text">
+                    <h2 style="font-size: 2.0rem;">92%の継続率が証明する、"子どもが続けたくなる学び"。</h2>
+                    <div class="testimonial-quote">
+                        <p>「終わったあとでも友達と遊べるので帰ってすぐ授業に参加し始めるように。」</p>
+                        <p style="font-size: 0.9rem; color: #666; margin-top: 10px;">— アメリカ在住・Mさん（8歳ママ）</p>
+                    </div>
+                    <div class="testimonial-quote">
+                        <p>「祖父母と日本語で話せるようになって、家族全員が感動しました。」</p>
+                        <p style="font-size: 0.9rem; color: #666; margin-top: 10px;">— ドイツ在住・Rさん（6歳のママ）</p>
+                    </div>
+                    <div class="testimonial-quote">
+                        <p>「4歳の娘が小学校入学前に引き算・足し算ができるようになった。」</p>
+                        <p style="font-size: 0.9rem; color: #666; margin-top: 10px;">— ドイツ在住・Rさん（6歳のママ）</p>
+                    </div>
+                    <p class="stat-highlight" style="font-size: 1.4rem;">無理せず気がついたら<br>月500分以上、自宅で勉強するお子様に成長する。</p>
+                </div>
+                <div class="solution-image">
+                    <img src="https://i.imgur.com/tiP4hQv.png" alt="学習する子供イメージ" style="width: 100%; max-width: 450px; height: auto; border-radius: 30px; box-shadow: 0 20px 60px rgba(0,0,0,0.1);">
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Influencer Section -->
+    <section class="influencer-section">
+        <div class="container">
+            <h2 class="section-title">海外で活躍するインフルエンサーが<br>自信を持っておすすめ</h2>
+            
+            <div style="overflow: hidden; margin: 60px auto; max-width: 1200px;">
+                <!-- スマホ用スクロールヒント -->
+                <div class="scroll-hint" style="display: none; text-align: center; margin-bottom: 20px; color: #667eea; font-size: 0.9rem; font-weight: bold;">
+                    👉 横にスワイプしてください 👈
+                </div>
+                
+                <div class="influencer-scroll" style="display: flex; gap: 40px; animation: scrollInfinite 40s linear infinite;">
+                    <div class="influencer-card">
+                        <img src="https://i.imgur.com/ye4vAGS.png" alt="Mrs. Cross" style="width: 140px; height: 140px; border-radius: 50%; object-fit: cover; display: block; margin: 0 auto 25px; box-shadow: 0 5px 15px rgba(0,0,0,0.1);">
+                        <p class="influencer-name">Mrs. Cross 様</p>
+                        <p class="influencer-details">YouTube登録者数 16.4万人 | アメリカ在住</p>
+                        <div style="text-align: left; background: #f8f9fa; padding: 20px; border-radius: 10px; margin-top: 15px;">
+                            <h4 style="margin-bottom: 10px; font-size: 1rem; color: #0066cc;">日本滞在中や移動中でも学べる柔軟さ</h4>
+                            <p style="font-size: 0.9rem; line-height: 1.7; color: #555;">最初は集中が難しかった算数も、今では楽しんで取り組めています。先生が丁寧に教えてくれるので安心です。ネット環境があれば日本滞在中や移動中でも受講でき、25分の短い授業で子どもは遊ぶ時間も確保可能。親も送り迎え不要で家事をしながら見守れるのが便利です。</p>
+                        </div>
+                    </div>
+                    <div class="influencer-card">
+                        <img src="https://i.imgur.com/A84WSkj.png" alt="ブラウンファミリーの大冒険" style="width: 140px; height: 140px; border-radius: 50%; object-fit: cover; display: block; margin: 0 auto 25px; box-shadow: 0 5px 15px rgba(0,0,0,0.1);">
+                        <p class="influencer-name">ブラウンファミリーの大冒険 様</p>
+                        <p class="influencer-details">YouTube 1.03万人登録者 | アメリカ在住</p>
+                        <div style="text-align: left; background: #f8f9fa; padding: 20px; border-radius: 10px; margin-top: 15px;">
+                            <h4 style="margin-bottom: 10px; font-size: 1rem; color: #0066cc;">学びとコミュニケーションが同時に育つ場</h4>
+                            <p style="font-size: 0.9rem; line-height: 1.7; color: #555;">子どもは楽しそうに参加しており、特に偉人のクラスは親子の会話を広げてくれます。送迎不要で自宅から安心して受講でき、先生の丁寧な指導や日本語でのコミュニケーションにも満足しています。引っ越し直後でも、人とつながれる場があるのはとてもありがたいです。</p>
+                        </div>
+                    </div>
+                    <div class="influencer-card">
+                        <img src="https://i.imgur.com/sZbmDlv.png" alt="Trilingual Family" style="width: 140px; height: 140px; border-radius: 50%; object-fit: cover; display: block; margin: 0 auto 25px; box-shadow: 0 5px 15px rgba(0,0,0,0.1);">
+                        <p class="influencer-name">Trilingual Family ドイツ在住4人家族 様</p>
+                        <p class="influencer-details">YouTube 3.75万人登録者 | ドイツ在住</p>
+                        <div style="text-align: left; background: #f8f9fa; padding: 20px; border-radius: 10px; margin-top: 15px;">
+                            <h4 style="margin-bottom: 10px; font-size: 1rem; color: #0066cc;">送迎不要で親も子も大満足</h4>
+                            <p style="font-size: 0.9rem; line-height: 1.7; color: #555;">子どもは楽しんで受講しており、特に偉人のクラスはとても気に入っています。送迎が不要で、親としても安心して利用できる点が大変助かります。レッスンやお問い合わせへの対応もとてもスムーズで、安心して続けられる環境だと感じています。</p>
+                        </div>
+                    </div>
+                    <div class="influencer-card">
+                        <img src="https://i.imgur.com/S4cjBqL.png" alt="かおり | お家子育て☆イギリス" style="width: 140px; height: 140px; border-radius: 50%; object-fit: cover; display: block; margin: 0 auto 25px; box-shadow: 0 5px 15px rgba(0,0,0,0.1);">
+                        <p class="influencer-name">かおり | お家子育て☆イギリス 様</p>
+                        <p class="influencer-details">Instagram 2.9万人フォロワー | イギリス在住</p>
+                        <div style="text-align: left; background: #f8f9fa; padding: 20px; border-radius: 10px; margin-top: 15px;">
+                            <h4 style="margin-bottom: 10px; font-size: 1rem; color: #0066cc;">国語も算数も少しずつ自信に</h4>
+                            <p style="font-size: 0.9rem; line-height: 1.7; color: #555;">7月から受講を始め、夏休みは午前の同じ時間帯で継続しています。発言が苦手な長女も国語や偉人クラスを楽しめるようになり、次女は計算が速くなり、さくらんぼ計算にも慣れてきました。先生が性格に合わせて丁寧に対応してくださるおかげで、少しずつ場に慣れ、練習すれば伸びるという手応えを感じています。</p>
+                        </div>
+                    </div>
+                    <!-- 複製してループ -->
+                    <div class="influencer-card">
+                        <img src="https://i.imgur.com/ye4vAGS.png" alt="Mrs. Cross" style="width: 140px; height: 140px; border-radius: 50%; object-fit: cover; display: block; margin: 0 auto 25px; box-shadow: 0 5px 15px rgba(0,0,0,0.1);">
+                        <p class="influencer-name">Mrs. Cross 様</p>
+                        <p class="influencer-details">YouTube登録者数 16.4万人 | アメリカ在住</p>
+                        <div style="text-align: left; background: #f8f9fa; padding: 20px; border-radius: 10px; margin-top: 15px;">
+                            <h4 style="margin-bottom: 10px; font-size: 1rem; color: #0066cc;">日本滞在中や移動中でも学べる柔軟さ</h4>
+                            <p style="font-size: 0.9rem; line-height: 1.7; color: #555;">最初は集中が難しかった算数も、今では楽しんで取り組めています。先生が丁寧に教えてくれるので安心です。ネット環境があれば日本滞在中や移動中でも受講でき、25分の短い授業で子どもは遊ぶ時間も確保可能。親も送り迎え不要で家事をしながら見守れるのが便利です。</p>
+                        </div>
+                    </div>
+                    <div class="influencer-card">
+                        <img src="https://i.imgur.com/A84WSkj.png" alt="ブラウンファミリーの大冒険" style="width: 140px; height: 140px; border-radius: 50%; object-fit: cover; display: block; margin: 0 auto 25px; box-shadow: 0 5px 15px rgba(0,0,0,0.1);">
+                        <p class="influencer-name">ブラウンファミリーの大冒険 様</p>
+                        <p class="influencer-details">YouTube 1.03万人登録者 | アメリカ在住</p>
+                        <div style="text-align: left; background: #f8f9fa; padding: 20px; border-radius: 10px; margin-top: 15px;">
+                            <h4 style="margin-bottom: 10px; font-size: 1rem; color: #0066cc;">学びとコミュニケーションが同時に育つ場</h4>
+                            <p style="font-size: 0.9rem; line-height: 1.7; color: #555;">子どもは楽しそうに参加しており、特に偉人のクラスは親子の会話を広げてくれます。送迎不要で自宅から安心して受講でき、先生の丁寧な指導や日本語でのコミュニケーションにも満足しています。引っ越し直後でも、人とつながれる場があるのはとてもありがたいです。</p>
+                        </div>
+                    </div>
+                    <div class="influencer-card">
+                        <img src="https://i.imgur.com/sZbmDlv.png" alt="Trilingual Family" style="width: 140px; height: 140px; border-radius: 50%; object-fit: cover; display: block; margin: 0 auto 25px; box-shadow: 0 5px 15px rgba(0,0,0,0.1);">
+                        <p class="influencer-name">Trilingual Family ドイツ在住4人家族 様</p>
+                        <p class="influencer-details">YouTube 3.75万人登録者 | ドイツ在住</p>
+                        <div style="text-align: left; background: #f8f9fa; padding: 20px; border-radius: 10px; margin-top: 15px;">
+                            <h4 style="margin-bottom: 10px; font-size: 1rem; color: #0066cc;">送迎不要で親も子も大満足</h4>
+                            <p style="font-size: 0.9rem; line-height: 1.7; color: #555;">子どもは楽しんで受講しており、特に偉人のクラスはとても気に入っています。送迎が不要で、親としても安心して利用できる点が大変助かります。レッスンやお問い合わせへの対応もとてもスムーズで、安心して続けられる環境だと感じています。</p>
+                        </div>
+                    </div>
+                    <div class="influencer-card">
+                        <img src="https://i.imgur.com/S4cjBqL.png" alt="かおり | お家子育て☆イギリス" style="width: 140px; height: 140px; border-radius: 50%; object-fit: cover; display: block; margin: 0 auto 25px; box-shadow: 0 5px 15px rgba(0,0,0,0.1);">
+                        <p class="influencer-name">かおり | お家子育て☆イギリス 様</p>
+                        <p class="influencer-details">Instagram 2.9万人フォロワー | イギリス在住</p>
+                        <div style="text-align: left; background: #f8f9fa; padding: 20px; border-radius: 10px; margin-top: 15px;">
+                            <h4 style="margin-bottom: 10px; font-size: 1rem; color: #0066cc;">国語も算数も少しずつ自信に</h4>
+                            <p style="font-size: 0.9rem; line-height: 1.7; color: #555;">7月から受講を始め、夏休みは午前の同じ時間帯で継続しています。発言が苦手な長女も国語や偉人クラスを楽しめるようになり、次女は計算が速くなり、さくらんぼ計算にも慣れてきました。先生が性格に合わせて丁寧に対応してくださるおかげで、少しずつ場に慣れ、練習すれば伸びるという手応えを感じています。</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+            <style>
+                .influencer-card {
+                    min-width: 320px;
+                    max-width: 320px;
+                    flex-shrink: 0;
+                }
+                
+                @keyframes scrollInfinite {
+                    0% {
+                        transform: translateX(0);
+                    }
+                    100% {
+                        transform: translateX(-50%);
+                    }
+                }
+                
+                .influencer-scroll:hover {
+                    animation-play-state: paused;
+                }
+            </style>
+            
+            <p class="anniversary-text">今年で5周年<br>多くのご家族と共に成長してきました</p>
+        </div>
+    </section>
+
+    <!-- Final CTA Section -->
+    <section class="cta-section" style="position: relative; overflow: hidden;">
+        <!-- 背景アニメーション -->
+        <div style="position: absolute; width: 200%; height: 200%; top: -50%; left: -50%; background: radial-gradient(circle at 20% 50%, rgba(255,255,255,0.1) 0%, transparent 50%), radial-gradient(circle at 80% 80%, rgba(255,255,255,0.1) 0%, transparent 50%); animation: rotate 20s linear infinite;"></div>
+        
+        <style>
+            @keyframes rotate {
+                from { transform: rotate(0deg); }
+                to { transform: rotate(360deg); }
+            }
+        </style>
+        
+        <div class="container" style="position: relative; z-index: 1; max-width: 1200px; margin: 0 auto; padding: 0 20px;">
+            <div style="text-align: center; margin-bottom: 50px;">
+                <div style="display: inline-block; background: rgba(255,255,255,0.2); padding: 10px 25px; border-radius: 50px; margin-bottom: 20px; backdrop-filter: blur(10px);">
+                    <span style="font-size: 1rem; font-weight: bold;">⏰ 今だけの特別オファー</span>
+                </div>
+                <h2 class="cta-title" style="font-size: 2.5rem; line-height: 1.4; text-shadow: 0 2px 10px rgba(0,0,0,0.2); margin: 0 auto;">1年後、「あのとき始めておけば...」<br>と思う前に。</h2>
+                <p class="cta-subtitle" style="font-size: 1.3rem; margin-top: 20px; opacity: 0.95;">まずは無料で、"できた！"を体験してください。</p>
+            </div>
+            
+            <!-- 派手なLINE登録ボックス -->
+            <div style="max-width: 700px; margin: 0 auto;">
+                <div style="background: linear-gradient(135deg, #0066cc 0%, #0099ff 100%); border-radius: 30px; padding: 60px 50px; box-shadow: 0 40px 100px rgba(0, 102, 204, 0.5); position: relative; overflow: hidden; border: 3px solid rgba(255,255,255,0.3);">
+                    <!-- 背景装飾 -->
+                    <div style="position: absolute; top: -50px; right: -50px; width: 200px; height: 200px; background: rgba(255,255,255,0.1); border-radius: 50%; filter: blur(60px);"></div>
+                    <div style="position: absolute; bottom: -80px; left: -80px; width: 250px; height: 250px; background: rgba(255,255,255,0.08); border-radius: 50%; filter: blur(80px);"></div>
+                    
+                    <div style="position: relative; z-index: 1; text-align: center;">
+                        <!-- バッジ -->
+                        <div style="display: inline-block; background: linear-gradient(135deg, #ffeb3b 0%, #ffc107 100%); color: #333; padding: 12px 30px; border-radius: 50px; margin-bottom: 25px; font-weight: bold; font-size: 1.1rem; box-shadow: 0 8px 20px rgba(255, 235, 59, 0.4); animation: pulse 2s ease-in-out infinite;">
+                            🎉 期間限定：11.1(土) ▶ 11.30(日)
+                        </div>
+                        
+                        <style>
+                            @keyframes pulse {
+                                0%, 100% { transform: scale(1); }
+                                50% { transform: scale(1.05); }
+                            }
+                        </style>
+                        
+                        <!-- タイトル -->
+                        <h3 style="font-size: 2.5rem; font-weight: 900; color: white; margin-bottom: 15px; text-shadow: 0 4px 15px rgba(0,0,0,0.3); line-height: 1.3;">今だけ たっぷり30日間<br>無料体験延長！</h3>
+                        
+                        <p style="font-size: 1.1rem; color: rgba(255,255,255,0.95); margin-bottom: 25px; font-weight: 500;">（通常は14日間の無料体験）</p>
+                        
+                        <div style="display: inline-block; background: rgba(255,255,255,0.2); padding: 12px 30px; border-radius: 50px; margin-bottom: 35px; backdrop-filter: blur(10px);">
+                            <p style="font-size: 1.1rem; font-weight: bold; color: white; margin: 0;">🎁 公式LINE登録者限定</p>
+                        </div>
+                        
+                        <!-- LINE登録ボタン -->
+                        <button id="lineRegButton2" class="line-button" style="width: 100%; padding: 25px; font-size: 1.35rem; margin-bottom: 25px; box-shadow: 0 15px 40px rgba(6, 199, 85, 0.5); position: relative; overflow: hidden; transform: scale(1); transition: transform 0.3s ease;">
+                          <span style="position: relative; z-index: 1; display: flex; align-items: center; justify-content: center; gap: 10px;">
+                              <span style="font-size: 1.5rem;">💬</span>
+                              今すぐ特典をゲット
+                              <span style="font-size: 1.5rem;">🎯</span>
+                          </span>
+                        </button>
+                        
+                        <style>
+                            #lineRegButton2:hover {
+                                transform: scale(1.05);
+                            }
+                        </style>
+                        
+                        <!-- 補足情報 -->
+                        <div style="background: white; padding: 20px 25px; border-radius: 15px; box-shadow: 0 10px 30px rgba(0,0,0,0.2);">
+                            <p style="font-size: 1rem; color: #0066cc; line-height: 1.8; margin: 0; font-weight: 500;">✨ 授業スケジュールや無料体験の情報も全てLINEから</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+            <div style="text-align: center; margin-top: 60px; max-width: 800px; margin-left: auto; margin-right: auto;">
+                <p style="font-size: 1.2rem; line-height: 1.8; opacity: 0.95; margin: 0 auto;">子どもの「できた！」は、早ければ早いほど自信に変わります。</p>
+                <p style="font-size: 1.2rem; line-height: 1.8; margin-top: 15px; opacity: 0.95;">まずは無料で、その変化を感じてください。</p>
+                <div style="background: linear-gradient(135deg, rgba(255,235,59,0.2) 0%, rgba(255,193,7,0.2) 100%); padding: 25px 35px; border-radius: 20px; margin: 40px auto 0; border: 2px solid rgba(255,235,59,0.4); backdrop-filter: blur(10px); display: inline-block; max-width: 100%;">
+                    <p style="font-size: 1.7rem; font-weight: 900; color: #ffeb3b; text-shadow: 2px 2px 6px rgba(0,0,0,0.3); margin: 0; line-height: 1.4;">💯 30日間以内のキャンセルは<br>一切の料金が発生しません</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Pricing Section -->
+    <section class="pricing-section">
+        <div class="container">
+            <h2 class="section-title">安心の料金プラン</h2>
+            <div class="pricing-grid">
+                <div class="pricing-card popular">
+                    <div class="popular-crown">👑</div>
+                    <span class="pricing-badge">グループレッスン</span>
+                    <h3 class="pricing-name">Free Lesson</h3>
+                    <p class="pricing-target">対象：4歳から中学生まで</p>
+                    <p class="pricing-description">月額50USDで日本語/国語/算数/<br>英語への無制限アクセス</p>
+                    <div class="pricing-price">50<span style="font-size: 1.5rem;">USD/月</span></div>
+                    <div class="pricing-trial">14日間安心の無料体験</div>
+                    <div class="pricing-details">
+                        週5日 25分レッスン<br>
+                        ※未就学児コースは+月 10USD
+                    </div>
+                </div>
+                
+                <div class="pricing-card">
+                    <span class="pricing-badge orange">プライベートレッスン</span>
+                    <h3 class="pricing-name">プライベートライト</h3>
+                    <p class="pricing-target">対象：4歳から中学生まで</p>
+                    <p class="pricing-description">担当講師による学習管理、<br>自由な時間で振替も柔軟に対応</p>
+                    <div class="pricing-price">78<span style="font-size: 1.5rem;">USD/月</span></div>
+                    <div class="pricing-trial orange">無料で初回お試し</div>
+                    <div class="pricing-details">
+                        1コマ25分レッスン月4回
+                    </div>
+                </div>
+                
+                <div class="pricing-card">
+                    <span class="pricing-badge gold">プライベートレッスン</span>
+                    <h3 class="pricing-name">プライベートプレミアム</h3>
+                    <p class="pricing-target">対象：4歳から中学生まで</p>
+                    <p class="pricing-description">学校の宿題、試験対策、漢検な<br>どの資格対策を個別で対応</p>
+                    <div class="pricing-price">122<span style="font-size: 1.5rem;">USD/月</span></div>
+                    <div class="pricing-trial gold">完全オーダーメイド</div>
+                    <div class="pricing-details">
+                        1コマ25分レッスン月4回
+                    </div>
+                </div>
+            </div>
+            
+            <div class="entry-fee">
+                入会費　50 USD<br>
+                <span style="font-size: 1.2rem; font-weight: normal;">※初月のみ一律</span>
+            </div>
+        </div>
+    </section>
+
+    <script>
+    (function () {
+      var btn1 = document.getElementById('lineRegButton');
+      var btn2 = document.getElementById('lineRegButton2');
+      
+      function handleClick() {
+        var lineUrl = 'https://line.me/R/ti/p/@359fnsdb';
+        
+        if (typeof fbq === 'function') {
+          fbq('trackCustom', 'LineRegistrationClick_EN', {
+            content_name: 'LINE公式アカウント登録',
+            country: 'Japan'
+          });
+          console.log('✅ LineRegistrationClick_EN 発火');
+        }
+        
+        try { window.parent && window.parent.postMessage('LineButtonClicked', '*'); } catch (e) {}
+        
+        setTimeout(function () {
+          var w = window.open(lineUrl, '_blank');
+          if (!w || w.closed || typeof w.closed === 'undefined') {
+            window.location.href = lineUrl;
+          }
+        }, 300);
+      }
+      
+      if (btn1) btn1.addEventListener('click', handleClick);
+      if (btn2) btn2.addEventListener('click', handleClick);
+    })();
+    </script>
+
+    <script>
+    window.addEventListener('message', function (event) {
+      if (event && event.data === 'LineButtonClicked') {
+        if (typeof fbq === 'function') {
+          fbq('trackCustom', 'LineRegistrationClick_EN', {
+            content_name: 'LINE公式アカウント登録',
+            country: 'Japan'
+          });
+          console.log('✅ 親フレームで LineRegistrationClick_EN 発火');
+        } else {
+          console.warn('⚠️ 親フレームに fbq がありません');
+        }
+      }
+    });
+    </script>
+
+    <!-- Footer -->
+    <footer style="background: #f8f9fa; padding: 60px 20px; margin-top: 100px; border-top: 1px solid #e0e0e0;">
+        <div class="container" style="max-width: 1200px; margin: 0 auto; text-align: center;">
+            <!-- 会社名 -->
+            <h3 style="font-size: 1.3rem; font-weight: bold; margin-bottom: 20px; color: #333;">サクセスアカデミー</h3>
+            <p style="color: #666; line-height: 1.8; font-size: 1rem; margin-bottom: 30px;">
+                海外在住のご家族向けに、<br>
+                オンラインで日本語教育を提供しています。
+            </p>
+            
+            <!-- LINEボタン -->
+            <a href="https://lin.ee/P3VuGle" class="line-button" style="display: inline-block; background: linear-gradient(135deg, #06c755 0%, #00b300 100%); color: white; padding: 18px 40px; border-radius: 50px; text-decoration: none; font-weight: bold; font-size: 1.1rem; box-shadow: 0 4px 15px rgba(6, 199, 85, 0.3); transition: all 0.3s ease; margin-bottom: 40px;">
+                <span style="margin-right: 8px;">💬</span>LINEで無料相談
+            </a>
+            
+            <!-- コピーライト -->
+            <div style="padding-top: 30px; border-top: 1px solid #e0e0e0;">
+                <p style="color: #999; font-size: 0.85rem; margin: 0;">
+                    © 2025 サクセスアカデミー All rights reserved.
+                </p>
+            </div>
+        </div>
+    </footer>
+
+</body>
+</html>
