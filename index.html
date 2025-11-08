@@ -1779,15 +1779,15 @@
         
         var lineUrl = 'https://line.me/R/ti/p/@359fnsdb';
         
-        // ✅ Metaピクセル: Leadイベント(標準イベント)に変更
+        // ✅ Metaピクセル: カスタムイベント
         if (typeof fbq === 'function') {
-          fbq('track', 'Lead', {
+          fbq('trackCustom', 'LineRegistrationClick_EN', {
             content_name: 'LINE公式アカウント登録',
             content_category: 'Free Trial Registration',
             currency: 'USD',
             value: 0.00
           });
-          console.log('✅ Meta Pixel Lead イベント発火');
+          console.log('✅ Meta Pixel LineRegistrationClick_EN イベント発火');
         } else {
           console.warn('⚠️ fbq が定義されていません');
         }
@@ -1824,13 +1824,13 @@
     window.addEventListener('message', function (event) {
       if (event && event.data === 'LineButtonClicked') {
         if (typeof fbq === 'function') {
-          fbq('track', 'Lead', {
+          fbq('trackCustom', 'LineRegistrationClick_EN', {
             content_name: 'LINE公式アカウント登録',
             content_category: 'Free Trial Registration',
             currency: 'USD',
             value: 0.00
           });
-          console.log('✅ 親フレームで Meta Pixel Lead イベント発火');
+          console.log('✅ 親フレームで Meta Pixel LineRegistrationClick_EN イベント発火');
         } else {
           console.warn('⚠️ 親フレームに fbq がありません');
         }
