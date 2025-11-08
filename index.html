@@ -853,13 +853,20 @@
                 padding-right: 0 !important;
             }
             
-            /* 比較セクションのコンテナ */
-            section[style*="linear-gradient(135deg, #667eea"] .container {
+            /* 補習校セクション全体 */
+            .comparison-problems-section {
                 padding-left: 0 !important;
                 padding-right: 0 !important;
+            }
+            
+            /* 比較セクションのコンテナ */
+            section[style*="linear-gradient(135deg, #667eea"] .container {
+                padding-left: 20px !important;
+                padding-right: 20px !important;
                 margin-left: 0 !important;
                 margin-right: 0 !important;
                 width: 100% !important;
+                max-width: 100% !important;
             }
             
             /* お悩みカードのグリッド全体を中央に */
@@ -1227,7 +1234,7 @@
     </section>
 
     <!-- Comparison Section: 補習校 vs サクセスアカデミー -->
-    <section style="padding: 100px 20px; background: linear-gradient(135deg, #667eea 0%, #764ba2 100%); position: relative; overflow: hidden;">
+    <section class="comparison-problems-section" style="padding: 100px 20px; background: linear-gradient(135deg, #667eea 0%, #764ba2 100%); position: relative; overflow: hidden;">
         <!-- 背景の装飾 -->
         <div style="position: absolute; top: -50px; right: -50px; width: 300px; height: 300px; background: rgba(255,255,255,0.1); border-radius: 50%; filter: blur(80px);"></div>
         <div style="position: absolute; bottom: -100px; left: -100px; width: 400px; height: 400px; background: rgba(255,255,255,0.08); border-radius: 50%; filter: blur(100px);"></div>
