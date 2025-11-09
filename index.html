@@ -217,6 +217,9 @@
         .campaign-content {
             position: relative;
             z-index: 1;
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
         }
         
         .campaign-flex {
@@ -922,6 +925,18 @@
                 padding: 50px 20px !important;
             }
             
+            .campaign-content {
+                padding: 0 10px !important;
+            }
+            
+            .cta-box-wrapper {
+                padding: 0 10px !important;
+            }
+            
+            .cta-line-box {
+                padding: 30px 20px !important;
+            }
+            
             .campaign-banner h3 {
                 font-size: 1.8rem !important;
                 line-height: 1.4 !important;
@@ -1132,7 +1147,7 @@
                     </p>
                     
                     <!-- CTAボタン -->
-                    <button class="hero-cta-button" onclick="trackLineClick(); window.open('https://lin.ee/JVV8msS', '_blank')" style="background: linear-gradient(135deg, #06c755 0%, #00b300 100%); color: white; border: none; padding: 18px 40px; border-radius: 50px; font-size: 1.15rem; font-weight: bold; cursor: pointer; box-shadow: 0 12px 35px rgba(6, 199, 85, 0.4); transition: all 0.3s ease; display: inline-flex; align-items: center; gap: 10px;">
+                    <button class="hero-cta-button" onclick="trackLineClick(); setTimeout(function() { window.open('https://lin.ee/JVV8msS', '_blank'); }, 300);" style="background: linear-gradient(135deg, #06c755 0%, #00b300 100%); color: white; border: none; padding: 18px 40px; border-radius: 50px; font-size: 1.15rem; font-weight: bold; cursor: pointer; box-shadow: 0 12px 35px rgba(6, 199, 85, 0.4); transition: all 0.3s ease; display: inline-flex; align-items: center; gap: 10px;">
                         <span>💬</span>
                         <span>今すぐLINEで無料相談</span>
                     </button>
@@ -1211,7 +1226,7 @@
             <p style="font-size: 1.1rem; margin-bottom: 10px; opacity: 0.9;">（通常は14日間の無料体験）</p>
             <p style="font-size: 1.2rem; margin-bottom: 40px; opacity: 0.95;">📅 期間限定：11.1(土) ▶ 11.30(日)</p>
             
-            <div style="max-width: 550px; margin: 0 auto;">
+            <div class="cta-box-wrapper" style="max-width: 550px; margin: 0 auto; padding: 0 20px;">
                 <div class="cta-line-box" style="padding: 40px 35px; background: white; border-radius: 25px; box-shadow: 0 20px 60px rgba(0,0,0,0.15); border: 3px solid rgba(255,255,255,0.8); text-align: center;">
                     <div style="display: inline-block; background: linear-gradient(135deg, #667eea 0%, #764ba2 100%); color: white; padding: 8px 20px; border-radius: 50px; font-size: 0.95rem; font-weight: bold; margin-bottom: 20px;">
                         🎁 公式LINE登録者限定
