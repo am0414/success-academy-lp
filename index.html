@@ -359,7 +359,7 @@
         }
         
         .solution-text p {
-            font-size: 1.3rem;
+            font-size: 1.15rem;
             line-height: 1.6;
             margin: 25px 0;
         }
@@ -1264,120 +1264,114 @@
 
 
     <!-- お悩みセクション（超超カッコいい比較表） -->
-    <section style="padding: 120px 20px; background: linear-gradient(135deg, #1e3c72 0%, #2a5298 50%, #7e22ce 100%); position: relative; overflow: hidden;">
+    <section class="comparison-section" style="padding: 120px 20px; background: linear-gradient(135deg, #1e3c72 0%, #2a5298 50%, #7e22ce 100%); position: relative; overflow: hidden;">
         <!-- 背景の装飾 - 超強化版 -->
         <div style="position: absolute; top: -150px; right: -150px; width: 600px; height: 600px; background: radial-gradient(circle, rgba(139, 92, 246, 0.3) 0%, transparent 70%); border-radius: 50%; animation: float 8s ease-in-out infinite;"></div>
         <div style="position: absolute; bottom: -200px; left: -200px; width: 700px; height: 700px; background: radial-gradient(circle, rgba(59, 130, 246, 0.25) 0%, transparent 70%); border-radius: 50%; animation: float 10s ease-in-out infinite reverse;"></div>
         <div style="position: absolute; top: 30%; right: 10%; width: 400px; height: 400px; background: radial-gradient(circle, rgba(236, 72, 153, 0.2) 0%, transparent 70%); border-radius: 50%; animation: pulse 6s ease-in-out infinite;"></div>
         
-        <!-- キラキラパーティクル効果 -->
-        <div style="position: absolute; top: 20%; left: 15%; width: 4px; height: 4px; background: white; border-radius: 50%; box-shadow: 0 0 20px rgba(255,255,255,0.8); animation: twinkle 3s infinite;"></div>
-        <div style="position: absolute; top: 60%; right: 20%; width: 3px; height: 3px; background: white; border-radius: 50%; box-shadow: 0 0 15px rgba(255,255,255,0.8); animation: twinkle 2.5s infinite 0.5s;"></div>
-        <div style="position: absolute; bottom: 30%; left: 25%; width: 5px; height: 5px; background: white; border-radius: 50%; box-shadow: 0 0 25px rgba(255,255,255,0.8); animation: twinkle 3.5s infinite 1s;"></div>
+
         
         <div style="position: relative; z-index: 1; text-align: center;">
             <!-- タイトル - 超カッコよく -->
-            <div style="display: inline-block; background: linear-gradient(135deg, rgba(255,255,255,0.15) 0%, rgba(255,255,255,0.25) 100%); padding: 12px 35px; border-radius: 50px; margin-bottom: 30px; backdrop-filter: blur(20px); border: 2px solid rgba(255,255,255,0.4); box-shadow: 0 8px 32px rgba(0,0,0,0.2), inset 0 1px 0 rgba(255,255,255,0.3);">
-                <span style="background: linear-gradient(135deg, #fbbf24 0%, #f59e0b 100%); -webkit-background-clip: text; -webkit-text-fill-color: transparent; background-clip: text; font-size: 1.1rem; font-weight: 900;">⚡ 徹底比較</span>
+            <div class="comparison-badge" style="display: inline-block; background: linear-gradient(135deg, rgba(255,255,255,0.25) 0%, rgba(255,255,255,0.15) 100%); padding: 14px 38px; border-radius: 50px; margin-bottom: 35px; backdrop-filter: blur(20px); border: 2px solid rgba(255,255,255,0.5); box-shadow: 0 10px 40px rgba(0,0,0,0.25), inset 0 2px 0 rgba(255,255,255,0.4);">
+                <span style="background: linear-gradient(135deg, #fbbf24 0%, #f59e0b 100%); -webkit-background-clip: text; -webkit-text-fill-color: transparent; background-clip: text; font-size: 1.15rem; font-weight: 900; letter-spacing: 0.5px;">⚡ 徹底比較</span>
             </div>
             
-            <h2 style="color: white; font-size: 3.2rem; font-weight: 900; margin-bottom: 20px; text-shadow: 0 4px 30px rgba(0,0,0,0.5), 0 2px 10px rgba(139, 92, 246, 0.5); line-height: 1.3; letter-spacing: -0.02em;">補習校のお悩み、<br>サクセスなら<span style="background: linear-gradient(135deg, #fbbf24 0%, #f59e0b 100%); -webkit-background-clip: text; -webkit-text-fill-color: transparent; background-clip: text;">全て解決！</span></h2>
-            <p style="color: rgba(255,255,255,0.95); font-size: 1.4rem; margin-bottom: 70px; text-shadow: 0 2px 15px rgba(0,0,0,0.3); font-weight: 500;">一目で分かる、圧倒的な違い</p>
+            <h2 class="comparison-title" style="color: white; font-size: 3.5rem; font-weight: 900; margin-bottom: 25px; text-shadow: 0 4px 30px rgba(0,0,0,0.6), 0 2px 15px rgba(139, 92, 246, 0.6); line-height: 1.25; letter-spacing: -0.03em;">補習校のお悩み、<br>サクセスなら<span style="background: linear-gradient(135deg, #fbbf24 0%, #f59e0b 50%, #ef4444 100%); -webkit-background-clip: text; -webkit-text-fill-color: transparent; background-clip: text; text-shadow: none;">全て解決！</span></h2>
+            <p class="comparison-subtitle" style="color: rgba(255,255,255,0.95); font-size: 1.45rem; margin-bottom: 80px; text-shadow: 0 2px 15px rgba(0,0,0,0.4); font-weight: 600; letter-spacing: 0.02em;">一目で分かる、圧倒的な違い</p>
             
-            <!-- スマホ用スクロールヒント -->
-            <div class="scroll-hint" style="display: none; background: rgba(255,255,255,0.2); color: white; font-size: 0.95rem; padding: 10px 25px; border-radius: 25px; margin: 0 auto 30px; max-width: 300px; backdrop-filter: blur(10px); border: 1px solid rgba(255,255,255,0.3); animation: slideHint 2s infinite;">
-                👉 横にスライドして比較できます
-            </div>
+
             
             <!-- 比較表 - 超超強化版 + スマホ対応 -->
             <div class="table-container" style="max-width: 1200px; margin: 0 auto; overflow-x: auto; padding: 0 20px; -webkit-overflow-scrolling: touch; scroll-behavior: smooth;">
-                <table style="width: 100%; min-width: 850px; background: rgba(255,255,255,0.98); border-radius: 30px; overflow: hidden; box-shadow: 0 50px 120px rgba(0,0,0,0.5), 0 20px 60px rgba(0,0,0,0.3); border-collapse: separate; border-spacing: 0; animation: slideUp 0.8s ease-out; backdrop-filter: blur(10px);">
+                <table style="width: 100%; min-width: 850px; background: rgba(255,255,255,0.98); border-radius: 35px; overflow: hidden; box-shadow: 0 60px 140px rgba(0,0,0,0.6), 0 25px 70px rgba(0,0,0,0.4); border-collapse: separate; border-spacing: 0; animation: slideUp 0.8s ease-out; backdrop-filter: blur(10px); border: 1px solid rgba(255,255,255,0.1);">
                     <thead>
                         <tr>
-                            <th style="background: linear-gradient(135deg, #1e293b 0%, #334155 100%); padding: 40px 25px; text-align: center; font-size: 1.4rem; font-weight: 900; color: white; width: 28%; box-shadow: inset 0 -3px 0 rgba(255,255,255,0.1), 0 2px 10px rgba(0,0,0,0.1);">
-                                <div style="display: flex; align-items: center; justify-content: center; gap: 12px;">
-                                    <span style="font-size: 2rem; filter: drop-shadow(0 2px 4px rgba(0,0,0,0.3));">📋</span>
-                                    <span style="text-shadow: 0 2px 8px rgba(0,0,0,0.3);">比較項目</span>
+                            <th style="background: linear-gradient(135deg, #0f172a 0%, #1e293b 100%); padding: 45px 30px; text-align: center; font-size: 1.5rem; font-weight: 900; color: white; width: 28%; box-shadow: inset 0 -4px 0 rgba(255,255,255,0.15), 0 3px 12px rgba(0,0,0,0.15);">
+                                <div class="header-content" style="display: flex; align-items: center; justify-content: center; gap: 14px;">
+                                    <span style="font-size: 2.2rem; filter: drop-shadow(0 3px 6px rgba(0,0,0,0.4));">📋</span>
+                                    <span class="header-text" style="text-shadow: 0 3px 10px rgba(0,0,0,0.4); letter-spacing: 0.02em;">比較項目</span>
                                 </div>
                             </th>
-                            <th style="background: linear-gradient(135deg, #64748b 0%, #475569 100%); padding: 40px 25px; text-align: center; font-size: 1.4rem; font-weight: 900; color: white; width: 36%; position: relative; box-shadow: inset 0 -3px 0 rgba(0,0,0,0.2), 0 2px 10px rgba(0,0,0,0.1);">
-                                <div style="position: absolute; top: 10px; right: 20px; font-size: 2.2rem; animation: shake 2.5s ease-in-out infinite; filter: drop-shadow(0 2px 4px rgba(0,0,0,0.3));">😰</div>
-                                <div style="display: flex; align-items: center; justify-content: center; gap: 12px;">
-                                    <span style="font-size: 2rem; filter: drop-shadow(0 2px 4px rgba(0,0,0,0.3));">⚠️</span>
-                                    <span style="text-shadow: 0 2px 8px rgba(0,0,0,0.3);">補習校の課題</span>
+                            <th style="background: linear-gradient(135deg, #64748b 0%, #475569 100%); padding: 45px 30px; text-align: center; font-size: 1.5rem; font-weight: 900; color: white; width: 36%; position: relative; box-shadow: inset 0 -4px 0 rgba(0,0,0,0.25), 0 3px 12px rgba(0,0,0,0.15);">
+                                <div style="position: absolute; top: 12px; right: 22px; font-size: 2.4rem; animation: shake 2.5s ease-in-out infinite; filter: drop-shadow(0 3px 6px rgba(0,0,0,0.4));">😰</div>
+                                <div class="header-content" style="display: flex; align-items: center; justify-content: center; gap: 14px;">
+                                    <span style="font-size: 2.2rem; filter: drop-shadow(0 3px 6px rgba(0,0,0,0.4));">⚠️</span>
+                                    <span class="header-text" style="text-shadow: 0 3px 10px rgba(0,0,0,0.4); letter-spacing: 0.02em;">補習校の課題</span>
                                 </div>
                             </th>
-                            <th style="background: linear-gradient(135deg, #10b981 0%, #059669 100%); padding: 40px 25px; text-align: center; font-size: 1.4rem; font-weight: 900; color: white; width: 36%; position: relative; box-shadow: inset 0 -3px 0 rgba(255,255,255,0.2), 0 2px 10px rgba(0,0,0,0.1);">
-                                <div style="position: absolute; top: 10px; right: 20px; font-size: 2.2rem; animation: sparkle 2s ease-in-out infinite; filter: drop-shadow(0 2px 4px rgba(0,0,0,0.3));">✨</div>
-                                <div style="display: flex; align-items: center; justify-content: center; gap: 12px;">
-                                    <span style="font-size: 2rem; filter: drop-shadow(0 2px 4px rgba(0,0,0,0.3));">✅</span>
-                                    <span style="text-shadow: 0 2px 8px rgba(0,0,0,0.3);">サクセスの解決策</span>
+                            <th style="background: linear-gradient(135deg, #10b981 0%, #059669 100%); padding: 45px 30px; text-align: center; font-size: 1.5rem; font-weight: 900; color: white; width: 36%; position: relative; box-shadow: inset 0 -4px 0 rgba(255,255,255,0.25), 0 3px 12px rgba(0,0,0,0.15);">
+                                <div style="position: absolute; top: 12px; right: 22px; font-size: 2.4rem; animation: sparkle 2s ease-in-out infinite; filter: drop-shadow(0 3px 6px rgba(0,0,0,0.4));">✨</div>
+                                <div class="header-content" style="display: flex; align-items: center; justify-content: center; gap: 14px;">
+                                    <span style="font-size: 2.2rem; filter: drop-shadow(0 3px 6px rgba(0,0,0,0.4));">✅</span>
+                                    <span class="header-text" style="text-shadow: 0 3px 10px rgba(0,0,0,0.4); letter-spacing: 0.02em;">サクセスの解決策</span>
                                 </div>
                             </th>
                         </tr>
                     </thead>
                     <tbody>
                         <!-- Row 1: 送迎 -->
-                        <tr style="border-bottom: 3px solid #e5e7eb; transition: all 0.3s ease;" onmouseover="this.style.background='linear-gradient(135deg, #f9fafb 0%, #f3f4f6 100%)'; this.style.transform='scale(1.01)'" onmouseout="this.style.background='white'; this.style.transform='scale(1)'">
-                            <td style="padding: 40px 25px; text-align: center; font-weight: 900; font-size: 1.35rem; color: #1e293b; background: linear-gradient(135deg, #f8fafc 0%, #f1f5f9 100%); border-right: 3px solid #e5e7eb;">
-                                <div style="font-size: 2.8rem; margin-bottom: 15px; filter: drop-shadow(0 2px 6px rgba(0,0,0,0.1));">🚗</div>
-                                <div style="letter-spacing: 0.02em;">送迎</div>
+                        <tr style="border-bottom: 4px solid #e5e7eb; transition: all 0.3s ease;" onmouseover="this.style.background='linear-gradient(135deg, #f9fafb 0%, #f3f4f6 100%)'; this.style.transform='scale(1.01)'" onmouseout="this.style.background='white'; this.style.transform='scale(1)'">
+                            <td style="padding: 45px 30px; text-align: center; font-weight: 900; font-size: 1.4rem; color: #0f172a; background: linear-gradient(135deg, #f8fafc 0%, #f1f5f9 100%); border-right: 4px solid #e5e7eb;">
+                                <div style="font-size: 3rem; margin-bottom: 18px; filter: drop-shadow(0 3px 8px rgba(0,0,0,0.15));">🚗</div>
+                                <div style="letter-spacing: 0.03em;">送迎</div>
                             </td>
-                            <td style="padding: 40px 25px; text-align: center; background: linear-gradient(135deg, #f8fafc 0%, #f1f5f9 100%); border-right: 3px solid #e5e7eb;">
-                                <div style="font-size: 1.25rem; font-weight: 900; color: #475569; margin-bottom: 15px; text-shadow: 0 1px 2px rgba(0,0,0,0.05);">毎週の送迎が大変</div>
-                                <div style="font-size: 1.05rem; color: #64748b; line-height: 1.8; font-weight: 500;">土日の貴重な時間が<br>送迎で消えていく...</div>
+                            <td style="padding: 45px 30px; text-align: center; background: linear-gradient(135deg, #f8fafc 0%, #f1f5f9 100%); border-right: 4px solid #e5e7eb;">
+                                <div style="font-size: 1.3rem; font-weight: 900; color: #475569; margin-bottom: 18px; text-shadow: 0 2px 4px rgba(0,0,0,0.08); line-height: 1.4;">毎週の送迎が大変</div>
+                                <div style="font-size: 1.1rem; color: #64748b; line-height: 1.9; font-weight: 500;">土日の貴重な時間が送迎で消えていく...</div>
                             </td>
-                            <td style="padding: 40px 25px; text-align: center; background: linear-gradient(135deg, #ecfdf5 0%, #d1fae5 100%);">
-                                <div style="font-size: 1.25rem; font-weight: 900; color: #059669; margin-bottom: 15px; text-shadow: 0 1px 2px rgba(5, 150, 105, 0.2);">🏠 送迎完全不要！</div>
-                                <div style="font-size: 1.05rem; color: #047857; line-height: 1.8; font-weight: 600;">自宅からオンラインで参加<br>移動時間ゼロ</div>
+                            <td style="padding: 45px 30px; text-align: center; background: linear-gradient(135deg, #ecfdf5 0%, #d1fae5 100%);">
+                                <div style="font-size: 1.3rem; font-weight: 900; color: #059669; margin-bottom: 18px; text-shadow: 0 2px 4px rgba(5, 150, 105, 0.25); line-height: 1.4;">🏠 送迎完全不要！</div>
+                                <div style="font-size: 1.1rem; color: #047857; line-height: 1.9; font-weight: 600;">自宅からオンラインで参加 移動時間ゼロ</div>
                             </td>
                         </tr>
                         
                         <!-- Row 2: 費用 -->
-                        <tr style="border-bottom: 3px solid #e5e7eb; transition: all 0.3s ease;" onmouseover="this.style.background='linear-gradient(135deg, #f9fafb 0%, #f3f4f6 100%)'; this.style.transform='scale(1.01)'" onmouseout="this.style.background='white'; this.style.transform='scale(1)'">
-                            <td style="padding: 40px 25px; text-align: center; font-weight: 900; font-size: 1.35rem; color: #1e293b; background: linear-gradient(135deg, #f8fafc 0%, #f1f5f9 100%); border-right: 3px solid #e5e7eb;">
-                                <div style="font-size: 2.8rem; margin-bottom: 15px; filter: drop-shadow(0 2px 6px rgba(0,0,0,0.1));">💰</div>
-                                <div style="letter-spacing: 0.02em;">費用</div>
+                        <tr style="border-bottom: 4px solid #e5e7eb; transition: all 0.3s ease;" onmouseover="this.style.background='linear-gradient(135deg, #f9fafb 0%, #f3f4f6 100%)'; this.style.transform='scale(1.01)'" onmouseout="this.style.background='white'; this.style.transform='scale(1)'">
+                            <td style="padding: 45px 30px; text-align: center; font-weight: 900; font-size: 1.4rem; color: #0f172a; background: linear-gradient(135deg, #f8fafc 0%, #f1f5f9 100%); border-right: 4px solid #e5e7eb;">
+                                <div style="font-size: 3rem; margin-bottom: 18px; filter: drop-shadow(0 3px 8px rgba(0,0,0,0.15));">💰</div>
+                                <div style="letter-spacing: 0.03em;">費用</div>
                             </td>
-                            <td style="padding: 40px 25px; text-align: center; background: linear-gradient(135deg, #f8fafc 0%, #f1f5f9 100%); border-right: 3px solid #e5e7eb;">
-                                <div style="font-size: 1.25rem; font-weight: 900; color: #475569; margin-bottom: 15px; text-shadow: 0 1px 2px rgba(0,0,0,0.05);">年間数十万円</div>
-                                <div style="font-size: 1.05rem; color: #64748b; line-height: 1.8; font-weight: 500;">授業料・教材費・施設費で<br>家計への負担が重い</div>
+                            <td style="padding: 45px 30px; text-align: center; background: linear-gradient(135deg, #f8fafc 0%, #f1f5f9 100%); border-right: 4px solid #e5e7eb;">
+                                <div style="font-size: 1.3rem; font-weight: 900; color: #475569; margin-bottom: 18px; text-shadow: 0 2px 4px rgba(0,0,0,0.08); line-height: 1.4;">年間数十万円</div>
+                                <div style="font-size: 1.1rem; color: #64748b; line-height: 1.9; font-weight: 500;">授業料・教材費・施設費で家計への負担が重い</div>
                             </td>
-                            <td style="padding: 40px 25px; text-align: center; background: linear-gradient(135deg, #ecfdf5 0%, #d1fae5 100%);">
-                                <div style="font-size: 1.25rem; font-weight: 900; color: #059669; margin-bottom: 15px; text-shadow: 0 1px 2px rgba(5, 150, 105, 0.2);">💵 月額50USD～</div>
-                                <div style="font-size: 1.05rem; color: #047857; line-height: 1.8; font-weight: 600;">補習校の1/3以下の価格で<br>週5日学び放題</div>
+                            <td style="padding: 45px 30px; text-align: center; background: linear-gradient(135deg, #ecfdf5 0%, #d1fae5 100%);">
+                                <div style="font-size: 1.3rem; font-weight: 900; color: #059669; margin-bottom: 18px; text-shadow: 0 2px 4px rgba(5, 150, 105, 0.25); line-height: 1.4;">💵 月額50USD～</div>
+                                <div style="font-size: 1.1rem; color: #047857; line-height: 1.9; font-weight: 600;">補習校の1/3以下の価格で週5日学び放題</div>
                             </td>
                         </tr>
                         
                         <!-- Row 3: 宿題 -->
-                        <tr style="border-bottom: 3px solid #e5e7eb; transition: all 0.3s ease;" onmouseover="this.style.background='linear-gradient(135deg, #f9fafb 0%, #f3f4f6 100%)'; this.style.transform='scale(1.01)'" onmouseout="this.style.background='white'; this.style.transform='scale(1)'">
-                            <td style="padding: 40px 25px; text-align: center; font-weight: 900; font-size: 1.35rem; color: #1e293b; background: linear-gradient(135deg, #f8fafc 0%, #f1f5f9 100%); border-right: 3px solid #e5e7eb;">
-                                <div style="font-size: 2.8rem; margin-bottom: 15px; filter: drop-shadow(0 2px 6px rgba(0,0,0,0.1));">📚</div>
-                                <div style="letter-spacing: 0.02em;">宿題</div>
+                        <tr style="border-bottom: 4px solid #e5e7eb; transition: all 0.3s ease;" onmouseover="this.style.background='linear-gradient(135deg, #f9fafb 0%, #f3f4f6 100%)'; this.style.transform='scale(1.01)'" onmouseout="this.style.background='white'; this.style.transform='scale(1)'">
+                            <td style="padding: 45px 30px; text-align: center; font-weight: 900; font-size: 1.4rem; color: #0f172a; background: linear-gradient(135deg, #f8fafc 0%, #f1f5f9 100%); border-right: 4px solid #e5e7eb;">
+                                <div style="font-size: 3rem; margin-bottom: 18px; filter: drop-shadow(0 3px 8px rgba(0,0,0,0.15));">📚</div>
+                                <div style="letter-spacing: 0.03em;">宿題</div>
                             </td>
-                            <td style="padding: 40px 25px; text-align: center; background: linear-gradient(135deg, #f8fafc 0%, #f1f5f9 100%); border-right: 3px solid #e5e7eb;">
-                                <div style="font-size: 1.25rem; font-weight: 900; color: #475569; margin-bottom: 15px; text-shadow: 0 1px 2px rgba(0,0,0,0.05);">宿題が多すぎる</div>
-                                <div style="font-size: 1.05rem; color: #64748b; line-height: 1.8; font-weight: 500;">大量の宿題で親子でストレス<br>現地校との両立が困難</div>
+                            <td style="padding: 45px 30px; text-align: center; background: linear-gradient(135deg, #f8fafc 0%, #f1f5f9 100%); border-right: 4px solid #e5e7eb;">
+                                <div style="font-size: 1.3rem; font-weight: 900; color: #475569; margin-bottom: 18px; text-shadow: 0 2px 4px rgba(0,0,0,0.08); line-height: 1.4;">宿題が多すぎる</div>
+                                <div style="font-size: 1.1rem; color: #64748b; line-height: 1.9; font-weight: 500;">大量の宿題で親子でストレス 現地校との両立が困難</div>
                             </td>
-                            <td style="padding: 40px 25px; text-align: center; background: linear-gradient(135deg, #ecfdf5 0%, #d1fae5 100%);">
-                                <div style="font-size: 1.25rem; font-weight: 900; color: #059669; margin-bottom: 15px; text-shadow: 0 1px 2px rgba(5, 150, 105, 0.2);">⏱️ 25分で完結</div>
-                                <div style="font-size: 1.05rem; color: #047857; line-height: 1.8; font-weight: 600;">宿題なし！授業内で完結<br>現地校との両立も楽々</div>
+                            <td style="padding: 45px 30px; text-align: center; background: linear-gradient(135deg, #ecfdf5 0%, #d1fae5 100%);">
+                                <div style="font-size: 1.3rem; font-weight: 900; color: #059669; margin-bottom: 18px; text-shadow: 0 2px 4px rgba(5, 150, 105, 0.25); line-height: 1.4;">⏱️ 25分で完結</div>
+                                <div style="font-size: 1.1rem; color: #047857; line-height: 1.9; font-weight: 600;">宿題なし！授業内で完結 現地校との両立も楽々</div>
                             </td>
                         </tr>
                         
                         <!-- Row 4: レベル -->
                         <tr style="transition: all 0.3s ease;" onmouseover="this.style.background='linear-gradient(135deg, #f9fafb 0%, #f3f4f6 100%)'; this.style.transform='scale(1.01)'" onmouseout="this.style.background='white'; this.style.transform='scale(1)'">
-                            <td style="padding: 40px 25px; text-align: center; font-weight: 900; font-size: 1.35rem; color: #1e293b; background: linear-gradient(135deg, #f8fafc 0%, #f1f5f9 100%); border-right: 3px solid #e5e7eb; border-bottom-left-radius: 30px;">
-                                <div style="font-size: 2.8rem; margin-bottom: 15px; filter: drop-shadow(0 2px 6px rgba(0,0,0,0.1));">📖</div>
-                                <div style="letter-spacing: 0.02em;">レベル</div>
+                            <td style="padding: 45px 30px; text-align: center; font-weight: 900; font-size: 1.4rem; color: #0f172a; background: linear-gradient(135deg, #f8fafc 0%, #f1f5f9 100%); border-right: 4px solid #e5e7eb; border-bottom-left-radius: 35px;">
+                                <div style="font-size: 3rem; margin-bottom: 18px; filter: drop-shadow(0 3px 8px rgba(0,0,0,0.15));">📖</div>
+                                <div style="letter-spacing: 0.03em;">レベル</div>
                             </td>
-                            <td style="padding: 40px 25px; text-align: center; background: linear-gradient(135deg, #f8fafc 0%, #f1f5f9 100%); border-right: 3px solid #e5e7eb;">
-                                <div style="font-size: 1.25rem; font-weight: 900; color: #475569; margin-bottom: 15px; text-shadow: 0 1px 2px rgba(0,0,0,0.05);">学年が上がると難しい</div>
-                                <div style="font-size: 1.05rem; color: #64748b; line-height: 1.8; font-weight: 500;">学年相応の内容に<br>ついていけず自信を失う</div>
+                            <td style="padding: 45px 30px; text-align: center; background: linear-gradient(135deg, #f8fafc 0%, #f1f5f9 100%); border-right: 4px solid #e5e7eb;">
+                                <div style="font-size: 1.3rem; font-weight: 900; color: #475569; margin-bottom: 18px; text-shadow: 0 2px 4px rgba(0,0,0,0.08); line-height: 1.4;">学年が上がると難しい</div>
+                                <div style="font-size: 1.1rem; color: #64748b; line-height: 1.9; font-weight: 500;">学年相応の内容についていけず自信を失う</div>
                             </td>
-                            <td style="padding: 40px 25px; text-align: center; background: linear-gradient(135deg, #ecfdf5 0%, #d1fae5 100%); border-bottom-right-radius: 30px;">
-                                <div style="font-size: 1.25rem; font-weight: 900; color: #059669; margin-bottom: 15px; text-shadow: 0 1px 2px rgba(5, 150, 105, 0.2);">🎯 レベル別クラス</div>
-                                <div style="font-size: 1.05rem; color: #047857; line-height: 1.8; font-weight: 600;">お子様に合った学年で学べる<br>「できた！」を増やす</div>
+                            <td style="padding: 45px 30px; text-align: center; background: linear-gradient(135deg, #ecfdf5 0%, #d1fae5 100%); border-bottom-right-radius: 35px;">
+                                <div style="font-size: 1.3rem; font-weight: 900; color: #059669; margin-bottom: 18px; text-shadow: 0 2px 4px rgba(5, 150, 105, 0.25); line-height: 1.4;">🎯 レベル別クラス</div>
+                                <div style="font-size: 1.1rem; color: #047857; line-height: 1.9; font-weight: 600;">お子様に合った学年で学べる「できた！」を増やす</div>
                             </td>
                         </tr>
                     </tbody>
@@ -1385,14 +1379,14 @@
             </div>
             
             <!-- 表の下のCTA - 超超強化版 -->
-            <div style="margin-top: 90px;">
-                <div style="background: linear-gradient(135deg, rgba(255,255,255,0.2) 0%, rgba(255,255,255,0.1) 100%); padding: 45px; border-radius: 30px; backdrop-filter: blur(20px); border: 2px solid rgba(255,255,255,0.4); max-width: 750px; margin: 0 auto 50px; box-shadow: 0 20px 60px rgba(0,0,0,0.3), inset 0 1px 0 rgba(255,255,255,0.3);">
-                    <p style="color: white; font-size: 1.6rem; font-weight: 900; margin-bottom: 18px; text-shadow: 0 3px 15px rgba(0,0,0,0.3); letter-spacing: -0.01em;">🎁 今なら30日間無料でお試し！</p>
-                    <p style="color: rgba(255,255,255,0.95); font-size: 1.15rem; font-weight: 500; text-shadow: 0 2px 10px rgba(0,0,0,0.2);">一切のリスクなし、いつでもキャンセルOK</p>
+            <div class="comparison-cta-wrapper" style="margin-top: 100px;">
+                <div class="comparison-cta-box" style="background: linear-gradient(135deg, rgba(255,255,255,0.25) 0%, rgba(255,255,255,0.15) 100%); padding: 50px; border-radius: 35px; backdrop-filter: blur(20px); border: 2px solid rgba(255,255,255,0.5); max-width: 800px; margin: 0 auto 55px; box-shadow: 0 25px 70px rgba(0,0,0,0.35), inset 0 2px 0 rgba(255,255,255,0.4);">
+                    <p style="color: white; font-size: 1.7rem; font-weight: 900; margin-bottom: 20px; text-shadow: 0 3px 15px rgba(0,0,0,0.4); letter-spacing: -0.01em;">🎁 今なら30日間無料でお試し！</p>
+                    <p style="color: rgba(255,255,255,0.95); font-size: 1.2rem; font-weight: 600; text-shadow: 0 2px 10px rgba(0,0,0,0.25);">一切のリスクなし、いつでもキャンセルOK</p>
                 </div>
                 
-                <button onclick="trackLineClick(); window.open('https://lin.ee/JVV8msS', '_blank')" style="background: linear-gradient(135deg, #ffffff 0%, #f8f9fa 100%); color: #1e3c72; border: none; padding: 28px 70px; border-radius: 50px; font-size: 1.35rem; font-weight: 900; cursor: pointer; box-shadow: 0 25px 70px rgba(0,0,0,0.5), 0 10px 30px rgba(0,0,0,0.3); transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1); position: relative; overflow: hidden; letter-spacing: 0.02em;" onmouseover="this.style.transform='translateY(-8px) scale(1.05)'; this.style.boxShadow='0 35px 90px rgba(0,0,0,0.6), 0 15px 40px rgba(0,0,0,0.4)'" onmouseout="this.style.transform='translateY(0) scale(1)'; this.style.boxShadow='0 25px 70px rgba(0,0,0,0.5), 0 10px 30px rgba(0,0,0,0.3)'">
-                    <span style="font-size: 1.6rem; margin-right: 15px;">💬</span>今すぐLINEで無料相談する
+                <button class="comparison-cta-button" onclick="trackLineClick(); window.open('https://line.me/R/ti/p/@359fnsdb', '_blank')" style="background: linear-gradient(135deg, #ffffff 0%, #f8f9fa 100%); color: #1e3c72; border: none; padding: 32px 75px; border-radius: 50px; font-size: 1.4rem; font-weight: 900; cursor: pointer; box-shadow: 0 30px 80px rgba(0,0,0,0.55), 0 12px 35px rgba(0,0,0,0.35); transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1); position: relative; overflow: hidden; letter-spacing: 0.02em;" onmouseover="this.style.transform='translateY(-10px) scale(1.05)'; this.style.boxShadow='0 40px 100px rgba(0,0,0,0.65), 0 18px 45px rgba(0,0,0,0.45)'" onmouseout="this.style.transform='translateY(0) scale(1)'; this.style.boxShadow='0 30px 80px rgba(0,0,0,0.55), 0 12px 35px rgba(0,0,0,0.35)'">
+                    <span style="font-size: 1.7rem; margin-right: 18px;">💬</span>今すぐLINEで無料相談する
                 </button>
             </div>
         </div>
@@ -1432,43 +1426,193 @@
                 }
             }
             
+            
             @keyframes slideHint {
                 0%, 100% { transform: translateX(0); }
                 50% { transform: translateX(12px); }
             }
             
-            @keyframes twinkle {
-                0%, 100% { opacity: 0; transform: scale(0); }
-                50% { opacity: 1; transform: scale(1.5); }
-            }
-            
             /* スマホ対応 */
             @media (max-width: 768px) {
+                /* セクション全体の調整 */
+                .comparison-section {
+                    padding: 60px 15px !important;
+                }
+                
+                /* バッジの調整 */
+                .comparison-badge {
+                    padding: 10px 25px !important;
+                    margin-bottom: 25px !important;
+                }
+                
+                .comparison-badge span {
+                    font-size: 0.95rem !important;
+                }
+                
+                /* タイトルの調整 */
+                .comparison-title {
+                    font-size: 2rem !important;
+                    margin-bottom: 18px !important;
+                    line-height: 1.3 !important;
+                    padding: 0 10px;
+                }
+                
+                /* サブタイトルの調整 */
+                .comparison-subtitle {
+                    font-size: 1.1rem !important;
+                    margin-bottom: 50px !important;
+                    padding: 0 10px;
+                }
+                
                 .scroll-hint {
                     display: block !important;
                 }
                 
                 .table-container {
-                    padding: 0 10px !important;
+                    padding: 0 5px !important;
+                    margin: 0 -5px !important;
                 }
                 
                 .table-container::-webkit-scrollbar {
-                    height: 10px;
+                    height: 6px;
                 }
                 
                 .table-container::-webkit-scrollbar-track {
-                    background: rgba(255,255,255,0.15);
+                    background: rgba(255,255,255,0.2);
                     border-radius: 10px;
                 }
                 
                 .table-container::-webkit-scrollbar-thumb {
-                    background: linear-gradient(135deg, rgba(255,255,255,0.6) 0%, rgba(255,255,255,0.4) 100%);
+                    background: linear-gradient(135deg, rgba(255,255,255,0.7) 0%, rgba(255,255,255,0.5) 100%);
                     border-radius: 10px;
-                    border: 2px solid rgba(255,255,255,0.2);
+                    border: 2px solid rgba(255,255,255,0.3);
                 }
                 
                 .table-container::-webkit-scrollbar-thumb:hover {
-                    background: linear-gradient(135deg, rgba(255,255,255,0.8) 0%, rgba(255,255,255,0.6) 100%);
+                    background: linear-gradient(135deg, rgba(255,255,255,0.9) 0%, rgba(255,255,255,0.7) 100%);
+                }
+                
+                /* テーブルのスマホ最適化 - 幅を大幅に縮小 */
+                table {
+                    min-width: 100% !important;
+                    width: 100% !important;
+                    border-radius: 20px !important;
+                }
+                
+                /* ヘッダーのスマホ最適化 */
+                thead th {
+                    padding: 18px 8px !important;
+                    font-size: 0.8rem !important;
+                    width: 33.33% !important;
+                }
+                
+                thead th .header-content {
+                    display: flex !important;
+                    flex-direction: column !important;
+                    align-items: center !important;
+                    justify-content: center !important;
+                    gap: 4px !important;
+                }
+                
+                thead th .header-content span {
+                    display: block !important;
+                }
+                
+                thead th .header-content span:first-child {
+                    font-size: 1.5rem !important;
+                }
+                
+                thead th .header-text {
+                    font-size: 0.75rem !important;
+                    line-height: 1.3 !important;
+                    display: block !important;
+                    text-align: center !important;
+                    word-break: keep-all !important;
+                }
+                
+                /* ヘッダーの装飾絵文字は非表示 */
+                thead th > div + div {
+                    display: none !important;
+                }
+                
+                /* 最初のヘッダー（比較項目）は少し小さく */
+                thead th:first-child {
+                    width: 28% !important;
+                }
+                
+                thead th:nth-child(2),
+                thead th:nth-child(3) {
+                    width: 36% !important;
+                }
+                
+                /* テーブル本体のスマホ最適化 */
+                tbody td {
+                    padding: 15px 6px !important;
+                    font-size: 0.75rem !important;
+                }
+                
+                tbody td:first-child {
+                    font-size: 0.85rem !important;
+                    width: 28% !important;
+                }
+                
+                tbody td:first-child > div:first-child {
+                    font-size: 1.8rem !important;
+                    margin-bottom: 6px !important;
+                }
+                
+                tbody td:first-child > div:last-child {
+                    font-size: 0.85rem !important;
+                    font-weight: 800;
+                }
+                
+                tbody td:nth-child(2),
+                tbody td:nth-child(3) {
+                    width: 36% !important;
+                }
+                
+                tbody td:not(:first-child) > div:first-child {
+                    font-size: 0.85rem !important;
+                    margin-bottom: 6px !important;
+                    line-height: 1.3;
+                    font-weight: 800;
+                }
+                
+                tbody td:not(:first-child) > div:last-child {
+                    font-size: 0.7rem !important;
+                    line-height: 1.4 !important;
+                }
+                
+                /* CTAエリアのスマホ対応 */
+                .comparison-cta-wrapper {
+                    margin-top: 60px !important;
+                }
+                
+                .comparison-cta-box {
+                    padding: 30px 20px !important;
+                    margin: 0 auto 40px !important;
+                    border-radius: 25px !important;
+                }
+                
+                .comparison-cta-box p:first-child {
+                    font-size: 1.3rem !important;
+                    margin-bottom: 15px !important;
+                }
+                
+                .comparison-cta-box p:last-child {
+                    font-size: 1rem !important;
+                }
+                
+                .comparison-cta-button {
+                    padding: 22px 40px !important;
+                    font-size: 1.1rem !important;
+                    width: 100% !important;
+                    max-width: 350px !important;
+                }
+                
+                .comparison-cta-button span:first-child {
+                    font-size: 1.3rem !important;
+                    margin-right: 10px !important;
                 }
             }
         </style>
