@@ -1442,7 +1442,7 @@
                     <p style="color: rgba(255,255,255,0.95); font-size: 1.2rem; font-weight: 600; text-shadow: 0 2px 10px rgba(0,0,0,0.25);">一切のリスクなし、いつでもキャンセルOK</p>
                 </div>
                 
-                <button class="comparison-cta-button" onclick="event.preventDefault(); trackLineClick('comparison'); setTimeout(function() { window.open('https://line.me/R/ti/p/@359fnsdb', '_blank'); }, 300);" style="background: linear-gradient(135deg, #ffffff 0%, #f8f9fa 100%); color: #1e3c72; border: none; padding: 32px 75px; border-radius: 50px; font-size: 1.4rem; font-weight: 900; cursor: pointer; box-shadow: 0 30px 80px rgba(0,0,0,0.55), 0 12px 35px rgba(0,0,0,0.35); transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1); position: relative; overflow: hidden; letter-spacing: 0.02em;" onmouseover="this.style.transform='translateY(-10px) scale(1.05)'; this.style.boxShadow='0 40px 100px rgba(0,0,0,0.65), 0 18px 45px rgba(0,0,0,0.45)'" onmouseout="this.style.transform='translateY(0) scale(1)'; this.style.boxShadow='0 30px 80px rgba(0,0,0,0.55), 0 12px 35px rgba(0,0,0,0.35)'">
+                <button class="comparison-cta-button" onclick="event.preventDefault(); trackLineClick(); setTimeout(function() { window.open('https://line.me/R/ti/p/@359fnsdb', '_blank'); }, 300);" style="background: linear-gradient(135deg, #ffffff 0%, #f8f9fa 100%); color: #1e3c72; border: none; padding: 32px 75px; border-radius: 50px; font-size: 1.4rem; font-weight: 900; cursor: pointer; box-shadow: 0 30px 80px rgba(0,0,0,0.55), 0 12px 35px rgba(0,0,0,0.35); transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1); position: relative; overflow: hidden; letter-spacing: 0.02em;" onmouseover="this.style.transform='translateY(-10px) scale(1.05)'; this.style.boxShadow='0 40px 100px rgba(0,0,0,0.65), 0 18px 45px rgba(0,0,0,0.45)'" onmouseout="this.style.transform='translateY(0) scale(1)'; this.style.boxShadow='0 30px 80px rgba(0,0,0,0.55), 0 12px 35px rgba(0,0,0,0.35)'">
                     <span style="font-size: 1.7rem; margin-right: 18px;">💬</span>今すぐLINEで無料相談する
                 </button>
             </div>
@@ -2036,36 +2036,29 @@
     <!-- 統一されたLINEボタントラッキングスクリプト -->
     <script>
     // グローバルなトラッキング関数（デバウンス付き）
-    var lastTrackTime = {};
+    var lastTrackTime = 0;
     var TRACK_DEBOUNCE_MS = 2000; // 2秒間は再発火を防ぐ
     
-    function trackLineClick(buttonLocation) {
+    function trackLineClick() {
       var now = Date.now();
-      buttonLocation = buttonLocation || 'unknown';
-      
-      // ボタンごとにデバウンス管理
-      if (!lastTrackTime[buttonLocation]) {
-        lastTrackTime[buttonLocation] = 0;
-      }
       
       // デバウンス: 前回の発火から2秒以内は無視
-      if (now - lastTrackTime[buttonLocation] < TRACK_DEBOUNCE_MS) {
-        console.log('⏱️ デバウンス中 (' + buttonLocation + '): トラッキングをスキップ');
+      if (now - lastTrackTime < TRACK_DEBOUNCE_MS) {
+        console.log('⏱️ デバウンス中: トラッキングをスキップ');
         return;
       }
       
-      lastTrackTime[buttonLocation] = now;
+      lastTrackTime = now;
       
-      // Meta Pixel イベント（位置情報付き）
+      // Meta Pixel イベント
       if (typeof fbq === 'function') {
         fbq('trackCustom', 'LineRegistrationClick_EN', {
-          button_location: buttonLocation,
           content_name: 'LINE公式アカウント登録',
           content_category: 'Free Trial Registration',
           currency: 'USD',
           value: 0.00
         });
-        console.log('✅ Meta Pixel LineRegistrationClick_EN イベント発火 (場所: ' + buttonLocation + ')');
+        console.log('✅ Meta Pixel LineRegistrationClick_EN イベント発火');
       } else {
         console.warn('⚠️ fbq が定義されていません');
       }
@@ -2074,10 +2067,9 @@
       if (typeof gtag === 'function') {
         gtag('event', 'line_registration_click', {
           'event_category': 'engagement',
-          'event_label': buttonLocation,
-          'button_location': buttonLocation
+          'event_label': 'LINE Registration Button'
         });
-        console.log('✅ GA4 イベント発火 (場所: ' + buttonLocation + ')');
+        console.log('✅ GA4 イベント発火');
       }
     }
     
@@ -2087,17 +2079,16 @@
       var btn2 = document.getElementById('lineRegButton2');
       var clickProcessed = false;
       
-      function handleClick(buttonId) {
+      function handleClick() {
         if (clickProcessed) {
           return;
         }
         clickProcessed = true;
         
         var lineUrl = 'https://line.me/R/ti/p/@359fnsdb';
-        var location = buttonId === 'lineRegButton' ? 'hero' : 'campaign';
         
-        // トラッキング実行（位置情報付き）
-        trackLineClick(location);
+        // トラッキング実行
+        trackLineClick();
         
         try { window.parent && window.parent.postMessage('LineButtonClicked', '*'); } catch (e) {}
         
@@ -2112,8 +2103,8 @@
         }, 300);
       }
       
-      if (btn1) btn1.addEventListener('click', function() { handleClick('lineRegButton'); });
-      if (btn2) btn2.addEventListener('click', function() { handleClick('lineRegButton2'); });
+      if (btn1) btn1.addEventListener('click', handleClick);
+      if (btn2) btn2.addEventListener('click', handleClick);
     })();
     </script>
 
@@ -2136,7 +2127,7 @@
             </p>
             
             <!-- LINEボタン -->
-            <a href="https://line.me/R/ti/p/@359fnsdb" onclick="event.preventDefault(); trackLineClick('footer'); var url = this.href; setTimeout(function() { window.open(url, '_blank'); }, 300); return false;" target="_blank" class="line-button" style="display: inline-block; background: linear-gradient(135deg, #06c755 0%, #00b300 100%); color: white; padding: 18px 40px; border-radius: 50px; text-decoration: none; font-weight: bold; font-size: 1.1rem; box-shadow: 0 4px 15px rgba(6, 199, 85, 0.3); transition: all 0.3s ease; margin-bottom: 40px;">
+            <a href="https://line.me/R/ti/p/@359fnsdb" onclick="event.preventDefault(); trackLineClick(); var url = this.href; setTimeout(function() { window.open(url, '_blank'); }, 300); return false;" target="_blank" class="line-button" style="display: inline-block; background: linear-gradient(135deg, #06c755 0%, #00b300 100%); color: white; padding: 18px 40px; border-radius: 50px; text-decoration: none; font-weight: bold; font-size: 1.1rem; box-shadow: 0 4px 15px rgba(6, 199, 85, 0.3); transition: all 0.3s ease; margin-bottom: 40px;">
                 <span style="margin-right: 8px;">💬</span>LINEで無料相談
             </a>
             
@@ -2151,7 +2142,7 @@
 
     <!-- 固定CTA（下部） -->
     <div style="position: fixed; bottom: 0; left: 0; right: 0; background: linear-gradient(135deg, #667eea 0%, #764ba2 100%); padding: 15px 20px; box-shadow: 0 -5px 20px rgba(0,0,0,0.2); z-index: 1000; display: flex; justify-content: center; align-items: center; animation: slideUp 0.5s ease-out;">
-        <a href="https://line.me/R/ti/p/@359fnsdb" onclick="event.preventDefault(); trackLineClick('sticky_bottom'); var url = this.href; setTimeout(function() { window.open(url, '_blank'); }, 300); return false;" target="_blank" style="text-decoration: none; width: 100%; max-width: 500px;">
+        <a href="https://line.me/R/ti/p/@359fnsdb" onclick="event.preventDefault(); trackLineClick(); var url = this.href; setTimeout(function() { window.open(url, '_blank'); }, 300); return false;" target="_blank" style="text-decoration: none; width: 100%; max-width: 500px;">
             <button style="width: 100%; background: linear-gradient(135deg, #00b300 0%, #00e600 100%); color: white; border: none; padding: 18px 40px; border-radius: 50px; font-size: 1.2rem; font-weight: bold; cursor: pointer; box-shadow: 0 8px 25px rgba(0, 179, 0, 0.4); transition: all 0.3s ease; position: relative; overflow: hidden;" onmouseover="this.style.transform='scale(1.05)'; this.style.boxShadow='0 12px 35px rgba(0, 179, 0, 0.6)';" onmouseout="this.style.transform='scale(1)'; this.style.boxShadow='0 8px 25px rgba(0, 179, 0, 0.4)';">
                 <span style="position: relative; z-index: 1; display: flex; align-items: center; justify-content: center; gap: 10px;">
                     🎁 今すぐ特典をゲット
