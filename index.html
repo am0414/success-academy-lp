@@ -880,6 +880,61 @@
             }
         }
         
+        /* Mailchimp Form Styles */
+        .email-form-container {
+            margin-top: 25px;
+            padding-top: 25px;
+            border-top: 2px dashed rgba(102, 126, 234, 0.2);
+        }
+        
+        .email-form-title {
+            font-size: 0.95rem;
+            color: #666;
+            margin-bottom: 15px;
+            font-weight: 600;
+        }
+        
+        .email-form {
+            display: flex;
+            gap: 10px;
+            flex-wrap: wrap;
+            justify-content: center;
+        }
+        
+        .email-input {
+            flex: 1;
+            min-width: 200px;
+            padding: 12px 20px;
+            border: 2px solid #e0e0e0;
+            border-radius: 50px;
+            font-size: 1rem;
+            transition: all 0.3s ease;
+        }
+        
+        .email-input:focus {
+            outline: none;
+            border-color: #667eea;
+            box-shadow: 0 0 0 3px rgba(102, 126, 234, 0.1);
+        }
+        
+        .email-submit {
+            padding: 12px 30px;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: white;
+            border: none;
+            border-radius: 50px;
+            font-size: 1rem;
+            font-weight: bold;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            white-space: nowrap;
+        }
+        
+        .email-submit:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 8px 20px rgba(102, 126, 234, 0.4);
+        }
+        
         /* Responsive */
         @media (max-width: 768px) {
             /* 基本設定 */
@@ -1121,6 +1176,19 @@
                 0%, 100% { transform: translateX(0); }
                 50% { transform: translateX(10px); }
             }
+            
+            /* メールフォーム - スマホ対応 */
+            .email-form {
+                flex-direction: column;
+            }
+            
+            .email-input {
+                width: 100%;
+            }
+            
+            .email-submit {
+                width: 100%;
+            }
         }
     </style>
 </head>
@@ -1193,6 +1261,20 @@
                         <span>💬</span>
                         <span>今すぐLINEで無料相談</span>
                     </button>
+                    
+                    <!-- メールフォーム追加 -->
+                    <div class="email-form-container">
+                        <p class="email-form-title">📧 LINEが使えない方はメールでご登録</p>
+                        <!-- Mailchimpフォームをここに挿入してください -->
+                        <div id="mc_embed_shell">
+                            <div id="mc_embed_signup">
+                                <form action="YOUR_MAILCHIMP_ACTION_URL" method="post" id="mc-embedded-subscribe-form" name="mc-embedded-subscribe-form" class="validate email-form" target="_blank">
+                                    <input type="email" name="EMAIL" class="email-input" id="mce-EMAIL" placeholder="メールアドレスを入力" required="">
+                                    <button type="submit" name="subscribe" id="mc-embedded-subscribe" class="email-submit">登録する</button>
+                                </form>
+                            </div>
+                        </div>
+                    </div>
                 </div>
                 
                 <!-- 画像 -->
@@ -1279,6 +1361,20 @@
                     </button>
                     
                     <p style="font-size: 0.95rem; color: #666; line-height: 1.5; margin-top: 20px;">授業スケジュールや無料体験の情報も全てLINEから</p>
+                    
+                    <!-- メールフォーム追加 -->
+                    <div class="email-form-container">
+                        <p class="email-form-title">📧 LINEが使えない方はメールで</p>
+                        <!-- Mailchimpフォームをここに挿入してください -->
+                        <div id="mc_embed_shell2">
+                            <div id="mc_embed_signup2">
+                                <form action="YOUR_MAILCHIMP_ACTION_URL" method="post" id="mc-embedded-subscribe-form2" name="mc-embedded-subscribe-form" class="validate email-form" target="_blank">
+                                    <input type="email" name="EMAIL" class="email-input" id="mce-EMAIL2" placeholder="メールアドレスを入力" required="">
+                                    <button type="submit" name="subscribe" id="mc-embedded-subscribe2" class="email-submit">登録</button>
+                                </form>
+                            </div>
+                        </div>
+                    </div>
                 </div>
             </div>
         </div>
@@ -1445,6 +1541,20 @@
                 <button class="comparison-cta-button" onclick="event.preventDefault(); trackLineClick(); setTimeout(function() { window.open('https://line.me/R/ti/p/@359fnsdb', '_blank'); }, 300);" style="background: linear-gradient(135deg, #ffffff 0%, #f8f9fa 100%); color: #1e3c72; border: none; padding: 32px 75px; border-radius: 50px; font-size: 1.4rem; font-weight: 900; cursor: pointer; box-shadow: 0 30px 80px rgba(0,0,0,0.55), 0 12px 35px rgba(0,0,0,0.35); transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1); position: relative; overflow: hidden; letter-spacing: 0.02em;" onmouseover="this.style.transform='translateY(-10px) scale(1.05)'; this.style.boxShadow='0 40px 100px rgba(0,0,0,0.65), 0 18px 45px rgba(0,0,0,0.45)'" onmouseout="this.style.transform='translateY(0) scale(1)'; this.style.boxShadow='0 30px 80px rgba(0,0,0,0.55), 0 12px 35px rgba(0,0,0,0.35)'">
                     <span style="font-size: 1.7rem; margin-right: 18px;">💬</span>今すぐLINEで無料相談する
                 </button>
+                
+                <!-- メールフォーム追加 -->
+                <div class="email-form-container" style="max-width: 600px; margin: 30px auto 0;">
+                    <p class="email-form-title" style="color: white; font-size: 1rem;">📧 LINEが使えない方はメールでご登録</p>
+                    <!-- Mailchimpフォームをここに挿入してください -->
+                    <div id="mc_embed_shell3">
+                        <div id="mc_embed_signup3">
+                            <form action="YOUR_MAILCHIMP_ACTION_URL" method="post" id="mc-embedded-subscribe-form3" name="mc-embedded-subscribe-form" class="validate email-form" target="_blank">
+                                <input type="email" name="EMAIL" class="email-input" id="mce-EMAIL3" placeholder="メールアドレスを入力" required="">
+                                <button type="submit" name="subscribe" id="mc-embedded-subscribe3" class="email-submit">登録する</button>
+                            </form>
+                        </div>
+                    </div>
+                </div>
             </div>
         </div>
         
@@ -1965,8 +2075,22 @@
                         </style>
                         
                         <!-- 補足情報 -->
-                        <div style="background: white; padding: 20px 25px; border-radius: 15px; box-shadow: 0 10px 30px rgba(0,0,0,0.2);">
+                        <div style="background: white; padding: 20px 25px; border-radius: 15px; box-shadow: 0 10px 30px rgba(0,0,0,0.2); margin-bottom: 25px;">
                             <p style="font-size: 1rem; color: #0066cc; line-height: 1.6; margin: 0; font-weight: 500;">授業スケジュールや無料体験の情報も全てLINEから</p>
+                        </div>
+                        
+                        <!-- メールフォーム追加 -->
+                        <div class="email-form-container" style="border-top: 2px dashed rgba(255,255,255,0.3);">
+                            <p class="email-form-title" style="color: white; font-size: 1rem;">📧 LINEが使えない方はメールでご登録</p>
+                            <!-- Mailchimpフォームをここに挿入してください -->
+                            <div id="mc_embed_shell4">
+                                <div id="mc_embed_signup4">
+                                    <form action="YOUR_MAILCHIMP_ACTION_URL" method="post" id="mc-embedded-subscribe-form4" name="mc-embedded-subscribe-form" class="validate email-form" target="_blank">
+                                        <input type="email" name="EMAIL" class="email-input" id="mce-EMAIL4" placeholder="メールアドレスを入力" required="">
+                                        <button type="submit" name="subscribe" id="mc-embedded-subscribe4" class="email-submit">登録する</button>
+                                    </form>
+                                </div>
+                            </div>
                         </div>
                     </div>
                 </div>
@@ -2127,9 +2251,23 @@
             </p>
             
             <!-- LINEボタン -->
-            <a href="https://line.me/R/ti/p/@359fnsdb" onclick="event.preventDefault(); trackLineClick(); var url = this.href; setTimeout(function() { window.open(url, '_blank'); }, 300); return false;" target="_blank" class="line-button" style="display: inline-block; background: linear-gradient(135deg, #06c755 0%, #00b300 100%); color: white; padding: 18px 40px; border-radius: 50px; text-decoration: none; font-weight: bold; font-size: 1.1rem; box-shadow: 0 4px 15px rgba(6, 199, 85, 0.3); transition: all 0.3s ease; margin-bottom: 40px;">
+            <a href="https://line.me/R/ti/p/@359fnsdb" onclick="event.preventDefault(); trackLineClick(); var url = this.href; setTimeout(function() { window.open(url, '_blank'); }, 300); return false;" target="_blank" class="line-button" style="display: inline-block; background: linear-gradient(135deg, #06c755 0%, #00b300 100%); color: white; padding: 18px 40px; border-radius: 50px; text-decoration: none; font-weight: bold; font-size: 1.1rem; box-shadow: 0 4px 15px rgba(6, 199, 85, 0.3); transition: all 0.3s ease; margin-bottom: 20px;">
                 <span style="margin-right: 8px;">💬</span>LINEで無料相談
             </a>
+            
+            <!-- メールフォーム追加 -->
+            <div class="email-form-container" style="max-width: 500px; margin: 0 auto 40px;">
+                <p class="email-form-title">📧 LINEが使えない方はメールで</p>
+                <!-- Mailchimpフォームをここに挿入してください -->
+                <div id="mc_embed_shell5">
+                    <div id="mc_embed_signup5">
+                        <form action="YOUR_MAILCHIMP_ACTION_URL" method="post" id="mc-embedded-subscribe-form5" name="mc-embedded-subscribe-form" class="validate email-form" target="_blank">
+                            <input type="email" name="EMAIL" class="email-input" id="mce-EMAIL5" placeholder="メールアドレスを入力" required="">
+                            <button type="submit" name="subscribe" id="mc-embedded-subscribe5" class="email-submit">登録</button>
+                        </form>
+                    </div>
+                </div>
+            </div>
             
             <!-- コピーライト -->
             <div style="padding-top: 30px; border-top: 1px solid #e0e0e0;">
