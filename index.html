@@ -946,6 +946,20 @@
             box-shadow: 0 8px 20px rgba(102, 126, 234, 0.4);
         }
         
+        /* 緊急性テキスト */
+        .urgency-text {
+            color: #e74c3c;
+            font-weight: bold;
+            font-size: 0.95rem;
+            margin-top: 15px;
+            animation: pulse-urgency 2s infinite;
+        }
+        
+        @keyframes pulse-urgency {
+            0%, 100% { opacity: 1; }
+            50% { opacity: 0.7; }
+        }
+        
         /* Responsive */
         @media (max-width: 768px) {
             /* 基本設定 */
@@ -1271,12 +1285,6 @@
                         <span style="font-size: 0.95rem; color: #888;">オンラインで楽しく日本語を学ぶ</span>
                     </p>
                     
-                    <!-- CTAボタン -->
-                    <button class="hero-cta-button" onclick="trackLineClick(); setTimeout(function() { window.open('https://lin.ee/JVV8msS', '_blank'); }, 300);" style="background: linear-gradient(135deg, #06c755 0%, #00b300 100%); color: white; border: none; padding: 18px 40px; border-radius: 50px; font-size: 1.15rem; font-weight: bold; cursor: pointer; box-shadow: 0 12px 35px rgba(6, 199, 85, 0.4); transition: all 0.3s ease; display: inline-flex; align-items: center; gap: 10px;">
-                        <span>💬</span>
-                        <span>今すぐLINEで無料相談</span>
-                    </button>
-                    
                     <!-- メールフォーム追加 -->
                     <div class="email-form-container">
                         <p class="email-form-title">📧 LINEが使えない方はメールでご登録</p>
@@ -1391,7 +1399,10 @@
                         <button id="lineRegButton" class="line-button" onclick="event.preventDefault(); trackLineClick(); setTimeout(function() { window.open('https://line.me/R/ti/p/@359fnsdb', '_blank'); }, 300);" style="width: 100%; padding: 20px; font-size: 1.2rem; position: relative; overflow: hidden;">まずはLINE登録して特典だけをゲット 🎁</button>
                     </div>
                     
-                    <p style="font-size: 0.95rem; color: #666; line-height: 1.5; margin-top: 20px;">詳細やご質問もLINEでお気軽にどうぞ</p>
+                    <!-- 緊急性テキスト追加 -->
+                    <p class="urgency-text">⚠️ 席数に限りがございます</p>
+                    
+                    <p style="font-size: 0.95rem; color: #666; line-height: 1.5; margin-top: 15px;">詳細やご質問もLINEでお気軽にどうぞ</p>
                     
                     <!-- メールフォーム追加 -->
                     <div class="email-form-container">
@@ -1573,6 +1584,9 @@
                 
                 <div style="text-align: center;">
                     <button class="comparison-cta-button" onclick="event.preventDefault(); trackLineClick(); setTimeout(function() { window.open('https://line.me/R/ti/p/@359fnsdb', '_blank'); }, 300);" style="background: linear-gradient(135deg, #ffffff 0%, #f8f9fa 100%); color: #1e3c72; border: none; padding: 32px 75px; border-radius: 50px; font-size: 1.4rem; font-weight: 900; cursor: pointer; box-shadow: 0 30px 80px rgba(0,0,0,0.55), 0 12px 35px rgba(0,0,0,0.35); transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1); position: relative; overflow: hidden; letter-spacing: 0.02em; text-align: center;" onmouseover="this.style.transform='translateY(-10px) scale(1.05)'; this.style.boxShadow='0 40px 100px rgba(0,0,0,0.65), 0 18px 45px rgba(0,0,0,0.45)'" onmouseout="this.style.transform='translateY(0) scale(1)'; this.style.boxShadow='0 30px 80px rgba(0,0,0,0.55), 0 12px 35px rgba(0,0,0,0.35)'">💬 まずはLINE登録して特典だけをゲット</button>
+                    
+                    <!-- 緊急性テキスト追加 -->
+                    <p class="urgency-text" style="color: #fbbf24; margin-top: 20px; font-size: 1.1rem;">⚠️ 席数に限りがございます</p>
                 </div>
                 
                 <!-- メールフォーム追加 -->
@@ -2099,8 +2113,11 @@
                         
                         <!-- LINE登録ボタン -->
                         <div class="line-button-wrapper" style="text-align: center;">
-                            <button id="lineRegButton2" class="line-button" onclick="event.preventDefault(); trackLineClick(); setTimeout(function() { window.open('https://line.me/R/ti/p/@359fnsdb', '_blank'); }, 300);" style="width: 100%; padding: 25px; font-size: 1.35rem; margin-bottom: 25px; box-shadow: 0 15px 40px rgba(6, 199, 85, 0.5); position: relative; overflow: hidden;">💬 まずはLINE登録して特典だけをゲット 🎁</button>
+                            <button id="lineRegButton2" class="line-button" onclick="event.preventDefault(); trackLineClick(); setTimeout(function() { window.open('https://line.me/R/ti/p/@359fnsdb', '_blank'); }, 300);" style="width: 100%; padding: 25px; font-size: 1.35rem; margin-bottom: 15px; box-shadow: 0 15px 40px rgba(6, 199, 85, 0.5); position: relative; overflow: hidden;">💬 まずはLINE登録して特典だけをゲット 🎁</button>
                         </div>
+                        
+                        <!-- 緊急性テキスト追加 -->
+                        <p class="urgency-text" style="color: #fbbf24; margin-bottom: 20px;">⚠️ 席数に限りがございます</p>
                         
                         <style>
                             #lineRegButton2:hover {
@@ -2291,6 +2308,9 @@
                 <span style="margin-right: 8px;">💬</span>LINEで無料相談
             </a>
             
+            <!-- 緊急性テキスト追加 -->
+            <p class="urgency-text">⚠️ 席数に限りがございます</p>
+            
             <!-- メールフォーム追加 -->
             <div class="email-form-container" style="max-width: 500px; margin: 0 auto 40px;">
                 <p class="email-form-title">📧 LINEが使えない方はメールで</p>
@@ -2317,10 +2337,11 @@
     </footer>
 
     <!-- 固定CTA（下部） - 変更箇所 -->
-    <div style="position: fixed; bottom: 0; left: 0; right: 0; background: linear-gradient(135deg, #667eea 0%, #764ba2 100%); padding: 15px 20px; box-shadow: 0 -5px 20px rgba(0,0,0,0.2); z-index: 1000; display: flex; justify-content: center; align-items: center; animation: slideUp 0.5s ease-out;">
+    <div style="position: fixed; bottom: 0; left: 0; right: 0; background: linear-gradient(135deg, #667eea 0%, #764ba2 100%); padding: 15px 20px; box-shadow: 0 -5px 20px rgba(0,0,0,0.2); z-index: 1000; display: flex; flex-direction: column; justify-content: center; align-items: center; animation: slideUp 0.5s ease-out;">
         <a href="https://line.me/R/ti/p/@359fnsdb" onclick="event.preventDefault(); trackLineClick(); var url = this.href; setTimeout(function() { window.open(url, '_blank'); }, 300); return false;" target="_blank" style="text-decoration: none; width: 100%; max-width: 500px; display: block;">
             <button style="width: 100%; background: linear-gradient(135deg, #00b300 0%, #00e600 100%); color: white; border: none; padding: 18px 40px; border-radius: 50px; font-size: 1.2rem; font-weight: bold; cursor: pointer; box-shadow: 0 8px 25px rgba(0, 179, 0, 0.4); transition: all 0.3s ease; position: relative; overflow: hidden; text-align: center;" onmouseover="this.style.transform='scale(1.05)'; this.style.boxShadow='0 12px 35px rgba(0, 179, 0, 0.6)';" onmouseout="this.style.transform='scale(1)'; this.style.boxShadow='0 8px 25px rgba(0, 179, 0, 0.4)';">🎁 まずはLINE登録して特典だけをゲット</button>
         </a>
+        <p style="color: #fbbf24; font-size: 0.85rem; font-weight: bold; margin-top: 8px; margin-bottom: 0;">⚠️ 席数に限りがございます</p>
     </div>
     
     <style>
