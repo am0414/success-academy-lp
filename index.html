@@ -1346,64 +1346,40 @@
         </style>
     </section>
 
-    <!-- Campaign Banner - 変更箇所 -->
+    <!-- Campaign Banner - シンプルCTA -->
     <section class="campaign-banner" style="position: relative; overflow: hidden;">
         <!-- 背景パターン -->
         <div style="position: absolute; top: 0; left: 0; right: 0; bottom: 0; opacity: 0.05; background-image: repeating-linear-gradient(45deg, transparent, transparent 35px, rgba(255,255,255,.5) 35px, rgba(255,255,255,.5) 70px);"></div>
         
         <div class="campaign-content" style="position: relative; z-index: 1; text-align: center;">
-            <div style="display: inline-block; background: rgba(255,255,255,0.3); padding: 8px 20px; border-radius: 50px; margin-bottom: 20px; backdrop-filter: blur(10px);">
-                <span style="font-size: 1rem; font-weight: bold;">🎄 12月限定キャンペーン</span>
-            </div>
             
-            <h3 style="font-size: 2.3rem; font-weight: 900; margin-bottom: 15px; text-shadow: 0 2px 10px rgba(0,0,0,0.1);">1月新クール開始！<br>今から準備しませんか？</h3>
-            <p style="font-size: 1.1rem; margin-bottom: 10px; opacity: 0.9;">新年から新しいスタートを切るチャンス</p>
-            <p style="font-size: 1.2rem; margin-bottom: 40px; opacity: 0.95;">📅 期間限定：12.1(日) ▶ 12.31(火)</p>
-            
-            <div class="cta-box-wrapper" style="max-width: 550px; margin: 0 auto; padding: 0 20px;">
-                <div class="cta-line-box" style="padding: 40px 35px; background: white; border-radius: 25px; box-shadow: 0 20px 60px rgba(0,0,0,0.15); border: 3px solid rgba(255,255,255,0.8); text-align: center;">
-                    <div style="display: inline-block; background: linear-gradient(135deg, #06c755 0%, #00b300 100%); color: white; padding: 8px 20px; border-radius: 50px; font-size: 0.95rem; font-weight: bold; margin-bottom: 20px;">
-                        🎁 LINE登録限定特典
+            <div class="cta-box-wrapper" style="max-width: 500px; margin: 0 auto; padding: 0 20px;">
+                <div class="cta-line-box" style="padding: 35px 30px; background: white; border-radius: 25px; box-shadow: 0 20px 60px rgba(0,0,0,0.15); border: 3px solid #06c755; text-align: center;">
+                    
+                    <!-- 期間 -->
+                    <p style="font-size: 0.95rem; color: #666; margin-bottom: 15px;">📅 期間限定：12.1(日) ▶ 12.31(火)</p>
+                    
+                    <!-- メインキャッチ -->
+                    <p style="font-size: 1.6rem; font-weight: 900; color: #e74c3c; margin-bottom: 20px;">入会費が最大100%無料に！</p>
+                    
+                    <!-- 特典内容 -->
+                    <div style="background: linear-gradient(135deg, #f0fff4 0%, #dcfce7 100%); padding: 20px; border-radius: 15px; margin-bottom: 15px; border: 2px solid #06c755;">
+                        <p style="font-size: 1rem; color: #333; margin-bottom: 5px;">LINE登録するだけで</p>
+                        <p style="font-size: 2rem; font-weight: 900; color: #06c755; margin-bottom: 5px;">入会費 50%OFF</p>
+                        <p style="font-size: 0.85rem; color: #666;">（通常 50USD → 25USD）</p>
                     </div>
                     
-                    <!-- メイン特典 -->
-                    <div style="background: linear-gradient(135deg, #f0fff4 0%, #dcfce7 100%); padding: 25px; border-radius: 15px; margin-bottom: 20px; border: 2px solid #06c755;">
-                        <p style="font-size: 1.1rem; font-weight: 900; color: #333; margin-bottom: 8px;">LINE登録するだけで</p>
-                        <p style="font-size: 2rem; font-weight: 900; color: #06c755;">入会費 50%OFF</p>
-                        <p style="font-size: 0.9rem; color: #666;">（通常 50USD → 25USD）</p>
-                    </div>
+                    <!-- さらに特典 -->
+                    <p style="font-size: 0.9rem; color: #666; margin-bottom: 20px;">さらに、無料説明会に参加して<span style="color: #e74c3c; font-weight: bold;">100%OFF</span></p>
                     
-                    <!-- さらに特典（控えめなデザイン） -->
-                    <div style="background: #f8f9fa; padding: 15px; border-radius: 10px; margin-bottom: 20px;">
-                        <p style="font-size: 0.85rem; color: #666; line-height: 1.5;">
-                            ✨ さらに無料説明会に参加すると入会費が無料になる特典も！
-                        </p>
-                    </div>
-                    
+                    <!-- LINEボタン -->
                     <div style="text-align: center;" class="line-button-wrapper">
-                        <button id="lineRegButton" class="line-button" onclick="event.preventDefault(); trackLineClick(); setTimeout(function() { window.open('https://line.me/R/ti/p/@359fnsdb', '_blank'); }, 300);" style="width: 100%; padding: 20px; font-size: 1.2rem; position: relative; overflow: hidden;">まずはLINE登録して特典だけをゲット 🎁</button>
+                        <button id="lineRegButton" class="line-button" onclick="event.preventDefault(); trackLineClick(); setTimeout(function() { window.open('https://line.me/R/ti/p/@359fnsdb', '_blank'); }, 300);" style="width: 100%; padding: 18px; font-size: 1.15rem;">LINE登録をして特典だけゲット</button>
                     </div>
                     
-                    <!-- 緊急性テキスト追加 -->
-                    <p class="urgency-text">⚠️ 席数に限りがございます</p>
+                    <!-- 注釈 -->
+                    <p style="font-size: 0.8rem; color: #999; margin-top: 10px;">※時間割なども確認できます</p>
                     
-                    <p style="font-size: 0.95rem; color: #666; line-height: 1.5; margin-top: 15px;">詳細やご質問もLINEでお気軽にどうぞ</p>
-                    
-                    <!-- メールフォーム追加 -->
-                    <div class="email-form-container">
-                        <p class="email-form-title">📧 LINEが使えない方はメールで</p>
-                        <!-- Mailchimpフォームをここに挿入してください -->
-                        <div id="mc_embed_shell2">
-                            <div id="mc_embed_signup2">
-                                <form action="https://mercy-education.us10.list-manage.com/subscribe/post?u=3fc0ca0518c0063b0701b969e&amp;id=0e737d1946&amp;f_id=004f27e2f0" method="post" id="mc-embedded-subscribe-form2" name="mc-embedded-subscribe-form" class="validate email-form" target="_blank">
-                                    <input type="email" name="EMAIL" class="email-input" id="mce-EMAIL2" placeholder="メールアドレスを入力" required="" value="">
-                                    <div hidden=""><input type="hidden" name="tags" value="14567839"></div>
-                                    <div style="position: absolute; left: -5000px;" aria-hidden="true"><input type="text" name="b_3fc0ca0518c0063b0701b969e_0e737d1946" tabindex="-1" value=""></div>
-                                    <button type="submit" name="subscribe" id="mc-embedded-subscribe2" class="email-submit">登録</button>
-                                </form>
-                            </div>
-                        </div>
-                    </div>
                 </div>
             </div>
         </div>
@@ -1560,34 +1536,24 @@
                 </table>
             </div>
             
-            <!-- 表の下のCTA - 変更箇所 -->
-            <div class="comparison-cta-wrapper" style="margin-top: 100px;">
-                <div class="comparison-cta-box" style="background: linear-gradient(135deg, rgba(255,255,255,0.25) 0%, rgba(255,255,255,0.15) 100%); padding: 50px; border-radius: 35px; backdrop-filter: blur(20px); border: 2px solid rgba(255,255,255,0.5); max-width: 800px; margin: 0 auto 55px; box-shadow: 0 25px 70px rgba(0,0,0,0.35), inset 0 2px 0 rgba(255,255,255,0.4);">
-                    <p style="color: white; font-size: 1.7rem; font-weight: 900; margin-bottom: 20px; text-shadow: 0 3px 15px rgba(0,0,0,0.4); letter-spacing: -0.01em;">🎁 LINE登録で入会費50%OFF！</p>
-                    <p style="color: rgba(255,255,255,0.95); font-size: 1.2rem; font-weight: 600; text-shadow: 0 2px 10px rgba(0,0,0,0.25);">30日間無料体験も実施中</p>
-                </div>
-                
-                <div style="text-align: center;">
-                    <button class="comparison-cta-button" onclick="event.preventDefault(); trackLineClick(); setTimeout(function() { window.open('https://line.me/R/ti/p/@359fnsdb', '_blank'); }, 300);" style="background: linear-gradient(135deg, #ffffff 0%, #f8f9fa 100%); color: #1e3c72; border: none; padding: 32px 75px; border-radius: 50px; font-size: 1.4rem; font-weight: 900; cursor: pointer; box-shadow: 0 30px 80px rgba(0,0,0,0.55), 0 12px 35px rgba(0,0,0,0.35); transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1); position: relative; overflow: hidden; letter-spacing: 0.02em; text-align: center;" onmouseover="this.style.transform='translateY(-10px) scale(1.05)'; this.style.boxShadow='0 40px 100px rgba(0,0,0,0.65), 0 18px 45px rgba(0,0,0,0.45)'" onmouseout="this.style.transform='translateY(0) scale(1)'; this.style.boxShadow='0 30px 80px rgba(0,0,0,0.55), 0 12px 35px rgba(0,0,0,0.35)'">💬 まずはLINE登録して特典だけをゲット</button>
+            <!-- 表の下のCTA - シンプル版 -->
+            <div class="comparison-cta-wrapper" style="margin-top: 80px;">
+                <div style="max-width: 450px; margin: 0 auto; background: white; padding: 30px 25px; border-radius: 20px; border: 3px solid #06c755;">
                     
-                    <!-- 緊急性テキスト追加 -->
-                    <p class="urgency-text" style="color: #fbbf24; margin-top: 20px; font-size: 1.1rem;">⚠️ 席数に限りがございます</p>
-                </div>
-                
-                <!-- メールフォーム追加 -->
-                <div class="email-form-container" style="max-width: 600px; margin: 30px auto 0;">
-                    <p class="email-form-title" style="color: white; font-size: 1rem;">📧 LINEが使えない方はメールでご登録</p>
-                    <!-- Mailchimpフォームをここに挿入してください -->
-                    <div id="mc_embed_shell3">
-                        <div id="mc_embed_signup3">
-                            <form action="https://mercy-education.us10.list-manage.com/subscribe/post?u=3fc0ca0518c0063b0701b969e&amp;id=0e737d1946&amp;f_id=004f27e2f0" method="post" id="mc-embedded-subscribe-form3" name="mc-embedded-subscribe-form" class="validate email-form" target="_blank">
-                                <input type="email" name="EMAIL" class="email-input" id="mce-EMAIL3" placeholder="メールアドレスを入力" required="" value="">
-                                <div hidden=""><input type="hidden" name="tags" value="14567839"></div>
-                                <div style="position: absolute; left: -5000px;" aria-hidden="true"><input type="text" name="b_3fc0ca0518c0063b0701b969e_0e737d1946" tabindex="-1" value=""></div>
-                                <button type="submit" name="subscribe" id="mc-embedded-subscribe3" class="email-submit">登録する</button>
-                            </form>
-                        </div>
+                    <p style="font-size: 0.9rem; color: #666; margin-bottom: 12px;">📅 期間限定：12.1(日) ▶ 12.31(火)</p>
+                    <p style="font-size: 1.4rem; font-weight: 900; color: #e74c3c; margin-bottom: 15px;">入会費が最大100%無料に！</p>
+                    
+                    <div style="background: #f0fff4; padding: 15px; border-radius: 10px; margin-bottom: 12px; border: 1px solid #06c755;">
+                        <p style="font-size: 0.9rem; color: #333; margin-bottom: 3px;">LINE登録するだけで</p>
+                        <p style="font-size: 1.6rem; font-weight: 900; color: #06c755;">入会費 50%OFF</p>
+                        <p style="font-size: 0.8rem; color: #666;">（通常 50USD → 25USD）</p>
                     </div>
+                    
+                    <p style="font-size: 0.85rem; color: #666; margin-bottom: 15px;">さらに、無料説明会に参加して<span style="color: #e74c3c; font-weight: bold;">100%OFF</span></p>
+                    
+                    <button class="comparison-cta-button" onclick="event.preventDefault(); trackLineClick(); setTimeout(function() { window.open('https://line.me/R/ti/p/@359fnsdb', '_blank'); }, 300);" style="width: 100%; background: #06c755; color: white; border: none; padding: 16px; border-radius: 50px; font-size: 1.1rem; font-weight: bold; cursor: pointer;">LINE登録をして特典だけゲット</button>
+                    
+                    <p style="font-size: 0.75rem; color: #999; margin-top: 10px;">※時間割なども確認できます</p>
                 </div>
             </div>
         </div>
@@ -2043,7 +2009,7 @@
         </div>
     </section>
 
-    <!-- Final CTA Section - 変更箇所 -->
+    <!-- Final CTA Section - シンプル版 -->
     <section class="cta-section" style="position: relative; overflow: hidden;">
         <!-- 背景アニメーション -->
         <div style="position: absolute; width: 200%; height: 200%; top: -50%; left: -50%; background: radial-gradient(circle at 20% 50%, rgba(255,255,255,0.1) 0%, transparent 50%), radial-gradient(circle at 80% 80%, rgba(255,255,255,0.1) 0%, transparent 50%); animation: rotate 20s linear infinite;"></div>
@@ -2056,91 +2022,46 @@
         </style>
         
         <div class="container" style="position: relative; z-index: 1; max-width: 1200px; margin: 0 auto; padding: 0 20px;">
-            <div style="text-align: center; margin-bottom: 50px;">
-                <div style="display: inline-block; background: rgba(255,255,255,0.2); padding: 10px 25px; border-radius: 50px; margin-bottom: 20px; backdrop-filter: blur(10px);">
-                    <span style="font-size: 1rem; font-weight: bold;">🎄 12月限定キャンペーン</span>
-                </div>
-                <h2 class="cta-title" style="line-height: 1.4; text-shadow: 0 2px 10px rgba(0,0,0,0.2); margin: 0 auto;">1月の新クール、<br>今から準備を始めませんか？</h2>
-                <p class="cta-subtitle" style="font-size: 1.3rem; margin-top: 20px; opacity: 0.95; text-align: center !important;">LINE登録で入会費50%OFF特典をゲット！</p>
-            </div>
             
-            <!-- 派手なLINE登録ボックス -->
-            <div style="max-width: 700px; margin: 0 auto;">
-                <div style="background: linear-gradient(135deg, #0066cc 0%, #0099ff 100%); border-radius: 30px; padding: 60px 50px; box-shadow: 0 40px 100px rgba(0, 102, 204, 0.5); position: relative; overflow: hidden; border: 3px solid rgba(255,255,255,0.3);">
-                    <!-- 背景装飾 -->
-                    <div style="position: absolute; top: -50px; right: -50px; width: 200px; height: 200px; background: rgba(255,255,255,0.1); border-radius: 50%; filter: blur(60px);"></div>
-                    <div style="position: absolute; bottom: -80px; left: -80px; width: 250px; height: 250px; background: rgba(255,255,255,0.08); border-radius: 50%; filter: blur(80px);"></div>
+            <!-- シンプルCTAボックス -->
+            <div style="max-width: 450px; margin: 0 auto;">
+                <div style="background: white; border-radius: 25px; padding: 35px 30px; box-shadow: 0 30px 80px rgba(0,0,0,0.3); text-align: center; border: 3px solid #06c755;">
                     
-                    <div style="position: relative; z-index: 1; text-align: center;">
-                        <!-- バッジ -->
-                        <div style="display: inline-block; background: linear-gradient(135deg, #06c755 0%, #00b300 100%); color: white; padding: 12px 30px; border-radius: 50px; margin-bottom: 25px; font-weight: bold; font-size: 1.1rem; box-shadow: 0 8px 20px rgba(6, 199, 85, 0.4);">
-                            🎁 LINE登録限定特典
-                        </div>
-                        
-                        <!-- タイトル -->
-                        <h3 style="font-size: 2.5rem; font-weight: 900; color: white; margin-bottom: 15px; text-shadow: 0 4px 15px rgba(0,0,0,0.3); line-height: 1.3;">1月新クール開始！<br>今から準備しませんか？</h3>
-                        
-                        <p style="font-size: 1.1rem; color: rgba(255,255,255,0.95); margin-bottom: 25px; font-weight: 500;">📅 期間限定：12.1(日) ▶ 12.31(火)</p>
-                        
-                        <!-- メイン特典ボックス -->
-                        <div style="background: rgba(255,255,255,0.95); padding: 25px; border-radius: 15px; margin-bottom: 25px;">
-                            <p style="font-size: 1.1rem; font-weight: 900; color: #333; margin-bottom: 8px;">LINE登録するだけで</p>
-                            <p style="font-size: 2.2rem; font-weight: 900; color: #06c755; margin-bottom: 5px;">入会費 50%OFF</p>
-                            <p style="font-size: 0.9rem; color: #666;">（通常 50USD → 25USD）</p>
-                        </div>
-                        
-                        <!-- さらに特典（控えめ） -->
-                        <div style="background: rgba(255,255,255,0.15); padding: 15px 20px; border-radius: 10px; margin-bottom: 25px; backdrop-filter: blur(10px);">
-                            <p style="font-size: 0.95rem; color: rgba(255,255,255,0.95); line-height: 1.5;">
-                                ✨ さらに無料説明会参加で入会費が無料になる特典も
-                            </p>
-                        </div>
-                        
-                        <!-- LINE登録ボタン -->
-                        <div class="line-button-wrapper" style="text-align: center;">
-                            <button id="lineRegButton2" class="line-button" onclick="event.preventDefault(); trackLineClick(); setTimeout(function() { window.open('https://line.me/R/ti/p/@359fnsdb', '_blank'); }, 300);" style="width: 100%; padding: 25px; font-size: 1.35rem; margin-bottom: 15px; box-shadow: 0 15px 40px rgba(6, 199, 85, 0.5); position: relative; overflow: hidden;">💬 まずはLINE登録して特典だけをゲット 🎁</button>
-                        </div>
-                        
-                        <!-- 緊急性テキスト追加 -->
-                        <p class="urgency-text" style="color: #fbbf24; margin-bottom: 20px;">⚠️ 席数に限りがございます</p>
-                        
-                        <style>
-                            #lineRegButton2:hover {
-                                transform: scale(1.05);
-                            }
-                        </style>
-                        
-                        <!-- 補足情報 -->
-                        <div style="background: white; padding: 20px 25px; border-radius: 15px; box-shadow: 0 10px 30px rgba(0,0,0,0.2); margin-bottom: 25px;">
-                            <p style="font-size: 1rem; color: #0066cc; line-height: 1.6; margin: 0; font-weight: 500;">詳細やご質問もLINEでお気軽にどうぞ</p>
-                        </div>
-                        
-                        <!-- メールフォーム追加 -->
-                        <div class="email-form-container" style="border-top: 2px dashed rgba(255,255,255,0.3);">
-                            <p class="email-form-title" style="color: white; font-size: 1rem;">📧 LINEが使えない方はメールでご登録</p>
-                            <!-- Mailchimpフォームをここに挿入してください -->
-                            <div id="mc_embed_shell4">
-                                <div id="mc_embed_signup4">
-                                    <form action="https://mercy-education.us10.list-manage.com/subscribe/post?u=3fc0ca0518c0063b0701b969e&amp;id=0e737d1946&amp;f_id=004f27e2f0" method="post" id="mc-embedded-subscribe-form4" name="mc-embedded-subscribe-form" class="validate email-form" target="_blank">
-                                        <input type="email" name="EMAIL" class="email-input" id="mce-EMAIL4" placeholder="メールアドレスを入力" required="" value="">
-                                        <div hidden=""><input type="hidden" name="tags" value="14567839"></div>
-                                        <div style="position: absolute; left: -5000px;" aria-hidden="true"><input type="text" name="b_3fc0ca0518c0063b0701b969e_0e737d1946" tabindex="-1" value=""></div>
-                                        <button type="submit" name="subscribe" id="mc-embedded-subscribe4" class="email-submit">登録する</button>
-                                    </form>
-                                </div>
+                    <p style="font-size: 0.95rem; color: #666; margin-bottom: 15px;">📅 期間限定：12.1(日) ▶ 12.31(火)</p>
+                    <p style="font-size: 1.6rem; font-weight: 900; color: #e74c3c; margin-bottom: 20px;">入会費が最大100%無料に！</p>
+                    
+                    <div style="background: linear-gradient(135deg, #f0fff4 0%, #dcfce7 100%); padding: 20px; border-radius: 15px; margin-bottom: 15px; border: 2px solid #06c755;">
+                        <p style="font-size: 1rem; color: #333; margin-bottom: 5px;">LINE登録するだけで</p>
+                        <p style="font-size: 2rem; font-weight: 900; color: #06c755; margin-bottom: 5px;">入会費 50%OFF</p>
+                        <p style="font-size: 0.85rem; color: #666;">（通常 50USD → 25USD）</p>
+                    </div>
+                    
+                    <p style="font-size: 0.9rem; color: #666; margin-bottom: 20px;">さらに、無料説明会に参加して<span style="color: #e74c3c; font-weight: bold;">100%OFF</span></p>
+                    
+                    <div class="line-button-wrapper" style="text-align: center;">
+                        <button id="lineRegButton2" class="line-button" onclick="event.preventDefault(); trackLineClick(); setTimeout(function() { window.open('https://line.me/R/ti/p/@359fnsdb', '_blank'); }, 300);" style="width: 100%; padding: 18px; font-size: 1.15rem;">LINE登録をして特典だけゲット</button>
+                    </div>
+                    
+                    <p style="font-size: 0.8rem; color: #999; margin-top: 10px;">※時間割なども確認できます</p>
+                    
+                    <!-- メールフォーム -->
+                    <div class="email-form-container" style="margin-top: 20px; padding-top: 20px; border-top: 2px dashed #e0e0e0;">
+                        <p class="email-form-title" style="font-size: 0.9rem; color: #666; margin-bottom: 12px;">📧 LINEが使えない方はメールで</p>
+                        <div id="mc_embed_shell4">
+                            <div id="mc_embed_signup4">
+                                <form action="https://mercy-education.us10.list-manage.com/subscribe/post?u=3fc0ca0518c0063b0701b969e&amp;id=0e737d1946&amp;f_id=004f27e2f0" method="post" id="mc-embedded-subscribe-form4" name="mc-embedded-subscribe-form" class="validate email-form" target="_blank">
+                                    <input type="email" name="EMAIL" class="email-input" id="mce-EMAIL4" placeholder="メールアドレスを入力" required="" value="">
+                                    <div hidden=""><input type="hidden" name="tags" value="14567839"></div>
+                                    <div style="position: absolute; left: -5000px;" aria-hidden="true"><input type="text" name="b_3fc0ca0518c0063b0701b969e_0e737d1946" tabindex="-1" value=""></div>
+                                    <button type="submit" name="subscribe" id="mc-embedded-subscribe4" class="email-submit">登録</button>
+                                </form>
                             </div>
                         </div>
                     </div>
+                    
                 </div>
             </div>
             
-            <div style="text-align: center; margin-top: 60px; max-width: 800px; margin-left: auto; margin-right: auto;">
-                <p style="font-size: 1.2rem; line-height: 1.6; opacity: 0.95; margin: 0 auto;">1月から新クールがスタート！今から準備を始めましょう。</p>
-                <p style="font-size: 1.2rem; line-height: 1.6; margin-top: 15px; opacity: 0.95; text-align: center;">LINE登録で入会費50%OFFの特典をゲット！</p>
-                <div style="background: linear-gradient(135deg, rgba(6,199,85,0.2) 0%, rgba(0,179,0,0.2) 100%); padding: 25px 35px; border-radius: 20px; margin: 40px auto 0; border: 2px solid rgba(6,199,85,0.4); backdrop-filter: blur(10px); display: inline-block; max-width: 100%;">
-                    <p style="font-size: 1.7rem; font-weight: 900; color: #fff; text-shadow: 2px 2px 6px rgba(0,0,0,0.3); margin: 0; line-height: 1.4;">🎁 LINE登録で<br>入会費50%OFF！</p>
-                </div>
-            </div>
         </div>
     </section>
 
@@ -2289,25 +2210,9 @@
             </p>
             
             <!-- LINEボタン -->
-            <a href="https://line.me/R/ti/p/@359fnsdb" onclick="event.preventDefault(); trackLineClick(); var url = this.href; setTimeout(function() { window.open(url, '_blank'); }, 300); return false;" target="_blank" class="line-button" style="display: inline-block; background: linear-gradient(135deg, #06c755 0%, #00b300 100%); color: white; padding: 18px 40px; border-radius: 50px; text-decoration: none; font-weight: bold; font-size: 1.1rem; box-shadow: 0 4px 15px rgba(6, 199, 85, 0.3); transition: all 0.3s ease; margin-bottom: 20px;">
-                <span style="margin-right: 8px;">💬</span>LINEで無料相談
+            <a href="https://line.me/R/ti/p/@359fnsdb" onclick="event.preventDefault(); trackLineClick(); var url = this.href; setTimeout(function() { window.open(url, '_blank'); }, 300); return false;" target="_blank" class="line-button" style="display: inline-block; background: linear-gradient(135deg, #06c755 0%, #00b300 100%); color: white; padding: 16px 35px; border-radius: 50px; text-decoration: none; font-weight: bold; font-size: 1rem; box-shadow: 0 4px 15px rgba(6, 199, 85, 0.3); transition: all 0.3s ease; margin-bottom: 20px;">
+                LINE登録をして特典だけゲット
             </a>
-            
-            <!-- メールフォーム追加 -->
-            <div class="email-form-container" style="max-width: 500px; margin: 0 auto 40px;">
-                <p class="email-form-title">📧 LINEが使えない方はメールで</p>
-                <!-- Mailchimpフォームをここに挿入してください -->
-                <div id="mc_embed_shell5">
-                    <div id="mc_embed_signup5">
-                        <form action="https://mercy-education.us10.list-manage.com/subscribe/post?u=3fc0ca0518c0063b0701b969e&amp;id=0e737d1946&amp;f_id=004f27e2f0" method="post" id="mc-embedded-subscribe-form5" name="mc-embedded-subscribe-form" class="validate email-form" target="_blank">
-                            <input type="email" name="EMAIL" class="email-input" id="mce-EMAIL5" placeholder="メールアドレスを入力" required="" value="">
-                            <div hidden=""><input type="hidden" name="tags" value="14567839"></div>
-                            <div style="position: absolute; left: -5000px;" aria-hidden="true"><input type="text" name="b_3fc0ca0518c0063b0701b969e_0e737d1946" tabindex="-1" value=""></div>
-                            <button type="submit" name="subscribe" id="mc-embedded-subscribe5" class="email-submit">登録</button>
-                        </form>
-                    </div>
-                </div>
-            </div>
             
             <!-- コピーライト -->
             <div style="padding-top: 30px; border-top: 1px solid #e0e0e0;">
@@ -2318,12 +2223,12 @@
         </div>
     </footer>
 
-    <!-- 固定CTA（下部） - 変更箇所 -->
-    <div style="position: fixed; bottom: 0; left: 0; right: 0; background: linear-gradient(135deg, #667eea 0%, #764ba2 100%); padding: 15px 20px; box-shadow: 0 -5px 20px rgba(0,0,0,0.2); z-index: 1000; display: flex; flex-direction: column; justify-content: center; align-items: center; animation: slideUp 0.5s ease-out;">
-        <a href="https://line.me/R/ti/p/@359fnsdb" onclick="event.preventDefault(); trackLineClick(); var url = this.href; setTimeout(function() { window.open(url, '_blank'); }, 300); return false;" target="_blank" style="text-decoration: none; width: 100%; max-width: 500px; display: block;">
-            <button style="width: 100%; background: linear-gradient(135deg, #00b300 0%, #00e600 100%); color: white; border: none; padding: 18px 40px; border-radius: 50px; font-size: 1.2rem; font-weight: bold; cursor: pointer; box-shadow: 0 8px 25px rgba(0, 179, 0, 0.4); transition: all 0.3s ease; position: relative; overflow: hidden; text-align: center;" onmouseover="this.style.transform='scale(1.05)'; this.style.boxShadow='0 12px 35px rgba(0, 179, 0, 0.6)';" onmouseout="this.style.transform='scale(1)'; this.style.boxShadow='0 8px 25px rgba(0, 179, 0, 0.4)';">🎁 まずはLINE登録して特典だけをゲット</button>
+    <!-- 固定CTA（下部） - シンプル版 -->
+    <div style="position: fixed; bottom: 0; left: 0; right: 0; background: white; padding: 12px 20px; box-shadow: 0 -5px 20px rgba(0,0,0,0.15); z-index: 1000; display: flex; flex-direction: column; justify-content: center; align-items: center; animation: slideUp 0.5s ease-out;">
+        <a href="https://line.me/R/ti/p/@359fnsdb" onclick="event.preventDefault(); trackLineClick(); var url = this.href; setTimeout(function() { window.open(url, '_blank'); }, 300); return false;" target="_blank" style="text-decoration: none; width: 100%; max-width: 400px; display: block;">
+            <button style="width: 100%; background: #06c755; color: white; border: none; padding: 16px 30px; border-radius: 50px; font-size: 1.1rem; font-weight: bold; cursor: pointer; box-shadow: 0 6px 20px rgba(6, 199, 85, 0.4);">LINE登録をして特典だけゲット</button>
         </a>
-        <p style="color: #fbbf24; font-size: 0.85rem; font-weight: bold; margin-top: 8px; margin-bottom: 0;">⚠️ 席数に限りがございます</p>
+        <p style="color: #e74c3c; font-size: 0.8rem; font-weight: bold; margin-top: 6px; margin-bottom: 0;">入会費が最大100%無料に！</p>
     </div>
     
     <style>
