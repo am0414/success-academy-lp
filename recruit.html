@@ -1,0 +1,629 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="robots" content="noindex, nofollow">
+    <title>Join Our Team | Success Academy International</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Fraunces:opsz,wght@9..144,400;9..144,600;9..144,700&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --color-cream: #FDF8F3;
+            --color-navy: #1a2744;
+            --color-coral: #E8734A;
+            --color-coral-light: #FFEEE8;
+            --color-sage: #7BA383;
+            --color-sage-light: #E8F2EA;
+            --color-text: #2D3748;
+            --color-text-light: #64748B;
+            --font-display: 'Fraunces', serif;
+            --font-body: 'DM Sans', sans-serif;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: var(--font-body);
+            background: var(--color-cream);
+            color: var(--color-text);
+            line-height: 1.7;
+        }
+
+        /* Hero Section */
+        .hero {
+            min-height: 100vh;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            text-align: center;
+            padding: 2rem;
+            position: relative;
+            overflow: hidden;
+            background: linear-gradient(135deg, var(--color-cream) 0%, #FFF5EE 50%, var(--color-sage-light) 100%);
+        }
+
+        .hero::before {
+            content: '';
+            position: absolute;
+            top: -50%;
+            right: -20%;
+            width: 80%;
+            height: 150%;
+            background: radial-gradient(ellipse, rgba(232, 115, 74, 0.08) 0%, transparent 70%);
+            animation: float 15s ease-in-out infinite;
+        }
+
+        .hero::after {
+            content: '';
+            position: absolute;
+            bottom: -30%;
+            left: -10%;
+            width: 60%;
+            height: 100%;
+            background: radial-gradient(ellipse, rgba(123, 163, 131, 0.1) 0%, transparent 70%);
+            animation: float 12s ease-in-out infinite reverse;
+        }
+
+        @keyframes float {
+            0%, 100% { transform: translateY(0) rotate(0deg); }
+            50% { transform: translateY(-30px) rotate(2deg); }
+        }
+
+        .hero-content {
+            position: relative;
+            z-index: 1;
+            max-width: 800px;
+        }
+
+        .badge {
+            display: inline-block;
+            background: var(--color-coral-light);
+            color: var(--color-coral);
+            padding: 0.5rem 1.25rem;
+            border-radius: 50px;
+            font-size: 0.875rem;
+            font-weight: 600;
+            margin-bottom: 1.5rem;
+            animation: fadeInUp 0.8s ease-out;
+        }
+
+        .hero h1 {
+            font-family: var(--font-display);
+            font-size: clamp(2.5rem, 6vw, 4rem);
+            font-weight: 700;
+            color: var(--color-navy);
+            margin-bottom: 1.5rem;
+            line-height: 1.2;
+            animation: fadeInUp 0.8s ease-out 0.1s backwards;
+        }
+
+        .hero h1 span {
+            color: var(--color-coral);
+        }
+
+        .hero-subtitle {
+            font-size: 1.25rem;
+            color: var(--color-text-light);
+            max-width: 600px;
+            margin: 0 auto 2.5rem;
+            animation: fadeInUp 0.8s ease-out 0.2s backwards;
+        }
+
+        @keyframes fadeInUp {
+            from {
+                opacity: 0;
+                transform: translateY(30px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        .cta-button {
+            display: inline-flex;
+            align-items: center;
+            gap: 0.75rem;
+            background: var(--color-coral);
+            color: white;
+            padding: 1rem 2rem;
+            border-radius: 50px;
+            text-decoration: none;
+            font-weight: 600;
+            font-size: 1.1rem;
+            transition: all 0.3s ease;
+            animation: fadeInUp 0.8s ease-out 0.3s backwards;
+            box-shadow: 0 4px 20px rgba(232, 115, 74, 0.3);
+        }
+
+        .cta-button:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 8px 30px rgba(232, 115, 74, 0.4);
+        }
+
+        .cta-button svg {
+            width: 24px;
+            height: 24px;
+        }
+
+        /* Main Content */
+        .container {
+            max-width: 1100px;
+            margin: 0 auto;
+            padding: 0 2rem;
+        }
+
+        section {
+            padding: 5rem 0;
+        }
+
+        .section-title {
+            font-family: var(--font-display);
+            font-size: 2rem;
+            color: var(--color-navy);
+            margin-bottom: 1rem;
+            text-align: center;
+        }
+
+        .section-subtitle {
+            color: var(--color-text-light);
+            text-align: center;
+            max-width: 600px;
+            margin: 0 auto 3rem;
+        }
+
+        /* About Section */
+        .about {
+            background: white;
+        }
+
+        .about-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 2rem;
+        }
+
+        .about-card {
+            background: var(--color-cream);
+            padding: 2rem;
+            border-radius: 20px;
+            text-align: center;
+            transition: transform 0.3s ease;
+        }
+
+        .about-card:hover {
+            transform: translateY(-5px);
+        }
+
+        .about-icon {
+            width: 60px;
+            height: 60px;
+            background: var(--color-coral-light);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin: 0 auto 1.25rem;
+            font-size: 1.5rem;
+        }
+
+        .about-card h3 {
+            font-family: var(--font-display);
+            color: var(--color-navy);
+            margin-bottom: 0.75rem;
+            font-size: 1.25rem;
+        }
+
+        .about-card p {
+            color: var(--color-text-light);
+            font-size: 0.95rem;
+        }
+
+        /* Position Details */
+        .details {
+            background: linear-gradient(180deg, var(--color-cream) 0%, white 100%);
+        }
+
+        .details-wrapper {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 3rem;
+            align-items: start;
+        }
+
+        @media (max-width: 768px) {
+            .details-wrapper {
+                grid-template-columns: 1fr;
+            }
+        }
+
+        .detail-block {
+            background: white;
+            padding: 2.5rem;
+            border-radius: 24px;
+            box-shadow: 0 4px 30px rgba(26, 39, 68, 0.06);
+        }
+
+        .detail-block h3 {
+            font-family: var(--font-display);
+            color: var(--color-navy);
+            font-size: 1.5rem;
+            margin-bottom: 1.5rem;
+            display: flex;
+            align-items: center;
+            gap: 0.75rem;
+        }
+
+        .detail-block h3 span {
+            font-size: 1.5rem;
+        }
+
+        .detail-list {
+            list-style: none;
+        }
+
+        .detail-list li {
+            padding: 0.75rem 0;
+            border-bottom: 1px solid #f0f0f0;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .detail-list li:last-child {
+            border-bottom: none;
+        }
+
+        .detail-label {
+            color: var(--color-text-light);
+            font-size: 0.95rem;
+        }
+
+        .detail-value {
+            font-weight: 600;
+            color: var(--color-navy);
+        }
+
+        .highlight-box {
+            background: var(--color-sage-light);
+            border-radius: 16px;
+            padding: 1.5rem;
+            margin-top: 1.5rem;
+        }
+
+        .highlight-box p {
+            color: var(--color-sage);
+            font-weight: 500;
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+        }
+
+        /* Ideal Candidate */
+        .ideal {
+            background: var(--color-navy);
+            color: white;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .ideal::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            right: 0;
+            width: 50%;
+            height: 100%;
+            background: radial-gradient(ellipse at right, rgba(232, 115, 74, 0.15) 0%, transparent 70%);
+        }
+
+        .ideal .section-title {
+            color: white;
+        }
+
+        .ideal .section-subtitle {
+            color: rgba(255, 255, 255, 0.7);
+        }
+
+        .ideal-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 1.5rem;
+            position: relative;
+            z-index: 1;
+        }
+
+        .ideal-item {
+            background: rgba(255, 255, 255, 0.08);
+            backdrop-filter: blur(10px);
+            padding: 1.75rem;
+            border-radius: 16px;
+            border: 1px solid rgba(255, 255, 255, 0.1);
+            transition: all 0.3s ease;
+        }
+
+        .ideal-item:hover {
+            background: rgba(255, 255, 255, 0.12);
+            transform: translateY(-3px);
+        }
+
+        .ideal-item h4 {
+            font-family: var(--font-display);
+            font-size: 1.1rem;
+            margin-bottom: 0.5rem;
+            color: var(--color-coral);
+        }
+
+        .ideal-item p {
+            font-size: 0.95rem;
+            color: rgba(255, 255, 255, 0.8);
+            line-height: 1.6;
+        }
+
+        /* Apply Section */
+        .apply {
+            text-align: center;
+            background: linear-gradient(180deg, white 0%, var(--color-cream) 100%);
+        }
+
+        .apply-card {
+            background: white;
+            max-width: 500px;
+            margin: 0 auto;
+            padding: 3rem;
+            border-radius: 24px;
+            box-shadow: 0 10px 50px rgba(26, 39, 68, 0.08);
+        }
+
+        .email-icon {
+            width: 80px;
+            height: 80px;
+            background: var(--color-coral);
+            border-radius: 20px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin: 0 auto 1.5rem;
+        }
+
+        .email-icon svg {
+            width: 40px;
+            height: 40px;
+            stroke: white;
+        }
+
+        .apply h3 {
+            font-family: var(--font-display);
+            font-size: 1.75rem;
+            color: var(--color-navy);
+            margin-bottom: 1rem;
+        }
+
+        .apply p {
+            color: var(--color-text-light);
+            margin-bottom: 2rem;
+        }
+
+        .email-link {
+            display: inline-block;
+            background: var(--color-coral-light);
+            color: var(--color-coral);
+            padding: 0.75rem 1.5rem;
+            border-radius: 12px;
+            font-weight: 700;
+            font-size: 1.1rem;
+            margin-bottom: 1.5rem;
+            text-decoration: none;
+            transition: all 0.3s ease;
+        }
+
+        .email-link:hover {
+            background: var(--color-coral);
+            color: white;
+        }
+
+        .apply-note {
+            font-size: 0.9rem;
+            color: var(--color-text-light);
+            background: var(--color-cream);
+            padding: 1rem;
+            border-radius: 12px;
+        }
+
+        /* Footer */
+        footer {
+            background: var(--color-navy);
+            color: rgba(255, 255, 255, 0.7);
+            text-align: center;
+            padding: 2rem;
+            font-size: 0.9rem;
+        }
+
+        footer a {
+            color: var(--color-coral);
+            text-decoration: none;
+        }
+    </style>
+</head>
+<body>
+    <!-- Hero Section -->
+    <section class="hero">
+        <div class="hero-content">
+            <span class="badge">MERCY EDUCATION — Launching April 2026</span>
+            <h1>TRUE SUCCESS <span>for ALL</span></h1>
+            <p class="hero-subtitle">We're building Success Academy International, an online school for American children. Join us as a founding teacher and help shape our Math & English programs from the ground up.</p>
+            <a href="#apply" class="cta-button">
+                Apply Now
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                    <path d="M5 12h14M12 5l7 7-7 7"/>
+                </svg>
+            </a>
+        </div>
+    </section>
+
+    <!-- Mission Section -->
+    <section class="about">
+        <div class="container">
+            <h2 class="section-title">Our Mission</h2>
+            <p class="section-subtitle">Essential Learning Program (ELP) — Spreading quality education worldwide to give every child the keys to hope and true success.</p>
+            
+            <div class="about-grid">
+                <div class="about-card">
+                    <div class="about-icon">❤️</div>
+                    <h3>Love</h3>
+                    <p>Students are the future of our world. We believe in every child's potential to succeed and make a positive impact. Guide them with love, smiles, and encouragement.</p>
+                </div>
+                <div class="about-card">
+                    <div class="about-icon">✨</div>
+                    <h3>Enlightenment</h3>
+                    <p>Through daily self-reflection and continuous growth, we strive to show children the path of self-improvement and spiritual development.</p>
+                </div>
+                <div class="about-card">
+                    <div class="about-icon">🙏</div>
+                    <h3>Salvation</h3>
+                    <p>Listen with an open heart. Accept each student where they are, understand their struggles, and offer healing and support.</p>
+                </div>
+                <div class="about-card">
+                    <div class="about-icon">🌍</div>
+                    <h3>Development</h3>
+                    <p>Our daily work contributes to building a better world. We aim for excellence that is worthy of gratitude and creates lasting positive change.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Position Details -->
+    <section class="details">
+        <div class="container">
+            <h2 class="section-title">Position Details</h2>
+            <p class="section-subtitle">We're currently in the preparation stage, with classes starting in April 2026. Join us now to help build something meaningful.</p>
+            
+            <div class="details-wrapper">
+                <div class="detail-block">
+                    <h3><span>📋</span> Job Overview</h3>
+                    <ul class="detail-list">
+                        <li>
+                            <span class="detail-label">Status</span>
+                            <span class="detail-value">Preparation Stage</span>
+                        </li>
+                        <li>
+                            <span class="detail-label">Launch</span>
+                            <span class="detail-value">April 2026 (Planned)</span>
+                        </li>
+                        <li>
+                            <span class="detail-label">Subjects</span>
+                            <span class="detail-value">Math & English</span>
+                        </li>
+                        <li>
+                            <span class="detail-label">Student Ages</span>
+                            <span class="detail-value">4 years old – 6th Grade</span>
+                        </li>
+                        <li>
+                            <span class="detail-label">Lesson Format</span>
+                            <span class="detail-value">Online (Zoom)</span>
+                        </li>
+                        <li>
+                            <span class="detail-label">Hours (Japan Time)</span>
+                            <span class="detail-value">Early Morning (TBD)</span>
+                        </li>
+                        <li>
+                            <span class="detail-label">Target Area</span>
+                            <span class="detail-value">US East Coast (EST)</span>
+                        </li>
+                    </ul>
+                </div>
+                
+                <div class="detail-block">
+                    <h3><span>💰</span> Compensation</h3>
+                    <ul class="detail-list">
+                        <li>
+                            <span class="detail-label">Hourly Rate</span>
+                            <span class="detail-value">¥2,000 / hour</span>
+                        </li>
+                        <li>
+                            <span class="detail-label">Payment</span>
+                            <span class="detail-value">Monthly</span>
+                        </li>
+                        <li>
+                            <span class="detail-label">Contract Type</span>
+                            <span class="detail-value">Freelance / Part-time</span>
+                        </li>
+                    </ul>
+                    <div class="highlight-box">
+                        <p>✨ No experience required – training provided!</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Ideal Candidate -->
+    <section class="ideal">
+        <div class="container">
+            <h2 class="section-title">Who We're Looking For</h2>
+            <p class="section-subtitle">Be sincere, honest, and hardworking. Accumulate small enlightenments to achieve great aspirations.</p>
+            
+            <div class="ideal-grid">
+                <div class="ideal-item">
+                    <h4>Happy Science Member</h4>
+                    <p>You deeply resonate with our mission and philosophy at Mercy Education.</p>
+                </div>
+                <div class="ideal-item">
+                    <h4>Fluent English Speaker</h4>
+                    <p>Native-level fluency preferred. Non-native speakers with excellent English are also welcome.</p>
+                </div>
+                <div class="ideal-item">
+                    <h4>Basic Japanese Comprehension</h4>
+                    <p>Able to understand instructions in Japanese. Reading and writing skills are not required.</p>
+                </div>
+                <div class="ideal-item">
+                    <h4>Early Morning Availability</h4>
+                    <p>Can commit to early morning hours (around 5–8 AM JST) on weekdays. Exact schedule to be determined.</p>
+                </div>
+                <div class="ideal-item">
+                    <h4>Love for Children</h4>
+                    <p>Believe in every child's potential and guide them with patience and encouragement.</p>
+                </div>
+                <div class="ideal-item">
+                    <h4>Commitment to Growth</h4>
+                    <p>Dedicated to continuous self-improvement and embodying our mission of true success.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Apply Section -->
+    <section class="apply" id="apply">
+        <div class="container">
+            <h2 class="section-title">Ready to Join Us?</h2>
+            <p class="section-subtitle">We'd love to hear from you! Send us an email.</p>
+            
+            <div class="apply-card">
+                <div class="email-icon">
+                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                        <rect x="2" y="4" width="20" height="16" rx="2"/>
+                        <path d="M22 6l-10 7L2 6"/>
+                    </svg>
+                </div>
+                <h3>Contact Us</h3>
+                <p>Send us a message with a brief self-introduction and your availability.</p>
+                <a href="mailto:info@mercy-education.com" class="email-link">info@mercy-education.com</a>
+                <p class="apply-note">💡 Please include: Your name, current location, and your local temple (支部名).</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+        <p>© 2025 Success Academy International | MERCY EDUCATION</p>
+        <p style="margin-top: 0.5rem;">Questions? Contact us at <a href="mailto:info@mercy-education.com">info@mercy-education.com</a></p>
+    </footer>
+</body>
+</html>
