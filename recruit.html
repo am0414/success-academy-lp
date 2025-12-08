@@ -419,7 +419,6 @@
             border-radius: 12px;
             font-weight: 700;
             font-size: 1.1rem;
-            margin-bottom: 1.5rem;
             text-decoration: none;
             transition: all 0.3s ease;
         }
@@ -427,6 +426,50 @@
         .email-link:hover {
             background: var(--color-coral);
             color: white;
+        }
+
+        .email-container {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 0.75rem;
+            margin-bottom: 1.5rem;
+        }
+
+        .copy-btn {
+            background: var(--color-cream);
+            border: 2px solid #e0e0e0;
+            border-radius: 10px;
+            padding: 0.6rem;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .copy-btn:hover {
+            background: #f0f0f0;
+            border-color: var(--color-coral);
+        }
+
+        .copy-btn svg {
+            width: 20px;
+            height: 20px;
+            stroke: var(--color-text-light);
+        }
+
+        .copy-btn:hover svg {
+            stroke: var(--color-coral);
+        }
+
+        .copy-btn.copied {
+            background: var(--color-sage-light);
+            border-color: var(--color-sage);
+        }
+
+        .copy-btn.copied svg {
+            stroke: var(--color-sage);
         }
 
         .apply-note {
@@ -614,7 +657,18 @@
                 </div>
                 <h3>Contact Us</h3>
                 <p>Send us a message with a brief self-introduction and your availability.</p>
-                <a href="mailto:info@mercy-education.com" class="email-link">info@mercy-education.com</a>
+                <div class="email-container">
+                    <a href="mailto:info@mercy-education.com" class="email-link">info@mercy-education.com</a>
+                    <button class="copy-btn" onclick="copyEmail()">
+                        <svg class="copy-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                            <rect x="9" y="9" width="13" height="13" rx="2" ry="2"></rect>
+                            <path d="M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1"></path>
+                        </svg>
+                        <svg class="check-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="display:none;">
+                            <polyline points="20 6 9 17 4 12"></polyline>
+                        </svg>
+                    </button>
+                </div>
                 <p class="apply-note">💡 Please include: Your name, current location, and your local temple (支部名).</p>
             </div>
         </div>
@@ -625,5 +679,26 @@
         <p>© 2025 Success Academy International | MERCY EDUCATION</p>
         <p style="margin-top: 0.5rem;">Questions? Contact us at <a href="mailto:info@mercy-education.com">info@mercy-education.com</a></p>
     </footer>
+
+    <script>
+        function copyEmail() {
+            const email = 'info@mercy-education.com';
+            navigator.clipboard.writeText(email).then(() => {
+                const btn = document.querySelector('.copy-btn');
+                const copyIcon = btn.querySelector('.copy-icon');
+                const checkIcon = btn.querySelector('.check-icon');
+                
+                btn.classList.add('copied');
+                copyIcon.style.display = 'none';
+                checkIcon.style.display = 'block';
+                
+                setTimeout(() => {
+                    btn.classList.remove('copied');
+                    copyIcon.style.display = 'block';
+                    checkIcon.style.display = 'none';
+                }, 2000);
+            });
+        }
+    </script>
 </body>
 </html>
