@@ -1,0 +1,1278 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="robots" content="noindex, nofollow">
+    <title>説明会動画 | Success Academy</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@300;400;500;600;700&family=Zen+Maru+Gothic:wght@400;500;700&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --primary: #E8505B;
+            --primary-dark: #D43F4A;
+            --secondary: #FFB347;
+            --accent: #4ECDC4;
+            --text-dark: #2D3436;
+            --text-light: #636E72;
+            --bg-cream: #FDF8F5;
+            --bg-white: #FFFFFF;
+            --shadow-soft: 0 4px 20px rgba(0,0,0,0.08);
+            --shadow-hover: 0 8px 30px rgba(232,80,91,0.2);
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Noto Sans JP', sans-serif;
+            background: var(--bg-cream);
+            color: var(--text-dark);
+            line-height: 1.8;
+            overflow-x: hidden;
+            padding-top: 80px;
+        }
+
+        /* Fixed Countdown Bar */
+        .countdown-bar {
+            position: fixed;
+            top: 0;
+            left: 0;
+            right: 0;
+            background: linear-gradient(135deg, var(--primary), var(--primary-dark));
+            color: white;
+            padding: 12px 20px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 20px;
+            z-index: 1000;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.15);
+        }
+
+        .countdown-bar .countdown-label {
+            font-size: 0.9rem;
+            font-weight: 600;
+            margin: 0;
+            color: white;
+        }
+
+        .countdown-bar .countdown-timer {
+            display: flex;
+            align-items: center;
+            gap: 6px;
+        }
+
+        .countdown-bar .countdown-item {
+            background: rgba(255,255,255,0.2);
+            padding: 6px 10px;
+            border-radius: 8px;
+            min-width: auto;
+            box-shadow: none;
+            text-align: center;
+        }
+
+        .countdown-bar .countdown-number {
+            font-family: 'Zen Maru Gothic', sans-serif;
+            font-size: 1.2rem;
+            font-weight: 700;
+            line-height: 1;
+        }
+
+        .countdown-bar .countdown-unit {
+            font-size: 0.65rem;
+            margin-top: 2px;
+            opacity: 0.9;
+        }
+
+        .countdown-bar .countdown-separator {
+            font-size: 1.2rem;
+            font-weight: 700;
+            color: white;
+        }
+
+        .countdown-expired {
+            font-weight: 600;
+        }
+        .hero {
+            background: linear-gradient(135deg, var(--bg-white) 0%, var(--bg-cream) 100%);
+            padding: 60px 20px 40px;
+            text-align: center;
+            position: relative;
+        }
+
+        .hero::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            height: 4px;
+            background: linear-gradient(90deg, var(--primary), var(--secondary), var(--accent));
+        }
+
+        .hero-badge {
+            display: inline-block;
+            background: linear-gradient(135deg, var(--primary), var(--primary-dark));
+            color: white;
+            padding: 8px 24px;
+            border-radius: 50px;
+            font-size: 0.85rem;
+            font-weight: 500;
+            margin-bottom: 20px;
+            animation: fadeInDown 0.6s ease-out;
+        }
+
+        .hero h1 {
+            font-family: 'Zen Maru Gothic', sans-serif;
+            font-size: clamp(1.8rem, 5vw, 2.5rem);
+            font-weight: 700;
+            color: var(--text-dark);
+            margin-bottom: 16px;
+            animation: fadeInUp 0.6s ease-out 0.2s backwards;
+        }
+
+        .hero-subtitle {
+            font-size: 1rem;
+            color: var(--text-light);
+            max-width: 600px;
+            margin: 0 auto;
+            text-align: center;
+            animation: fadeInUp 0.6s ease-out 0.4s backwards;
+        }
+
+        /* New Course Notice */
+        .new-course-notice {
+            margin-top: 32px;
+            padding: 24px;
+            background: linear-gradient(135deg, #E8F5E9, #C8E6C9);
+            border-radius: 16px;
+            max-width: 500px;
+            margin-left: auto;
+            margin-right: auto;
+            animation: fadeInUp 0.6s ease-out 0.6s backwards;
+        }
+
+        .course-badge {
+            display: inline-block;
+            background: linear-gradient(135deg, #43A047, #2E7D32);
+            color: white;
+            padding: 8px 20px;
+            border-radius: 50px;
+            font-size: 1rem;
+            font-weight: 600;
+            margin-bottom: 12px;
+        }
+
+        .course-message {
+            font-size: 0.95rem;
+            color: var(--text-dark);
+            line-height: 1.7;
+            text-align: center;
+        }
+
+        .highlight-date {
+            display: inline-block;
+            background: white;
+            padding: 4px 12px;
+            border-radius: 8px;
+            color: #2E7D32;
+            font-weight: 600;
+            margin-top: 8px;
+        }
+
+        /* Video Section */
+        .video-section {
+            padding: 40px 20px 60px;
+            max-width: 900px;
+            margin: 0 auto;
+        }
+
+        .video-container {
+            position: relative;
+            background: var(--bg-white);
+            border-radius: 20px;
+            box-shadow: var(--shadow-soft);
+            overflow: hidden;
+            animation: fadeInUp 0.8s ease-out 0.5s backwards;
+        }
+
+        .video-wrapper {
+            position: relative;
+            padding-bottom: 56.25%;
+            height: 0;
+            overflow: hidden;
+        }
+
+        .video-wrapper iframe {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            border: none;
+        }
+
+        .video-placeholder {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            color: white;
+        }
+
+        /* Custom Video Player Styles */
+        .custom-video-container {
+            position: relative;
+            width: 100%;
+            background: #000;
+        }
+
+        .custom-video-container video {
+            width: 100%;
+            display: block;
+        }
+
+        .video-controls {
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            right: 0;
+            background: linear-gradient(transparent, rgba(0,0,0,0.8));
+            padding: 20px 16px 12px;
+            display: flex;
+            flex-direction: column;
+            gap: 8px;
+            opacity: 0;
+            transition: opacity 0.3s;
+        }
+
+        .custom-video-container:hover .video-controls,
+        .custom-video-container.playing .video-controls {
+            opacity: 1;
+        }
+
+        .progress-container {
+            width: 100%;
+            height: 6px;
+            background: rgba(255,255,255,0.3);
+            border-radius: 3px;
+            cursor: not-allowed;
+            position: relative;
+        }
+
+        .progress-bar {
+            height: 100%;
+            background: var(--primary);
+            border-radius: 3px;
+            width: 0%;
+            transition: width 0.1s linear;
+        }
+
+        .progress-allowed {
+            position: absolute;
+            top: 0;
+            left: 0;
+            height: 100%;
+            background: rgba(255,255,255,0.2);
+            border-radius: 3px;
+            pointer-events: none;
+        }
+
+        .controls-row {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            gap: 12px;
+        }
+
+        .controls-left, .controls-right {
+            display: flex;
+            align-items: center;
+            gap: 12px;
+        }
+
+        .video-btn {
+            background: none;
+            border: none;
+            color: white;
+            cursor: pointer;
+            padding: 6px;
+            border-radius: 4px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            transition: background 0.2s;
+        }
+
+        .video-btn:hover {
+            background: rgba(255,255,255,0.2);
+        }
+
+        .video-btn svg {
+            width: 24px;
+            height: 24px;
+            fill: white;
+        }
+
+        .time-display {
+            color: white;
+            font-size: 0.85rem;
+            font-family: monospace;
+        }
+
+        .speed-btn {
+            background: rgba(255,255,255,0.2);
+            border: none;
+            color: white;
+            cursor: pointer;
+            padding: 4px 10px;
+            border-radius: 4px;
+            font-size: 0.8rem;
+            font-weight: 600;
+            transition: background 0.2s;
+        }
+
+        .speed-btn:hover {
+            background: rgba(255,255,255,0.3);
+        }
+
+        .speed-btn.active {
+            background: var(--primary);
+        }
+
+        .video-overlay {
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            background: rgba(0,0,0,0.3);
+            cursor: pointer;
+            transition: opacity 0.3s;
+        }
+
+        .video-overlay.hidden {
+            opacity: 0;
+            pointer-events: none;
+        }
+
+        .play-overlay-btn {
+            width: 80px;
+            height: 80px;
+            background: rgba(255,255,255,0.9);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            transition: transform 0.2s;
+        }
+
+        .play-overlay-btn:hover {
+            transform: scale(1.1);
+        }
+
+        .play-overlay-btn svg {
+            width: 36px;
+            height: 36px;
+            fill: var(--primary);
+            margin-left: 4px;
+        }
+
+        .play-icon {
+            width: 80px;
+            height: 80px;
+            background: rgba(255,255,255,0.2);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin-bottom: 16px;
+            backdrop-filter: blur(10px);
+        }
+
+        .play-icon svg {
+            width: 32px;
+            height: 32px;
+            fill: white;
+            margin-left: 4px;
+        }
+
+        .video-note {
+            text-align: center;
+            padding: 20px;
+            color: var(--text-light);
+            font-size: 0.9rem;
+        }
+
+        /* Code Notice */
+        .code-notice {
+            background: linear-gradient(135deg, #FFF9E6, #FFF3CD);
+            border: 2px solid var(--secondary);
+            border-radius: 16px;
+            padding: 24px;
+            margin-top: 24px;
+            text-align: center;
+            animation: fadeInUp 0.8s ease-out 0.7s backwards;
+        }
+
+        .code-notice-icon {
+            width: 56px;
+            height: 56px;
+            background: var(--secondary);
+            border-radius: 12px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 1.5rem;
+            margin: 0 auto 16px;
+        }
+
+        .code-notice-content h3 {
+            font-size: 1.1rem;
+            font-weight: 600;
+            color: var(--text-dark);
+            margin-bottom: 10px;
+        }
+
+        .code-notice-content p {
+            font-size: 0.9rem;
+            color: var(--text-light);
+            line-height: 1.6;
+        }
+
+        .code-notice-content .highlight-code {
+            display: inline-block;
+            background: white;
+            border: 1px dashed var(--secondary);
+            padding: 4px 14px;
+            border-radius: 6px;
+            font-weight: 600;
+            color: var(--primary);
+            margin-top: 12px;
+        }
+
+        /* Flow Section */
+        .flow-section {
+            padding: 60px 20px;
+            background: var(--bg-white);
+        }
+
+        .section-header {
+            text-align: center;
+            margin-bottom: 50px;
+        }
+
+        .section-header h2 {
+            font-family: 'Zen Maru Gothic', sans-serif;
+            font-size: clamp(1.5rem, 4vw, 2rem);
+            color: var(--text-dark);
+            margin-bottom: 12px;
+        }
+
+        .section-header .badge-free {
+            display: inline-block;
+            background: linear-gradient(135deg, var(--accent), #3DB9B2);
+            color: white;
+            padding: 6px 16px;
+            border-radius: 50px;
+            font-size: 0.85rem;
+            font-weight: 500;
+            margin-bottom: 16px;
+        }
+
+        .section-header p {
+            color: var(--text-light);
+            font-size: 0.95rem;
+        }
+
+        .flow-container {
+            max-width: 800px;
+            margin: 0 auto;
+        }
+
+        .flow-step {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            text-align: center;
+            margin-bottom: 48px;
+            opacity: 0;
+            transform: translateY(20px);
+            animation: fadeInUp 0.6s ease-out forwards;
+        }
+
+        .flow-step:nth-child(1) { animation-delay: 0.1s; }
+        .flow-step:nth-child(2) { animation-delay: 0.2s; }
+        .flow-step:nth-child(3) { animation-delay: 0.3s; }
+
+        .step-number {
+            flex-shrink: 0;
+            width: 56px;
+            height: 56px;
+            background: linear-gradient(135deg, var(--primary), var(--primary-dark));
+            color: white;
+            border-radius: 16px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-family: 'Zen Maru Gothic', sans-serif;
+            font-size: 1.5rem;
+            font-weight: 700;
+            box-shadow: 0 4px 15px rgba(232,80,91,0.3);
+            margin-bottom: 16px;
+        }
+
+        .step-content {
+            max-width: 400px;
+        }
+
+        .step-content h3 {
+            font-size: 1.1rem;
+            font-weight: 600;
+            color: var(--text-dark);
+            margin-bottom: 8px;
+        }
+
+        .step-content p {
+            color: var(--text-light);
+            font-size: 0.95rem;
+            line-height: 1.7;
+        }
+
+        .step-highlight {
+            display: inline-block;
+            background: linear-gradient(135deg, rgba(232,80,91,0.1), rgba(255,179,71,0.1));
+            padding: 2px 10px;
+            border-radius: 6px;
+            color: var(--primary);
+            font-weight: 500;
+        }
+
+        .step-code-reminder {
+            display: inline-flex;
+            align-items: center;
+            gap: 6px;
+            background: #FFF9E6;
+            border: 1px solid var(--secondary);
+            padding: 4px 12px;
+            border-radius: 6px;
+            font-size: 0.85rem;
+            color: #B8860B;
+            font-weight: 500;
+            margin-top: 8px;
+        }
+
+        .tutorial-link {
+            display: inline-block;
+            margin-top: 12px;
+            padding: 8px 16px;
+            background: var(--bg-cream);
+            border: 1px solid #ddd;
+            border-radius: 8px;
+            color: var(--primary);
+            font-size: 0.9rem;
+            font-weight: 500;
+            text-decoration: none;
+            transition: all 0.2s ease;
+        }
+
+        .tutorial-link:hover {
+            background: var(--primary);
+            color: white;
+            border-color: var(--primary);
+        }
+
+        .step-note {
+            font-size: 0.85rem;
+            color: var(--text-light);
+            margin-top: 8px;
+        }
+
+        /* CTA Section */
+        .cta-section {
+            padding: 80px 20px;
+            background: linear-gradient(135deg, var(--bg-cream) 0%, #FFF5F5 100%);
+            text-align: center;
+            position: relative;
+        }
+
+        .cta-section::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 100px;
+            height: 4px;
+            background: linear-gradient(90deg, var(--primary), var(--secondary));
+            border-radius: 2px;
+        }
+
+        .cta-content {
+            max-width: 600px;
+            margin: 0 auto;
+        }
+
+        .cta-content h2 {
+            font-family: 'Zen Maru Gothic', sans-serif;
+            font-size: clamp(1.5rem, 4vw, 2rem);
+            color: var(--text-dark);
+            margin-bottom: 16px;
+        }
+
+        .cta-content p {
+            color: var(--text-light);
+            margin-bottom: 32px;
+            font-size: 1rem;
+        }
+
+        .cta-button {
+            display: inline-flex;
+            align-items: center;
+            gap: 12px;
+            background: linear-gradient(135deg, var(--primary), var(--primary-dark));
+            color: white;
+            padding: 18px 48px;
+            border-radius: 60px;
+            font-size: 1.1rem;
+            font-weight: 600;
+            text-decoration: none;
+            box-shadow: var(--shadow-soft);
+            transition: all 0.3s ease;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .cta-button::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: -100%;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(90deg, transparent, rgba(255,255,255,0.2), transparent);
+            transition: left 0.5s ease;
+        }
+
+        .cta-button:hover {
+            transform: translateY(-3px);
+            box-shadow: var(--shadow-hover);
+        }
+
+        .cta-button:hover::before {
+            left: 100%;
+        }
+
+        .cta-button svg {
+            width: 20px;
+            height: 20px;
+            fill: currentColor;
+        }
+
+        .cta-features {
+            display: flex;
+            justify-content: center;
+            gap: 24px;
+            margin-top: 24px;
+            flex-wrap: wrap;
+        }
+
+        .cta-features span {
+            display: inline-flex;
+            align-items: center;
+            gap: 6px;
+            font-size: 0.9rem;
+            color: var(--text-light);
+        }
+
+        .cta-features .check {
+            color: var(--accent);
+            font-weight: bold;
+        }
+
+        .extension-notice {
+            margin-top: 32px;
+            padding: 20px 24px;
+            background: linear-gradient(135deg, #E3F2FD, #BBDEFB);
+            border-radius: 12px;
+            border: 1px solid #90CAF9;
+        }
+
+        .extension-notice p {
+            font-size: 0.95rem;
+            color: var(--text-dark);
+            line-height: 1.8;
+            margin: 0;
+        }
+
+        .extension-notice a {
+            color: #1976D2;
+            font-weight: 600;
+            text-decoration: none;
+        }
+
+        .extension-notice a:hover {
+            text-decoration: underline;
+        }
+
+        .extension-highlight {
+            display: inline-block;
+            background: white;
+            padding: 4px 12px;
+            border-radius: 6px;
+            color: #1565C0;
+            font-weight: 600;
+            margin-top: 8px;
+        }
+
+        .extension-warning {
+            margin-top: 12px;
+            font-size: 0.85rem;
+            color: #C62828;
+            font-weight: 500;
+        }
+
+        /* Footer */
+        .footer {
+            background: var(--text-dark);
+            color: rgba(255,255,255,0.7);
+            text-align: center;
+            padding: 30px 20px;
+            font-size: 0.85rem;
+        }
+
+        .footer a {
+            color: rgba(255,255,255,0.9);
+            text-decoration: none;
+        }
+
+        /* Animations */
+        @keyframes fadeInDown {
+            from {
+                opacity: 0;
+                transform: translateY(-20px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        @keyframes fadeInUp {
+            from {
+                opacity: 0;
+                transform: translateY(20px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        @keyframes slideInRight {
+            to {
+                opacity: 1;
+                transform: translateX(0);
+            }
+        }
+
+        /* Responsive */
+        @media (max-width: 600px) {
+            body {
+                padding-top: 70px;
+            }
+
+            .countdown-bar {
+                flex-direction: column;
+                gap: 8px;
+                padding: 10px 16px;
+            }
+
+            .countdown-bar .countdown-item {
+                padding: 4px 8px;
+            }
+
+            .countdown-bar .countdown-number {
+                font-size: 1rem;
+            }
+
+            .hero {
+                padding: 50px 16px 30px;
+            }
+
+            .video-section {
+                padding: 30px 16px 50px;
+            }
+
+            .flow-section {
+                padding: 50px 16px;
+            }
+
+            .flow-step {
+                gap: 16px;
+            }
+
+            .step-number {
+                width: 48px;
+                height: 48px;
+                font-size: 1.3rem;
+            }
+
+            .cta-section {
+                padding: 60px 16px;
+            }
+
+            .cta-button {
+                padding: 16px 36px;
+                font-size: 1rem;
+            }
+
+            .cta-features {
+                flex-direction: column;
+                gap: 12px;
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <!-- Fixed Countdown Bar -->
+    <div class="countdown-bar">
+        <p class="countdown-label">⏰ このページの公開期限</p>
+        <div class="countdown-timer" id="countdown">
+            <div class="countdown-item">
+                <span class="countdown-number" id="hours">23</span>
+                <span class="countdown-unit">時間</span>
+            </div>
+            <div class="countdown-separator">:</div>
+            <div class="countdown-item">
+                <span class="countdown-number" id="minutes">59</span>
+                <span class="countdown-unit">分</span>
+            </div>
+            <div class="countdown-separator">:</div>
+            <div class="countdown-item">
+                <span class="countdown-number" id="seconds">59</span>
+                <span class="countdown-unit">秒</span>
+            </div>
+        </div>
+    </div>
+
+    <!-- Hero Section -->
+    <section class="hero">
+        <span class="hero-badge">📹 説明会動画</span>
+        <h1>日程が合わない方へ</h1>
+        <p class="hero-subtitle">
+            説明会への参加が難しい方のために、<br>
+            説明会の内容を動画でご用意いたしました。
+        </p>
+        
+        <!-- New Course Notice -->
+        <div class="new-course-notice">
+            <div class="course-badge">🌸 2026年1月5日(月)から新規クール開始！</div>
+            <p class="course-message">
+                新しいクールに向けて、今から準備を始めましょう。<br>
+                <span class="highlight-date">12月中にご登録いただくと、1月19日まで体験できます！</span>
+            </p>
+        </div>
+    </section>
+
+    <!-- Video Section -->
+    <section class="video-section">
+        <div class="video-container">
+            <div class="custom-video-container" id="videoContainer">
+                <!-- 動画URLをここに設定 -->
+                <video id="mainVideo" playsinline>
+                    <source src="https://pub-095a0484f394489392c64093ed976e10.r2.dev/setsumeikai.mp4" type="video/mp4">
+                    お使いのブラウザは動画再生に対応していません。
+                </video>
+                
+                <!-- 再生オーバーレイ -->
+                <div class="video-overlay" id="videoOverlay">
+                    <div class="play-overlay-btn">
+                        <svg viewBox="0 0 24 24"><path d="M8 5v14l11-7z"/></svg>
+                    </div>
+                </div>
+                
+                <!-- コントロール -->
+                <div class="video-controls">
+                    <div class="progress-container" id="progressContainer">
+                        <div class="progress-allowed" id="progressAllowed"></div>
+                        <div class="progress-bar" id="progressBar"></div>
+                    </div>
+                    <div class="controls-row">
+                        <div class="controls-left">
+                            <button class="video-btn" id="playPauseBtn">
+                                <svg id="playIcon" viewBox="0 0 24 24"><path d="M8 5v14l11-7z"/></svg>
+                                <svg id="pauseIcon" viewBox="0 0 24 24" style="display:none;"><path d="M6 19h4V5H6v14zm8-14v14h4V5h-4z"/></svg>
+                            </button>
+                            <span class="time-display"><span id="currentTime">0:00</span> / <span id="duration">0:00</span></span>
+                        </div>
+                        <div class="controls-right">
+                            <button class="speed-btn active" data-speed="1">1x</button>
+                            <button class="speed-btn" data-speed="1.5">1.5x</button>
+                            <button class="speed-btn" data-speed="2">2x</button>
+                            <button class="video-btn" id="fullscreenBtn">
+                                <svg viewBox="0 0 24 24"><path d="M7 14H5v5h5v-2H7v-3zm-2-4h2V7h3V5H5v5zm12 7h-3v2h5v-5h-2v3zM14 5v2h3v3h2V5h-5z"/></svg>
+                            </button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <p class="video-note">※ 動画は約20分です。早送り再生も可能です。</p>
+
+        <!-- Code Notice -->
+        <div class="code-notice">
+            <div class="code-notice-icon">🎁</div>
+            <div class="code-notice-content">
+                <h3>動画内で特典コードをお伝えしています</h3>
+                <p>動画内でご案内するコードを、会員登録時に入力してください。<br>説明会参加者限定の特典が適用されます。</p>
+                <span class="highlight-code">💡 コードは登録時に入力！</span>
+            </div>
+        </div>
+    </section>
+
+    <!-- Flow Section -->
+    <section class="flow-section">
+        <div class="section-header">
+            <span class="badge-free">✨ 1月19日まで無料体験</span>
+            <h2>📚 フリーレッスン体験の流れ</h2>
+            <p>簡単3ステップ</p>
+        </div>
+
+        <div class="flow-container">
+            <div class="flow-step">
+                <div class="step-number">1</div>
+                <div class="step-content">
+                    <h3>会員登録</h3>
+                    <p>
+                        メールアドレスとお支払い情報を登録。<br>
+                        <span class="step-highlight">体験期間中は料金が発生しません。</span>
+                    </p>
+                    <div class="step-code-reminder">
+                        🎁 動画内のコードを入力してください
+                    </div>
+                    <a href="https://youtu.be/iq_vI22n30M?si=n3JQiAbu07Mmr3Os" target="_blank" class="tutorial-link">
+                        ▶ 動画で解説！無料体験開始方法
+                    </a>
+                </div>
+            </div>
+
+            <div class="flow-step">
+                <div class="step-number">2</div>
+                <div class="step-content">
+                    <h3>レッスン予約</h3>
+                    <p>
+                        時間割から好きなクラスを選んで予約。<br>
+                        <span class="step-highlight">1月5日からレッスン開始！</span>
+                    </p>
+                    <p class="step-note">※ 12月中にご登録いただき、1月のレッスンからご参加ください。</p>
+                </div>
+            </div>
+
+            <div class="flow-step">
+                <div class="step-number">3</div>
+                <div class="step-content">
+                    <h3>レッスン受講</h3>
+                    <p>
+                        Zoomで参加。<br>
+                        <span class="step-highlight">週5日、毎日25分のレッスンが取り放題！</span>
+                    </p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- CTA Section -->
+    <section class="cta-section">
+        <div class="cta-content">
+            <h2>1月19日まで無料体験できます ✨</h2>
+            <p>
+                会員登録後すぐにレッスン予約ができます。<br>
+                動画内のコードを忘れずに入力してください！
+            </p>
+            <a href="https://success-academy.web.app/" class="cta-button">
+                フリーレッスンの体験を始める
+                <svg viewBox="0 0 24 24"><path d="M12 4l-1.41 1.41L16.17 11H4v2h12.17l-5.58 5.59L12 20l8-8z"/></svg>
+            </a>
+            <div class="cta-features">
+                <span><span class="check">✓</span> 1月19日まで無料</span>
+                <span><span class="check">✓</span> Stripeで安全決済</span>
+                <span><span class="check">✓</span> いつでも解約OK</span>
+            </div>
+
+            <!-- Extension Notice -->
+            <div class="extension-notice">
+                <p>📩 説明会動画を見て会員登録しました、と<br>
+                <a href="https://lin.ee/JVV8msS" target="_blank">LINE</a>または<a href="mailto:info@success-j-academy.com">メール</a>でご連絡ください。<br>
+                <span class="extension-highlight">体験期間を延長いたします！</span></p>
+                <p class="extension-warning">※ ご連絡がない場合、体験期間の延長ができませんのでご了承ください。</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <p>© 2025 <a href="https://success-j-academy.com/">Success Academy</a> All Rights Reserved.</p>
+    </footer>
+
+    <script>
+        // カスタムビデオプレイヤー
+        (function() {
+            const video = document.getElementById('mainVideo');
+            const videoContainer = document.getElementById('videoContainer');
+            const videoOverlay = document.getElementById('videoOverlay');
+            const playPauseBtn = document.getElementById('playPauseBtn');
+            const playIcon = document.getElementById('playIcon');
+            const pauseIcon = document.getElementById('pauseIcon');
+            const progressBar = document.getElementById('progressBar');
+            const progressAllowed = document.getElementById('progressAllowed');
+            const progressContainer = document.getElementById('progressContainer');
+            const currentTimeEl = document.getElementById('currentTime');
+            const durationEl = document.getElementById('duration');
+            const fullscreenBtn = document.getElementById('fullscreenBtn');
+            const speedBtns = document.querySelectorAll('.speed-btn');
+            
+            let maxWatchedTime = 0; // 視聴した最大位置を記録
+            
+            // 時間フォーマット
+            function formatTime(seconds) {
+                const mins = Math.floor(seconds / 60);
+                const secs = Math.floor(seconds % 60);
+                return `${mins}:${secs.toString().padStart(2, '0')}`;
+            }
+            
+            // 再生/一時停止
+            function togglePlay() {
+                if (video.paused) {
+                    video.play();
+                } else {
+                    video.pause();
+                }
+            }
+            
+            // 再生状態の更新
+            video.addEventListener('play', () => {
+                playIcon.style.display = 'none';
+                pauseIcon.style.display = 'block';
+                videoOverlay.classList.add('hidden');
+                videoContainer.classList.add('playing');
+            });
+            
+            video.addEventListener('pause', () => {
+                playIcon.style.display = 'block';
+                pauseIcon.style.display = 'none';
+                videoContainer.classList.remove('playing');
+            });
+            
+            // 時間更新
+            video.addEventListener('timeupdate', () => {
+                const current = video.currentTime;
+                const duration = video.duration;
+                
+                // 最大視聴位置を更新
+                if (current > maxWatchedTime) {
+                    maxWatchedTime = current;
+                }
+                
+                // プログレスバー更新
+                const progress = (current / duration) * 100;
+                const allowedProgress = (maxWatchedTime / duration) * 100;
+                progressBar.style.width = `${progress}%`;
+                progressAllowed.style.width = `${allowedProgress}%`;
+                
+                // 時間表示更新
+                currentTimeEl.textContent = formatTime(current);
+            });
+            
+            // 動画の長さ取得
+            video.addEventListener('loadedmetadata', () => {
+                durationEl.textContent = formatTime(video.duration);
+            });
+            
+            // プログレスバークリック（視聴済み範囲のみ許可）
+            progressContainer.addEventListener('click', (e) => {
+                const rect = progressContainer.getBoundingClientRect();
+                const clickX = e.clientX - rect.left;
+                const width = rect.width;
+                const clickPercent = clickX / width;
+                const clickTime = clickPercent * video.duration;
+                
+                // 視聴済みの位置までのみシーク可能
+                if (clickTime <= maxWatchedTime) {
+                    video.currentTime = clickTime;
+                }
+            });
+            
+            // イベントリスナー
+            playPauseBtn.addEventListener('click', togglePlay);
+            videoOverlay.addEventListener('click', togglePlay);
+            
+            // 動画クリックで再生/一時停止
+            video.addEventListener('click', togglePlay);
+            
+            // 再生速度
+            speedBtns.forEach(btn => {
+                btn.addEventListener('click', () => {
+                    speedBtns.forEach(b => b.classList.remove('active'));
+                    btn.classList.add('active');
+                    video.playbackRate = parseFloat(btn.dataset.speed);
+                });
+            });
+            
+            // フルスクリーン
+            fullscreenBtn.addEventListener('click', () => {
+                if (document.fullscreenElement) {
+                    document.exitFullscreen();
+                } else {
+                    videoContainer.requestFullscreen();
+                }
+            });
+            
+            // キーボードショートカット
+            document.addEventListener('keydown', (e) => {
+                if (e.target.tagName === 'INPUT' || e.target.tagName === 'TEXTAREA') return;
+                
+                switch(e.key) {
+                    case ' ':
+                        e.preventDefault();
+                        togglePlay();
+                        break;
+                    case 'ArrowLeft':
+                        video.currentTime = Math.max(0, video.currentTime - 10);
+                        break;
+                    case 'ArrowRight':
+                        // 右矢印は視聴済み範囲内のみ
+                        video.currentTime = Math.min(maxWatchedTime, video.currentTime + 10);
+                        break;
+                }
+            });
+        })();
+    </script>
+
+    <script>
+        // 24時間カウントダウンタイマー
+        (function() {
+            const STORAGE_KEY = 'sa_video_page_start';
+            const DURATION = 24 * 60 * 60 * 1000; // 24時間（ミリ秒）
+            
+            // 初回アクセス時刻を取得または設定
+            let startTime = localStorage.getItem(STORAGE_KEY);
+            if (!startTime) {
+                startTime = Date.now();
+                localStorage.setItem(STORAGE_KEY, startTime);
+            } else {
+                startTime = parseInt(startTime);
+            }
+            
+            const endTime = startTime + DURATION;
+            
+            function showExpiredPage() {
+                document.body.innerHTML = `
+                    <div style="
+                        min-height: 100vh;
+                        display: flex;
+                        flex-direction: column;
+                        align-items: center;
+                        justify-content: center;
+                        background: linear-gradient(135deg, #FDF8F5, #FFF5F5);
+                        padding: 40px 20px;
+                        text-align: center;
+                        font-family: 'Noto Sans JP', sans-serif;
+                    ">
+                        <div style="
+                            background: white;
+                            padding: 48px;
+                            border-radius: 20px;
+                            box-shadow: 0 4px 20px rgba(0,0,0,0.08);
+                            max-width: 500px;
+                        ">
+                            <div style="font-size: 4rem; margin-bottom: 20px;">⏰</div>
+                            <h1 style="
+                                font-family: 'Zen Maru Gothic', sans-serif;
+                                font-size: 1.5rem;
+                                color: #2D3436;
+                                margin-bottom: 16px;
+                            ">公開期限が終了しました</h1>
+                            <p style="
+                                color: #636E72;
+                                line-height: 1.8;
+                                margin-bottom: 24px;
+                            ">
+                                このページは24時間限定公開でした。<br>
+                                ご質問がございましたら、お気軽にお問い合わせください。
+                            </p>
+                            <div style="display: flex; flex-direction: column; gap: 12px; align-items: center;">
+                                <a href="https://lin.ee/JVV8msS" target="_blank" style="
+                                    display: inline-block;
+                                    background: #06C755;
+                                    color: white;
+                                    padding: 14px 32px;
+                                    border-radius: 50px;
+                                    text-decoration: none;
+                                    font-weight: 600;
+                                    min-width: 220px;
+                                    text-align: center;
+                                ">LINEでお問い合わせ</a>
+                                <a href="mailto:info@mercy-education.com" style="
+                                    display: inline-block;
+                                    background: linear-gradient(135deg, #E8505B, #D43F4A);
+                                    color: white;
+                                    padding: 14px 32px;
+                                    border-radius: 50px;
+                                    text-decoration: none;
+                                    font-weight: 600;
+                                    min-width: 220px;
+                                    text-align: center;
+                                ">メールでお問い合わせ</a>
+                            </div>
+                        </div>
+                    </div>
+                `;
+                document.body.style.paddingTop = '0';
+            }
+            
+            function updateCountdown() {
+                const now = Date.now();
+                const remaining = endTime - now;
+                
+                if (remaining <= 0) {
+                    showExpiredPage();
+                    return;
+                }
+                
+                const hours = Math.floor(remaining / (1000 * 60 * 60));
+                const minutes = Math.floor((remaining % (1000 * 60 * 60)) / (1000 * 60));
+                const seconds = Math.floor((remaining % (1000 * 60)) / 1000);
+                
+                document.getElementById('hours').textContent = String(hours).padStart(2, '0');
+                document.getElementById('minutes').textContent = String(minutes).padStart(2, '0');
+                document.getElementById('seconds').textContent = String(seconds).padStart(2, '0');
+            }
+            
+            // ページ読み込み時にすでに期限切れかチェック
+            if (Date.now() >= endTime) {
+                showExpiredPage();
+            } else {
+                updateCountdown();
+                setInterval(updateCountdown, 1000);
+            }
+        })();
+    </script>
+
+</body>
+</html>
