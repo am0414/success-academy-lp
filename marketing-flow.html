@@ -1,0 +1,417 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>説明会案内フロー | Success Academy マーケティング</title>
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@400;500;700&display=swap" rel="stylesheet">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        body {
+            font-family: 'Noto Sans JP', sans-serif;
+            background: #f5f7fa;
+            padding: 40px 20px;
+            color: #2d3436;
+            line-height: 1.8;
+        }
+        .container {
+            max-width: 900px;
+            margin: 0 auto;
+        }
+        h1 {
+            text-align: center;
+            font-size: 1.8rem;
+            margin-bottom: 10px;
+            color: #2d3436;
+        }
+        .subtitle {
+            text-align: center;
+            color: #636e72;
+            margin-bottom: 40px;
+        }
+        
+        /* Flow Chart Styles */
+        .flow-section {
+            margin-bottom: 50px;
+        }
+        .step-header {
+            display: flex;
+            align-items: center;
+            gap: 15px;
+            margin-bottom: 20px;
+        }
+        .step-badge {
+            background: linear-gradient(135deg, #E8505B, #D43F4A);
+            color: white;
+            padding: 8px 20px;
+            border-radius: 25px;
+            font-weight: 700;
+            font-size: 0.9rem;
+        }
+        .step-badge.green {
+            background: linear-gradient(135deg, #00b894, #00a085);
+        }
+        .step-title {
+            font-size: 1.3rem;
+            font-weight: 700;
+        }
+        .team-badge {
+            display: inline-block;
+            background: #dfe6e9;
+            color: #636e72;
+            padding: 4px 12px;
+            border-radius: 15px;
+            font-size: 0.75rem;
+            font-weight: 600;
+            margin-left: 10px;
+        }
+        .team-badge.marketing {
+            background: #ffeaa7;
+            color: #d68910;
+        }
+        .team-badge.email {
+            background: #81ecec;
+            color: #00878a;
+        }
+        
+        .card {
+            background: white;
+            border-radius: 16px;
+            padding: 25px;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.08);
+            margin-bottom: 20px;
+        }
+        .message-box {
+            background: #f8f9fa;
+            border-left: 4px solid #E8505B;
+            padding: 20px;
+            border-radius: 0 12px 12px 0;
+            font-size: 0.95rem;
+            white-space: pre-line;
+        }
+        .note {
+            background: #fff3cd;
+            border-radius: 10px;
+            padding: 15px 20px;
+            margin-top: 15px;
+            font-size: 0.9rem;
+        }
+        .note-icon {
+            margin-right: 8px;
+        }
+        
+        /* Arrow */
+        .arrow-down {
+            display: flex;
+            justify-content: center;
+            padding: 20px 0;
+        }
+        .arrow-down svg {
+            width: 40px;
+            height: 40px;
+            fill: #b2bec3;
+        }
+        
+        /* Branch */
+        .branch-container {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 20px;
+        }
+        @media (max-width: 700px) {
+            .branch-container {
+                grid-template-columns: 1fr;
+            }
+        }
+        .branch-card {
+            background: white;
+            border-radius: 16px;
+            padding: 25px;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.08);
+            border-top: 4px solid #dfe6e9;
+        }
+        .branch-card.option1 {
+            border-top-color: #00b894;
+        }
+        .branch-card.option2 {
+            border-top-color: #fdcb6e;
+        }
+        .branch-header {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            margin-bottom: 15px;
+        }
+        .branch-number {
+            width: 30px;
+            height: 30px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-weight: 700;
+            font-size: 0.9rem;
+            color: white;
+        }
+        .branch-card.option1 .branch-number {
+            background: #00b894;
+        }
+        .branch-card.option2 .branch-number {
+            background: #fdcb6e;
+            color: #2d3436;
+        }
+        .branch-title {
+            font-weight: 700;
+            font-size: 1.1rem;
+        }
+        .action-list {
+            list-style: none;
+            margin-top: 15px;
+        }
+        .action-list li {
+            padding: 10px 0;
+            border-bottom: 1px dashed #dfe6e9;
+            display: flex;
+            align-items: flex-start;
+            gap: 10px;
+        }
+        .action-list li:last-child {
+            border-bottom: none;
+        }
+        .action-number {
+            background: #dfe6e9;
+            color: #636e72;
+            width: 22px;
+            height: 22px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 0.75rem;
+            font-weight: 700;
+            flex-shrink: 0;
+            margin-top: 2px;
+        }
+        .url-box {
+            background: #2d3436;
+            color: #00cec9;
+            padding: 12px 15px;
+            border-radius: 8px;
+            font-family: monospace;
+            font-size: 0.85rem;
+            word-break: break-all;
+            margin-top: 10px;
+        }
+        .highlight {
+            background: #ffeaa7;
+            padding: 2px 6px;
+            border-radius: 4px;
+        }
+        
+        /* Summary */
+        .summary-box {
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: white;
+            border-radius: 16px;
+            padding: 30px;
+            margin-top: 40px;
+        }
+        .summary-title {
+            font-size: 1.2rem;
+            font-weight: 700;
+            margin-bottom: 20px;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+        .summary-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 20px;
+        }
+        @media (max-width: 600px) {
+            .summary-grid {
+                grid-template-columns: 1fr;
+            }
+        }
+        .summary-item {
+            background: rgba(255,255,255,0.15);
+            padding: 15px;
+            border-radius: 10px;
+        }
+        .summary-item h4 {
+            font-size: 0.85rem;
+            opacity: 0.9;
+            margin-bottom: 5px;
+        }
+        .summary-item p {
+            font-weight: 600;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>📋 説明会案内フロー</h1>
+        <p class="subtitle">1月新クール（Jan 2026）LINE対応マニュアル</p>
+        
+        <!-- Communication Policy -->
+        <div class="card" style="border-left: 4px solid #E8505B; margin-bottom: 40px;">
+            <div style="display: flex; align-items: center; gap: 10px; margin-bottom: 15px;">
+                <span style="font-size: 1.5rem;">💬</span>
+                <span style="font-weight: 700; font-size: 1.1rem;">お願いしたいこと</span>
+            </div>
+            <p style="color: #636e72; margin-bottom: 15px;">
+                できる限り、保護者様から返事が来るような受け答えをお願いします😊
+            </p>
+            <p style="color: #636e72; margin-bottom: 15px;">
+                機械的な返事ではなく、<strong>LINEのラリーが続くような感じ</strong>だと嬉しいです！<br>
+                例えば、最後を質問で終わるなど工夫してみてください✨
+            </p>
+            <div style="background: #ffe0e0; padding: 12px 15px; border-radius: 8px; margin-bottom: 10px;">
+                ❌ 機械的に見える、情報過多な返信は避ける
+            </div>
+            <div style="background: #e0f7e0; padding: 12px 15px; border-radius: 8px; margin-bottom: 15px;">
+                ✅ LINEノートに進捗情報を随時更新する
+            </div>
+            <div style="background: #ffeaa7; padding: 15px; border-radius: 10px;">
+                <strong>🎯 目的：</strong>保護者様にサクセスアカデミーへの<strong>親近感</strong>を持っていただくため
+            </div>
+        </div>
+        
+        <!-- STEP 1 -->
+        <div class="flow-section">
+            <div class="step-header">
+                <span class="step-badge">STEP 1</span>
+                <span class="step-title">初回メッセージ送信</span>
+                <span class="team-badge marketing">マーケティング担当</span>
+            </div>
+            <div class="card">
+                <p style="margin-bottom: 15px; font-weight: 600;">以下のメッセージをLINEで送信：</p>
+                <div class="message-box">こんにちは😊
+新クールの開始が近づいてきたため、
+個別にご案内させていただきました。
+
+12月の無料説明会の日程を増やしておりますが、
+ご都合に合う日程はありますでしょうか？
+
+もし参加できそうな日があれば、
+"この日いけます" と一言いただけると嬉しいです。
+
+日程をもう一度確認されたい場合は、
+お知らせいただければすぐに送りいたします✨</div>
+                <div class="note">
+                    <span class="note-icon">📝</span>
+                    <strong>送信後：</strong>名前を編集して連絡回数を記録（例：「<span class="highlight">1</span> 山田花子」→「<span class="highlight">2</span> 山田花子」→「<span class="highlight">3</span> 山田花子」）
+                </div>
+            </div>
+        </div>
+        
+        <!-- Arrow -->
+        <div class="arrow-down">
+            <svg viewBox="0 0 24 24"><path d="M7.41 8.59L12 13.17l4.59-4.58L18 10l-6 6-6-6 1.41-1.41z"/></svg>
+        </div>
+        
+        <!-- STEP 2 -->
+        <div class="flow-section">
+            <div class="step-header">
+                <span class="step-badge green">STEP 2</span>
+                <span class="step-title">返信対応</span>
+                <span class="team-badge email">メールチーム担当</span>
+            </div>
+            
+            <p style="margin-bottom: 20px; color: #636e72;">返信内容に応じて対応を分岐：</p>
+            
+            <div class="branch-container">
+                <!-- Option 1 -->
+                <div class="branch-card option1">
+                    <div class="branch-header">
+                        <div class="branch-number">1</div>
+                        <span class="branch-title">日程が合う場合</span>
+                    </div>
+                    <p style="color: #636e72; font-size: 0.9rem;">「〜の説明会に参加できます」と特定の日程を送られた場合</p>
+                    <ul class="action-list">
+                        <li>
+                            <span class="action-number">1</span>
+                            <span><strong>メールアドレス</strong>と<strong>保護者様の氏名</strong>を聞く</span>
+                        </li>
+                        <li>
+                            <span class="action-number">2</span>
+                            <span>「こちらで代わりに説明会の申し込みをしておきますね」と案内</span>
+                        </li>
+                        <li>
+                            <span class="action-number">3</span>
+                            <span>メールチームで<strong>氏名・メアド・参加日</strong>を記入して代理申込</span>
+                        </li>
+                        <li>
+                            <span class="action-number">4</span>
+                            <span><strong>LINEノートにメモ</strong>：説明会参加予定（日程）</span>
+                        </li>
+                    </ul>
+                </div>
+                
+                <!-- Option 2 -->
+                <div class="branch-card option2">
+                    <div class="branch-header">
+                        <div class="branch-number">2</div>
+                        <span class="branch-title">日程が合わない場合</span>
+                    </div>
+                    <p style="color: #636e72; font-size: 0.9rem;">「都合が合わない」「参加できない」などの返信</p>
+                    <p style="margin: 15px 0 10px; font-weight: 600;">以下のメッセージをコピペして送信：</p>
+                    <div class="message-box" style="border-left-color: #fdcb6e;">ご連絡ありがとうございます😊
+
+説明会にご参加が難しい方のために、
+特別に動画をご用意しました🎬
+
+https://www.successacademyworld.com/jan2026.html
+⚠️ 開いてから24時間限定です
+
+動画内で入会金50USDが無料になる
+クーポンをお渡ししています🎁
+
+1月5日から新クールがスタートします！
+動画をご覧になったら、一言いただけると嬉しいです😊</div>
+                    <ul class="action-list" style="margin-top: 15px;">
+                        <li>
+                            <span class="action-number">✓</span>
+                            <span><strong>LINEノートにメモ</strong>：動画URL送付済み</span>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+        
+        <!-- Summary -->
+        <div class="summary-box">
+            <div class="summary-title">
+                📌 クイックリファレンス
+            </div>
+            <div class="summary-grid">
+                <div class="summary-item">
+                    <h4>説明会動画URL</h4>
+                    <p>successacademyworld.com/jan2026.html</p>
+                </div>
+                <div class="summary-item">
+                    <h4>動画の有効期限</h4>
+                    <p>URLを開いてから24時間</p>
+                </div>
+                <div class="summary-item">
+                    <h4>説明会特典コード</h4>
+                    <p>JOINFREE（入会金$50無料）</p>
+                </div>
+                <div class="summary-item">
+                    <h4>次回クール開始日</h4>
+                    <p>2026年1月5日</p>
+                </div>
+            </div>
+            <div class="summary-item" style="margin-top: 20px;">
+                <h4>説明会 代理申込フォーム</h4>
+                <p style="font-size: 0.85rem; word-break: break-all;">https://docs.google.com/forms/d/e/1FAIpQLSftP6pY57qua7db75wleEfTLv96kUqf8HE-kMnnGiVqkI8_dw/viewform</p>
+            </div>
+        </div>
+    </div>
+</body>
+</html>
