@@ -1,0 +1,411 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="robots" content="noindex, nofollow">
+    <title>カリキュラムのご案内 | Success Academy</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@300;400;500;600;700&family=Zen+Maru+Gothic:wght@400;500;700&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --primary: #E8505B;
+            --primary-dark: #D43F4A;
+            --secondary: #FFB347;
+            --accent: #4ECDC4;
+            --text-dark: #2D3436;
+            --text-light: #636E72;
+            --bg-cream: #FDF8F5;
+            --bg-white: #FFFFFF;
+            --shadow-soft: 0 4px 20px rgba(0,0,0,0.08);
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Noto Sans JP', sans-serif;
+            background: var(--bg-cream);
+            color: var(--text-dark);
+            line-height: 1.8;
+        }
+
+        .container {
+            max-width: 800px;
+            margin: 0 auto;
+            padding: 40px 20px;
+        }
+
+        /* Header */
+        .header {
+            text-align: center;
+            margin-bottom: 40px;
+        }
+
+        .logo {
+            font-family: 'Zen Maru Gothic', sans-serif;
+            font-size: 1.5rem;
+            font-weight: 700;
+            color: var(--primary);
+            margin-bottom: 10px;
+        }
+
+        h1 {
+            font-family: 'Zen Maru Gothic', sans-serif;
+            font-size: 1.8rem;
+            font-weight: 700;
+            color: var(--text-dark);
+            margin-bottom: 10px;
+        }
+
+        .subtitle {
+            color: var(--text-light);
+            font-size: 1rem;
+        }
+
+        /* Welcome Message */
+        .welcome-card {
+            background: var(--bg-white);
+            border-radius: 20px;
+            padding: 30px;
+            box-shadow: var(--shadow-soft);
+            margin-bottom: 30px;
+        }
+
+        .welcome-card p {
+            margin-bottom: 15px;
+        }
+
+        .welcome-card p:last-child {
+            margin-bottom: 0;
+        }
+
+        /* Video Section */
+        .video-section {
+            margin-bottom: 30px;
+        }
+
+        .section-title {
+            font-family: 'Zen Maru Gothic', sans-serif;
+            font-size: 1.3rem;
+            font-weight: 700;
+            color: var(--text-dark);
+            margin-bottom: 15px;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+
+        .video-container {
+            background: var(--bg-white);
+            border-radius: 20px;
+            overflow: hidden;
+            box-shadow: var(--shadow-soft);
+        }
+
+        .video-wrapper {
+            position: relative;
+            width: 100%;
+        }
+
+        .video-wrapper video {
+            width: 100%;
+            display: block;
+        }
+
+        /* Info Cards */
+        .info-card {
+            background: var(--bg-white);
+            border-radius: 20px;
+            padding: 25px 30px;
+            box-shadow: var(--shadow-soft);
+            margin-bottom: 20px;
+        }
+
+        .info-card.highlight {
+            border-left: 5px solid var(--secondary);
+            background: linear-gradient(135deg, #FFF9F0 0%, #FFFFFF 100%);
+        }
+
+        .info-card.support {
+            border-left: 5px solid var(--accent);
+            background: linear-gradient(135deg, #F0FFFD 0%, #FFFFFF 100%);
+        }
+
+        .info-card h3 {
+            font-family: 'Zen Maru Gothic', sans-serif;
+            font-size: 1.1rem;
+            font-weight: 700;
+            color: var(--text-dark);
+            margin-bottom: 10px;
+            display: flex;
+            align-items: center;
+            gap: 8px;
+        }
+
+        .info-card p {
+            color: var(--text-light);
+        }
+
+        /* Cycle Diagram */
+        .cycle-diagram {
+            display: flex;
+            justify-content: center;
+            gap: 10px;
+            margin: 20px 0;
+            flex-wrap: wrap;
+        }
+
+        .cycle-item {
+            background: #f0f0f0;
+            padding: 15px 20px;
+            border-radius: 12px;
+            text-align: center;
+            min-width: 80px;
+        }
+
+        .cycle-item.current {
+            background: linear-gradient(135deg, var(--secondary), #FFA500);
+            color: white;
+            font-weight: 700;
+        }
+
+        .cycle-item .month {
+            font-size: 0.8rem;
+            opacity: 0.8;
+        }
+
+        .cycle-item .level {
+            font-size: 1rem;
+            font-weight: 600;
+        }
+
+        .cycle-arrow {
+            display: flex;
+            align-items: center;
+            color: var(--text-light);
+            font-size: 1.2rem;
+        }
+
+        /* CTA Section */
+        .cta-section {
+            background: linear-gradient(135deg, var(--primary), var(--primary-dark));
+            border-radius: 20px;
+            padding: 30px;
+            text-align: center;
+            color: white;
+            margin-top: 30px;
+        }
+
+        .cta-section h3 {
+            font-family: 'Zen Maru Gothic', sans-serif;
+            font-size: 1.3rem;
+            margin-bottom: 15px;
+        }
+
+        .cta-section p {
+            margin-bottom: 20px;
+            opacity: 0.95;
+        }
+
+        .cta-button {
+            display: inline-block;
+            background: white;
+            color: var(--primary);
+            padding: 14px 40px;
+            border-radius: 50px;
+            text-decoration: none;
+            font-weight: 700;
+            font-size: 1rem;
+            transition: transform 0.3s, box-shadow 0.3s;
+        }
+
+        .cta-button:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 8px 25px rgba(0,0,0,0.2);
+        }
+
+        /* Footer */
+        .footer {
+            text-align: center;
+            margin-top: 40px;
+            padding-top: 20px;
+            border-top: 1px solid #eee;
+            color: var(--text-light);
+            font-size: 0.85rem;
+        }
+
+        @media (max-width: 600px) {
+            h1 {
+                font-size: 1.5rem;
+            }
+
+            .container {
+                padding: 20px 15px;
+            }
+
+            .welcome-card, .info-card {
+                padding: 20px;
+            }
+
+            .cycle-diagram {
+                gap: 8px;
+            }
+
+            .cycle-item {
+                padding: 10px 15px;
+                min-width: 70px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <!-- Header -->
+        <div class="header">
+            <div class="logo">🌟 Success Academy</div>
+            <h1>カリキュラムのご案内</h1>
+            <p class="subtitle">ご入会いただきありがとうございます</p>
+        </div>
+
+        <!-- Welcome Message -->
+        <div class="welcome-card">
+            <p>こんにちは、Success Academyです。</p>
+            <p>この度は、当アカデミーにご入会いただき、誠にありがとうございます！</p>
+            <p>本ページでは、<strong>学習の進め方</strong>についてご案内いたします。</p>
+        </div>
+
+        <!-- Video Section -->
+        <div class="video-section">
+            <h2 class="section-title">🎬 フリーレッスンのカリキュラム・参加方法について</h2>
+            <div class="video-container">
+                <div class="video-wrapper">
+                    <video controls playsinline>
+                        <source src="https://pub-194dd7ab479f4286867f03741a685fc6.r2.dev/info-video.mp4" type="video/mp4">
+                        お使いのブラウザは動画再生に対応していません。
+                    </video>
+                </div>
+            </div>
+        </div>
+
+        <!-- 3-Month Cycle Info -->
+        <div class="info-card">
+            <h3>📚 3ヶ月1クール制とは</h3>
+            <p>当アカデミーでは、3ヶ月を1クールとしたカリキュラムを採用しています。1年分の学習内容を年に4回繰り返し学んでいきます。</p>
+            <div class="cycle-diagram">
+                <div class="cycle-item" id="month1">
+                    <div class="month">1ヶ月目</div>
+                    <div class="level">やさしい</div>
+                </div>
+                <div class="cycle-arrow">→</div>
+                <div class="cycle-item" id="month2">
+                    <div class="month">2ヶ月目</div>
+                    <div class="level">普通</div>
+                </div>
+                <div class="cycle-arrow">→</div>
+                <div class="cycle-item" id="month3">
+                    <div class="month">3ヶ月目</div>
+                    <div class="level">とても難しい</div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Current Period Notice -->
+        <div class="info-card highlight" id="currentPeriod">
+            <!-- JavaScriptで自動更新 -->
+        </div>
+
+        <!-- Support Message -->
+        <div class="info-card support" id="supportMessage">
+            <!-- JavaScriptで自動更新 -->
+        </div>
+
+        <!-- Contact Section -->
+        <div class="cta-section" style="background: linear-gradient(135deg, #F8A5A5, #E8505B);">
+            <h3>📩 お問い合わせ</h3>
+            <p>ご不明な点がございましたら、お気軽にお問い合わせください。</p>
+            <div style="display: flex; flex-direction: column; gap: 12px; align-items: center; margin-top: 20px;">
+                <a href="https://lin.ee/JVV8msS" target="_blank" class="cta-button" style="background: #06C755; color: white;">LINEでお問い合わせ</a>
+                <a href="mailto:info@mercy-education.com" class="cta-button">メールでお問い合わせ</a>
+            </div>
+        </div>
+
+        <!-- Footer -->
+        <div class="footer">
+            <p>© Success Academy</p>
+        </div>
+    </div>
+
+    <script>
+        // 月ごとのメッセージを自動切り替え
+        (function() {
+            const month = new Date().getMonth() + 1; // 1-12
+            
+            // クール内の月を計算（1,4,7,10月が1ヶ月目）
+            let monthInCycle;
+            if ([1, 4, 7, 10].includes(month)) {
+                monthInCycle = 1;
+            } else if ([2, 5, 8, 11].includes(month)) {
+                monthInCycle = 2;
+            } else {
+                monthInCycle = 3;
+            }
+            
+            const currentPeriod = document.getElementById('currentPeriod');
+            const supportMessage = document.getElementById('supportMessage');
+            
+            // サイクル図のハイライトを更新
+            document.getElementById('month' + monthInCycle).classList.add('current');
+            
+            if (monthInCycle === 1) {
+                // 1ヶ月目（やさしい）
+                currentPeriod.innerHTML = `
+                    <h3>🌸 今は1ヶ月目です</h3>
+                    <p>現在は<strong>新しいクールの1ヶ月目</strong>です。基礎的な内容からスタートします！</p>
+                    <p>初めての方も安心してご参加ください。</p>
+                `;
+                currentPeriod.className = 'info-card support';
+                
+                supportMessage.innerHTML = `
+                    <h3>💪 新クールスタート！</h3>
+                    <p>新しいクールが始まりました！<strong>基礎からスタート</strong>するので、今がはじめどきです。</p>
+                    <p>ぜひたくさんレッスンにご参加ください😊</p>
+                `;
+            } else if (monthInCycle === 2) {
+                // 2ヶ月目（普通）
+                currentPeriod.innerHTML = `
+                    <h3>📚 今は2ヶ月目です</h3>
+                    <p>現在は<strong>クールの2ヶ月目</strong>です。少しずつ内容が難しくなってきます。</p>
+                    <p>分からないところがあれば、お気軽にご質問ください。</p>
+                `;
+                currentPeriod.className = 'info-card';
+                currentPeriod.style.borderLeft = '5px solid #4ECDC4';
+                
+                supportMessage.innerHTML = `
+                    <h3>💪 しっかりサポートします</h3>
+                    <p>来月は難しい内容になりますが、<strong>繰り返し学ぶことで定着</strong>していきます。</p>
+                    <p>私たちがしっかりサポートいたします！</p>
+                `;
+            } else {
+                // 3ヶ月目（とても難しい）
+                currentPeriod.innerHTML = `
+                    <h3>⚠️ 今は3ヶ月目です</h3>
+                    <p>現在は<strong>クールの3ヶ月目</strong>に入り、とても内容が難しくなる時期です。</p>
+                    <p>この時期は、<strong>1つ下の学年のクラスへの参加をおすすめ</strong>しています。</p>
+                `;
+                currentPeriod.className = 'info-card highlight';
+                
+                supportMessage.innerHTML = `
+                    <h3>💪 しっかりサポートします</h3>
+                    <p>難しい時期ですが、<strong>来月から新しいクールが始まり、また基礎からスタート</strong>します。</p>
+                    <p>今は「慣れる期間」と思って、ぜひ気軽にレッスンにご参加ください！</p>
+                `;
+            }
+        })();
+    </script>
+</body>
+</html>
