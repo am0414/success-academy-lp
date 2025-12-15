@@ -1,0 +1,356 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="robots" content="noindex, nofollow">
+    <title>講師用資料 | Success Academy</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@400;500;700&display=swap" rel="stylesheet">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Noto Sans JP', sans-serif;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            min-height: 100vh;
+            padding: 40px 20px;
+        }
+
+        .container {
+            max-width: 900px;
+            margin: 0 auto;
+        }
+
+        header {
+            text-align: center;
+            margin-bottom: 40px;
+            color: white;
+        }
+
+        header h1 {
+            font-size: 2.2rem;
+            margin-bottom: 10px;
+            text-shadow: 2px 2px 4px rgba(0,0,0,0.2);
+        }
+
+        header p {
+            font-size: 1.1rem;
+            opacity: 0.9;
+        }
+
+        .card {
+            background: white;
+            border-radius: 16px;
+            padding: 30px;
+            margin-bottom: 24px;
+            box-shadow: 0 10px 40px rgba(0,0,0,0.15);
+        }
+
+        .card h2 {
+            color: #667eea;
+            font-size: 1.4rem;
+            margin-bottom: 20px;
+            padding-bottom: 12px;
+            border-bottom: 3px solid #667eea;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+
+        .card h2::before {
+            content: '';
+            display: inline-block;
+            width: 8px;
+            height: 8px;
+            background: #667eea;
+            border-radius: 50%;
+        }
+
+        .link-button {
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: white;
+            text-decoration: none;
+            padding: 14px 24px;
+            border-radius: 8px;
+            font-weight: 500;
+            transition: all 0.3s ease;
+            margin: 8px 8px 8px 0;
+        }
+
+        .link-button:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 6px 20px rgba(102, 126, 234, 0.4);
+        }
+
+        .link-button.secondary {
+            background: linear-gradient(135deg, #11998e 0%, #38ef7d 100%);
+        }
+
+        .section-title {
+            color: #333;
+            font-size: 1.1rem;
+            margin: 24px 0 12px 0;
+            font-weight: 700;
+        }
+
+        .video-grid {
+            display: grid;
+            gap: 12px;
+        }
+
+        .video-link {
+            display: flex;
+            align-items: center;
+            gap: 12px;
+            padding: 14px 18px;
+            background: #f8f9ff;
+            border-radius: 10px;
+            text-decoration: none;
+            color: #333;
+            transition: all 0.3s ease;
+            border-left: 4px solid #667eea;
+        }
+
+        .video-link:hover {
+            background: #eef0ff;
+            transform: translateX(4px);
+        }
+
+        .video-link .icon {
+            width: 40px;
+            height: 40px;
+            background: #ff0000;
+            border-radius: 8px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: white;
+            font-size: 18px;
+            flex-shrink: 0;
+        }
+
+        .video-link .text {
+            font-weight: 500;
+        }
+
+        .warning-box {
+            background: #fff3cd;
+            border: 1px solid #ffc107;
+            border-radius: 8px;
+            padding: 16px;
+            margin-bottom: 24px;
+            color: #856404;
+            font-size: 0.95rem;
+        }
+
+        .warning-box strong {
+            color: #664d03;
+        }
+
+        .category-badge {
+            display: inline-block;
+            background: #667eea;
+            color: white;
+            padding: 4px 12px;
+            border-radius: 20px;
+            font-size: 0.85rem;
+            margin-bottom: 16px;
+        }
+
+        .category-badge.math {
+            background: #11998e;
+        }
+
+        .category-badge.english {
+            background: #f093fb;
+        }
+
+        footer {
+            text-align: center;
+            color: white;
+            margin-top: 40px;
+            opacity: 0.8;
+        }
+
+        footer a {
+            color: white;
+            text-decoration: none;
+            font-weight: 500;
+        }
+
+        footer a:hover {
+            text-decoration: underline;
+        }
+
+        @media (max-width: 600px) {
+            header h1 {
+                font-size: 1.6rem;
+            }
+            
+            .card {
+                padding: 20px;
+            }
+            
+            .link-button {
+                display: flex;
+                width: 100%;
+                justify-content: center;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <header>
+            <h1>📚 Success Academy 講師用資料</h1>
+            <p>Teacher Resources</p>
+        </header>
+
+        <!-- 基本情報 -->
+        <div class="card">
+            <h2>サクセスアカデミーについて</h2>
+            <a href="https://success-j-academy.com/" target="_blank" class="link-button">
+                🌐 公式ウェブサイト
+            </a>
+            <a href="https://www.instagram.com/successacademy_7/" target="_blank" class="link-button" style="background: linear-gradient(135deg, #f093fb 0%, #f5576c 100%);">
+                📸 Instagram
+            </a>
+        </div>
+
+        <!-- 教材・時間割 -->
+        <div class="card">
+            <h2>教材・時間割</h2>
+            <a href="https://drive.google.com/embeddedfolderview?id=1EMhq3GkTEfsk5NiSHpqyZjS4H2N_aSak#list" target="_blank" class="link-button secondary">
+                📁 教材フォルダ
+            </a>
+            <a href="https://drive.google.com/embeddedfolderview?id=1EMhq3GkTEfsk5NiSHpqyZjS4H2N_aSak#list" target="_blank" class="link-button secondary">
+                📅 時間割
+            </a>
+        </div>
+
+        <!-- レッスン参考動画 -->
+        <div class="card">
+            <h2>レッスン参考動画</h2>
+            
+            <div class="warning-box">
+                <strong>⚠️ 注意事項</strong><br>
+                レッスン参考動画です。講師以外への共有はお控えください。
+            </div>
+
+            <!-- 未就学児 国語 -->
+            <span class="category-badge">未就学児 国語</span>
+            <div class="video-grid">
+                <a href="https://youtu.be/nygQcF46f08" target="_blank" class="video-link">
+                    <span class="icon">▶</span>
+                    <span class="text">未就学 日本語 1コマ目（第8週火曜日）</span>
+                </a>
+                <a href="https://youtu.be/rbL6L2VhlsU" target="_blank" class="video-link">
+                    <span class="icon">▶</span>
+                    <span class="text">未就学 日本語 2コマ目（第8週火曜日）</span>
+                </a>
+            </div>
+
+            <!-- 未就学児 算数 -->
+            <p class="section-title"></p>
+            <span class="category-badge math">未就学児 算数</span>
+            <div class="video-grid">
+                <a href="https://youtu.be/ffIddQBD3L8" target="_blank" class="video-link">
+                    <span class="icon">▶</span>
+                    <span class="text">未就学 算数 1コマ目（第7週金曜日）</span>
+                </a>
+                <a href="https://youtu.be/2hEd6hF_Y5o" target="_blank" class="video-link">
+                    <span class="icon">▶</span>
+                    <span class="text">未就学 算数 2コマ目（第7週金曜日）</span>
+                </a>
+            </div>
+
+            <!-- 小学生 国語 -->
+            <p class="section-title"></p>
+            <span class="category-badge">小学生 国語</span>
+            <div class="video-grid">
+                <a href="https://youtu.be/Po8zjLTsH3A" target="_blank" class="video-link">
+                    <span class="icon">▶</span>
+                    <span class="text">小学生 国語 1コマ目（第8週火曜日）</span>
+                </a>
+                <a href="https://youtu.be/JUR6TYIUWHY" target="_blank" class="video-link">
+                    <span class="icon">▶</span>
+                    <span class="text">小学生 国語 2コマ目 偉人（第8週火曜日）</span>
+                </a>
+                <a href="https://youtu.be/2OBUGAVRSUs" target="_blank" class="video-link">
+                    <span class="icon">▶</span>
+                    <span class="text">小学生 国語 3コマ目（第8週火曜日）</span>
+                </a>
+                <a href="https://youtu.be/fmfYpx2sw0Y" target="_blank" class="video-link">
+                    <span class="icon">▶</span>
+                    <span class="text">小学生 国語 4コマ目（第8週火曜日）</span>
+                </a>
+                <a href="https://youtu.be/YUuCohFridg" target="_blank" class="video-link">
+                    <span class="icon">▶</span>
+                    <span class="text">小学生 国語 5コマ目 新聞・ディベート（第8週火曜日）</span>
+                </a>
+            </div>
+
+            <!-- 小学生 算数 -->
+            <p class="section-title"></p>
+            <span class="category-badge math">小学生 算数</span>
+            <div class="video-grid">
+                <a href="https://youtu.be/kRxDlUHfnBQ" target="_blank" class="video-link">
+                    <span class="icon">▶</span>
+                    <span class="text">小学生算数 1コマ目（第8週水曜日）</span>
+                </a>
+                <a href="https://youtu.be/JrBtdVIxw_A" target="_blank" class="video-link">
+                    <span class="icon">▶</span>
+                    <span class="text">小学生算数 2コマ目（第8週水曜日）</span>
+                </a>
+                <a href="https://youtu.be/etdAFt5xmvU" target="_blank" class="video-link">
+                    <span class="icon">▶</span>
+                    <span class="text">小学生算数 3コマ目（第8週水曜日）</span>
+                </a>
+                <a href="https://youtu.be/QQnXVccB_P8" target="_blank" class="video-link">
+                    <span class="icon">▶</span>
+                    <span class="text">小学生算数 4コマ目（第10週水曜日）</span>
+                </a>
+                <a href="https://youtu.be/Jv4I94OKDF4" target="_blank" class="video-link">
+                    <span class="icon">▶</span>
+                    <span class="text">小学生算数 5コマ目（第10週水曜日）</span>
+                </a>
+            </div>
+
+            <!-- 英語 -->
+            <p class="section-title"></p>
+            <span class="category-badge english">英語</span>
+            <div class="video-grid">
+                <a href="https://youtu.be/8wUTUkL_Ymk" target="_blank" class="video-link">
+                    <span class="icon">▶</span>
+                    <span class="text">英語 1コマ目</span>
+                </a>
+                <a href="https://youtu.be/ldxg3oBvcQ0" target="_blank" class="video-link">
+                    <span class="icon">▶</span>
+                    <span class="text">英語 2コマ目</span>
+                </a>
+                <a href="https://youtu.be/6jIGU29LiZY" target="_blank" class="video-link">
+                    <span class="icon">▶</span>
+                    <span class="text">英語 3コマ目</span>
+                </a>
+                <a href="https://youtu.be/VGi0eQuDXHc" target="_blank" class="video-link">
+                    <span class="icon">▶</span>
+                    <span class="text">英語 4コマ目</span>
+                </a>
+            </div>
+        </div>
+
+        <footer>
+            <p>© 2024 <a href="https://success-j-academy.com/" target="_blank">Success Academy</a></p>
+        </footer>
+    </div>
+</body>
+</html>
