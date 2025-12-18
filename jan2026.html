@@ -937,7 +937,7 @@
         <div class="video-container">
             <div class="custom-video-container" id="videoContainer">
                 <!-- 動画URLをここに設定 -->
-                <video id="mainVideo" playsinline>
+                <video id="mainVideo" playsinline webkit-playsinline>
                     <source src="https://pub-095a0484f394489392c64093ed976e10.r2.dev/setsumeikai.mp4" type="video/mp4">
                     お使いのブラウザは動画再生に対応していません。
                 </video>
@@ -1188,26 +1188,87 @@
                 });
             });
             
-            // フルスクリーン（モバイル対応）
-            fullscreenBtn.addEventListener('click', () => {
-                // まずドキュメント全体のフルスクリーンを試す
-                if (document.fullscreenElement || document.webkitFullscreenElement) {
+            // フルスクリーン（モバイル対応強化）
+            fullscreenBtn.addEventListener('click', async (e) => {
+                e.preventDefault();
+                e.stopPropagation();
+                
+                // 現在フルスクリーンかどうか
+                const isFullscreen = document.fullscreenElement || 
+                                    document.webkitFullscreenElement || 
+                                    document.mozFullScreenElement ||
+                                    document.msFullscreenElement;
+                
+                if (isFullscreen) {
+                    // フルスクリーン解除
                     if (document.exitFullscreen) {
                         document.exitFullscreen();
                     } else if (document.webkitExitFullscreen) {
                         document.webkitExitFullscreen();
+                    } else if (document.mozCancelFullScreen) {
+                        document.mozCancelFullScreen();
+                    } else if (document.msExitFullscreen) {
+                        document.msExitFullscreen();
                     }
                 } else {
-                    // モバイルではvideoのネイティブフルスクリーンを優先
+                    // iOSでは再生中でないとフルスクリーンできない場合がある
+                    if (video.paused) {
+                        try {
+                            await video.play();
+                        } catch(err) {
+                            console.log('Auto-play failed:', err);
+                        }
+                    }
+                    
+                    // フルスクリーン開始 - 複数の方法を試す
+                    
+                    // 1. iOS Safari - video要素のネイティブフルスクリーン
                     if (video.webkitEnterFullscreen) {
-                        // iOS Safari
-                        video.webkitEnterFullscreen();
-                    } else if (video.requestFullscreen) {
-                        video.requestFullscreen();
+                        try {
+                            video.webkitEnterFullscreen();
+                            return;
+                        } catch(err) {
+                            console.log('webkitEnterFullscreen failed:', err);
+                        }
+                    }
+                    
+                    // 2. iOS Safari - webkitSupportsFullscreen チェック
+                    if (video.webkitSupportsFullscreen) {
+                        try {
+                            video.webkitEnterFullScreen();
+                            return;
+                        } catch(err) {
+                            console.log('webkitEnterFullScreen failed:', err);
+                        }
+                    }
+                    
+                    // 3. 標準 Fullscreen API (video要素)
+                    if (video.requestFullscreen) {
+                        video.requestFullscreen().catch(err => {
+                            console.log('video requestFullscreen failed:', err);
+                            // コンテナでリトライ
+                            if (videoContainer.requestFullscreen) {
+                                videoContainer.requestFullscreen().catch(e => console.log(e));
+                            }
+                        });
+                        return;
+                    }
+                    
+                    // 4. webkit prefix (video要素)
+                    if (video.webkitRequestFullscreen) {
+                        video.webkitRequestFullscreen();
+                        return;
+                    }
+                    
+                    // 5. コンテナ要素でフルスクリーン
+                    if (videoContainer.requestFullscreen) {
+                        videoContainer.requestFullscreen().catch(err => console.log(err));
                     } else if (videoContainer.webkitRequestFullscreen) {
                         videoContainer.webkitRequestFullscreen();
-                    } else if (videoContainer.requestFullscreen) {
-                        videoContainer.requestFullscreen();
+                    } else if (videoContainer.mozRequestFullScreen) {
+                        videoContainer.mozRequestFullScreen();
+                    } else if (videoContainer.msRequestFullscreen) {
+                        videoContainer.msRequestFullscreen();
                     }
                 }
             });
