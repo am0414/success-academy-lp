@@ -243,24 +243,12 @@
             display: block;
         }
 
-        /* モバイルではネイティブコントロールを使用 */
-        @media (max-width: 768px) {
-            .video-controls {
-                display: none !important;
-            }
-            .video-overlay {
-                display: none !important;
-            }
+        /* ネイティブコントロールを非表示 */
+        .custom-video-container video::-webkit-media-controls {
+            display: none !important;
         }
-
-        /* PCではネイティブコントロールを非表示 */
-        @media (min-width: 769px) {
-            .custom-video-container video::-webkit-media-controls {
-                display: none !important;
-            }
-            .custom-video-container video::-webkit-media-controls-enclosure {
-                display: none !important;
-            }
+        .custom-video-container video::-webkit-media-controls-enclosure {
+            display: none !important;
         }
 
         .video-controls {
@@ -407,9 +395,20 @@
             border: none;
         }
 
-        @media (max-width: 600px) {
+        /* モバイルではボリュームスライダーを非表示（iOSでは動作しないため） */
+        @media (max-width: 768px) {
             .volume-slider {
-                width: 50px;
+                display: none;
+            }
+            .volume-container {
+                display: none;
+            }
+            .speed-btn {
+                padding: 6px 10px;
+                font-size: 0.75rem;
+            }
+            .controls-right {
+                gap: 8px;
             }
         }
 
@@ -957,7 +956,7 @@
         <div class="video-container">
             <div class="custom-video-container" id="videoContainer">
                 <!-- 動画URLをここに設定 -->
-                <video id="mainVideo" controls>
+                <video id="mainVideo" playsinline webkit-playsinline>
                     <source src="https://pub-095a0484f394489392c64093ed976e10.r2.dev/setsumeikai.mp4" type="video/mp4">
                     お使いのブラウザは動画再生に対応していません。
                 </video>
