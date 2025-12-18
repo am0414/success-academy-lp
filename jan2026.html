@@ -351,6 +351,48 @@
             background: var(--primary);
         }
 
+        /* Volume Control */
+        .volume-container {
+            display: flex;
+            align-items: center;
+            gap: 6px;
+        }
+
+        .volume-slider {
+            width: 60px;
+            height: 4px;
+            -webkit-appearance: none;
+            appearance: none;
+            background: rgba(255,255,255,0.3);
+            border-radius: 2px;
+            cursor: pointer;
+        }
+
+        .volume-slider::-webkit-slider-thumb {
+            -webkit-appearance: none;
+            appearance: none;
+            width: 14px;
+            height: 14px;
+            background: white;
+            border-radius: 50%;
+            cursor: pointer;
+        }
+
+        .volume-slider::-moz-range-thumb {
+            width: 14px;
+            height: 14px;
+            background: white;
+            border-radius: 50%;
+            cursor: pointer;
+            border: none;
+        }
+
+        @media (max-width: 600px) {
+            .volume-slider {
+                width: 50px;
+            }
+        }
+
         .video-overlay {
             position: absolute;
             top: 0;
@@ -922,6 +964,13 @@
                             <span class="time-display"><span id="currentTime">0:00</span> / <span id="duration">0:00</span></span>
                         </div>
                         <div class="controls-right">
+                            <div class="volume-container">
+                                <button class="video-btn" id="muteBtn">
+                                    <svg id="volumeIcon" viewBox="0 0 24 24"><path d="M3 9v6h4l5 5V4L7 9H3zm13.5 3c0-1.77-1.02-3.29-2.5-4.03v8.05c1.48-.73 2.5-2.25 2.5-4.02zM14 3.23v2.06c2.89.86 5 3.54 5 6.71s-2.11 5.85-5 6.71v2.06c4.01-.91 7-4.49 7-8.77s-2.99-7.86-7-8.77z"/></svg>
+                                    <svg id="muteIcon" viewBox="0 0 24 24" style="display:none;"><path d="M16.5 12c0-1.77-1.02-3.29-2.5-4.03v2.21l2.45 2.45c.03-.2.05-.41.05-.63zm2.5 0c0 .94-.2 1.82-.54 2.64l1.51 1.51C20.63 14.91 21 13.5 21 12c0-4.28-2.99-7.86-7-8.77v2.06c2.89.86 5 3.54 5 6.71zM4.27 3L3 4.27 7.73 9H3v6h4l5 5v-6.73l4.25 4.25c-.67.52-1.42.93-2.25 1.18v2.06c1.38-.31 2.63-.95 3.69-1.81L19.73 21 21 19.73l-9-9L4.27 3zM12 4L9.91 6.09 12 8.18V4z"/></svg>
+                                </button>
+                                <input type="range" class="volume-slider" id="volumeSlider" min="0" max="1" step="0.1" value="1">
+                            </div>
                             <button class="speed-btn active" data-speed="1">1x</button>
                             <button class="speed-btn" data-speed="1.5">1.5x</button>
                             <button class="speed-btn" data-speed="2">2x</button>
@@ -1046,8 +1095,13 @@
             const durationEl = document.getElementById('duration');
             const fullscreenBtn = document.getElementById('fullscreenBtn');
             const speedBtns = document.querySelectorAll('.speed-btn');
+            const muteBtn = document.getElementById('muteBtn');
+            const volumeIcon = document.getElementById('volumeIcon');
+            const muteIcon = document.getElementById('muteIcon');
+            const volumeSlider = document.getElementById('volumeSlider');
             
             let maxWatchedTime = 0; // 視聴した最大位置を記録
+            let previousVolume = 1; // ミュート前の音量を保存
             
             // 時間フォーマット
             function formatTime(seconds) {
@@ -1134,13 +1188,68 @@
                 });
             });
             
-            // フルスクリーン
+            // フルスクリーン（モバイル対応）
             fullscreenBtn.addEventListener('click', () => {
-                if (document.fullscreenElement) {
-                    document.exitFullscreen();
+                // まずドキュメント全体のフルスクリーンを試す
+                if (document.fullscreenElement || document.webkitFullscreenElement) {
+                    if (document.exitFullscreen) {
+                        document.exitFullscreen();
+                    } else if (document.webkitExitFullscreen) {
+                        document.webkitExitFullscreen();
+                    }
                 } else {
-                    videoContainer.requestFullscreen();
+                    // モバイルではvideoのネイティブフルスクリーンを優先
+                    if (video.webkitEnterFullscreen) {
+                        // iOS Safari
+                        video.webkitEnterFullscreen();
+                    } else if (video.requestFullscreen) {
+                        video.requestFullscreen();
+                    } else if (videoContainer.webkitRequestFullscreen) {
+                        videoContainer.webkitRequestFullscreen();
+                    } else if (videoContainer.requestFullscreen) {
+                        videoContainer.requestFullscreen();
+                    }
                 }
+            });
+            
+            // ボリュームコントロール
+            function updateVolumeIcon() {
+                if (video.muted || video.volume === 0) {
+                    volumeIcon.style.display = 'none';
+                    muteIcon.style.display = 'block';
+                } else {
+                    volumeIcon.style.display = 'block';
+                    muteIcon.style.display = 'none';
+                }
+            }
+            
+            muteBtn.addEventListener('click', () => {
+                if (video.muted || video.volume === 0) {
+                    video.muted = false;
+                    video.volume = previousVolume || 1;
+                    volumeSlider.value = video.volume;
+                } else {
+                    previousVolume = video.volume;
+                    video.muted = true;
+                    volumeSlider.value = 0;
+                }
+                updateVolumeIcon();
+            });
+            
+            volumeSlider.addEventListener('input', (e) => {
+                const volume = parseFloat(e.target.value);
+                video.volume = volume;
+                video.muted = volume === 0;
+                if (volume > 0) {
+                    previousVolume = volume;
+                }
+                updateVolumeIcon();
+            });
+            
+            // 動画の音量変更を監視
+            video.addEventListener('volumechange', () => {
+                volumeSlider.value = video.muted ? 0 : video.volume;
+                updateVolumeIcon();
             });
             
             // キーボードショートカット
