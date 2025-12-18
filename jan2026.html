@@ -243,6 +243,26 @@
             display: block;
         }
 
+        /* モバイルではネイティブコントロールを使用 */
+        @media (max-width: 768px) {
+            .video-controls {
+                display: none !important;
+            }
+            .video-overlay {
+                display: none !important;
+            }
+        }
+
+        /* PCではネイティブコントロールを非表示 */
+        @media (min-width: 769px) {
+            .custom-video-container video::-webkit-media-controls {
+                display: none !important;
+            }
+            .custom-video-container video::-webkit-media-controls-enclosure {
+                display: none !important;
+            }
+        }
+
         .video-controls {
             position: absolute;
             bottom: 0;
@@ -937,7 +957,7 @@
         <div class="video-container">
             <div class="custom-video-container" id="videoContainer">
                 <!-- 動画URLをここに設定 -->
-                <video id="mainVideo" playsinline webkit-playsinline>
+                <video id="mainVideo" playsinline webkit-playsinline controls>
                     <source src="https://pub-095a0484f394489392c64093ed976e10.r2.dev/setsumeikai.mp4" type="video/mp4">
                     お使いのブラウザは動画再生に対応していません。
                 </video>
