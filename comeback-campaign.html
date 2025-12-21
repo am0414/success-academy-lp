@@ -726,45 +726,6 @@
             box-shadow: 0 4px 15px rgba(6, 199, 85, 0.3);
         }
 
-        .contact-email-wrapper {
-            display: flex;
-            align-items: center;
-            gap: 0.5rem;
-        }
-
-        .copy-btn {
-            background: var(--warm-white);
-            border: 2px solid var(--primary);
-            border-radius: 50%;
-            width: 40px;
-            height: 40px;
-            cursor: pointer;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            transition: all 0.3s ease;
-        }
-
-        .copy-btn:hover {
-            background: var(--primary);
-            transform: scale(1.1);
-        }
-
-        .copy-btn:hover .copy-icon {
-            filter: brightness(10);
-        }
-
-        .copy-icon {
-            font-size: 1rem;
-        }
-
-        .copy-message {
-            color: var(--success);
-            font-size: 0.9rem;
-            font-weight: 500;
-            min-height: 1.5rem;
-        }
-
         /* Footer */
         .footer {
             background: var(--text-dark);
@@ -894,17 +855,6 @@
             .reminder-contact {
                 flex-direction: column;
                 align-items: center;
-            }
-
-            .contact-email-wrapper {
-                width: 100%;
-                max-width: 320px;
-                justify-content: center;
-            }
-
-            .contact-email-wrapper .contact-btn {
-                flex: 1;
-                max-width: none;
             }
 
             .contact-btn {
@@ -1144,17 +1094,6 @@
     </footer>
 
     <script>
-        // Copy email function
-        function copyEmail() {
-            navigator.clipboard.writeText('info@mercy-education.com').then(function() {
-                const message = document.getElementById('copyMessage');
-                message.textContent = '✓ コピーしました！';
-                setTimeout(function() {
-                    message.textContent = '';
-                }, 2000);
-            });
-        }
-
         // Countdown Timer
         function updateCountdown() {
             const deadline = new Date('2025-12-31T23:59:59').getTime();
