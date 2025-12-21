@@ -1,0 +1,1034 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="robots" content="noindex, nofollow">
+    <title>カムバックキャンペーン | Success Academy</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@400;500;700;900&family=Zen+Maru+Gothic:wght@500;700&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --primary: #E85A4F;
+            --primary-dark: #D64840;
+            --secondary: #8E8D8A;
+            --accent: #E98074;
+            --cream: #FFF9F5;
+            --warm-white: #FFFCFA;
+            --text-dark: #2D3436;
+            --text-light: #636E72;
+            --gold: #D4A574;
+            --success: #00B894;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Noto Sans JP', sans-serif;
+            background: var(--cream);
+            color: var(--text-dark);
+            line-height: 1.8;
+            overflow-x: hidden;
+        }
+
+        /* Decorative Background */
+        .bg-decoration {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            pointer-events: none;
+            z-index: -1;
+            overflow: hidden;
+        }
+
+        .bg-circle {
+            position: absolute;
+            border-radius: 50%;
+            opacity: 0.15;
+        }
+
+        .bg-circle-1 {
+            width: 600px;
+            height: 600px;
+            background: linear-gradient(135deg, var(--primary), var(--accent));
+            top: -200px;
+            right: -200px;
+            animation: float 20s ease-in-out infinite;
+        }
+
+        .bg-circle-2 {
+            width: 400px;
+            height: 400px;
+            background: linear-gradient(135deg, var(--gold), var(--accent));
+            bottom: -100px;
+            left: -150px;
+            animation: float 25s ease-in-out infinite reverse;
+        }
+
+        @keyframes float {
+            0%, 100% { transform: translate(0, 0) rotate(0deg); }
+            50% { transform: translate(30px, 20px) rotate(5deg); }
+        }
+
+        /* Header */
+        .header {
+            background: var(--warm-white);
+            padding: 1rem 2rem;
+            box-shadow: 0 2px 20px rgba(0,0,0,0.05);
+            position: sticky;
+            top: 0;
+            z-index: 100;
+        }
+
+        .header-content {
+            max-width: 1200px;
+            margin: 0 auto;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .logo {
+            font-family: 'Zen Maru Gothic', sans-serif;
+            font-size: 1.5rem;
+            font-weight: 700;
+            color: var(--primary);
+            text-decoration: none;
+        }
+
+        .header-cta {
+            background: var(--primary);
+            color: white;
+            padding: 0.75rem 1.5rem;
+            border-radius: 50px;
+            text-decoration: none;
+            font-weight: 500;
+            font-size: 0.9rem;
+            transition: all 0.3s ease;
+        }
+
+        .header-cta:hover {
+            background: var(--primary-dark);
+            transform: translateY(-2px);
+            box-shadow: 0 4px 15px rgba(232, 90, 79, 0.3);
+        }
+
+        /* Hero Section */
+        .hero {
+            padding: 4rem 2rem 3rem;
+            text-align: center;
+            position: relative;
+        }
+
+        .campaign-badge {
+            display: inline-block;
+            background: linear-gradient(135deg, var(--primary), var(--accent));
+            color: white;
+            padding: 0.5rem 1.5rem;
+            border-radius: 50px;
+            font-size: 0.9rem;
+            font-weight: 500;
+            margin-bottom: 1.5rem;
+            animation: pulse 2s ease-in-out infinite;
+        }
+
+        @keyframes pulse {
+            0%, 100% { transform: scale(1); }
+            50% { transform: scale(1.05); }
+        }
+
+        .hero h1 {
+            font-family: 'Zen Maru Gothic', sans-serif;
+            font-size: clamp(2rem, 5vw, 3.2rem);
+            font-weight: 700;
+            color: var(--text-dark);
+            margin-bottom: 1rem;
+            line-height: 1.4;
+        }
+
+        .hero h1 span {
+            color: var(--primary);
+        }
+
+        .hero-subtitle {
+            font-size: 1.1rem;
+            color: var(--text-light);
+            max-width: 600px;
+            margin: 0 auto 2rem;
+        }
+
+        .new-course-banner {
+            display: inline-flex;
+            align-items: center;
+            gap: 1rem;
+            background: linear-gradient(135deg, var(--primary), var(--accent));
+            padding: 1rem 2rem;
+            border-radius: 16px;
+            margin-top: 1rem;
+            box-shadow: 0 10px 30px rgba(232, 90, 79, 0.25);
+            animation: glow 2s ease-in-out infinite alternate;
+        }
+
+        @keyframes glow {
+            0% { box-shadow: 0 10px 30px rgba(232, 90, 79, 0.25); }
+            100% { box-shadow: 0 10px 40px rgba(232, 90, 79, 0.4); }
+        }
+
+        .new-course-icon {
+            font-size: 2rem;
+        }
+
+        .new-course-text {
+            display: flex;
+            flex-direction: column;
+            text-align: left;
+        }
+
+        .new-course-date {
+            color: white;
+            font-family: 'Zen Maru Gothic', sans-serif;
+            font-size: 1.5rem;
+            font-weight: 700;
+        }
+
+        .new-course-label {
+            color: rgba(255,255,255,0.95);
+            font-size: 1rem;
+        }
+
+        /* Countdown Timer */
+        .countdown-section {
+            background: linear-gradient(135deg, var(--warm-white), #FFF5F0);
+            padding: 2rem;
+            margin: 0 2rem 3rem;
+            border-radius: 20px;
+            max-width: 800px;
+            margin-left: auto;
+            margin-right: auto;
+            border: 2px solid rgba(232, 90, 79, 0.15);
+            box-shadow: 0 10px 40px rgba(232, 90, 79, 0.1);
+        }
+
+        .countdown-label {
+            color: var(--primary);
+            font-size: 0.9rem;
+            font-weight: 500;
+            margin-bottom: 1rem;
+            text-align: center;
+        }
+
+        .countdown {
+            display: flex;
+            justify-content: center;
+            gap: 1rem;
+        }
+
+        .countdown-item {
+            text-align: center;
+        }
+
+        .countdown-number {
+            background: linear-gradient(135deg, var(--primary), var(--accent));
+            color: white;
+            font-size: clamp(1.5rem, 4vw, 2.5rem);
+            font-weight: 700;
+            padding: 1rem 1.5rem;
+            border-radius: 12px;
+            min-width: 70px;
+            font-family: 'Zen Maru Gothic', sans-serif;
+            box-shadow: 0 4px 15px rgba(232, 90, 79, 0.3);
+        }
+
+        .countdown-unit {
+            color: var(--text-light);
+            font-size: 0.75rem;
+            margin-top: 0.5rem;
+            font-weight: 500;
+        }
+
+        .deadline-date {
+            color: var(--text-dark);
+            text-align: center;
+            margin-top: 1rem;
+            font-size: 1rem;
+        }
+
+        .deadline-date strong {
+            color: var(--primary);
+        }
+
+        /* Benefits Section */
+        .benefits {
+            padding: 3rem 2rem;
+            max-width: 1000px;
+            margin: 0 auto;
+        }
+
+        .section-title {
+            font-family: 'Zen Maru Gothic', sans-serif;
+            font-size: 1.8rem;
+            text-align: center;
+            margin-bottom: 2.5rem;
+            color: var(--text-dark);
+        }
+
+        .section-title::after {
+            content: '';
+            display: block;
+            width: 60px;
+            height: 4px;
+            background: linear-gradient(90deg, var(--primary), var(--accent));
+            margin: 1rem auto 0;
+            border-radius: 2px;
+        }
+
+        .benefit-cards {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 1.5rem;
+        }
+
+        .benefit-card {
+            background: var(--warm-white);
+            border-radius: 20px;
+            padding: 2rem;
+            box-shadow: 0 10px 40px rgba(0,0,0,0.05);
+            transition: all 0.3s ease;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .benefit-card::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 4px;
+            background: linear-gradient(90deg, var(--primary), var(--accent));
+        }
+
+        .benefit-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 20px 50px rgba(0,0,0,0.1);
+        }
+
+        .benefit-number {
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            width: 40px;
+            height: 40px;
+            background: linear-gradient(135deg, var(--primary), var(--accent));
+            color: white;
+            font-weight: 700;
+            border-radius: 50%;
+            margin-bottom: 1rem;
+            font-size: 1.1rem;
+        }
+
+        .benefit-title {
+            font-family: 'Zen Maru Gothic', sans-serif;
+            font-size: 1.2rem;
+            font-weight: 700;
+            color: var(--text-dark);
+            margin-bottom: 0.75rem;
+        }
+
+        .benefit-value {
+            font-size: 1.8rem;
+            font-weight: 900;
+            color: var(--primary);
+            margin-bottom: 0.5rem;
+        }
+
+        .benefit-description {
+            color: var(--text-light);
+            font-size: 0.95rem;
+            line-height: 1.7;
+        }
+
+        .benefit-code {
+            display: inline-block;
+            background: var(--cream);
+            border: 2px dashed var(--primary);
+            padding: 0.5rem 1rem;
+            border-radius: 8px;
+            font-weight: 700;
+            color: var(--primary);
+            margin-top: 0.75rem;
+            font-size: 1.1rem;
+            letter-spacing: 1px;
+        }
+
+        .benefit-note {
+            font-size: 0.85rem;
+            color: var(--text-light);
+            margin-top: 0.75rem;
+            padding: 0.75rem;
+            background: var(--cream);
+            border-radius: 8px;
+        }
+
+        /* News Section */
+        .news-section {
+            background: var(--warm-white);
+            padding: 3rem 2rem;
+            margin: 2rem 0;
+        }
+
+        .news-content {
+            max-width: 800px;
+            margin: 0 auto;
+            text-align: center;
+        }
+
+        .news-icon {
+            font-size: 2.5rem;
+            margin-bottom: 1rem;
+        }
+
+        .news-title {
+            font-family: 'Zen Maru Gothic', sans-serif;
+            font-size: 1.3rem;
+            color: var(--text-dark);
+            margin-bottom: 1rem;
+        }
+
+        .news-text {
+            color: var(--text-light);
+            max-width: 600px;
+            margin: 0 auto;
+        }
+
+        .schedule-link {
+            display: inline-block;
+            margin-top: 1rem;
+            color: var(--primary);
+            text-decoration: none;
+            font-weight: 500;
+            border-bottom: 2px solid var(--primary);
+            padding-bottom: 2px;
+            transition: all 0.3s ease;
+        }
+
+        .schedule-link:hover {
+            color: var(--primary-dark);
+            border-color: var(--primary-dark);
+        }
+
+        /* CTA Section */
+        .cta-section {
+            padding: 4rem 2rem;
+            text-align: center;
+        }
+
+        .cta-box {
+            background: linear-gradient(135deg, var(--primary), var(--accent));
+            border-radius: 30px;
+            padding: 3rem 2rem;
+            max-width: 700px;
+            margin: 0 auto;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .cta-box::before {
+            content: '';
+            position: absolute;
+            top: -50%;
+            right: -50%;
+            width: 100%;
+            height: 100%;
+            background: radial-gradient(circle, rgba(255,255,255,0.2) 0%, transparent 70%);
+            pointer-events: none;
+        }
+
+        .cta-title {
+            font-family: 'Zen Maru Gothic', sans-serif;
+            font-size: 1.5rem;
+            color: white;
+            margin-bottom: 1rem;
+        }
+
+        .cta-new-course {
+            font-size: 1.1rem;
+            color: rgba(255,255,255,0.95);
+            margin-bottom: 0.75rem;
+            font-weight: 500;
+        }
+
+        .cta-subtitle {
+            color: rgba(255,255,255,0.9);
+            margin-bottom: 2rem;
+            font-size: 1rem;
+        }
+
+        .cta-button {
+            display: inline-block;
+            background: white;
+            color: var(--primary);
+            padding: 1.25rem 3rem;
+            border-radius: 50px;
+            text-decoration: none;
+            font-weight: 700;
+            font-size: 1.1rem;
+            transition: all 0.3s ease;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.2);
+        }
+
+        .cta-button:hover {
+            transform: translateY(-3px) scale(1.02);
+            box-shadow: 0 15px 40px rgba(0,0,0,0.25);
+        }
+
+        /* How to Section */
+        .howto-section {
+            padding: 3rem 2rem;
+            max-width: 800px;
+            margin: 0 auto;
+        }
+
+        .howto-steps {
+            background: var(--warm-white);
+            border-radius: 20px;
+            padding: 2rem;
+            box-shadow: 0 10px 40px rgba(0,0,0,0.05);
+        }
+
+        .howto-step {
+            display: flex;
+            gap: 1rem;
+            margin-bottom: 1.5rem;
+            padding-bottom: 1.5rem;
+            border-bottom: 1px solid rgba(0,0,0,0.05);
+        }
+
+        .howto-step:last-child {
+            margin-bottom: 0;
+            padding-bottom: 0;
+            border-bottom: none;
+        }
+
+        .step-number {
+            flex-shrink: 0;
+            width: 32px;
+            height: 32px;
+            background: var(--cream);
+            border: 2px solid var(--primary);
+            color: var(--primary);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-weight: 700;
+            font-size: 0.9rem;
+        }
+
+        .step-content h4 {
+            font-size: 1rem;
+            margin-bottom: 0.25rem;
+            color: var(--text-dark);
+        }
+
+        .step-content p {
+            color: var(--text-light);
+            font-size: 0.9rem;
+        }
+
+        .step-link {
+            color: var(--primary);
+            text-decoration: none;
+            font-weight: 500;
+        }
+
+        .step-link:hover {
+            text-decoration: underline;
+        }
+
+        .step-link-sub {
+            color: var(--text-light);
+            text-decoration: none;
+            font-size: 0.85rem;
+        }
+
+        .step-link-sub:hover {
+            color: var(--primary);
+            text-decoration: underline;
+        }
+
+        .step-note {
+            display: block;
+            margin-top: 0.5rem;
+            font-size: 0.85rem;
+            color: var(--text-light);
+        }
+
+        /* Reminder Section */
+        .reminder-section {
+            padding: 3rem 2rem 4rem;
+            max-width: 800px;
+            margin: 0 auto;
+        }
+
+        .reminder-box {
+            background: linear-gradient(135deg, #FFF9E6, #FFF3CD);
+            border: 3px solid var(--gold);
+            border-radius: 24px;
+            padding: 3rem 2rem;
+            text-align: center;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .reminder-box::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            height: 6px;
+            background: linear-gradient(90deg, var(--gold), var(--primary), var(--gold));
+        }
+
+        .reminder-icon {
+            font-size: 3rem;
+            margin-bottom: 1rem;
+        }
+
+        .reminder-title {
+            font-family: 'Zen Maru Gothic', sans-serif;
+            font-size: clamp(1.3rem, 4vw, 1.8rem);
+            color: var(--text-dark);
+            margin-bottom: 1rem;
+            line-height: 1.5;
+        }
+
+        .reminder-description {
+            font-size: 1.1rem;
+            color: var(--text-dark);
+            margin-bottom: 0.75rem;
+        }
+
+        .reminder-description strong {
+            color: var(--primary);
+            font-size: 1.2rem;
+        }
+
+        .reminder-note {
+            font-size: 0.9rem;
+            color: var(--text-light);
+        }
+
+        .reminder-contact {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            gap: 1rem;
+            margin: 1.5rem 0;
+        }
+
+        .contact-btn {
+            display: inline-flex;
+            align-items: center;
+            gap: 0.5rem;
+            padding: 0.875rem 1.5rem;
+            border-radius: 50px;
+            text-decoration: none;
+            font-weight: 500;
+            font-size: 1rem;
+            transition: all 0.3s ease;
+        }
+
+        .contact-icon {
+            font-size: 1.2rem;
+        }
+
+        .contact-email {
+            background: var(--primary);
+            color: white;
+        }
+
+        .contact-email:hover {
+            background: var(--primary-dark);
+            transform: translateY(-2px);
+            box-shadow: 0 4px 15px rgba(232, 90, 79, 0.3);
+        }
+
+        .contact-line {
+            background: #06C755;
+            color: white;
+        }
+
+        .contact-line:hover {
+            background: #05b04c;
+            transform: translateY(-2px);
+            box-shadow: 0 4px 15px rgba(6, 199, 85, 0.3);
+        }
+
+        /* Footer */
+        .footer {
+            background: var(--text-dark);
+            color: rgba(255,255,255,0.8);
+            padding: 2rem;
+            text-align: center;
+        }
+
+        .footer-logo {
+            font-family: 'Zen Maru Gothic', sans-serif;
+            font-size: 1.3rem;
+            color: white;
+            margin-bottom: 1rem;
+        }
+
+        .footer-text {
+            font-size: 0.9rem;
+            max-width: 500px;
+            margin: 0 auto 1.5rem;
+        }
+
+        .footer-contact {
+            color: var(--gold);
+            text-decoration: none;
+        }
+
+        /* Responsive */
+        @media (max-width: 768px) {
+            .header {
+                padding: 1rem;
+            }
+
+            .logo {
+                font-size: 1.2rem;
+            }
+
+            .header-cta {
+                padding: 0.5rem 1rem;
+                font-size: 0.85rem;
+            }
+
+            .hero {
+                padding: 3rem 1rem 2rem;
+            }
+
+            .new-course-banner {
+                padding: 0.75rem 1.5rem;
+            }
+
+            .new-course-date {
+                font-size: 1.2rem;
+            }
+
+            .new-course-label {
+                font-size: 0.9rem;
+            }
+
+            .countdown-section {
+                margin: 0 1rem 2rem;
+                padding: 1.5rem;
+            }
+
+            .countdown-number {
+                padding: 0.75rem 1rem;
+                min-width: 55px;
+            }
+
+            .benefits {
+                padding: 2rem 1rem;
+            }
+
+            .benefit-card {
+                padding: 1.5rem;
+            }
+
+            .cta-box {
+                padding: 2rem 1.5rem;
+            }
+
+            .cta-button {
+                padding: 1rem 2rem;
+                font-size: 1rem;
+            }
+
+            .howto-section {
+                padding: 2rem 1rem;
+            }
+
+            .reminder-section {
+                padding: 2rem 1rem 3rem;
+            }
+
+            .reminder-box {
+                padding: 2rem 1.5rem;
+            }
+
+            .reminder-icon {
+                font-size: 2.5rem;
+            }
+
+            .reminder-contact {
+                flex-direction: column;
+                align-items: center;
+            }
+
+            .contact-btn {
+                width: 100%;
+                max-width: 280px;
+                justify-content: center;
+            }
+        }
+
+        /* Small mobile */
+        @media (max-width: 480px) {
+            .hero h1 {
+                font-size: 1.6rem;
+            }
+
+            .campaign-badge {
+                font-size: 0.8rem;
+                padding: 0.4rem 1rem;
+            }
+
+            .countdown {
+                gap: 0.5rem;
+            }
+
+            .countdown-number {
+                font-size: 1.3rem;
+                padding: 0.6rem 0.75rem;
+                min-width: 45px;
+            }
+
+            .countdown-unit {
+                font-size: 0.65rem;
+            }
+
+            .section-title {
+                font-size: 1.4rem;
+            }
+
+            .benefit-value {
+                font-size: 1.5rem;
+            }
+
+            .benefit-code {
+                font-size: 1rem;
+            }
+
+            .reminder-title {
+                font-size: 1.1rem;
+            }
+
+            .cta-title {
+                font-size: 1.2rem;
+            }
+
+            .cta-new-course {
+                font-size: 1rem;
+            }
+
+            .howto-step {
+                flex-direction: column;
+                gap: 0.75rem;
+            }
+
+            .step-number {
+                align-self: flex-start;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="bg-decoration">
+        <div class="bg-circle bg-circle-1"></div>
+        <div class="bg-circle bg-circle-2"></div>
+    </div>
+
+    <!-- Header -->
+    <header class="header">
+        <div class="header-content">
+            <a href="https://www.success-j-academy.com/" class="logo">Success Academy</a>
+            <a href="https://www.success-j-academy.com/" class="header-cta">再入会はこちら</a>
+        </div>
+    </header>
+
+    <!-- Hero Section -->
+    <section class="hero">
+        <div class="campaign-badge">🎉 期間限定キャンペーン</div>
+        <h1>続々と再入会中！<br><span>カムバックキャンペーン</span></h1>
+        <p class="hero-subtitle">以前サクセス・アカデミーをご利用いただいた皆さまへ<br>この機会をどうぞお見逃しなく✨</p>
+        <div class="new-course-banner">
+            <span class="new-course-icon">🌟</span>
+            <div class="new-course-text">
+                <span class="new-course-date">1月5日（月）</span>
+                <span class="new-course-label">新規クール開始！</span>
+            </div>
+        </div>
+    </section>
+
+    <!-- Countdown Timer -->
+    <div class="countdown-section">
+        <p class="countdown-label">⏰ キャンペーン終了まで</p>
+        <div class="countdown" id="countdown">
+            <div class="countdown-item">
+                <div class="countdown-number" id="days">00</div>
+                <div class="countdown-unit">日</div>
+            </div>
+            <div class="countdown-item">
+                <div class="countdown-number" id="hours">00</div>
+                <div class="countdown-unit">時間</div>
+            </div>
+            <div class="countdown-item">
+                <div class="countdown-number" id="minutes">00</div>
+                <div class="countdown-unit">分</div>
+            </div>
+            <div class="countdown-item">
+                <div class="countdown-number" id="seconds">00</div>
+                <div class="countdown-unit">秒</div>
+            </div>
+        </div>
+        <p class="deadline-date">締切：<strong>12月31日（火）23:59</strong></p>
+    </div>
+
+    <!-- Benefits Section -->
+    <section class="benefits">
+        <h2 class="section-title">🎁 再入会特典</h2>
+        <div class="benefit-cards">
+            <div class="benefit-card">
+                <div class="benefit-number">1</div>
+                <h3 class="benefit-title">入会費が無料に！</h3>
+                <div class="benefit-value">50 USD → 0 USD</div>
+                <p class="benefit-description">ご登録時に「Referral Code欄」にコードを入力してください</p>
+                <div class="benefit-code">JOINFREE</div>
+                <p class="benefit-note">※登録時に入力がない場合は、特典が適用されませんのでご了承ください。</p>
+            </div>
+            <div class="benefit-card">
+                <div class="benefit-number">2</div>
+                <h3 class="benefit-title">フリーレッスン体験</h3>
+                <div class="benefit-value">2週間無料</div>
+                <p class="benefit-description">再入会された日から<strong>1月19日まで</strong>、フリーレッスンを体験できます。</p>
+            </div>
+            <div class="benefit-card">
+                <div class="benefit-number">3</div>
+                <h3 class="benefit-title">ポイントプレゼント</h3>
+                <div class="benefit-value">500 pt</div>
+                <p class="benefit-description">個別レッスン2回分のポイントをプレゼント！</p>
+                <p class="benefit-note">再入会後、「再入会しました」とメールにご返信ください。メール確認ができない場合は対象外となります。</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- News Section -->
+    <section class="news-section">
+        <div class="news-content">
+            <div class="news-icon">📚</div>
+            <h3 class="news-title">サクセス・アカデミーはさらに受けやすくなりました！</h3>
+            <p class="news-text">この秋からフリーレッスンの時間割を一部変更し、特にアメリカ西海岸にお住まいの方がより参加しやすくなっています。</p>
+            <a href="#" class="schedule-link">フリーレッスン時間割を確認する →</a>
+        </div>
+    </section>
+
+    <!-- CTA Section -->
+    <section class="cta-section">
+        <div class="cta-box">
+            <p class="cta-new-course">🌟 1月5日（月）新規クール開始</p>
+            <h2 class="cta-title">新しいクールから、一緒に始めませんか？</h2>
+            <p class="cta-subtitle">また一緒に学べるのを楽しみにしております！</p>
+            <a href="https://www.success-j-academy.com/" class="cta-button">今すぐ再入会する</a>
+        </div>
+    </section>
+
+    <!-- How to Section -->
+    <section class="howto-section">
+        <h2 class="section-title">再入会方法</h2>
+        <div class="howto-steps">
+            <div class="howto-step">
+                <div class="step-number">1</div>
+                <div class="step-content">
+                    <h4>ログイン</h4>
+                    <p><a href="https://www.success-j-academy.com/" class="step-link">こちらからログイン</a>してください。<br>
+                    <span class="step-note">※パスワードをお忘れの方は、<a href="https://www.success-j-academy.com/" class="step-link-sub">パスワードリセット</a>をお願いいたします。</span></p>
+                </div>
+            </div>
+            <div class="howto-step">
+                <div class="step-number">2</div>
+                <div class="step-content">
+                    <h4>生徒アカウントを作成</h4>
+                    <p>新しい生徒アカウントを作成してください。<br>
+                    <a href="#" class="step-link">登録方法動画（27秒以降）を見る</a></p>
+                </div>
+            </div>
+            <div class="howto-step">
+                <div class="step-number">3</div>
+                <div class="step-content">
+                    <h4>特典コードを入力</h4>
+                    <p>Referral Code欄に <strong>JOINFREE</strong> と入力して、入会費無料の特典を適用してください。</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Reminder Section -->
+    <section class="reminder-section">
+        <div class="reminder-box">
+            <div class="reminder-icon">📩</div>
+            <h2 class="reminder-title">再入会後、「再入会しました」とご連絡ください</h2>
+            <div class="reminder-contact">
+                <a href="mailto:info@mercy-education.com" class="contact-btn contact-email">
+                    <span class="contact-icon">✉️</span>
+                    <span>info@mercy-education.com</span>
+                </a>
+                <a href="https://lin.ee/JVV8msS" class="contact-btn contact-line">
+                    <span class="contact-icon">💬</span>
+                    <span>LINE</span>
+                </a>
+            </div>
+            <p class="reminder-note">※ご連絡が確認できない場合は、ポイント付与および体験期間の延長が適用されませんのでご了承ください。</p>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="footer-logo">Success Academy</div>
+        <p class="footer-text">ご不明点がありましたら、お気軽にご連絡ください。</p>
+        <a href="mailto:info@mercy-education.com" class="footer-contact">お問い合わせ</a>
+    </footer>
+
+    <script>
+        // Countdown Timer
+        function updateCountdown() {
+            const deadline = new Date('2025-12-31T23:59:59').getTime();
+            const now = new Date().getTime();
+            const diff = deadline - now;
+
+            if (diff <= 0) {
+                document.getElementById('days').textContent = '00';
+                document.getElementById('hours').textContent = '00';
+                document.getElementById('minutes').textContent = '00';
+                document.getElementById('seconds').textContent = '00';
+                return;
+            }
+
+            const days = Math.floor(diff / (1000 * 60 * 60 * 24));
+            const hours = Math.floor((diff % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+            const minutes = Math.floor((diff % (1000 * 60 * 60)) / (1000 * 60));
+            const seconds = Math.floor((diff % (1000 * 60)) / 1000);
+
+            document.getElementById('days').textContent = String(days).padStart(2, '0');
+            document.getElementById('hours').textContent = String(hours).padStart(2, '0');
+            document.getElementById('minutes').textContent = String(minutes).padStart(2, '0');
+            document.getElementById('seconds').textContent = String(seconds).padStart(2, '0');
+        }
+
+        updateCountdown();
+        setInterval(updateCountdown, 1000);
+    </script>
+</body>
+</html>
