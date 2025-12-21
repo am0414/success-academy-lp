@@ -77,13 +77,65 @@
             50% { transform: translate(30px, 20px) rotate(5deg); }
         }
 
+        /* Sticky Countdown Bar */
+        .sticky-countdown {
+            position: fixed;
+            top: 0;
+            left: 0;
+            right: 0;
+            z-index: 200;
+            background: linear-gradient(135deg, var(--primary), var(--accent));
+            padding: 0.5rem 1rem;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            gap: 1rem;
+            flex-wrap: wrap;
+            box-shadow: 0 2px 10px rgba(232, 90, 79, 0.3);
+        }
+
+        .sticky-label {
+            color: white;
+            font-size: 0.85rem;
+            font-weight: 500;
+        }
+
+        .sticky-timer {
+            display: flex;
+            align-items: center;
+            gap: 0.25rem;
+        }
+
+        .sticky-number {
+            background: rgba(255,255,255,0.2);
+            color: white;
+            font-weight: 700;
+            font-size: 1rem;
+            padding: 0.25rem 0.5rem;
+            border-radius: 4px;
+            font-family: 'Zen Maru Gothic', sans-serif;
+            min-width: 28px;
+            text-align: center;
+        }
+
+        .sticky-unit {
+            color: rgba(255,255,255,0.9);
+            font-size: 0.75rem;
+            margin-right: 0.5rem;
+        }
+
+        .sticky-deadline {
+            color: rgba(255,255,255,0.9);
+            font-size: 0.8rem;
+        }
+
         /* Header */
         .header {
             background: var(--warm-white);
             padding: 1rem 2rem;
             box-shadow: 0 2px 20px rgba(0,0,0,0.05);
             position: sticky;
-            top: 0;
+            top: 44px;
             z-index: 100;
         }
 
@@ -123,6 +175,7 @@
         /* Hero Section */
         .hero {
             padding: 4rem 2rem 3rem;
+            padding-top: calc(4rem + 44px);
             text-align: center;
             position: relative;
         }
@@ -701,8 +754,33 @@
 
         /* Responsive */
         @media (max-width: 768px) {
+            .sticky-countdown {
+                padding: 0.4rem 0.5rem;
+                gap: 0.5rem;
+            }
+
+            .sticky-label {
+                display: none;
+            }
+
+            .sticky-number {
+                font-size: 0.9rem;
+                padding: 0.2rem 0.4rem;
+                min-width: 24px;
+            }
+
+            .sticky-unit {
+                font-size: 0.65rem;
+                margin-right: 0.3rem;
+            }
+
+            .sticky-deadline {
+                font-size: 0.7rem;
+            }
+
             .header {
                 padding: 1rem;
+                top: 36px;
             }
 
             .logo {
@@ -716,6 +794,7 @@
 
             .hero {
                 padding: 3rem 1rem 2rem;
+                padding-top: calc(3rem + 36px);
             }
 
             .new-course-banner {
@@ -787,6 +866,32 @@
 
         /* Small mobile */
         @media (max-width: 480px) {
+            .sticky-countdown {
+                padding: 0.3rem 0.5rem;
+            }
+
+            .sticky-number {
+                font-size: 0.8rem;
+                padding: 0.15rem 0.3rem;
+                min-width: 22px;
+            }
+
+            .sticky-unit {
+                font-size: 0.6rem;
+            }
+
+            .sticky-deadline {
+                display: none;
+            }
+
+            .header {
+                top: 32px;
+            }
+
+            .hero {
+                padding-top: calc(3rem + 32px);
+            }
+
             .hero h1 {
                 font-size: 1.6rem;
             }
@@ -851,6 +956,18 @@
         <div class="bg-circle bg-circle-2"></div>
     </div>
 
+    <!-- Sticky Countdown Bar -->
+    <div class="sticky-countdown">
+        <span class="sticky-label">⏰ キャンペーン終了まで</span>
+        <div class="sticky-timer">
+            <span class="sticky-number" id="sticky-days">00</span><span class="sticky-unit">日</span>
+            <span class="sticky-number" id="sticky-hours">00</span><span class="sticky-unit">時間</span>
+            <span class="sticky-number" id="sticky-minutes">00</span><span class="sticky-unit">分</span>
+            <span class="sticky-number" id="sticky-seconds">00</span><span class="sticky-unit">秒</span>
+        </div>
+        <span class="sticky-deadline">締切：12月31日（火）23:59</span>
+    </div>
+
     <!-- Header -->
     <header class="header">
         <div class="header-content">
@@ -867,35 +984,11 @@
         <div class="new-course-banner">
             <span class="new-course-icon">🌟</span>
             <div class="new-course-text">
-                <span class="new-course-date">1月5日（月）</span>
+                <span class="new-course-date">2026年1月5日（月）</span>
                 <span class="new-course-label">新規クール開始！</span>
             </div>
         </div>
     </section>
-
-    <!-- Countdown Timer -->
-    <div class="countdown-section">
-        <p class="countdown-label">⏰ キャンペーン終了まで</p>
-        <div class="countdown" id="countdown">
-            <div class="countdown-item">
-                <div class="countdown-number" id="days">00</div>
-                <div class="countdown-unit">日</div>
-            </div>
-            <div class="countdown-item">
-                <div class="countdown-number" id="hours">00</div>
-                <div class="countdown-unit">時間</div>
-            </div>
-            <div class="countdown-item">
-                <div class="countdown-number" id="minutes">00</div>
-                <div class="countdown-unit">分</div>
-            </div>
-            <div class="countdown-item">
-                <div class="countdown-number" id="seconds">00</div>
-                <div class="countdown-unit">秒</div>
-            </div>
-        </div>
-        <p class="deadline-date">締切：<strong>12月31日（火）23:59</strong></p>
-    </div>
 
     <!-- Benefits Section -->
     <section class="benefits">
@@ -913,7 +1006,7 @@
                 <div class="benefit-number">2</div>
                 <h3 class="benefit-title">フリーレッスン体験</h3>
                 <div class="benefit-value">2週間無料</div>
-                <p class="benefit-description">再入会された日から<strong>1月19日まで</strong>、フリーレッスンを体験できます。</p>
+                <p class="benefit-description">再入会された日から<strong>2026年1月19日まで</strong>、フリーレッスンを体験できます。</p>
             </div>
             <div class="benefit-card">
                 <div class="benefit-number">3</div>
@@ -931,14 +1024,14 @@
             <div class="news-icon">📚</div>
             <h3 class="news-title">サクセス・アカデミーはさらに受けやすくなりました！</h3>
             <p class="news-text">この秋からフリーレッスンの時間割を一部変更し、特にアメリカ西海岸にお住まいの方がより参加しやすくなっています。</p>
-            <a href="#" class="schedule-link">フリーレッスン時間割を確認する →</a>
+            <a href="https://drive.google.com/embeddedfolderview?id=1z5WUmx_lFVRy3YbmtEUH-tIqrwsaP8au#grid" class="schedule-link" target="_blank">フリーレッスン時間割を確認する →</a>
         </div>
     </section>
 
     <!-- CTA Section -->
     <section class="cta-section">
         <div class="cta-box">
-            <p class="cta-new-course">🌟 1月5日（月）新規クール開始</p>
+            <p class="cta-new-course">🌟 2026年1月5日（月）新規クール開始</p>
             <h2 class="cta-title">新しいクールから、一緒に始めませんか？</h2>
             <p class="cta-subtitle">また一緒に学べるのを楽しみにしております！</p>
             <a href="https://www.success-j-academy.com/" class="cta-button">今すぐ再入会する</a>
@@ -961,8 +1054,7 @@
                 <div class="step-number">2</div>
                 <div class="step-content">
                     <h4>生徒アカウントを作成</h4>
-                    <p>新しい生徒アカウントを作成してください。<br>
-                    <a href="#" class="step-link">登録方法動画（27秒以降）を見る</a></p>
+                    <p><a href="https://www.youtube.com/watch?si=S-E0xNpp91N8UKQS&t=27&v=iq_vI22n30M&feature=youtu.be" class="step-link" target="_blank">こちらの動画</a>を参考に、生徒アカウントを作成してください。</p>
                 </div>
             </div>
             <div class="howto-step">
@@ -1009,10 +1101,10 @@
             const diff = deadline - now;
 
             if (diff <= 0) {
-                document.getElementById('days').textContent = '00';
-                document.getElementById('hours').textContent = '00';
-                document.getElementById('minutes').textContent = '00';
-                document.getElementById('seconds').textContent = '00';
+                document.getElementById('sticky-days').textContent = '00';
+                document.getElementById('sticky-hours').textContent = '00';
+                document.getElementById('sticky-minutes').textContent = '00';
+                document.getElementById('sticky-seconds').textContent = '00';
                 return;
             }
 
@@ -1021,10 +1113,10 @@
             const minutes = Math.floor((diff % (1000 * 60 * 60)) / (1000 * 60));
             const seconds = Math.floor((diff % (1000 * 60)) / 1000);
 
-            document.getElementById('days').textContent = String(days).padStart(2, '0');
-            document.getElementById('hours').textContent = String(hours).padStart(2, '0');
-            document.getElementById('minutes').textContent = String(minutes).padStart(2, '0');
-            document.getElementById('seconds').textContent = String(seconds).padStart(2, '0');
+            document.getElementById('sticky-days').textContent = String(days).padStart(2, '0');
+            document.getElementById('sticky-hours').textContent = String(hours).padStart(2, '0');
+            document.getElementById('sticky-minutes').textContent = String(minutes).padStart(2, '0');
+            document.getElementById('sticky-seconds').textContent = String(seconds).padStart(2, '0');
         }
 
         updateCountdown();
