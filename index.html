@@ -2415,49 +2415,49 @@
 
     <!-- カウントダウンタイマースクリプト -->
     <script>
-    (function() {
-        // キャンペーン終了日時: 2025年1月4日 23:59:59 (日本時間)
-        const endDate = new Date('2025-01-04T23:59:59+09:00').getTime();
+    document.addEventListener('DOMContentLoaded', function() {
+        // キャンペーン終了日時: 2026年1月4日 23:59:59 (日本時間)
+        var endDate = new Date('2026-01-04T23:59:59+09:00').getTime();
         
         function updateAllCountdowns() {
-            const now = new Date().getTime();
-            const distance = endDate - now;
+            var now = new Date().getTime();
+            var distance = endDate - now;
             
             if (distance < 0) {
                 // キャンペーン終了
-                document.querySelectorAll('.countdown-days').forEach(el => el.textContent = '00');
-                document.querySelectorAll('.countdown-hours').forEach(el => el.textContent = '00');
-                document.querySelectorAll('.countdown-minutes').forEach(el => el.textContent = '00');
-                document.querySelectorAll('.countdown-seconds').forEach(el => el.textContent = '00');
+                var daysEls = document.querySelectorAll('.countdown-days');
+                var hoursEls = document.querySelectorAll('.countdown-hours');
+                var minutesEls = document.querySelectorAll('.countdown-minutes');
+                var secondsEls = document.querySelectorAll('.countdown-seconds');
+                
+                for (var i = 0; i < daysEls.length; i++) daysEls[i].textContent = '00';
+                for (var i = 0; i < hoursEls.length; i++) hoursEls[i].textContent = '00';
+                for (var i = 0; i < minutesEls.length; i++) minutesEls[i].textContent = '00';
+                for (var i = 0; i < secondsEls.length; i++) secondsEls[i].textContent = '00';
                 return;
             }
             
-            const days = Math.floor(distance / (1000 * 60 * 60 * 24));
-            const hours = Math.floor((distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
-            const minutes = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
-            const seconds = Math.floor((distance % (1000 * 60)) / 1000);
+            var days = Math.floor(distance / (1000 * 60 * 60 * 24));
+            var hours = Math.floor((distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+            var minutes = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
+            var seconds = Math.floor((distance % (1000 * 60)) / 1000);
+            
+            // ゼロ埋め
+            var daysStr = days < 10 ? '0' + days : days.toString();
+            var hoursStr = hours < 10 ? '0' + hours : hours.toString();
+            var minutesStr = minutes < 10 ? '0' + minutes : minutes.toString();
+            var secondsStr = seconds < 10 ? '0' + seconds : seconds.toString();
             
             // 各カウントダウン要素を更新
-            document.querySelectorAll('.countdown-days').forEach(el => {
-                el.textContent = days.toString().padStart(2, '0');
-            });
-            document.querySelectorAll('.countdown-hours').forEach(el => {
-                el.textContent = hours.toString().padStart(2, '0');
-            });
-            document.querySelectorAll('.countdown-minutes').forEach(el => {
-                el.textContent = minutes.toString().padStart(2, '0');
-            });
-            document.querySelectorAll('.countdown-seconds').forEach(el => {
-                el.textContent = seconds.toString().padStart(2, '0');
-            });
+            var daysEls = document.querySelectorAll('.countdown-days');
+            var hoursEls = document.querySelectorAll('.countdown-hours');
+            var minutesEls = document.querySelectorAll('.countdown-minutes');
+            var secondsEls = document.querySelectorAll('.countdown-seconds');
             
-            // 残り1日以下の場合、緊急表示
-            if (days === 0) {
-                document.querySelectorAll('.countdown-days').forEach(el => {
-                    el.style.animation = 'pulse-seconds 0.5s infinite';
-                    el.style.color = '#ffd700';
-                });
-            }
+            for (var i = 0; i < daysEls.length; i++) daysEls[i].textContent = daysStr;
+            for (var i = 0; i < hoursEls.length; i++) hoursEls[i].textContent = hoursStr;
+            for (var i = 0; i < minutesEls.length; i++) minutesEls[i].textContent = minutesStr;
+            for (var i = 0; i < secondsEls.length; i++) secondsEls[i].textContent = secondsStr;
         }
         
         // 初回実行
@@ -2465,7 +2465,7 @@
         
         // 1秒ごとに更新
         setInterval(updateAllCountdowns, 1000);
-    })();
+    });
     </script>
 
 </body>
