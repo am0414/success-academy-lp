@@ -200,7 +200,7 @@
         
         /* Campaign Banner */
         .campaign-banner {
-            background: linear-gradient(135deg, #0066cc 0%, #00b4d8 100%);
+            background: linear-gradient(135deg, #c0392b 0%, #e74c3c 100%);
             color: white;
             padding: 80px 20px;
             text-align: center;
@@ -211,16 +211,16 @@
         .campaign-banner::before {
             content: '';
             position: absolute;
-            top: -50%;
-            left: -50%;
-            width: 200%;
-            height: 200%;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
             background: repeating-linear-gradient(
                 45deg,
                 transparent,
                 transparent 10px,
-                rgba(255,255,255,0.05) 10px,
-                rgba(255,255,255,0.05) 20px
+                rgba(255,255,255,0.03) 10px,
+                rgba(255,255,255,0.03) 20px
             );
         }
         
@@ -606,7 +606,7 @@
         /* CTA Section */
         .cta-section {
             padding: 100px 20px;
-            background: linear-gradient(135deg, #0066cc 0%, #00b4d8 100%);
+            background: linear-gradient(135deg, #c0392b 0%, #e74c3c 100%);
             color: white;
             text-align: center;
         }
@@ -930,7 +930,7 @@
         
         .email-submit {
             padding: 12px 30px;
-            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            background: linear-gradient(135deg, #e74c3c 0%, #c0392b 100%);
             color: white;
             border: none;
             border-radius: 50px;
@@ -943,7 +943,7 @@
         
         .email-submit:hover {
             transform: translateY(-2px);
-            box-shadow: 0 8px 20px rgba(102, 126, 234, 0.4);
+            box-shadow: 0 8px 20px rgba(231, 76, 60, 0.4);
         }
         
         /* 緊急性テキスト */
@@ -958,6 +958,57 @@
         @keyframes pulse-urgency {
             0%, 100% { opacity: 1; }
             50% { opacity: 0.7; }
+        }
+        
+        /* カウントダウン用スタイル */
+        @keyframes pulse-badge {
+            0%, 100% { transform: scale(1); }
+            50% { transform: scale(1.05); }
+        }
+        
+        @keyframes pulse-seconds {
+            0%, 100% { opacity: 1; }
+            50% { opacity: 0.7; }
+        }
+        
+        @keyframes sparkle {
+            0%, 100% { transform: scale(1) rotate(0deg); opacity: 1; }
+            50% { transform: scale(1.2) rotate(180deg); opacity: 0.7; }
+        }
+        
+        .countdown-box {
+            display: flex;
+            justify-content: center;
+            gap: 8px;
+        }
+        
+        .countdown-item {
+            text-align: center;
+        }
+        
+        .countdown-number {
+            background: rgba(255,255,255,0.2);
+            color: white;
+            font-size: 1.6rem;
+            font-weight: 900;
+            padding: 8px 12px;
+            border-radius: 10px;
+            min-width: 45px;
+            display: inline-block;
+        }
+        
+        .countdown-label {
+            color: #999;
+            font-size: 0.65rem;
+            margin-top: 4px;
+        }
+        
+        .countdown-separator {
+            color: white;
+            font-size: 1.3rem;
+            font-weight: bold;
+            align-self: center;
+            padding-bottom: 15px;
         }
         
         /* Responsive */
@@ -1033,6 +1084,21 @@
             }
             
             .campaign-banner p {
+                font-size: 1rem !important;
+            }
+            
+            /* カウントダウン スマホ対応 */
+            .countdown-box {
+                gap: 5px !important;
+            }
+            
+            .countdown-number {
+                font-size: 1.3rem !important;
+                padding: 6px 10px !important;
+                min-width: 38px !important;
+            }
+            
+            .countdown-separator {
                 font-size: 1rem !important;
             }
             
@@ -1346,39 +1412,73 @@
         </style>
     </section>
 
-    <!-- Campaign Banner - シンプルCTA -->
-    <section class="campaign-banner" style="position: relative; overflow: hidden;">
+    <!-- Campaign Banner - 年末年始キャンペーン -->
+    <section class="campaign-banner" style="position: relative; overflow: hidden; background: linear-gradient(135deg, #c0392b 0%, #e74c3c 100%);">
         <!-- 背景パターン -->
-        <div style="position: absolute; top: 0; left: 0; right: 0; bottom: 0; opacity: 0.05; background-image: repeating-linear-gradient(45deg, transparent, transparent 35px, rgba(255,255,255,.5) 35px, rgba(255,255,255,.5) 70px);"></div>
+        <div style="position: absolute; top: 0; left: 0; right: 0; bottom: 0; opacity: 0.1; background-image: repeating-linear-gradient(45deg, transparent, transparent 35px, rgba(255,255,255,0.3) 35px, rgba(255,255,255,0.3) 70px);"></div>
         
         <div class="campaign-content" style="position: relative; z-index: 1; text-align: center;">
             
             <div class="cta-box-wrapper" style="max-width: 500px; margin: 0 auto; padding: 0 20px;">
-                <div class="cta-line-box" style="padding: 35px 30px; background: white; border-radius: 25px; box-shadow: 0 20px 60px rgba(0,0,0,0.15); border: 3px solid #06c755; text-align: center;">
+                <div class="cta-line-box" style="padding: 35px 30px; background: white; border-radius: 25px; box-shadow: 0 20px 60px rgba(0,0,0,0.3); border: 4px solid #e74c3c; text-align: center; position: relative; overflow: hidden;">
                     
-                    <!-- 期間 -->
-                    <p style="font-size: 0.95rem; color: #666; margin-bottom: 15px;">📅 期間限定：12.1(日) ▶ 12.31(火)</p>
+                    <!-- キラキラ装飾 -->
+                    <div style="position: absolute; top: 10px; left: 15px; font-size: 1.5rem; animation: sparkle 1.5s ease-in-out infinite;">🎍</div>
+                    <div style="position: absolute; top: 10px; right: 15px; font-size: 1.5rem; animation: sparkle 1.5s ease-in-out infinite 0.5s;">🎍</div>
                     
-                    <!-- メインキャッチ -->
-                    <p style="font-size: 1.6rem; font-weight: 900; color: #e74c3c; margin-bottom: 20px;">入会費が最大100%無料に！</p>
-                    
-                    <!-- 特典内容 -->
-                    <div style="background: linear-gradient(135deg, #f0fff4 0%, #dcfce7 100%); padding: 20px; border-radius: 15px; margin-bottom: 15px; border: 2px solid #06c755;">
-                        <p style="font-size: 1rem; color: #333; margin-bottom: 5px;">LINE登録するだけで</p>
-                        <p style="font-size: 2rem; font-weight: 900; color: #06c755; margin-bottom: 5px;">入会費 50%OFF</p>
-                        <p style="font-size: 0.85rem; color: #666;">（通常 50USD → 25USD）</p>
+                    <!-- 緊急バッジ -->
+                    <div style="display: inline-block; background: linear-gradient(135deg, #e74c3c 0%, #c0392b 100%); color: white; padding: 8px 20px; border-radius: 50px; font-size: 0.85rem; font-weight: bold; margin-bottom: 15px; animation: pulse-badge 2s infinite;">
+                        ⏰ 残りわずか
                     </div>
                     
-                    <!-- さらに特典 -->
-                    <p style="font-size: 0.9rem; color: #666; margin-bottom: 20px;">さらに、無料説明会に参加して<span style="color: #e74c3c; font-weight: bold;">100%OFF</span></p>
+                    <!-- キャンペーン名 -->
+                    <h3 style="font-size: 1.8rem; font-weight: 900; color: #1a1a1a; margin-bottom: 10px; line-height: 1.3;">年末年始キャンペーン</h3>
+                    
+                    <!-- 期間 -->
+                    <p style="font-size: 0.95rem; color: #666; margin-bottom: 20px;">📅 12/28(土) ～ 1/4(土) 23:59まで</p>
+                    
+                    <!-- カウントダウン -->
+                    <div id="countdown-1" style="background: linear-gradient(135deg, #c0392b 0%, #a93226 100%); padding: 18px 12px; border-radius: 15px; margin-bottom: 20px;">
+                        <p style="color: #ffd700; font-size: 0.8rem; font-weight: bold; margin-bottom: 10px;">⏰ キャンペーン終了まで</p>
+                        <div class="countdown-box">
+                            <div class="countdown-item">
+                                <div class="countdown-number countdown-days" style="background: rgba(255,255,255,0.2);">--</div>
+                                <p class="countdown-label" style="color: rgba(255,255,255,0.8);">日</p>
+                            </div>
+                            <div class="countdown-separator">:</div>
+                            <div class="countdown-item">
+                                <div class="countdown-number countdown-hours" style="background: rgba(255,255,255,0.2);">--</div>
+                                <p class="countdown-label" style="color: rgba(255,255,255,0.8);">時間</p>
+                            </div>
+                            <div class="countdown-separator">:</div>
+                            <div class="countdown-item">
+                                <div class="countdown-number countdown-minutes" style="background: rgba(255,255,255,0.2);">--</div>
+                                <p class="countdown-label" style="color: rgba(255,255,255,0.8);">分</p>
+                            </div>
+                            <div class="countdown-separator">:</div>
+                            <div class="countdown-item">
+                                <div class="countdown-number countdown-seconds" style="background: rgba(255,255,255,0.2); animation: pulse-seconds 1s infinite;">--</div>
+                                <p class="countdown-label" style="color: rgba(255,255,255,0.8);">秒</p>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <!-- 特典内容 -->
+                    <div style="background: linear-gradient(135deg, #fff5f5 0%, #ffe8e8 100%); padding: 20px; border-radius: 15px; margin-bottom: 20px; border: 2px solid #e74c3c;">
+                        <p style="font-size: 1rem; color: #333; margin-bottom: 8px;">LINE登録するだけで</p>
+                        <p style="font-size: 2.2rem; font-weight: 900; color: #e74c3c; margin-bottom: 5px; line-height: 1.2;">入会費 <span style="font-size: 2.8rem;">0</span>円</p>
+                        <p style="font-size: 1.1rem; color: #666; text-decoration: line-through;">通常 50USD</p>
+                    </div>
                     
                     <!-- LINEボタン -->
                     <div style="text-align: center;" class="line-button-wrapper">
-                        <button id="lineRegButton" class="line-button" onclick="event.preventDefault(); trackLineClick(); setTimeout(function() { window.open('https://line.me/R/ti/p/@359fnsdb', '_blank'); }, 300);" style="width: 100%; padding: 18px; font-size: 1.15rem;">LINE登録をして特典だけゲット</button>
+                        <button class="line-button campaign-line-btn" onclick="event.preventDefault(); trackLineClick(); setTimeout(function() { window.open('https://line.me/R/ti/p/@359fnsdb', '_blank'); }, 300);" style="width: 100%; padding: 20px; font-size: 1.2rem; background: #06c755; border: none; border-radius: 60px; color: white; font-weight: bold; cursor: pointer; box-shadow: 0 10px 30px rgba(6, 199, 85, 0.4);">
+                            LINE登録する
+                        </button>
                     </div>
                     
                     <!-- 注釈 -->
-                    <p style="font-size: 0.8rem; color: #999; margin-top: 10px;">※時間割なども確認できます</p>
+                    <p style="font-size: 0.75rem; color: #999; margin-top: 15px; line-height: 1.5;">※会員登録時にクーポンコード入力が必要です<br>※時間割なども確認できます</p>
                     
                 </div>
             </div>
@@ -1536,24 +1636,57 @@
                 </table>
             </div>
             
-            <!-- 表の下のCTA - シンプル版 -->
+            <!-- 表の下のCTA - 年末年始キャンペーン -->
             <div class="comparison-cta-wrapper" style="margin-top: 80px;">
-                <div style="max-width: 450px; margin: 0 auto; background: white; padding: 30px 25px; border-radius: 20px; border: 3px solid #06c755;">
+                <div style="max-width: 450px; margin: 0 auto; background: white; padding: 30px 25px; border-radius: 20px; border: 4px solid #e74c3c; box-shadow: 0 20px 60px rgba(0,0,0,0.3); position: relative; overflow: hidden;">
                     
-                    <p style="font-size: 0.9rem; color: #666; margin-bottom: 12px;">📅 期間限定：12.1(日) ▶ 12.31(火)</p>
-                    <p style="font-size: 1.4rem; font-weight: 900; color: #e74c3c; margin-bottom: 15px;">入会費が最大100%無料に！</p>
+                    <!-- キラキラ装飾 -->
+                    <div style="position: absolute; top: 8px; left: 12px; font-size: 1.2rem; animation: sparkle 1.5s ease-in-out infinite;">🎍</div>
+                    <div style="position: absolute; top: 8px; right: 12px; font-size: 1.2rem; animation: sparkle 1.5s ease-in-out infinite 0.5s;">🎍</div>
                     
-                    <div style="background: #f0fff4; padding: 15px; border-radius: 10px; margin-bottom: 12px; border: 1px solid #06c755;">
-                        <p style="font-size: 0.9rem; color: #333; margin-bottom: 3px;">LINE登録するだけで</p>
-                        <p style="font-size: 1.6rem; font-weight: 900; color: #06c755;">入会費 50%OFF</p>
-                        <p style="font-size: 0.8rem; color: #666;">（通常 50USD → 25USD）</p>
+                    <!-- 緊急バッジ -->
+                    <div style="display: inline-block; background: linear-gradient(135deg, #e74c3c 0%, #c0392b 100%); color: white; padding: 6px 15px; border-radius: 50px; font-size: 0.8rem; font-weight: bold; margin-bottom: 12px; animation: pulse-badge 2s infinite;">
+                        ⏰ 残りわずか
                     </div>
                     
-                    <p style="font-size: 0.85rem; color: #666; margin-bottom: 15px;">さらに、無料説明会に参加して<span style="color: #e74c3c; font-weight: bold;">100%OFF</span></p>
+                    <h4 style="font-size: 1.3rem; font-weight: 900; color: #1a1a1a; margin-bottom: 8px;">年末年始キャンペーン</h4>
+                    <p style="font-size: 0.85rem; color: #666; margin-bottom: 12px;">📅 12/28(土) ～ 1/4(土) 23:59まで</p>
                     
-                    <button class="comparison-cta-button" onclick="event.preventDefault(); trackLineClick(); setTimeout(function() { window.open('https://line.me/R/ti/p/@359fnsdb', '_blank'); }, 300);" style="width: 100%; background: #06c755; color: white; border: none; padding: 16px; border-radius: 50px; font-size: 1.1rem; font-weight: bold; cursor: pointer;">LINE登録をして特典だけゲット</button>
+                    <!-- カウントダウン -->
+                    <div id="countdown-2" style="background: linear-gradient(135deg, #c0392b 0%, #a93226 100%); padding: 15px 10px; border-radius: 12px; margin-bottom: 15px;">
+                        <p style="color: #ffd700; font-size: 0.75rem; font-weight: bold; margin-bottom: 8px;">⏰ 終了まで</p>
+                        <div class="countdown-box">
+                            <div class="countdown-item">
+                                <div class="countdown-number countdown-days" style="background: rgba(255,255,255,0.2);">--</div>
+                                <p class="countdown-label" style="color: rgba(255,255,255,0.8);">日</p>
+                            </div>
+                            <div class="countdown-separator">:</div>
+                            <div class="countdown-item">
+                                <div class="countdown-number countdown-hours" style="background: rgba(255,255,255,0.2);">--</div>
+                                <p class="countdown-label" style="color: rgba(255,255,255,0.8);">時間</p>
+                            </div>
+                            <div class="countdown-separator">:</div>
+                            <div class="countdown-item">
+                                <div class="countdown-number countdown-minutes" style="background: rgba(255,255,255,0.2);">--</div>
+                                <p class="countdown-label" style="color: rgba(255,255,255,0.8);">分</p>
+                            </div>
+                            <div class="countdown-separator">:</div>
+                            <div class="countdown-item">
+                                <div class="countdown-number countdown-seconds" style="background: rgba(255,255,255,0.2); animation: pulse-seconds 1s infinite;">--</div>
+                                <p class="countdown-label" style="color: rgba(255,255,255,0.8);">秒</p>
+                            </div>
+                        </div>
+                    </div>
                     
-                    <p style="font-size: 0.75rem; color: #999; margin-top: 10px;">※時間割なども確認できます</p>
+                    <div style="background: #fff5f5; padding: 15px; border-radius: 10px; margin-bottom: 12px; border: 2px solid #e74c3c;">
+                        <p style="font-size: 0.9rem; color: #333; margin-bottom: 3px;">LINE登録するだけで</p>
+                        <p style="font-size: 1.8rem; font-weight: 900; color: #e74c3c;">入会費 0円</p>
+                        <p style="font-size: 0.8rem; color: #666; text-decoration: line-through;">通常 50USD</p>
+                    </div>
+                    
+                    <button class="comparison-cta-button" onclick="event.preventDefault(); trackLineClick(); setTimeout(function() { window.open('https://line.me/R/ti/p/@359fnsdb', '_blank'); }, 300);" style="width: 100%; background: #06c755; color: white; border: none; padding: 16px; border-radius: 50px; font-size: 1.1rem; font-weight: bold; cursor: pointer; box-shadow: 0 8px 25px rgba(6, 199, 85, 0.4);">LINE登録する</button>
+                    
+                    <p style="font-size: 0.7rem; color: #999; margin-top: 10px;">※会員登録時にコード入力が必要です</p>
                 </div>
             </div>
         </div>
@@ -1566,20 +1699,10 @@
                 66% { transform: translate(-30px, 30px) scale(0.9); }
             }
             
-            @keyframes pulse {
-                0%, 100% { transform: translate(-50%, -50%) scale(1); opacity: 0.6; }
-                50% { transform: translate(-50%, -50%) scale(1.3); opacity: 0.3; }
-            }
-            
             @keyframes shake {
                 0%, 100% { transform: rotate(0deg) translateY(0); }
                 25% { transform: rotate(-12deg) translateY(-2px); }
                 75% { transform: rotate(12deg) translateY(-2px); }
-            }
-            
-            @keyframes sparkle {
-                0%, 100% { transform: scale(1) rotate(0deg); opacity: 1; }
-                50% { transform: scale(1.3) rotate(180deg); opacity: 0.7; }
             }
             
             @keyframes slideUp {
@@ -2009,8 +2132,8 @@
         </div>
     </section>
 
-    <!-- Final CTA Section - シンプル版 -->
-    <section class="cta-section" style="position: relative; overflow: hidden;">
+    <!-- Final CTA Section - 年末年始キャンペーン -->
+    <section class="cta-section" style="position: relative; overflow: hidden; background: linear-gradient(135deg, #c0392b 0%, #e74c3c 100%);">
         <!-- 背景アニメーション -->
         <div style="position: absolute; width: 200%; height: 200%; top: -50%; left: -50%; background: radial-gradient(circle at 20% 50%, rgba(255,255,255,0.1) 0%, transparent 50%), radial-gradient(circle at 80% 80%, rgba(255,255,255,0.1) 0%, transparent 50%); animation: rotate 20s linear infinite;"></div>
         
@@ -2024,25 +2147,58 @@
         <div class="container" style="position: relative; z-index: 1; max-width: 1200px; margin: 0 auto; padding: 0 20px;">
             
             <!-- シンプルCTAボックス -->
-            <div style="max-width: 450px; margin: 0 auto;">
-                <div style="background: white; border-radius: 25px; padding: 35px 30px; box-shadow: 0 30px 80px rgba(0,0,0,0.3); text-align: center; border: 3px solid #06c755;">
+            <div style="max-width: 500px; margin: 0 auto;">
+                <div style="background: white; border-radius: 25px; padding: 35px 30px; box-shadow: 0 30px 80px rgba(0,0,0,0.3); text-align: center; border: 4px solid #e74c3c; position: relative; overflow: hidden;">
                     
-                    <p style="font-size: 0.95rem; color: #666; margin-bottom: 15px;">📅 期間限定：12.1(日) ▶ 12.31(火)</p>
-                    <p style="font-size: 1.6rem; font-weight: 900; color: #e74c3c; margin-bottom: 20px;">入会費が最大100%無料に！</p>
+                    <!-- キラキラ装飾 -->
+                    <div style="position: absolute; top: 10px; left: 15px; font-size: 1.5rem; animation: sparkle 1.5s ease-in-out infinite;">🎍</div>
+                    <div style="position: absolute; top: 10px; right: 15px; font-size: 1.5rem; animation: sparkle 1.5s ease-in-out infinite 0.5s;">🎍</div>
                     
-                    <div style="background: linear-gradient(135deg, #f0fff4 0%, #dcfce7 100%); padding: 20px; border-radius: 15px; margin-bottom: 15px; border: 2px solid #06c755;">
-                        <p style="font-size: 1rem; color: #333; margin-bottom: 5px;">LINE登録するだけで</p>
-                        <p style="font-size: 2rem; font-weight: 900; color: #06c755; margin-bottom: 5px;">入会費 50%OFF</p>
-                        <p style="font-size: 0.85rem; color: #666;">（通常 50USD → 25USD）</p>
+                    <!-- 緊急バッジ -->
+                    <div style="display: inline-block; background: linear-gradient(135deg, #e74c3c 0%, #c0392b 100%); color: white; padding: 8px 20px; border-radius: 50px; font-size: 0.85rem; font-weight: bold; margin-bottom: 15px; animation: pulse-badge 2s infinite;">
+                        ⏰ 残りわずか
                     </div>
                     
-                    <p style="font-size: 0.9rem; color: #666; margin-bottom: 20px;">さらに、無料説明会に参加して<span style="color: #e74c3c; font-weight: bold;">100%OFF</span></p>
+                    <h3 style="font-size: 1.8rem; font-weight: 900; color: #1a1a1a; margin-bottom: 10px;">年末年始キャンペーン</h3>
+                    <p style="font-size: 0.95rem; color: #666; margin-bottom: 20px;">📅 12/28(土) ～ 1/4(土) 23:59まで</p>
+                    
+                    <!-- カウントダウン -->
+                    <div id="countdown-3" style="background: linear-gradient(135deg, #c0392b 0%, #a93226 100%); padding: 18px 12px; border-radius: 15px; margin-bottom: 20px;">
+                        <p style="color: #ffd700; font-size: 0.8rem; font-weight: bold; margin-bottom: 10px;">⏰ キャンペーン終了まで</p>
+                        <div class="countdown-box">
+                            <div class="countdown-item">
+                                <div class="countdown-number countdown-days" style="background: rgba(255,255,255,0.2);">--</div>
+                                <p class="countdown-label" style="color: rgba(255,255,255,0.8);">日</p>
+                            </div>
+                            <div class="countdown-separator">:</div>
+                            <div class="countdown-item">
+                                <div class="countdown-number countdown-hours" style="background: rgba(255,255,255,0.2);">--</div>
+                                <p class="countdown-label" style="color: rgba(255,255,255,0.8);">時間</p>
+                            </div>
+                            <div class="countdown-separator">:</div>
+                            <div class="countdown-item">
+                                <div class="countdown-number countdown-minutes" style="background: rgba(255,255,255,0.2);">--</div>
+                                <p class="countdown-label" style="color: rgba(255,255,255,0.8);">分</p>
+                            </div>
+                            <div class="countdown-separator">:</div>
+                            <div class="countdown-item">
+                                <div class="countdown-number countdown-seconds" style="background: rgba(255,255,255,0.2); animation: pulse-seconds 1s infinite;">--</div>
+                                <p class="countdown-label" style="color: rgba(255,255,255,0.8);">秒</p>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div style="background: linear-gradient(135deg, #fff5f5 0%, #ffe8e8 100%); padding: 20px; border-radius: 15px; margin-bottom: 20px; border: 2px solid #e74c3c;">
+                        <p style="font-size: 1rem; color: #333; margin-bottom: 8px;">LINE登録するだけで</p>
+                        <p style="font-size: 2.2rem; font-weight: 900; color: #e74c3c; margin-bottom: 5px; line-height: 1.2;">入会費 <span style="font-size: 2.8rem;">0</span>円</p>
+                        <p style="font-size: 1.1rem; color: #666; text-decoration: line-through;">通常 50USD</p>
+                    </div>
                     
                     <div class="line-button-wrapper" style="text-align: center;">
-                        <button id="lineRegButton2" class="line-button" onclick="event.preventDefault(); trackLineClick(); setTimeout(function() { window.open('https://line.me/R/ti/p/@359fnsdb', '_blank'); }, 300);" style="width: 100%; padding: 18px; font-size: 1.15rem;">LINE登録をして特典だけゲット</button>
+                        <button id="lineRegButton2" class="line-button" onclick="event.preventDefault(); trackLineClick(); setTimeout(function() { window.open('https://line.me/R/ti/p/@359fnsdb', '_blank'); }, 300);" style="width: 100%; padding: 20px; font-size: 1.2rem;">LINE登録する</button>
                     </div>
                     
-                    <p style="font-size: 0.8rem; color: #999; margin-top: 10px;">※時間割なども確認できます</p>
+                    <p style="font-size: 0.75rem; color: #999; margin-top: 15px; line-height: 1.5;">※会員登録時にクーポンコード入力が必要です<br>※時間割なども確認できます</p>
                     
                     <!-- メールフォーム -->
                     <div class="email-form-container" style="margin-top: 20px; padding-top: 20px; border-top: 2px dashed #e0e0e0;">
@@ -2053,7 +2209,7 @@
                                     <input type="email" name="EMAIL" class="email-input" id="mce-EMAIL4" placeholder="メールアドレスを入力" required="" value="">
                                     <div hidden=""><input type="hidden" name="tags" value="14567839"></div>
                                     <div style="position: absolute; left: -5000px;" aria-hidden="true"><input type="text" name="b_3fc0ca0518c0063b0701b969e_0e737d1946" tabindex="-1" value=""></div>
-                                    <button type="submit" name="subscribe" id="mc-embedded-subscribe4" class="email-submit">登録</button>
+                                    <button type="submit" name="subscribe" id="mc-embedded-subscribe4" class="email-submit" style="background: linear-gradient(135deg, #e74c3c 0%, #c0392b 100%);">登録</button>
                                 </form>
                             </div>
                         </div>
@@ -2211,7 +2367,7 @@
             
             <!-- LINEボタン -->
             <a href="https://line.me/R/ti/p/@359fnsdb" onclick="event.preventDefault(); trackLineClick(); var url = this.href; setTimeout(function() { window.open(url, '_blank'); }, 300); return false;" target="_blank" class="line-button" style="display: inline-block; background: linear-gradient(135deg, #06c755 0%, #00b300 100%); color: white; padding: 16px 35px; border-radius: 50px; text-decoration: none; font-weight: bold; font-size: 1rem; box-shadow: 0 4px 15px rgba(6, 199, 85, 0.3); transition: all 0.3s ease; margin-bottom: 20px;">
-                LINE登録をして特典だけゲット
+                LINE登録する
             </a>
             
             <!-- コピーライト -->
@@ -2223,16 +2379,29 @@
         </div>
     </footer>
 
-    <!-- 固定CTA（下部） - シンプル版 -->
-    <div style="position: fixed; bottom: 0; left: 0; right: 0; background: white; padding: 12px 20px; box-shadow: 0 -5px 20px rgba(0,0,0,0.15); z-index: 1000; display: flex; flex-direction: column; justify-content: center; align-items: center; animation: slideUp 0.5s ease-out;">
+    <!-- 固定CTA（下部） - 年末年始キャンペーン -->
+    <div style="position: fixed; bottom: 0; left: 0; right: 0; background: linear-gradient(135deg, #c0392b 0%, #e74c3c 100%); padding: 12px 20px; box-shadow: 0 -5px 20px rgba(0,0,0,0.2); z-index: 1000; display: flex; flex-direction: column; justify-content: center; align-items: center; animation: slideUpFixed 0.5s ease-out;">
+        
+        <!-- カウントダウン（コンパクト版） -->
+        <div id="countdown-fixed" style="display: flex; align-items: center; gap: 8px; margin-bottom: 8px;">
+            <span style="color: #ffd700; font-size: 0.75rem; font-weight: bold;">⏰ 残り</span>
+            <span class="countdown-days" style="color: white; font-weight: 900; font-size: 0.9rem;">--</span>
+            <span style="color: rgba(255,255,255,0.8); font-size: 0.75rem;">日</span>
+            <span class="countdown-hours" style="color: white; font-weight: 900; font-size: 0.9rem;">--</span>
+            <span style="color: rgba(255,255,255,0.8); font-size: 0.75rem;">:</span>
+            <span class="countdown-minutes" style="color: white; font-weight: 900; font-size: 0.9rem;">--</span>
+            <span style="color: rgba(255,255,255,0.8); font-size: 0.75rem;">:</span>
+            <span class="countdown-seconds" style="color: white; font-weight: 900; font-size: 0.9rem; animation: pulse-seconds 1s infinite;">--</span>
+        </div>
+        
         <a href="https://line.me/R/ti/p/@359fnsdb" onclick="event.preventDefault(); trackLineClick(); var url = this.href; setTimeout(function() { window.open(url, '_blank'); }, 300); return false;" target="_blank" style="text-decoration: none; width: 100%; max-width: 400px; display: block;">
-            <button style="width: 100%; background: #06c755; color: white; border: none; padding: 16px 30px; border-radius: 50px; font-size: 1.1rem; font-weight: bold; cursor: pointer; box-shadow: 0 6px 20px rgba(6, 199, 85, 0.4);">LINE登録をして特典だけゲット</button>
+            <button style="width: 100%; background: #06c755; color: white; border: none; padding: 14px 30px; border-radius: 50px; font-size: 1.1rem; font-weight: bold; cursor: pointer; box-shadow: 0 6px 20px rgba(6, 199, 85, 0.4);">LINE登録する</button>
         </a>
-        <p style="color: #e74c3c; font-size: 0.8rem; font-weight: bold; margin-top: 6px; margin-bottom: 0;">入会費が最大100%無料に！</p>
+        <p style="color: white; font-size: 0.75rem; font-weight: bold; margin-top: 6px; margin-bottom: 0;">🎍 年末年始限定！入会費0円</p>
     </div>
     
     <style>
-        @keyframes slideUp {
+        @keyframes slideUpFixed {
             from {
                 transform: translateY(100%);
                 opacity: 0;
@@ -2243,6 +2412,61 @@
             }
         }
     </style>
+
+    <!-- カウントダウンタイマースクリプト -->
+    <script>
+    (function() {
+        // キャンペーン終了日時: 2025年1月4日 23:59:59 (日本時間)
+        const endDate = new Date('2025-01-04T23:59:59+09:00').getTime();
+        
+        function updateAllCountdowns() {
+            const now = new Date().getTime();
+            const distance = endDate - now;
+            
+            if (distance < 0) {
+                // キャンペーン終了
+                document.querySelectorAll('.countdown-days').forEach(el => el.textContent = '00');
+                document.querySelectorAll('.countdown-hours').forEach(el => el.textContent = '00');
+                document.querySelectorAll('.countdown-minutes').forEach(el => el.textContent = '00');
+                document.querySelectorAll('.countdown-seconds').forEach(el => el.textContent = '00');
+                return;
+            }
+            
+            const days = Math.floor(distance / (1000 * 60 * 60 * 24));
+            const hours = Math.floor((distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+            const minutes = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
+            const seconds = Math.floor((distance % (1000 * 60)) / 1000);
+            
+            // 各カウントダウン要素を更新
+            document.querySelectorAll('.countdown-days').forEach(el => {
+                el.textContent = days.toString().padStart(2, '0');
+            });
+            document.querySelectorAll('.countdown-hours').forEach(el => {
+                el.textContent = hours.toString().padStart(2, '0');
+            });
+            document.querySelectorAll('.countdown-minutes').forEach(el => {
+                el.textContent = minutes.toString().padStart(2, '0');
+            });
+            document.querySelectorAll('.countdown-seconds').forEach(el => {
+                el.textContent = seconds.toString().padStart(2, '0');
+            });
+            
+            // 残り1日以下の場合、緊急表示
+            if (days === 0) {
+                document.querySelectorAll('.countdown-days').forEach(el => {
+                    el.style.animation = 'pulse-seconds 0.5s infinite';
+                    el.style.color = '#ffd700';
+                });
+            }
+        }
+        
+        // 初回実行
+        updateAllCountdowns();
+        
+        // 1秒ごとに更新
+        setInterval(updateAllCountdowns, 1000);
+    })();
+    </script>
 
 </body>
 </html>
