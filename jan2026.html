@@ -913,8 +913,13 @@
 
     <!-- Fixed Countdown Bar -->
     <div class="countdown-bar">
-        <p class="countdown-label">⏰ このページの公開期限</p>
+        <p class="countdown-label">⏰ 1月4日までの限定公開</p>
         <div class="countdown-timer" id="countdown">
+            <div class="countdown-item">
+                <span class="countdown-number" id="days">0</span>
+                <span class="countdown-unit">日</span>
+            </div>
+            <div class="countdown-separator">:</div>
             <div class="countdown-item">
                 <span class="countdown-number" id="hours">23</span>
                 <span class="countdown-unit">時間</span>
@@ -946,7 +951,7 @@
             <div class="course-badge">🌸 2026年1月5日(月)から新規クール開始！</div>
             <p class="course-message">
                 新しいクールに向けて、今から準備を始めましょう。<br>
-                <span class="highlight-date">12月中にご登録いただくと、1月19日まで体験できます！</span>
+                
             </p>
         </div>
     </section>
@@ -1071,7 +1076,7 @@
     <!-- CTA Section -->
     <section class="cta-section">
         <div class="cta-content">
-            <h2>1月19日まで無料体験できます ✨</h2>
+            <h2>まずは無料で体験してみませんか？ ✨</h2>
             <p>
                 会員登録後すぐにレッスン予約ができます。<br>
                 動画内のコードを忘れずに入力してください！
@@ -1377,21 +1382,10 @@
     </script>
 
     <script>
-        // 24時間カウントダウンタイマー
+        // 1月5日（日本時間）までのカウントダウンタイマー
         (function() {
-            const STORAGE_KEY = 'sa_video_page_start';
-            const DURATION = 24 * 60 * 60 * 1000; // 24時間（ミリ秒）
-            
-            // 初回アクセス時刻を取得または設定
-            let startTime = localStorage.getItem(STORAGE_KEY);
-            if (!startTime) {
-                startTime = Date.now();
-                localStorage.setItem(STORAGE_KEY, startTime);
-            } else {
-                startTime = parseInt(startTime);
-            }
-            
-            const endTime = startTime + DURATION;
+            // 日本時間 2026年1月5日 00:00:00
+            const endTime = new Date('2026-01-05T00:00:00+09:00').getTime();
             
             function showExpiredPage() {
                 document.body.innerHTML = `
@@ -1425,7 +1419,7 @@
                                 line-height: 1.8;
                                 margin-bottom: 24px;
                             ">
-                                このページは24時間限定公開でした。<br>
+                                このページは1月4日までの限定公開でした。<br>
                                 ご質問がございましたら、お気軽にお問い合わせください。
                             </p>
                             <div style="display: flex; flex-direction: column; gap: 12px; align-items: center;">
@@ -1467,10 +1461,12 @@
                     return;
                 }
                 
-                const hours = Math.floor(remaining / (1000 * 60 * 60));
+                const days = Math.floor(remaining / (1000 * 60 * 60 * 24));
+                const hours = Math.floor((remaining % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
                 const minutes = Math.floor((remaining % (1000 * 60 * 60)) / (1000 * 60));
                 const seconds = Math.floor((remaining % (1000 * 60)) / 1000);
                 
+                document.getElementById('days').textContent = String(days);
                 document.getElementById('hours').textContent = String(hours).padStart(2, '0');
                 document.getElementById('minutes').textContent = String(minutes).padStart(2, '0');
                 document.getElementById('seconds').textContent = String(seconds).padStart(2, '0');
