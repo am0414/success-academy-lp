@@ -60,7 +60,7 @@
         "price": "50",
         "priceCurrency": "USD",
         "availability": "https://schema.org/InStock",
-        "validFrom": "2025-01-01"
+        "validFrom": "2026-01-01"
       },
       "contactPoint": {
         "@type": "ContactPoint",
@@ -200,7 +200,7 @@
         
         /* Campaign Banner */
         .campaign-banner {
-            background: linear-gradient(135deg, #c0392b 0%, #e74c3c 100%);
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
             color: white;
             padding: 80px 20px;
             text-align: center;
@@ -606,7 +606,7 @@
         /* CTA Section */
         .cta-section {
             padding: 100px 20px;
-            background: linear-gradient(135deg, #c0392b 0%, #e74c3c 100%);
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
             color: white;
             text-align: center;
         }
@@ -930,7 +930,7 @@
         
         .email-submit {
             padding: 12px 30px;
-            background: linear-gradient(135deg, #e74c3c 0%, #c0392b 100%);
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
             color: white;
             border: none;
             border-radius: 50px;
@@ -943,7 +943,7 @@
         
         .email-submit:hover {
             transform: translateY(-2px);
-            box-shadow: 0 8px 20px rgba(231, 76, 60, 0.4);
+            box-shadow: 0 8px 20px rgba(102, 126, 234, 0.4);
         }
         
         /* 緊急性テキスト */
@@ -1412,76 +1412,57 @@
         </style>
     </section>
 
-    <!-- Campaign Banner - 期間延長キャンペーン -->
-    <section class="campaign-banner" style="position: relative; overflow: hidden; background: linear-gradient(135deg, #c0392b 0%, #e74c3c 100%);">
+    <!-- Campaign Banner - 無料資料ダウンロード -->
+    <section class="campaign-banner" style="position: relative; overflow: hidden; background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);">
         <!-- 背景パターン -->
         <div style="position: absolute; top: 0; left: 0; right: 0; bottom: 0; opacity: 0.1; background-image: repeating-linear-gradient(45deg, transparent, transparent 35px, rgba(255,255,255,0.3) 35px, rgba(255,255,255,0.3) 70px);"></div>
         
         <div class="campaign-content" style="position: relative; z-index: 1; text-align: center;">
             
             <div class="cta-box-wrapper" style="max-width: 500px; margin: 0 auto; padding: 0 20px;">
-                <div class="cta-line-box" style="padding: 35px 30px; background: white; border-radius: 25px; box-shadow: 0 20px 60px rgba(0,0,0,0.3); border: 4px solid #e74c3c; text-align: center; position: relative; overflow: hidden;">
+                <div class="cta-line-box" style="padding: 40px 30px; background: white; border-radius: 25px; box-shadow: 0 20px 60px rgba(0,0,0,0.3); border: 4px solid #06c755; text-align: center; position: relative; overflow: hidden;">
                     
                     <!-- キラキラ装飾 -->
-                    <div style="position: absolute; top: 10px; left: 15px; font-size: 1.5rem; animation: sparkle 1.5s ease-in-out infinite;">🎉</div>
-                    <div style="position: absolute; top: 10px; right: 15px; font-size: 1.5rem; animation: sparkle 1.5s ease-in-out infinite 0.5s;">🎉</div>
+                    <div style="position: absolute; top: 10px; left: 15px; font-size: 1.5rem; animation: sparkle 1.5s ease-in-out infinite;">📚</div>
+                    <div style="position: absolute; top: 10px; right: 15px; font-size: 1.5rem; animation: sparkle 1.5s ease-in-out infinite 0.5s;">✨</div>
                     
-                    <!-- 延長バッジ -->
-                    <div style="display: inline-block; background: linear-gradient(135deg, #ff6b6b 0%, #e74c3c 100%); color: white; padding: 8px 20px; border-radius: 50px; font-size: 0.85rem; font-weight: bold; margin-bottom: 15px; animation: pulse-badge 2s infinite;">
-                        🎊 ご好評につき期間延長！
+                    <!-- バッジ -->
+                    <div style="display: inline-block; background: linear-gradient(135deg, #06c755 0%, #00b300 100%); color: white; padding: 8px 20px; border-radius: 50px; font-size: 0.85rem; font-weight: bold; margin-bottom: 20px;">
+                        🎁 LINE登録で無料プレゼント
                     </div>
                     
-                    <!-- キャンペーン名 -->
-                    <h3 style="font-size: 1.8rem; font-weight: 900; color: #1a1a1a; margin-bottom: 10px; line-height: 1.3;">新春キャンペーン</h3>
+                    <!-- タイトル -->
+                    <h3 style="font-size: 1.8rem; font-weight: 900; color: #1a1a1a; margin-bottom: 25px; line-height: 1.4;">LINE登録で<br>無料資料を受け取る</h3>
                     
-                    <!-- 期間 -->
-                    <p style="font-size: 1.2rem; font-weight: 900; color: #e74c3c; margin-bottom: 20px;">📅 1月11日（日）23:59まで</p>
-                    
-                    <!-- カウントダウン -->
-                    <div id="countdown-1" style="background: linear-gradient(135deg, #c0392b 0%, #a93226 100%); padding: 18px 12px; border-radius: 15px; margin-bottom: 20px;">
-                        <p style="color: #ffd700; font-size: 0.8rem; font-weight: bold; margin-bottom: 10px;">⏰ キャンペーン終了まで</p>
-                        <div class="countdown-box">
-                            <div class="countdown-item">
-                                <div class="countdown-number countdown-days" style="background: rgba(255,255,255,0.2);">--</div>
-                                <p class="countdown-label" style="color: rgba(255,255,255,0.8);">日</p>
-                            </div>
-                            <div class="countdown-separator">:</div>
-                            <div class="countdown-item">
-                                <div class="countdown-number countdown-hours" style="background: rgba(255,255,255,0.2);">--</div>
-                                <p class="countdown-label" style="color: rgba(255,255,255,0.8);">時間</p>
-                            </div>
-                            <div class="countdown-separator">:</div>
-                            <div class="countdown-item">
-                                <div class="countdown-number countdown-minutes" style="background: rgba(255,255,255,0.2);">--</div>
-                                <p class="countdown-label" style="color: rgba(255,255,255,0.8);">分</p>
-                            </div>
-                            <div class="countdown-separator">:</div>
-                            <div class="countdown-item">
-                                <div class="countdown-number countdown-seconds" style="background: rgba(255,255,255,0.2); animation: pulse-seconds 1s infinite;">--</div>
-                                <p class="countdown-label" style="color: rgba(255,255,255,0.8);">秒</p>
-                            </div>
-                        </div>
+                    <!-- 特典内容リスト -->
+                    <div style="background: linear-gradient(135deg, #f8f9ff 0%, #f0f4ff 100%); padding: 25px 20px; border-radius: 15px; margin-bottom: 25px; text-align: left;">
+                        <ul style="list-style: none; padding: 0; margin: 0;">
+                            <li style="padding: 10px 0; font-size: 1.05rem; color: #333; display: flex; align-items: center; border-bottom: 1px dashed #e0e0e0;">
+                                <span style="color: #06c755; font-size: 1.3rem; margin-right: 12px;">✓</span>
+                                無料説明会のご案内
+                            </li>
+                            <li style="padding: 10px 0; font-size: 1.05rem; color: #333; display: flex; align-items: center; border-bottom: 1px dashed #e0e0e0;">
+                                <span style="color: #06c755; font-size: 1.3rem; margin-right: 12px;">✓</span>
+                                授業スケジュール
+                            </li>
+                            <li style="padding: 10px 0; font-size: 1.05rem; color: #333; display: flex; align-items: center;">
+                                <span style="color: #06c755; font-size: 1.3rem; margin-right: 12px;">✓</span>
+                                授業プリントのサンプル
+                            </li>
+                        </ul>
                     </div>
                     
-                    <!-- 特典内容 -->
-                    <div style="background: linear-gradient(135deg, #fff5f5 0%, #ffe8e8 100%); padding: 20px; border-radius: 15px; margin-bottom: 15px; border: 2px solid #e74c3c;">
-                        <p style="font-size: 1rem; color: #333; margin-bottom: 8px;">LINE登録するだけで</p>
-                        <p style="font-size: 2.2rem; font-weight: 900; color: #e74c3c; margin-bottom: 5px; line-height: 1.2;">入会費 <span style="font-size: 2.8rem;">無料</span></p>
-                        <p style="font-size: 1.1rem; color: #666; text-decoration: line-through;">通常 50USD</p>
-                    </div>
-                    
-                    <!-- 新規クール案内 -->
-                    <p style="font-size: 0.85rem; color: #667eea; font-weight: 600; margin-bottom: 15px;">📚 1/5〜新規クール開始！今が一番始めやすい時期です</p>
+                    <p style="font-size: 0.95rem; color: #667eea; font-weight: 600; margin-bottom: 20px;">📲 すべてLINEでダウンロードできます</p>
                     
                     <!-- LINEボタン -->
                     <div style="text-align: center;" class="line-button-wrapper">
                         <button class="line-button campaign-line-btn" onclick="event.preventDefault(); trackLineClick(); setTimeout(function() { window.open('https://line.me/R/ti/p/@359fnsdb', '_blank'); }, 300);" style="width: 100%; padding: 20px; font-size: 1.2rem; background: #06c755; border: none; border-radius: 60px; color: white; font-weight: bold; cursor: pointer; box-shadow: 0 10px 30px rgba(6, 199, 85, 0.4);">
-                            今すぐ特典だけゲット
+                            無料で資料を受け取る
                         </button>
                     </div>
                     
                     <!-- 注釈 -->
-                    <p style="font-size: 0.75rem; color: #999; margin-top: 15px; line-height: 1.5;">※会員登録時にクーポンコード入力が必要です<br>※時間割なども確認できます</p>
+                    <p style="font-size: 0.8rem; color: #999; margin-top: 15px; line-height: 1.5;">※登録は無料／いつでも解除OK</p>
                     
                 </div>
             </div>
@@ -1639,59 +1620,32 @@
                 </table>
             </div>
             
-            <!-- 表の下のCTA - 期間延長キャンペーン -->
+            <!-- 表の下のCTA - 無料資料ダウンロード -->
             <div class="comparison-cta-wrapper" style="margin-top: 80px;">
-                <div style="max-width: 450px; margin: 0 auto; background: white; padding: 30px 25px; border-radius: 20px; border: 4px solid #e74c3c; box-shadow: 0 20px 60px rgba(0,0,0,0.3); position: relative; overflow: hidden;">
+                <div style="max-width: 450px; margin: 0 auto; background: white; padding: 35px 25px; border-radius: 20px; border: 4px solid #06c755; box-shadow: 0 20px 60px rgba(0,0,0,0.3); position: relative; overflow: hidden;">
                     
                     <!-- キラキラ装飾 -->
-                    <div style="position: absolute; top: 8px; left: 12px; font-size: 1.2rem; animation: sparkle 1.5s ease-in-out infinite;">🎉</div>
-                    <div style="position: absolute; top: 8px; right: 12px; font-size: 1.2rem; animation: sparkle 1.5s ease-in-out infinite 0.5s;">🎉</div>
+                    <div style="position: absolute; top: 8px; left: 12px; font-size: 1.2rem; animation: sparkle 1.5s ease-in-out infinite;">📚</div>
+                    <div style="position: absolute; top: 8px; right: 12px; font-size: 1.2rem; animation: sparkle 1.5s ease-in-out infinite 0.5s;">✨</div>
                     
-                    <!-- 延長バッジ -->
-                    <div style="display: inline-block; background: linear-gradient(135deg, #ff6b6b 0%, #e74c3c 100%); color: white; padding: 6px 15px; border-radius: 50px; font-size: 0.8rem; font-weight: bold; margin-bottom: 12px; animation: pulse-badge 2s infinite;">
-                        🎊 ご好評につき期間延長！
+                    <!-- バッジ -->
+                    <div style="display: inline-block; background: linear-gradient(135deg, #06c755 0%, #00b300 100%); color: white; padding: 6px 15px; border-radius: 50px; font-size: 0.8rem; font-weight: bold; margin-bottom: 15px;">
+                        🎁 LINE登録で無料プレゼント
                     </div>
                     
-                    <h4 style="font-size: 1.3rem; font-weight: 900; color: #1a1a1a; margin-bottom: 8px;">新春キャンペーン</h4>
-                    <p style="font-size: 1rem; font-weight: 900; color: #e74c3c; margin-bottom: 12px;">📅 1月11日（日）23:59まで</p>
+                    <h4 style="font-size: 1.4rem; font-weight: 900; color: #1a1a1a; margin-bottom: 15px; line-height: 1.3;">LINE登録で<br>無料資料を受け取る</h4>
                     
-                    <!-- カウントダウン -->
-                    <div id="countdown-2" style="background: linear-gradient(135deg, #c0392b 0%, #a93226 100%); padding: 15px 10px; border-radius: 12px; margin-bottom: 15px;">
-                        <p style="color: #ffd700; font-size: 0.75rem; font-weight: bold; margin-bottom: 8px;">⏰ 終了まで</p>
-                        <div class="countdown-box">
-                            <div class="countdown-item">
-                                <div class="countdown-number countdown-days" style="background: rgba(255,255,255,0.2);">--</div>
-                                <p class="countdown-label" style="color: rgba(255,255,255,0.8);">日</p>
-                            </div>
-                            <div class="countdown-separator">:</div>
-                            <div class="countdown-item">
-                                <div class="countdown-number countdown-hours" style="background: rgba(255,255,255,0.2);">--</div>
-                                <p class="countdown-label" style="color: rgba(255,255,255,0.8);">時間</p>
-                            </div>
-                            <div class="countdown-separator">:</div>
-                            <div class="countdown-item">
-                                <div class="countdown-number countdown-minutes" style="background: rgba(255,255,255,0.2);">--</div>
-                                <p class="countdown-label" style="color: rgba(255,255,255,0.8);">分</p>
-                            </div>
-                            <div class="countdown-separator">:</div>
-                            <div class="countdown-item">
-                                <div class="countdown-number countdown-seconds" style="background: rgba(255,255,255,0.2); animation: pulse-seconds 1s infinite;">--</div>
-                                <p class="countdown-label" style="color: rgba(255,255,255,0.8);">秒</p>
-                            </div>
-                        </div>
+                    <div style="background: #f8f9ff; padding: 15px; border-radius: 10px; margin-bottom: 15px; text-align: left;">
+                        <p style="font-size: 0.9rem; color: #333; margin-bottom: 5px;">✓ 無料説明会のご案内</p>
+                        <p style="font-size: 0.9rem; color: #333; margin-bottom: 5px;">✓ 授業スケジュール</p>
+                        <p style="font-size: 0.9rem; color: #333; margin-bottom: 0;">✓ 授業プリントのサンプル</p>
                     </div>
                     
-                    <div style="background: #fff5f5; padding: 15px; border-radius: 10px; margin-bottom: 10px; border: 2px solid #e74c3c;">
-                        <p style="font-size: 0.9rem; color: #333; margin-bottom: 3px;">LINE登録するだけで</p>
-                        <p style="font-size: 1.8rem; font-weight: 900; color: #e74c3c;">入会費無料</p>
-                        <p style="font-size: 0.8rem; color: #666; text-decoration: line-through;">通常 50USD</p>
-                    </div>
+                    <p style="font-size: 0.8rem; color: #667eea; font-weight: 600; margin-bottom: 15px;">📲 すべてLINEでダウンロードできます</p>
                     
-                    <p style="font-size: 0.75rem; color: #667eea; font-weight: 600; margin-bottom: 12px;">📚 1/5〜新規クール開始！始めやすい時期です</p>
+                    <button class="comparison-cta-button" onclick="event.preventDefault(); trackLineClick(); setTimeout(function() { window.open('https://line.me/R/ti/p/@359fnsdb', '_blank'); }, 300);" style="width: 100%; background: #06c755; color: white; border: none; padding: 16px; border-radius: 50px; font-size: 1.1rem; font-weight: bold; cursor: pointer; box-shadow: 0 8px 25px rgba(6, 199, 85, 0.4);">無料で資料を受け取る</button>
                     
-                    <button class="comparison-cta-button" onclick="event.preventDefault(); trackLineClick(); setTimeout(function() { window.open('https://line.me/R/ti/p/@359fnsdb', '_blank'); }, 300);" style="width: 100%; background: #06c755; color: white; border: none; padding: 16px; border-radius: 50px; font-size: 1.1rem; font-weight: bold; cursor: pointer; box-shadow: 0 8px 25px rgba(6, 199, 85, 0.4);">今すぐ特典だけゲット</button>
-                    
-                    <p style="font-size: 0.7rem; color: #999; margin-top: 10px;">※会員登録時にコード入力が必要です</p>
+                    <p style="font-size: 0.75rem; color: #999; margin-top: 12px;">※登録は無料／いつでも解除OK</p>
                 </div>
             </div>
         </div>
@@ -2137,8 +2091,8 @@
         </div>
     </section>
 
-    <!-- Final CTA Section - 期間延長キャンペーン -->
-    <section class="cta-section" style="position: relative; overflow: hidden; background: linear-gradient(135deg, #c0392b 0%, #e74c3c 100%);">
+    <!-- Final CTA Section - 無料資料ダウンロード -->
+    <section class="cta-section" style="position: relative; overflow: hidden; background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);">
         <!-- 背景アニメーション -->
         <div style="position: absolute; width: 200%; height: 200%; top: -50%; left: -50%; background: radial-gradient(circle at 20% 50%, rgba(255,255,255,0.1) 0%, transparent 50%), radial-gradient(circle at 80% 80%, rgba(255,255,255,0.1) 0%, transparent 50%); animation: rotate 20s linear infinite;"></div>
         
@@ -2153,59 +2107,44 @@
             
             <!-- シンプルCTAボックス -->
             <div style="max-width: 500px; margin: 0 auto;">
-                <div style="background: white; border-radius: 25px; padding: 35px 30px; box-shadow: 0 30px 80px rgba(0,0,0,0.3); text-align: center; border: 4px solid #e74c3c; position: relative; overflow: hidden;">
+                <div style="background: white; border-radius: 25px; padding: 40px 30px; box-shadow: 0 30px 80px rgba(0,0,0,0.3); text-align: center; border: 4px solid #06c755; position: relative; overflow: hidden;">
                     
                     <!-- キラキラ装飾 -->
-                    <div style="position: absolute; top: 10px; left: 15px; font-size: 1.5rem; animation: sparkle 1.5s ease-in-out infinite;">🎉</div>
-                    <div style="position: absolute; top: 10px; right: 15px; font-size: 1.5rem; animation: sparkle 1.5s ease-in-out infinite 0.5s;">🎉</div>
+                    <div style="position: absolute; top: 10px; left: 15px; font-size: 1.5rem; animation: sparkle 1.5s ease-in-out infinite;">📚</div>
+                    <div style="position: absolute; top: 10px; right: 15px; font-size: 1.5rem; animation: sparkle 1.5s ease-in-out infinite 0.5s;">✨</div>
                     
-                    <!-- 延長バッジ -->
-                    <div style="display: inline-block; background: linear-gradient(135deg, #ff6b6b 0%, #e74c3c 100%); color: white; padding: 8px 20px; border-radius: 50px; font-size: 0.85rem; font-weight: bold; margin-bottom: 15px; animation: pulse-badge 2s infinite;">
-                        🎊 ご好評につき期間延長！
+                    <!-- バッジ -->
+                    <div style="display: inline-block; background: linear-gradient(135deg, #06c755 0%, #00b300 100%); color: white; padding: 8px 20px; border-radius: 50px; font-size: 0.85rem; font-weight: bold; margin-bottom: 20px;">
+                        🎁 LINE登録で無料プレゼント
                     </div>
                     
-                    <h3 style="font-size: 1.8rem; font-weight: 900; color: #1a1a1a; margin-bottom: 10px;">新春キャンペーン</h3>
-                    <p style="font-size: 1.2rem; font-weight: 900; color: #e74c3c; margin-bottom: 20px;">📅 1月11日（日）23:59まで</p>
+                    <h3 style="font-size: 1.8rem; font-weight: 900; color: #1a1a1a; margin-bottom: 25px; line-height: 1.4;">LINE登録で<br>無料資料を受け取る</h3>
                     
-                    <!-- カウントダウン -->
-                    <div id="countdown-3" style="background: linear-gradient(135deg, #c0392b 0%, #a93226 100%); padding: 18px 12px; border-radius: 15px; margin-bottom: 20px;">
-                        <p style="color: #ffd700; font-size: 0.8rem; font-weight: bold; margin-bottom: 10px;">⏰ キャンペーン終了まで</p>
-                        <div class="countdown-box">
-                            <div class="countdown-item">
-                                <div class="countdown-number countdown-days" style="background: rgba(255,255,255,0.2);">--</div>
-                                <p class="countdown-label" style="color: rgba(255,255,255,0.8);">日</p>
-                            </div>
-                            <div class="countdown-separator">:</div>
-                            <div class="countdown-item">
-                                <div class="countdown-number countdown-hours" style="background: rgba(255,255,255,0.2);">--</div>
-                                <p class="countdown-label" style="color: rgba(255,255,255,0.8);">時間</p>
-                            </div>
-                            <div class="countdown-separator">:</div>
-                            <div class="countdown-item">
-                                <div class="countdown-number countdown-minutes" style="background: rgba(255,255,255,0.2);">--</div>
-                                <p class="countdown-label" style="color: rgba(255,255,255,0.8);">分</p>
-                            </div>
-                            <div class="countdown-separator">:</div>
-                            <div class="countdown-item">
-                                <div class="countdown-number countdown-seconds" style="background: rgba(255,255,255,0.2); animation: pulse-seconds 1s infinite;">--</div>
-                                <p class="countdown-label" style="color: rgba(255,255,255,0.8);">秒</p>
-                            </div>
-                        </div>
+                    <!-- 特典内容リスト -->
+                    <div style="background: linear-gradient(135deg, #f8f9ff 0%, #f0f4ff 100%); padding: 25px 20px; border-radius: 15px; margin-bottom: 25px; text-align: left;">
+                        <ul style="list-style: none; padding: 0; margin: 0;">
+                            <li style="padding: 10px 0; font-size: 1.05rem; color: #333; display: flex; align-items: center; border-bottom: 1px dashed #e0e0e0;">
+                                <span style="color: #06c755; font-size: 1.3rem; margin-right: 12px;">✓</span>
+                                無料説明会のご案内
+                            </li>
+                            <li style="padding: 10px 0; font-size: 1.05rem; color: #333; display: flex; align-items: center; border-bottom: 1px dashed #e0e0e0;">
+                                <span style="color: #06c755; font-size: 1.3rem; margin-right: 12px;">✓</span>
+                                授業スケジュール
+                            </li>
+                            <li style="padding: 10px 0; font-size: 1.05rem; color: #333; display: flex; align-items: center;">
+                                <span style="color: #06c755; font-size: 1.3rem; margin-right: 12px;">✓</span>
+                                授業プリントのサンプル
+                            </li>
+                        </ul>
                     </div>
                     
-                    <div style="background: linear-gradient(135deg, #fff5f5 0%, #ffe8e8 100%); padding: 20px; border-radius: 15px; margin-bottom: 15px; border: 2px solid #e74c3c;">
-                        <p style="font-size: 1rem; color: #333; margin-bottom: 8px;">LINE登録するだけで</p>
-                        <p style="font-size: 2.2rem; font-weight: 900; color: #e74c3c; margin-bottom: 5px; line-height: 1.2;">入会費 <span style="font-size: 2.8rem;">無料</span></p>
-                        <p style="font-size: 1.1rem; color: #666; text-decoration: line-through;">通常 50USD</p>
-                    </div>
-                    
-                    <p style="font-size: 0.85rem; color: #667eea; font-weight: 600; margin-bottom: 15px;">📚 1/5〜新規クール開始！今が一番始めやすい時期です</p>
+                    <p style="font-size: 0.95rem; color: #667eea; font-weight: 600; margin-bottom: 20px;">📲 すべてLINEでダウンロードできます</p>
                     
                     <div class="line-button-wrapper" style="text-align: center;">
-                        <button id="lineRegButton2" class="line-button" onclick="event.preventDefault(); trackLineClick(); setTimeout(function() { window.open('https://line.me/R/ti/p/@359fnsdb', '_blank'); }, 300);" style="width: 100%; padding: 20px; font-size: 1.2rem;">今すぐ特典だけゲット</button>
+                        <button id="lineRegButton2" class="line-button" onclick="event.preventDefault(); trackLineClick(); setTimeout(function() { window.open('https://line.me/R/ti/p/@359fnsdb', '_blank'); }, 300);" style="width: 100%; padding: 20px; font-size: 1.2rem;">無料で資料を受け取る</button>
                     </div>
                     
-                    <p style="font-size: 0.75rem; color: #999; margin-top: 15px; line-height: 1.5;">※会員登録時にクーポンコード入力が必要です<br>※時間割なども確認できます</p>
+                    <p style="font-size: 0.8rem; color: #999; margin-top: 15px; line-height: 1.5;">※登録は無料／いつでも解除OK</p>
                     
                     <!-- メールフォーム -->
                     <div class="email-form-container" style="margin-top: 20px; padding-top: 20px; border-top: 2px dashed #e0e0e0;">
@@ -2216,7 +2155,7 @@
                                     <input type="email" name="EMAIL" class="email-input" id="mce-EMAIL4" placeholder="メールアドレスを入力" required="" value="">
                                     <div hidden=""><input type="hidden" name="tags" value="14567839"></div>
                                     <div style="position: absolute; left: -5000px;" aria-hidden="true"><input type="text" name="b_3fc0ca0518c0063b0701b969e_0e737d1946" tabindex="-1" value=""></div>
-                                    <button type="submit" name="subscribe" id="mc-embedded-subscribe4" class="email-submit" style="background: linear-gradient(135deg, #e74c3c 0%, #c0392b 100%);">登録</button>
+                                    <button type="submit" name="subscribe" id="mc-embedded-subscribe4" class="email-submit" style="background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);">登録</button>
                                 </form>
                             </div>
                         </div>
@@ -2374,37 +2313,25 @@
             
             <!-- LINEボタン -->
             <a href="https://line.me/R/ti/p/@359fnsdb" onclick="event.preventDefault(); trackLineClick(); var url = this.href; setTimeout(function() { window.open(url, '_blank'); }, 300); return false;" target="_blank" class="line-button" style="display: inline-block; background: linear-gradient(135deg, #06c755 0%, #00b300 100%); color: white; padding: 16px 35px; border-radius: 50px; text-decoration: none; font-weight: bold; font-size: 1rem; box-shadow: 0 4px 15px rgba(6, 199, 85, 0.3); transition: all 0.3s ease; margin-bottom: 20px;">
-                今すぐ特典だけゲット
+                無料で資料を受け取る
             </a>
             
             <!-- コピーライト -->
             <div style="padding-top: 30px; border-top: 1px solid #e0e0e0;">
                 <p style="color: #999; font-size: 0.85rem; margin: 0;">
-                    © 2025 サクセスアカデミー All rights reserved.
+                    © 2026 サクセスアカデミー All rights reserved.
                 </p>
             </div>
         </div>
     </footer>
 
-    <!-- 固定CTA（下部） - 期間延長キャンペーン -->
-    <div style="position: fixed; bottom: 0; left: 0; right: 0; background: linear-gradient(135deg, #c0392b 0%, #e74c3c 100%); padding: 12px 20px; box-shadow: 0 -5px 20px rgba(0,0,0,0.2); z-index: 1000; display: flex; flex-direction: column; justify-content: center; align-items: center; animation: slideUpFixed 0.5s ease-out;">
-        
-        <!-- カウントダウン（コンパクト版） -->
-        <div id="countdown-fixed" style="display: flex; align-items: center; gap: 8px; margin-bottom: 8px;">
-            <span style="color: #ffd700; font-size: 0.75rem; font-weight: bold;">⏰ 残り</span>
-            <span class="countdown-days" style="color: white; font-weight: 900; font-size: 0.9rem;">--</span>
-            <span style="color: rgba(255,255,255,0.8); font-size: 0.75rem;">日</span>
-            <span class="countdown-hours" style="color: white; font-weight: 900; font-size: 0.9rem;">--</span>
-            <span style="color: rgba(255,255,255,0.8); font-size: 0.75rem;">:</span>
-            <span class="countdown-minutes" style="color: white; font-weight: 900; font-size: 0.9rem;">--</span>
-            <span style="color: rgba(255,255,255,0.8); font-size: 0.75rem;">:</span>
-            <span class="countdown-seconds" style="color: white; font-weight: 900; font-size: 0.9rem; animation: pulse-seconds 1s infinite;">--</span>
-        </div>
+    <!-- 固定CTA（下部） - 無料資料ダウンロード -->
+    <div style="position: fixed; bottom: 0; left: 0; right: 0; background: linear-gradient(135deg, #667eea 0%, #764ba2 100%); padding: 15px 20px; box-shadow: 0 -5px 20px rgba(0,0,0,0.2); z-index: 1000; display: flex; flex-direction: column; justify-content: center; align-items: center; animation: slideUpFixed 0.5s ease-out;">
         
         <a href="https://line.me/R/ti/p/@359fnsdb" onclick="event.preventDefault(); trackLineClick(); var url = this.href; setTimeout(function() { window.open(url, '_blank'); }, 300); return false;" target="_blank" style="text-decoration: none; width: 100%; max-width: 400px; display: block;">
-            <button style="width: 100%; background: #06c755; color: white; border: none; padding: 14px 30px; border-radius: 50px; font-size: 1.1rem; font-weight: bold; cursor: pointer; box-shadow: 0 6px 20px rgba(6, 199, 85, 0.4);">今すぐ特典だけゲット</button>
+            <button style="width: 100%; background: #06c755; color: white; border: none; padding: 14px 30px; border-radius: 50px; font-size: 1.1rem; font-weight: bold; cursor: pointer; box-shadow: 0 6px 20px rgba(6, 199, 85, 0.4);">無料で資料を受け取る</button>
         </a>
-        <p style="color: white; font-size: 0.75rem; font-weight: bold; margin-top: 6px; margin-bottom: 0;">🎊 ご好評につき延長！入会費無料</p>
+        <p style="color: white; font-size: 0.8rem; font-weight: 500; margin-top: 8px; margin-bottom: 0;">📲 登録は無料／いつでも解除OK</p>
     </div>
     
     <style>
@@ -2419,61 +2346,6 @@
             }
         }
     </style>
-
-    <!-- カウントダウンタイマースクリプト -->
-    <script>
-    document.addEventListener('DOMContentLoaded', function() {
-        // キャンペーン終了日時: 2026年1月11日 23:59:59 (日本時間)
-        var endDate = new Date('2026-01-11T23:59:59+09:00').getTime();
-        
-        function updateAllCountdowns() {
-            var now = new Date().getTime();
-            var distance = endDate - now;
-            
-            if (distance < 0) {
-                // キャンペーン終了
-                var daysEls = document.querySelectorAll('.countdown-days');
-                var hoursEls = document.querySelectorAll('.countdown-hours');
-                var minutesEls = document.querySelectorAll('.countdown-minutes');
-                var secondsEls = document.querySelectorAll('.countdown-seconds');
-                
-                for (var i = 0; i < daysEls.length; i++) daysEls[i].textContent = '00';
-                for (var i = 0; i < hoursEls.length; i++) hoursEls[i].textContent = '00';
-                for (var i = 0; i < minutesEls.length; i++) minutesEls[i].textContent = '00';
-                for (var i = 0; i < secondsEls.length; i++) secondsEls[i].textContent = '00';
-                return;
-            }
-            
-            var days = Math.floor(distance / (1000 * 60 * 60 * 24));
-            var hours = Math.floor((distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
-            var minutes = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
-            var seconds = Math.floor((distance % (1000 * 60)) / 1000);
-            
-            // ゼロ埋め
-            var daysStr = days < 10 ? '0' + days : days.toString();
-            var hoursStr = hours < 10 ? '0' + hours : hours.toString();
-            var minutesStr = minutes < 10 ? '0' + minutes : minutes.toString();
-            var secondsStr = seconds < 10 ? '0' + seconds : seconds.toString();
-            
-            // 各カウントダウン要素を更新
-            var daysEls = document.querySelectorAll('.countdown-days');
-            var hoursEls = document.querySelectorAll('.countdown-hours');
-            var minutesEls = document.querySelectorAll('.countdown-minutes');
-            var secondsEls = document.querySelectorAll('.countdown-seconds');
-            
-            for (var i = 0; i < daysEls.length; i++) daysEls[i].textContent = daysStr;
-            for (var i = 0; i < hoursEls.length; i++) hoursEls[i].textContent = hoursStr;
-            for (var i = 0; i < minutesEls.length; i++) minutesEls[i].textContent = minutesStr;
-            for (var i = 0; i < secondsEls.length; i++) secondsEls[i].textContent = secondsStr;
-        }
-        
-        // 初回実行
-        updateAllCountdowns();
-        
-        // 1秒ごとに更新
-        setInterval(updateAllCountdowns, 1000);
-    });
-    </script>
 
 </body>
 </html>
