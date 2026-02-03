@@ -1,0 +1,895 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="robots" content="noindex, nofollow">
+    <title>紹介キャンペーン | Success Academy</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@300;400;500;600;700&family=Zen+Maru+Gothic:wght@400;500;700&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --primary: #E8505B;
+            --primary-dark: #D43F4A;
+            --secondary: #FFB347;
+            --accent: #4ECDC4;
+            --text-dark: #2D3436;
+            --text-light: #636E72;
+            --bg-cream: #FDF8F5;
+            --bg-white: #FFFFFF;
+            --shadow-soft: 0 4px 20px rgba(0,0,0,0.08);
+            --shadow-hover: 0 8px 30px rgba(232,80,91,0.2);
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Noto Sans JP', sans-serif;
+            background: var(--bg-cream);
+            color: var(--text-dark);
+            line-height: 1.8;
+            overflow-x: hidden;
+            padding-top: 80px;
+        }
+
+        /* Fixed Countdown Bar */
+        .countdown-bar {
+            position: fixed;
+            top: 0;
+            left: 0;
+            right: 0;
+            background: linear-gradient(135deg, var(--primary), var(--primary-dark));
+            color: white;
+            padding: 12px 20px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 20px;
+            z-index: 1000;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.15);
+        }
+
+        .countdown-bar .countdown-label {
+            font-size: 0.9rem;
+            font-weight: 600;
+            margin: 0;
+            color: white;
+        }
+
+        .countdown-bar .countdown-timer {
+            display: flex;
+            align-items: center;
+            gap: 6px;
+        }
+
+        .countdown-bar .countdown-item {
+            background: rgba(255,255,255,0.2);
+            padding: 6px 10px;
+            border-radius: 8px;
+            min-width: auto;
+            box-shadow: none;
+            text-align: center;
+        }
+
+        .countdown-bar .countdown-number {
+            font-family: 'Zen Maru Gothic', sans-serif;
+            font-size: 1.2rem;
+            font-weight: 700;
+            line-height: 1;
+        }
+
+        .countdown-bar .countdown-unit {
+            font-size: 0.65rem;
+            margin-top: 2px;
+            opacity: 0.9;
+        }
+
+        .countdown-bar .countdown-separator {
+            font-size: 1.2rem;
+            font-weight: 700;
+            color: white;
+        }
+
+        .hero {
+            background: linear-gradient(135deg, var(--bg-white) 0%, var(--bg-cream) 100%);
+            padding: 60px 20px 40px;
+            text-align: center;
+            position: relative;
+        }
+
+        .hero::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            height: 4px;
+            background: linear-gradient(90deg, var(--primary), var(--secondary), var(--accent));
+        }
+
+        .hero-badge {
+            display: inline-block;
+            background: linear-gradient(135deg, var(--primary), var(--primary-dark));
+            color: white;
+            padding: 8px 24px;
+            border-radius: 50px;
+            font-size: 0.85rem;
+            font-weight: 500;
+            margin-bottom: 20px;
+            animation: fadeInDown 0.6s ease-out;
+        }
+
+        .hero h1 {
+            font-family: 'Zen Maru Gothic', sans-serif;
+            font-size: clamp(1.8rem, 5vw, 2.5rem);
+            font-weight: 700;
+            color: var(--text-dark);
+            margin-bottom: 16px;
+            animation: fadeInUp 0.6s ease-out 0.2s backwards;
+        }
+
+        .hero-subtitle {
+            font-size: 1rem;
+            color: var(--text-light);
+            max-width: 600px;
+            margin: 0 auto;
+            text-align: center;
+            animation: fadeInUp 0.6s ease-out 0.4s backwards;
+        }
+
+        /* Reward Highlight */
+        .reward-highlight {
+            margin-top: 32px;
+            padding: 32px 24px;
+            background: linear-gradient(135deg, #FFF9E6, #FFF3CD);
+            border: 3px solid var(--secondary);
+            border-radius: 20px;
+            max-width: 500px;
+            margin-left: auto;
+            margin-right: auto;
+            animation: fadeInUp 0.6s ease-out 0.6s backwards;
+        }
+
+        .reward-icon {
+            font-size: 3rem;
+            margin-bottom: 12px;
+        }
+
+        .reward-amount {
+            font-family: 'Zen Maru Gothic', sans-serif;
+            font-size: 2.5rem;
+            font-weight: 700;
+            color: var(--primary);
+            margin-bottom: 8px;
+        }
+
+        .reward-description {
+            font-size: 1rem;
+            color: var(--text-dark);
+        }
+
+        /* Benefits Section */
+        .benefits-section {
+            padding: 60px 20px;
+            background: var(--bg-white);
+        }
+
+        .section-header {
+            text-align: center;
+            margin-bottom: 40px;
+        }
+
+        .section-header h2 {
+            font-family: 'Zen Maru Gothic', sans-serif;
+            font-size: clamp(1.5rem, 4vw, 2rem);
+            color: var(--text-dark);
+            margin-bottom: 12px;
+        }
+
+        .benefits-container {
+            max-width: 800px;
+            margin: 0 auto;
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 24px;
+        }
+
+        .benefit-card {
+            background: var(--bg-cream);
+            border-radius: 16px;
+            padding: 32px 24px;
+            text-align: center;
+            animation: fadeInUp 0.6s ease-out backwards;
+        }
+
+        .benefit-card-highlight {
+            background: linear-gradient(135deg, #FFF5F5, #FFE8E8);
+            border: 3px solid var(--primary);
+            position: relative;
+            transform: scale(1.02);
+            box-shadow: 0 8px 30px rgba(232,80,91,0.15);
+            padding-top: 40px;
+        }
+
+        .benefit-card-badge {
+            position: absolute;
+            top: -12px;
+            left: 50%;
+            transform: translateX(-50%);
+            background: var(--primary);
+            color: white;
+            padding: 6px 20px;
+            border-radius: 20px;
+            font-size: 0.85rem;
+            font-weight: 600;
+            white-space: nowrap;
+        }
+
+        .benefit-amount-large {
+            font-family: 'Zen Maru Gothic', sans-serif;
+            font-size: 2.5rem;
+            font-weight: 700;
+            color: var(--primary);
+            margin: 8px 0;
+        }
+
+        .benefit-card:nth-child(1) { animation-delay: 0.1s; }
+        .benefit-card:nth-child(2) { animation-delay: 0.2s; }
+
+        .benefit-card-icon {
+            font-size: 2.5rem;
+            margin-bottom: 16px;
+        }
+
+        .benefit-card h3 {
+            font-size: 1.1rem;
+            font-weight: 600;
+            color: var(--text-dark);
+            margin-bottom: 16px;
+        }
+
+        .benefit-item {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 8px;
+            margin-bottom: 12px;
+            font-size: 1rem;
+        }
+
+        .benefit-item .check {
+            color: var(--accent);
+            font-weight: bold;
+        }
+
+        .benefit-amount {
+            font-family: 'Zen Maru Gothic', sans-serif;
+            font-size: 1.5rem;
+            font-weight: 700;
+            color: var(--primary);
+        }
+
+        /* Target Section */
+        .target-section {
+            padding: 60px 20px;
+            background: linear-gradient(135deg, #E8F5E9, #C8E6C9);
+        }
+
+        .target-container {
+            max-width: 600px;
+            margin: 0 auto;
+            text-align: center;
+        }
+
+        .target-title {
+            font-family: 'Zen Maru Gothic', sans-serif;
+            font-size: 1.3rem;
+            color: var(--text-dark);
+            margin-bottom: 24px;
+        }
+
+        .target-list {
+            background: white;
+            border-radius: 16px;
+            padding: 24px 32px;
+            text-align: left;
+        }
+
+        .target-item {
+            display: flex;
+            align-items: center;
+            gap: 12px;
+            padding: 12px 0;
+            border-bottom: 1px solid #eee;
+        }
+
+        .target-item:last-child {
+            border-bottom: none;
+        }
+
+        .target-item-icon {
+            font-size: 1.2rem;
+        }
+
+        /* Flow Section */
+        .flow-section {
+            padding: 60px 20px;
+            background: var(--bg-white);
+        }
+
+        .flow-container {
+            max-width: 600px;
+            margin: 0 auto;
+        }
+
+        .flow-step {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            text-align: center;
+            margin-bottom: 40px;
+            opacity: 0;
+            transform: translateY(20px);
+            animation: fadeInUp 0.6s ease-out forwards;
+        }
+
+        .flow-step:nth-child(1) { animation-delay: 0.1s; }
+        .flow-step:nth-child(2) { animation-delay: 0.2s; }
+        .flow-step:nth-child(3) { animation-delay: 0.3s; }
+        .flow-step:nth-child(3) { animation-delay: 0.3s; }
+
+        .step-number {
+            flex-shrink: 0;
+            width: 56px;
+            height: 56px;
+            background: linear-gradient(135deg, var(--primary), var(--primary-dark));
+            color: white;
+            border-radius: 16px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-family: 'Zen Maru Gothic', sans-serif;
+            font-size: 1.5rem;
+            font-weight: 700;
+            box-shadow: 0 4px 15px rgba(232,80,91,0.3);
+            margin-bottom: 16px;
+        }
+
+        .step-content {
+            max-width: 400px;
+        }
+
+        .step-content h3 {
+            font-size: 1.1rem;
+            font-weight: 600;
+            color: var(--text-dark);
+            margin-bottom: 8px;
+        }
+
+        .step-content p {
+            color: var(--text-light);
+            font-size: 0.95rem;
+            line-height: 1.7;
+        }
+
+        .referral-code {
+            display: inline-block;
+            background: linear-gradient(135deg, #FFF9E6, #FFF3CD);
+            border: 2px dashed var(--secondary);
+            border-radius: 12px;
+            padding: 12px 32px;
+            margin-top: 12px;
+            font-family: 'Zen Maru Gothic', sans-serif;
+            font-size: 1.5rem;
+            font-weight: 700;
+            color: var(--primary);
+            letter-spacing: 0.1em;
+        }
+
+        .register-link {
+            display: inline-block;
+            margin-top: 12px;
+            padding: 10px 20px;
+            background: var(--primary);
+            color: white;
+            border-radius: 8px;
+            font-size: 0.9rem;
+            font-weight: 500;
+            text-decoration: none;
+            transition: all 0.2s ease;
+        }
+
+        .register-link:hover {
+            background: var(--primary-dark);
+            transform: translateY(-2px);
+        }
+
+        .share-url {
+            display: block;
+            background: #f5f5f5;
+            border: 2px dashed #ddd;
+            border-radius: 8px;
+            padding: 12px 16px;
+            margin-top: 12px;
+            font-size: 0.85rem;
+            color: var(--primary);
+            word-break: break-all;
+        }
+
+        /* CTA Section */
+        .cta-section {
+            padding: 80px 20px;
+            background: linear-gradient(135deg, var(--bg-cream) 0%, #FFF5F5 100%);
+            text-align: center;
+            position: relative;
+        }
+
+        .cta-section::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 100px;
+            height: 4px;
+            background: linear-gradient(90deg, var(--primary), var(--secondary));
+            border-radius: 2px;
+        }
+
+        .cta-content {
+            max-width: 600px;
+            margin: 0 auto;
+        }
+
+        .cta-content h2 {
+            font-family: 'Zen Maru Gothic', sans-serif;
+            font-size: clamp(1.5rem, 4vw, 2rem);
+            color: var(--text-dark);
+            margin-bottom: 16px;
+        }
+
+        .cta-content p {
+            color: var(--text-light);
+            margin-bottom: 32px;
+            font-size: 1rem;
+        }
+
+        .cta-button {
+            display: inline-flex;
+            align-items: center;
+            gap: 12px;
+            background: linear-gradient(135deg, #06C755, #05B04A);
+            color: white;
+            padding: 18px 48px;
+            border-radius: 60px;
+            font-size: 1.1rem;
+            font-weight: 600;
+            text-decoration: none;
+            box-shadow: var(--shadow-soft);
+            transition: all 0.3s ease;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .cta-button:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 8px 30px rgba(6,199,85,0.3);
+        }
+
+        .cta-button svg {
+            width: 24px;
+            height: 24px;
+            fill: currentColor;
+        }
+
+        .cta-sub {
+            margin-top: 16px;
+        }
+
+        .cta-sub a {
+            color: var(--primary);
+            text-decoration: none;
+            font-weight: 500;
+        }
+
+        .cta-sub a:hover {
+            text-decoration: underline;
+        }
+
+        /* Footer */
+        .footer {
+            background: var(--text-dark);
+            color: rgba(255,255,255,0.7);
+            text-align: center;
+            padding: 30px 20px;
+            font-size: 0.85rem;
+        }
+
+        .footer a {
+            color: rgba(255,255,255,0.9);
+            text-decoration: none;
+        }
+
+        /* Terms Section */
+        .terms-section {
+            padding: 40px 20px;
+            background: #f5f5f5;
+        }
+
+        .terms-container {
+            max-width: 700px;
+            margin: 0 auto;
+        }
+
+        .terms-container h3 {
+            font-size: 1rem;
+            font-weight: 600;
+            color: var(--text-dark);
+            margin-bottom: 16px;
+            text-align: center;
+        }
+
+        .terms-list {
+            background: white;
+            border-radius: 12px;
+            padding: 24px 24px 24px 40px;
+            list-style: disc;
+        }
+
+        .terms-list li {
+            font-size: 0.85rem;
+            color: var(--text-light);
+            line-height: 1.8;
+            margin-bottom: 8px;
+        }
+
+        .terms-list li:last-child {
+            margin-bottom: 0;
+        }
+
+        /* Animations */
+        @keyframes fadeInDown {
+            from {
+                opacity: 0;
+                transform: translateY(-20px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        @keyframes fadeInUp {
+            from {
+                opacity: 0;
+                transform: translateY(20px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        /* Responsive */
+        @media (max-width: 600px) {
+            body {
+                padding-top: 70px;
+            }
+
+            .countdown-bar {
+                flex-direction: column;
+                gap: 8px;
+                padding: 10px 16px;
+            }
+
+            .countdown-bar .countdown-item {
+                padding: 4px 8px;
+            }
+
+            .countdown-bar .countdown-number {
+                font-size: 1rem;
+            }
+
+            .hero {
+                padding: 50px 16px 30px;
+            }
+
+            .reward-amount {
+                font-size: 2rem;
+            }
+
+            .benefits-container {
+                grid-template-columns: 1fr;
+            }
+
+            .flow-section {
+                padding: 50px 16px;
+            }
+
+            .cta-section {
+                padding: 60px 16px;
+            }
+
+            .cta-button {
+                padding: 16px 36px;
+                font-size: 1rem;
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <!-- Fixed Countdown Bar -->
+    <div class="countdown-bar">
+        <p class="countdown-label">💝 2/1〜2/28 限定キャンペーン</p>
+        <div class="countdown-timer" id="countdown">
+            <div class="countdown-item">
+                <span class="countdown-number" id="days">0</span>
+                <span class="countdown-unit">日</span>
+            </div>
+            <div class="countdown-separator">:</div>
+            <div class="countdown-item">
+                <span class="countdown-number" id="hours">00</span>
+                <span class="countdown-unit">時間</span>
+            </div>
+            <div class="countdown-separator">:</div>
+            <div class="countdown-item">
+                <span class="countdown-number" id="minutes">00</span>
+                <span class="countdown-unit">分</span>
+            </div>
+            <div class="countdown-separator">:</div>
+            <div class="countdown-item">
+                <span class="countdown-number" id="seconds">00</span>
+                <span class="countdown-unit">秒</span>
+            </div>
+        </div>
+    </div>
+
+    <!-- Hero Section -->
+    <section class="hero">
+        <span class="hero-badge">💝 紹介キャンペーン</span>
+        <h1>お友達を紹介して<br>Amazonギフト券をもらおう！</h1>
+        <p class="hero-subtitle">
+            サクセスアカデミーを周りの方にご紹介ください。<br>
+            あなたもお友達もお得な特典があります🌸
+        </p>
+    </section>
+
+    <!-- Benefits Section -->
+    <section class="benefits-section">
+        <div class="section-header">
+            <h2>🎉 キャンペーン特典</h2>
+        </div>
+
+        <div class="benefits-container">
+            <div class="benefit-card benefit-card-highlight">
+                <div class="benefit-card-badge">🎁 あなたの特典</div>
+                <div class="benefit-card-icon">👤</div>
+                <h3>紹介する方（会員様）</h3>
+                <div class="benefit-item">
+                    <span>お友達が本入会で</span>
+                </div>
+                <div class="benefit-amount-large">1,000円</div>
+                <p style="font-size: 0.95rem; color: var(--text-dark); font-weight: 500;">Amazonギフト券</p>
+            </div>
+
+            <div class="benefit-card">
+                <div class="benefit-card-icon">👥</div>
+                <h3>ご紹介相手</h3>
+                <div class="benefit-item">
+                    <span>入会費</span>
+                </div>
+                <div class="benefit-amount" style="text-decoration: line-through; color: #999; font-size: 1.2rem;">50USD</div>
+                <div class="benefit-amount" style="color: var(--accent);">無料！</div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Target Section -->
+    <section class="target-section">
+        <div class="target-container">
+            <h2 class="target-title">🌸 こんなお友達がいたらぜひご紹介ください</h2>
+            <div class="target-list">
+                <div class="target-item">
+                    <span class="target-item-icon">🌍</span>
+                    <span>海外で日本語の維持に困っている</span>
+                </div>
+                <div class="target-item">
+                    <span class="target-item-icon">📚</span>
+                    <span>日本語に触れる機会が少ない</span>
+                </div>
+                <div class="target-item">
+                    <span class="target-item-icon">🏠</span>
+                    <span>家庭学習がなかなか続かない</span>
+                </div>
+                <div class="target-item">
+                    <span class="target-item-icon">✏️</span>
+                    <span>読み書きをどこから始めればいいか迷っている</span>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Flow Section -->
+    <section class="flow-section">
+        <div class="section-header">
+            <h2>📩 紹介方法（かんたん3ステップ）</h2>
+        </div>
+
+        <div class="flow-container">
+            <div class="flow-step">
+                <div class="step-number">1</div>
+                <div class="step-content">
+                    <h3>お友達に会員登録をしてもらう</h3>
+                    <p>このページのURLをシェアして、<br>会員登録をご案内ください。</p>
+                    <a href="https://success-academy.web.app/" target="_blank" class="register-link">▶ 会員登録ページはこちら</a>
+                </div>
+            </div>
+
+            <div class="flow-step">
+                <div class="step-number">2</div>
+                <div class="step-content">
+                    <h3>登録時にコードを入力してもらう</h3>
+                    <p>「Referral code」欄に下記コードを入力すると、<br>入会費が無料になります。</p>
+                    <div class="referral-code">FRIEND</div>
+                </div>
+            </div>
+
+            <div class="flow-step">
+                <div class="step-number">3</div>
+                <div class="step-content">
+                    <h3>LINEまたはメールで報告</h3>
+                    <p>「紹介しました」とご連絡ください。<br>お相手のお名前をお知らせいただければOKです！</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- CTA Section -->
+    <section class="cta-section">
+        <div class="cta-content">
+            <h2>心当たりのある方がいれば<br>ぜひシェアしてください🌸</h2>
+            <p>
+                お友達が体験後に本入会されたら、<br>
+                Amazonギフト券をお届けします！
+            </p>
+            <a href="https://lin.ee/JVV8msS" target="_blank" class="cta-button">
+                <svg viewBox="0 0 24 24"><path d="M19.365 9.863c.349 0 .63.285.63.631 0 .345-.281.63-.63.63H17.61v1.125h1.755c.349 0 .63.283.63.63 0 .344-.281.629-.63.629h-2.386c-.345 0-.627-.285-.627-.629V8.108c0-.345.282-.63.63-.63h2.386c.349 0 .63.285.63.63 0 .349-.281.63-.63.63H17.61v1.125h1.755zm-3.855 3.016c0 .27-.174.51-.432.596-.064.021-.133.031-.199.031-.211 0-.391-.09-.51-.25l-2.443-3.317v2.94c0 .344-.279.629-.631.629-.346 0-.626-.285-.626-.629V8.108c0-.27.173-.51.43-.595.06-.023.136-.033.194-.033.195 0 .375.104.495.254l2.462 3.33V8.108c0-.345.282-.63.63-.63.345 0 .63.285.63.63v4.771zm-5.741 0c0 .344-.282.629-.631.629-.345 0-.627-.285-.627-.629V8.108c0-.345.282-.63.63-.63.346 0 .628.285.628.63v4.771zm-2.466.629H4.917c-.345 0-.63-.285-.63-.629V8.108c0-.345.285-.63.63-.63.348 0 .63.285.63.63v4.141h1.756c.348 0 .629.283.629.63 0 .344-.282.629-.629.629M24 10.314C24 4.943 18.615.572 12 .572S0 4.943 0 10.314c0 4.811 4.27 8.842 10.035 9.608.391.082.923.258 1.058.59.12.301.079.766.038 1.08l-.164 1.02c-.045.301-.24 1.186 1.049.645 1.291-.539 6.916-4.078 9.436-6.975C23.176 14.393 24 12.458 24 10.314"/></svg>
+                LINEで紹介報告する
+            </a>
+            <div class="cta-sub">
+                <p>または <a href="mailto:info@success-j-academy.com">メールで報告</a></p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Terms Section -->
+    <section class="terms-section">
+        <div class="terms-container">
+            <h3>📋 キャンペーン詳細・注意事項</h3>
+            <ul class="terms-list">
+                <li>キャンペーン期間：2026年2月1日〜2月28日</li>
+                <li>本入会とは、無料体験後に初月利用料金をお支払いされた方を指します</li>
+                <li>入会費無料コードは、登録時に「Referral code」欄への入力が必要です。入力がない場合は適用されません</li>
+                <li>2026年1月31日より前に紹介された方は、本キャンペーンの対象外となります</li>
+                <li>紹介者の方は、メールまたはLINEで紹介相手のお名前をお知らせください</li>
+                <li>Amazonギフト券は、紹介者がサクセスアカデミーの会員である場合にのみお受け取りいただけます。紹介相手が継続中であっても、紹介者が退会されている場合は特典の対象外となります</li>
+                <li>Amazonギフト券は日本のAmazonで使用できるギフト券です</li>
+                <li>兄弟間でのご紹介は対象外となります</li>
+            </ul>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <p>© 2026 <a href="https://success-j-academy.com/">Success Academy</a> All Rights Reserved.</p>
+    </footer>
+
+    <script>
+        // 2月28日（日本時間）までのカウントダウンタイマー
+        (function() {
+            // 日本時間 2026年2月28日 23:59:59
+            const endTime = new Date('2026-02-28T23:59:59+09:00').getTime();
+            
+            function showExpiredPage() {
+                document.body.innerHTML = `
+                    <div style="
+                        min-height: 100vh;
+                        display: flex;
+                        flex-direction: column;
+                        align-items: center;
+                        justify-content: center;
+                        background: linear-gradient(135deg, #FDF8F5, #FFF5F5);
+                        padding: 40px 20px;
+                        text-align: center;
+                        font-family: 'Noto Sans JP', sans-serif;
+                    ">
+                        <div style="
+                            background: white;
+                            padding: 48px;
+                            border-radius: 20px;
+                            box-shadow: 0 4px 20px rgba(0,0,0,0.08);
+                            max-width: 500px;
+                        ">
+                            <div style="font-size: 4rem; margin-bottom: 20px;">⏰</div>
+                            <h1 style="
+                                font-family: 'Zen Maru Gothic', sans-serif;
+                                font-size: 1.5rem;
+                                color: #2D3436;
+                                margin-bottom: 16px;
+                            ">キャンペーン期間が終了しました</h1>
+                            <p style="
+                                color: #636E72;
+                                line-height: 1.8;
+                                margin-bottom: 24px;
+                            ">
+                                このキャンペーンは2月28日までの限定でした。<br>
+                                ご質問がございましたら、お気軽にお問い合わせください。
+                            </p>
+                            <div style="display: flex; flex-direction: column; gap: 12px; align-items: center;">
+                                <a href="https://lin.ee/JVV8msS" target="_blank" style="
+                                    display: inline-block;
+                                    background: #06C755;
+                                    color: white;
+                                    padding: 14px 32px;
+                                    border-radius: 50px;
+                                    text-decoration: none;
+                                    font-weight: 600;
+                                    min-width: 220px;
+                                    text-align: center;
+                                ">LINEでお問い合わせ</a>
+                                <a href="mailto:info@success-j-academy.com" style="
+                                    display: inline-block;
+                                    background: linear-gradient(135deg, #E8505B, #D43F4A);
+                                    color: white;
+                                    padding: 14px 32px;
+                                    border-radius: 50px;
+                                    text-decoration: none;
+                                    font-weight: 600;
+                                    min-width: 220px;
+                                    text-align: center;
+                                ">メールでお問い合わせ</a>
+                            </div>
+                        </div>
+                    </div>
+                `;
+                document.body.style.paddingTop = '0';
+            }
+            
+            function updateCountdown() {
+                const now = Date.now();
+                const remaining = endTime - now;
+                
+                if (remaining <= 0) {
+                    showExpiredPage();
+                    return;
+                }
+                
+                const days = Math.floor(remaining / (1000 * 60 * 60 * 24));
+                const hours = Math.floor((remaining % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+                const minutes = Math.floor((remaining % (1000 * 60 * 60)) / (1000 * 60));
+                const seconds = Math.floor((remaining % (1000 * 60)) / 1000);
+                
+                document.getElementById('days').textContent = String(days);
+                document.getElementById('hours').textContent = String(hours).padStart(2, '0');
+                document.getElementById('minutes').textContent = String(minutes).padStart(2, '0');
+                document.getElementById('seconds').textContent = String(seconds).padStart(2, '0');
+            }
+            
+            // ページ読み込み時にすでに期限切れかチェック
+            if (Date.now() >= endTime) {
+                showExpiredPage();
+            } else {
+                updateCountdown();
+                setInterval(updateCountdown, 1000);
+            }
+        })();
+    </script>
+
+</body>
+</html>
