@@ -1,0 +1,666 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>BrightBe Learning モニター生徒募集</title>
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@300;400;500;700&family=Poppins:wght@600;700&display=swap" rel="stylesheet">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Noto Sans JP', sans-serif;
+            background: linear-gradient(135deg, #f5f7fa 0%, #e4e8ec 100%);
+            min-height: 100vh;
+            padding: 40px 20px;
+            line-height: 1.8;
+        }
+
+        .container {
+            max-width: 650px;
+            margin: 0 auto;
+        }
+
+        .card {
+            background: white;
+            border-radius: 20px;
+            box-shadow: 0 10px 40px rgba(0,0,0,0.1);
+            overflow: hidden;
+        }
+
+        .header {
+            background: linear-gradient(135deg, #e85d04 0%, #ff7e33 50%, #ff9a47 100%);
+            padding: 50px 30px;
+            text-align: center;
+            color: white;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .header::before {
+            content: '';
+            position: absolute;
+            top: -50%;
+            left: -50%;
+            width: 200%;
+            height: 200%;
+            background: radial-gradient(circle, rgba(255,255,255,0.2) 0%, transparent 50%);
+        }
+
+        .header > * {
+            position: relative;
+            z-index: 1;
+        }
+
+        .open-badge {
+            display: inline-block;
+            background: white;
+            color: #e85d04;
+            padding: 10px 30px;
+            border-radius: 8px;
+            font-size: 16px;
+            font-weight: 700;
+            margin: 20px 0;
+            letter-spacing: 3px;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.1);
+        }
+
+        .lang-switcher {
+            position: absolute;
+            top: 15px;
+            right: 15px;
+            z-index: 10;
+            display: flex;
+            gap: 5px;
+        }
+
+        .lang-btn {
+            padding: 6px 12px;
+            border: 2px solid rgba(255,255,255,0.5);
+            background: transparent;
+            color: white;
+            border-radius: 20px;
+            cursor: pointer;
+            font-size: 12px;
+            font-weight: 600;
+            transition: all 0.3s;
+        }
+
+        .lang-btn.active {
+            background: white;
+            color: #e85d04;
+            border-color: white;
+        }
+
+        /* Mobile Responsive */
+        @media (max-width: 600px) {
+            body {
+                padding: 20px 15px;
+            }
+
+            .header {
+                padding: 35px 20px;
+            }
+
+            .main-title {
+                font-size: 32px;
+                letter-spacing: 1px;
+            }
+
+            .badge {
+                font-size: 12px;
+                padding: 6px 14px;
+            }
+
+            .subtitle {
+                font-size: 14px;
+                letter-spacing: 2px;
+            }
+
+            .open-badge {
+                padding: 8px 20px;
+                font-size: 14px;
+                letter-spacing: 2px;
+            }
+
+            .content {
+                padding: 25px 20px;
+            }
+
+            .section-title {
+                font-size: 16px;
+            }
+
+            .price {
+                font-size: 36px;
+            }
+
+            .price span {
+                font-size: 16px;
+            }
+
+            .price-box {
+                padding: 20px 15px;
+            }
+
+            .feature-item {
+                padding: 10px 12px;
+            }
+
+            .feature-text {
+                font-size: 14px;
+            }
+
+            .conditions {
+                padding: 20px 15px;
+            }
+
+            .cta-section {
+                padding: 25px 20px;
+            }
+
+            .cta-section a {
+                padding: 15px 30px !important;
+                font-size: 16px !important;
+            }
+
+            .schedule-table th,
+            .schedule-table td {
+                padding: 8px 6px;
+                font-size: 13px;
+            }
+
+            /* Timetable */
+            .section table {
+                font-size: 12px !important;
+            }
+
+            .section table th,
+            .section table td {
+                padding: 8px 4px !important;
+            }
+        }
+
+        .logo {
+            max-width: 250px;
+            margin-bottom: 20px;
+        }
+
+        .badge {
+            display: inline-block;
+            background: rgba(255,255,255,0.3);
+            padding: 8px 20px;
+            border-radius: 50px;
+            font-size: 14px;
+            font-weight: 500;
+            letter-spacing: 1px;
+            color: white;
+        }
+
+        .main-title {
+            font-family: 'Poppins', sans-serif;
+            font-size: 46px;
+            font-weight: 700;
+            margin: 20px 0 5px;
+            letter-spacing: 2px;
+            color: white;
+            text-shadow: 0 2px 10px rgba(0,0,0,0.15);
+        }
+
+        .subtitle {
+            font-size: 16px;
+            margin-top: 15px;
+            letter-spacing: 4px;
+            color: white;
+            text-shadow: 0 1px 3px rgba(0,0,0,0.1);
+        }
+
+        .content {
+            padding: 40px 35px;
+        }
+
+        .intro {
+            background: #f8f9fa;
+            border-left: 4px solid #ff7e33;
+            padding: 20px;
+            margin-bottom: 30px;
+            border-radius: 0 12px 12px 0;
+        }
+
+        .intro p {
+            color: #555;
+            font-size: 15px;
+        }
+
+        .section {
+            margin-bottom: 30px;
+        }
+
+        .section-title {
+            font-size: 18px;
+            font-weight: 700;
+            color: #ff7e33;
+            margin-bottom: 15px;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+
+        .section-title::before {
+            content: '';
+            width: 4px;
+            height: 20px;
+            background: linear-gradient(135deg, #ff7e33, #ffb347);
+            border-radius: 2px;
+        }
+
+        .price-box {
+            background: #fff8f3;
+            border: 2px solid #ff7e33;
+            border-radius: 16px;
+            padding: 25px;
+            text-align: center;
+            margin-bottom: 30px;
+        }
+
+        .price-label {
+            font-size: 14px;
+            color: #888;
+            margin-bottom: 5px;
+        }
+
+        .price {
+            font-size: 48px;
+            font-weight: 700;
+            background: linear-gradient(135deg, #ff7e33 0%, #ffb347 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+        }
+
+        .price span {
+            font-size: 20px;
+        }
+
+        .price-note {
+            font-size: 14px;
+            color: #666;
+            margin-top: 10px;
+        }
+
+        .regular-price {
+            text-decoration: line-through;
+            color: #999;
+        }
+
+        .limit-badge {
+            display: inline-block;
+            background: #ff4757;
+            color: white;
+            padding: 6px 16px;
+            border-radius: 50px;
+            font-size: 13px;
+            font-weight: 600;
+            margin-top: 15px;
+        }
+
+        .features {
+            display: grid;
+            gap: 12px;
+        }
+
+        .feature-item {
+            display: flex;
+            align-items: flex-start;
+            gap: 12px;
+            padding: 12px 15px;
+            background: #f8f9fa;
+            border-radius: 10px;
+            border-left: 3px solid #ff7e33;
+        }
+
+        .feature-icon {
+            font-size: 20px;
+            flex-shrink: 0;
+        }
+
+        .feature-text {
+            font-size: 15px;
+            color: #444;
+        }
+
+        .conditions {
+            background: #f8f9fa;
+            border-radius: 12px;
+            padding: 25px;
+            border: 1px solid #e9ecef;
+        }
+
+        .conditions-title {
+            font-size: 16px;
+            font-weight: 600;
+            color: #ff7e33;
+            margin-bottom: 15px;
+        }
+
+        .condition-list {
+            list-style: none;
+        }
+
+        .condition-list li {
+            position: relative;
+            padding-left: 24px;
+            margin-bottom: 12px;
+            font-size: 14px;
+            color: #444;
+        }
+
+        .condition-list li::before {
+            content: '✓';
+            position: absolute;
+            left: 0;
+            color: #ff7e33;
+            font-weight: bold;
+        }
+
+        .highlight {
+            background: #fff3e6;
+            padding: 2px 6px;
+            border-radius: 4px;
+        }
+
+        .cta-section {
+            background: #f8f9fa;
+            padding: 30px;
+            text-align: center;
+            color: #333;
+            border-top: 3px solid #ff7e33;
+        }
+
+        .cta-text {
+            font-size: 16px;
+            margin-bottom: 15px;
+            color: #333;
+        }
+
+        .cta-note {
+            font-size: 13px;
+            color: #666;
+            opacity: 0.9;
+        }
+
+        .footer {
+            padding: 25px;
+            text-align: center;
+            background: #f8f9fa;
+            border-top: 1px solid #e9ecef;
+        }
+
+        .footer-text {
+            font-size: 13px;
+            color: #666;
+        }
+
+        .schedule-table {
+            width: 100%;
+            border-collapse: collapse;
+            margin-top: 10px;
+        }
+
+        .schedule-table th,
+        .schedule-table td {
+            padding: 12px 15px;
+            text-align: left;
+            border-bottom: 1px solid #eee;
+            font-size: 14px;
+        }
+
+        .schedule-table th {
+            background: #ff7e33;
+            font-weight: 600;
+            color: white;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="card">
+            <div class="header">
+                <div class="lang-switcher">
+                    <button class="lang-btn active" onclick="setLang('ja')" id="btn-ja">JA</button>
+                    <button class="lang-btn" onclick="setLang('en')" id="btn-en">EN</button>
+                </div>
+                <div class="badge" data-ja="🎉 Success Academy 会員様限定" data-en="🎉 Exclusive for Success Academy Members">🎉 Success Academy 会員様限定</div>
+                <h1 class="main-title">BrightBe Learning</h1>
+                <div class="open-badge" data-ja="2026年4月 OPEN" data-en="OPENS APRIL 2026">2026年4月 OPEN</div>
+                <p class="subtitle" data-ja="モニター生徒募集中" data-en="Join Our Pilot Program">モニター生徒募集中</p>
+            </div>
+
+            <div class="content">
+                <div class="intro">
+                    <p data-ja="いつもSuccess Academyをご利用いただきありがとうございます。この度、米国のカリキュラム（Common Core）に沿ったLanguage Arts・Mathのオンラインスクール「<strong>BrightBe Learning</strong>」をオープンすることになりました。オープンに先立ち、Success Academy会員様限定でモニター生徒を募集いたします。" data-en="Thank you for being a valued Success Academy member. We are excited to announce the launch of <strong>BrightBe Learning</strong>, an online school offering Language Arts and Math based on U.S. Common Core standards. We are now inviting Success Academy members to join our pilot program.">いつもSuccess Academyをご利用いただきありがとうございます。この度、米国のカリキュラム（Common Core）に沿ったLanguage Arts・Mathのオンラインスクール「<strong>BrightBe Learning</strong>」をオープンすることになりました。オープンに先立ち、Success Academy会員様限定でモニター生徒を募集いたします。</p>
+                </div>
+
+                <div class="price-box">
+                    <p class="price-label" data-ja="創業モニター価格" data-en="Founding Member Price">創業モニター価格</p>
+                    <p class="price">$50<span>/月</span></p>
+                    <p class="price-note"><span class="regular-price" data-ja="通常価格 $200" data-en="Regular $200">通常価格 $200</span> → 75%OFF</p>
+                    <div class="limit-badge" data-ja="🔥 先着10名限定" data-en="🔥 Limited to First 10">🔥 先着10名限定</div>
+                </div>
+
+                <div class="section">
+                    <h2 class="section-title" data-ja="BrightBe Learningとは" data-en="About BrightBe Learning">BrightBe Learningとは</h2>
+                    <div class="features">
+                        <div class="feature-item">
+                            <span class="feature-icon">📖</span>
+                            <div class="feature-text">
+                                <strong>Language Arts</strong><br>
+                                <span data-ja="フォニックスから始まり、Reading Comprehensionを中心に指導します。" data-en="Starting with phonics, focusing on reading comprehension.">フォニックスから始まり、Reading Comprehensionを中心に指導します。</span>
+                            </div>
+                        </div>
+                        <div class="feature-item">
+                            <span class="feature-icon">🔢</span>
+                            <div class="feature-text">
+                                <strong>Math</strong><br>
+                                <span data-ja="基礎計算を日本式で指導します。" data-en="Basic math taught using Japanese methods.">基礎計算を日本式で指導します。</span>
+                            </div>
+                        </div>
+                        <div class="feature-item">
+                            <span class="feature-icon">👩‍🏫</span>
+                            <span class="feature-text" data-ja="<strong>All English</strong>でのオンライングループレッスン" data-en="Online group lessons conducted <strong>entirely in English</strong>"><strong>All English</strong>でのオンライングループレッスン</span>
+                        </div>
+                        <div class="feature-item">
+                            <span class="feature-icon">🏠</span>
+                            <span class="feature-text" data-ja="ホームスクール・アフタースクールどちらにも対応" data-en="Suitable for both homeschool and after-school">ホームスクール・アフタースクールどちらにも対応</span>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="section">
+                    <h2 class="section-title" data-ja="レッスン概要" data-en="Lesson Overview">レッスン概要</h2>
+                    <table class="schedule-table">
+                        <tr>
+                            <th data-ja="対象" data-en="Ages">対象</th>
+                            <td>Ages 4-12（Pre-K〜Grade 6）</td>
+                        </tr>
+                        <tr>
+                            <th data-ja="開校日" data-en="Opens">開校日</th>
+                            <td data-ja="2026年4月" data-en="April 2026">2026年4月</td>
+                        </tr>
+                        <tr>
+                            <th data-ja="形式" data-en="Format">形式</th>
+                            <td data-ja="オンライングループレッスン" data-en="Online Group Lessons">オンライングループレッスン</td>
+                        </tr>
+                    </table>
+                </div>
+
+                <div class="section">
+                    <h2 class="section-title" data-ja="時間割（予定）" data-en="Schedule (Tentative)">時間割（予定）</h2>
+                    <div style="margin-bottom: 15px; text-align: center;">
+                        <span style="font-size: 13px; color: #666; display: block; margin-bottom: 8px;" data-ja="タイムゾーン:" data-en="Timezone:">タイムゾーン:</span>
+                        <div style="display: flex; flex-wrap: wrap; justify-content: center; gap: 5px;">
+                            <button onclick="setTimezone('EST')" id="btn-EST" class="tz-btn" style="padding: 8px 14px; border: 2px solid #ff7e33; background: #ff7e33; color: white; border-radius: 20px; cursor: pointer; font-weight: 600; font-size: 13px;">EST</button>
+                            <button onclick="setTimezone('CST')" id="btn-CST" class="tz-btn" style="padding: 8px 14px; border: 2px solid #ddd; background: white; color: #666; border-radius: 20px; cursor: pointer; font-size: 13px;">CST</button>
+                            <button onclick="setTimezone('MST')" id="btn-MST" class="tz-btn" style="padding: 8px 14px; border: 2px solid #ddd; background: white; color: #666; border-radius: 20px; cursor: pointer; font-size: 13px;">MST</button>
+                            <button onclick="setTimezone('PST')" id="btn-PST" class="tz-btn" style="padding: 8px 14px; border: 2px solid #ddd; background: white; color: #666; border-radius: 20px; cursor: pointer; font-size: 13px;">PST</button>
+                            <button onclick="setTimezone('HST')" id="btn-HST" class="tz-btn" style="padding: 8px 14px; border: 2px solid #ddd; background: white; color: #666; border-radius: 20px; cursor: pointer; font-size: 13px;">HST</button>
+                        </div>
+                    </div>
+                    <div style="overflow-x: auto;">
+                        <table style="width: 100%; border-collapse: collapse; text-align: center; font-size: 14px;">
+                            <thead>
+                                <tr style="border-bottom: 2px solid #333;">
+                                    <th style="padding: 12px 8px; font-weight: 600; text-align: left;" id="tz-label">EST</th>
+                                    <th style="padding: 12px 8px; font-weight: 600;">Mon</th>
+                                    <th style="padding: 12px 8px; font-weight: 600;">Tue</th>
+                                    <th style="padding: 12px 8px; font-weight: 600;">Wed</th>
+                                    <th style="padding: 12px 8px; font-weight: 600;">Thu</th>
+                                    <th style="padding: 12px 8px; font-weight: 600;">Fri</th>
+                                </tr>
+                                <tr style="background: #f8f9fa;">
+                                    <td style="padding: 8px; font-size: 12px; text-align: left; color: #666;" data-ja="科目" data-en="Subject">科目</td>
+                                    <td style="padding: 8px; font-size: 12px; color: #ff7e33; font-weight: 600;">Math</td>
+                                    <td style="padding: 8px; font-size: 12px; color: #0984e3; font-weight: 600;">English</td>
+                                    <td style="padding: 8px; font-size: 12px; color: #ff7e33; font-weight: 600;">Math</td>
+                                    <td style="padding: 8px; font-size: 12px; color: #0984e3; font-weight: 600;">English</td>
+                                    <td style="padding: 8px; font-size: 12px; color: #ff7e33; font-weight: 600;">Math</td>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr style="border-bottom: 1px solid #eee;">
+                                    <td style="padding: 12px 8px; text-align: left;" class="time-slot" data-est="16">4:00 PM</td>
+                                    <td colspan="5" style="padding: 12px 8px;">Pre-K Elementary</td>
+                                </tr>
+                                <tr style="border-bottom: 1px solid #eee;">
+                                    <td style="padding: 12px 8px; text-align: left;" class="time-slot" data-est="16.5">4:30 PM</td>
+                                    <td colspan="5" style="padding: 12px 8px;">Pre-K Advanced</td>
+                                </tr>
+                                <tr style="border-bottom: 1px solid #eee;">
+                                    <td style="padding: 12px 8px; text-align: left;" class="time-slot" data-est="17">5:00 PM</td>
+                                    <td colspan="5" style="padding: 12px 8px;">Grade 1-2</td>
+                                </tr>
+                                <tr style="border-bottom: 1px solid #eee;">
+                                    <td style="padding: 12px 8px; text-align: left;" class="time-slot" data-est="17.5">5:30 PM</td>
+                                    <td colspan="5" style="padding: 12px 8px;">Grade 3-4</td>
+                                </tr>
+                                <tr>
+                                    <td style="padding: 12px 8px; text-align: left;" class="time-slot" data-est="18">6:00 PM</td>
+                                    <td colspan="5" style="padding: 12px 8px;">Grade 5-6</td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                    <p style="font-size: 13px; color: #888; margin-top: 15px; text-align: center;" data-ja="※お子様の該当クラスに参加｜出たい時に参加OK" data-en="※Join your child's class | Attend whenever you want">
+                        ※お子様の該当クラスに参加｜出たい時に参加OK
+                    </p>
+                </div>
+
+                <script>
+                    const tzOffsets = { EST: 0, CST: -1, MST: -2, PST: -3, HST: -5 };
+                    
+                    function setTimezone(tz) {
+                        const offset = tzOffsets[tz];
+                        const slots = document.querySelectorAll('.time-slot');
+                        
+                        slots.forEach(slot => {
+                            const estHour = parseFloat(slot.dataset.est);
+                            let newHour = estHour + offset;
+                            
+                            const hours = Math.floor(newHour);
+                            const minutes = (newHour % 1) * 60;
+                            
+                            let displayHour = hours > 12 ? hours - 12 : hours;
+                            const ampm = hours >= 12 ? 'PM' : 'AM';
+                            const displayMin = minutes === 0 ? '00' : '30';
+                            
+                            slot.textContent = `${displayHour}:${displayMin} ${ampm}`;
+                        });
+                        
+                        document.getElementById('tz-label').textContent = tz;
+                        
+                        // Update button styles
+                        ['EST', 'CST', 'MST', 'PST', 'HST'].forEach(t => {
+                            const btn = document.getElementById('btn-' + t);
+                            if (t === tz) {
+                                btn.style.background = '#ff7e33';
+                                btn.style.color = 'white';
+                                btn.style.borderColor = '#ff7e33';
+                                btn.style.fontWeight = '600';
+                            } else {
+                                btn.style.background = 'white';
+                                btn.style.color = '#666';
+                                btn.style.borderColor = '#ddd';
+                                btn.style.fontWeight = 'normal';
+                            }
+                        });
+                    }
+
+                    // Language Switching
+                    function setLang(lang) {
+                        document.querySelectorAll('[data-ja][data-en]').forEach(el => {
+                            el.innerHTML = el.dataset[lang];
+                        });
+                        
+                        // Update button styles
+                        document.getElementById('btn-ja').classList.toggle('active', lang === 'ja');
+                        document.getElementById('btn-en').classList.toggle('active', lang === 'en');
+                        
+                        // Update page title
+                        document.title = lang === 'ja' ? 'BrightBe Learning モニター生徒募集' : 'BrightBe Learning - Pilot Program Recruitment';
+                    }
+                </script>
+
+                <div class="section">
+                    <h2 class="section-title" data-ja="モニター参加条件" data-en="Pilot Program Requirements">モニター参加条件</h2>
+                    <div class="conditions">
+                        <ul class="condition-list">
+                            <li data-ja="1年間のご契約（途中解約可）" data-en="1-year commitment (early cancellation available)">1年間のご契約（途中解約可）</li>
+                            <li data-ja="月1回程度の簡単なフィードバックアンケートへのご協力" data-en="Brief monthly feedback survey">月1回程度の簡単なフィードバックアンケートへのご協力</li>
+                            <li data-ja="可能であれば、受講前後の成績データの共有にご協力ください<br><span class='highlight'>標準テスト（MAP、Iowa等）が特にありがたいです</span><br>学校の成績表（Report Card）でもOK" data-en="If possible, share academic progress data<br><span class='highlight'>Standardized tests (MAP, Iowa, etc.) especially appreciated</span><br>Report cards are also welcome">可能であれば、受講前後の成績データの共有にご協力ください<br>
+                                <span class="highlight">標準テスト（MAP、Iowa等）が特にありがたいです</span><br>
+                                学校の成績表（Report Card）でもOK</li>
+                            <li data-ja="匿名での成果データ・ご感想の使用許可" data-en="Permission to use anonymized results and feedback">匿名での成果データ・ご感想の使用許可</li>
+                        </ul>
+                    </div>
+                </div>
+
+                <div class="section">
+                    <h2 class="section-title" data-ja="モニター特典" data-en="Pilot Member Benefits">モニター特典</h2>
+                    <div class="features">
+                        <div class="feature-item">
+                            <span class="feature-icon">💎</span>
+                            <span class="feature-text" data-ja="<strong>創業メンバー価格</strong>：ご契約継続中はずっと$50/月" data-en="<strong>Founding Member Price</strong>: $50/month as long as you stay"><strong>創業メンバー価格</strong>：ご契約継続中はずっと$50/月</span>
+                        </div>
+                        <div class="feature-item">
+                            <span class="feature-icon">🎁</span>
+                            <span class="feature-text" data-ja="カリキュラムへのご意見を直接反映" data-en="Your feedback directly shapes our curriculum">カリキュラムへのご意見を直接反映</span>
+                        </div>
+                        <div class="feature-item">
+                            <span class="feature-icon">⭐</span>
+                            <span class="feature-text" data-ja="今後のサービス開発への優先案内" data-en="Priority access to future services">今後のサービス開発への優先案内</span>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+
+            <div class="cta-section">
+                <p class="cta-text" data-ja="ご興味のある方は下記フォームよりお申し込みください" data-en="Interested? Apply using the form below">ご興味のある方は下記フォームよりお申し込みください</p>
+                <a href="https://forms.gle/4vk3z6VXmNJa32YS6" target="_blank" style="display: inline-block; background: #ff7e33; color: white; padding: 18px 50px; border-radius: 50px; font-weight: 700; text-decoration: none; margin: 15px 0; font-size: 18px; box-shadow: 0 4px 15px rgba(255,126,51,0.4); transition: all 0.3s;" data-ja="📝 モニター申し込みフォーム" data-en="📝 Apply Now">📝 モニター申し込みフォーム</a>
+                <p class="cta-note" data-ja="※お申し込み後、3月に無料体験レッスンへご招待します<br>※先着10名に達し次第、募集を締め切らせていただきます<br><strong style='color: #ff7e33;'>募集締切：2026年2月28日</strong>" data-en="※After applying, you'll be invited to a free trial lesson in March<br>※Applications close when we reach 10 students<br><strong style='color: #ff7e33;'>Deadline: February 28, 2026</strong>">※お申し込み後、3月に無料体験レッスンへご招待します<br>
+                ※先着10名に達し次第、募集を締め切らせていただきます<br>
+                <strong style="color: #ff7e33;">募集締切：2026年2月28日</strong></p>
+            </div>
+
+            <div class="footer">
+                <p class="footer-text" data-ja="ご質問はお気軽にどうぞ" data-en="Questions? Feel free to contact us">ご質問はお気軽にどうぞ</p>
+                <p style="margin: 15px 0;">
+                    <a href="https://lin.ee/KtZdAoc" target="_blank" style="display: inline-block; background: #06C755; color: white; padding: 10px 25px; border-radius: 25px; text-decoration: none; font-weight: 600; font-size: 14px; margin: 5px " data-ja="💬 公式LINE" data-en="💬 LINE">💬 公式LINE</a>
+                    <a href="/cdn-cgi/l/email-protection#c8a1a6aea788a5adbaabb1e5adacbdaba9bca1a7a6e6aba7a5" style="display: inline-block; background: #ff7e33; color: white; padding: 10px 25px; border-radius: 25px; text-decoration: none; font-weight: 600; font-size: 14px; margin: 5px " data-ja="✉️ メール" data-en="✉️ Email">✉️ メール</a>
+                </p>
+                <p class="footer-text" style="margin-top: 15px;">BrightBe Learning<br>Operated by MERCY GLOBAL EDUCATION LLC</p>
+            </
