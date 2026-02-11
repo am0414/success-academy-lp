@@ -9,7 +9,6 @@
     <meta name="description" content="北米・アジア・欧州の海外在住日本人家族向けオンライン日本語スクール。日本語・国語・算数が月50ドル取り放題。帰国子女、インター生、バイリンガル教育に最適。25分授業で継続率95%。14日間無料体験実施中。">
     <meta name="keywords" content="オンラインスクール,海外在住,日本語教育,帰国子女,バイリンガル教育,日本語補習校,オンライン,インターナショナルスクール,早期教育,海外子育て">
     <link rel="canonical" href="https://www.successacademyworld.com/">
-
     
     <!-- Open Graph / Facebook -->
     <meta property="og:type" content="website">
@@ -1601,9 +1600,27 @@
             .testi-img img { max-width: 75%; border-radius: var(--radius-md); }
 
             /* === Influencer === */
-            .influencer-section { padding: 64px 0; }
+            .influencer-section { padding: 64px 0; overflow: visible; }
             .influencer-section .section-label { padding: 0 20px; }
-            .inf-card { min-width: 280px; max-width: 280px; padding: 24px 20px; border-radius: 16px; }
+            .influencer-track-wrapper {
+                overflow-x: auto;
+                overflow-y: hidden;
+                -webkit-overflow-scrolling: touch;
+                padding: 0 20px 16px;
+                margin: 32px 0;
+                scroll-snap-type: x mandatory;
+            }
+            .influencer-track {
+                animation: none;
+                gap: 16px;
+                width: max-content;
+            }
+            .inf-card {
+                min-width: 280px; max-width: 280px;
+                padding: 24px 20px; border-radius: 16px;
+                scroll-snap-align: start;
+            }
+            .inf-card:hover { transform: none; }
             .inf-card-header img { width: 44px; height: 44px; }
             .inf-name { font-size: 0.88rem; }
             .inf-details { font-size: 0.68rem; }
@@ -1712,7 +1729,7 @@
     <header class="site-header">
         <div class="container header-inner">
             <div class="logo">Success Academy</div>
-            <a href="https://line.me/R/ti/p/@359fnsdb" onclick="event.preventDefault(); trackLineClick(); var url=this.href; setTimeout(function(){window.open(url,'_blank');},300); return false;" target="_blank" class="header-cta">説明会を予約する</a>
+            <a href="https://line.me/R/ti/p/@359fnsdb" onclick="event.preventDefault(); trackLineClick(); var url=this.href; setTimeout(function(){window.open(url,'_blank');},300); return false;" target="_blank" class="header-cta">まずは無料で資料請求</a>
         </div>
     </header>
 
@@ -1730,19 +1747,13 @@
                             <div class="countdown-timer" id="heroCountdown"></div>
                         </div>
                         <button class="btn-line pulse-btn" onclick="event.preventDefault(); trackLineClick(); setTimeout(function(){window.open('https://line.me/R/ti/p/@359fnsdb','_blank');},300);">
-                            📲 LINE登録して説明会に予約する
+                            📲 まずは無料で資料請求
                         </button>
                         <p class="btn-micro">※ 登録無料・いつでも解除OK・30秒で完了</p>
                     </div>
                 </div>
                 <div class="hero-visual">
                     <img src="https://i.imgur.com/l48QbXM.png" alt="Success Academyで学ぶ子供たち" loading="eager">
-                    <div class="hero-badge">
-                        <div>
-                            <div class="hero-badge-number">92.5%</div>
-                            <div class="hero-badge-label">継続率</div>
-                        </div>
-                    </div>
                 </div>
             </div>
         </div>
@@ -1950,19 +1961,19 @@
                 </div>
             </div>
             <div class="inline-cta">
-                <div class="inline-cta-badge">🎓 無料説明会 開催中</div>
-                <h4>まずは説明会で<br>詳しく聞いてみませんか？</h4>
+                <div class="inline-cta-badge">📄 無料資料配布中</div>
+                <h4>まずは資料で<br>詳しく見てみませんか？</h4>
                 
                 <div class="session-cards" id="inlineSessionContainer">
                     <!-- Dynamically populated by JS -->
                 </div>
                 <div class="inline-cta-list">
-                    <p><span>✓</span> 授業の雰囲気がわかる</p>
-                    <p><span>✓</span> 料金・スケジュールを詳しく説明</p>
-                    <p><span>✓</span> 質問・相談もOK</p>
+                    <p><span>✓</span> レッスン内容がわかる</p>
+                    <p><span>✓</span> 料金・スケジュールもひと目で確認</p>
+                    <p><span>✓</span> LINEでいつでも質問OK</p>
                 </div>
                 <button class="btn-line pulse-btn" onclick="event.preventDefault(); trackLineClick(); setTimeout(function(){window.open('https://line.me/R/ti/p/@359fnsdb','_blank');},300);">
-                    📲 LINE登録して説明会に予約する
+                    📲 まずは無料で資料請求
                 </button>
                 <p class="note">※ 登録無料・いつでも解除OK</p>
             </div>
@@ -2231,21 +2242,21 @@
     <section class="final-cta">
         <div class="final-cta-inner">
             <div class="final-cta-card">
-                <div class="inline-cta-badge">🎓 無料説明会 受付中</div>
-                <h3>お子さまの日本語の未来、<br>説明会で一歩踏み出しませんか？</h3>
+                <div class="inline-cta-badge">📄 無料資料配布中</div>
+                <h3>お子さまの日本語の未来、<br>まずは資料で一歩踏み出しませんか？</h3>
                 
                 <div class="session-cards" id="finalSessionContainer">
                     <!-- Dynamically populated by JS -->
                 </div>
 
                 <div class="inline-cta-list">
-                    <p><span>✓</span> 授業の雰囲気がわかる</p>
-                    <p><span>✓</span> 料金・スケジュールを詳しく説明</p>
-                    <p><span>✓</span> 質問・相談もOK</p>
+                    <p><span>✓</span> レッスン内容がわかる</p>
+                    <p><span>✓</span> 料金・スケジュールもひと目で確認</p>
+                    <p><span>✓</span> LINEでいつでも質問OK</p>
                 </div>
-                <p style="font-size: 0.85rem; color: var(--orange-600); font-weight: 600; margin-bottom: 16px;">📲 LINEから簡単に予約できます</p>
+                <p style="font-size: 0.85rem; color: var(--orange-600); font-weight: 600; margin-bottom: 16px;">📲 LINEから簡単にダウンロードできます</p>
                 <button id="lineRegButton2" class="btn-line pulse-btn" onclick="event.preventDefault(); trackLineClick(); setTimeout(function(){window.open('https://line.me/R/ti/p/@359fnsdb','_blank');},300);" style="width: 100%;">
-                    LINE登録して説明会に予約する
+                    まずは無料で資料請求
                 </button>
                 <p style="font-size: 0.75rem; color: var(--gray-400); margin-top: 12px;">※ 登録無料・いつでも解除OK</p>
                 
@@ -2272,7 +2283,7 @@
         <div class="container">
             <div class="footer-logo">サクセスアカデミー</div>
             <p>海外在住のご家族向けに、<br>オンラインで日本語教育を提供しています。</p>
-            <a href="https://line.me/R/ti/p/@359fnsdb" onclick="event.preventDefault(); trackLineClick(); var url=this.href; setTimeout(function(){window.open(url,'_blank');},300); return false;" target="_blank" class="footer-line-btn">説明会に予約する</a>
+            <a href="https://line.me/R/ti/p/@359fnsdb" onclick="event.preventDefault(); trackLineClick(); var url=this.href; setTimeout(function(){window.open(url,'_blank');},300); return false;" target="_blank" class="footer-line-btn">まずは無料で資料請求</a>
             <div class="footer-copy">
                 <p>© 2026 サクセスアカデミー All rights reserved.</p>
             </div>
@@ -2282,7 +2293,7 @@
     <!-- Fixed Bottom CTA -->
     <div class="fixed-cta">
         <a href="https://line.me/R/ti/p/@359fnsdb" onclick="event.preventDefault(); trackLineClick(); var url=this.href; setTimeout(function(){window.open(url,'_blank');},300); return false;" target="_blank" style="text-decoration: none; width: 100%; max-width: 400px;">
-            <button class="fixed-cta-btn">📲 LINE登録して説明会に予約する</button>
+            <button class="fixed-cta-btn">📲 まずは無料で資料請求</button>
         </a>
         <p class="fixed-cta-note">次回説明会: <span id="fixedCtaNext"></span></p>
     </div>
