@@ -789,7 +789,8 @@
     <p class="footer-text" data-ja="ご質問はお気軽にどうぞ" data-en="Questions? Feel free to contact us">ご質問はお気軽にどうぞ</p>
     <p style="margin: 15px 0;">
         <a href="https://lin.ee/KtZdAoc" target="_blank" class="footer-btn" style="background: #06C755;" data-ja="💬 公式LINE" data-en="💬 LINE">💬 公式LINE</a>
-        <a href="mailto:info@mercy-education.com" class="footer-btn" style="background: #2563eb;" data-ja="✉️ メール" data-en="✉️ Email">✉️ メール</a>
+        <a href="#" onclick="copyEmail(event)" class="footer-btn" style="background: #2563eb;" data-ja="✉️ メール" data-en="✉️ Email">✉️ メール</a>
+        <span id="email-copied" style="display:none; font-size:12px; color:#22c55e; margin-left:8px;">コピーしました！</span>
     </p>
     <p class="footer-text" style="margin-top: 15px;">BrightBe Learning<br>Operated by Mercy Global Education LLC</p>
 </div>
@@ -798,7 +799,16 @@
 </div>
 
 <script>
-// Accordion (section-level)
+// Copy email
+function copyEmail(e) {
+    e.preventDefault();
+    navigator.clipboard.writeText('info@mercy-education.com').then(() => {
+        const msg = document.getElementById('email-copied');
+        msg.style.display = 'inline';
+        setTimeout(() => { msg.style.display = 'none'; }, 2000);
+    });
+}
+
 function toggleAccordion(id, header) {
     const body = document.getElementById(id);
     const arrow = header.querySelector('.accordion-arrow');
@@ -850,4 +860,3 @@ function showCurr(type) {
     tab.classList.add(type === 'math' ? 'active-math' : 'active-reading');
 }
 </script>
-　
