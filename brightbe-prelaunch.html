@@ -1,0 +1,846 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>BrightBe Learning プレオープン会員募集</title>
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@300;400;500;700&family=Poppins:wght@600;700&display=swap" rel="stylesheet">
+    <style>
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        body {
+            font-family: 'Noto Sans JP', sans-serif;
+            background: linear-gradient(135deg, #f5f7fa 0%, #e4e8ec 100%);
+            min-height: 100vh;
+            padding: 40px 20px;
+            line-height: 1.8;
+        }
+        .container { max-width: 650px; margin: 0 auto; }
+        .card {
+            background: white;
+            border-radius: 20px;
+            box-shadow: 0 10px 40px rgba(0,0,0,0.1);
+            overflow: hidden;
+        }
+
+        /* ── HEADER ── */
+        .header {
+            background: linear-gradient(135deg, #2563eb 0%, #3b82f6 50%, #60a5fa 100%);
+            padding: 50px 30px;
+            text-align: center;
+            color: white;
+            position: relative;
+            overflow: hidden;
+        }
+        .header::before {
+            content: '';
+            position: absolute;
+            top: -50%; left: -50%;
+            width: 200%; height: 200%;
+            background: radial-gradient(circle, rgba(255,255,255,0.2) 0%, transparent 50%);
+        }
+        .header > * { position: relative; z-index: 1; }
+
+        .lang-switcher {
+            position: absolute; top: 15px; right: 15px; z-index: 10;
+            display: flex; gap: 5px;
+        }
+        .lang-btn {
+            padding: 6px 12px;
+            border: 2px solid rgba(255,255,255,0.5);
+            background: transparent; color: white;
+            border-radius: 20px; cursor: pointer;
+            font-size: 12px; font-weight: 600;
+            transition: all 0.3s;
+        }
+        .lang-btn.active { background: white; color: #1d4ed8; border-color: white; }
+
+        .open-badge-big {
+            display: inline-block; background: white; color: #1d4ed8;
+            padding: 12px 35px; border-radius: 10px;
+            font-family: 'Poppins', sans-serif;
+            font-size: 24px; font-weight: 700;
+            letter-spacing: 3px; margin-bottom: 15px;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.15);
+        }
+        .badge {
+            display: inline-block; background: white;
+            padding: 10px 25px; border-radius: 50px;
+            font-size: 14px; font-weight: 600;
+            letter-spacing: 1px; color: #1d4ed8;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.1);
+        }
+        .subtitle {
+            font-size: 28px; margin-top: 18px;
+            letter-spacing: 6px; color: white;
+            font-weight: 700;
+            text-shadow: 0 2px 10px rgba(0,0,0,0.2);
+        }
+
+        /* ── CONTENT ── */
+        .content { padding: 40px 35px; }
+        .intro {
+            background: #f8f9fa;
+            border-left: 4px solid #2563eb;
+            padding: 20px; margin-bottom: 30px;
+            border-radius: 0 12px 12px 0;
+        }
+        .intro p { color: #555; font-size: 15px; }
+
+        .section { margin-bottom: 30px; }
+        .section-title {
+            font-size: 18px; font-weight: 700;
+            color: #2563eb; margin-bottom: 15px;
+            display: flex; align-items: center; gap: 10px;
+        }
+        .section-title::before {
+            content: ''; width: 4px; height: 20px;
+            background: linear-gradient(135deg, #2563eb, #60a5fa);
+            border-radius: 2px;
+        }
+
+        /* ── PRICE BOX ── */
+        @keyframes priceGlow {
+            0%, 100% { box-shadow: 0 0 20px rgba(37,99,235,0.3), 0 8px 32px rgba(37,99,235,0.15); }
+            50% { box-shadow: 0 0 35px rgba(37,99,235,0.5), 0 8px 40px rgba(37,99,235,0.25); }
+        }
+        @keyframes shimmer {
+            0% { background-position: -200% center; }
+            100% { background-position: 200% center; }
+        }
+        @keyframes badgePulse {
+            0%, 100% { transform: scale(1); }
+            50% { transform: scale(1.05); }
+        }
+        .price-box {
+            background: linear-gradient(135deg, #1d4ed8 0%, #2563eb 40%, #3b82f6 70%, #60a5fa 100%);
+            border: 3px solid #1d4ed8;
+            border-radius: 20px; padding: 35px 25px;
+            text-align: center; margin-bottom: 30px;
+            position: relative; overflow: hidden;
+            animation: priceGlow 3s ease-in-out infinite;
+        }
+        .price-box::before {
+            content: '';
+            position: absolute; top: -50%; left: -50%;
+            width: 200%; height: 200%;
+            background: radial-gradient(circle, rgba(255,255,255,0.15) 0%, transparent 50%);
+            pointer-events: none;
+        }
+        .price-box > * { position: relative; z-index: 1; }
+        .price-label {
+            font-size: 15px; color: rgba(255,255,255,0.85);
+            margin-bottom: 8px; font-weight: 500;
+            letter-spacing: 2px; text-transform: uppercase;
+        }
+        .price {
+            font-family: 'Poppins', sans-serif;
+            font-size: 72px; font-weight: 700;
+            color: white;
+            background: linear-gradient(90deg, #fff 0%, #e0eaff 25%, #fff 50%, #e0eaff 75%, #fff 100%);
+            background-size: 200% auto;
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+            animation: shimmer 4s linear infinite;
+            line-height: 1.1;
+            text-shadow: none;
+            filter: drop-shadow(0 2px 8px rgba(0,0,0,0.2));
+        }
+        .price span { font-size: 24px; }
+        .discount-badge {
+            display: inline-block;
+            background: #fbbf24; color: #92400e;
+            padding: 6px 18px; border-radius: 50px;
+            font-size: 16px; font-weight: 700;
+            margin-top: 8px; letter-spacing: 1px;
+            animation: badgePulse 2s ease-in-out infinite;
+        }
+        .price-note { font-size: 15px; color: rgba(255,255,255,0.9); margin-top: 12px; }
+        .regular-price {
+            text-decoration: line-through;
+            color: rgba(255,255,255,0.7);
+            font-size: 16px;
+        }
+        .price-sub { font-size: 13px; color: rgba(255,255,255,0.75); margin-top: 14px; }
+        .lock-badge {
+            display: inline-block; background: white; color: #1d4ed8;
+            padding: 10px 22px; border-radius: 50px;
+            font-size: 14px; font-weight: 700; margin-top: 18px;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.15);
+        }
+
+        /* ── FEATURES ── */
+        .features { display: grid; gap: 12px; }
+        .feature-item {
+            display: flex; align-items: flex-start; gap: 12px;
+            padding: 12px 15px; background: #f8f9fa;
+            border-radius: 10px; border-left: 3px solid #2563eb;
+        }
+        .feature-icon { font-size: 20px; flex-shrink: 0; }
+        .feature-text { font-size: 15px; color: #444; }
+
+        /* ── SCHEDULE ── */
+        .schedule-table { width: 100%; border-collapse: collapse; margin-top: 10px; }
+        .schedule-table th, .schedule-table td {
+            padding: 12px 15px; text-align: left;
+            border-bottom: 1px solid #eee; font-size: 14px;
+        }
+        .schedule-table th { background: #2563eb; font-weight: 600; color: white; }
+
+        .tz-btn-wrap {
+            display: flex; flex-wrap: wrap; justify-content: center; gap: 5px;
+        }
+        .tz-btn {
+            padding: 8px 14px; border: 2px solid #ddd;
+            background: white; color: #666;
+            border-radius: 20px; cursor: pointer; font-size: 13px;
+            transition: all 0.2s;
+        }
+        .tz-btn.active {
+            background: #2563eb; color: white;
+            border-color: #2563eb; font-weight: 600;
+        }
+
+        /* ── TIMETABLE CARDS ── */
+        .tt-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 14px; }
+        .tt-block { border-radius: 12px; overflow: hidden; border: 1px solid #eee; }
+        .tt-header {
+            display: flex; align-items: center; gap: 10px;
+            padding: 14px 16px; color: white; font-size: 15px;
+        }
+        .tt-header span:first-child { font-size: 20px; }
+        .tt-header strong { display: block; font-size: 15px; }
+        .tt-days { font-size: 12px; opacity: 0.85; font-weight: 400; }
+        .math-header { background: linear-gradient(135deg, #2563eb, #60a5fa); }
+        .eng-header { background: linear-gradient(135deg, #ff7e33, #ffb347); }
+        .tt-rows { background: white; }
+        .tt-row {
+            display: flex; justify-content: space-between; align-items: center;
+            padding: 11px 16px; border-bottom: 1px solid #f0f0f0;
+            font-size: 13px;
+        }
+        .tt-row:last-child { border-bottom: none; }
+        .tt-time { color: #888; font-weight: 500; min-width: 70px; }
+        .tt-label { font-weight: 600; color: #333; text-align: right; }
+        .tt-legend { background: #fffdf5; }
+        .tt-legend .tt-label { color: #f39c12; }
+
+        /* ── CURRICULUM TABS ── */
+
+        /* ── QUARTER SYSTEM ── */
+        .quarter-box {
+            background: linear-gradient(135deg, #f0f4ff 0%, #e8f0fe 100%);
+            border: 2px solid #2563eb;
+            border-radius: 16px;
+            padding: 30px 25px;
+            text-align: center;
+        }
+        .quarter-icon { font-size: 32px; margin-bottom: 10px; }
+        .quarter-title {
+            font-size: 18px; font-weight: 700;
+            color: #1d4ed8; margin-bottom: 10px;
+        }
+        .quarter-lead {
+            font-size: 14px; color: #666;
+            margin-bottom: 24px; line-height: 1.7;
+        }
+        .quarter-steps {
+            display: grid; gap: 14px; text-align: left;
+        }
+        .quarter-step {
+            display: flex; align-items: flex-start; gap: 14px;
+            background: white; border-radius: 12px;
+            padding: 16px; box-shadow: 0 2px 8px rgba(0,0,0,0.04);
+        }
+        .step-num {
+            background: #2563eb; color: white;
+            width: 28px; height: 28px; border-radius: 50%;
+            display: flex; align-items: center; justify-content: center;
+            font-weight: 700; font-size: 14px; flex-shrink: 0;
+        }
+        .step-text { font-size: 14px; color: #444; line-height: 1.7; }
+        .step-text strong { color: #333; }
+        .curr-tabs {
+            display: flex; gap: 6px; margin-bottom: 16px;
+        }
+        .curr-tab {
+            flex: 1; padding: 10px; border-radius: 10px;
+            border: 2px solid #eee; background: white;
+            text-align: center; font-weight: 600; font-size: 14px;
+            cursor: pointer; transition: all 0.3s; color: #888;
+        }
+        .curr-tab.active-math { border-color: #2563eb; color: #2563eb; background: #f0f4ff; }
+        .curr-tab.active-reading { border-color: #ff7e33; color: #ff7e33; background: #fff8f3; }
+        .curr-panel { display: none; }
+        .curr-panel.active { display: block; }
+
+        .level-item {
+            padding: 14px 16px; margin-bottom: 8px;
+            border-radius: 10px; background: #f8f9fa;
+            border-left: 3px solid #2563eb;
+        }
+        .level-item.reading { border-left-color: #ff7e33; }
+        .level-name {
+            font-weight: 700; font-size: 14px; color: #333;
+            margin-bottom: 4px;
+        }
+        .level-desc { font-size: 13px; color: #666; line-height: 1.6; }
+
+        /* ── FAQ ── */
+        .faq-list { display: grid; gap: 15px; }
+        .faq-item {
+            background: #f8f9fa; border-radius: 10px;
+            padding: 15px 20px; border-left: 3px solid #2563eb;
+        }
+        .faq-q { font-weight: 600; color: #333; margin-bottom: 8px; font-size: 15px; }
+        .faq-a { color: #555; font-size: 14px; line-height: 1.7; }
+
+        /* ── CTA ── */
+        .cta-section {
+            background: #f8f9fa; padding: 30px;
+            text-align: center; color: #333;
+            border-top: 3px solid #2563eb;
+        }
+        .cta-text { font-size: 16px; margin-bottom: 15px; color: #333; }
+        .cta-btn {
+            display: inline-block; background: #2563eb; color: white;
+            padding: 18px 50px; border-radius: 50px;
+            font-weight: 700; text-decoration: none;
+            margin: 15px 0; font-size: 18px;
+            box-shadow: 0 4px 15px rgba(37,99,235,0.4);
+            transition: all 0.3s;
+        }
+        .cta-btn:hover { background: #1d4ed8; transform: translateY(-2px); box-shadow: 0 6px 20px rgba(37,99,235,0.5); }
+        .cta-note { font-size: 13px; color: #666; }
+
+        /* ── FOOTER ── */
+        .footer {
+            padding: 25px; text-align: center;
+            background: #f8f9fa; border-top: 1px solid #e9ecef;
+        }
+        .footer-text { font-size: 13px; color: #666; }
+        .footer-btn {
+            display: inline-block; color: white;
+            padding: 10px 25px; border-radius: 25px;
+            text-decoration: none; font-weight: 600;
+            font-size: 14px; margin: 5px;
+        }
+
+        .highlight { background: #e8f0fe; padding: 2px 6px; border-radius: 4px; }
+
+        /* ── ACCORDION (section-level) ── */
+        .accordion-header {
+            display: flex; justify-content: space-between; align-items: center;
+            cursor: pointer; user-select: none;
+            padding: 4px 0;
+            transition: opacity 0.2s;
+        }
+        .accordion-header:hover { opacity: 0.75; }
+        .accordion-header .section-title { margin-bottom: 0; }
+        .accordion-arrow {
+            width: 28px; height: 28px;
+            background: #e8f0fe; color: #2563eb;
+            border-radius: 50%;
+            display: flex; align-items: center; justify-content: center;
+            font-size: 14px; font-weight: 700;
+            transition: transform 0.3s;
+            flex-shrink: 0;
+        }
+        .accordion-arrow.open { transform: rotate(180deg); }
+        .accordion-body {
+            overflow: hidden;
+            max-height: 0;
+            transition: max-height 0.4s ease;
+        }
+        .accordion-body.open { max-height: 2000px; padding-top: 16px; }
+
+        /* ── FAQ ACCORDION ── */
+        .faq-item {
+            cursor: pointer;
+            transition: background 0.2s;
+        }
+        .faq-item:hover { background: #f0f4ff; }
+        .faq-item .faq-a {
+            display: none;
+            margin-top: 8px;
+        }
+        .faq-item.open .faq-a { display: block; }
+        .faq-q {
+            display: flex; justify-content: space-between; align-items: flex-start; gap: 10px;
+        }
+        .faq-q::after {
+            content: '＋'; color: #2563eb; font-size: 20px; font-weight: 700;
+            flex-shrink: 0; line-height: 1;
+        }
+        .faq-item.open .faq-q::after { content: '－'; }
+
+        /* ── MINI CTA ── */
+        .mini-cta {
+            text-align: center;
+            margin: 5px 0 20px;
+        }
+        .mini-cta a {
+            display: inline-block; background: white; color: #2563eb;
+            padding: 14px 35px; border-radius: 50px;
+            font-weight: 700; text-decoration: none;
+            font-size: 16px; border: 2px solid white;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.15);
+            transition: all 0.3s;
+        }
+        .mini-cta a:hover { background: #e8f0fe; }
+
+        /* ── RESPONSIVE ── */
+        @media (max-width: 600px) {
+            body { padding: 15px 10px; }
+            .container { max-width: 100%; }
+            .header { padding: 50px 16px 30px; }
+            .lang-switcher { top: 10px; right: 10px; }
+            .lang-btn { padding: 5px 10px; font-size: 11px; }
+            .open-badge-big { font-size: 16px; padding: 8px 20px; letter-spacing: 1px; }
+            .badge { font-size: 12px; padding: 6px 14px; }
+            .subtitle { font-size: 20px; letter-spacing: 2px; }
+            .content { padding: 20px 16px; }
+            .section-title { font-size: 15px; }
+            .price { font-size: 52px; }
+            .price span { font-size: 18px; }
+            .price-box { padding: 24px 16px; }
+            .price-label { font-size: 13px; }
+            .discount-badge { font-size: 14px; padding: 5px 14px; }
+            .lock-badge { font-size: 12px; padding: 8px 16px; }
+            .price-sub { font-size: 12px; }
+            .feature-item { padding: 10px 12px; gap: 10px; }
+            .feature-text { font-size: 13px; }
+            .feature-icon { font-size: 18px; }
+            .cta-btn { 
+                display: block;
+                padding: 16px 20px !important; 
+                font-size: 16px !important; 
+                margin: 15px 0;
+            }
+            .mini-cta a { 
+                display: block; 
+                padding: 14px 20px; 
+                font-size: 15px; 
+            }
+            .section table { font-size: 12px !important; }
+            .section table th, .section table td { padding: 8px 6px !important; }
+            .curr-tab { font-size: 12px; padding: 8px 4px; }
+            .tt-grid { grid-template-columns: 1fr; gap: 10px; }
+            .tt-row { font-size: 12px; padding: 9px 12px; }
+            .tt-time { min-width: 55px; }
+            .tt-header { padding: 12px 14px; }
+            .quarter-box { padding: 18px 14px; }
+            .quarter-title { font-size: 15px; }
+            .quarter-step { padding: 12px; gap: 10px; }
+            .step-text { font-size: 13px; }
+            .accordion-header { padding: 12px 14px; border-radius: 10px; }
+            .accordion-header .section-title { font-size: 15px; }
+            .accordion-arrow { width: 28px; height: 28px; font-size: 14px; }
+            .level-item { padding: 10px 12px; }
+            .level-name { font-size: 13px; }
+            .level-desc { font-size: 12px; }
+            .faq-q { font-size: 14px; }
+            .faq-a { font-size: 13px; }
+            .cta-section { padding: 24px 16px; }
+            .cta-text { font-size: 14px; }
+            .cta-note { font-size: 12px; }
+            .footer { padding: 20px 16px; }
+            .footer-btn { padding: 9px 18px; font-size: 13px; }
+            .tz-btn { padding: 6px 10px; font-size: 12px; }
+            .intro p { font-size: 14px; }
+            .schedule-table th, .schedule-table td { font-size: 13px; padding: 10px 10px; }
+        }
+    </style>
+</head>
+<body>
+<div class="container">
+<div class="card">
+
+<!-- HEADER -->
+<div class="header">
+    <div class="lang-switcher">
+        <button class="lang-btn active" onclick="setLang('ja')" id="btn-ja">JA</button>
+        <button class="lang-btn" onclick="setLang('en')" id="btn-en">EN</button>
+    </div>
+    <div class="open-badge-big" data-ja="2026年4月 OPEN" data-en="OPENS APRIL 2026">2026年4月 OPEN</div>
+    <img src="https://www.successacademyworld.com/BrightBe_logo2.png" alt="BrightBe Learning" style="max-width: 380px; width: 80%; margin: 15px auto; display: block;">
+    <div class="badge" data-ja="🎉 サクセスに関わる皆さまへ" data-en="🎉 For the Success Academy Community">🎉 サクセスに関わる皆さまへ</div>
+    <p class="subtitle" data-ja="プレオープン会員募集中" data-en="Pre-Launch Enrollment Now Open">プレオープン会員募集中</p>
+</div>
+
+<div class="content">
+
+    <!-- INTRO -->
+    <div class="intro">
+        <p data-ja="この度、アメリカの学習基準（Common Core）を意識した英語＆算数のオンラインスクール「<strong>BrightBe Learning</strong>」を2026年4月にオープンします。<br><br>Success Academyの生徒様、以前ご受講いただいていた方、またサクセスにご興味をお持ちの皆さまへ、開校に先立ち<strong>プレオープン特別価格</strong>でのご案内です。" data-en="We are excited to announce the launch of <strong>BrightBe Learning</strong>, an online school for Language Arts and Math, aligned with U.S. learning standards (Common Core), opening April 2026.<br><br>Whether you are a current Success Academy student, a past member, or someone interested in our programs — we'd like to offer you an exclusive <strong>pre-launch price</strong>.">この度、アメリカの学習基準（Common Core）を意識した英語＆算数のオンラインスクール「<strong>BrightBe Learning</strong>」を2026年4月にオープンします。<br><br>Success Academyの生徒様、以前ご受講いただいていた方、またサクセスにご興味をお持ちの皆さまへ、開校に先立ち<strong>プレオープン特別価格</strong>でのご案内です。</p>
+    </div>
+
+    <!-- PRICE -->
+    <div class="price-box">
+        <p class="price-label" data-ja="プレオープン特別価格" data-en="Pre-Launch Special Offer">プレオープン特別価格</p>
+        <p class="price">$100<span data-ja="/月" data-en="/mo">/月</span></p>
+        <div class="discount-badge">67% OFF</div>
+        <p class="price-note"><span class="regular-price" data-ja="通常価格 $300/月" data-en="Regular $300/month">通常価格 $300/月</span></p>
+        <div class="lock-badge" data-ja="🔒 在籍中ずっとこの価格" data-en="🔒 Lifetime Price Guarantee — your rate will never increase as long as you maintain your enrollment.">🔒 在籍中ずっとこの価格</div>
+        <p class="price-sub" data-ja="✅ 最初の1週間は体験期間（通常通りのレッスンに参加できます）" data-en="✅ First week is a trial period — experience full access to our regular curriculum.">✅ 最初の1週間は体験期間（通常通りのレッスンに参加できます）</p>
+        <p class="price-sub" data-ja="※退会後の再入会時はプレオープン価格の適用外となります" data-en="※Pre-launch pricing will not apply if you re-enroll after cancellation">※退会後の再入会時はプレオープン価格の適用外となります</p>
+    </div>
+
+    <!-- MINI CTA -->
+    <div class="mini-cta">
+        <a href="https://docs.google.com/forms/d/e/1FAIpQLSe1aW1hSKlwsio_5Q_rI3tsPUYl1fFN3dkljlViEvSVogy6hg/viewform?usp=dialog" target="_blank" data-ja="📩 先行エントリーする" data-en="📩 Join the Pre-Launch">📩 先行エントリーする</a>
+    </div>
+
+    <!-- ABOUT -->
+    <div class="section">
+        <h2 class="section-title" data-ja="BrightBe Learningとは" data-en="About BrightBe Learning">BrightBe Learningとは</h2>
+        <div class="features">
+            <div class="feature-item">
+                <span class="feature-icon">📖</span>
+                <div class="feature-text">
+                    <strong>Language Arts</strong><br>
+                    <span data-ja="フォニックスから始まり、Reading Comprehensionを中心に指導します。Science of Readingに基づくアプローチです。" data-en="Starting with phonics and focusing on reading comprehension, using a Science of Reading-based approach.">フォニックスから始まり、Reading Comprehensionを中心に指導します。Science of Readingに基づくアプローチです。</span>
+                </div>
+            </div>
+            <div class="feature-item">
+                <span class="feature-icon">🔢</span>
+                <div class="feature-text">
+                    <strong>Math</strong><br>
+                    <span data-ja="アメリカの学習基準（Common Core）を意識したカリキュラムを日本式メソッドで指導。計算力を中心にライブ授業で基礎を固めます。" data-en="Curriculum aligned with U.S. learning standards (Common Core), taught using proven Japanese instructional methods for calculation speed and accuracy. Building strong foundations through live instruction.">アメリカの学習基準（Common Core）を意識したカリキュラムを日本式メソッドで指導。計算力を中心にライブ授業で基礎を固めます。</span>
+                </div>
+            </div>
+            <div class="feature-item">
+                <span class="feature-icon">👩‍🏫</span>
+                <span class="feature-text" data-ja="英語ネイティブ・ネイティブレベルの講師による<strong>All English</strong>のオンライングループレッスン" data-en="Online group lessons conducted <strong>entirely in English</strong> by native or near-native English-speaking instructors">英語ネイティブ・ネイティブレベルの講師による<strong>All English</strong>のオンライングループレッスン</span>
+            </div>
+            <div class="feature-item">
+                <span class="feature-icon">📅</span>
+                <span class="feature-text" data-ja="<strong>週5日</strong>（月〜金）のライブ授業。算数3回＋英語2回で毎日の学習習慣をつくります" data-en="<strong>5 days a week</strong> (Mon–Fri) live classes. Math 3× + Language Arts 2× builds lasting learning habits"><strong>週5日</strong>（月〜金）のライブ授業。算数3回＋英語2回で毎日の学習習慣をつくります</span>
+            </div>
+            <div class="feature-item">
+                <span class="feature-icon">💰</span>
+                <span class="feature-text" data-ja="<strong>月額定額で全レベル受講OK</strong>。お子さまに合ったクラスに自由に参加できます" data-en="<strong>Unlimited access to all levels</strong> with one flat monthly fee. Your child can join any class that fits their level and learning pace."><strong>月額定額で全レベル受講OK</strong>。お子さまに合ったクラスに自由に参加できます</span>
+            </div>
+            <div class="feature-item">
+                <span class="feature-icon">✅</span>
+                <span class="feature-text" data-ja="<strong>ClassWallet対応</strong>（Arizona ESAをご利用の方はClassWallet経由でお支払いいただけます）<br><small style='color:#888;'>※ESAご利用の方は通常価格$300/月が適用されます。ClassWalletでのお支払いをご希望の方は個別にご連絡ください。</small>" data-en="<strong>ClassWallet accepted</strong> (Arizona ESA families can pay via ClassWallet)<br><small style='color:#888;'>※Regular price of $300/month applies for ESA families. Please contact us directly if you would like to pay via ClassWallet.</small>"><strong>ClassWallet対応</strong>（Arizona ESAをご利用の方はClassWallet経由でお支払いいただけます）<br><small style="color:#888;">※ESAご利用の方は通常価格$300/月が適用されます。ClassWalletでのお支払いをご希望の方は個別にご連絡ください。</small></span>
+            </div>
+        </div>
+    </div>
+
+    <!-- QUARTER SYSTEM -->
+    <div class="section">
+        <div class="quarter-box">
+            <div class="quarter-icon">🔄</div>
+            <h3 class="quarter-title" data-ja="学びが定着する「3ヶ月1クール」制" data-en='The "3-Month Quarter" System That Makes Learning Stick'>学びが定着する「3ヶ月1クール」制</h3>
+            <p class="quarter-lead" data-ja="Success Academyで継続率92.5%を支えてきた学習サイクルを、BrightBe Learningにも導入しています。" data-en="This learning cycle has powered a 92.5% retention rate at Success Academy — and we've brought it to BrightBe Learning.">Success Academyで継続率92.5%を支えてきた学習サイクルを、BrightBe Learningにも導入しています。</p>
+            <div class="quarter-steps">
+                <div class="quarter-step">
+                    <div class="step-num">1</div>
+                    <div class="step-text" data-ja="<strong>12週間で完結</strong><br>1クール（3ヶ月）でカリキュラムが一巡。「やりっぱなし」にならず、確実にステップアップ。" data-en="<strong>Complete in 12 weeks</strong><br>Each quarter completes a full curriculum cycle — structured and goal-oriented progress."><strong>12週間で完結</strong><br>1クール（3ヶ月）でカリキュラムが一巡。「やりっぱなし」にならず、確実にステップアップ。</div>
+                </div>
+                <div class="quarter-step">
+                    <div class="step-num">2</div>
+                    <div class="step-text" data-ja="<strong>4クール繰り返して定着</strong><br>同じレベルを4クール（1年間）かけて学びます。3回の復習で知識を確実に自分のものにします。" data-en="<strong>4 quarters to master</strong><br>Each level is studied over 4 quarters (1 year). Three rounds of review turn knowledge into lasting skills."><strong>4クール繰り返して定着</strong><br>同じレベルを4クール（1年間）かけて学びます。3回の復習で知識を確実に自分のものにします。</div>
+                </div>
+                <div class="quarter-step">
+                    <div class="step-num">3</div>
+                    <div class="step-text" data-ja="<strong>週5日だから習慣になる</strong><br>月〜金の毎日レッスンで、学びが生活の一部に。「今日はやらない」がなくなります。" data-en="<strong>5 days a week builds lasting learning habits.</strong><br>Daily lessons Mon–Fri make learning part of life. Helps reduce missed days and build consistency."><strong>週5日だから習慣になる</strong><br>月〜金の毎日レッスンで、学びが生活の一部に。「今日はやらない」がなくなります。</div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- OVERVIEW -->
+    <div class="section">
+        <h2 class="section-title" data-ja="レッスン概要" data-en="Lesson Overview">レッスン概要</h2>
+        <table class="schedule-table">
+            <tr>
+                <th data-ja="対象" data-en="Ages">対象</th>
+                <td>Ages 4–12（Level 1〜Level 6）</td>
+            </tr>
+            <tr>
+                <th data-ja="オープン日" data-en="Opens">オープン日</th>
+                <td data-ja="2026年4月" data-en="April 2026">2026年4月</td>
+            </tr>
+            <tr>
+                <th data-ja="形式" data-en="Format">形式</th>
+                <td data-ja="オンライングループレッスン" data-en="Online Group Lessons">オンライングループレッスン</td>
+            </tr>
+            <tr>
+                <th data-ja="科目" data-en="Subjects">科目</th>
+                <td data-ja="Math（月・水・金）/ 英語（火・木）" data-en="Math (Mon/Wed/Fri) / Language Arts (Tue/Thu)">Math（月・水・金）/ 英語（火・木）</td>
+            </tr>
+        </table>
+    </div>
+
+    <!-- TIMETABLE -->
+    <div class="section">
+        <h2 class="section-title" data-ja="時間割（予定）" data-en="Schedule (Tentative)">時間割（予定）</h2>
+        <div style="margin-bottom: 15px; text-align: center;">
+            <span style="font-size: 13px; color: #666; display: block; margin-bottom: 8px;" data-ja="タイムゾーン:" data-en="Timezone:">タイムゾーン:</span>
+            <div class="tz-btn-wrap">
+                <button onclick="setTimezone('EST')" id="btn-EST" class="tz-btn active">EST</button>
+                <button onclick="setTimezone('CST')" id="btn-CST" class="tz-btn">CST</button>
+                <button onclick="setTimezone('MST')" id="btn-MST" class="tz-btn">MST</button>
+                <button onclick="setTimezone('PST')" id="btn-PST" class="tz-btn">PST</button>
+                <button onclick="setTimezone('HST')" id="btn-HST" class="tz-btn">HST</button>
+            </div>
+        </div>
+
+        <div class="tt-grid">
+            <!-- MATH TABLE -->
+            <div class="tt-block">
+                <div class="tt-header math-header">
+                    <span>🔢</span>
+                    <div>
+                        <strong>Math</strong>
+                        <span class="tt-days" data-ja="月・水・金" data-en="Mon / Wed / Fri">月・水・金</span>
+                    </div>
+                </div>
+                <div class="tt-rows">
+                    <div class="tt-row">
+                        <span class="tt-time time-slot" data-est="16">4:00 PM</span>
+                        <span class="tt-label">Level 1</span>
+                    </div>
+                    <div class="tt-row">
+                        <span class="tt-time time-slot" data-est="16.5">4:30 PM</span>
+                        <span class="tt-label">Level 2</span>
+                    </div>
+                    <div class="tt-row">
+                        <span class="tt-time time-slot" data-est="17">5:00 PM</span>
+                        <span class="tt-label">Level 3</span>
+                    </div>
+                    <div class="tt-row">
+                        <span class="tt-time time-slot" data-est="17.5">5:30 PM</span>
+                        <span class="tt-label">Level 4</span>
+                    </div>
+                    <div class="tt-row">
+                        <span class="tt-time time-slot" data-est="18">6:00 PM</span>
+                        <span class="tt-label">Level 5</span>
+                    </div>
+                    <div class="tt-row">
+                        <span class="tt-time time-slot" data-est="18.5">6:30 PM</span>
+                        <span class="tt-label">Level 6</span>
+                    </div>
+                </div>
+            </div>
+
+            <!-- LANGUAGE ARTS TABLE -->
+            <div class="tt-block">
+                <div class="tt-header eng-header">
+                    <span>📖</span>
+                    <div>
+                        <strong>Language Arts</strong>
+                        <span class="tt-days" data-ja="火・木" data-en="Tue / Thu">火・木</span>
+                    </div>
+                </div>
+                <div class="tt-rows">
+                    <div class="tt-row">
+                        <span class="tt-time time-slot" data-est="16">4:00 PM</span>
+                        <span class="tt-label">Level 1（Elem K）</span>
+                    </div>
+                    <div class="tt-row">
+                        <span class="tt-time time-slot" data-est="16.5">4:30 PM</span>
+                        <span class="tt-label">Level 2（Adv K）</span>
+                    </div>
+                    <div class="tt-row">
+                        <span class="tt-time time-slot" data-est="17">5:00 PM</span>
+                        <span class="tt-label">Level 3（G1–2）</span>
+                    </div>
+                    <div class="tt-row tt-legend">
+                        <span class="tt-time time-slot" data-est="17.5">5:30 PM</span>
+                        <span class="tt-label" data-ja="🌟 偉人クラス（全学年）" data-en="🌟 Biographies & Historical Leaders">🌟 偉人クラス（全学年）</span>
+                    </div>
+                    <div class="tt-row">
+                        <span class="tt-time time-slot" data-est="18">6:00 PM</span>
+                        <span class="tt-label">Level 4（G3–4）</span>
+                    </div>
+                    <div class="tt-row">
+                        <span class="tt-time time-slot" data-est="18.5">6:30 PM</span>
+                        <span class="tt-label">Level 5（G5–6）</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <p style="font-size: 13px; color: #888; margin-top: 15px; text-align: center;" data-ja="※お子様の該当レベルに参加｜出たい時に参加OK" data-en="※Join your child's level | Flexible access to all levels">※お子様の該当レベルに参加｜出たい時に参加OK</p>
+    </div>
+
+    <!-- CURRICULUM -->
+    <div class="section">
+        <div class="accordion-header" onclick="toggleAccordion('curr-body', this)">
+            <h2 class="section-title" data-ja="カリキュラム" data-en="Curriculum">カリキュラム</h2>
+            <span class="accordion-arrow">▼</span>
+        </div>
+        <div class="accordion-body" id="curr-body">
+            <div class="curr-tabs">
+            <button class="curr-tab active-math" onclick="showCurr('math')" id="ctab-math" data-ja="🔢 算数（月/水/金）" data-en="🔢 Math (Mon/Wed/Fri)">🔢 算数（月/水/金）</button>
+            <button class="curr-tab" onclick="showCurr('reading')" id="ctab-reading" data-ja="📖 英語（火/木）" data-en="📖 Language Arts (Tue/Thu)">📖 英語（火/木）</button>
+        </div>
+
+        <!-- Math Panel -->
+        <div class="curr-panel active" id="cpanel-math">
+            <div class="level-item">
+                <div class="level-name">Level 1</div>
+                <div class="level-desc" data-ja="数える→たし算ひき算→さくらんぼ計算→筆算導入" data-en="Counting → Addition & Subtraction → Make-a-Ten → Introduction to Vertical Addition/Subtraction">数える→たし算ひき算→さくらんぼ計算→筆算導入</div>
+            </div>
+            <div class="level-item">
+                <div class="level-name">Level 2</div>
+                <div class="level-desc" data-ja="たし算・ひき算の筆算（2桁→3桁→文章題）" data-en="Column addition & subtraction (2-digit → 3-digit → word problems)">たし算・ひき算の筆算（2桁→3桁→文章題）</div>
+            </div>
+            <div class="level-item">
+                <div class="level-name">Level 3</div>
+                <div class="level-desc" data-ja="かけ算（九九）＋ たし算ひき算混合（→4桁）" data-en="Multiplication (times tables) + Mixed Operations: Addition & Subtraction (→ 4-digit)">かけ算（九九）＋ たし算ひき算混合（→4桁）</div>
+            </div>
+            <div class="level-item">
+                <div class="level-name">Level 4</div>
+                <div class="level-desc" data-ja="わり算・かけ算筆算（2桁×2桁→3桁×2桁）" data-en="Division + Multi-digit Multiplication (2-digit × 2-digit → 3-digit × 2-digit)">わり算・かけ算筆算（2桁×2桁→3桁×2桁）</div>
+            </div>
+            <div class="level-item">
+                <div class="level-name">Level 5</div>
+                <div class="level-desc" data-ja="小数（しくみ→四則演算→単位換算応用）" data-en="Decimals (concepts → four operations → unit conversion)">小数（しくみ→四則演算→単位換算応用）</div>
+            </div>
+            <div class="level-item">
+                <div class="level-name">Level 6</div>
+                <div class="level-desc" data-ja="分数（しくみ→四則演算→帯分数→3つの計算）" data-en="Fractions (concepts → four operations → mixed numbers → 3-step calculations)">分数（しくみ→四則演算→帯分数→3つの計算）</div>
+            </div>
+            <p style="font-size: 12px; color: #888; margin-top: 12px; text-align: center;" data-ja="各レベル12週間（1クール）｜文章題・時計・お金も定期的にカバー" data-en="Each level = 12 weeks | Word problems, time & money covered regularly">各レベル12週間（1クール）｜文章題・時計・お金も定期的にカバー</p>
+        </div>
+
+        <!-- Reading Panel -->
+        <div class="curr-panel" id="cpanel-reading">
+            <div class="level-item reading">
+                <div class="level-name">Level 1（Elementary K）</div>
+                <div class="level-desc" data-ja="アルファベット26文字 ＋ 短母音の導入" data-en="Letter Recognition & Phonics Foundations">アルファベット26文字 ＋ 短母音の導入</div>
+            </div>
+            <div class="level-item reading">
+                <div class="level-name">Level 2（Advanced K）</div>
+                <div class="level-desc" data-ja="ブレンド・ダイグラフ・サイレントe・母音チーム・Rコントロール" data-en="Blends, Digraphs, Silent-E, Vowel Teams & R-Controlled Vowels">ブレンド・ダイグラフ・サイレントe・母音チーム・Rコントロール</div>
+            </div>
+            <div class="level-item reading">
+                <div class="level-name">Level 3（Grade 1–2）</div>
+                <div class="level-desc" data-ja="フィクション＆ノンフィクション読解 ＋ 語彙・サイトワード（Lexile 200–500L）" data-en="Fiction & nonfiction reading + vocabulary & sight words (Lexile 200–500L)">フィクション＆ノンフィクション読解 ＋ 語彙・サイトワード（Lexile 200–500L）</div>
+            </div>
+            <div class="level-item reading" style="border-left-color: #f39c12; background: #fffdf5;">
+                <div class="level-name" data-ja="🌟 偉人クラス（全学年）" data-en="🌟 Biographies & Historical Leaders (All Grades)">🌟 偉人クラス（全学年）</div>
+                <div class="level-desc" data-ja="偉人の生き方を英語で学び、道徳心と考える力を育てます。ディスカッション中心のAll Englishクラス。" data-en="Learn from the lives of great historical figures in English. A discussion-based, All English class that builds character and critical thinking.">偉人の生き方を英語で学び、道徳心と考える力を育てます。ディスカッション中心のAll Englishクラス。</div>
+            </div>
+            <div class="level-item reading">
+                <div class="level-name">Level 4（Grade 3–4）</div>
+                <div class="level-desc" data-ja="比喩・ラテン語の語根・慣用句を学びながら読解力を深める（Lexile 500–800L）" data-en="Similes, Latin roots, idioms with deeper comprehension (Lexile 500–800L)">比喩・ラテン語の語根・慣用句を学びながら読解力を深める（Lexile 500–800L）</div>
+            </div>
+            <div class="level-item reading">
+                <div class="level-name">Level 5（Grade 5–6）</div>
+                <div class="level-desc" data-ja="ギリシャ語・ラテン語の語根、高度な修辞表現、中学準備の読解（Lexile 750–1000L）" data-en="Greek & Latin roots, advanced figurative language, middle-school prep (Lexile 750–1000L)">ギリシャ語・ラテン語の語根、高度な修辞表現、中学準備の読解（Lexile 750–1000L）</div>
+            </div>
+            <p style="font-size: 12px; color: #888; margin-top: 12px; text-align: center;" data-ja="各レベル12週間（1クール）× 年4回 ｜ SELテーマ統合" data-en="Each level = 12 weeks × 4 quarters/year | SEL themes integrated">各レベル12週間（1クール）× 年4回 ｜ SELテーマ統合</p>
+        </div>
+        </div><!-- end accordion-body -->
+    </div>
+
+    <!-- FAQ -->
+    <div class="section">
+        <h2 class="section-title" data-ja="よくある質問" data-en="FAQ">よくある質問</h2>
+        <div class="faq-list">
+            <div class="faq-item" onclick="toggleFaq(this)">
+                <p class="faq-q" data-ja="Q. 体験はできますか？" data-en="Q. Can we try a class first?">Q. 体験はできますか？</p>
+                <p class="faq-a" data-ja="A. はい。3月中にお申し込みいただいた方を、4月第1週目（4月6日レッスン開始）の体験レッスンへご招待します。通常通りのレッスンにご参加いただき、そのまま継続いただけます。" data-en="A. Yes! Those who apply by the end of March will be invited to trial lessons during the first week of April (lessons start April 6). You are welcome to join regular classes and continue from there.">A. はい。3月中にお申し込みいただいた方を、4月第1週目（4月6日レッスン開始）の体験レッスンへご招待します。通常通りのレッスンにご参加いただき、そのまま継続いただけます。</p>
+            </div>
+            <div class="faq-item" onclick="toggleFaq(this)">
+                <p class="faq-q" data-ja="Q. 日本人の先生ですか？" data-en="Q. Are the teachers Japanese?">Q. 日本人の先生ですか？</p>
+                <p class="faq-a" data-ja="A. 講師はすべて、ネイティブスピーカーまたはネイティブに準ずる英語力を持つ先生です。" data-en="A. All instructors are native English speakers or have near-native proficiency.">A. 講師はすべて、ネイティブスピーカーまたはネイティブに準ずる英語力を持つ先生です。</p>
+            </div>
+            <div class="faq-item" onclick="toggleFaq(this)">
+                <p class="faq-q" data-ja="Q. どのような教材・メソッドを使用しますか？" data-en="Q. What materials and methods do you use?">Q. どのような教材・メソッドを使用しますか？</p>
+                <p class="faq-a" data-ja="A. 英語はScience of Readingに基づいたアプローチ、算数はアメリカの学習基準（Common Core）を意識しつつ日本式メソッドで指導します。すべてオリジナル教材です。" data-en="A. Language Arts uses a Science of Reading-based approach. Math is aligned with U.S. learning standards (Common Core) and taught using Japanese methods. All materials are original.">A. 英語はScience of Readingに基づいたアプローチ、算数はアメリカの学習基準（Common Core）を意識しつつ日本式メソッドで指導します。すべてオリジナル教材です。</p>
+            </div>
+            <div class="faq-item" onclick="toggleFaq(this)">
+                <p class="faq-q" data-ja="Q. Success Academyとの違いは？" data-en="Q. How is this different from Success Academy?">Q. Success Academyとの違いは？</p>
+                <p class="faq-a" data-ja="A. Success Academyは日本語での学習がメインのオンラインスクールです。BrightBe Learningは<strong>All English</strong>で、アメリカの学習基準を意識した英語と算数を指導する別サービスです。Success Academyの会員でなくてもご受講いただけます。" data-en="A. Success Academy is an online school focused on Japanese-language learning. BrightBe Learning is a separate service that teaches Language Arts and Math <strong>entirely in English</strong>, aligned with U.S. learning standards. No Success Academy membership is required.">A. Success Academyは日本語での学習がメインのオンラインスクールです。BrightBe Learningは<strong>All English</strong>で、アメリカの学習基準を意識した英語と算数を指導する別サービスです。Success Academyの会員でなくてもご受講いただけます。</p>
+            </div>
+            <div class="faq-item" onclick="toggleFaq(this)">
+                <p class="faq-q" data-ja="Q. いつでも退会できますか？" data-en="Q. Can I cancel anytime?">Q. いつでも退会できますか？</p>
+                <p class="faq-a" data-ja="A. はい、いつでも退会できます。長期契約はありません。ただし、退会後に再入会される場合、プレオープン価格は適用されません。" data-en="A. Yes, you can cancel anytime. No long-term contracts. However, pre-launch pricing will not apply if you re-enroll after cancellation.">A. はい、いつでも退会できます。長期契約はありません。ただし、退会後に再入会される場合、プレオープン価格は適用されません。</p>
+            </div>
+            <div class="faq-item" onclick="toggleFaq(this)">
+                <p class="faq-q" data-ja="Q. どのレベルから始めればいいですか？" data-en="Q. Which level should my child start at?">Q. どのレベルから始めればいいですか？</p>
+                <p class="faq-a" data-ja="A. レベルの固定はありません。月額定額で全クラスに参加できるので、お子さまに合ったクラスに自由に参加してください。" data-en="A. There's no fixed level assignment. Your subscription covers all classes, so your child can freely join whichever class fits best.">A. レベルの固定はありません。月額定額で全クラスに参加できるので、お子さまに合ったクラスに自由に参加してください。</p>
+            </div>
+        </div>
+    </div>
+</div>
+
+<!-- CTA -->
+<div class="cta-section">
+    <p class="cta-text" data-ja="ご興味のある方は下記フォームより先行エントリーください" data-en="Interested? Join the pre-launch below">ご興味のある方は下記フォームより先行エントリーください</p>
+    <a href="https://docs.google.com/forms/d/e/1FAIpQLSe1aW1hSKlwsio_5Q_rI3tsPUYl1fFN3dkljlViEvSVogy6hg/viewform?usp=dialog" target="_blank" class="cta-btn" data-ja="📩 先行エントリーする" data-en="📩 Join the Pre-Launch">📩 先行エントリーする</a>
+    <p class="cta-note" data-ja="※エントリー後、プレオープン特別価格の入会案内をメールでお送りします。4月6日（月）レッスン開始。4月第1週目は体験期間です。<br><strong style='color: #2563eb;'>エントリー締切：2026年3月中旬</strong>" data-en="※After entering, you will receive pre-launch pricing and enrollment details by email. Lessons begin Monday, April 6. The first week of April is a trial period.<br><strong style='color: #2563eb;'>Entry Deadline: Mid-March 2026</strong>">※エントリー後、プレオープン特別価格の入会案内をメールでお送りします。4月6日（月）レッスン開始。4月第1週目は体験期間です。<br><strong style="color: #2563eb;">エントリー締切：2026年3月中旬</strong></p>
+</div>
+
+<!-- FOOTER -->
+<div class="footer">
+    <p class="footer-text" data-ja="ご質問はお気軽にどうぞ" data-en="Questions? Feel free to contact us">ご質問はお気軽にどうぞ</p>
+    <p style="margin: 15px 0;">
+        <a href="https://lin.ee/KtZdAoc" target="_blank" class="footer-btn" style="background: #06C755;" data-ja="💬 公式LINE" data-en="💬 LINE">💬 公式LINE</a>
+        <a href="/cdn-cgi/l/email-protection#afc7cac3c3c0efcdddc6c8c7dbcdcac3caceddc1c6c1c881ccc0c2" class="footer-btn" style="background: #2563eb;" data-ja="✉️ メール" data-en="✉️ Email">✉️ メール</a>
+    </p>
+    <p class="footer-text" style="margin-top: 15px;">BrightBe Learning<br>Operated by Mercy Global Education LLC</p>
+</div>
+
+</div>
+</div>
+
+<script>
+// Accordion (section-level)
+function toggleAccordion(id, header) {
+    const body = document.getElementById(id);
+    const arrow = header.querySelector('.accordion-arrow');
+    body.classList.toggle('open');
+    arrow.classList.toggle('open');
+}
+
+// FAQ item accordion
+function toggleFaq(item) {
+    item.classList.toggle('open');
+}
+
+// Language Switching
+function setLang(lang) {
+    document.querySelectorAll('[data-ja][data-en]').forEach(el => {
+        el.innerHTML = el.dataset[lang];
+    });
+    document.getElementById('btn-ja').classList.toggle('active', lang === 'ja');
+    document.getElementById('btn-en').classList.toggle('active', lang === 'en');
+    document.title = lang === 'ja'
+        ? 'BrightBe Learning プレオープン会員募集'
+        : 'BrightBe Learning - Pre-Launch Enrollment';
+}
+
+// Timezone Switching
+const tzOffsets = { EST: 0, CST: -1, MST: -2, PST: -3, HST: -5 };
+function setTimezone(tz) {
+    document.querySelectorAll('.time-slot').forEach(slot => {
+        const estHour = parseFloat(slot.dataset.est);
+        let newHour = estHour + tzOffsets[tz];
+        const hours = Math.floor(newHour);
+        const minutes = (newHour % 1) * 60;
+        let displayHour = hours > 12 ? hours - 12 : (hours === 0 ? 12 : hours);
+        const ampm = hours >= 12 ? 'PM' : 'AM';
+        const displayMin = minutes === 0 ? '00' : '30';
+        slot.textContent = `${displayHour}:${displayMin} ${ampm}`;
+    });
+    document.querySelectorAll('.tz-btn').forEach(btn => {
+        btn.classList.toggle('active', btn.textContent === tz);
+    });
+}
+
+// Curriculum Tabs
+function showCurr(type) {
+    document.querySelectorAll('.curr-panel').forEach(p => p.classList.remove('active'));
+    document.querySelectorAll('.curr-tab').forEach(t => t.classList.remove('active-math', 'active-reading'));
+    document.getElementById('cpanel-' + type).classList.add('active');
+    const tab = document.getElementById('ctab-' + type);
+    tab.classList.add(type === 'math' ? 'active-math' : 'active-reading');
+}
+</script>
