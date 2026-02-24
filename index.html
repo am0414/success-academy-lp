@@ -3,14 +3,10 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    
-    <!-- SEO Meta Tags -->
     <title>海外在住者向けオンライン日本語スクール Success Academy | 日本語・国語・算数 月50ドル取り放題</title>
     <meta name="description" content="北米・アジア・欧州の海外在住日本人家族向けオンライン日本語スクール。日本語・国語・算数が月50ドル取り放題。帰国子女、インター生、バイリンガル教育に最適。25分授業で継続率95%。14日間無料体験実施中。">
     <meta name="keywords" content="オンラインスクール,海外在住,日本語教育,帰国子女,バイリンガル教育,日本語補習校,オンライン,インターナショナルスクール,早期教育,海外子育て">
     <link rel="canonical" href="https://www.successacademyworld.com/">
-    
-    <!-- Open Graph / Facebook -->
     <meta property="og:type" content="website">
     <meta property="og:url" content="https://www.successacademyworld.com/">
     <meta property="og:title" content="海外在住者向けオンライン日本語スクール Success Academy | 月50ドル取り放題">
@@ -18,15 +14,11 @@
     <meta property="og:image" content="https://www.successacademyworld.com/og-image.jpg">
     <meta property="og:locale" content="ja_JP">
     <meta property="og:site_name" content="Success Academy">
-    
-    <!-- Twitter -->
     <meta property="twitter:card" content="summary_large_image">
     <meta property="twitter:url" content="https://www.successacademyworld.com/">
     <meta property="twitter:title" content="海外在住者向けオンライン日本語スクール Success Academy">
     <meta property="twitter:description" content="日本語・国語・算数が月50ドル取り放題。25分授業で継続率95%。14日間無料体験実施中。">
     <meta property="twitter:image" content="https://www.successacademyworld.com/og-image.jpg">
-    
-    <!-- Structured Data (JSON-LD) -->
     <script type="application/ld+json">
     {
       "@context": "https://schema.org",
@@ -69,8 +61,6 @@
       }
     }
     </script>
-    
-    <!-- Meta Pixel Code -->
     <script>
     !function(f,b,e,v,n,t,s)
     {if(f.fbq)return;n=f.fbq=function(){n.callMethod?
@@ -83,13 +73,7 @@
     fbq('init', '1014262833889321');
     fbq('track', 'PageView');
     </script>
-    <noscript>
-      <img height="1" width="1" style="display:none"
-           src="https://www.facebook.com/tr?id=1014262833889321&ev=PageView&noscript=1"/>
-    </noscript>
-    <!-- End Meta Pixel Code -->
-    
-    <!-- Microsoft Clarity -->
+    <noscript><img height="1" width="1" style="display:none" src="https://www.facebook.com/tr?id=1014262833889321&ev=PageView&noscript=1"/></noscript>
     <script type="text/javascript">
     (function(c,l,a,r,i,t,y){
         c[a]=c[a]||function(){(c[a].q=c[a].q||[]).push(arguments)};
@@ -97,9 +81,6 @@
         y=l.getElementsByTagName(r)[0];y.parentNode.insertBefore(t,y);
     })(window, document, "clarity", "script", "rke4n5revh");
     </script>
-    <!-- End Microsoft Clarity -->
-    
-    <!-- Google tag (gtag.js) -->
     <script async src="https://www.googletagmanager.com/gtag/js?id=G-NNZQ223JNE"></script>
     <script>
       window.dataLayer = window.dataLayer || [];
@@ -107,15 +88,10 @@
       gtag('js', new Date());
       gtag('config', 'G-NNZQ223JNE');
     </script>
-    <!-- End Google Analytics -->
-    
-    <!-- Google Search Console Verification -->
     <meta name="google-site-verification" content="HxIvAN8v2t9vDEpxbNbZVvE85oAkrOtumMdTzO4Y4WE" />
-
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@300;400;500;600;700;800;900&family=Zen+Maru+Gothic:wght@400;500;700;900&display=swap" rel="stylesheet">
-    
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet">
     <style>
         :root {
             --cream: #F7F9FC;
@@ -141,12 +117,12 @@
             --shadow-md: 0 8px 32px rgba(28,25,23,0.08);
             --shadow-lg: 0 16px 48px rgba(28,25,23,0.10);
             --shadow-green: 0 8px 28px rgba(6,199,85,0.3);
+            --campaign-bg: #EFF6FF;
+            --campaign-border: #3B82F6;
+            --campaign-text: #1D4ED8;
         }
-
         * { margin: 0; padding: 0; box-sizing: border-box; }
-
         html { scroll-behavior: smooth; }
-
         body {
             font-family: 'Noto Sans JP', sans-serif;
             background: var(--cream);
@@ -156,8 +132,144 @@
             overflow-x: hidden;
             -webkit-font-smoothing: antialiased;
         }
-
         .container { max-width: 1100px; margin: 0 auto; padding: 0 24px; }
+
+        /* ===== CAMPAIGN BANNER ===== */
+        .campaign-banner {
+            position: fixed;
+            top: 0;
+            left: 0;
+            right: 0;
+            z-index: 200;
+            background: linear-gradient(90deg, #1D4ED8 0%, #3B82F6 50%, #1D4ED8 100%);
+            background-size: 200% 100%;
+            animation: bannerShimmer 3s ease-in-out infinite;
+            padding: 10px 20px;
+            text-align: center;
+        }
+        @keyframes bannerShimmer {
+            0%, 100% { background-position: 0% 50%; }
+            50% { background-position: 100% 50%; }
+        }
+        .campaign-banner-inner {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 16px;
+            flex-wrap: wrap;
+        }
+        .campaign-banner-text {
+            color: white;
+            font-size: 0.9rem;
+            font-weight: 700;
+            line-height: 1.4;
+        }
+        .campaign-banner-text strong {
+            font-size: 1.05rem;
+        }
+        .campaign-banner-countdown {
+            display: inline-flex;
+            align-items: center;
+            gap: 4px;
+            background: rgba(0,0,0,0.25);
+            padding: 4px 12px;
+            border-radius: 50px;
+            color: white;
+            font-family: 'Noto Sans JP', sans-serif;
+            font-size: 0.82rem;
+            font-weight: 700;
+        }
+        .campaign-banner-btn {
+            display: inline-block;
+            background: white;
+            color: #1D4ED8;
+            padding: 6px 18px;
+            border-radius: 50px;
+            font-size: 0.8rem;
+            font-weight: 800;
+            text-decoration: none;
+            cursor: pointer;
+            border: none;
+            transition: all 0.2s;
+            white-space: nowrap;
+        }
+        .campaign-banner-btn:hover { transform: scale(1.04); }
+
+        /* ===== CAMPAIGN HERO CARD ===== */
+        .campaign-card {
+            background: linear-gradient(135deg, #EFF6FF 0%, #DBEAFE 100%);
+            border: 2px solid #3B82F6;
+            border-radius: var(--radius-md);
+            padding: 24px 28px;
+            margin-bottom: 24px;
+            position: relative;
+            overflow: hidden;
+        }
+        .campaign-card::before {
+            content: '🎁';
+            position: absolute;
+            right: -10px;
+            top: -10px;
+            font-size: 5rem;
+            opacity: 0.08;
+        }
+        .campaign-card-badge {
+            display: inline-flex;
+            align-items: center;
+            gap: 6px;
+            background: #1D4ED8;
+            color: white;
+            padding: 5px 14px;
+            border-radius: 50px;
+            font-size: 0.75rem;
+            font-weight: 800;
+            margin-bottom: 12px;
+            letter-spacing: 0.03em;
+        }
+        .campaign-card-title {
+            font-family: 'Noto Sans JP', sans-serif;
+            font-size: 1.25rem;
+            font-weight: 900;
+            color: #1E3A8A;
+            margin-bottom: 8px;
+            line-height: 1.4;
+        }
+        .campaign-card-title em {
+            font-style: normal;
+            color: #1D4ED8;
+            font-size: 1.5rem;
+        }
+        .campaign-card-sub {
+            font-size: 0.88rem;
+            color: #1E40AF;
+            line-height: 1.6;
+            margin-bottom: 14px;
+        }
+        .campaign-deadline {
+            display: flex;
+            align-items: center;
+            gap: 8px;
+            font-size: 0.8rem;
+            color: #1D4ED8;
+            font-weight: 700;
+        }
+        .campaign-deadline-cd {
+            display: inline-flex;
+            gap: 4px;
+            align-items: center;
+        }
+        .cd-mini {
+            background: #1E3A8A;
+            color: white;
+            font-family: 'Noto Sans JP', sans-serif;
+            font-size: 0.9rem;
+            font-weight: 900;
+            padding: 3px 7px;
+            border-radius: 6px;
+            min-width: 28px;
+            text-align: center;
+        }
+        .cd-mini-sep { color: #1D4ED8; font-weight: 700; }
 
         /* ===== HEADER ===== */
         .site-header {
@@ -166,29 +278,16 @@
             -webkit-backdrop-filter: blur(16px);
             padding: 16px 0;
             position: fixed;
-            top: 0;
+            top: var(--banner-h, 44px);
             left: 0;
             right: 0;
             z-index: 100;
             border-bottom: 1px solid rgba(0,0,0,0.04);
         }
-
-        .header-inner {
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-        }
-
-        .logo {
-            font-family: 'Zen Maru Gothic', sans-serif;
-            font-size: 1.4rem;
-            font-weight: 900;
-            color: var(--orange-600);
-            letter-spacing: -0.02em;
-        }
-
+        .header-inner { display: flex; justify-content: space-between; align-items: center; }
+        .logo { font-family: 'Noto Sans JP', sans-serif; font-size: 1.4rem; font-weight: 900; color: var(--orange-600); letter-spacing: -0.02em; }
         .header-cta {
-            background: var(--green-500);
+            background: #1D4ED8;
             color: white;
             border: none;
             padding: 10px 24px;
@@ -200,1231 +299,297 @@
             text-decoration: none;
             display: inline-block;
         }
-
-        .header-cta:hover { transform: translateY(-1px); box-shadow: var(--shadow-green); }
+        .header-cta:hover { transform: translateY(-1px); box-shadow: 0 8px 24px rgba(29,78,216,0.35); }
 
         /* ===== HERO ===== */
         .hero {
-            padding: 140px 24px 80px;
+            padding: calc(var(--banner-h, 44px) + var(--header-h, 68px) + 40px) 24px 80px;
             background: var(--cream);
             position: relative;
             overflow: hidden;
         }
-
         .hero::before {
             content: '';
             position: absolute;
-            top: -200px;
-            right: -200px;
-            width: 600px;
-            height: 600px;
+            top: -200px; right: -200px;
+            width: 600px; height: 600px;
             background: radial-gradient(circle, rgba(37,99,235,0.08) 0%, transparent 70%);
             border-radius: 50%;
         }
-
-        .hero-grid {
-            display: grid;
-            grid-template-columns: 1fr 1fr;
-            gap: 60px;
-            align-items: center;
-            position: relative;
-            z-index: 1;
-        }
-
+        .hero-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 60px; align-items: center; position: relative; z-index: 1; }
         .hero-eyebrow {
-            display: inline-flex;
-            align-items: center;
-            gap: 8px;
-            background: var(--orange-100);
-            color: var(--orange-700);
-            padding: 8px 20px;
-            border-radius: 50px;
-            font-size: 0.85rem;
-            font-weight: 700;
-            margin-bottom: 24px;
+            display: inline-flex; align-items: center; gap: 8px;
+            background: var(--orange-100); color: var(--orange-700);
+            padding: 8px 20px; border-radius: 50px;
+            font-size: 0.85rem; font-weight: 700; margin-bottom: 24px;
         }
-
         .hero h1 {
-            font-family: 'Zen Maru Gothic', sans-serif;
-            font-size: 2.8rem;
-            font-weight: 900;
-            line-height: 1.35;
-            color: var(--charcoal);
-            margin-bottom: 20px;
-            letter-spacing: -0.02em;
+            font-family: 'Noto Sans JP', sans-serif;
+            font-size: 2.8rem; font-weight: 900; line-height: 1.35;
+            color: var(--charcoal); margin-bottom: 20px; letter-spacing: -0.02em;
         }
-
-        .hero h1 em {
-            font-style: normal;
-            color: var(--orange-600);
-        }
-
-        .hero-sub {
-            font-size: 1.1rem;
-            color: var(--gray-600);
-            line-height: 1.8;
-            margin-bottom: 36px;
-        }
-
-        .hero-cta-group {
-            display: flex;
-            flex-direction: column;
-            gap: 12px;
-            max-width: 380px;
-        }
-
+        .hero h1 em { font-style: normal; color: var(--orange-600); }
+        .hero-sub { font-size: 1.1rem; color: var(--gray-600); line-height: 1.8; margin-bottom: 28px; }
+        .hero-cta-group { display: flex; flex-direction: column; gap: 12px; max-width: 380px; }
         .btn-line {
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            gap: 10px;
-            background: var(--green-500);
-            color: white;
-            border: none;
-            padding: 18px 36px;
-            border-radius: 60px;
-            font-size: 1.15rem;
-            font-weight: 700;
-            cursor: pointer;
+            display: flex; align-items: center; justify-content: center; gap: 10px;
+            background: var(--green-500); color: white; border: none;
+            padding: 18px 36px; border-radius: 60px;
+            font-size: 1.15rem; font-weight: 700; cursor: pointer;
+            transition: all 0.25s; box-shadow: var(--shadow-green);
+            position: relative; overflow: hidden; text-decoration: none;
+        }
+        .btn-line:hover { transform: translateY(-2px); box-shadow: 0 12px 36px rgba(6,199,85,0.4); }
+        .btn-line::after { content: ''; position: absolute; inset: 0; background: linear-gradient(135deg, rgba(255,255,255,0.15) 0%, transparent 50%); pointer-events: none; }
+        .btn-campaign {
+            display: flex; align-items: center; justify-content: center; gap: 10px;
+            background: linear-gradient(135deg, #1D4ED8, #3B82F6);
+            color: white; border: none;
+            padding: 18px 36px; border-radius: 60px;
+            font-size: 1.1rem; font-weight: 800; cursor: pointer;
             transition: all 0.25s;
-            box-shadow: var(--shadow-green);
-            position: relative;
-            overflow: hidden;
-            text-decoration: none;
-        }
-
-        .btn-line:hover {
-            transform: translateY(-2px);
-            box-shadow: 0 12px 36px rgba(6,199,85,0.4);
-        }
-
-        .btn-line::after {
-            content: '';
-            position: absolute;
-            inset: 0;
-            background: linear-gradient(135deg, rgba(255,255,255,0.15) 0%, transparent 50%);
-            pointer-events: none;
-        }
-
-        .btn-micro {
-            font-size: 0.8rem;
-            color: var(--gray-400);
-            text-align: center;
-        }
-
-        .hero-visual {
-            position: relative;
-        }
-
-        .hero-visual img {
+            box-shadow: 0 8px 28px rgba(29,78,216,0.35);
+            position: relative; overflow: hidden; text-decoration: none;
             width: 100%;
-            border-radius: var(--radius-lg);
-            box-shadow: var(--shadow-lg);
         }
-
+        .btn-campaign:hover { transform: translateY(-2px); box-shadow: 0 12px 36px rgba(29,78,216,0.5); }
+        .btn-micro { font-size: 0.8rem; color: var(--gray-400); text-align: center; }
+        .hero-visual { position: relative; }
+        .hero-visual img { width: 100%; border-radius: var(--radius-lg); box-shadow: var(--shadow-lg); }
         .hero-badge {
-            position: absolute;
-            bottom: -16px;
-            left: -16px;
-            background: white;
-            padding: 14px 22px;
-            border-radius: var(--radius-md);
-            box-shadow: var(--shadow-md);
-            display: flex;
-            align-items: center;
-            gap: 12px;
+            position: absolute; bottom: -16px; left: -16px;
+            background: white; padding: 14px 22px;
+            border-radius: var(--radius-md); box-shadow: var(--shadow-md);
+            display: flex; align-items: center; gap: 12px;
         }
-
-        .hero-badge-number {
-            font-family: 'Zen Maru Gothic', sans-serif;
-            font-size: 2rem;
-            font-weight: 900;
-            color: var(--orange-600);
-            line-height: 1;
-        }
-
-        .hero-badge-label {
-            font-size: 0.75rem;
-            color: var(--gray-600);
-            font-weight: 600;
-            line-height: 1.3;
-        }
+        .hero-badge-number { font-family: 'Noto Sans JP', sans-serif; font-size: 2rem; font-weight: 900; color: var(--orange-600); line-height: 1; }
+        .hero-badge-label { font-size: 0.75rem; color: var(--gray-600); font-weight: 600; line-height: 1.3; }
 
         /* ===== SOCIAL PROOF BAR ===== */
-        .proof-bar {
-            background: white;
-            padding: 40px 24px;
-            border-top: 1px solid var(--gray-200);
-            border-bottom: 1px solid var(--gray-200);
-        }
-
-        .proof-items {
-            display: flex;
-            justify-content: center;
-            gap: 48px;
-            flex-wrap: wrap;
-        }
-
-        .proof-item {
-            text-align: center;
-        }
-
-        .proof-number {
-            font-family: 'Zen Maru Gothic', sans-serif;
-            font-size: 2.2rem;
-            font-weight: 900;
-            color: var(--orange-600);
-            line-height: 1;
-            margin-bottom: 6px;
-        }
-
-        .proof-label {
-            font-size: 0.8rem;
-            color: var(--gray-600);
-            font-weight: 500;
-        }
+        .proof-bar { background: white; padding: 40px 24px; border-top: 1px solid var(--gray-200); border-bottom: 1px solid var(--gray-200); }
+        .proof-items { display: flex; justify-content: center; gap: 48px; flex-wrap: wrap; }
+        .proof-item { text-align: center; }
+        .proof-number { font-family: 'Noto Sans JP', sans-serif; font-size: 2.2rem; font-weight: 900; color: var(--orange-600); line-height: 1; margin-bottom: 6px; }
+        .proof-label { font-size: 0.8rem; color: var(--gray-600); font-weight: 500; }
 
         /* ===== VIDEO SECTION ===== */
-        .video-section {
-            padding: 80px 24px;
-            background: var(--warm-white);
-        }
-
-        .video-wrapper {
-            max-width: 720px;
-            margin: 0 auto;
-        }
-
-        .video-label {
-            text-align: center;
-            margin-bottom: 24px;
-        }
-
-        .video-label h2 {
-            font-family: 'Zen Maru Gothic', sans-serif;
-            font-size: 1.6rem;
-            font-weight: 700;
-            color: var(--charcoal);
-            margin-bottom: 8px;
-        }
-
-        .video-label p {
-            font-size: 0.95rem;
-            color: var(--gray-600);
-        }
-
-        .video-embed {
-            position: relative;
-            padding-bottom: 56.25%;
-            height: 0;
-            overflow: hidden;
-            border-radius: var(--radius-lg);
-            box-shadow: var(--shadow-lg);
-        }
-
-        .video-embed iframe {
-            position: absolute;
-            top: 0; left: 0;
-            width: 100%; height: 100%;
-            border: 0;
-            border-radius: var(--radius-lg);
-        }
+        .video-section { padding: 80px 24px; background: var(--warm-white); }
+        .video-wrapper { max-width: 720px; margin: 0 auto; }
+        .video-label { text-align: center; margin-bottom: 24px; }
+        .video-label h2 { font-family: 'Noto Sans JP', sans-serif; font-size: 1.6rem; font-weight: 700; color: var(--charcoal); margin-bottom: 8px; }
+        .video-label p { font-size: 0.95rem; color: var(--gray-600); }
+        .video-embed { position: relative; padding-bottom: 56.25%; height: 0; overflow: hidden; border-radius: var(--radius-lg); box-shadow: var(--shadow-lg); }
+        .video-embed iframe { position: absolute; top: 0; left: 0; width: 100%; height: 100%; border: 0; border-radius: var(--radius-lg); }
 
         /* ===== SECTION TITLES ===== */
-        .section-label {
-            text-align: center;
-            margin-bottom: 48px;
-        }
-
-        .section-label .eyebrow {
-            display: inline-block;
-            font-size: 0.8rem;
-            font-weight: 700;
-            color: var(--orange-600);
-            background: var(--orange-50);
-            padding: 6px 16px;
-            border-radius: 50px;
-            margin-bottom: 16px;
-            letter-spacing: 0.05em;
-        }
-
-        .section-label h2 {
-            font-family: 'Zen Maru Gothic', sans-serif;
-            font-size: 2.2rem;
-            font-weight: 900;
-            color: var(--charcoal);
-            line-height: 1.4;
-            letter-spacing: -0.01em;
-        }
-
-        .section-label p {
-            font-size: 1rem;
-            color: var(--gray-600);
-            margin-top: 12px;
-        }
+        .section-label { text-align: center; margin-bottom: 48px; }
+        .section-label .eyebrow { display: inline-block; font-size: 0.8rem; font-weight: 700; color: var(--orange-600); background: var(--orange-50); padding: 6px 16px; border-radius: 50px; margin-bottom: 16px; letter-spacing: 0.05em; }
+        .section-label h2 { font-family: 'Noto Sans JP', sans-serif; font-size: 2.2rem; font-weight: 900; color: var(--charcoal); line-height: 1.4; letter-spacing: -0.01em; }
+        .section-label p { font-size: 1rem; color: var(--gray-600); margin-top: 12px; }
 
         /* ===== PROBLEM SECTION ===== */
-        .problem-section {
-            padding: 100px 24px;
-            background: var(--cream);
-        }
-
-        .problem-grid {
-            display: grid;
-            grid-template-columns: 1fr 1fr;
-            gap: 60px;
-            align-items: center;
-        }
-
-        .problem-img img {
-            width: 100%;
-            max-width: 450px;
-            border-radius: var(--radius-lg);
-            box-shadow: var(--shadow-md);
-        }
-
-        .problem-text h3 {
-            font-family: 'Zen Maru Gothic', sans-serif;
-            font-size: 1.5rem;
-            font-weight: 700;
-            margin-bottom: 20px;
-            line-height: 1.5;
-        }
-
-        .problem-text p {
-            font-size: 1.05rem;
-            color: var(--gray-600);
-            margin-bottom: 16px;
-            line-height: 1.8;
-        }
-
-        .problem-text .highlight {
-            color: #DC2626;
-            font-weight: 700;
-        }
-
-        .pain-list {
-            list-style: none;
-            margin: 28px 0;
-            padding: 0;
-        }
-
-        .pain-list li {
-            background: white;
-            padding: 18px 24px;
-            border-radius: var(--radius-sm);
-            margin-bottom: 12px;
-            font-size: 1rem;
-            font-weight: 500;
-            display: flex;
-            align-items: center;
-            gap: 14px;
-            box-shadow: var(--shadow-soft);
-            transition: transform 0.2s;
-        }
-
+        .problem-section { padding: 100px 24px; background: var(--cream); }
+        .problem-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 60px; align-items: center; }
+        .problem-img img { width: 100%; max-width: 450px; border-radius: var(--radius-lg); box-shadow: var(--shadow-md); }
+        .problem-text h3 { font-family: 'Noto Sans JP', sans-serif; font-size: 1.5rem; font-weight: 700; margin-bottom: 20px; line-height: 1.5; }
+        .problem-text p { font-size: 1.05rem; color: var(--gray-600); margin-bottom: 16px; line-height: 1.8; }
+        .problem-text .highlight { color: #DC2626; font-weight: 700; }
+        .pain-list { list-style: none; margin: 28px 0; padding: 0; }
+        .pain-list li { background: white; padding: 18px 24px; border-radius: var(--radius-sm); margin-bottom: 12px; font-size: 1rem; font-weight: 500; display: flex; align-items: center; gap: 14px; box-shadow: var(--shadow-soft); transition: transform 0.2s; }
         .pain-list li:hover { transform: translateX(4px); }
-
-        .pain-list li::before {
-            content: '';
-            width: 4px;
-            height: 28px;
-            background: var(--orange-500);
-            border-radius: 4px;
-            flex-shrink: 0;
-        }
-
-        .problem-answer {
-            background: var(--orange-50);
-            padding: 24px;
-            border-radius: var(--radius-md);
-            margin-top: 28px;
-            border-left: 4px solid var(--orange-500);
-        }
-
-        .problem-answer p {
-            font-weight: 600;
-            color: var(--charcoal);
-            font-size: 1.1rem;
-        }
+        .pain-list li::before { content: ''; width: 4px; height: 28px; background: var(--orange-500); border-radius: 4px; flex-shrink: 0; }
+        .problem-answer { background: var(--orange-50); padding: 24px; border-radius: var(--radius-md); margin-top: 28px; border-left: 4px solid var(--orange-500); }
+        .problem-answer p { font-weight: 600; color: var(--charcoal); font-size: 1.1rem; }
 
         /* ===== COMPARISON TABLE ===== */
-        .comparison-section {
-            padding: 100px 24px;
-            background: white;
-        }
-
-        .comp-table-wrap {
-            max-width: 900px;
-            margin: 0 auto;
-            overflow-x: auto;
-            -webkit-overflow-scrolling: touch;
-        }
-
-        .comp-table {
-            width: 100%;
-            min-width: 700px;
-            border-collapse: separate;
-            border-spacing: 0;
-            border-radius: var(--radius-lg);
-            overflow: hidden;
-            box-shadow: var(--shadow-lg);
-        }
-
-        .comp-table thead th {
-            padding: 24px 20px;
-            font-size: 0.95rem;
-            font-weight: 800;
-            text-align: center;
-        }
-
-        .comp-table thead th:first-child {
-            background: var(--charcoal);
-            color: white;
-            width: 22%;
-        }
-
-        .comp-table thead th:nth-child(2) {
-            background: #64748B;
-            color: white;
-            width: 39%;
-        }
-
-        .comp-table thead th:nth-child(3) {
-            background: #059669;
-            color: white;
-            width: 39%;
-        }
-
-        .comp-table tbody td {
-            padding: 24px 20px;
-            text-align: center;
-            border-bottom: 1px solid var(--gray-200);
-            font-size: 0.95rem;
-            vertical-align: middle;
-        }
-
-        .comp-table tbody td:first-child {
-            font-weight: 800;
-            background: #FAFAF9;
-            border-right: 1px solid var(--gray-200);
-        }
-
-        .comp-table tbody td:nth-child(2) {
-            color: var(--gray-600);
-            background: #FAFAF9;
-            border-right: 1px solid var(--gray-200);
-        }
-
-        .comp-table tbody td:nth-child(3) {
-            background: #ECFDF5;
-            color: #047857;
-            font-weight: 600;
-        }
-
+        .comparison-section { padding: 100px 24px; background: white; }
+        .comp-table-wrap { max-width: 900px; margin: 0 auto; overflow-x: auto; -webkit-overflow-scrolling: touch; }
+        .comp-table { width: 100%; min-width: 700px; border-collapse: separate; border-spacing: 0; border-radius: var(--radius-lg); overflow: hidden; box-shadow: var(--shadow-lg); }
+        .comp-table thead th { padding: 24px 20px; font-size: 0.95rem; font-weight: 800; text-align: center; }
+        .comp-table thead th:first-child { background: var(--charcoal); color: white; width: 22%; }
+        .comp-table thead th:nth-child(2) { background: #64748B; color: white; width: 39%; }
+        .comp-table thead th:nth-child(3) { background: #059669; color: white; width: 39%; }
+        .comp-table tbody td { padding: 24px 20px; text-align: center; border-bottom: 1px solid var(--gray-200); font-size: 0.95rem; vertical-align: middle; }
+        .comp-table tbody td:first-child { font-weight: 800; background: #FAFAF9; border-right: 1px solid var(--gray-200); }
+        .comp-table tbody td:nth-child(2) { color: var(--gray-600); background: #FAFAF9; border-right: 1px solid var(--gray-200); }
+        .comp-table tbody td:nth-child(3) { background: #ECFDF5; color: #047857; font-weight: 600; }
         .comp-table tbody tr:last-child td { border-bottom: none; }
-
         .comp-icon { font-size: 1.6rem; display: block; margin-bottom: 6px; }
         .comp-main { font-weight: 700; display: block; margin-bottom: 4px; font-size: 1rem; }
         .comp-sub { font-size: 0.82rem; display: block; opacity: 0.85; line-height: 1.5; }
 
         /* ===== INLINE CTA CARD ===== */
         .inline-cta {
-            max-width: 480px;
-            margin: 60px auto 0;
-            background: white;
-            border: 3px solid var(--green-500);
-            border-radius: var(--radius-lg);
-            padding: 36px 28px;
-            text-align: center;
-            box-shadow: var(--shadow-md);
-            position: relative;
+            max-width: 480px; margin: 60px auto 0;
+            background: white; border: 3px solid var(--green-500);
+            border-radius: var(--radius-lg); padding: 36px 28px;
+            text-align: center; box-shadow: var(--shadow-md); position: relative;
         }
-
-        .inline-cta-badge {
-            display: inline-block;
-            background: var(--green-500);
-            color: white;
-            padding: 6px 18px;
-            border-radius: 50px;
-            font-size: 0.8rem;
-            font-weight: 700;
-            margin-bottom: 16px;
-        }
-
-        .inline-cta h4 {
-            font-family: 'Zen Maru Gothic', sans-serif;
-            font-size: 1.4rem;
-            font-weight: 900;
-            margin-bottom: 20px;
-            line-height: 1.4;
-        }
-
-        .inline-cta-list {
-            background: var(--orange-50);
-            padding: 18px 20px;
-            border-radius: var(--radius-sm);
-            text-align: left;
-            margin-bottom: 20px;
-        }
-
-        .inline-cta-list p {
-            font-size: 0.95rem;
-            padding: 6px 0;
-            display: flex;
-            align-items: center;
-            gap: 10px;
-        }
-
+        .inline-cta-badge { display: inline-block; background: var(--green-500); color: white; padding: 6px 18px; border-radius: 50px; font-size: 0.8rem; font-weight: 700; margin-bottom: 16px; }
+        .inline-cta h4 { font-family: 'Noto Sans JP', sans-serif; font-size: 1.4rem; font-weight: 900; margin-bottom: 20px; line-height: 1.4; }
+        .inline-cta-list { background: var(--orange-50); padding: 18px 20px; border-radius: var(--radius-sm); text-align: left; margin-bottom: 20px; }
+        .inline-cta-list p { font-size: 0.95rem; padding: 6px 0; display: flex; align-items: center; gap: 10px; }
         .inline-cta-list p span { color: var(--green-500); font-weight: 700; }
+        .inline-cta .btn-campaign { width: 100%; }
+        .inline-cta .note { font-size: 0.75rem; color: var(--gray-400); margin-top: 12px; }
 
-        .inline-cta .btn-line { width: 100%; }
-
-        .inline-cta .note {
-            font-size: 0.75rem;
-            color: var(--gray-400);
-            margin-top: 12px;
+        /* Campaign highlight box inside inline CTA */
+        .campaign-highlight-box {
+            background: linear-gradient(135deg, #EFF6FF, #DBEAFE);
+            border: 2px dashed #3B82F6;
+            border-radius: var(--radius-sm);
+            padding: 14px 18px;
+            margin-bottom: 16px;
+            text-align: center;
         }
+        .campaign-highlight-box .chb-label { font-size: 0.72rem; color: #1D4ED8; font-weight: 700; margin-bottom: 4px; }
+        .campaign-highlight-box .chb-main { font-family: 'Noto Sans JP', sans-serif; font-size: 1.15rem; font-weight: 900; color: #1E3A8A; line-height: 1.3; }
+        .campaign-highlight-box .chb-main em { font-style: normal; color: #1D4ED8; font-size: 1.5rem; }
+        .campaign-highlight-box .chb-sub { font-size: 0.78rem; color: #1E40AF; margin-top: 4px; }
 
         /* ===== SOLUTION SECTION ===== */
-        .solution-section {
-            padding: 100px 24px;
-            background: var(--cream);
-        }
-
-        .solution-grid {
-            display: grid;
-            grid-template-columns: 1fr 1fr;
-            gap: 60px;
-            align-items: center;
-        }
-
-        .solution-text h2 {
-            font-family: 'Zen Maru Gothic', sans-serif;
-            font-size: 2rem;
-            font-weight: 900;
-            margin-bottom: 28px;
-            line-height: 1.5;
-            color: var(--charcoal);
-        }
-
-        .solution-text p {
-            font-size: 1.05rem;
-            color: var(--gray-600);
-            margin-bottom: 16px;
-            line-height: 1.8;
-        }
-
-        .solution-text .emphasis {
-            font-weight: 700;
-            color: var(--charcoal);
-            font-size: 1.1rem;
-            margin-top: 24px;
-            padding: 20px;
-            background: var(--orange-50);
-            border-radius: var(--radius-sm);
-            border-left: 4px solid var(--orange-500);
-        }
-
-        .solution-img img {
-            width: 100%;
-            max-width: 450px;
-            border-radius: var(--radius-lg);
-            box-shadow: var(--shadow-md);
-        }
+        .solution-section { padding: 100px 24px; background: var(--cream); }
+        .solution-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 60px; align-items: center; }
+        .solution-text h2 { font-family: 'Noto Sans JP', sans-serif; font-size: 2rem; font-weight: 900; margin-bottom: 28px; line-height: 1.5; color: var(--charcoal); }
+        .solution-text p { font-size: 1.05rem; color: var(--gray-600); margin-bottom: 16px; line-height: 1.8; }
+        .solution-text .emphasis { font-weight: 700; color: var(--charcoal); font-size: 1.1rem; margin-top: 24px; padding: 20px; background: var(--orange-50); border-radius: var(--radius-sm); border-left: 4px solid var(--orange-500); }
+        .solution-img img { width: 100%; max-width: 450px; border-radius: var(--radius-lg); box-shadow: var(--shadow-md); }
 
         /* ===== FEATURES ===== */
-        .features-section {
-            padding: 100px 24px;
-            background: var(--charcoal);
-            position: relative;
-            overflow: hidden;
-        }
-
-        .features-section::before {
-            content: '';
-            position: absolute;
-            inset: 0;
-            background: radial-gradient(circle at 20% 80%, rgba(37,99,235,0.15) 0%, transparent 50%),
-                        radial-gradient(circle at 80% 20%, rgba(37,99,235,0.08) 0%, transparent 50%);
-        }
-
+        .features-section { padding: 100px 24px; background: var(--charcoal); position: relative; overflow: hidden; }
+        .features-section::before { content: ''; position: absolute; inset: 0; background: radial-gradient(circle at 20% 80%, rgba(37,99,235,0.15) 0%, transparent 50%), radial-gradient(circle at 80% 20%, rgba(37,99,235,0.08) 0%, transparent 50%); }
         .features-section .section-label h2 { color: white; }
         .features-section .section-label .eyebrow { background: rgba(37,99,235,0.2); color: var(--orange-400); }
-
-        .features-grid {
-            display: grid;
-            grid-template-columns: repeat(3, 1fr);
-            gap: 24px;
-            position: relative;
-            z-index: 1;
-        }
-
-        .feature-card {
-            background: rgba(255,255,255,0.06);
-            backdrop-filter: blur(10px);
-            -webkit-backdrop-filter: blur(10px);
-            border: 1px solid rgba(255,255,255,0.08);
-            border-radius: var(--radius-md);
-            padding: 36px 28px;
-            transition: all 0.3s;
-        }
-
-        .feature-card:hover {
-            background: rgba(255,255,255,0.1);
-            transform: translateY(-4px);
-            border-color: rgba(37,99,235,0.3);
-        }
-
-        .feature-card .icon {
-            font-size: 2.4rem;
-            margin-bottom: 16px;
-            display: block;
-        }
-
-        .feature-card h3 {
-            font-family: 'Zen Maru Gothic', sans-serif;
-            font-size: 1.15rem;
-            font-weight: 700;
-            color: white;
-            margin-bottom: 10px;
-        }
-
-        .feature-card p {
-            font-size: 0.9rem;
-            color: rgba(255,255,255,0.65);
-            line-height: 1.7;
-        }
-
-        .features-tagline {
-            text-align: center;
-            margin-top: 56px;
-            position: relative;
-            z-index: 1;
-        }
-
-        .features-tagline p {
-            font-family: 'Zen Maru Gothic', sans-serif;
-            font-size: 1.3rem;
-            font-weight: 700;
-            color: rgba(255,255,255,0.85);
-            line-height: 1.6;
-        }
+        .features-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 24px; position: relative; z-index: 1; }
+        .feature-card { background: rgba(255,255,255,0.06); backdrop-filter: blur(10px); -webkit-backdrop-filter: blur(10px); border: 1px solid rgba(255,255,255,0.08); border-radius: var(--radius-md); padding: 36px 28px; transition: all 0.3s; }
+        .feature-card:hover { background: rgba(255,255,255,0.1); transform: translateY(-4px); border-color: rgba(37,99,235,0.3); }
+        .feature-card .icon { font-size: 2.4rem; margin-bottom: 16px; display: block; }
+        .feature-card h3 { font-family: 'Noto Sans JP', sans-serif; font-size: 1.15rem; font-weight: 700; color: white; margin-bottom: 10px; }
+        .feature-card p { font-size: 0.9rem; color: rgba(255,255,255,0.65); line-height: 1.7; }
+        .features-tagline { text-align: center; margin-top: 56px; position: relative; z-index: 1; }
+        .features-tagline p { font-family: 'Noto Sans JP', sans-serif; font-size: 1.3rem; font-weight: 700; color: rgba(255,255,255,0.85); line-height: 1.6; }
 
         /* ===== TESTIMONIALS ===== */
-        .testimonials-section {
-            padding: 100px 24px;
-            background: white;
-        }
-
-        .testi-grid {
-            display: grid;
-            grid-template-columns: 1fr 1fr;
-            gap: 60px;
-            align-items: center;
-        }
-
-        .testi-content h2 {
-            font-family: 'Zen Maru Gothic', sans-serif;
-            font-size: 2rem;
-            font-weight: 900;
-            line-height: 1.5;
-            margin-bottom: 32px;
-            color: var(--charcoal);
-        }
-
-        .testi-card {
-            background: var(--cream);
-            padding: 24px;
-            border-radius: var(--radius-md);
-            margin-bottom: 16px;
-            border-left: 4px solid var(--orange-500);
-        }
-
+        .testimonials-section { padding: 100px 24px; background: white; }
+        .testi-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 60px; align-items: center; }
+        .testi-content h2 { font-family: 'Noto Sans JP', sans-serif; font-size: 2rem; font-weight: 900; line-height: 1.5; margin-bottom: 32px; color: var(--charcoal); }
+        .testi-card { background: var(--cream); padding: 24px; border-radius: var(--radius-md); margin-bottom: 16px; border-left: 4px solid var(--orange-500); }
         .testi-card p { font-size: 0.95rem; color: var(--charcoal); line-height: 1.7; }
         .testi-card .author { font-size: 0.82rem; color: var(--gray-400); margin-top: 10px; font-weight: 500; }
-
-        .testi-highlight {
-            margin-top: 32px;
-            font-family: 'Zen Maru Gothic', sans-serif;
-            font-size: 1.3rem;
-            font-weight: 700;
-            color: var(--charcoal);
-            line-height: 1.6;
-        }
-
-        .testi-img img {
-            width: 100%;
-            max-width: 450px;
-            border-radius: var(--radius-lg);
-            box-shadow: var(--shadow-md);
-        }
+        .testi-highlight { margin-top: 32px; font-family: 'Noto Sans JP', sans-serif; font-size: 1.3rem; font-weight: 700; color: var(--charcoal); line-height: 1.6; }
+        .testi-img img { width: 100%; max-width: 450px; border-radius: var(--radius-lg); box-shadow: var(--shadow-md); }
 
         /* ===== INFLUENCER SECTION ===== */
-        .influencer-section {
-            padding: 100px 24px;
-            background: var(--cream);
-            overflow: hidden;
-        }
-
-        .influencer-track-wrapper {
-            overflow: hidden;
-            margin: 48px 0;
-        }
-
-        .influencer-track {
-            display: flex;
-            gap: 28px;
-            animation: scrollCards 45s linear infinite;
-        }
-
+        .influencer-section { padding: 100px 24px; background: var(--cream); overflow: hidden; }
+        .influencer-track-wrapper { overflow: hidden; margin: 48px 0; }
+        .influencer-track { display: flex; gap: 28px; animation: scrollCards 45s linear infinite; }
         .influencer-track:hover { animation-play-state: paused; }
-
-        @keyframes scrollCards {
-            0% { transform: translateX(0); }
-            100% { transform: translateX(-50%); }
-        }
-
-        .inf-card {
-            min-width: 320px;
-            max-width: 320px;
-            background: white;
-            border-radius: var(--radius-md);
-            padding: 32px 24px;
-            box-shadow: var(--shadow-soft);
-            flex-shrink: 0;
-            transition: transform 0.3s;
-        }
-
+        @keyframes scrollCards { 0% { transform: translateX(0); } 100% { transform: translateX(-50%); } }
+        .inf-card { min-width: 320px; max-width: 320px; background: white; border-radius: var(--radius-md); padding: 32px 24px; box-shadow: var(--shadow-soft); flex-shrink: 0; transition: transform 0.3s; }
         .inf-card:hover { transform: translateY(-4px); }
-
-        .inf-card-header {
-            display: flex;
-            align-items: center;
-            gap: 14px;
-            margin-bottom: 16px;
-        }
-
-        .inf-card-header img {
-            width: 56px;
-            height: 56px;
-            border-radius: 50%;
-            object-fit: cover;
-        }
-
+        .inf-card-header { display: flex; align-items: center; gap: 14px; margin-bottom: 16px; }
+        .inf-card-header img { width: 56px; height: 56px; border-radius: 50%; object-fit: cover; }
         .inf-name { font-size: 0.95rem; font-weight: 700; }
         .inf-details { font-size: 0.75rem; color: var(--gray-400); }
-
-        .inf-card h4 {
-            font-size: 0.9rem;
-            font-weight: 700;
-            color: var(--charcoal);
-            margin-bottom: 10px;
-        }
-
-        .inf-card p {
-            font-size: 0.82rem;
-            color: var(--gray-600);
-            line-height: 1.6;
-        }
-
-        .inf-card .inf-body {
-            background: var(--cream);
-            padding: 16px;
-            border-radius: var(--radius-sm);
-        }
-
-        .anniversary-badge {
-            text-align: center;
-            margin-top: 48px;
-            font-family: 'Zen Maru Gothic', sans-serif;
-            font-size: 1.5rem;
-            font-weight: 900;
-            color: var(--charcoal);
-        }
+        .inf-card h4 { font-size: 0.9rem; font-weight: 700; color: var(--charcoal); margin-bottom: 10px; }
+        .inf-card p { font-size: 0.82rem; color: var(--gray-600); line-height: 1.6; }
+        .inf-card .inf-body { background: var(--cream); padding: 16px; border-radius: var(--radius-sm); }
+        .anniversary-badge { text-align: center; margin-top: 48px; font-family: 'Noto Sans JP', sans-serif; font-size: 1.5rem; font-weight: 900; color: var(--charcoal); }
 
         /* ===== PRICING ===== */
-        .pricing-section {
-            padding: 100px 24px;
-            background: white;
-        }
-
-        .pricing-grid {
-            display: grid;
-            grid-template-columns: repeat(3, 1fr);
-            gap: 24px;
-            max-width: 960px;
-            margin: 0 auto;
-        }
-
-        .price-card {
-            background: var(--cream);
-            border: 2px solid var(--gray-200);
-            border-radius: var(--radius-lg);
-            padding: 36px 24px;
-            text-align: center;
-            transition: all 0.3s;
-            position: relative;
-        }
-
-        .price-card:hover {
-            transform: translateY(-6px);
-            box-shadow: var(--shadow-lg);
-        }
-
-        .price-card.featured {
-            border-color: var(--orange-600);
-            background: white;
-            transform: scale(1.04);
-            box-shadow: 0 12px 40px rgba(37,99,235,0.12);
-        }
-
+        .pricing-section { padding: 100px 24px; background: white; }
+        .pricing-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 24px; max-width: 960px; margin: 0 auto; }
+        .price-card { background: var(--cream); border: 2px solid var(--gray-200); border-radius: var(--radius-lg); padding: 36px 24px; text-align: center; transition: all 0.3s; position: relative; }
+        .price-card:hover { transform: translateY(-6px); box-shadow: var(--shadow-lg); }
+        .price-card.featured { border-color: var(--orange-600); background: white; transform: scale(1.04); box-shadow: 0 12px 40px rgba(37,99,235,0.12); }
         .price-card.featured:hover { transform: scale(1.04) translateY(-6px); }
-
-        .price-crown {
-            position: absolute;
-            top: -20px;
-            left: 50%;
-            transform: translateX(-50%);
-            font-size: 2rem;
-        }
-
-        .price-badge {
-            display: inline-block;
-            padding: 5px 14px;
-            border-radius: 50px;
-            font-size: 0.75rem;
-            font-weight: 700;
-            color: white;
-            margin-bottom: 12px;
-        }
-
+        .price-crown { position: absolute; top: -20px; left: 50%; transform: translateX(-50%); font-size: 2rem; }
+        .price-badge { display: inline-block; padding: 5px 14px; border-radius: 50px; font-size: 0.75rem; font-weight: 700; color: white; margin-bottom: 12px; }
         .price-badge.orange { background: var(--orange-600); }
         .price-badge.amber { background: #D97706; }
         .price-badge.gold { background: #B8935A; }
-
-        .price-name {
-            font-family: 'Zen Maru Gothic', sans-serif;
-            font-size: 1.2rem;
-            font-weight: 900;
-            margin-bottom: 6px;
-        }
-
+        .price-name { font-family: 'Noto Sans JP', sans-serif; font-size: 1.2rem; font-weight: 900; margin-bottom: 6px; }
         .price-target { font-size: 0.75rem; color: var(--gray-400); margin-bottom: 10px; }
         .price-desc { font-size: 0.85rem; color: var(--gray-600); margin-bottom: 20px; min-height: 40px; line-height: 1.5; }
-
-        .price-amount {
-            font-family: 'Zen Maru Gothic', sans-serif;
-            font-size: 2.6rem;
-            font-weight: 900;
-            color: var(--orange-600);
-            line-height: 1;
-            margin-bottom: 16px;
-        }
-
+        .price-amount { font-family: 'Noto Sans JP', sans-serif; font-size: 2.6rem; font-weight: 900; color: var(--orange-600); line-height: 1; margin-bottom: 16px; }
         .price-amount span { font-size: 1.1rem; }
-
-        .price-trial {
-            display: inline-block;
-            padding: 6px 16px;
-            border-radius: 50px;
-            font-size: 0.8rem;
-            font-weight: 700;
-            color: white;
-            margin-bottom: 14px;
-        }
-
+        .price-trial { display: inline-block; padding: 6px 16px; border-radius: 50px; font-size: 0.8rem; font-weight: 700; color: white; margin-bottom: 14px; }
         .price-trial.orange { background: var(--orange-600); }
         .price-trial.amber { background: #D97706; }
         .price-trial.gold { background: #B8935A; }
-
         .price-detail { font-size: 0.82rem; color: var(--gray-600); line-height: 1.5; }
-
-        .entry-fee-box {
-            max-width: 500px;
-            margin: 40px auto 0;
-            text-align: center;
-            background: var(--cream);
-            border: 2px dashed var(--orange-500);
-            border-radius: var(--radius-md);
-            padding: 24px;
-        }
-
-        .entry-fee-box p {
-            font-family: 'Zen Maru Gothic', sans-serif;
-            font-size: 1.3rem;
-            font-weight: 900;
-        }
-
+        .entry-fee-box { max-width: 500px; margin: 40px auto 0; text-align: center; background: var(--cream); border: 2px dashed var(--orange-500); border-radius: var(--radius-md); padding: 24px; }
+        .entry-fee-box p { font-family: 'Noto Sans JP', sans-serif; font-size: 1.3rem; font-weight: 900; }
         .entry-fee-box .sub { font-size: 0.9rem; font-weight: 400; color: var(--gray-600); margin-top: 4px; }
 
-        /* ===== FINAL CTA ===== */
-        .final-cta {
-            padding: 100px 24px;
-            background: linear-gradient(135deg, var(--orange-500) 0%, #1E3A8A 100%);
-            position: relative;
-            overflow: hidden;
-        }
-
-        .final-cta::before {
-            content: '';
-            position: absolute;
-            inset: 0;
-            background: radial-gradient(circle at 30% 50%, rgba(255,255,255,0.1) 0%, transparent 50%);
-        }
-
-        .final-cta-inner {
-            max-width: 500px;
-            margin: 0 auto;
-            position: relative;
-            z-index: 1;
-        }
-
-        .final-cta-card {
-            background: white;
-            border-radius: var(--radius-lg);
-            padding: 44px 32px;
+        /* Campaign pricing badge */
+        .campaign-pricing-note {
+            max-width: 500px; margin: 16px auto 0;
+            background: linear-gradient(135deg, #EFF6FF, #DBEAFE);
+            border: 2px solid #3B82F6;
+            border-radius: var(--radius-md); padding: 18px 24px;
             text-align: center;
-            border: 4px solid var(--green-500);
-            box-shadow: 0 20px 50px rgba(0,0,0,0.15);
         }
+        .campaign-pricing-note p { font-family: 'Noto Sans JP', sans-serif; font-size: 1.05rem; font-weight: 900; color: #1E3A8A; }
+        .campaign-pricing-note .cpn-sub { font-size: 0.82rem; font-weight: 500; color: #1E40AF; margin-top: 4px; font-family: 'Noto Sans JP', sans-serif; }
 
+        /* ===== FINAL CTA ===== */
+        .final-cta { padding: 100px 24px; background: linear-gradient(135deg, var(--orange-500) 0%, #1E3A8A 100%); position: relative; overflow: hidden; }
+        .final-cta::before { content: ''; position: absolute; inset: 0; background: radial-gradient(circle at 30% 50%, rgba(255,255,255,0.1) 0%, transparent 50%); }
+        .final-cta-inner { max-width: 500px; margin: 0 auto; position: relative; z-index: 1; }
+        .final-cta-card { background: white; border-radius: var(--radius-lg); padding: 44px 32px; text-align: center; border: 4px solid var(--green-500); box-shadow: 0 20px 50px rgba(0,0,0,0.15); }
         .final-cta-card .inline-cta-badge { margin-bottom: 20px; }
-
-        .final-cta-card h3 {
-            font-family: 'Zen Maru Gothic', sans-serif;
-            font-size: 1.7rem;
-            font-weight: 900;
-            margin-bottom: 24px;
-            line-height: 1.4;
-        }
-
-        .final-cta-card .btn-line { width: 100%; }
+        .final-cta-card h3 { font-family: 'Noto Sans JP', sans-serif; font-size: 1.7rem; font-weight: 900; margin-bottom: 24px; line-height: 1.4; }
+        .final-cta-card .btn-campaign { width: 100%; }
 
         /* ===== EMAIL FORM ===== */
-        .email-divider {
-            margin-top: 24px;
-            padding-top: 24px;
-            border-top: 2px dashed var(--gray-200);
-        }
-
-        .email-divider .email-label {
-            font-size: 0.85rem;
-            color: var(--gray-400);
-            margin-bottom: 12px;
-            font-weight: 600;
-        }
-
-        .email-form-row {
-            display: flex;
-            gap: 8px;
-        }
-
-        .email-input {
-            flex: 1;
-            padding: 12px 18px;
-            border: 2px solid var(--gray-200);
-            border-radius: 50px;
-            font-size: 0.9rem;
-            font-family: inherit;
-            transition: border-color 0.2s;
-        }
-
-        .email-input:focus {
-            outline: none;
-            border-color: var(--orange-500);
-        }
-
-        .email-btn {
-            padding: 12px 24px;
-            background: var(--orange-600);
-            color: white;
-            border: none;
-            border-radius: 50px;
-            font-size: 0.85rem;
-            font-weight: 700;
-            cursor: pointer;
-            transition: all 0.2s;
-            white-space: nowrap;
-            font-family: inherit;
-        }
-
+        .email-divider { margin-top: 24px; padding-top: 24px; border-top: 2px dashed var(--gray-200); }
+        .email-divider .email-label { font-size: 0.85rem; color: var(--gray-400); margin-bottom: 12px; font-weight: 600; }
+        .email-form-row { display: flex; gap: 8px; }
+        .email-input { flex: 1; padding: 12px 18px; border: 2px solid var(--gray-200); border-radius: 50px; font-size: 0.9rem; font-family: inherit; transition: border-color 0.2s; }
+        .email-input:focus { outline: none; border-color: var(--orange-500); }
+        .email-btn { padding: 12px 24px; background: var(--orange-600); color: white; border: none; border-radius: 50px; font-size: 0.85rem; font-weight: 700; cursor: pointer; transition: all 0.2s; white-space: nowrap; font-family: inherit; }
         .email-btn:hover { background: var(--orange-700); }
 
         /* ===== FOOTER ===== */
-        .site-footer {
-            background: var(--charcoal);
-            padding: 60px 24px;
-            text-align: center;
-            color: rgba(255,255,255,0.5);
-        }
-
-        .footer-logo {
-            font-family: 'Zen Maru Gothic', sans-serif;
-            font-size: 1.3rem;
-            font-weight: 900;
-            color: white;
-            margin-bottom: 12px;
-        }
-
+        .site-footer { background: var(--charcoal); padding: 60px 24px; text-align: center; color: rgba(255,255,255,0.5); }
+        .footer-logo { font-family: 'Noto Sans JP', sans-serif; font-size: 1.3rem; font-weight: 900; color: white; margin-bottom: 12px; }
         .site-footer p { font-size: 0.85rem; line-height: 1.7; margin-bottom: 20px; }
-
-        .footer-line-btn {
-            display: inline-flex;
-            align-items: center;
-            gap: 8px;
-            background: var(--green-500);
-            color: white;
-            padding: 12px 28px;
-            border-radius: 50px;
-            font-size: 0.9rem;
-            font-weight: 700;
-            text-decoration: none;
-            border: none;
-            cursor: pointer;
-            transition: all 0.2s;
-            margin-bottom: 28px;
-        }
-
+        .footer-line-btn { display: inline-flex; align-items: center; gap: 8px; background: var(--green-500); color: white; padding: 12px 28px; border-radius: 50px; font-size: 0.9rem; font-weight: 700; text-decoration: none; border: none; cursor: pointer; transition: all 0.2s; margin-bottom: 28px; }
         .footer-line-btn:hover { box-shadow: var(--shadow-green); }
-
-        .footer-copy {
-            padding-top: 20px;
-            border-top: 1px solid rgba(255,255,255,0.08);
-            font-size: 0.75rem;
-        }
+        .footer-copy { padding-top: 20px; border-top: 1px solid rgba(255,255,255,0.08); font-size: 0.75rem; }
 
         /* ===== FIXED BOTTOM CTA ===== */
-        .fixed-cta {
-            position: fixed;
-            bottom: 0;
-            left: 0;
-            right: 0;
-            background: rgba(28,25,23,0.95);
-            backdrop-filter: blur(12px);
-            -webkit-backdrop-filter: blur(12px);
-            padding: 14px 20px;
-            z-index: 1000;
-            display: flex;
-            flex-direction: column;
-            align-items: center;
-            gap: 6px;
-            transform: translateY(100%);
-            animation: slideUpCTA 0.5s ease-out 2s forwards;
-        }
-
-        @keyframes slideUpCTA {
-            to { transform: translateY(0); }
-        }
-
-        .fixed-cta-btn {
-            width: 100%;
-            max-width: 400px;
-            background: var(--green-500);
-            color: white;
-            border: none;
-            padding: 14px 28px;
-            border-radius: 50px;
-            font-size: 1.05rem;
-            font-weight: 700;
-            cursor: pointer;
-            transition: all 0.2s;
-            font-family: inherit;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            gap: 8px;
-        }
-
-        .fixed-cta-btn:hover { box-shadow: var(--shadow-green); }
-
-        .fixed-cta-note {
-            font-size: 0.72rem;
-            color: rgba(255,255,255,0.5);
-        }
+        .fixed-cta { position: fixed; bottom: 0; left: 0; right: 0; background: rgba(28,25,23,0.95); backdrop-filter: blur(12px); -webkit-backdrop-filter: blur(12px); padding: 14px 20px; z-index: 1000; display: flex; flex-direction: column; align-items: center; gap: 6px; transform: translateY(100%); animation: slideUpCTA 0.5s ease-out 2s forwards; }
+        @keyframes slideUpCTA { to { transform: translateY(0); } }
+        .fixed-cta-btn { width: 100%; max-width: 400px; background: linear-gradient(135deg, #1D4ED8, #3B82F6); color: white; border: none; padding: 14px 28px; border-radius: 50px; font-size: 1.05rem; font-weight: 800; cursor: pointer; transition: all 0.2s; font-family: inherit; display: flex; align-items: center; justify-content: center; gap: 8px; }
+        .fixed-cta-btn:hover { box-shadow: 0 8px 28px rgba(29,78,216,0.4); }
+        .fixed-cta-note { font-size: 0.72rem; color: rgba(255,255,255,0.6); }
 
         /* ===== SESSION CARDS & COUNTDOWN ===== */
-        .session-cards {
-            display: flex;
-            flex-direction: column;
-            gap: 10px;
-            margin-bottom: 20px;
-        }
-
-        .session-card {
-            background: var(--orange-50);
-            border: 2px solid var(--orange-100);
-            border-radius: var(--radius-sm);
-            padding: 18px;
-            display: flex;
-            flex-direction: column;
-            align-items: center;
-            text-align: center;
-            gap: 8px;
-        }
-
-        .session-date {
-            font-family: 'Noto Sans JP', sans-serif;
-            font-size: 1.05rem;
-            font-weight: 800;
-            color: var(--charcoal);
-            white-space: nowrap;
-        }
-
-        .session-type {
-            font-size: 0.85rem;
-            font-weight: 600;
-            color: var(--orange-600);
-            background: white;
-            padding: 4px 12px;
-            border-radius: 50px;
-            white-space: nowrap;
-        }
-
-        .session-countdown-inline {
-            font-family: 'Zen Maru Gothic', sans-serif;
-            font-size: 0.8rem;
-            font-weight: 700;
-            color: #DC2626;
-            white-space: nowrap;
-        }
-
-        .session-countdown-mini {
-            background: white;
-            border: 2px solid var(--orange-100);
-            border-radius: var(--radius-sm);
-            padding: 14px 20px;
-            margin-bottom: 16px;
-            text-align: center;
-        }
-
-        .countdown-next {
-            font-size: 0.82rem;
-            color: var(--gray-600);
-            font-weight: 600;
-            margin-bottom: 8px;
-        }
-
-        .countdown-timer {
-            display: flex;
-            justify-content: center;
-            gap: 6px;
-            align-items: center;
-        }
-
-        .cd-unit {
-            display: flex;
-            flex-direction: column;
-            align-items: center;
-        }
-
-        .cd-number {
-            background: var(--charcoal);
-            color: white;
-            font-family: 'Zen Maru Gothic', sans-serif;
-            font-size: 1.4rem;
-            font-weight: 900;
-            padding: 6px 10px;
-            border-radius: 8px;
-            min-width: 44px;
-            text-align: center;
-            line-height: 1;
-        }
-
-        .cd-label {
-            font-size: 0.65rem;
-            color: var(--gray-400);
-            margin-top: 4px;
-            font-weight: 600;
-        }
-
-        .cd-sep {
-            font-size: 1.2rem;
-            font-weight: 900;
-            color: var(--gray-400);
-            padding-bottom: 16px;
-        }
-
-        .session-ended {
-            color: var(--gray-400);
-            font-weight: 600;
-            font-size: 0.85rem;
-        }
-
-        /* ===== PULSE ANIMATION ===== */
+        /* ===== PULSE ===== */
         @keyframes gentle-pulse {
-            0%, 100% { box-shadow: 0 8px 28px rgba(6,199,85,0.3); }
-            50% { box-shadow: 0 8px 36px rgba(6,199,85,0.5); }
+            0%, 100% { box-shadow: 0 8px 28px rgba(29,78,216,0.3); }
+            50% { box-shadow: 0 8px 36px rgba(29,78,216,0.55); }
         }
-
         .pulse-btn { animation: gentle-pulse 2.5s ease-in-out infinite; }
 
-        /* ===== MOBILE COMPARISON CARDS ===== */
+        /* ===== MOBILE ===== */
         .comp-mobile { display: none; }
         .comp-swipe-hint { display: none; }
-
-        .comp-mobile-card {
-            background: white;
-            border-radius: var(--radius-md);
-            padding: 24px 20px;
-            margin-bottom: 16px;
-            box-shadow: var(--shadow-soft);
-            text-align: center;
-        }
-
+        .comp-mobile-card { background: white; border-radius: var(--radius-md); padding: 24px 20px; margin-bottom: 16px; box-shadow: var(--shadow-soft); text-align: center; }
         .comp-mobile-icon { font-size: 2rem; margin-bottom: 4px; }
-
-        .comp-mobile-topic {
-            font-family: 'Zen Maru Gothic', sans-serif;
-            font-size: 1.1rem;
-            font-weight: 900;
-            color: var(--charcoal);
-            margin-bottom: 16px;
-        }
-
-        .comp-mobile-row {
-            padding: 14px 16px;
-            border-radius: 12px;
-            margin-bottom: 8px;
-            text-align: left;
-        }
-
-        .comp-mobile-bad {
-            background: #F8FAFC;
-            border: 1px solid var(--gray-200);
-        }
-
-        .comp-mobile-good {
-            background: #ECFDF5;
-            border: 1px solid #A7F3D0;
-        }
-
-        .comp-mobile-label {
-            font-size: 0.72rem;
-            font-weight: 700;
-            margin-bottom: 4px;
-            color: var(--gray-400);
-        }
-
+        .comp-mobile-topic { font-family: 'Noto Sans JP', sans-serif; font-size: 1.1rem; font-weight: 900; color: var(--charcoal); margin-bottom: 16px; }
+        .comp-mobile-row { padding: 14px 16px; border-radius: 12px; margin-bottom: 8px; text-align: left; }
+        .comp-mobile-bad { background: #F8FAFC; border: 1px solid var(--gray-200); }
+        .comp-mobile-good { background: #ECFDF5; border: 1px solid #A7F3D0; }
+        .comp-mobile-label { font-size: 0.72rem; font-weight: 700; margin-bottom: 4px; color: var(--gray-400); }
         .comp-mobile-good .comp-mobile-label { color: #059669; }
-
-        .comp-mobile-text {
-            font-size: 0.95rem;
-            font-weight: 700;
-            color: var(--charcoal);
-            line-height: 1.5;
-        }
-
-        .comp-mobile-text span {
-            font-weight: 400;
-            font-size: 0.82rem;
-            color: var(--gray-600);
-        }
-
+        .comp-mobile-text { font-size: 0.95rem; font-weight: 700; color: var(--charcoal); line-height: 1.5; }
+        .comp-mobile-text span { font-weight: 400; font-size: 0.82rem; color: var(--gray-600); }
         .comp-mobile-good .comp-mobile-text { color: #047857; }
         .comp-mobile-good .comp-mobile-text span { color: #059669; }
 
-        /* ===== RESPONSIVE ===== */
         @media (max-width: 900px) {
             .features-grid { grid-template-columns: 1fr 1fr; }
             .pricing-grid { grid-template-columns: 1fr; max-width: 400px; }
@@ -1433,303 +598,115 @@
         }
 
         @media (max-width: 768px) {
-            /* === Global Mobile === */
             body { line-height: 1.75; }
             .container { padding: 0 20px; }
-
-            /* === Header === */
-            .site-header { padding: 12px 0; }
+            .campaign-banner { padding: 8px 16px; }
+            .campaign-banner-inner { justify-content: center; }
+            .campaign-banner-text { font-size: 0.8rem; }
+            .site-header { padding: 12px 0; top: var(--banner-h, 40px); }
             .logo { font-size: 1.2rem; }
-            .header-cta { padding: 8px 18px; font-size: 0.8rem; }
-
-            /* === Hero === */
-            .hero { padding: 100px 20px 48px; }
+            .header-cta { padding: 8px 14px; font-size: 0.75rem; white-space: nowrap; }
+            .hero { padding: calc(var(--banner-h, 40px) + var(--header-h, 60px) + 28px) 20px 48px; }
             .hero::before { width: 300px; height: 300px; top: -100px; right: -100px; }
             .hero-grid { grid-template-columns: 1fr; gap: 28px; text-align: center; }
             .hero-visual { order: -1; }
             .hero-visual img { border-radius: var(--radius-md); }
-            .hero-badge {
-                position: relative;
-                bottom: auto; left: auto;
-                justify-content: center;
-                margin: -24px auto 0;
-                display: inline-flex;
-                box-shadow: 0 4px 16px rgba(0,0,0,0.08);
-            }
+            .hero-badge { position: relative; bottom: auto; left: auto; justify-content: center; margin: -24px auto 0; display: inline-flex; box-shadow: 0 4px 16px rgba(0,0,0,0.08); }
             .hero-badge-number { font-size: 1.6rem; }
             .hero-eyebrow { font-size: 0.78rem; padding: 6px 16px; margin-bottom: 20px; }
             .hero h1 { font-size: 1.85rem; line-height: 1.4; margin-bottom: 16px; }
             .hero-sub { font-size: 1rem; margin-bottom: 28px; line-height: 1.7; }
             .hero-cta-group { max-width: 100%; margin: 0 auto; }
-            .session-countdown-mini { padding: 12px 16px; margin-bottom: 14px; }
-            .countdown-next { font-size: 0.78rem; margin-bottom: 6px; }
-            .cd-number { font-size: 1.15rem; padding: 5px 8px; min-width: 36px; }
-            .cd-label { font-size: 0.6rem; }
-            .cd-sep { font-size: 1rem; padding-bottom: 14px; }
-            .btn-line { padding: 16px 28px; font-size: 1.05rem; border-radius: 50px; }
-            .btn-micro { font-size: 0.75rem; }
-
-            /* === Proof Bar === */
+            .campaign-card { padding: 20px; }
+            .campaign-card-title { font-size: 1.05rem; }
+            .campaign-card-title em { font-size: 1.25rem; }
+            .btn-campaign { padding: 16px 28px; font-size: 1rem; }
             .proof-bar { padding: 28px 20px; }
-            .proof-items {
-                display: grid;
-                grid-template-columns: repeat(4, 1fr);
-                gap: 8px;
-                text-align: center;
-            }
+            .proof-items { display: grid; grid-template-columns: repeat(4, 1fr); gap: 8px; text-align: center; }
             .proof-number { font-size: 1.5rem; }
             .proof-label { font-size: 0.7rem; }
-
-            /* === Video === */
             .video-section { padding: 56px 20px; }
             .video-label h2 { font-size: 1.3rem; }
             .video-label p { font-size: 0.85rem; }
-            .video-embed { border-radius: var(--radius-md); }
-
-            /* === Section Titles === */
             .section-label { margin-bottom: 36px; }
             .section-label .eyebrow { font-size: 0.72rem; padding: 5px 14px; margin-bottom: 12px; }
             .section-label h2 { font-size: 1.5rem; line-height: 1.45; }
             .section-label p { font-size: 0.9rem; margin-top: 8px; }
-
-            /* === Problem === */
             .problem-section { padding: 64px 20px; }
             .problem-grid { grid-template-columns: 1fr; gap: 32px; }
             .problem-img { text-align: center; }
             .problem-img img { max-width: 85%; border-radius: var(--radius-md); }
-            .problem-text h3 { font-size: 1.25rem; line-height: 1.5; margin-bottom: 16px; }
-            .problem-text p { font-size: 0.95rem; }
-            .pain-list li { padding: 14px 18px; font-size: 0.92rem; border-radius: 10px; }
-            .pain-list li::before { height: 22px; }
-            .problem-answer { padding: 18px; }
-            .problem-answer p { font-size: 1rem; }
-
-            /* === Comparison === */
+            .problem-text h3 { font-size: 1.25rem; }
             .comparison-section { padding: 64px 20px; }
-
-            /* === Comparison Table with swipe === */
-            .comp-table-wrap {
-                position: relative;
-                margin: 0 -20px;
-                padding: 0;
-                overflow-x: auto;
-                -webkit-overflow-scrolling: touch;
-            }
+            .comp-table-wrap { position: relative; margin: 0 -20px; padding: 0; overflow-x: auto; }
             .comp-table { min-width: 600px; margin: 0; border-radius: var(--radius-md); }
-            .comp-table thead th { padding: 14px 10px; font-size: 0.75rem; }
-            .comp-table tbody td { padding: 14px 10px; font-size: 0.78rem; }
-            .comp-icon { font-size: 1.1rem; margin-bottom: 3px; }
-            .comp-main { font-size: 0.78rem; margin-bottom: 2px; }
-            .comp-sub { font-size: 0.65rem; line-height: 1.4; }
-            .comp-swipe-hint {
-                display: flex;
-                align-items: center;
-                justify-content: center;
-                gap: 6px;
-                margin-top: 10px;
-                font-size: 0.75rem;
-                color: var(--gray-400);
-                animation: swipeHint 2s ease-in-out infinite;
-            }
-            @keyframes swipeHint {
-                0%, 100% { opacity: 0.5; transform: translateX(0); }
-                50% { opacity: 1; transform: translateX(4px); }
-            }
-            .comp-mobile { display: none; }
-
-            /* === Inline CTA === */
-            .inline-cta {
-                margin: 48px 0 0;
-                padding: 28px 22px;
-                border-radius: var(--radius-md);
-                border-width: 2px;
-            }
-            .inline-cta-badge { font-size: 0.75rem; padding: 5px 14px; }
-            .inline-cta h4 { font-size: 1.2rem; margin-bottom: 16px; }
-            .inline-cta-list { padding: 14px 16px; margin-bottom: 16px; }
-            .inline-cta-list p { font-size: 0.88rem; padding: 5px 0; }
-            .inline-cta .note { font-size: 0.7rem; }
-            .session-card {
-                padding: 16px;
-                border-radius: 12px;
-                display: flex;
-                flex-direction: column;
-                align-items: center;
-                text-align: center;
-                gap: 8px;
-            }
-            .session-date { font-size: 1.1rem; font-weight: 800; }
-            .session-type { font-size: 0.82rem; padding: 4px 14px; }
-            .session-countdown-inline { font-size: 0.78rem; }
-
-            /* === Solution === */
+            .comp-swipe-hint { display: flex; align-items: center; justify-content: center; gap: 6px; margin-top: 10px; font-size: 0.75rem; color: var(--gray-400); }
+            .inline-cta { margin: 48px 0 0; padding: 28px 22px; border-radius: var(--radius-md); border-width: 2px; }
+            .inline-cta h4 { font-size: 1.2rem; }
             .solution-section { padding: 64px 20px; }
             .solution-grid { grid-template-columns: 1fr; gap: 32px; }
             .solution-text h2 { font-size: 1.5rem; text-align: center; }
-            .solution-text p { font-size: 0.95rem; }
-            .solution-text .emphasis { padding: 16px; font-size: 1rem; border-left-width: 3px; }
             .solution-img { text-align: center; }
             .solution-img img { max-width: 85%; border-radius: var(--radius-md); }
-
-            /* === Features === */
-            .features-section { padding: 64px 20px; }
-            .features-grid { grid-template-columns: 1fr; gap: 16px; }
-            .feature-card {
-                padding: 24px 22px;
-                border-radius: 16px;
-                display: flex;
-                gap: 16px;
-                align-items: flex-start;
-                text-align: left;
-            }
-            .feature-card .icon { font-size: 1.8rem; margin-bottom: 0; flex-shrink: 0; padding-top: 2px; }
-            .feature-card h3 { font-size: 1rem; margin-bottom: 4px; }
-            .feature-card p { font-size: 0.82rem; line-height: 1.6; }
-            .features-tagline { margin-top: 40px; }
-            .features-tagline p { font-size: 1.05rem; line-height: 1.6; }
-
-            /* === Testimonials === */
+            .features-section { padding: 56px 20px; }
+            .features-grid { grid-template-columns: 1fr 1fr; gap: 14px; }
+            .feature-card { padding: 20px 16px; border-radius: 16px; display: flex; flex-direction: column; align-items: flex-start; text-align: left; }
+            .feature-card .icon { font-size: 2rem; margin-bottom: 10px; }
+            .feature-card h3 { font-size: 0.95rem; margin-bottom: 6px; line-height: 1.4; }
+            .feature-card p { font-size: 0.8rem; line-height: 1.65; color: rgba(255,255,255,0.7); }
+            .features-tagline { margin-top: 32px; }
+            .features-tagline p { font-size: 1rem; }
             .testimonials-section { padding: 64px 20px; }
             .testi-grid { grid-template-columns: 1fr; gap: 32px; }
             .testi-content h2 { font-size: 1.4rem; text-align: center; }
-            .testi-card { padding: 20px; border-radius: 16px; border-left-width: 3px; }
-            .testi-card p { font-size: 0.9rem; }
-            .testi-card .author { font-size: 0.78rem; }
-            .testi-highlight { font-size: 1.1rem; text-align: center; }
             .testi-img { text-align: center; order: -1; }
             .testi-img img { max-width: 75%; border-radius: var(--radius-md); }
-
-            /* === Influencer === */
             .influencer-section { padding: 64px 0; overflow: visible; }
             .influencer-section .section-label { padding: 0 20px; }
-            .influencer-track-wrapper {
-                overflow-x: auto;
-                overflow-y: hidden;
-                -webkit-overflow-scrolling: touch;
-                padding: 0 20px 16px;
-                margin: 32px 0;
-                scroll-snap-type: x mandatory;
-            }
-            .influencer-track {
-                animation: none;
-                gap: 16px;
-                width: max-content;
-            }
-            .inf-card {
-                min-width: 280px; max-width: 280px;
-                padding: 24px 20px; border-radius: 16px;
-                scroll-snap-align: start;
-            }
-            .inf-card:hover { transform: none; }
-            .inf-card-header img { width: 44px; height: 44px; }
-            .inf-name { font-size: 0.88rem; }
-            .inf-details { font-size: 0.68rem; }
-            .inf-card h4 { font-size: 0.82rem; }
-            .inf-card p { font-size: 0.75rem; }
-            .inf-card .inf-body { padding: 14px; border-radius: 10px; }
-            .anniversary-badge { font-size: 1.15rem; padding: 0 20px; }
-
-            /* === Pricing === */
+            .influencer-track-wrapper { overflow-x: auto; overflow-y: hidden; padding: 0 20px 16px; margin: 32px 0; scroll-snap-type: x mandatory; }
+            .influencer-track { animation: none; gap: 16px; width: max-content; }
+            .inf-card { min-width: 280px; max-width: 280px; padding: 24px 20px; border-radius: 16px; scroll-snap-align: start; }
             .pricing-section { padding: 64px 20px; }
             .pricing-grid { max-width: 100%; gap: 16px; }
             .price-card { padding: 28px 22px; border-radius: var(--radius-md); }
-            .price-card.featured { box-shadow: 0 8px 28px rgba(37,99,235,0.1); }
-            .price-crown { font-size: 1.6rem; top: -16px; }
-            .price-badge { font-size: 0.7rem; }
-            .price-name { font-size: 1.1rem; }
-            .price-target { font-size: 0.72rem; }
-            .price-desc { font-size: 0.82rem; min-height: auto; margin-bottom: 14px; }
-            .price-amount { font-size: 2.2rem; margin-bottom: 12px; }
-            .price-amount span { font-size: 0.95rem; }
-            .price-trial { font-size: 0.75rem; padding: 5px 14px; }
-            .price-detail { font-size: 0.78rem; }
-            .entry-fee-box { padding: 20px; margin-top: 28px; }
-            .entry-fee-box p { font-size: 1.15rem; }
-            .entry-fee-box .sub { font-size: 0.82rem; }
-
-            /* === Final CTA === */
             .final-cta { padding: 56px 20px; }
-            .final-cta-card {
-                padding: 28px 22px;
-                border-radius: var(--radius-md);
-                border-width: 3px;
-            }
+            .final-cta-card { padding: 28px 22px; border-radius: var(--radius-md); border-width: 3px; }
             .final-cta-card h3 { font-size: 1.3rem; margin-bottom: 20px; }
-            .email-divider { margin-top: 20px; padding-top: 20px; }
-            .email-divider .email-label { font-size: 0.78rem; }
             .email-form-row { flex-direction: column; gap: 10px; }
-            .email-input { padding: 12px 16px; font-size: 0.88rem; }
-            .email-btn { padding: 12px; font-size: 0.85rem; }
-
-            /* === Footer === */
             .site-footer { padding: 48px 20px 110px; }
-            .footer-logo { font-size: 1.15rem; }
-            .site-footer p { font-size: 0.8rem; }
-            .footer-line-btn { padding: 10px 24px; font-size: 0.85rem; }
-
-            /* === Fixed Bottom CTA === */
             .fixed-cta { padding: 12px 16px; gap: 4px; }
-            .fixed-cta-btn { padding: 13px 24px; font-size: 0.95rem; border-radius: 50px; }
+            .fixed-cta-btn { padding: 13px 24px; font-size: 0.95rem; }
             .fixed-cta-note { font-size: 0.68rem; }
         }
 
         @media (max-width: 480px) {
             .hero h1 { font-size: 1.6rem; }
-            .hero-sub { font-size: 0.92rem; }
-            .hero-eyebrow { font-size: 0.72rem; }
-            .section-label h2 { font-size: 1.3rem; }
-
             .proof-items { grid-template-columns: repeat(2, 1fr); gap: 16px; }
-            .proof-item {
-                background: white;
-                padding: 14px 8px;
-                border-radius: 12px;
-                box-shadow: 0 2px 8px rgba(0,0,0,0.04);
-            }
-            .proof-number { font-size: 1.4rem; }
-            .proof-label { font-size: 0.68rem; }
-
-            .problem-img img, .solution-img img, .testi-img img { max-width: 100%; }
-
-            .feature-card { padding: 20px 18px; gap: 14px; }
-            .feature-card .icon { font-size: 1.5rem; }
-            .feature-card h3 { font-size: 0.92rem; }
-            .feature-card p { font-size: 0.78rem; }
-
-            .inf-card { min-width: 260px; max-width: 260px; padding: 20px 16px; }
-
-            .comp-table { min-width: 520px; }
-            .comp-table thead th { padding: 12px 6px; font-size: 0.68rem; }
-            .comp-table tbody td { padding: 12px 6px; }
-            .comp-icon { font-size: 0.95rem; }
-            .comp-main { font-size: 0.72rem; }
-            .comp-sub { font-size: 0.58rem; }
-
-            .cd-number { font-size: 1.05rem; min-width: 32px; padding: 4px 7px; border-radius: 6px; }
-            .cd-sep { font-size: 0.9rem; }
-
-            .btn-line { padding: 15px 24px; font-size: 0.98rem; }
+            .proof-item { background: white; padding: 14px 8px; border-radius: 12px; box-shadow: 0 2px 8px rgba(0,0,0,0.04); }
+            .features-grid { grid-template-columns: 1fr 1fr; gap: 10px; }
+            .feature-card { padding: 16px 14px; }
+            .feature-card .icon { font-size: 1.6rem; margin-bottom: 8px; }
+            .feature-card h3 { font-size: 0.85rem; }
+            .feature-card p { font-size: 0.75rem; }
         }
 
-        @media (max-width: 360px) {
-            .hero h1 { font-size: 1.45rem; }
-            .section-label h2 { font-size: 1.2rem; }
-            .hero-eyebrow { font-size: 0.68rem; padding: 5px 12px; }
-            .inline-cta { padding: 24px 18px; }
-            .final-cta-card { padding: 24px 18px; }
-        }
-
-        /* Bottom padding for fixed CTA */
         body { padding-bottom: 90px; }
     </style>
 </head>
 <body>
 
+    <!-- Campaign Banner -->
+    <div class="campaign-banner">
+        <div class="campaign-banner-inner">
+            <span class="campaign-banner-text">🎁 &nbsp;入会費半額クーポン配布中 &nbsp;—&nbsp; 3/10まで</span>
+        </div>
+    </div>
+
     <!-- Header -->
     <header class="site-header">
         <div class="container header-inner">
             <div class="logo">Success Academy</div>
-            <a href="https://line.me/R/ti/p/@359fnsdb" onclick="event.preventDefault(); trackLineClick(); var url=this.href; setTimeout(function(){window.open(url,'_blank');},300); return false;" target="_blank" class="header-cta">まずは無料で資料請求</a>
+            <a href="https://line.me/R/ti/p/@359fnsdb" onclick="event.preventDefault(); trackLineClick(); var url=this.href; setTimeout(function(){window.open(url,'_blank');},300); return false;" target="_blank" class="header-cta">今すぐ特典だけをゲット 🎁</a>
         </div>
     </header>
 
@@ -1741,19 +718,31 @@
                     <div class="hero-eyebrow">🌍 世界20カ国の家族が選ぶオンライン日本語スクール</div>
                     <h1>海外にいても、<br>お子さまの<em>「日本語」</em>は<br>伸ばせる。</h1>
                     <p class="hero-sub">海外在住のお子さま専門のオンライン日本語スクール。<br>1日たった25分・送迎なし・宿題なしで、<br>毎日の小さな「できた！」が日本語への自信に変わります。</p>
-                    <div class="hero-cta-group">
-                        <div class="session-countdown-mini">
-                            <p class="countdown-next">次回の説明会まで</p>
-                            <div class="countdown-timer" id="heroCountdown"></div>
+
+                    <!-- Campaign Card -->
+                    <div class="campaign-card">
+                        <div class="campaign-card-badge">🔥 期間限定キャンペーン</div>
+                        <div class="campaign-card-title">LINE登録で<br>入会費半額<em>クーポン</em>プレゼント！</div>
+                        <div class="campaign-card-sub">通常50ドルの入会費が<strong style="color:#1D4ED8;">25ドル引き</strong>になるクーポンをお渡しします。資料請求もLINEから無料でできます。</div>
+                        <div class="campaign-deadline">
+                            ⏰ 終了まで：
+                            <div class="campaign-deadline-cd" id="campaignDeadlineCd"></div>
                         </div>
-                        <button class="btn-line pulse-btn" onclick="event.preventDefault(); trackLineClick(); setTimeout(function(){window.open('https://line.me/R/ti/p/@359fnsdb','_blank');},300);">
-                            📲 まずは無料で資料請求
+                    </div>
+
+                    <div class="hero-cta-group">
+                    <button class="btn-campaign pulse-btn" onclick="event.preventDefault(); trackLineClick(); setTimeout(function(){window.open('https://line.me/R/ti/p/@359fnsdb','_blank');},300);">
+                            🎁 今すぐ特典だけをゲット
                         </button>
-                        <p class="btn-micro">※ 登録無料・いつでも解除OK・30秒で完了</p>
+                        <p class="btn-micro">※ 登録無料・いつでも解除OK</p>
                     </div>
                 </div>
                 <div class="hero-visual">
                     <img src="https://i.imgur.com/l48QbXM.png" alt="Success Academyで学ぶ子供たち" loading="eager">
+                    <div class="hero-badge">
+                        <div class="hero-badge-number">92.5%</div>
+                        <div class="hero-badge-label">継続率</div>
+                    </div>
                 </div>
             </div>
         </div>
@@ -1763,22 +752,10 @@
     <div class="proof-bar">
         <div class="container">
             <div class="proof-items">
-                <div class="proof-item">
-                    <div class="proof-number">1,000+</div>
-                    <div class="proof-label">累計生徒数</div>
-                </div>
-                <div class="proof-item">
-                    <div class="proof-number">20</div>
-                    <div class="proof-label">カ国</div>
-                </div>
-                <div class="proof-item">
-                    <div class="proof-number">92.5%</div>
-                    <div class="proof-label">継続率</div>
-                </div>
-                <div class="proof-item">
-                    <div class="proof-number">6年</div>
-                    <div class="proof-label">運営実績</div>
-                </div>
+                <div class="proof-item"><div class="proof-number">1,000+</div><div class="proof-label">累計生徒数</div></div>
+                <div class="proof-item"><div class="proof-number">20</div><div class="proof-label">カ国</div></div>
+                <div class="proof-item"><div class="proof-number">92.5%</div><div class="proof-label">継続率</div></div>
+                <div class="proof-item"><div class="proof-number">6年</div><div class="proof-label">運営実績</div></div>
             </div>
         </div>
     </div>
@@ -1791,13 +768,7 @@
                 <p>海外で日本語教育に悩むご家族へ</p>
             </div>
             <div class="video-embed">
-                <iframe 
-                    src="https://drive.google.com/file/d/1Zjjw6kLgMjZGcor4nLbJtcs60NWYh5QR/preview" 
-                    allow="autoplay; encrypted-media"
-                    allowfullscreen
-                    title="Success Academy 紹介動画"
-                    loading="lazy">
-                </iframe>
+                <iframe src="https://drive.google.com/file/d/1Zjjw6kLgMjZGcor4nLbJtcs60NWYh5QR/preview" allow="autoplay; encrypted-media" allowfullscreen title="Success Academy 紹介動画" loading="lazy"></iframe>
             </div>
         </div>
     </section>
@@ -1849,133 +820,49 @@
                     </thead>
                     <tbody>
                         <tr>
-                            <td>
-                                <span class="comp-icon">🚗</span>
-                                送迎
-                            </td>
-                            <td>
-                                <span class="comp-main">毎週の送迎が大変</span>
-                                <span class="comp-sub">土日の貴重な時間が送迎で消える</span>
-                            </td>
-                            <td>
-                                <span class="comp-main">🏠 送迎完全不要！</span>
-                                <span class="comp-sub">自宅からオンラインで参加、移動時間ゼロ</span>
-                            </td>
+                            <td><span class="comp-icon">🚗</span>送迎</td>
+                            <td><span class="comp-main">毎週の送迎が大変</span><span class="comp-sub">土日の貴重な時間が送迎で消える</span></td>
+                            <td><span class="comp-main">🏠 送迎完全不要！</span><span class="comp-sub">自宅からオンラインで参加、移動時間ゼロ</span></td>
                         </tr>
                         <tr>
-                            <td>
-                                <span class="comp-icon">💰</span>
-                                費用
-                            </td>
-                            <td>
-                                <span class="comp-main">年間数十万円</span>
-                                <span class="comp-sub">授業料・教材費・施設費で家計に負担</span>
-                            </td>
-                            <td>
-                                <span class="comp-main">💵 月額50USD～</span>
-                                <span class="comp-sub">補習校の1/3以下で週5日学び放題</span>
-                            </td>
+                            <td><span class="comp-icon">💰</span>費用</td>
+                            <td><span class="comp-main">年間数十万円</span><span class="comp-sub">授業料・教材費・施設費で家計に負担</span></td>
+                            <td><span class="comp-main">💵 月額50USD～</span><span class="comp-sub">補習校の1/3以下で週5日学び放題</span></td>
                         </tr>
                         <tr>
-                            <td>
-                                <span class="comp-icon">📚</span>
-                                宿題
-                            </td>
-                            <td>
-                                <span class="comp-main">宿題が多すぎる</span>
-                                <span class="comp-sub">大量の宿題で親子にストレス</span>
-                            </td>
-                            <td>
-                                <span class="comp-main">⏱️ 25分で完結</span>
-                                <span class="comp-sub">宿題なし！現地校との両立も楽々</span>
-                            </td>
+                            <td><span class="comp-icon">📚</span>宿題</td>
+                            <td><span class="comp-main">宿題が多すぎる</span><span class="comp-sub">大量の宿題で親子にストレス</span></td>
+                            <td><span class="comp-main">⏱️ 25分で完結</span><span class="comp-sub">宿題なし！現地校との両立も楽々</span></td>
                         </tr>
                         <tr>
-                            <td>
-                                <span class="comp-icon">📖</span>
-                                レベル
-                            </td>
-                            <td>
-                                <span class="comp-main">学年が上がると難しい</span>
-                                <span class="comp-sub">ついていけず自信を失う</span>
-                            </td>
-                            <td>
-                                <span class="comp-main">🎯 レベル別クラス</span>
-                                <span class="comp-sub">お子様に合った学年で「できた！」を増やす</span>
-                            </td>
+                            <td><span class="comp-icon">📖</span>レベル</td>
+                            <td><span class="comp-main">学年が上がると難しい</span><span class="comp-sub">ついていけず自信を失う</span></td>
+                            <td><span class="comp-main">🎯 レベル別クラス</span><span class="comp-sub">お子様に合った学年で「できた！」を増やす</span></td>
                         </tr>
                     </tbody>
                 </table>
             </div>
             <div class="comp-swipe-hint">← 横にスワイプ →</div>
 
-            <!-- Mobile Comparison Cards (shown on mobile only) -->
-            <div class="comp-mobile">
-                <div class="comp-mobile-card">
-                    <div class="comp-mobile-icon">🚗</div>
-                    <div class="comp-mobile-topic">送迎</div>
-                    <div class="comp-mobile-row comp-mobile-bad">
-                        <div class="comp-mobile-label">😰 補習校</div>
-                        <div class="comp-mobile-text">毎週の送迎が大変<br><span>土日の貴重な時間が消える</span></div>
-                    </div>
-                    <div class="comp-mobile-row comp-mobile-good">
-                        <div class="comp-mobile-label">✅ サクセス</div>
-                        <div class="comp-mobile-text">送迎完全不要！<br><span>自宅からオンラインで参加</span></div>
-                    </div>
-                </div>
-                <div class="comp-mobile-card">
-                    <div class="comp-mobile-icon">💰</div>
-                    <div class="comp-mobile-topic">費用</div>
-                    <div class="comp-mobile-row comp-mobile-bad">
-                        <div class="comp-mobile-label">😰 補習校</div>
-                        <div class="comp-mobile-text">年間数十万円<br><span>授業料・教材費・施設費で負担</span></div>
-                    </div>
-                    <div class="comp-mobile-row comp-mobile-good">
-                        <div class="comp-mobile-label">✅ サクセス</div>
-                        <div class="comp-mobile-text">月額50USD〜<br><span>補習校の1/3以下で週5日学び放題</span></div>
-                    </div>
-                </div>
-                <div class="comp-mobile-card">
-                    <div class="comp-mobile-icon">📚</div>
-                    <div class="comp-mobile-topic">宿題</div>
-                    <div class="comp-mobile-row comp-mobile-bad">
-                        <div class="comp-mobile-label">😰 補習校</div>
-                        <div class="comp-mobile-text">宿題が多すぎる<br><span>大量の宿題で親子にストレス</span></div>
-                    </div>
-                    <div class="comp-mobile-row comp-mobile-good">
-                        <div class="comp-mobile-label">✅ サクセス</div>
-                        <div class="comp-mobile-text">25分で完結<br><span>宿題なし！現地校との両立も楽々</span></div>
-                    </div>
-                </div>
-                <div class="comp-mobile-card">
-                    <div class="comp-mobile-icon">📖</div>
-                    <div class="comp-mobile-topic">レベル</div>
-                    <div class="comp-mobile-row comp-mobile-bad">
-                        <div class="comp-mobile-label">😰 補習校</div>
-                        <div class="comp-mobile-text">学年が上がると難しい<br><span>ついていけず自信を失う</span></div>
-                    </div>
-                    <div class="comp-mobile-row comp-mobile-good">
-                        <div class="comp-mobile-label">✅ サクセス</div>
-                        <div class="comp-mobile-text">レベル別クラス<br><span>お子様に合った学年で「できた！」を増やす</span></div>
-                    </div>
-                </div>
-            </div>
             <div class="inline-cta">
-                <div class="inline-cta-badge">📄 無料資料配布中</div>
-                <h4>まずは資料で<br>詳しく見てみませんか？</h4>
+                <div class="inline-cta-badge">🎁 期間限定・無料特典</div>
+                <h4>LINE登録で<br>入会費半額クーポンをゲット！</h4>
                 
-                <div class="session-cards" id="inlineSessionContainer">
-                    <!-- Dynamically populated by JS -->
+                <!-- Campaign Highlight -->
+                <div class="campaign-highlight-box">
+                    <div class="chb-label">🎉 今だけキャンペーン</div>
+                    <div class="chb-main">入会費が<em>25ドル引き</em>になるクーポン</div>
+                    <div class="chb-sub">LINE登録後、クーポンをお渡しします。入会時にご利用ください。</div>
                 </div>
                 <div class="inline-cta-list">
-                    <p><span>✓</span> レッスン内容がわかる</p>
-                    <p><span>✓</span> 料金・スケジュールもひと目で確認</p>
+                    <p><span>✓</span> 入会費半額クーポン配布（25ドル相当）※入会時に使用</p>
+                    <p><span>✓</span> レッスン内容・料金・スケジュールがわかる資料</p>
                     <p><span>✓</span> LINEでいつでも質問OK</p>
                 </div>
-                <button class="btn-line pulse-btn" onclick="event.preventDefault(); trackLineClick(); setTimeout(function(){window.open('https://line.me/R/ti/p/@359fnsdb','_blank');},300);">
-                    📲 まずは無料で資料請求
+                <button class="btn-campaign pulse-btn" onclick="event.preventDefault(); trackLineClick(); setTimeout(function(){window.open('https://line.me/R/ti/p/@359fnsdb','_blank');},300);" style="width:100%;">
+                    🎁 今すぐ特典だけをゲット
                 </button>
-                <p class="note">※ 登録無料・いつでも解除OK</p>
+                <p class="note">※ 登録無料・いつでも解除OK｜キャンペーン終了：3/10まで</p>
             </div>
         </div>
     </section>
@@ -2006,31 +893,11 @@
                 <h2>世界中のご家族に選ばれる<br>5つの理由</h2>
             </div>
             <div class="features-grid">
-                <div class="feature-card">
-                    <span class="icon">🌍</span>
-                    <h3>世界20カ国から参加</h3>
-                    <p>4つのタイムゾーンで毎日授業。世界中の仲間と一緒に学べます。</p>
-                </div>
-                <div class="feature-card">
-                    <span class="icon">👨‍🏫</span>
-                    <h3>有資格の講師が多数在籍</h3>
-                    <p>教員免許・小学校教員資格など、プロの講師が丁寧に指導します。</p>
-                </div>
-                <div class="feature-card">
-                    <span class="icon">📚</span>
-                    <h3>学年を超えても料金は一律</h3>
-                    <p>追加料金なしで、お子様のレベルに合った学年の授業に自由に参加できます。</p>
-                </div>
-                <div class="feature-card">
-                    <span class="icon">🚗</span>
-                    <h3>送迎は一切不要</h3>
-                    <p>全クラスオンライン。LINEで担当講師といつでも連絡が取れます。</p>
-                </div>
-                <div class="feature-card">
-                    <span class="icon">⏰</span>
-                    <h3>25分 × 平日毎日</h3>
-                    <p>時差に対応した授業時間。短いから、遊びや家族の時間も確保できます。</p>
-                </div>
+                <div class="feature-card"><span class="icon">🌍</span><h3>世界20カ国から参加</h3><p>4つのタイムゾーンで毎日授業。世界中の仲間と一緒に学べます。</p></div>
+                <div class="feature-card"><span class="icon">👨‍🏫</span><h3>有資格の講師が多数在籍</h3><p>教員免許・小学校教員資格など、プロの講師が丁寧に指導します。</p></div>
+                <div class="feature-card"><span class="icon">📚</span><h3>学年を超えても料金は一律</h3><p>追加料金なしで、お子様のレベルに合った学年の授業に自由に参加できます。</p></div>
+                <div class="feature-card"><span class="icon">🚗</span><h3>送迎は一切不要</h3><p>全クラスオンライン。LINEで担当講師といつでも連絡が取れます。</p></div>
+                <div class="feature-card"><span class="icon">⏰</span><h3>25分 × 平日毎日</h3><p>時差に対応した授業時間。短いから、遊びや家族の時間も確保できます。</p></div>
             </div>
             <div class="features-tagline">
                 <p>家でもなく、学校でもない。<br>子どもが"自分から学びたくなる"第3の場所。</p>
@@ -2047,23 +914,12 @@
             </div>
             <div class="testi-grid">
                 <div class="testi-content">
-                    <div class="testi-card">
-                        <p>「終わったあとでも友達と遊べるので、帰ってすぐ授業に参加し始めるようになりました。」</p>
-                        <p class="author">— アメリカ在住・Mさん（8歳ママ）</p>
-                    </div>
-                    <div class="testi-card">
-                        <p>「祖父母と日本語で話せるようになって、家族全員が感動しました。」</p>
-                        <p class="author">— オーストラリア在住・Kさん（7歳の子供のママ）</p>
-                    </div>
-                    <div class="testi-card">
-                        <p>「4歳の娘が小学校入学前に引き算・足し算ができるようになりました。」</p>
-                        <p class="author">— ドイツ在住・Rさん（6歳のママ）</p>
-                    </div>
+                    <div class="testi-card"><p>「終わったあとでも友達と遊べるので、帰ってすぐ授業に参加し始めるようになりました。」</p><p class="author">— アメリカ在住・Mさん（8歳ママ）</p></div>
+                    <div class="testi-card"><p>「祖父母と日本語で話せるようになって、家族全員が感動しました。」</p><p class="author">— オーストラリア在住・Kさん（7歳の子供のママ）</p></div>
+                    <div class="testi-card"><p>「4歳の娘が小学校入学前に引き算・足し算ができるようになりました。」</p><p class="author">— ドイツ在住・Rさん（6歳のママ）</p></div>
                     <p class="testi-highlight">気づけば月500分以上——<br>自宅で自然と学ぶお子さまに。</p>
                 </div>
-                <div class="testi-img">
-                    <img src="https://i.imgur.com/tiP4hQv.png" alt="学習する子供" loading="lazy">
-                </div>
+                <div class="testi-img"><img src="https://i.imgur.com/tiP4hQv.png" alt="学習する子供" loading="lazy"></div>
             </div>
         </div>
     </section>
@@ -2078,115 +934,15 @@
         </div>
         <div class="influencer-track-wrapper">
             <div class="influencer-track">
-                <!-- Card 1 -->
-                <div class="inf-card">
-                    <div class="inf-card-header">
-                        <img src="https://i.imgur.com/ye4vAGS.png" alt="Mrs. Cross">
-                        <div>
-                            <div class="inf-name">Mrs. Cross 様</div>
-                            <div class="inf-details">YouTube 16.4万人 | アメリカ在住</div>
-                        </div>
-                    </div>
-                    <div class="inf-body">
-                        <h4>日本滞在中や移動中でも学べる柔軟さ</h4>
-                        <p>最初は集中が難しかった算数も、今では楽しんで取り組めています。先生が丁寧に教えてくれるので安心です。ネット環境があれば日本滞在中や移動中でも受講でき、25分の短い授業で子どもは遊ぶ時間も確保可能。親も送り迎え不要で家事をしながら見守れるのが便利です。</p>
-                    </div>
-                </div>
-                <!-- Card 2 -->
-                <div class="inf-card">
-                    <div class="inf-card-header">
-                        <img src="https://i.imgur.com/A84WSkj.png" alt="ブラウンファミリーの大冒険">
-                        <div>
-                            <div class="inf-name">ブラウンファミリーの大冒険 様</div>
-                            <div class="inf-details">YouTube 1.03万人 | アメリカ在住</div>
-                        </div>
-                    </div>
-                    <div class="inf-body">
-                        <h4>学びとコミュニケーションが同時に育つ場</h4>
-                        <p>子どもは楽しそうに参加しており、特に偉人のクラスは親子の会話を広げてくれます。送迎不要で自宅から安心して受講でき、先生の丁寧な指導や日本語でのコミュニケーションにも満足しています。引っ越し直後でも、人とつながれる場があるのはとてもありがたいです。</p>
-                    </div>
-                </div>
-                <!-- Card 3 -->
-                <div class="inf-card">
-                    <div class="inf-card-header">
-                        <img src="https://i.imgur.com/sZbmDlv.png" alt="Trilingual Family">
-                        <div>
-                            <div class="inf-name">Trilingual Family 様</div>
-                            <div class="inf-details">YouTube 3.75万人 | ドイツ在住</div>
-                        </div>
-                    </div>
-                    <div class="inf-body">
-                        <h4>送迎不要で親も子も大満足</h4>
-                        <p>子どもは楽しんで受講しており、特に偉人のクラスはとても気に入っています。送迎が不要で、親としても安心して利用できる点が大変助かります。レッスンやお問い合わせへの対応もとてもスムーズで、安心して続けられる環境だと感じています。</p>
-                    </div>
-                </div>
-                <!-- Card 4 -->
-                <div class="inf-card">
-                    <div class="inf-card-header">
-                        <img src="https://i.imgur.com/S4cjBqL.png" alt="かおり | お家子育て☆イギリス">
-                        <div>
-                            <div class="inf-name">かおり 様</div>
-                            <div class="inf-details">Instagram 2.9万人 | イギリス在住</div>
-                        </div>
-                    </div>
-                    <div class="inf-body">
-                        <h4>国語も算数も少しずつ自信に</h4>
-                        <p>発言が苦手な長女も国語や偉人クラスを楽しめるようになり、次女は計算が速くなり、さくらんぼ計算にも慣れてきました。先生が性格に合わせて丁寧に対応してくださるおかげで、少しずつ場に慣れ、練習すれば伸びるという手応えを感じています。</p>
-                    </div>
-                </div>
-                <!-- Duplicate for infinite scroll -->
-                <div class="inf-card">
-                    <div class="inf-card-header">
-                        <img src="https://i.imgur.com/ye4vAGS.png" alt="Mrs. Cross">
-                        <div>
-                            <div class="inf-name">Mrs. Cross 様</div>
-                            <div class="inf-details">YouTube 16.4万人 | アメリカ在住</div>
-                        </div>
-                    </div>
-                    <div class="inf-body">
-                        <h4>日本滞在中や移動中でも学べる柔軟さ</h4>
-                        <p>最初は集中が難しかった算数も、今では楽しんで取り組めています。先生が丁寧に教えてくれるので安心です。ネット環境があれば日本滞在中や移動中でも受講でき、25分の短い授業で子どもは遊ぶ時間も確保可能。親も送り迎え不要で家事をしながら見守れるのが便利です。</p>
-                    </div>
-                </div>
-                <div class="inf-card">
-                    <div class="inf-card-header">
-                        <img src="https://i.imgur.com/A84WSkj.png" alt="ブラウンファミリーの大冒険">
-                        <div>
-                            <div class="inf-name">ブラウンファミリーの大冒険 様</div>
-                            <div class="inf-details">YouTube 1.03万人 | アメリカ在住</div>
-                        </div>
-                    </div>
-                    <div class="inf-body">
-                        <h4>学びとコミュニケーションが同時に育つ場</h4>
-                        <p>子どもは楽しそうに参加しており、特に偉人のクラスは親子の会話を広げてくれます。送迎不要で自宅から安心して受講でき、先生の丁寧な指導や日本語でのコミュニケーションにも満足しています。引っ越し直後でも、人とつながれる場があるのはとてもありがたいです。</p>
-                    </div>
-                </div>
-                <div class="inf-card">
-                    <div class="inf-card-header">
-                        <img src="https://i.imgur.com/sZbmDlv.png" alt="Trilingual Family">
-                        <div>
-                            <div class="inf-name">Trilingual Family 様</div>
-                            <div class="inf-details">YouTube 3.75万人 | ドイツ在住</div>
-                        </div>
-                    </div>
-                    <div class="inf-body">
-                        <h4>送迎不要で親も子も大満足</h4>
-                        <p>子どもは楽しんで受講しており、特に偉人のクラスはとても気に入っています。送迎が不要で、親としても安心して利用できる点が大変助かります。レッスンやお問い合わせへの対応もとてもスムーズで、安心して続けられる環境だと感じています。</p>
-                    </div>
-                </div>
-                <div class="inf-card">
-                    <div class="inf-card-header">
-                        <img src="https://i.imgur.com/S4cjBqL.png" alt="かおり | お家子育て☆イギリス">
-                        <div>
-                            <div class="inf-name">かおり 様</div>
-                            <div class="inf-details">Instagram 2.9万人 | イギリス在住</div>
-                        </div>
-                    </div>
-                    <div class="inf-body">
-                        <h4>国語も算数も少しずつ自信に</h4>
-                        <p>発言が苦手な長女も国語や偉人クラスを楽しめるようになり、次女は計算が速くなり、さくらんぼ計算にも慣れてきました。先生が性格に合わせて丁寧に対応してくださるおかげで、少しずつ場に慣れ、練習すれば伸びるという手応えを感じています。</p>
-                    </div>
-                </div>
+                <div class="inf-card"><div class="inf-card-header"><img src="https://i.imgur.com/ye4vAGS.png" alt="Mrs. Cross"><div><div class="inf-name">Mrs. Cross 様</div><div class="inf-details">YouTube 16.4万人 | アメリカ在住</div></div></div><div class="inf-body"><h4>日本滞在中や移動中でも学べる柔軟さ</h4><p>最初は集中が難しかった算数も、今では楽しんで取り組めています。先生が丁寧に教えてくれるので安心です。ネット環境があれば日本滞在中や移動中でも受講でき、25分の短い授業で子どもは遊ぶ時間も確保可能。親も送り迎え不要で家事をしながら見守れるのが便利です。</p></div></div>
+                <div class="inf-card"><div class="inf-card-header"><img src="https://i.imgur.com/A84WSkj.png" alt="ブラウンファミリーの大冒険"><div><div class="inf-name">ブラウンファミリーの大冒険 様</div><div class="inf-details">YouTube 1.03万人 | アメリカ在住</div></div></div><div class="inf-body"><h4>学びとコミュニケーションが同時に育つ場</h4><p>子どもは楽しそうに参加しており、特に偉人のクラスは親子の会話を広げてくれます。送迎不要で自宅から安心して受講でき、先生の丁寧な指導や日本語でのコミュニケーションにも満足しています。</p></div></div>
+                <div class="inf-card"><div class="inf-card-header"><img src="https://i.imgur.com/sZbmDlv.png" alt="Trilingual Family"><div><div class="inf-name">Trilingual Family 様</div><div class="inf-details">YouTube 3.75万人 | ドイツ在住</div></div></div><div class="inf-body"><h4>送迎不要で親も子も大満足</h4><p>子どもは楽しんで受講しており、特に偉人のクラスはとても気に入っています。送迎が不要で、親としても安心して利用できる点が大変助かります。レッスンやお問い合わせへの対応もとてもスムーズです。</p></div></div>
+                <div class="inf-card"><div class="inf-card-header"><img src="https://i.imgur.com/S4cjBqL.png" alt="かおり"><div><div class="inf-name">かおり 様</div><div class="inf-details">Instagram 2.9万人 | イギリス在住</div></div></div><div class="inf-body"><h4>国語も算数も少しずつ自信に</h4><p>発言が苦手な長女も国語や偉人クラスを楽しめるようになり、次女は計算が速くなりました。先生が性格に合わせて丁寧に対応してくださるおかげで、少しずつ場に慣れ、練習すれば伸びるという手応えを感じています。</p></div></div>
+                <!-- Duplicates for scroll -->
+                <div class="inf-card"><div class="inf-card-header"><img src="https://i.imgur.com/ye4vAGS.png" alt="Mrs. Cross"><div><div class="inf-name">Mrs. Cross 様</div><div class="inf-details">YouTube 16.4万人 | アメリカ在住</div></div></div><div class="inf-body"><h4>日本滞在中や移動中でも学べる柔軟さ</h4><p>最初は集中が難しかった算数も、今では楽しんで取り組めています。先生が丁寧に教えてくれるので安心です。ネット環境があれば日本滞在中や移動中でも受講でき、25分の短い授業で子どもは遊ぶ時間も確保可能。</p></div></div>
+                <div class="inf-card"><div class="inf-card-header"><img src="https://i.imgur.com/A84WSkj.png" alt="ブラウンファミリーの大冒険"><div><div class="inf-name">ブラウンファミリーの大冒険 様</div><div class="inf-details">YouTube 1.03万人 | アメリカ在住</div></div></div><div class="inf-body"><h4>学びとコミュニケーションが同時に育つ場</h4><p>子どもは楽しそうに参加しており、特に偉人のクラスは親子の会話を広げてくれます。送迎不要で自宅から安心して受講できます。</p></div></div>
+                <div class="inf-card"><div class="inf-card-header"><img src="https://i.imgur.com/sZbmDlv.png" alt="Trilingual Family"><div><div class="inf-name">Trilingual Family 様</div><div class="inf-details">YouTube 3.75万人 | ドイツ在住</div></div></div><div class="inf-body"><h4>送迎不要で親も子も大満足</h4><p>子どもは楽しんで受講しており、特に偉人のクラスはとても気に入っています。送迎が不要で、親としても安心して利用できる点が大変助かります。</p></div></div>
+                <div class="inf-card"><div class="inf-card-header"><img src="https://i.imgur.com/S4cjBqL.png" alt="かおり"><div><div class="inf-name">かおり 様</div><div class="inf-details">Instagram 2.9万人 | イギリス在住</div></div></div><div class="inf-body"><h4>国語も算数も少しずつ自信に</h4><p>発言が苦手な長女も国語や偉人クラスを楽しめるようになり、次女は計算が速くなりました。先生が性格に合わせて丁寧に対応してくださるおかげで少しずつ自信がつきました。</p></div></div>
             </div>
         </div>
         <div class="container">
@@ -2232,8 +988,12 @@
                 </div>
             </div>
             <div class="entry-fee-box">
-                <p>入会費　50 USD</p>
-                <p class="sub">※初月のみ一律</p>
+                <p>入会費　<s style="opacity:0.5;font-size:1rem;">50 USD</s>　→　<span style="color:#1D4ED8;">25 USD</span></p>
+                <p class="sub">🎁 期間限定キャンペーン中（〜3/10）｜LINE登録で半額クーポンを配布中</p>
+            </div>
+            <div class="campaign-pricing-note">
+                <p>🔥 今すぐLINE登録で<span style="color:#1D4ED8;">25ドル引き</span>クーポンをゲット！</p>
+                <p class="cpn-sub">キャンペーンは3月10日（火）23:59まで。お早めに。</p>
             </div>
         </div>
     </section>
@@ -2242,25 +1002,27 @@
     <section class="final-cta">
         <div class="final-cta-inner">
             <div class="final-cta-card">
-                <div class="inline-cta-badge">📄 無料資料配布中</div>
-                <h3>お子さまの日本語の未来、<br>まずは資料で一歩踏み出しませんか？</h3>
+                <div class="inline-cta-badge">🎁 入会費半額クーポン配布中</div>
+                <h3>LINE登録で<br>25ドル分のクーポンをゲット！</h3>
                 
-                <div class="session-cards" id="finalSessionContainer">
-                    <!-- Dynamically populated by JS -->
+                <!-- Campaign highlight -->
+                <div class="campaign-highlight-box" style="margin-bottom:20px;">
+                    <div class="chb-label">⏰ キャンペーン終了まで</div>
+                    <div class="chb-main" id="finalCampaignCd">計算中...</div>
+                    <div class="chb-sub">3月10日（火）23:59まで</div>
                 </div>
-
                 <div class="inline-cta-list">
-                    <p><span>✓</span> レッスン内容がわかる</p>
+                    <p><span>✓</span> 入会費半額クーポン配布（25ドル相当）※入会時に使用</p>
+                    <p><span>✓</span> レッスン内容がわかる資料</p>
                     <p><span>✓</span> 料金・スケジュールもひと目で確認</p>
                     <p><span>✓</span> LINEでいつでも質問OK</p>
                 </div>
-                <p style="font-size: 0.85rem; color: var(--orange-600); font-weight: 600; margin-bottom: 16px;">📲 LINEから簡単にダウンロードできます</p>
-                <button id="lineRegButton2" class="btn-line pulse-btn" onclick="event.preventDefault(); trackLineClick(); setTimeout(function(){window.open('https://line.me/R/ti/p/@359fnsdb','_blank');},300);" style="width: 100%;">
-                    まずは無料で資料請求
+                <p style="font-size: 0.85rem; color: var(--orange-600); font-weight: 600; margin-bottom: 16px;">📲 LINEから簡単に受け取れます</p>
+                <button id="lineRegButton2" class="btn-campaign pulse-btn" onclick="event.preventDefault(); trackLineClick(); setTimeout(function(){window.open('https://line.me/R/ti/p/@359fnsdb','_blank');},300);" style="width: 100%;">
+                    🎁 今すぐ特典だけをゲット
                 </button>
-                <p style="font-size: 0.75rem; color: var(--gray-400); margin-top: 12px;">※ 登録無料・いつでも解除OK</p>
+                <p style="font-size: 0.75rem; color: var(--gray-400); margin-top: 12px;">※ 登録無料・いつでも解除OK｜キャンペーンは3/10まで</p>
                 
-                <!-- Email Form -->
                 <div class="email-divider">
                     <p class="email-label">📧 LINEが使えない方はメールで</p>
                     <div id="mc_embed_shell4">
@@ -2283,99 +1045,57 @@
         <div class="container">
             <div class="footer-logo">サクセスアカデミー</div>
             <p>海外在住のご家族向けに、<br>オンラインで日本語教育を提供しています。</p>
-            <a href="https://line.me/R/ti/p/@359fnsdb" onclick="event.preventDefault(); trackLineClick(); var url=this.href; setTimeout(function(){window.open(url,'_blank');},300); return false;" target="_blank" class="footer-line-btn">まずは無料で資料請求</a>
-            <div class="footer-copy">
-                <p>© 2026 サクセスアカデミー All rights reserved.</p>
-            </div>
+            <a href="https://line.me/R/ti/p/@359fnsdb" onclick="event.preventDefault(); trackLineClick(); var url=this.href; setTimeout(function(){window.open(url,'_blank');},300); return false;" target="_blank" class="footer-line-btn">🎁 今すぐ特典だけをゲット</a>
+            <div class="footer-copy"><p>© 2026 サクセスアカデミー All rights reserved.</p></div>
         </div>
     </footer>
 
     <!-- Fixed Bottom CTA -->
     <div class="fixed-cta">
         <a href="https://line.me/R/ti/p/@359fnsdb" onclick="event.preventDefault(); trackLineClick(); var url=this.href; setTimeout(function(){window.open(url,'_blank');},300); return false;" target="_blank" style="text-decoration: none; width: 100%; max-width: 400px;">
-            <button class="fixed-cta-btn">📲 まずは無料で資料請求</button>
+            <button class="fixed-cta-btn">🎁 今すぐ特典だけをゲット</button>
         </a>
-        <p class="fixed-cta-note">次回説明会: <span id="fixedCtaNext"></span></p>
+        <p class="fixed-cta-note">入会費半額クーポン配布中｜終了まで：<span id="fixedCtaNext"></span></p>
     </div>
 
-    <!-- Tracking Script (PRESERVED) -->
+    <!-- Tracking Script -->
     <script>
     var lastTrackTime = 0;
     var TRACK_DEBOUNCE_MS = 2000;
-    
     function trackLineClick() {
       var now = Date.now();
-      if (now - lastTrackTime < TRACK_DEBOUNCE_MS) {
-        console.log('⏱️ デバウンス中: トラッキングをスキップ');
-        return;
-      }
+      if (now - lastTrackTime < TRACK_DEBOUNCE_MS) return;
       lastTrackTime = now;
-      
-      // Meta Pixel イベント
       if (typeof fbq === 'function') {
-        fbq('trackCustom', 'LineRegistrationClick_EN', {
-          content_name: 'LINE公式アカウント登録',
-          content_category: 'Free Trial Registration',
-          currency: 'USD',
-          value: 0.00
-        });
-        console.log('✅ Meta Pixel LineRegistrationClick_EN イベント発火');
-      } else {
-        console.warn('⚠️ fbq が定義されていません');
+        fbq('trackCustom', 'LineRegistrationClick_EN', { content_name: 'LINE公式アカウント登録', content_category: 'Free Trial Registration', currency: 'USD', value: 0.00 });
       }
-      
-      // Google Analytics イベント
       if (typeof gtag === 'function') {
-        gtag('event', 'line_registration_click', {
-          'event_category': 'engagement',
-          'event_label': 'LINE Registration Button'
-        });
-        console.log('✅ GA4 イベント発火');
+        gtag('event', 'line_registration_click', { 'event_category': 'engagement', 'event_label': 'LINE Registration Button' });
       }
     }
-    
     (function () {
-      var btn1 = document.getElementById('lineRegButton');
       var btn2 = document.getElementById('lineRegButton2');
       var clickProcessed = false;
-      
       function handleClick() {
         if (clickProcessed) return;
         clickProcessed = true;
         var lineUrl = 'https://line.me/R/ti/p/@359fnsdb';
         trackLineClick();
-        try { window.parent && window.parent.postMessage('LineButtonClicked', '*'); } catch (e) {}
         setTimeout(function () {
           var w = window.open(lineUrl, '_blank');
-          if (!w || w.closed || typeof w.closed === 'undefined') {
-            window.location.href = lineUrl;
-          }
+          if (!w || w.closed || typeof w.closed === 'undefined') { window.location.href = lineUrl; }
           setTimeout(function() { clickProcessed = false; }, 3000);
         }, 300);
       }
-      
-      if (btn1) btn1.addEventListener('click', handleClick);
       if (btn2) btn2.addEventListener('click', handleClick);
     })();
-    </script>
-
-    <script>
-    window.addEventListener('message', function (event) {
-      if (event && event.data === 'LineButtonClicked') {
-        trackLineClick();
-      }
-    });
     </script>
 
     <!-- Countdown Timer Script -->
     <script>
     (function() {
-      // Sessions in JST (UTC+9) — 10:00 JST = 01:00 UTC
-      var sessions = [
-        { date: new Date('2026-02-16T01:00:00Z'), dateText: '2/16 (月) 10:00〜', type: '個別レッスン説明会', short: '2/16(月) 10:00〜' },
-        { date: new Date('2026-02-24T01:00:00Z'), dateText: '2/24 (火) 10:00〜', type: 'フリーレッスン説明会', short: '2/24(火) 10:00〜' }
-      ];
-
+      // Campaign deadline: March 10, 2026 23:59 JST = March 10 14:59 UTC
+      var CAMPAIGN_END = new Date('2026-03-10T14:59:00Z');
       function getTimeLeft(target) {
         var diff = target.getTime() - Date.now();
         if (diff <= 0) return null;
@@ -2387,83 +1107,67 @@
         };
       }
 
-      function getNextSession() {
-        var now = Date.now();
-        for (var i = 0; i < sessions.length; i++) {
-          if (sessions[i].date.getTime() > now) return sessions[i];
-        }
-        return null;
+      function formatCampaignCountdown(tl) {
+        if (!tl) return '終了しました';
+        return tl.d + '日 ' + String(tl.h).padStart(2,'0') + ':' + String(tl.m).padStart(2,'0') + ':' + String(tl.s).padStart(2,'0');
       }
 
-      function renderHero(el, session) {
-        if (!el) return;
-        if (!session) {
-          el.innerHTML = '<span class="session-ended">次回の説明会をお待ちください</span>';
-          return;
-        }
-        var tl = getTimeLeft(session.date);
-        if (!tl) {
-          el.innerHTML = '<span class="session-ended">次回の説明会をお待ちください</span>';
-          return;
-        }
-        el.innerHTML =
-          '<div class="cd-unit"><div class="cd-number">' + tl.d + '</div><div class="cd-label">日</div></div>' +
-          '<div class="cd-sep">:</div>' +
-          '<div class="cd-unit"><div class="cd-number">' + String(tl.h).padStart(2,'0') + '</div><div class="cd-label">時間</div></div>' +
-          '<div class="cd-sep">:</div>' +
-          '<div class="cd-unit"><div class="cd-number">' + String(tl.m).padStart(2,'0') + '</div><div class="cd-label">分</div></div>' +
-          '<div class="cd-sep">:</div>' +
-          '<div class="cd-unit"><div class="cd-number">' + String(tl.s).padStart(2,'0') + '</div><div class="cd-label">秒</div></div>';
+      function renderMiniCd(tl) {
+        if (!tl) return '<span style="color:#1D4ED8;">終了しました</span>';
+        return '<span class="cd-mini">' + tl.d + '日</span>' +
+               '<span class="cd-mini-sep">:</span>' +
+               '<span class="cd-mini">' + String(tl.h).padStart(2,'0') + 'h</span>' +
+               '<span class="cd-mini-sep">:</span>' +
+               '<span class="cd-mini">' + String(tl.m).padStart(2,'0') + 'm</span>' +
+               '<span class="cd-mini-sep">:</span>' +
+               '<span class="cd-mini">' + String(tl.s).padStart(2,'0') + 's</span>';
       }
-
-      function renderSessionCard(containerId, session) {
-        var el = document.getElementById(containerId);
-        if (!el) return;
-        if (!session) {
-          el.innerHTML = '<div class="session-card"><span class="session-ended">次回の説明会日程はLINEでお知らせします</span></div>';
-          return;
-        }
-        var tl = getTimeLeft(session.date);
-        var countdownText = tl 
-          ? '<div class="session-countdown-inline">あと' + tl.d + '日' + tl.h + '時間' + tl.m + '分' + tl.s + '秒</div>'
-          : '<div class="session-countdown-inline"><span class="session-ended">終了しました</span></div>';
-        
-        el.innerHTML =
-          '<div class="session-card">' +
-            '<div class="session-date">' + session.dateText + '</div>' +
-            '<div class="session-type">' + session.type + '</div>' +
-            countdownText +
-          '</div>';
-      }
-
       function update() {
-        var next = getNextSession();
+        var ctl = getTimeLeft(CAMPAIGN_END);
+        // Campaign banner countdown
+        var bannerEl = document.getElementById('bannerCountdown');
+        if (bannerEl) bannerEl.textContent = ctl ? '残り ' + formatCampaignCountdown(ctl) : 'キャンペーン終了';
 
-        // Hero countdown
-        renderHero(document.getElementById('heroCountdown'), next);
+        // Campaign deadline in hero
+        var cdEl = document.getElementById('campaignDeadlineCd');
+        if (cdEl) cdEl.innerHTML = renderMiniCd(ctl);
 
-        // Session cards — show only next session
-        renderSessionCard('inlineSessionContainer', next);
-        renderSessionCard('finalSessionContainer', next);
-
-        // Fixed CTA bottom bar
+        // Final CTA campaign countdown
+        var finalEl = document.getElementById('finalCampaignCd');
+        if (finalEl) finalEl.textContent = ctl ? formatCampaignCountdown(ctl) : '終了しました';
+        // Fixed CTA
         var fixedEl = document.getElementById('fixedCtaNext');
         if (fixedEl) {
-          if (next) {
-            var tl = getTimeLeft(next.date);
-            if (tl) {
-              fixedEl.textContent = next.short + '（あと' + tl.d + '日' + tl.h + '時間）';
-            } else {
-              fixedEl.textContent = '次回日程はLINEでお知らせ';
-            }
+          if (ctl) {
+            fixedEl.textContent = ctl.d + '日' + ctl.h + '時間' + ctl.m + '分';
           } else {
-            fixedEl.textContent = '次回日程はLINEでお知らせ';
+            fixedEl.textContent = '終了しました';
           }
         }
       }
 
       update();
       setInterval(update, 1000);
+    })();
+    </script>
+
+
+    <script>
+    (function() {
+        function setOffsets() {
+            var banner = document.querySelector('.campaign-banner');
+            var header = document.querySelector('.site-header');
+            var bh = banner ? banner.getBoundingClientRect().height : 44;
+            document.documentElement.style.setProperty('--banner-h', bh + 'px');
+            // After setting banner-h, measure header
+            if (header) {
+                var hh = header.getBoundingClientRect().height;
+                document.documentElement.style.setProperty('--header-h', hh + 'px');
+            }
+        }
+        setOffsets();
+        window.addEventListener('resize', setOffsets);
+        window.addEventListener('load', setOffsets);
     })();
     </script>
 
