@@ -850,9 +850,9 @@
                 
                 <!-- Campaign Highlight -->
                 <div class="campaign-highlight-box">
-                    <div class="chb-label">🎉 今だけキャンペーン</div>
-                    <div class="chb-main">入会費が<em>25ドル引き</em>になるクーポン</div>
-                    <div class="chb-sub">LINE登録後、クーポンをお渡しします。入会時にご利用ください。</div>
+                    <div class="chb-label">⏰ キャンペーン終了まで</div>
+                    <div class="chb-main" id="inlineCampaignCd">計算中...</div>
+                    <div class="chb-sub">3月10日（火）23:59まで｜LINE登録でクーポンをお渡しします</div>
                 </div>
                 <div class="inline-cta-list">
                     <p><span>✓</span> 入会費半額クーポン配布（25ドル相当）※入会時に使用</p>
@@ -1133,6 +1133,9 @@
         if (cdEl) cdEl.innerHTML = renderMiniCd(ctl);
 
         // Final CTA campaign countdown
+        var inlineEl = document.getElementById('inlineCampaignCd');
+        if (inlineEl) inlineEl.textContent = ctl ? formatCampaignCountdown(ctl) : '終了しました';
+
         var finalEl = document.getElementById('finalCampaignCd');
         if (finalEl) finalEl.textContent = ctl ? formatCampaignCountdown(ctl) : '終了しました';
         // Fixed CTA
