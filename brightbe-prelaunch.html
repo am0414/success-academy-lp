@@ -21,8 +21,6 @@
             box-shadow: 0 10px 40px rgba(0,0,0,0.1);
             overflow: hidden;
         }
-
-        /* ── HEADER ── */
         .header {
             background: linear-gradient(135deg, #2563eb 0%, #3b82f6 50%, #60a5fa 100%);
             padding: 50px 30px;
@@ -39,7 +37,6 @@
             background: radial-gradient(circle, rgba(255,255,255,0.2) 0%, transparent 50%);
         }
         .header > * { position: relative; z-index: 1; }
-
         .lang-switcher {
             position: absolute; top: 15px; right: 15px; z-index: 10;
             display: flex; gap: 5px;
@@ -53,7 +50,6 @@
             transition: all 0.3s;
         }
         .lang-btn.active { background: white; color: #1d4ed8; border-color: white; }
-
         .open-badge-big {
             display: inline-block; background: white; color: #1d4ed8;
             padding: 12px 35px; border-radius: 10px;
@@ -75,8 +71,6 @@
             font-weight: 700;
             text-shadow: 0 2px 10px rgba(0,0,0,0.2);
         }
-
-        /* ── CONTENT ── */
         .content { padding: 40px 35px; }
         .intro {
             background: #f8f9fa;
@@ -85,7 +79,6 @@
             border-radius: 0 12px 12px 0;
         }
         .intro p { color: #555; font-size: 15px; }
-
         .section { margin-bottom: 30px; }
         .section-title {
             font-size: 18px; font-weight: 700;
@@ -97,8 +90,6 @@
             background: linear-gradient(135deg, #2563eb, #60a5fa);
             border-radius: 2px;
         }
-
-        /* ── PRICE BOX ── */
         @keyframes priceGlow {
             0%, 100% { box-shadow: 0 0 20px rgba(37,99,235,0.3), 0 8px 32px rgba(37,99,235,0.15); }
             50% { box-shadow: 0 0 35px rgba(37,99,235,0.5), 0 8px 40px rgba(37,99,235,0.25); }
@@ -168,8 +159,6 @@
             font-size: 14px; font-weight: 700; margin-top: 18px;
             box-shadow: 0 4px 15px rgba(0,0,0,0.15);
         }
-
-        /* ── FEATURES ── */
         .features { display: grid; gap: 12px; }
         .feature-item {
             display: flex; align-items: flex-start; gap: 12px;
@@ -178,15 +167,12 @@
         }
         .feature-icon { font-size: 20px; flex-shrink: 0; }
         .feature-text { font-size: 15px; color: #444; }
-
-        /* ── SCHEDULE ── */
         .schedule-table { width: 100%; border-collapse: collapse; margin-top: 10px; }
         .schedule-table th, .schedule-table td {
             padding: 12px 15px; text-align: left;
             border-bottom: 1px solid #eee; font-size: 14px;
         }
         .schedule-table th { background: #2563eb; font-weight: 600; color: white; }
-
         .tz-btn-wrap {
             display: flex; flex-wrap: wrap; justify-content: center; gap: 5px;
         }
@@ -200,8 +186,6 @@
             background: #2563eb; color: white;
             border-color: #2563eb; font-weight: 600;
         }
-
-        /* ── TIMETABLE CARDS ── */
         .tt-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 14px; }
         .tt-block { border-radius: 12px; overflow: hidden; border: 1px solid #eee; }
         .tt-header {
@@ -224,10 +208,6 @@
         .tt-label { font-weight: 600; color: #333; text-align: right; }
         .tt-legend { background: #fffdf5; }
         .tt-legend .tt-label { color: #f39c12; }
-
-        /* ── CURRICULUM TABS ── */
-
-        /* ── QUARTER SYSTEM ── */
         .quarter-box {
             background: linear-gradient(135deg, #f0f4ff 0%, #e8f0fe 100%);
             border: 2px solid #2563eb;
@@ -244,9 +224,7 @@
             font-size: 14px; color: #666;
             margin-bottom: 24px; line-height: 1.7;
         }
-        .quarter-steps {
-            display: grid; gap: 14px; text-align: left;
-        }
+        .quarter-steps { display: grid; gap: 14px; text-align: left; }
         .quarter-step {
             display: flex; align-items: flex-start; gap: 14px;
             background: white; border-radius: 12px;
@@ -260,9 +238,7 @@
         }
         .step-text { font-size: 14px; color: #444; line-height: 1.7; }
         .step-text strong { color: #333; }
-        .curr-tabs {
-            display: flex; gap: 6px; margin-bottom: 16px;
-        }
+        .curr-tabs { display: flex; gap: 6px; margin-bottom: 16px; }
         .curr-tab {
             flex: 1; padding: 10px; border-radius: 10px;
             border: 2px solid #eee; background: white;
@@ -273,29 +249,32 @@
         .curr-tab.active-reading { border-color: #ff7e33; color: #ff7e33; background: #fff8f3; }
         .curr-panel { display: none; }
         .curr-panel.active { display: block; }
-
         .level-item {
             padding: 14px 16px; margin-bottom: 8px;
             border-radius: 10px; background: #f8f9fa;
             border-left: 3px solid #2563eb;
         }
         .level-item.reading { border-left-color: #ff7e33; }
-        .level-name {
-            font-weight: 700; font-size: 14px; color: #333;
-            margin-bottom: 4px;
-        }
+        .level-name { font-weight: 700; font-size: 14px; color: #333; margin-bottom: 4px; }
         .level-desc { font-size: 13px; color: #666; line-height: 1.6; }
-
-        /* ── FAQ ── */
         .faq-list { display: grid; gap: 15px; }
         .faq-item {
             background: #f8f9fa; border-radius: 10px;
             padding: 15px 20px; border-left: 3px solid #2563eb;
+            cursor: pointer; transition: background 0.2s;
         }
-        .faq-q { font-weight: 600; color: #333; margin-bottom: 8px; font-size: 15px; }
-        .faq-a { color: #555; font-size: 14px; line-height: 1.7; }
-
-        /* ── CTA ── */
+        .faq-item:hover { background: #f0f4ff; }
+        .faq-q {
+            font-weight: 600; color: #333; font-size: 15px;
+            display: flex; justify-content: space-between; align-items: flex-start; gap: 10px;
+        }
+        .faq-q::after {
+            content: '＋'; color: #2563eb; font-size: 20px; font-weight: 700;
+            flex-shrink: 0; line-height: 1;
+        }
+        .faq-item.open .faq-q::after { content: '－'; }
+        .faq-a { color: #555; font-size: 14px; line-height: 1.7; display: none; margin-top: 8px; }
+        .faq-item.open .faq-a { display: block; }
         .cta-section {
             background: #f8f9fa; padding: 30px;
             text-align: center; color: #333;
@@ -312,8 +291,6 @@
         }
         .cta-btn:hover { background: #1d4ed8; transform: translateY(-2px); box-shadow: 0 6px 20px rgba(37,99,235,0.5); }
         .cta-note { font-size: 13px; color: #666; }
-
-        /* ── FOOTER ── */
         .footer {
             padding: 25px; text-align: center;
             background: #f8f9fa; border-top: 1px solid #e9ecef;
@@ -325,15 +302,11 @@
             text-decoration: none; font-weight: 600;
             font-size: 14px; margin: 5px;
         }
-
         .highlight { background: #e8f0fe; padding: 2px 6px; border-radius: 4px; }
-
-        /* ── ACCORDION (section-level) ── */
         .accordion-header {
             display: flex; justify-content: space-between; align-items: center;
             cursor: pointer; user-select: none;
-            padding: 4px 0;
-            transition: opacity 0.2s;
+            padding: 4px 0; transition: opacity 0.2s;
         }
         .accordion-header:hover { opacity: 0.75; }
         .accordion-header .section-title { margin-bottom: 0; }
@@ -343,42 +316,15 @@
             border-radius: 50%;
             display: flex; align-items: center; justify-content: center;
             font-size: 14px; font-weight: 700;
-            transition: transform 0.3s;
-            flex-shrink: 0;
+            transition: transform 0.3s; flex-shrink: 0;
         }
         .accordion-arrow.open { transform: rotate(180deg); }
         .accordion-body {
-            overflow: hidden;
-            max-height: 0;
+            overflow: hidden; max-height: 0;
             transition: max-height 0.4s ease;
         }
         .accordion-body.open { max-height: 2000px; padding-top: 16px; }
-
-        /* ── FAQ ACCORDION ── */
-        .faq-item {
-            cursor: pointer;
-            transition: background 0.2s;
-        }
-        .faq-item:hover { background: #f0f4ff; }
-        .faq-item .faq-a {
-            display: none;
-            margin-top: 8px;
-        }
-        .faq-item.open .faq-a { display: block; }
-        .faq-q {
-            display: flex; justify-content: space-between; align-items: flex-start; gap: 10px;
-        }
-        .faq-q::after {
-            content: '＋'; color: #2563eb; font-size: 20px; font-weight: 700;
-            flex-shrink: 0; line-height: 1;
-        }
-        .faq-item.open .faq-q::after { content: '－'; }
-
-        /* ── MINI CTA ── */
-        .mini-cta {
-            text-align: center;
-            margin: 5px 0 20px;
-        }
+        .mini-cta { text-align: center; margin: 5px 0 20px; }
         .mini-cta a {
             display: inline-block; background: white; color: #2563eb;
             padding: 14px 35px; border-radius: 50px;
@@ -389,66 +335,116 @@
         }
         .mini-cta a:hover { background: #e8f0fe; }
 
-        /* ── RESPONSIVE ── */
+        /* ── ESA STATES ── */
+        .esa-states-grid {
+            display: grid; grid-template-columns: 1fr 1fr; gap: 12px; margin-top: 14px;
+        }
+        .esa-state-card {
+            background: white; border-radius: 12px;
+            padding: 18px 12px; text-align: center;
+            border: 1.5px solid #e5e7eb;
+            box-shadow: 0 2px 8px rgba(0,0,0,0.04);
+        }
+        .esa-state-flag { font-size: 30px; margin-bottom: 6px; }
+        .esa-state-name { font-weight: 700; font-size: 15px; color: #333; margin-bottom: 6px; }
+        .esa-state-program { font-size: 12px; color: #666; line-height: 1.5; }
+        .esa-approved-badge {
+            display: inline-block; background: #dcfce7; color: #16a34a;
+            padding: 3px 12px; border-radius: 20px;
+            font-size: 11px; font-weight: 700; margin-top: 8px;
+        }
+
         @media (max-width: 600px) {
-            body { padding: 15px 10px; }
+            /* Layout */
+            body { padding: 10px 8px; }
             .container { max-width: 100%; }
-            .header { padding: 50px 16px 30px; }
+            .content { padding: 20px 16px; }
+            .section { margin-bottom: 24px; }
+
+            /* Header */
+            .header { padding: 48px 16px 28px; }
             .lang-switcher { top: 10px; right: 10px; }
             .lang-btn { padding: 5px 10px; font-size: 11px; }
-            .open-badge-big { font-size: 16px; padding: 8px 20px; letter-spacing: 1px; }
+            .open-badge-big { font-size: 15px; padding: 8px 18px; letter-spacing: 1px; }
             .badge { font-size: 12px; padding: 6px 14px; }
-            .subtitle { font-size: 20px; letter-spacing: 2px; }
-            .content { padding: 20px 16px; }
-            .section-title { font-size: 15px; }
-            .price { font-size: 52px; }
-            .price span { font-size: 18px; }
-            .price-box { padding: 24px 16px; }
-            .price-label { font-size: 13px; }
-            .discount-badge { font-size: 14px; padding: 5px 14px; }
-            .lock-badge { font-size: 12px; padding: 8px 16px; }
-            .price-sub { font-size: 12px; }
+            .subtitle { font-size: 18px; letter-spacing: 2px; margin-top: 12px; }
+
+            /* Intro */
+            .intro { padding: 16px; }
+            .intro p { font-size: 14px; }
+
+            /* Price box */
+            .price-box { padding: 24px 16px; border-radius: 16px; }
+            .price-label { font-size: 12px; letter-spacing: 1px; }
+            .price { font-size: 56px; }
+            .price span { font-size: 20px; }
+            .discount-badge { font-size: 13px; padding: 5px 14px; }
+            .lock-badge { font-size: 12px; padding: 8px 16px; margin-top: 14px; }
+            .price-sub { font-size: 12px; margin-top: 10px; }
+
+            /* Section titles */
+            .section-title { font-size: 15px; gap: 8px; }
+            .section-title::before { height: 18px; }
+
+            /* Features */
             .feature-item { padding: 10px 12px; gap: 10px; }
-            .feature-text { font-size: 13px; }
             .feature-icon { font-size: 18px; }
-            .cta-btn { 
-                display: block;
-                padding: 16px 20px !important; 
-                font-size: 16px !important; 
-                margin: 15px 0;
-            }
-            .mini-cta a { 
-                display: block; 
-                padding: 14px 20px; 
-                font-size: 15px; 
-            }
-            .section table { font-size: 12px !important; }
-            .section table th, .section table td { padding: 8px 6px !important; }
-            .curr-tab { font-size: 12px; padding: 8px 4px; }
+            .feature-text { font-size: 13px; }
+
+            /* ESA states */
+            .esa-states-grid { grid-template-columns: 1fr 1fr; gap: 8px; }
+            .esa-state-card { padding: 14px 10px; border-radius: 10px; }
+            .esa-state-name { font-size: 13px; margin-bottom: 4px; }
+            .esa-state-program { font-size: 11px; }
+            .esa-approved-badge { font-size: 10px; padding: 3px 8px; }
+
+            /* Quarter box */
+            .quarter-box { padding: 20px 14px; border-radius: 14px; }
+            .quarter-icon { font-size: 26px; }
+            .quarter-title { font-size: 15px; }
+            .quarter-lead { font-size: 13px; margin-bottom: 18px; }
+            .quarter-step { padding: 12px; gap: 10px; border-radius: 10px; }
+            .step-num { width: 26px; height: 26px; font-size: 13px; }
+            .step-text { font-size: 13px; }
+
+            /* Schedule table */
+            .schedule-table th, .schedule-table td { padding: 10px 10px; font-size: 13px; }
+
+            /* Timetable */
             .tt-grid { grid-template-columns: 1fr; gap: 10px; }
+            .tt-header { padding: 12px 14px; }
+            .tt-header strong { font-size: 14px; }
+            .tt-days { font-size: 11px; }
             .tt-row { font-size: 12px; padding: 9px 12px; }
             .tt-time { min-width: 55px; }
-            .tt-header { padding: 12px 14px; }
-            .quarter-box { padding: 18px 14px; }
-            .quarter-title { font-size: 15px; }
-            .quarter-step { padding: 12px; gap: 10px; }
-            .step-text { font-size: 13px; }
-            .accordion-header { padding: 12px 14px; border-radius: 10px; }
-            .accordion-header .section-title { font-size: 15px; }
-            .accordion-arrow { width: 28px; height: 28px; font-size: 14px; }
+
+            /* Timezone buttons */
+            .tz-btn { padding: 6px 10px; font-size: 12px; }
+
+            /* Curriculum tabs */
+            .curr-tab { font-size: 12px; padding: 8px 4px; }
             .level-item { padding: 10px 12px; }
             .level-name { font-size: 13px; }
             .level-desc { font-size: 12px; }
+
+            /* Accordion */
+            .accordion-arrow { width: 26px; height: 26px; font-size: 13px; }
+
+            /* FAQ */
+            .faq-item { padding: 13px 14px; }
             .faq-q { font-size: 14px; }
             .faq-a { font-size: 13px; }
+
+            /* CTAs */
+            .mini-cta a { display: block; padding: 14px 20px; font-size: 15px; border-radius: 40px; }
             .cta-section { padding: 24px 16px; }
             .cta-text { font-size: 14px; }
+            .cta-btn { display: block; padding: 16px 20px !important; font-size: 16px !important; margin: 12px 0; border-radius: 40px; }
             .cta-note { font-size: 12px; }
+
+            /* Footer */
             .footer { padding: 20px 16px; }
-            .footer-btn { padding: 9px 18px; font-size: 13px; }
-            .tz-btn { padding: 6px 10px; font-size: 12px; }
-            .intro p { font-size: 14px; }
-            .schedule-table th, .schedule-table td { font-size: 13px; padding: 10px 10px; }
+            .footer-btn { padding: 10px 18px; font-size: 13px; }
         }
     </style>
 </head>
@@ -524,13 +520,29 @@
         </div>
     </div>
 
-    <!-- CLASSWALLET -->
+    <!-- ESA / CLASSWALLET - UPDATED SECTION -->
     <div class="section">
         <div style="background: linear-gradient(135deg, #f0faf4, #e6f4ee); border: 2px solid #22c55e; border-radius: 16px; padding: 28px 24px; text-align: center;">
             <div style="font-size: 32px; margin-bottom: 10px;">✅</div>
-            <h3 style="font-size: 20px; font-weight: 700; color: #16a34a; margin-bottom: 10px;" data-ja="ClassWallet対応" data-en="ClassWallet Accepted">ClassWallet対応</h3>
-            <p style="font-size: 15px; color: #444; margin-bottom: 14px;" data-ja="Arizona ESAをご利用の方は、ClassWallet経由でお支払いいただけます。" data-en="Arizona ESA families can pay directly via ClassWallet.">Arizona ESAをご利用の方は、ClassWallet経由でお支払いいただけます。</p>
-            <p style="font-size: 13px; color: #666; background: white; border-radius: 10px; padding: 10px 16px; display: inline-block;" data-ja="※ESAご利用の方は通常価格$300/月が適用されます。<br>ご利用希望の方はお気軽にご連絡ください。" data-en="※Regular price of $300/month applies for ESA families.<br>Please contact us directly to get started.">※ESAご利用の方は通常価格$300/月が適用されます。<br>ご利用希望の方はお気軽にご連絡ください。</p>
+            <h3 style="font-size: 20px; font-weight: 700; color: #16a34a; margin-bottom: 8px;" data-ja="教育資金支援プログラム対応" data-en="Education Funding Programs Accepted">教育資金支援プログラム対応</h3>
+            <p style="font-size: 14px; color: #555; margin-bottom: 4px;" data-ja="以下の州の教育資金支援プログラムにてBrightBe Learningをご利用いただけます。" data-en="BrightBe Learning is an approved provider in the following state education funding programs.">以下の州の教育資金支援プログラムにてBrightBe Learningをご利用いただけます。</p>
+
+            <div class="esa-states-grid">
+                <!-- Arizona -->
+                <div class="esa-state-card">
+                    <div class="esa-state-name">Arizona</div>
+                    <div class="esa-state-program" data-ja="Empowerment Scholarship Account<br>ClassWallet経由でお支払い可能" data-en="Empowerment Scholarship Account<br>Pay via ClassWallet">Empowerment Scholarship Account<br>ClassWallet経由でお支払い可能</div>
+                    <div class="esa-approved-badge">✓ Approved</div>
+                </div>
+                <!-- New Hampshire -->
+                <div class="esa-state-card">
+                    <div class="esa-state-name">New Hampshire</div>
+                    <div class="esa-state-program" data-ja="Education Freedom Account<br>CSF NH プログラム対応<br>ClassWallet経由でお支払い可能" data-en="Education Freedom Account<br>CSF NH Program<br>Pay via ClassWallet">Education Freedom Account<br>CSF NH プログラム対応<br>ClassWallet経由でお支払い可能</div>
+                    <div class="esa-approved-badge">✓ Approved</div>
+                </div>
+            </div>
+
+            <p style="font-size: 13px; color: #666; background: white; border-radius: 10px; padding: 10px 16px; display: inline-block; margin-top: 16px;" data-ja="※教育資金支援プログラムご利用の方は通常価格$300/月が適用されます。<br>ご利用希望の方はお気軽にご連絡ください。" data-en="※Regular price of $300/month applies for education funding program families.<br>Please contact us directly to get started.">※教育資金支援プログラムご利用の方は通常価格$300/月が適用されます。<br>ご利用希望の方はお気軽にご連絡ください。</p>
         </div>
     </div>
 
@@ -593,9 +605,7 @@
                 <button onclick="setTimezone('HST')" id="btn-HST" class="tz-btn">HST</button>
             </div>
         </div>
-
         <div class="tt-grid">
-            <!-- MATH TABLE -->
             <div class="tt-block">
                 <div class="tt-header math-header">
                     <span>🔢</span>
@@ -605,34 +615,14 @@
                     </div>
                 </div>
                 <div class="tt-rows">
-                    <div class="tt-row">
-                        <span class="tt-time time-slot" data-est="16">4:00 PM</span>
-                        <span class="tt-label">Level 1</span>
-                    </div>
-                    <div class="tt-row">
-                        <span class="tt-time time-slot" data-est="16.5">4:30 PM</span>
-                        <span class="tt-label">Level 2</span>
-                    </div>
-                    <div class="tt-row">
-                        <span class="tt-time time-slot" data-est="17">5:00 PM</span>
-                        <span class="tt-label">Level 3</span>
-                    </div>
-                    <div class="tt-row">
-                        <span class="tt-time time-slot" data-est="17.5">5:30 PM</span>
-                        <span class="tt-label">Level 4</span>
-                    </div>
-                    <div class="tt-row">
-                        <span class="tt-time time-slot" data-est="18">6:00 PM</span>
-                        <span class="tt-label">Level 5</span>
-                    </div>
-                    <div class="tt-row">
-                        <span class="tt-time time-slot" data-est="18.5">6:30 PM</span>
-                        <span class="tt-label">Level 6</span>
-                    </div>
+                    <div class="tt-row"><span class="tt-time time-slot" data-est="16">4:00 PM</span><span class="tt-label">Level 1</span></div>
+                    <div class="tt-row"><span class="tt-time time-slot" data-est="16.5">4:30 PM</span><span class="tt-label">Level 2</span></div>
+                    <div class="tt-row"><span class="tt-time time-slot" data-est="17">5:00 PM</span><span class="tt-label">Level 3</span></div>
+                    <div class="tt-row"><span class="tt-time time-slot" data-est="17.5">5:30 PM</span><span class="tt-label">Level 4</span></div>
+                    <div class="tt-row"><span class="tt-time time-slot" data-est="18">6:00 PM</span><span class="tt-label">Level 5</span></div>
+                    <div class="tt-row"><span class="tt-time time-slot" data-est="18.5">6:30 PM</span><span class="tt-label">Level 6</span></div>
                 </div>
             </div>
-
-            <!-- LANGUAGE ARTS TABLE -->
             <div class="tt-block">
                 <div class="tt-header eng-header">
                     <span>📖</span>
@@ -642,34 +632,15 @@
                     </div>
                 </div>
                 <div class="tt-rows">
-                    <div class="tt-row">
-                        <span class="tt-time time-slot" data-est="16">4:00 PM</span>
-                        <span class="tt-label">Level 1（Elem K）</span>
-                    </div>
-                    <div class="tt-row">
-                        <span class="tt-time time-slot" data-est="16.5">4:30 PM</span>
-                        <span class="tt-label">Level 2（Adv K）</span>
-                    </div>
-                    <div class="tt-row">
-                        <span class="tt-time time-slot" data-est="17">5:00 PM</span>
-                        <span class="tt-label">Level 3（G1–2）</span>
-                    </div>
-                    <div class="tt-row tt-legend">
-                        <span class="tt-time time-slot" data-est="17.5">5:30 PM</span>
-                        <span class="tt-label" data-ja="🌟 偉人クラス（全学年）" data-en="🌟 Biographies & Historical Leaders">🌟 偉人クラス（全学年）</span>
-                    </div>
-                    <div class="tt-row">
-                        <span class="tt-time time-slot" data-est="18">6:00 PM</span>
-                        <span class="tt-label">Level 4（G3–4）</span>
-                    </div>
-                    <div class="tt-row">
-                        <span class="tt-time time-slot" data-est="18.5">6:30 PM</span>
-                        <span class="tt-label">Level 5（G5–6）</span>
-                    </div>
+                    <div class="tt-row"><span class="tt-time time-slot" data-est="16">4:00 PM</span><span class="tt-label">Level 1（Elem K）</span></div>
+                    <div class="tt-row"><span class="tt-time time-slot" data-est="16.5">4:30 PM</span><span class="tt-label">Level 2（Adv K）</span></div>
+                    <div class="tt-row"><span class="tt-time time-slot" data-est="17">5:00 PM</span><span class="tt-label">Level 3（G1–2）</span></div>
+                    <div class="tt-row tt-legend"><span class="tt-time time-slot" data-est="17.5">5:30 PM</span><span class="tt-label" data-ja="🌟 偉人クラス（全学年）" data-en="🌟 Biographies & Historical Leaders">🌟 偉人クラス（全学年）</span></div>
+                    <div class="tt-row"><span class="tt-time time-slot" data-est="18">6:00 PM</span><span class="tt-label">Level 4（G3–4）</span></div>
+                    <div class="tt-row"><span class="tt-time time-slot" data-est="18.5">6:30 PM</span><span class="tt-label">Level 5（G5–6）</span></div>
                 </div>
             </div>
         </div>
-
         <p style="font-size: 13px; color: #888; margin-top: 15px; text-align: center;" data-ja="※お子様の該当レベルに参加｜出たい時に参加OK" data-en="※Join your child's level | Flexible access to all levels">※お子様の該当レベルに参加｜出たい時に参加OK</p>
     </div>
 
@@ -681,68 +652,28 @@
         </div>
         <div class="accordion-body" id="curr-body">
             <div class="curr-tabs">
-            <button class="curr-tab active-math" onclick="showCurr('math')" id="ctab-math" data-ja="🔢 算数（月/水/金）" data-en="🔢 Math (Mon/Wed/Fri)">🔢 算数（月/水/金）</button>
-            <button class="curr-tab" onclick="showCurr('reading')" id="ctab-reading" data-ja="📖 英語（火/木）" data-en="📖 Language Arts (Tue/Thu)">📖 英語（火/木）</button>
+                <button class="curr-tab active-math" onclick="showCurr('math')" id="ctab-math" data-ja="🔢 算数（月/水/金）" data-en="🔢 Math (Mon/Wed/Fri)">🔢 算数（月/水/金）</button>
+                <button class="curr-tab" onclick="showCurr('reading')" id="ctab-reading" data-ja="📖 英語（火/木）" data-en="📖 Language Arts (Tue/Thu)">📖 英語（火/木）</button>
+            </div>
+            <div class="curr-panel active" id="cpanel-math">
+                <div class="level-item"><div class="level-name">Level 1</div><div class="level-desc" data-ja="数える→たし算ひき算→さくらんぼ計算→筆算導入" data-en="Counting → Addition & Subtraction → Make-a-Ten → Introduction to Vertical Addition/Subtraction">数える→たし算ひき算→さくらんぼ計算→筆算導入</div></div>
+                <div class="level-item"><div class="level-name">Level 2</div><div class="level-desc" data-ja="たし算・ひき算の筆算（2桁→3桁→文章題）" data-en="Column addition & subtraction (2-digit → 3-digit → word problems)">たし算・ひき算の筆算（2桁→3桁→文章題）</div></div>
+                <div class="level-item"><div class="level-name">Level 3</div><div class="level-desc" data-ja="かけ算（九九）＋ たし算ひき算混合（→4桁）" data-en="Multiplication (times tables) + Mixed Operations: Addition & Subtraction (→ 4-digit)">かけ算（九九）＋ たし算ひき算混合（→4桁）</div></div>
+                <div class="level-item"><div class="level-name">Level 4</div><div class="level-desc" data-ja="わり算・かけ算筆算（2桁×2桁→3桁×2桁）" data-en="Division + Multi-digit Multiplication (2-digit × 2-digit → 3-digit × 2-digit)">わり算・かけ算筆算（2桁×2桁→3桁×2桁）</div></div>
+                <div class="level-item"><div class="level-name">Level 5</div><div class="level-desc" data-ja="小数（しくみ→四則演算→単位換算応用）" data-en="Decimals (concepts → four operations → unit conversion)">小数（しくみ→四則演算→単位換算応用）</div></div>
+                <div class="level-item"><div class="level-name">Level 6</div><div class="level-desc" data-ja="分数（しくみ→四則演算→帯分数→3つの計算）" data-en="Fractions (concepts → four operations → mixed numbers → 3-step calculations)">分数（しくみ→四則演算→帯分数→3つの計算）</div></div>
+                <p style="font-size: 12px; color: #888; margin-top: 12px; text-align: center;" data-ja="各レベル12週間（1クール）｜文章題・時計・お金も定期的にカバー" data-en="Each level = 12 weeks | Word problems, time & money covered regularly">各レベル12週間（1クール）｜文章題・時計・お金も定期的にカバー</p>
+            </div>
+            <div class="curr-panel" id="cpanel-reading">
+                <div class="level-item reading"><div class="level-name">Level 1（Elementary K）</div><div class="level-desc" data-ja="アルファベット26文字 ＋ 短母音の導入" data-en="Letter Recognition & Phonics Foundations">アルファベット26文字 ＋ 短母音の導入</div></div>
+                <div class="level-item reading"><div class="level-name">Level 2（Advanced K）</div><div class="level-desc" data-ja="ブレンド・ダイグラフ・サイレントe・母音チーム・Rコントロール" data-en="Blends, Digraphs, Silent-E, Vowel Teams & R-Controlled Vowels">ブレンド・ダイグラフ・サイレントe・母音チーム・Rコントロール</div></div>
+                <div class="level-item reading"><div class="level-name">Level 3（Grade 1–2）</div><div class="level-desc" data-ja="フィクション＆ノンフィクション読解 ＋ 語彙・サイトワード（Lexile 200–500L）" data-en="Fiction & nonfiction reading + vocabulary & sight words (Lexile 200–500L)">フィクション＆ノンフィクション読解 ＋ 語彙・サイトワード（Lexile 200–500L）</div></div>
+                <div class="level-item reading" style="border-left-color: #f39c12; background: #fffdf5;"><div class="level-name" data-ja="🌟 偉人クラス（全学年）" data-en="🌟 Biographies & Historical Leaders (All Grades)">🌟 偉人クラス（全学年）</div><div class="level-desc" data-ja="偉人の生き方を英語で学び、道徳心と考える力を育てます。ディスカッション中心のAll Englishクラス。" data-en="Learn from the lives of great historical figures in English. A discussion-based, All English class that builds character and critical thinking.">偉人の生き方を英語で学び、道徳心と考える力を育てます。ディスカッション中心のAll Englishクラス。</div></div>
+                <div class="level-item reading"><div class="level-name">Level 4（Grade 3–4）</div><div class="level-desc" data-ja="比喩・ラテン語の語根・慣用句を学びながら読解力を深める（Lexile 500–800L）" data-en="Similes, Latin roots, idioms with deeper comprehension (Lexile 500–800L)">比喩・ラテン語の語根・慣用句を学びながら読解力を深める（Lexile 500–800L）</div></div>
+                <div class="level-item reading"><div class="level-name">Level 5（Grade 5–6）</div><div class="level-desc" data-ja="ギリシャ語・ラテン語の語根、高度な修辞表現、中学準備の読解（Lexile 750–1000L）" data-en="Greek & Latin roots, advanced figurative language, middle-school prep (Lexile 750–1000L)">ギリシャ語・ラテン語の語根、高度な修辞表現、中学準備の読解（Lexile 750–1000L）</div></div>
+                <p style="font-size: 12px; color: #888; margin-top: 12px; text-align: center;" data-ja="各レベル12週間（1クール）× 年4回 ｜ SELテーマ統合" data-en="Each level = 12 weeks × 4 quarters/year | SEL themes integrated">各レベル12週間（1クール）× 年4回 ｜ SELテーマ統合</p>
+            </div>
         </div>
-
-        <!-- Math Panel -->
-        <div class="curr-panel active" id="cpanel-math">
-            <div class="level-item">
-                <div class="level-name">Level 1</div>
-                <div class="level-desc" data-ja="数える→たし算ひき算→さくらんぼ計算→筆算導入" data-en="Counting → Addition & Subtraction → Make-a-Ten → Introduction to Vertical Addition/Subtraction">数える→たし算ひき算→さくらんぼ計算→筆算導入</div>
-            </div>
-            <div class="level-item">
-                <div class="level-name">Level 2</div>
-                <div class="level-desc" data-ja="たし算・ひき算の筆算（2桁→3桁→文章題）" data-en="Column addition & subtraction (2-digit → 3-digit → word problems)">たし算・ひき算の筆算（2桁→3桁→文章題）</div>
-            </div>
-            <div class="level-item">
-                <div class="level-name">Level 3</div>
-                <div class="level-desc" data-ja="かけ算（九九）＋ たし算ひき算混合（→4桁）" data-en="Multiplication (times tables) + Mixed Operations: Addition & Subtraction (→ 4-digit)">かけ算（九九）＋ たし算ひき算混合（→4桁）</div>
-            </div>
-            <div class="level-item">
-                <div class="level-name">Level 4</div>
-                <div class="level-desc" data-ja="わり算・かけ算筆算（2桁×2桁→3桁×2桁）" data-en="Division + Multi-digit Multiplication (2-digit × 2-digit → 3-digit × 2-digit)">わり算・かけ算筆算（2桁×2桁→3桁×2桁）</div>
-            </div>
-            <div class="level-item">
-                <div class="level-name">Level 5</div>
-                <div class="level-desc" data-ja="小数（しくみ→四則演算→単位換算応用）" data-en="Decimals (concepts → four operations → unit conversion)">小数（しくみ→四則演算→単位換算応用）</div>
-            </div>
-            <div class="level-item">
-                <div class="level-name">Level 6</div>
-                <div class="level-desc" data-ja="分数（しくみ→四則演算→帯分数→3つの計算）" data-en="Fractions (concepts → four operations → mixed numbers → 3-step calculations)">分数（しくみ→四則演算→帯分数→3つの計算）</div>
-            </div>
-            <p style="font-size: 12px; color: #888; margin-top: 12px; text-align: center;" data-ja="各レベル12週間（1クール）｜文章題・時計・お金も定期的にカバー" data-en="Each level = 12 weeks | Word problems, time & money covered regularly">各レベル12週間（1クール）｜文章題・時計・お金も定期的にカバー</p>
-        </div>
-
-        <!-- Reading Panel -->
-        <div class="curr-panel" id="cpanel-reading">
-            <div class="level-item reading">
-                <div class="level-name">Level 1（Elementary K）</div>
-                <div class="level-desc" data-ja="アルファベット26文字 ＋ 短母音の導入" data-en="Letter Recognition & Phonics Foundations">アルファベット26文字 ＋ 短母音の導入</div>
-            </div>
-            <div class="level-item reading">
-                <div class="level-name">Level 2（Advanced K）</div>
-                <div class="level-desc" data-ja="ブレンド・ダイグラフ・サイレントe・母音チーム・Rコントロール" data-en="Blends, Digraphs, Silent-E, Vowel Teams & R-Controlled Vowels">ブレンド・ダイグラフ・サイレントe・母音チーム・Rコントロール</div>
-            </div>
-            <div class="level-item reading">
-                <div class="level-name">Level 3（Grade 1–2）</div>
-                <div class="level-desc" data-ja="フィクション＆ノンフィクション読解 ＋ 語彙・サイトワード（Lexile 200–500L）" data-en="Fiction & nonfiction reading + vocabulary & sight words (Lexile 200–500L)">フィクション＆ノンフィクション読解 ＋ 語彙・サイトワード（Lexile 200–500L）</div>
-            </div>
-            <div class="level-item reading" style="border-left-color: #f39c12; background: #fffdf5;">
-                <div class="level-name" data-ja="🌟 偉人クラス（全学年）" data-en="🌟 Biographies & Historical Leaders (All Grades)">🌟 偉人クラス（全学年）</div>
-                <div class="level-desc" data-ja="偉人の生き方を英語で学び、道徳心と考える力を育てます。ディスカッション中心のAll Englishクラス。" data-en="Learn from the lives of great historical figures in English. A discussion-based, All English class that builds character and critical thinking.">偉人の生き方を英語で学び、道徳心と考える力を育てます。ディスカッション中心のAll Englishクラス。</div>
-            </div>
-            <div class="level-item reading">
-                <div class="level-name">Level 4（Grade 3–4）</div>
-                <div class="level-desc" data-ja="比喩・ラテン語の語根・慣用句を学びながら読解力を深める（Lexile 500–800L）" data-en="Similes, Latin roots, idioms with deeper comprehension (Lexile 500–800L)">比喩・ラテン語の語根・慣用句を学びながら読解力を深める（Lexile 500–800L）</div>
-            </div>
-            <div class="level-item reading">
-                <div class="level-name">Level 5（Grade 5–6）</div>
-                <div class="level-desc" data-ja="ギリシャ語・ラテン語の語根、高度な修辞表現、中学準備の読解（Lexile 750–1000L）" data-en="Greek & Latin roots, advanced figurative language, middle-school prep (Lexile 750–1000L)">ギリシャ語・ラテン語の語根、高度な修辞表現、中学準備の読解（Lexile 750–1000L）</div>
-            </div>
-            <p style="font-size: 12px; color: #888; margin-top: 12px; text-align: center;" data-ja="各レベル12週間（1クール）× 年4回 ｜ SELテーマ統合" data-en="Each level = 12 weeks × 4 quarters/year | SEL themes integrated">各レベル12週間（1クール）× 年4回 ｜ SELテーマ統合</p>
-        </div>
-        </div><!-- end accordion-body -->
     </div>
 
     <!-- FAQ -->
@@ -799,7 +730,6 @@
 </div>
 
 <script>
-// Copy email
 function copyEmail(e) {
     e.preventDefault();
     navigator.clipboard.writeText('info@mercy-education.com').then(() => {
@@ -808,32 +738,19 @@ function copyEmail(e) {
         setTimeout(() => { msg.style.display = 'none'; }, 2000);
     });
 }
-
 function toggleAccordion(id, header) {
     const body = document.getElementById(id);
     const arrow = header.querySelector('.accordion-arrow');
     body.classList.toggle('open');
     arrow.classList.toggle('open');
 }
-
-// FAQ item accordion
-function toggleFaq(item) {
-    item.classList.toggle('open');
-}
-
-// Language Switching
+function toggleFaq(item) { item.classList.toggle('open'); }
 function setLang(lang) {
-    document.querySelectorAll('[data-ja][data-en]').forEach(el => {
-        el.innerHTML = el.dataset[lang];
-    });
+    document.querySelectorAll('[data-ja][data-en]').forEach(el => { el.innerHTML = el.dataset[lang]; });
     document.getElementById('btn-ja').classList.toggle('active', lang === 'ja');
     document.getElementById('btn-en').classList.toggle('active', lang === 'en');
-    document.title = lang === 'ja'
-        ? 'BrightBe Learning プレオープン会員募集'
-        : 'BrightBe Learning - Pre-Launch Enrollment';
+    document.title = lang === 'ja' ? 'BrightBe Learning プレオープン会員募集' : 'BrightBe Learning - Pre-Launch Enrollment';
 }
-
-// Timezone Switching
 const tzOffsets = { EST: 0, CST: -1, MST: -2, PST: -3, HST: -5 };
 function setTimezone(tz) {
     document.querySelectorAll('.time-slot').forEach(slot => {
@@ -846,12 +763,8 @@ function setTimezone(tz) {
         const displayMin = minutes === 0 ? '00' : '30';
         slot.textContent = `${displayHour}:${displayMin} ${ampm}`;
     });
-    document.querySelectorAll('.tz-btn').forEach(btn => {
-        btn.classList.toggle('active', btn.textContent === tz);
-    });
+    document.querySelectorAll('.tz-btn').forEach(btn => { btn.classList.toggle('active', btn.textContent === tz); });
 }
-
-// Curriculum Tabs
 function showCurr(type) {
     document.querySelectorAll('.curr-panel').forEach(p => p.classList.remove('active'));
     document.querySelectorAll('.curr-tab').forEach(t => t.classList.remove('active-math', 'active-reading'));
@@ -860,4 +773,5 @@ function showCurr(type) {
     tab.classList.add(type === 'math' ? 'active-math' : 'active-reading');
 }
 </script>
-　
+</body>
+</html>
