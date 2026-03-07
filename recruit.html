@@ -7,35 +7,31 @@
     <title>Join Our Team | BrightBe Learning</title>
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Fraunces:opsz,wght@9..144,400;9..144,600;9..144,700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=DM+Sans:ital,opsz,wght@0,9..40,300;0,9..40,400;0,9..40,500;0,9..40,600;0,9..40,700;1,9..40,400&family=Fraunces:opsz,wght@9..144,400;9..144,600;9..144,700&display=swap" rel="stylesheet">
     <style>
         :root {
-            --color-cream: #FDF8F3;
-            --color-navy: #1a2744;
-            --color-coral: #E8734A;
-            --color-coral-light: #FFEEE8;
-            --color-sage: #7BA383;
-            --color-sage-light: #E8F2EA;
-            --color-text: #2D3748;
-            --color-text-light: #64748B;
-            --font-display: 'Fraunces', serif;
-            --font-body: 'DM Sans', sans-serif;
-        }　
-
-        * {
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
+            --cream: #FDF8F3;
+            --navy: #1a2744;
+            --coral: #E8734A;
+            --coral-light: #FFEEE8;
+            --sage: #7BA383;
+            --sage-light: #E8F2EA;
+            --text: #2D3748;
+            --text-muted: #64748B;
+            --display: 'Fraunces', serif;
+            --body: 'DM Sans', sans-serif;
         }
 
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+
         body {
-            font-family: var(--font-body);
-            background: var(--color-cream);
-            color: var(--color-text);
+            font-family: var(--body);
+            background: var(--cream);
+            color: var(--text);
             line-height: 1.7;
         }
 
-        /* Hero Section */
+        /* ── HERO ── */
         .hero {
             min-height: 100vh;
             display: flex;
@@ -43,646 +39,808 @@
             justify-content: center;
             align-items: center;
             text-align: center;
-            padding: 2rem;
+            padding: 3rem 2rem;
             position: relative;
             overflow: hidden;
-            background: linear-gradient(135deg, var(--color-cream) 0%, #FFF5EE 50%, var(--color-sage-light) 100%);
+            background: linear-gradient(135deg, var(--cream) 0%, #FFF5EE 50%, var(--sage-light) 100%);
         }
-
         .hero::before {
             content: '';
-            position: absolute;
-            top: -50%;
-            right: -20%;
-            width: 80%;
-            height: 150%;
-            background: radial-gradient(ellipse, rgba(232, 115, 74, 0.08) 0%, transparent 70%);
+            position: absolute; top: -50%; right: -20%;
+            width: 80%; height: 150%;
+            background: radial-gradient(ellipse, rgba(232,115,74,.08) 0%, transparent 70%);
             animation: float 15s ease-in-out infinite;
         }
-
         .hero::after {
             content: '';
-            position: absolute;
-            bottom: -30%;
-            left: -10%;
-            width: 60%;
-            height: 100%;
-            background: radial-gradient(ellipse, rgba(123, 163, 131, 0.1) 0%, transparent 70%);
+            position: absolute; bottom: -30%; left: -10%;
+            width: 60%; height: 100%;
+            background: radial-gradient(ellipse, rgba(123,163,131,.1) 0%, transparent 70%);
             animation: float 12s ease-in-out infinite reverse;
         }
-
         @keyframes float {
-            0%, 100% { transform: translateY(0) rotate(0deg); }
-            50% { transform: translateY(-30px) rotate(2deg); }
+            0%,100% { transform: translateY(0) rotate(0deg); }
+            50%      { transform: translateY(-30px) rotate(2deg); }
+        }
+        @keyframes fadeUp {
+            from { opacity:0; transform:translateY(28px); }
+            to   { opacity:1; transform:translateY(0); }
         }
 
-        .hero-content {
-            position: relative;
-            z-index: 1;
-            max-width: 800px;
-        }
+        .hero-content { position:relative; z-index:1; max-width:820px; }
 
         .badge {
             display: inline-block;
-            background: var(--color-coral-light);
-            color: var(--color-coral);
-            padding: 0.5rem 1.25rem;
+            background: var(--coral-light);
+            color: var(--coral);
+            padding: .45rem 1.2rem;
             border-radius: 50px;
-            font-size: 0.875rem;
+            font-size: .85rem;
             font-weight: 600;
             margin-bottom: 1.5rem;
-            animation: fadeInUp 0.8s ease-out;
+            animation: fadeUp .7s ease-out both;
         }
 
         .hero h1 {
-            font-family: var(--font-display);
-            font-size: clamp(2.5rem, 6vw, 4rem);
+            font-family: var(--display);
+            font-size: clamp(2.6rem, 6vw, 4.2rem);
             font-weight: 700;
-            color: var(--color-navy);
-            margin-bottom: 1.5rem;
-            line-height: 1.2;
-            animation: fadeInUp 0.8s ease-out 0.1s backwards;
+            color: var(--navy);
+            line-height: 1.15;
+            margin-bottom: 1.4rem;
+            animation: fadeUp .7s .1s ease-out both;
         }
+        .hero h1 span { color: var(--coral); }
 
-        .hero h1 span {
-            color: var(--color-coral);
-        }
-
-        .hero-subtitle {
-            font-size: 1.25rem;
-            color: var(--color-text-light);
-            max-width: 600px;
+        .hero-sub {
+            font-size: 1.15rem;
+            color: var(--text-muted);
+            max-width: 580px;
             margin: 0 auto 2.5rem;
-            animation: fadeInUp 0.8s ease-out 0.2s backwards;
+            animation: fadeUp .7s .2s ease-out both;
         }
 
-        @keyframes fadeInUp {
-            from {
-                opacity: 0;
-                transform: translateY(30px);
-            }
-            to {
-                opacity: 1;
-                transform: translateY(0);
-            }
-        }
-
-        .cta-button {
+        .cta-btn {
             display: inline-flex;
             align-items: center;
-            gap: 0.75rem;
-            background: var(--color-coral);
-            color: white;
-            padding: 1rem 2rem;
+            gap: .7rem;
+            background: var(--coral);
+            color: #fff;
+            padding: .95rem 2rem;
             border-radius: 50px;
             text-decoration: none;
             font-weight: 600;
-            font-size: 1.1rem;
-            transition: all 0.3s ease;
-            animation: fadeInUp 0.8s ease-out 0.3s backwards;
-            box-shadow: 0 4px 20px rgba(232, 115, 74, 0.3);
+            font-size: 1.05rem;
+            transition: all .3s ease;
+            box-shadow: 0 4px 20px rgba(232,115,74,.3);
+            animation: fadeUp .7s .3s ease-out both;
         }
+        .cta-btn:hover { transform: translateY(-3px); box-shadow: 0 8px 28px rgba(232,115,74,.4); }
+        .cta-btn svg { width:20px; height:20px; }
 
-        .cta-button:hover {
-            transform: translateY(-3px);
-            box-shadow: 0 8px 30px rgba(232, 115, 74, 0.4);
+        /* ── LAYOUT ── */
+        .container { max-width: 1080px; margin: 0 auto; padding: 0 2rem; }
+        section { padding: 5rem 0; }
+
+        .section-label {
+            font-size: .78rem;
+            font-weight: 700;
+            letter-spacing: .12em;
+            text-transform: uppercase;
+            color: var(--coral);
+            margin-bottom: .6rem;
+            text-align: center;
         }
-
-        .cta-button svg {
-            width: 24px;
-            height: 24px;
-        }
-
-        /* Main Content */
-        .container {
-            max-width: 1100px;
-            margin: 0 auto;
-            padding: 0 2rem;
-        }
-
-        section {
-            padding: 5rem 0;
-        }
-
         .section-title {
-            font-family: var(--font-display);
+            font-family: var(--display);
             font-size: 2rem;
-            color: var(--color-navy);
-            margin-bottom: 1rem;
+            color: var(--navy);
             text-align: center;
+            margin-bottom: .9rem;
         }
-
-        .section-subtitle {
-            color: var(--color-text-light);
+        .section-sub {
+            color: var(--text-muted);
             text-align: center;
-            max-width: 600px;
+            max-width: 560px;
             margin: 0 auto 3rem;
+            font-size: .97rem;
         }
 
-        /* About Section */
-        .about {
-            background: white;
-        }
+        /* ── MISSION (compact) ── */
+        .mission { background: white; }
 
-        .about-grid {
+        .values-row {
             display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-            gap: 2rem;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 1.5rem;
+        }
+        @media (max-width: 700px) {
+            .values-row { grid-template-columns: 1fr 1fr; }
         }
 
-        .about-card {
-            background: var(--color-cream);
-            padding: 2rem;
-            border-radius: 20px;
+        .value-card {
+            background: var(--cream);
+            border-radius: 18px;
+            padding: 1.5rem 1.25rem;
             text-align: center;
-            transition: transform 0.3s ease;
+            transition: transform .3s ease;
         }
-
-        .about-card:hover {
-            transform: translateY(-5px);
-        }
-
-        .about-icon {
-            width: 60px;
-            height: 60px;
-            background: var(--color-coral-light);
+        .value-card:hover { transform: translateY(-4px); }
+        .v-icon {
+            font-size: 1.7rem;
+            width: 52px; height: 52px;
+            background: var(--coral-light);
             border-radius: 50%;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            margin: 0 auto 1.25rem;
-            font-size: 1.5rem;
+            display: flex; align-items: center; justify-content: center;
+            margin: 0 auto .9rem;
         }
-
-        .about-card h3 {
-            font-family: var(--font-display);
-            color: var(--color-navy);
-            margin-bottom: 0.75rem;
-            font-size: 1.25rem;
+        .value-card h3 {
+            font-family: var(--display);
+            color: var(--navy);
+            font-size: 1.05rem;
+            margin-bottom: .4rem;
         }
+        .value-card p { font-size: .875rem; color: var(--text-muted); }
 
-        .about-card p {
-            color: var(--color-text-light);
-            font-size: 0.95rem;
-        }
-
-        /* Position Details */
-        .details {
-            background: linear-gradient(180deg, var(--color-cream) 0%, white 100%);
-        }
-
-        .details-wrapper {
+        /* ── TIMETABLE ── */
+        .timetable {
             display: grid;
             grid-template-columns: 1fr 1fr;
-            gap: 3rem;
+            gap: 1.5rem;
+            margin-top: 2rem;
             align-items: start;
         }
-
-        @media (max-width: 768px) {
-            .details-wrapper {
-                grid-template-columns: 1fr;
-            }
+        @media (max-width: 640px) { .timetable { grid-template-columns: 1fr; } }
+        .tt-col { border-radius: 18px; overflow: hidden; box-shadow: 0 2px 16px rgba(26,39,68,.07); display: flex; flex-direction: column; }
+        .tt-header {
+            padding: 1rem 1.5rem;
+            font-weight: 700;
+            font-size: 1rem;
+            color: white;
+            display: flex;
+            align-items: center;
+            gap: .5rem;
+            flex-shrink: 0;
         }
+        .tt-header span { font-size: .78rem; font-weight: 500; opacity: .85; margin-left: auto; }
+        .tt-math { background: linear-gradient(135deg, #1D4ED8, #3B82F6); }
+        .tt-ela  { background: linear-gradient(135deg, #C05630, #E8734A); }
+        .tt-row {
+            display: grid;
+            grid-template-columns: 64px 1fr;
+            align-items: center;
+            gap: .75rem;
+            padding: 0 1.25rem;
+            height: 70px;
+            border-bottom: 1px solid #f0f0f0;
+            background: white;
+        }
+        .tt-row:last-child { border-bottom: none; }
+        .tt-time {
+            color: var(--text-muted);
+            font-weight: 600;
+            font-size: .78rem;
+            letter-spacing: .02em;
+            white-space: nowrap;
+        }
+        .tt-content { display: flex; flex-direction: column; gap: .08rem; }
+        .tt-level { font-weight: 700; color: var(--navy); font-size: .88rem; display: flex; align-items: baseline; gap: .3rem; flex-wrap: wrap; }
+        .tt-grade { font-size: .68rem; color: var(--text-muted); font-weight: 400; }
+        .tt-desc { font-size: .74rem; color: var(--text-muted); line-height: 1.4; }
+        .tt-dur { font-size: .67rem; color: #bbb; font-weight: 500; margin-top: .1rem; }
+        .tt-special { background: #FFFBEB; }
+        .tt-special .tt-level { color: #92400E; }
+        .tt-special .tt-grade { color: #A16207; }
+        .tt-special .tt-desc { color: #A16207; }
+
+        .shift-note {
+            display: flex;
+            align-items: flex-start;
+            gap: .75rem;
+            background: var(--sage-light);
+            border-left: 3px solid var(--sage);
+            border-radius: 12px;
+            padding: 1rem 1.25rem;
+            margin-top: 1rem;
+            font-size: .9rem;
+            color: #3D6B45;
+        }
+        .shift-note span { font-size: 1.1rem; flex-shrink: 0; }
+        .shift-note p { line-height: 1.55; }
+        .tt-note { text-align: center; font-size: .8rem; color: var(--text-muted); margin-top: .85rem; }
+
+
+        /* ── MISSION ── */
+        .mission { background: var(--navy); }
+        .mission-inner {
+            text-align: center;
+            max-width: 680px;
+            margin: 0 auto;
+            padding: 1rem 0;
+        }
+        .mission-label {
+            font-size: .78rem;
+            font-weight: 700;
+            letter-spacing: .14em;
+            text-transform: uppercase;
+            color: var(--coral);
+            margin-bottom: .6rem;
+        }
+        .mission-title {
+            font-family: var(--display);
+            font-size: 1.6rem;
+            color: white;
+            margin-bottom: 1.1rem;
+        }
+        .mission-text {
+            font-size: 1.05rem;
+            color: rgba(255,255,255,.75);
+            line-height: 1.75;
+        }
+
+        .teach { background: linear-gradient(180deg, var(--cream) 0%, white 100%); }
+
+        .teach-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 1.5rem;
+            margin-bottom: 2.5rem;
+        }
+        @media (max-width: 680px) { .teach-grid { grid-template-columns: 1fr; } }
+
+        .teach-card {
+            border-radius: 20px;
+            padding: 2rem 1.75rem;
+            border: 2px solid transparent;
+        }
+        .teach-card.math {
+            background: #EEF4FF;
+            border-color: #BFCFFF;
+        }
+        .teach-card.ela {
+            background: #FFF4EE;
+            border-color: #FFD3B8;
+        }
+        .teach-card h3 {
+            font-family: var(--display);
+            font-size: 1.25rem;
+            margin-bottom: .4rem;
+        }
+        .teach-card.math h3 { color: #2563EB; }
+        .teach-card.ela  h3 { color: var(--coral); }
+
+        .teach-meta {
+            font-size: .8rem;
+            font-weight: 600;
+            letter-spacing: .08em;
+            text-transform: uppercase;
+            margin-bottom: .9rem;
+            opacity: .65;
+        }
+        .teach-card p { font-size: .9rem; color: var(--text); line-height: 1.65; }
+
+        .level-pills {
+            display: flex;
+            flex-wrap: wrap;
+            gap: .4rem;
+            margin-top: .9rem;
+        }
+        .level-pill {
+            font-size: .75rem;
+            font-weight: 600;
+            padding: .25rem .7rem;
+            border-radius: 20px;
+        }
+        .math .level-pill { background: #DBEAFE; color: #1D4ED8; }
+        .ela  .level-pill { background: var(--coral-light); color: #C05630; }
+
+        /* ── SCHEDULE HIGHLIGHT ── */
+        .schedule-banner {
+            background: var(--navy);
+            border-radius: 20px;
+            padding: 2rem 2.5rem;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            gap: 2rem;
+            flex-wrap: wrap;
+        }
+        .sb-item { text-align: center; flex: 1; min-width: 120px; }
+        .sb-icon { font-size: 1.6rem; margin-bottom: .3rem; }
+        .sb-label { font-size: .72rem; font-weight: 600; letter-spacing: .1em; text-transform: uppercase; color: rgba(255,255,255,.55); margin-bottom: .2rem; }
+        .sb-value { font-family: var(--display); font-size: 1.15rem; color: white; }
+        .sb-value em { font-style: normal; color: #FBBF24; }
+        .sb-divider { width: 1px; background: rgba(255,255,255,.12); align-self: stretch; }
+        @media (max-width: 600px) { .sb-divider { display:none; } }
+
+        /* ── POSITION DETAILS ── */
+        .details { background: white; }
+
+        .details-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 2rem;
+        }
+        @media (max-width: 700px) { .details-grid { grid-template-columns: 1fr; } }
 
         .detail-block {
-            background: white;
-            padding: 2.5rem;
-            border-radius: 24px;
-            box-shadow: 0 4px 30px rgba(26, 39, 68, 0.06);
+            background: var(--cream);
+            padding: 2.25rem;
+            border-radius: 22px;
         }
-
         .detail-block h3 {
-            font-family: var(--font-display);
-            color: var(--color-navy);
-            font-size: 1.5rem;
-            margin-bottom: 1.5rem;
+            font-family: var(--display);
+            font-size: 1.35rem;
+            color: var(--navy);
+            margin-bottom: 1.4rem;
             display: flex;
             align-items: center;
-            gap: 0.75rem;
+            gap: .6rem;
         }
 
-        .detail-block h3 span {
-            font-size: 1.5rem;
-        }
-
-        .detail-list {
-            list-style: none;
-        }
-
-        .detail-list li {
-            padding: 0.75rem 0;
-            border-bottom: 1px solid #f0f0f0;
+        .dl { list-style: none; }
+        .dl li {
             display: flex;
             justify-content: space-between;
-            align-items: center;
+            align-items: baseline;
+            gap: 1rem;
+            padding: .7rem 0;
+            border-bottom: 1px solid rgba(0,0,0,.06);
+            font-size: .92rem;
         }
-
-        .detail-list li:last-child {
-            border-bottom: none;
-        }
-
-        .detail-label {
-            color: var(--color-text-light);
-            font-size: 0.95rem;
-        }
-
-        .detail-value {
-            font-weight: 600;
-            color: var(--color-navy);
-        }
+        .dl li:last-child { border-bottom: none; }
+        .dl .lbl { color: var(--text-muted); }
+        .dl .val { font-weight: 600; color: var(--navy); text-align: right; }
 
         .highlight-box {
-            background: var(--color-sage-light);
-            border-radius: 16px;
-            padding: 1.5rem;
-            margin-top: 1.5rem;
-        }
-
-        .highlight-box p {
-            color: var(--color-sage);
+            background: var(--sage-light);
+            border-radius: 12px;
+            padding: 1rem 1.25rem;
+            margin-top: 1.25rem;
+            font-size: .9rem;
+            color: #4A7A53;
             font-weight: 500;
-            display: flex;
-            align-items: center;
-            gap: 0.5rem;
         }
 
-        /* Ideal Candidate */
+        /* ── IDEAL CANDIDATE ── */
         .ideal {
-            background: var(--color-navy);
-            color: white;
+            background: var(--navy);
             position: relative;
             overflow: hidden;
         }
-
         .ideal::before {
             content: '';
-            position: absolute;
-            top: 0;
-            right: 0;
-            width: 50%;
-            height: 100%;
-            background: radial-gradient(ellipse at right, rgba(232, 115, 74, 0.15) 0%, transparent 70%);
+            position: absolute; top:0; right:0;
+            width:50%; height:100%;
+            background: radial-gradient(ellipse at right, rgba(232,115,74,.14) 0%, transparent 70%);
         }
-
-        .ideal .section-title {
-            color: white;
-        }
-
-        .ideal .section-subtitle {
-            color: rgba(255, 255, 255, 0.7);
-        }
+        .ideal .section-title { color: white; }
+        .ideal .section-sub { color: rgba(255,255,255,.6); }
 
         .ideal-grid {
             display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-            gap: 1.5rem;
-            position: relative;
-            z-index: 1;
+            grid-template-columns: repeat(auto-fit, minmax(230px, 1fr));
+            gap: 1.25rem;
+            position: relative; z-index:1;
         }
-
         .ideal-item {
-            background: rgba(255, 255, 255, 0.08);
-            backdrop-filter: blur(10px);
-            padding: 1.75rem;
+            background: rgba(255,255,255,.07);
+            border: 1px solid rgba(255,255,255,.1);
             border-radius: 16px;
-            border: 1px solid rgba(255, 255, 255, 0.1);
-            transition: all 0.3s ease;
+            padding: 1.6rem;
+            transition: all .3s ease;
         }
-
-        .ideal-item:hover {
-            background: rgba(255, 255, 255, 0.12);
-            transform: translateY(-3px);
-        }
-
+        .ideal-item:hover { background: rgba(255,255,255,.11); transform: translateY(-3px); }
         .ideal-item h4 {
-            font-family: var(--font-display);
-            font-size: 1.1rem;
-            margin-bottom: 0.5rem;
-            color: var(--color-coral);
+            font-family: var(--display);
+            font-size: 1.05rem;
+            color: var(--coral);
+            margin-bottom: .45rem;
         }
+        .ideal-item p { font-size: .9rem; color: rgba(255,255,255,.78); line-height: 1.6; }
 
-        .ideal-item p {
-            font-size: 0.95rem;
-            color: rgba(255, 255, 255, 0.8);
-            line-height: 1.6;
+        /* ── REQUIREMENTS ── */
+        .req { background: var(--cream); }
+        .req-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 1.25rem;
+            max-width: 860px;
+            margin: 0 auto;
         }
+        @media (max-width: 640px) { .req-grid { grid-template-columns: 1fr; } }
+        .req-item {
+            background: white;
+            border-radius: 16px;
+            padding: 1.5rem;
+            display: flex;
+            align-items: flex-start;
+            gap: 1rem;
+            box-shadow: 0 2px 12px rgba(26,39,68,.06);
+        }
+        .req-icon { font-size: 1.6rem; line-height: 1; flex-shrink: 0; }
+        .req-item h4 { font-family: var(--display); color: var(--navy); font-size: 1rem; margin-bottom: .3rem; }
+        .req-item p { font-size: .875rem; color: var(--text-muted); line-height: 1.55; }
 
-        /* Apply Section */
+        /* ── APPLY ── */
         .apply {
+            background: linear-gradient(180deg, white 0%, var(--cream) 100%);
             text-align: center;
-            background: linear-gradient(180deg, white 0%, var(--color-cream) 100%);
         }
-
         .apply-card {
             background: white;
-            max-width: 500px;
+            max-width: 480px;
             margin: 0 auto;
-            padding: 3rem;
+            padding: 2.75rem;
             border-radius: 24px;
-            box-shadow: 0 10px 50px rgba(26, 39, 68, 0.08);
+            box-shadow: 0 10px 50px rgba(26,39,68,.08);
         }
-
         .email-icon {
-            width: 80px;
-            height: 80px;
-            background: var(--color-coral);
-            border-radius: 20px;
+            width: 72px; height: 72px;
+            background: var(--coral);
+            border-radius: 18px;
+            display: flex; align-items: center; justify-content: center;
+            margin: 0 auto 1.4rem;
+        }
+        .email-icon svg { width:34px; height:34px; stroke: white; }
+        .apply-card h3 {
+            font-family: var(--display);
+            font-size: 1.6rem;
+            color: var(--navy);
+            margin-bottom: .75rem;
+        }
+        .apply-card > p { color: var(--text-muted); margin-bottom: 1.75rem; font-size: .95rem; }
+
+        .email-wrap {
             display: flex;
             align-items: center;
             justify-content: center;
-            margin: 0 auto 1.5rem;
+            gap: .65rem;
+            margin-bottom: 1.25rem;
         }
-
-        .email-icon svg {
-            width: 40px;
-            height: 40px;
-            stroke: white;
-        }
-
-        .apply h3 {
-            font-family: var(--font-display);
-            font-size: 1.75rem;
-            color: var(--color-navy);
-            margin-bottom: 1rem;
-        }
-
-        .apply p {
-            color: var(--color-text-light);
-            margin-bottom: 2rem;
-        }
-
         .email-link {
-            display: inline-block;
-            background: var(--color-coral-light);
-            color: var(--color-coral);
-            padding: 0.75rem 1.5rem;
-            border-radius: 12px;
+            background: var(--coral-light);
+            color: var(--coral);
+            padding: .65rem 1.35rem;
+            border-radius: 10px;
             font-weight: 700;
-            font-size: 1.1rem;
+            font-size: 1rem;
             text-decoration: none;
-            transition: all 0.3s ease;
+            transition: all .3s;
         }
-
-        .email-link:hover {
-            background: var(--color-coral);
-            color: white;
-        }
-
-        .email-container {
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            gap: 0.75rem;
-            margin-bottom: 1.5rem;
-        }
+        .email-link:hover { background: var(--coral); color: white; }
 
         .copy-btn {
-            background: var(--color-cream);
+            background: var(--cream);
             border: 2px solid #e0e0e0;
             border-radius: 10px;
-            padding: 0.6rem;
+            padding: .55rem;
             cursor: pointer;
-            transition: all 0.3s ease;
-            display: flex;
-            align-items: center;
-            justify-content: center;
+            transition: all .3s;
+            display: flex; align-items: center; justify-content: center;
         }
-
-        .copy-btn:hover {
-            background: #f0f0f0;
-            border-color: var(--color-coral);
-        }
-
-        .copy-btn svg {
-            width: 20px;
-            height: 20px;
-            stroke: var(--color-text-light);
-        }
-
-        .copy-btn:hover svg {
-            stroke: var(--color-coral);
-        }
-
-        .copy-btn.copied {
-            background: var(--color-sage-light);
-            border-color: var(--color-sage);
-        }
-
-        .copy-btn.copied svg {
-            stroke: var(--color-sage);
-        }
+        .copy-btn:hover { border-color: var(--coral); }
+        .copy-btn svg { width:18px; height:18px; stroke: var(--text-muted); }
+        .copy-btn:hover svg { stroke: var(--coral); }
+        .copy-btn.copied { background: var(--sage-light); border-color: var(--sage); }
+        .copy-btn.copied svg { stroke: var(--sage); }
 
         .apply-note {
-            font-size: 0.9rem;
-            color: var(--color-text-light);
-            background: var(--color-cream);
-            padding: 1rem;
-            border-radius: 12px;
+            background: var(--cream);
+            border-radius: 10px;
+            padding: .9rem 1.1rem;
+            font-size: .875rem;
+            color: var(--text-muted);
         }
 
-        /* Footer */
         footer {
-            background: var(--color-navy);
-            color: rgba(255, 255, 255, 0.7);
+            background: var(--navy);
+            color: rgba(255,255,255,.6);
             text-align: center;
             padding: 2rem;
-            font-size: 0.9rem;
+            font-size: .875rem;
+        }
+        footer a { color: var(--coral); text-decoration: none; }
+        /* ── MOBILE ── */
+        @media (max-width: 480px) {
+            .container { padding: 0 1.1rem; }
+            section { padding: 3rem 0; }
+
+            /* Hero */
+            .hero { padding: 4rem 1.25rem 3rem; min-height: auto; }
+            .badge { font-size: .78rem; padding: .4rem .9rem; }
+            .hero h1 { font-size: 2.2rem; }
+            .hero-sub { font-size: 1rem; margin-bottom: 2rem; }
+            .cta-btn { font-size: .95rem; padding: .85rem 1.5rem; }
+
+            /* Section headers */
+            .section-title { font-size: 1.5rem; }
+            .section-sub { font-size: .9rem; margin-bottom: 2rem; }
+
+            /* Teach cards */
+            .teach-grid { grid-template-columns: 1fr; gap: 1rem; margin-bottom: 1.5rem; }
+            .teach-card { padding: 1.5rem 1.25rem; }
+
+            /* Schedule banner */
+            .schedule-banner {
+                flex-direction: row;
+                flex-wrap: wrap;
+                justify-content: center;
+                gap: 1rem;
+                padding: 1.25rem 1rem;
+            }
+            .sb-item { min-width: calc(33% - 1rem); }
+            .sb-icon { font-size: 1.2rem; }
+            .sb-value { font-size: 1rem; }
+            .sb-label { font-size: .65rem; }
+            .sb-divider { display: none; }
+
+            /* Timetable */
+            .timetable { grid-template-columns: 1fr; gap: 1rem; }
+            .tt-header { font-size: .88rem; }
+            .tt-row { padding: .7rem 1rem; gap: .5rem; grid-template-columns: 55px 1fr; }
+            .tt-time { font-size: .72rem; }
+            .tt-level { font-size: .82rem; }
+            .tt-desc { font-size: .7rem; }
+            .shift-note { font-size: .85rem; padding: .85rem 1rem; }
+
+            /* Details */
+            .details-grid { grid-template-columns: 1fr; gap: 1rem; }
+            .detail-block { padding: 1.5rem 1.25rem; }
+            .dl li { font-size: .875rem; }
+
+            /* Requirements */
+            .req-grid { grid-template-columns: 1fr; gap: .85rem; }
+            .req-item { padding: 1.1rem; }
+            .req-icon { font-size: 1.3rem; }
+            .req-item h4 { font-size: .9rem; }
+            .req-item p { font-size: .82rem; }
+
+            /* Apply */
+            .apply-card { padding: 2rem 1.25rem; }
+            .email-wrap { flex-direction: column; align-items: stretch; gap: .5rem; }
+            .email-link { text-align: center; font-size: .9rem; }
+            .copy-btn { display: none; }
+            .apply-note { font-size: .82rem; }
+
+            /* Footer */
+            footer { font-size: .8rem; padding: 1.5rem 1rem; }
         }
 
-        footer a {
-            color: var(--color-coral);
-            text-decoration: none;
+        @media (max-width: 768px) and (min-width: 481px) {
+            .container { padding: 0 1.5rem; }
+            section { padding: 3.5rem 0; }
+            .teach-grid { grid-template-columns: 1fr; }
+            .timetable { grid-template-columns: 1fr; }
+            .schedule-banner { flex-wrap: wrap; gap: 1rem; }
+            .sb-divider { display: none; }
+            .details-grid { grid-template-columns: 1fr; }
+            .req-grid { grid-template-columns: 1fr; }
         }
     </style>
 </head>
 <body>
-    <!-- Hero Section -->
-    <section class="hero">
-        <div class="hero-content">
-            <span class="badge">BrightBe Learning — Launching April 2026</span>
-            <h1>TEACH. INSPIRE. <span>BrightBe.</span></h1>
-            <p class="hero-subtitle">We're launching BrightBe Learning, an online school for American children. Join us as a founding teacher and help shape our Math & Language Arts programs from the ground up.</p>
-            <a href="#apply" class="cta-button">
-                Apply Now
-                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-                    <path d="M5 12h14M12 5l7 7-7 7"/>
+
+<!-- HERO -->
+<section class="hero">
+    <div class="hero-content">
+        <span class="badge">🎉 BrightBe Learning — Launching April 2026</span>
+        <h1>BrightBe Learning<br><span>We're Hiring Teachers</span></h1>
+        <p class="hero-sub">We're opening an online Math & Language Arts school serving U.S. homeschool families and afterschool programs. Join us as a <strong>teacher</strong> and help build something meaningful from the start.</p>
+        <a href="#apply" class="cta-btn">
+            Apply Now
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round">
+                <path d="M5 12h14M12 5l7 7-7 7"/>
+            </svg>
+        </a>
+    </div>
+</section>
+
+
+
+<!-- MISSION -->
+<section class="mission">
+    <div class="container">
+        <div class="mission-inner">
+            <p class="mission-label">Our Mission</p>
+            <h2 class="mission-title">Essential Learning Program</h2>
+            <p class="mission-text">The key of hope and true success for every child in the world.</p>
+        </div>
+    </div>
+</section>
+
+
+<section class="teach">
+    <div class="container">
+        <p class="section-label">The Role</p>
+        <h2 class="section-title">What You'll Teach</h2>
+        <p class="section-sub">Live, online group lessons for American children ages 4–12, conducted entirely in English via Zoom.</p>
+
+        <div class="teach-grid">
+            <div class="teach-card math">
+                <h3>🔢 Math</h3>
+                <p class="teach-meta">Mon · Wed · Fri</p>
+                <p>U.S. Common Core curriculum taught with Japanese instructional methods — focused on building strong calculation fundamentals through structured, live instruction.</p>
+                <div class="level-pills">
+                    <span class="level-pill">Level 1</span>
+                    <span class="level-pill">Level 2</span>
+                    <span class="level-pill">Level 3</span>
+                    <span class="level-pill">Level 4</span>
+                    <span class="level-pill">Level 5</span>
+                    <span class="level-pill">Level 6</span>
+                </div>
+            </div>
+            <div class="teach-card ela">
+                <h3>📖 English Language Arts</h3>
+                <p class="teach-meta">Tue · Thu</p>
+                <p>Science of Reading-based approach covering phonics, reading comprehension, and vocabulary. Includes a cross-grade Great Figures class — reading and discussing stories of great historical figures together.</p>
+                <div class="level-pills">
+                    <span class="level-pill">Levels 1–5</span>
+                    <span class="level-pill">🌟 Great Figures (All Grades)</span>
+                </div>
+            </div>
+        </div>
+
+        <!-- Schedule Banner -->
+        <div class="schedule-banner">
+            <div class="sb-item">
+                <div class="sb-icon">📅</div>
+                <div class="sb-label">Schedule</div>
+                <div class="sb-value">Mon – Fri</div>
+            </div>
+            <div class="sb-divider"></div>
+            <div class="sb-item">
+                <div class="sb-icon">🇺🇸</div>
+                <div class="sb-label">US Time (ET)</div>
+                <div class="sb-value">4:00 – 7:00 PM</div>
+            </div>
+            <div class="sb-divider"></div>
+            <div class="sb-item">
+                <div class="sb-icon">👧</div>
+                <div class="sb-label">Students</div>
+                <div class="sb-value">Ages 4 – 12</div>
+            </div>
+            <div class="sb-divider"></div>
+            <div class="sb-item">
+                <div class="sb-icon">⏱️</div>
+                <div class="sb-label">Per Lesson</div>
+                <div class="sb-value">25 min</div>
+            </div>
+        </div>
+
+        <!-- Timetable -->
+        <div class="timetable">
+            <div class="tt-col">
+                <div class="tt-header tt-math">🔢 Math <span>Mon / Wed / Fri</span></div>
+                <div class="tt-row"><span class="tt-time">4:00 PM</span><div class="tt-content"><span class="tt-level">Level 1</span><span class="tt-desc">Counting, Addition &amp; Subtraction, Number Bonds</span></div></div>
+                <div class="tt-row"><span class="tt-time">4:30 PM</span><div class="tt-content"><span class="tt-level">Level 2</span><span class="tt-desc">2–3 Digit Column Arithmetic, Word Problems, Time &amp; Money</span></div></div>
+                <div class="tt-row"><span class="tt-time">5:00 PM</span><div class="tt-content"><span class="tt-level">Level 3</span><span class="tt-desc">Multiplication Tables, Mixed Operations (up to 4 digits)</span></div></div>
+                <div class="tt-row"><span class="tt-time">5:30 PM</span><div class="tt-content"><span class="tt-level">Level 4</span><span class="tt-desc">Division, Multi-Digit Multiplication, Unit Conversion</span></div></div>
+                <div class="tt-row"><span class="tt-time">6:00 PM</span><div class="tt-content"><span class="tt-level">Level 5</span><span class="tt-desc">Decimals, Four Operations, Unit Conversion</span></div></div>
+                <div class="tt-row"><span class="tt-time">6:30 PM</span><div class="tt-content"><span class="tt-level">Level 6</span><span class="tt-desc">Fractions, Mixed Numbers, Ratios, Graphs</span></div></div>
+            </div>
+            <div class="tt-col">
+                <div class="tt-header tt-ela">📖 English Language Arts <span>Tue / Thu</span></div>
+                <div class="tt-row"><span class="tt-time">4:00 PM</span><div class="tt-content"><span class="tt-level">Level 1 <span class="tt-grade">Elem K</span></span><span class="tt-desc">Letters, sounds, and beginning phonics</span></div></div>
+                <div class="tt-row"><span class="tt-time">4:30 PM</span><div class="tt-content"><span class="tt-level">Level 2 <span class="tt-grade">Adv K</span></span><span class="tt-desc">Word patterns and phonics building blocks</span></div></div>
+                <div class="tt-row"><span class="tt-time">5:00 PM</span><div class="tt-content"><span class="tt-level">Level 3 <span class="tt-grade">G1–2</span></span><span class="tt-desc">Reading short stories and learning new words</span></div></div>
+                <div class="tt-row tt-special"><span class="tt-time">5:30 PM</span><div class="tt-content"><span class="tt-level">🌟 Great Figures <span class="tt-grade">All Grades</span></span><span class="tt-desc">Read and discuss stories of great figures together</span></div></div>
+                <div class="tt-row"><span class="tt-time">6:00 PM</span><div class="tt-content"><span class="tt-level">Level 4 <span class="tt-grade">G3–4</span></span><span class="tt-desc">Reading comprehension and expanding vocabulary</span></div></div>
+                <div class="tt-row"><span class="tt-time">6:30 PM</span><div class="tt-content"><span class="tt-level">Level 5 <span class="tt-grade">G5–6</span></span><span class="tt-desc">Advanced reading and language skills</span></div></div>
+            </div>
+        </div>
+        <p class="tt-note">All times Eastern (ET)</p>
+        <div class="shift-note">
+            <span>🗓️</span>
+            <p>Classes run on a <strong>shift-based schedule</strong> — you'll be assigned specific time slots based on your availability. You won't be teaching all classes.</p>
+        </div>
+    </div>
+</section>
+
+<!-- POSITION DETAILS -->
+<section class="details">
+    <div class="container">
+        <p class="section-label">Position Details</p>
+        <h2 class="section-title">The Details</h2>
+        <p class="section-sub">We're in the preparation stage now — join early and help shape the curriculum and classroom experience.</p>
+
+        <div class="details-grid">
+            <div class="detail-block">
+                <h3><span>📋</span> Overview</h3>
+                <ul class="dl">
+                    <li><span class="lbl">Launch</span><span class="val">April 6, 2026</span></li>
+                    <li><span class="lbl">Subjects</span><span class="val">Math & Language Arts</span></li>
+                    <li><span class="lbl">Ages</span><span class="val">4 yrs – 6th Grade</span></li>
+                    <li><span class="lbl">Format</span><span class="val">Online Group (Zoom)</span></li>
+                    <li><span class="lbl">Hours (ET)</span><span class="val">4:00 – 7:00 PM</span></li>
+                    <li><span class="lbl">Days</span><span class="val">Monday – Friday</span></li>
+                </ul>
+            </div>
+
+            <div class="detail-block">
+                <h3><span>💰</span> Compensation</h3>
+                <ul class="dl">
+                    <li><span class="lbl">Hourly Rate</span><div style="text-align:right"><span class="val">$15 – $17 USD / hr</span><br><span style="font-size:.78rem; color:var(--text-muted); font-weight:400">Rate varies depending on your location</span></div></li>
+                    <li><span class="lbl">Payment</span><span class="val">Monthly</span></li>
+                    <li><span class="lbl">Work Type</span><span class="val">Contractor</span></li>
+                </ul>
+            </div>
+            <div class="highlight-box" style="margin-top:1.25rem; background:#EEF4FF; border-radius:12px; padding:1rem 1.25rem; font-size:1rem; color:#1E40AF; line-height:1.55;">
+                ✨ No prior experience required — but teaching or tutoring background is a plus!
+            </div>
+        </div>
+    </div>
+</section>
+<section class="req">
+    <div class="container">
+        <p class="section-label">Requirements</p>
+        <h2 class="section-title">Teaching Environment</h2>
+        <p class="section-sub">A professional setup is important for delivering a great lesson experience.</p>
+        <div class="req-grid">
+            <div class="req-item">
+                <div class="req-icon">💻</div>
+                <div>
+                    <h4>Computer</h4>
+                    <p>A laptop or desktop computer is required for teaching.</p>
+                </div>
+            </div>
+            <div class="req-item">
+                <div class="req-icon">📶</div>
+                <div>
+                    <h4>Stable WiFi</h4>
+                    <p>A reliable internet connection is essential — classes are held live on Zoom.</p>
+                </div>
+            </div>
+            <div class="req-item">
+                <div class="req-icon">🔇</div>
+                <div>
+                    <h4>Quiet Space</h4>
+                    <p>A calm, distraction-free environment suitable for conducting online lessons.</p>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- APPLY -->
+<section class="apply" id="apply">
+    <div class="container">
+        <p class="section-label">Apply</p>
+        <h2 class="section-title">Ready to Join Us?</h2>
+        <p class="section-sub">Feel free to reach out — we'd love to connect with you.</p>
+
+        <div class="apply-card">
+            <div class="email-icon">
+                <svg viewBox="0 0 24 24" fill="none" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                    <rect x="2" y="4" width="20" height="16" rx="2"/>
+                    <path d="M22 6l-10 7L2 6"/>
                 </svg>
-            </a>
-        </div>
-    </section>
-
-    <!-- Mission Section -->
-    <section class="about">
-        <div class="container">
-            <h2 class="section-title">Our Mission</h2>
-            <p class="section-subtitle">BrightBe Learning — Bringing quality Math & Language Arts education to children across America, giving every child the foundation to truly shine.</p>
-            
-            <div class="about-grid">
-                <div class="about-card">
-                    <div class="about-icon">❤️</div>
-                    <h3>Love</h3>
-                    <p>Students are the future of our world. We believe in every child's potential to succeed. Guide them with love, smiles, and encouragement.</p>
-                </div>
-                <div class="about-card">
-                    <div class="about-icon">✨</div>
-                    <h3>Growth</h3>
-                    <p>Through daily reflection and continuous learning, we strive to grow alongside our students and inspire them to become their best selves.</p>
-                </div>
-                <div class="about-card">
-                    <div class="about-icon">🤝</div>
-                    <h3>Support</h3>
-                    <p>Listen with an open heart. Meet each student where they are, understand their challenges, and provide the encouragement they need.</p>
-                </div>
-                <div class="about-card">
-                    <div class="about-icon">🌍</div>
-                    <h3>Impact</h3>
-                    <p>Our daily work contributes to building a better world. We aim for excellence and creating lasting positive change in children's lives.</p>
-                </div>
             </div>
-        </div>
-    </section>
-
-    <!-- Position Details -->
-    <section class="details">
-        <div class="container">
-            <h2 class="section-title">Position Details</h2>
-            <p class="section-subtitle">We're currently in the preparation stage, with classes starting in April 2026. Join us now to help build something meaningful.</p>
-            
-            <div class="details-wrapper">
-                <div class="detail-block">
-                    <h3><span>📋</span> Job Overview</h3>
-                    <ul class="detail-list">
-                        <li>
-                            <span class="detail-label">Status</span>
-                            <span class="detail-value">Preparation Stage</span>
-                        </li>
-                        <li>
-                            <span class="detail-label">Launch</span>
-                            <span class="detail-value">April 2026 (Planned)</span>
-                        </li>
-                        <li>
-                            <span class="detail-label">Subjects</span>
-                            <span class="detail-value">Math & Language Arts</span>
-                        </li>
-                        <li>
-                            <span class="detail-label">Student Ages</span>
-                            <span class="detail-value">4 years old – 6th Grade</span>
-                        </li>
-                        <li>
-                            <span class="detail-label">Target Students</span>
-                            <span class="detail-value">American Children (Ages 4–6th Grade)</span>
-                        </li>
-                        <li>
-                            <span class="detail-label">Lesson Format</span>
-                            <span class="detail-value">Teacher-Led Online Lessons (Zoom)</span>
-                        </li>
-                        <li>
-                            <span class="detail-label">Hours (Japan Time)</span>
-                            <span class="detail-value">Early Morning (TBD)</span>
-                        </li>
-                        <li>
-                            <span class="detail-label">Target Area</span>
-                            <span class="detail-value">US East Coast (EST)</span>
-                        </li>
-                    </ul>
-                </div>
-                
-                <div class="detail-block">
-                    <h3><span>💰</span> Compensation</h3>
-                    <ul class="detail-list">
-                        <li>
-                            <span class="detail-label">Hourly Rate</span>
-                            <span class="detail-value">¥2,000 / hour</span>
-                        </li>
-                        <li>
-                            <span class="detail-label">Payment</span>
-                            <span class="detail-value">Monthly</span>
-                        </li>
-                        <li>
-                            <span class="detail-label">Contract Type</span>
-                            <span class="detail-value">Freelance / Part-time</span>
-                        </li>
-                    </ul>
-                    <div class="highlight-box">
-                        <p>✨ No experience required – training provided!</p>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- Ideal Candidate -->
-    <section class="ideal">
-        <div class="container">
-            <h2 class="section-title">Who We're Looking For</h2>
-            <p class="section-subtitle">We're looking for passionate educators with native-level English fluency who want to make a real difference for American children.</p>
-            
-            <div class="ideal-grid">
-                <div class="ideal-item">
-                    <h4>Aligned with Our Values</h4>
-                    <p>You resonate with BrightBe Learning's mission of empowering every child to truly shine through quality education.</p>
-                </div>
-                <div class="ideal-item">
-                    <h4>Native-Level English Speaker</h4>
-                    <p>Native or near-native English fluency is required. Our students are American children — natural, accent-free English is essential.</p>
-                </div>
-                <div class="ideal-item">
-                    <h4>Early Morning Availability</h4>
-                    <p>Can commit to early morning hours (around 5–8 AM JST) on weekdays to match US East Coast schedules. Exact schedule to be determined.</p>
-                </div>
-                <div class="ideal-item">
-                    <h4>Love for Children</h4>
-                    <p>Believe in every child's potential and guide them with patience and encouragement.</p>
-                </div>
-                <div class="ideal-item">
-                    <h4>Commitment to Growth</h4>
-                    <p>Dedicated to continuous self-improvement and embodying our mission of helping children truly brighten their futures.</p>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- Apply Section -->
-    <section class="apply" id="apply">
-        <div class="container">
-            <h2 class="section-title">Ready to Join Us?</h2>
-            <p class="section-subtitle">We'd love to hear from you! Send us an email.</p>
-            
-            <div class="apply-card">
-                <div class="email-icon">
-                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-                        <rect x="2" y="4" width="20" height="16" rx="2"/>
-                        <path d="M22 6l-10 7L2 6"/>
+            <h3>Say Hello</h3>
+            <p>Send us a brief introduction along with your availability and current location.</p>
+            <div class="email-wrap">
+                <a href="/cdn-cgi/l/email-protection#6f070a0303002f0d1d0608071b0d0a030a0e1d01060108410c0002" class="email-link"><span class="__cf_email__" data-cfemail="472f222b2b280725352e202f3325222b222635292e29206924282a">[email&#160;protected]</span></a>
+                <button class="copy-btn" onclick="copyEmail(this)" aria-label="Copy email">
+                    <svg class="ico-copy" viewBox="0 0 24 24" fill="none" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                        <rect x="9" y="9" width="13" height="13" rx="2"/>
+                        <path d="M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1"/>
                     </svg>
-                </div>
-                <h3>Contact Us</h3>
-                <p>Send us a message with a brief self-introduction and your availability.</p>
-                <div class="email-container">
-                    <a href="/cdn-cgi/l/email-protection#9bf2f5fdf4dbf6fee9f8e2b6feffeef8faeff2f4f5b5f8f4f6" class="email-link"><span class="__cf_email__" data-cfemail="d2bbbcb4bd92bfb7a0b1abffb7b6a7b1b3a6bbbdbcfcb1bdbf">[email&#160;protected]</span></a>
-                    <button class="copy-btn" onclick="copyEmail()">
-                        <svg class="copy-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-                            <rect x="9" y="9" width="13" height="13" rx="2" ry="2"></rect>
-                            <path d="M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1"></path>
-                        </svg>
-                        <svg class="check-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="display:none;">
-                            <polyline points="20 6 9 17 4 12"></polyline>
-                        </svg>
-                    </button>
-                </div>
-                <p class="apply-note">💡 Please include: Your name, current location, and your availability.</p>
+                    <svg class="ico-check" viewBox="0 0 24 24" fill="none" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="display:none">
+                        <polyline points="20 6 9 17 4 12"/>
+                    </svg>
+                </button>
             </div>
+            <p class="apply-note">💡 Please include: your name, current location, availability, and any teaching experience (classroom, tutoring, etc.) — no experience required!</p>
         </div>
-    </section>
+    </div>
+</section>
 
-    <!-- Footer -->
-    <footer>
-        <p>© 2026 BrightBe Learning</p>
-        <p style="margin-top: 0.5rem;">Questions? Contact us at <a href="mailto:info@mercy-education.com">info@mercy-education.com</a></p>
-    </footer>
+<footer>
+    <p>© 2026 BrightBe Learning — Operated by Mercy Global Education LLC</p>
+    <p style="margin-top:.5rem">Questions? <a href="/cdn-cgi/l/email-protection#6109040d0d0e2103130806091503040d0400130f080f064f020e0c"><span class="__cf_email__" data-cfemail="dfb7bab3b3b09fbdadb6b8b7abbdbab3babeadb1b6b1b8f1bcb0b2">[email&#160;protected]</span></a></p>
+</footer>
 
-    <script data-cfasync="false" src="/cdn-cgi/scripts/5c5dd728/cloudflare-static/email-decode.min.js"></script><script data-cfasync="false" src="/cdn-cgi/scripts/5c5dd728/cloudflare-static/email-decode.min.js"></script><script>
-        function copyEmail() {
-            const email = 'info@mercy-education.com';
-            navigator.clipboard.writeText(email).then(() => {
-    
-　
+<script data-cfasync="false" src="/cdn-cgi/scripts/5c5dd728/cloudflare-static/email-decode.min.js"></script><script>
+function copyEmail(btn) {
+    navigator.clipboard.writeText('hello@brightbelearning.com').then(() => {
+        btn.classList.
