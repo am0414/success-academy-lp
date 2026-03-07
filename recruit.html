@@ -818,7 +818,7 @@
             <h3>Say Hello</h3>
             <p>Send us a brief introduction along with your availability and current location.</p>
             <div class="email-wrap">
-                <a href="mailto:hello@brightbelearning.com" class="email-link">hello@brightbelearning.com</a>
+                <a href="#" id="email-link" class="email-link"></a>
                 <button class="copy-btn" onclick="copyEmail(this)" aria-label="Copy email">
                     <svg class="ico-copy" viewBox="0 0 24 24" fill="none" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
                         <rect x="9" y="9" width="13" height="13" rx="2"/>
@@ -836,7 +836,34 @@
 
 <footer>
     <p>© 2026 BrightBe Learning — Operated by Mercy Global Education LLC</p>
-    <p style="margin-top:.5rem">Questions? <a href="mailto:hello@brightbelearning.com">hello@brightbelearning.com</a></p>
+    <p style="margin-top:.5rem">Questions? <a href="#" id="footer-email"></a></p>
 </footer>
 
-<script data-cfasync="false" src="/cdn-cgi/scripts/5c5dd728/cloudflare-static/email-decode.mi
+<script>
+(function() {
+    var u = 'hello';
+    var d = 'brightbelearning.com';
+    var e = u + '@' + d;
+    var el = document.getElementById('email-link');
+    if (el) { el.href = 'mailto:' + e; el.textContent = e; }
+    var fl = document.getElementById('footer-email');
+    if (fl) { fl.href = 'mailto:' + e; fl.textContent = e; }
+})();
+
+function copyEmail(btn) {
+    var u = 'hello';
+    var d = 'brightbelearning.com';
+    navigator.clipboard.writeText(u + '@' + d).then(function() {
+        btn.classList.add('copied');
+        btn.querySelector('.ico-copy').style.display = 'none';
+        btn.querySelector('.ico-check').style.display = 'block';
+        setTimeout(function() {
+            btn.classList.remove('copied');
+            btn.querySelector('.ico-copy').style.display = 'block';
+            btn.querySelector('.ico-check').style.display = 'none';
+        }, 2000);
+    });
+}
+</script>
+</body>
+</html>
