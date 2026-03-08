@@ -1,0 +1,476 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>BrightBe Learning — プレオープン会員ガイド</title>
+<link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@300;400;500;600;700&family=Outfit:wght@700;800;900&display=swap" rel="stylesheet">
+<style>
+  :root {
+    --navy: #0F172A;
+    --gold: #FBBF24;
+    --gold-light: #FEF3C7;
+    --gold-dark: #D97706;
+    --bg: #F8FAFC;
+    --white: #FFFFFF;
+    --text: #1E293B;
+    --muted: #64748B;
+    --green: #16A34A;
+    --blue: #2563EB;
+  }
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+  body { font-family: 'DM Sans', sans-serif; background: var(--bg); color: var(--text); line-height: 1.6; }
+
+  /* ===== HEADER ===== */
+  .site-header {
+    background: var(--white);
+    border-bottom: 1px solid rgba(15,23,42,0.08);
+    padding: 0 32px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    height: 68px;
+    position: sticky;
+    top: 0;
+    z-index: 100;
+    box-shadow: 0 1px 12px rgba(0,0,0,0.06);
+  }
+  .logo-wrap { display: flex; align-items: center; gap: 10px; }
+  .logo-mark { width: 38px; height: 38px; background: var(--navy); border-radius: 12px; display: flex; align-items: center; justify-content: center; }
+  .logo-mark svg { display: block; }
+  .logo-text { font-family: 'Outfit', sans-serif; font-size: 21px; color: var(--navy); }
+  .logo-text span { color: var(--gold-dark); }
+  .header-right { display: flex; align-items: center; gap: 8px; }
+  .header-badge { background: var(--gold); color: var(--navy); font-size: 11px; font-weight: 700; letter-spacing: 1.5px; text-transform: uppercase; padding: 6px 16px; border-radius: 100px; box-shadow: 0 2px 8px rgba(251,191,36,0.35); }
+  .header-star { font-size: 18px; }
+
+  /* ===== HERO ===== */
+  .hero {
+    background: #FFFDF5;
+    padding: 64px 24px 72px;
+    text-align: center;
+    position: relative;
+    overflow: hidden;
+    border-bottom: 3px solid var(--gold);
+  }
+  .hero::before {
+    content: '';
+    position: absolute;
+    width: 500px; height: 500px;
+    background: radial-gradient(circle, rgba(251,191,36,0.25) 0%, transparent 65%);
+    top: -100px; right: -100px;
+    border-radius: 50%; pointer-events: none;
+  }
+  .hero::after {
+    content: '';
+    position: absolute;
+    width: 350px; height: 350px;
+    background: radial-gradient(circle, rgba(251,191,36,0.15) 0%, transparent 65%);
+    bottom: -80px; left: -60px;
+    border-radius: 50%; pointer-events: none;
+  }
+  .hero-glow { display: none; }
+  .hero-eyebrow {
+    display: inline-flex; align-items: center; gap: 8px;
+    font-size: 12px; font-weight: 700; letter-spacing: 1.5px;
+    color: var(--gold-dark); margin-bottom: 20px;
+    background: var(--white);
+    border: 1.5px solid var(--gold);
+    padding: 5px 16px; border-radius: 100px;
+    position: relative; z-index: 1;
+    box-shadow: 0 2px 8px rgba(251,191,36,0.2);
+  }
+  .hero-eyebrow::before, .hero-eyebrow::after { display: none; }
+  .hero h1 { font-family: 'Outfit', sans-serif; font-size: clamp(36px, 7vw, 58px); color: var(--navy); line-height: 1.1; margin-bottom: 18px; position: relative; z-index: 1; }
+  .hero h1 em { font-style: italic; color: var(--gold-dark); }
+  .hero p { font-size: 17px; color: var(--muted); max-width: 440px; margin: 0 auto; position: relative; z-index: 1; line-height: 1.7; }
+
+  .container { max-width: 680px; margin: 0 auto; padding: 0 24px; }
+
+  /* CODE CARD */
+  .code-wrap { background: var(--bg); padding: 48px 24px 0; }
+  .code-card { max-width: 680px; margin: 0 auto; background: var(--navy); border-radius: 24px; padding: 40px 44px; text-align: center; box-shadow: 0 16px 48px rgba(15,23,42,0.18); }
+  .code-label { font-size: 11px; font-weight: 700; letter-spacing: 2.5px; text-transform: uppercase; color: rgba(255,255,255,0.5); margin-bottom: 12px; }
+  .code-value { font-family: 'Outfit', sans-serif; font-size: 52px; color: var(--gold); letter-spacing: 4px; margin-bottom: 8px; }
+  .code-price { font-size: 15px; color: rgba(255,255,255,0.65); margin-bottom: 22px; font-weight: 500; }
+  .copy-btn { display: inline-flex; align-items: center; gap: 8px; background: var(--gold); color: var(--navy); border: none; border-radius: 100px; padding: 12px 28px; font-family: 'DM Sans', sans-serif; font-size: 14px; font-weight: 600; cursor: pointer; transition: opacity 0.15s, transform 0.15s; }
+  .copy-btn:hover { opacity: 0.85; transform: scale(1.03); }
+  .navy-spacer { background: var(--bg); height: 56px; }
+
+  .toc-wrap { background: var(--bg); padding: 0 24px 48px; }
+  .toc { max-width: 680px; margin: 0 auto; background: var(--white); border: 1.5px solid rgba(15,23,42,0.08); border-radius: 18px; padding: 24px 28px; box-shadow: 0 2px 12px rgba(0,0,0,0.04); }
+  .toc-title { font-size: 12px; font-weight: 700; letter-spacing: 1.5px; text-transform: uppercase; color: var(--muted); margin-bottom: 16px; }
+  .toc-items { display: grid; grid-template-columns: 1fr 1fr; gap: 10px; }
+  .toc-item { display: flex; align-items: center; gap: 10px; text-decoration: none; color: var(--text); font-size: 14px; font-weight: 600; background: var(--bg); border-radius: 10px; padding: 10px 14px; transition: background 0.15s; }
+  .toc-item:hover { background: var(--gold-light); }
+  .toc-num { width: 24px; height: 24px; background: var(--navy); color: var(--gold); border-radius: 50%; font-size: 12px; font-weight: 700; display: flex; align-items: center; justify-content: center; flex-shrink: 0; }
+
+  section { padding: 60px 0; }
+  .section-label { font-size: 11px; font-weight: 700; letter-spacing: 2px; text-transform: uppercase; color: var(--gold-dark); margin-bottom: 10px; }
+  .section-title { font-family: 'Outfit', sans-serif; font-size: 30px; color: var(--navy); margin-bottom: 8px; line-height: 1.2; }
+  .section-sub { color: var(--muted); font-size: 15px; margin-bottom: 36px; line-height: 1.7; }
+
+  /* PREVIEW */
+  .preview-box { background: var(--navy); border-radius: 22px; padding: 36px 40px; overflow: hidden; position: relative; }
+  .preview-box::before { content: ''; position: absolute; width: 300px; height: 300px; background: radial-gradient(circle, rgba(251,191,36,0.14) 0%, transparent 65%); top: -80px; right: -60px; border-radius: 50%; }
+  .preview-box h3 { font-family: 'Outfit', sans-serif; font-size: 20px; color: var(--gold); margin-bottom: 22px; position: relative; z-index: 1; }
+  .preview-days { display: grid; grid-template-columns: 1fr 1fr; gap: 14px; position: relative; z-index: 1; }
+  .preview-day { background: rgba(255,255,255,0.06); border: 1px solid rgba(251,191,36,0.28); border-radius: 16px; padding: 22px 24px; }
+  .pday-week { font-size: 11px; font-weight: 700; letter-spacing: 1.5px; text-transform: uppercase; color: var(--gold); opacity: 0.75; margin-bottom: 4px; }
+  .pday-date { font-size: 22px; font-weight: 700; color: var(--white); margin-bottom: 6px; }
+  .pday-subject { font-size: 15px; color: rgba(255,255,255,0.7); margin-bottom: 8px; }
+  .pday-time { font-size: 13px; color: var(--gold); font-weight: 600; margin-top: 2px; }
+  .preview-note { margin-top: 18px; font-size: 13px; color: rgba(255,255,255,0.45); position: relative; z-index: 1; }
+
+  /* STEPS */
+  .steps { display: flex; flex-direction: column; }
+  .step { display: flex; gap: 20px; position: relative; }
+  .step:not(:last-child)::after { content: ''; position: absolute; left: 19px; top: 46px; bottom: 0; width: 2px; background: linear-gradient(to bottom, rgba(251,191,36,0.4), rgba(251,191,36,0.05)); }
+  .step-num { width: 40px; height: 40px; border-radius: 50%; background: var(--gold); color: var(--navy); font-weight: 700; font-size: 15px; display: flex; align-items: center; justify-content: center; flex-shrink: 0; box-shadow: 0 4px 14px rgba(251,191,36,0.35); position: relative; z-index: 1; }
+  .step-body { padding-bottom: 36px; flex: 1; }
+  .step-body h4 { font-size: 16px; font-weight: 700; color: var(--navy); margin-bottom: 6px; margin-top: 8px; }
+  .step-body p { font-size: 14px; color: var(--muted); line-height: 1.7; }
+  .code-chip { display: inline-block; background: var(--gold-light); border: 2px solid var(--gold); border-radius: 10px; padding: 7px 18px; font-size: 17px; font-weight: 700; color: var(--navy); margin-top: 10px; letter-spacing: 2px; }
+  .warn-note { margin-top: 12px; background: #FFF1F1; border: 1.5px solid #FCA5A5; border-radius: 10px; padding: 10px 14px; font-size: 13px; color: #B91C1C; font-weight: 500; line-height: 1.6; }
+  a.inline-link { color: var(--blue); font-weight: 600; text-decoration: none; border-bottom: 1px solid var(--blue); }
+
+  .divider { height: 1px; background: linear-gradient(to right, transparent, rgba(15,23,42,0.1), transparent); }
+
+  /* SIBLING */
+  .sibling-card { background: var(--white); border: 2px solid var(--gold); border-radius: 22px; padding: 36px 40px; }
+  .sibling-card h3 { font-family: 'Outfit', sans-serif; font-size: 22px; color: var(--navy); margin-bottom: 10px; }
+  .sibling-card > p { font-size: 15px; color: var(--muted); margin-bottom: 24px; line-height: 1.7; }
+  .sib-steps { display: flex; flex-direction: column; gap: 14px; }
+  .sib-step { display: flex; align-items: flex-start; gap: 12px; }
+  .snum { width: 28px; height: 28px; background: var(--navy); color: var(--gold); border-radius: 50%; font-size: 13px; font-weight: 700; display: flex; align-items: center; justify-content: center; flex-shrink: 0; margin-top: 2px; }
+  .sib-step p { margin: 0; font-size: 14px; color: var(--text); line-height: 1.6; }
+
+  .memo-box { background: var(--gold-light); border: 1.5px dashed var(--gold-dark); border-radius: 14px; padding: 18px 22px; margin-bottom: 24px; }
+  .memo-label { font-size: 13px; font-weight: 700; color: var(--gold-dark); margin-bottom: 12px; }
+  .memo-input-hint { font-size: 12px; color: var(--muted); display: block; margin-bottom: 6px; }
+  .memo-line { height: 1px; background: var(--gold-dark); opacity: 0.35; margin-top: 8px; }
+
+  /* REFERRAL */
+  .ref-section { background: var(--navy); border-radius: 24px; padding: 48px 44px; position: relative; overflow: hidden; }
+  .ref-section::before { content: ''; position: absolute; width: 400px; height: 400px; background: radial-gradient(circle, rgba(251,191,36,0.1) 0%, transparent 65%); bottom: -120px; right: -80px; border-radius: 50%; pointer-events: none; }
+  .ref-eyebrow { font-size: 11px; font-weight: 700; letter-spacing: 2px; text-transform: uppercase; color: var(--gold); opacity: 0.7; margin-bottom: 10px; position: relative; z-index: 1; }
+  .ref-section h3 { font-family: 'Outfit', sans-serif; font-size: 28px; color: var(--white); margin-bottom: 12px; position: relative; z-index: 1; }
+  .ref-section > p { font-size: 15px; color: rgba(255,255,255,0.65); margin-bottom: 28px; max-width: 440px; position: relative; z-index: 1; line-height: 1.7; }
+  .ref-how { background: rgba(255,255,255,0.06); border-radius: 16px; padding: 22px 26px; margin-bottom: 24px; position: relative; z-index: 1; display: flex; flex-direction: column; gap: 10px; }
+  .ref-how-item { display: flex; align-items: center; gap: 12px; font-size: 14px; color: rgba(255,255,255,0.75); }
+  .ref-icon { width: 30px; height: 30px; background: rgba(251,191,36,0.15); border-radius: 50%; display: flex; align-items: center; justify-content: center; font-size: 14px; flex-shrink: 0; }
+  .tiers { display: grid; grid-template-columns: repeat(5, 1fr); gap: 10px; margin-bottom: 20px; position: relative; z-index: 1; }
+  .tier { background: rgba(255,255,255,0.06); border: 1px solid rgba(251,191,36,0.18); border-radius: 14px; padding: 16px 8px; text-align: center; }
+  .tier .t-num { font-size: 20px; font-weight: 700; color: var(--gold); display: block; margin-bottom: 4px; }
+  .tier .t-pct { font-size: 11px; color: rgba(255,255,255,0.5); display: block; margin-bottom: 6px; }
+  .tier .t-price { font-size: 14px; font-weight: 700; color: var(--white); display: block; }
+  .tier.is-free { border-color: rgba(251,191,36,0.6); background: rgba(251,191,36,0.1); }
+  .tier.is-free .t-price { color: var(--gold); }
+  .ref-note { font-size: 12px; color: rgba(255,255,255,0.38); position: relative; z-index: 1; line-height: 1.7; }
+
+  /* CTA */
+  .cta-section { text-align: center; padding: 70px 0; }
+  .deadline-badge { display: inline-block; background: #FEF2F2; border: 2px solid #FCA5A5; color: #B91C1C; font-size: 14px; font-weight: 700; padding: 8px 20px; border-radius: 100px; margin-bottom: 20px; }
+  .cta-section h3 { font-family: 'Outfit', sans-serif; font-size: 32px; color: var(--navy); margin-bottom: 10px; }
+  .cta-section p { color: var(--muted); font-size: 15px; margin-bottom: 30px; }
+  .cta-btn { display: inline-block; background: var(--navy); color: var(--gold); font-family: 'DM Sans', sans-serif; font-size: 17px; font-weight: 700; padding: 18px 52px; border-radius: 100px; text-decoration: none; box-shadow: 0 8px 32px rgba(15,23,42,0.22); transition: transform 0.2s, box-shadow 0.2s; }
+  .cta-btn:hover { transform: translateY(-2px); box-shadow: 0 14px 44px rgba(15,23,42,0.3); }
+  .cta-sub { margin-top: 16px; font-size: 13px; color: var(--muted); }
+  .cta-sub a { color: var(--blue); }
+
+  footer { background: var(--navy); color: rgba(255,255,255,0.4); text-align: center; padding: 36px 24px; font-size: 13px; line-height: 2; }
+  footer a { color: rgba(255,255,255,0.55); text-decoration: none; }
+
+  @media (max-width: 560px) {
+    .site-header { padding: 0 16px; height: 58px; }
+    .header-star { display: none; }
+    .logo-text { font-size: 17px; }
+    .logo-mark { width: 32px; height: 32px; border-radius: 9px; }
+    .header-badge { font-size: 10px; padding: 5px 11px; letter-spacing: 1px; }
+
+    .hero { padding: 48px 20px 56px; }
+    .hero h1 { font-size: 32px; }
+    .hero p { font-size: 15px; }
+
+    .container { padding: 0 16px; }
+    .code-wrap { padding: 32px 16px 0; }
+    .code-card { padding: 28px 24px; border-radius: 18px; }
+    .code-value { font-size: 34px; letter-spacing: 2px; }
+    .code-price { font-size: 13px; }
+    .copy-btn { font-size: 13px; padding: 10px 22px; }
+
+    .toc-wrap { padding: 0 16px 36px; }
+    .toc { padding: 20px 18px; }
+    .toc-items { grid-template-columns: 1fr; gap: 8px; }
+
+    .preview-days { grid-template-columns: 1fr; }
+    .preview-box { padding: 24px 20px; }
+
+    section { padding: 44px 0; }
+    .section-title { font-size: 24px; }
+
+    .steps { gap: 0; }
+    .step-body { padding-bottom: 28px; }
+    .step-body h4 { font-size: 15px; }
+
+    .sibling-card { padding: 24px 18px; }
+    .sibling-card h3 { font-size: 18px; }
+    .memo-box { padding: 14px 16px; }
+
+    .tiers { grid-template-columns: repeat(3, 1fr); gap: 8px; }
+    .tier { padding: 12px 6px; }
+    .tier .t-num { font-size: 16px; }
+    .tier .t-price { font-size: 12px; }
+    .ref-section { padding: 28px 20px; border-radius: 18px; }
+    .ref-section h3 { font-size: 22px; }
+
+    .cta-section { padding: 48px 0; }
+    .cta-section h3 { font-size: 26px; }
+    .cta-btn { font-size: 15px; padding: 16px 36px; }
+  }
+</style>
+</head>
+<body>
+
+<!-- ===== HEADER ===== -->
+<header class="site-header">
+  <div class="logo-wrap">
+    <div class="logo-mark">
+      <span style="font-family:'Outfit',sans-serif; font-size:22px; font-weight:900; color:#FBBF24; line-height:1;">B</span>
+    </div>
+    <span class="logo-text">BrightBe <span>Learning</span></span>
+  </div>
+  <div class="header-right">
+    <span class="header-star">🚀</span>
+    <div class="header-badge">PRE-LAUNCH MEMBER</div>
+  </div>
+</header>
+
+<!-- ===== HERO ===== -->
+<div class="hero">
+  
+  <div class="container">
+    <div class="hero-eyebrow">⭐ PRE-LAUNCH MEMBER</div>
+    <h1>Welcome to<br><em>BrightBe</em> Learning!</h1>
+    <p>早めにご応募いただき、ありがとうございます。<br>7日間の無料トライアル付きでスタートできます。以下の手順で登録を進めてください。</p>
+    <div style="margin-top:20px; display:inline-block; background:var(--navy); border-radius:100px; padding:8px 20px; font-size:14px; font-weight:700; color:var(--gold); position:relative; z-index:1;">📅 登録締め切り：3月31日</div>
+  </div>
+</div>
+
+<!-- CODE CARD -->
+<div class="code-wrap">
+  <div class="code-card">
+    <div class="code-label">あなたの特別コード</div>
+    <div class="code-value">PREOPEN2026</div>
+    <div class="code-price">月額 $100 ／ 在籍中ずっとこの料金が続きます</div>
+    <button class="copy-btn" onclick="copyCode()">
+      <span id="copyIcon">📋</span>
+      <span id="copyLabel">コードをコピー</span>
+    </button>
+  </div>
+</div>
+<div class="navy-spacer"></div>
+
+<!-- TOC -->
+<div class="toc-wrap">
+  <div class="container">
+    <div class="toc">
+      <div class="toc-title">📋 このガイドの内容</div>
+      <div class="toc-items">
+        <a href="#preview" class="toc-item"><span class="toc-num">1</span>7日間無料トライアル</a>
+        <a href="#enroll" class="toc-item"><span class="toc-num">2</span>登録方法</a>
+        <a href="#sibling" class="toc-item"><span class="toc-num">3</span>兄弟・姉妹の登録</a>
+        <a href="#referral" class="toc-item"><span class="toc-num">4</span>お得に参加しよう</a>
+      </div>
+    </div>
+  </div>
+</div>
+<section>
+  <div class="container">
+    <div class="section-label">プレオープン特典</div>
+    <h2 class="section-title">✨ 7日間 無料トライアル</h2>
+    <p class="section-sub">クラス本番（4月6日）の前に、プレオープン会員だけの特別体験会があります。ぜひご参加ください！</p>
+    <div class="preview-box">
+      <h3>🎉 7日間 無料トライアル</h3>
+      <div class="preview-days">
+        <div class="preview-day">
+          <div class="pday-week">クラス開始</div>
+          <div class="pday-date">4月6日</div>
+          <div class="pday-subject">📖 ELA・🔢 算数 クラス開始</div>
+          <div class="pday-time">🇺🇸 午後4時〜（アメリカ時間）</div>
+        </div>
+        <div class="preview-day">
+          <div class="pday-week">初回請求日</div>
+          <div class="pday-date">4月13日</div>
+          <div class="pday-subject">💳 $100 請求（4/6前登録の場合）</div>
+          <div class="pday-time">4月13日までにキャンセルすれば費用ゼロ</div>
+        </div>
+      </div>
+      <div class="preview-note">⏰ 時間・ZoomリンクはマイページのCalendarから確認できます</div>
+    </div>
+  </div>
+</section>
+
+<div class="divider"></div>
+
+<!-- STEPS -->
+<div id="enroll"></div>
+<section>
+  <div class="container">
+    <div class="section-label">登録の流れ</div>
+    <h2 class="section-title">登録方法</h2>
+    <p class="section-sub">以下のステップで登録を完了してください。</p>
+    <div class="steps">
+      <div class="step">
+        <div class="step-num">1</div>
+        <div class="step-body">
+          <h4>登録ページにアクセス</h4>
+          <p><a class="inline-link" href="https://www.brightbelearning.com/login?tab=signup" target="_blank">こちらのリンク</a>から直接登録ページが開きます。</p>
+        </div>
+      </div>
+      <div class="step">
+        <div class="step-num">2</div>
+        <div class="step-body">
+          <h4>アカウントを作成</h4>
+          <p>お名前・メールアドレス・パスワードを入力します。確認メールが届いたら、リンクをクリックして認証してください。</p>
+        </div>
+      </div>
+      <div class="step">
+        <div class="step-num">3</div>
+        <div class="step-body">
+          <h4>お子さまの情報を入力 ← ここ重要！</h4>
+          <p>お子さまの名前・学年を入力します。<br><strong>「Have a code from BrightBe?」</strong>という欄が出てきたら、このコードを入力：</p>
+          <span class="code-chip">PREOPEN2026</span>
+          <div class="warn-note">⚠️ コードは登録時にのみ入力できます。登録後の適用はできませんのでご注意ください。</div>
+        </div>
+      </div>
+      <div class="step">
+        <div class="step-num">4</div>
+        <div class="step-body">
+          <h4>お支払い情報を入力</h4>
+          <p>クレジットカード情報を入力します。<strong>この時点では請求されません。</strong>トライアルは4月6日スタート、初回請求は4月13日（$100）です。4月13日までにキャンセルすれば費用ゼロです。</p>
+        </div>
+      </div>
+      <div class="step">
+        <div class="step-num">5</div>
+        <div class="step-body">
+          <h4>4月6日、クラス開始 🎉</h4>
+          <p>ダッシュボードからクラスを予約して、ZoomでJoinするだけ。一緒に頑張りましょう！</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<div class="divider"></div>
+
+<!-- SIBLING -->
+<div id="sibling"></div>
+<section>
+  <div class="container">
+    <div class="section-label">兄弟・姉妹の登録</div>
+    <h2 class="section-title">2人目以降のお子さまを追加するには</h2>
+    <p class="section-sub">同じコードを使えば、兄弟・姉妹も全員プレオープン料金（$100/月）で受講できます。</p>
+    <div class="sibling-card">
+      <h3>👨‍👩‍👧‍👦 2人目・3人目の登録方法</h3>
+      <p>1人目の登録が完了すると、ダッシュボードに<strong>その子専用のリファーラルコード</strong>が発行されます。2人目以降を追加するときは、そのコードを使ってください。</p>
+
+      <div class="memo-box">
+        <div class="memo-label">📝 1人目のリファーラルコードをメモしておこう</div>
+        <div class="memo-input-wrap">
+          <span class="memo-input-hint">例：SA2K7M9P</span>
+          <div class="memo-line"></div>
+        </div>
+      </div>
+
+      <div class="sib-steps">
+        <div class="sib-step"><div class="snum">1</div><p>ログインして <strong>ダッシュボード</strong> を開く</p></div>
+        <div class="sib-step"><div class="snum">2</div><p><strong>「+ Add Student」</strong> をクリック</p></div>
+        <div class="sib-step"><div class="snum">3</div><p>お子さまの情報を入力する</p></div>
+        <div class="sib-step"><div class="snum">4</div>
+          <div>
+            <p style="margin-bottom:10px;"><strong>「Have a code from BrightBe?」</strong> → <span class="code-chip">PREOPEN2026</span> を入力</p>
+            <p><strong>「Have a code from a friend?」</strong> → 先に登録した兄弟・姉妹のリファーラルコードを入力して完了！</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<div class="divider"></div>
+
+<!-- REFERRAL -->
+<div id="referral"></div>
+<section>
+  <div class="container">
+    <div class="section-label">紹介プログラム</div>
+    <h2 class="section-title">🎁 お得に参加しよう</h2>
+    <p class="section-sub">登録後、ダッシュボードにあなた専用の紹介コードが発行されます。お友達を紹介するたびに月謝が自動で割引されます。</p>
+    <div class="ref-section">
+      <div class="ref-eyebrow">BrightBe Referral Program</div>
+      <h3>友達紹介で最大無料に</h3>
+      <p>紹介したお友達がお支払いを続けている限り、あなたの割引もずっと継続！5人紹介すれば完全無料になります。</p>
+      <div class="ref-how">
+        <div class="ref-how-item"><div class="ref-icon">👤</div><span>お友達があなたの紹介コードで登録</span></div>
+        <div class="ref-how-item"><div class="ref-icon">✅</div><span>お友達の初回お支払いが確認される</span></div>
+        <div class="ref-how-item"><div class="ref-icon">💰</div><span>あなたの月謝が自動で20%オフに！</span></div>
+      </div>
+      <div class="tiers">
+        <div class="tier"><span class="t-num">1人</span><span class="t-pct">20% off</span><span class="t-price">$80/月</span></div>
+        <div class="tier"><span class="t-num">2人</span><span class="t-pct">40% off</span><span class="t-price">$60/月</span></div>
+        <div class="tier"><span class="t-num">3人</span><span class="t-pct">60% off</span><span class="t-price">$40/月</span></div>
+        <div class="tier"><span class="t-num">4人</span><span class="t-pct">80% off</span><span class="t-price">$20/月</span></div>
+        <div class="tier is-free"><span class="t-num">5人+</span><span class="t-pct">100% off</span><span class="t-price">無料🎉</span></div>
+      </div>
+      <p class="ref-note">※ 紹介コードは登録完了後にダッシュボードに表示されます。割引はお友達がアクティブ（お支払い中）の間ずっと継続されます。お友達がキャンセルした場合は割引も終了します。</p>
+    </div>
+  </div>
+</section>
+
+<div class="cta-section">
+  <div class="container">
+    <div class="deadline-badge">📅 登録締め切り：3月31日</div>
+    <h3>さっそく登録しよう</h3>
+    <p>クラスは4月6日スタート。今すぐモニター枠を確保してください。</p>
+    <a href="https://www.brightbelearning.com/login?tab=signup" class="cta-btn">今すぐ登録する →</a>
+    <p class="cta-sub">ご不明な点は <a href="mailto:hello@brightbelearning.com">hello@brightbelearning.com</a> までお気軽に</p>
+  </div>
+</div>
+
+<footer>
+  <p>© 2026 MERCY GLOBAL EDUCATION LLC · BrightBe Learning</p>
+  <p><a href="https://www.brightbelearning.com/login?tab=signup">brightbelearning.com</a> · <a href="/cdn-cgi/l/email-protection#f69e939a9a99b694849f919e8294939a939784989f9891d895999b"><span class="__cf_email__" data-cfemail="81e9e4ededeec1e3f3e8e6e9f5e3e4ede4e0f3efe8efe6afe2eeec">[email&#160;protected]</span></a></p>
+</footer>
+
+<script>
+function copyCode() {
+  const code = 'PREOPEN2026';
+  if (navigator.clipboard && window.isSecureContext) {
+    navigator.clipboard.writeText(code).then(showCopied).catch(() => fallbackCopy(code));
+  } else {
+    fallbackCopy(code);
+  }
+}
+function fallbackCopy(text) {
+  const el = document.createElement('textarea');
+  el.value = text;
+  el.style.position = 'fixed';
+  el.style.opacity = '0';
+  document.body.appendChild(el);
+  el.focus();
+  el.select();
+  try { document.execCommand('copy'); showCopied(); } catch(e) {}
+  document.body.removeChild(el);
+}
+function showCopied() {
+  document.getElementById('copyLabel').textContent = 'コピーしました！';
+  document.getElementById('copyIcon').textContent = '✅';
+  setTimeout(() => {
+    document.getElementById('copyLabel').textContent = 'コードをコピー';
+    document.getElementById('copyIcon').textContent = '📋';
+  }, 2000);
+}
+</script>
+</body>
+</html>
