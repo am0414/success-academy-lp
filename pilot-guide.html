@@ -21,7 +21,6 @@
   * { margin: 0; padding: 0; box-sizing: border-box; }
   body { font-family: 'DM Sans', sans-serif; background: var(--bg); color: var(--text); line-height: 1.6; }
 
-  /* ===== HEADER ===== */
   .site-header {
     background: var(--white);
     border-bottom: 1px solid rgba(15,23,42,0.08);
@@ -44,7 +43,6 @@
   .header-badge { background: var(--gold); color: var(--navy); font-size: 11px; font-weight: 700; letter-spacing: 1.5px; text-transform: uppercase; padding: 6px 16px; border-radius: 100px; box-shadow: 0 2px 8px rgba(251,191,36,0.35); }
   .header-star { font-size: 18px; }
 
-  /* ===== HERO ===== */
   .hero {
     background: #FFFDF5;
     padding: 64px 24px 72px;
@@ -69,7 +67,6 @@
     bottom: -80px; left: -60px;
     border-radius: 50%; pointer-events: none;
   }
-  .hero-glow { display: none; }
   .hero-eyebrow {
     display: inline-flex; align-items: center; gap: 8px;
     font-size: 12px; font-weight: 700; letter-spacing: 1.5px;
@@ -80,14 +77,12 @@
     position: relative; z-index: 1;
     box-shadow: 0 2px 8px rgba(251,191,36,0.2);
   }
-  .hero-eyebrow::before, .hero-eyebrow::after { display: none; }
   .hero h1 { font-family: 'Outfit', sans-serif; font-size: clamp(36px, 7vw, 58px); color: var(--navy); line-height: 1.1; margin-bottom: 18px; position: relative; z-index: 1; }
   .hero h1 em { font-style: italic; color: var(--gold-dark); }
   .hero p { font-size: 17px; color: var(--muted); max-width: 440px; margin: 0 auto; position: relative; z-index: 1; line-height: 1.7; }
 
   .container { max-width: 680px; margin: 0 auto; padding: 0 24px; }
 
-  /* CODE CARD */
   .code-wrap { background: var(--bg); padding: 48px 24px 0; }
   .code-card { max-width: 680px; margin: 0 auto; background: var(--navy); border-radius: 24px; padding: 40px 44px; text-align: center; box-shadow: 0 16px 48px rgba(15,23,42,0.18); }
   .code-label { font-size: 11px; font-weight: 700; letter-spacing: 2.5px; text-transform: uppercase; color: rgba(255,255,255,0.5); margin-bottom: 12px; }
@@ -110,7 +105,6 @@
   .section-title { font-family: 'Outfit', sans-serif; font-size: 30px; color: var(--navy); margin-bottom: 8px; line-height: 1.2; }
   .section-sub { color: var(--muted); font-size: 15px; margin-bottom: 36px; line-height: 1.7; }
 
-  /* PREVIEW */
   .preview-box { background: var(--navy); border-radius: 22px; padding: 36px 40px; overflow: hidden; position: relative; }
   .preview-box::before { content: ''; position: absolute; width: 300px; height: 300px; background: radial-gradient(circle, rgba(251,191,36,0.14) 0%, transparent 65%); top: -80px; right: -60px; border-radius: 50%; }
   .preview-box h3 { font-family: 'Outfit', sans-serif; font-size: 20px; color: var(--gold); margin-bottom: 22px; position: relative; z-index: 1; }
@@ -122,7 +116,6 @@
   .pday-time { font-size: 13px; color: var(--gold); font-weight: 600; margin-top: 2px; }
   .preview-note { margin-top: 18px; font-size: 13px; color: rgba(255,255,255,0.45); position: relative; z-index: 1; }
 
-  /* STEPS */
   .steps { display: flex; flex-direction: column; }
   .step { display: flex; gap: 20px; position: relative; }
   .step:not(:last-child)::after { content: ''; position: absolute; left: 19px; top: 46px; bottom: 0; width: 2px; background: linear-gradient(to bottom, rgba(251,191,36,0.4), rgba(251,191,36,0.05)); }
@@ -136,7 +129,6 @@
 
   .divider { height: 1px; background: linear-gradient(to right, transparent, rgba(15,23,42,0.1), transparent); }
 
-  /* SIBLING */
   .sibling-card { background: var(--white); border: 2px solid var(--gold); border-radius: 22px; padding: 36px 40px; }
   .sibling-card h3 { font-family: 'Outfit', sans-serif; font-size: 22px; color: var(--navy); margin-bottom: 10px; }
   .sibling-card > p { font-size: 15px; color: var(--muted); margin-bottom: 24px; line-height: 1.7; }
@@ -150,7 +142,6 @@
   .memo-input-hint { font-size: 12px; color: var(--muted); display: block; margin-bottom: 6px; }
   .memo-line { height: 1px; background: var(--gold-dark); opacity: 0.35; margin-top: 8px; }
 
-  /* REFERRAL */
   .ref-section { background: var(--navy); border-radius: 24px; padding: 48px 44px; position: relative; overflow: hidden; }
   .ref-section::before { content: ''; position: absolute; width: 400px; height: 400px; background: radial-gradient(circle, rgba(251,191,36,0.1) 0%, transparent 65%); bottom: -120px; right: -80px; border-radius: 50%; pointer-events: none; }
   .ref-eyebrow { font-size: 11px; font-weight: 700; letter-spacing: 2px; text-transform: uppercase; color: var(--gold); opacity: 0.7; margin-bottom: 10px; position: relative; z-index: 1; }
@@ -168,7 +159,6 @@
   .tier.is-free .t-price { color: var(--gold); }
   .ref-note { font-size: 12px; color: rgba(255,255,255,0.38); position: relative; z-index: 1; line-height: 1.7; }
 
-  /* CTA */
   .cta-section { text-align: center; padding: 70px 0; }
   .deadline-badge { display: inline-block; background: #FEF2F2; border: 2px solid #FCA5A5; color: #B91C1C; font-size: 14px; font-weight: 700; padding: 8px 20px; border-radius: 100px; margin-bottom: 20px; }
   .cta-section h3 { font-family: 'Outfit', sans-serif; font-size: 32px; color: var(--navy); margin-bottom: 10px; }
@@ -181,58 +171,188 @@
   footer { background: var(--navy); color: rgba(255,255,255,0.4); text-align: center; padding: 36px 24px; font-size: 13px; line-height: 2; }
   footer a { color: rgba(255,255,255,0.55); text-decoration: none; }
 
-  @media (max-width: 560px) {
-    .site-header { padding: 0 16px; height: 58px; }
-    .header-star { display: none; }
-    .logo-text { font-size: 17px; }
-    .logo-mark { width: 32px; height: 32px; border-radius: 9px; }
-    .header-badge { font-size: 10px; padding: 5px 11px; letter-spacing: 1px; }
+  /* sibling step 4 layout */
+  .sib-step-content { display: flex; flex-direction: column; gap: 12px; flex: 1; }
 
-    .hero { padding: 48px 20px 56px; }
-    .hero h1 { font-size: 32px; }
-    .hero p { font-size: 15px; }
+  .sib-code-block {
+    background: var(--bg);
+    border: 1.5px solid rgba(15,23,42,0.08);
+    border-radius: 12px;
+    padding: 12px 16px;
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+  }
+  .sib-code-label {
+    font-size: 13px;
+    font-weight: 700;
+    color: var(--navy);
+    line-height: 1.4;
+  }
+  .sib-code-answer {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    flex-wrap: wrap;
+  }
+  .sib-code-answer--text {
+    align-items: flex-start;
+  }
+  .sib-arrow {
+    font-size: 14px;
+    color: var(--gold-dark);
+    font-weight: 700;
+    flex-shrink: 0;
+  }
+  .sib-suffix {
+    font-size: 13px;
+    color: var(--muted);
+  }
+  .sib-code-answer--text span:last-child {
+    font-size: 13px;
+    color: var(--text);
+    line-height: 1.6;
+  }
 
-    .container { padding: 0 16px; }
-    .code-wrap { padding: 32px 16px 0; }
-    .code-card { padding: 28px 24px; border-radius: 18px; }
-    .code-value { font-size: 34px; letter-spacing: 2px; }
-    .code-price { font-size: 13px; }
-    .copy-btn { font-size: 13px; padding: 10px 22px; }
+  /* ===== GLOBAL MOBILE SAFETY ===== */
+  html, body { overflow-x: hidden; }
+  * { -webkit-tap-highlight-color: transparent; }
 
-    .toc-wrap { padding: 0 16px 36px; }
-    .toc { padding: 20px 18px; }
-    .toc-items { grid-template-columns: 1fr; gap: 8px; }
-
-    .preview-days { grid-template-columns: 1fr; }
-    .preview-box { padding: 24px 20px; }
-
-    section { padding: 44px 0; }
-    .section-title { font-size: 24px; }
-
-    .steps { gap: 0; }
-    .step-body { padding-bottom: 28px; }
-    .step-body h4 { font-size: 15px; }
-
-    .sibling-card { padding: 24px 18px; }
-    .sibling-card h3 { font-size: 18px; }
-    .memo-box { padding: 14px 16px; }
-
+  /* ===== TABLET (max 768px) ===== */
+  @media (max-width: 768px) {
     .tiers { grid-template-columns: repeat(3, 1fr); gap: 8px; }
-    .tier { padding: 12px 6px; }
-    .tier .t-num { font-size: 16px; }
-    .tier .t-price { font-size: 12px; }
-    .ref-section { padding: 28px 20px; border-radius: 18px; }
-    .ref-section h3 { font-size: 22px; }
+    .tier:nth-child(4), .tier:nth-child(5) { grid-column: span 1; }
+    /* make last 2 tiers centered on second row */
+    .tiers { justify-items: center; }
+    .tier { width: 100%; }
+  }
 
+  /* ===== MOBILE (max 560px) ===== */
+  @media (max-width: 560px) {
+    /* --- Header --- */
+    .site-header { padding: 0 16px; height: 56px; }
+    .header-star { display: none; }
+    .logo-text { font-size: 16px; }
+    .logo-mark { width: 30px; height: 30px; border-radius: 8px; }
+    .logo-mark span { font-size: 18px !important; }
+    .header-badge { font-size: 10px; padding: 5px 10px; letter-spacing: 0.8px; }
+
+    /* --- Hero --- */
+    .hero { padding: 40px 20px 48px; }
+    .hero h1 { font-size: 30px; }
+    .hero p { font-size: 14px; }
+    .hero-eyebrow { font-size: 11px; padding: 4px 13px; }
+
+    /* --- Container & spacing --- */
+    .container { padding: 0 16px; }
+    section { padding: 40px 0; }
+    .section-title { font-size: 22px; }
+    .section-sub { font-size: 14px; margin-bottom: 24px; }
+
+    /* --- Code card --- */
+    .code-wrap { padding: 28px 16px 0; }
+    .code-card { padding: 28px 20px; border-radius: 18px; }
+    .code-value { font-size: 28px; letter-spacing: 2px; }
+    .code-price { font-size: 13px; }
+    .copy-btn {
+      width: 100%;
+      justify-content: center;
+      font-size: 14px;
+      padding: 14px 20px;
+      border-radius: 14px;
+      min-height: 48px;
+    }
+    .navy-spacer { height: 36px; }
+
+    /* --- TOC --- */
+    .toc-wrap { padding: 0 16px 32px; }
+    .toc { padding: 18px 16px; border-radius: 14px; }
+    .toc-items { grid-template-columns: 1fr; gap: 8px; }
+    .toc-item { padding: 11px 14px; font-size: 13px; min-height: 44px; }
+
+    /* --- Preview --- */
+    .preview-box { padding: 22px 18px; border-radius: 16px; }
+    .preview-box h3 { font-size: 16px; margin-bottom: 16px; }
+    .preview-days { grid-template-columns: 1fr; gap: 10px; }
+    .preview-day { padding: 16px 18px; }
+    .pday-date { font-size: 18px; }
+    .pday-subject { font-size: 14px; }
+    .preview-note { font-size: 12px; }
+
+    /* --- Steps --- */
+    .step { gap: 14px; }
+    .step-num { width: 36px; height: 36px; font-size: 14px; flex-shrink: 0; }
+    .step:not(:last-child)::after { left: 17px; }
+    .step-body { padding-bottom: 24px; }
+    .step-body h4 { font-size: 14px; margin-top: 6px; }
+    .step-body p { font-size: 13px; }
+    .code-chip { font-size: 15px; padding: 6px 14px; margin-top: 8px; }
+    .warn-note { font-size: 12px; padding: 9px 12px; }
+
+    /* --- Sibling card --- */
+    .sibling-card { padding: 22px 16px; border-radius: 16px; }
+    .sibling-card h3 { font-size: 17px; }
+    .sibling-card > p { font-size: 13px; margin-bottom: 18px; }
+    .snum { width: 26px; height: 26px; font-size: 12px; }
+    .sib-step p { font-size: 13px; }
+    .sib-code-block { padding: 10px 12px; }
+    .sib-code-label { font-size: 12px; }
+    .sib-code-answer--text span:last-child { font-size: 12px; }
+    .memo-box { padding: 14px 14px; border-radius: 12px; }
+    .memo-label { font-size: 12px; }
+
+    /* --- Referral --- */
+    .ref-section { padding: 26px 18px; border-radius: 18px; }
+    .ref-section h3 { font-size: 20px; }
+    .ref-section > p { font-size: 13px; margin-bottom: 20px; }
+    .ref-how { padding: 16px 18px; border-radius: 12px; }
+    .ref-how-item { font-size: 13px; }
+    .ref-icon { width: 28px; height: 28px; font-size: 13px; }
+    /* Tiers: 3 columns → keep 3 cols but shrink text */
+    .tiers { grid-template-columns: repeat(3, 1fr); gap: 6px; margin-bottom: 16px; }
+    .tier { padding: 12px 4px; border-radius: 10px; }
+    .tier .t-num { font-size: 14px; margin-bottom: 2px; }
+    .tier .t-pct { font-size: 10px; margin-bottom: 4px; }
+    .tier .t-price { font-size: 11px; }
+    .ref-note { font-size: 11px; }
+
+    /* --- CTA --- */
     .cta-section { padding: 48px 0; }
-    .cta-section h3 { font-size: 26px; }
-    .cta-btn { font-size: 15px; padding: 16px 36px; }
+    .cta-section h3 { font-size: 24px; }
+    .cta-section > .container > p { font-size: 14px; }
+    .deadline-badge { font-size: 13px; padding: 7px 16px; }
+    .cta-btn {
+      display: block;
+      width: 100%;
+      font-size: 16px;
+      padding: 16px 20px;
+      border-radius: 14px;
+      text-align: center;
+      min-height: 52px;
+    }
+    .cta-sub { font-size: 12px; }
+    .cta-sub a { display: inline-block; word-break: break-all; }
+
+    /* --- Footer --- */
+    footer { padding: 28px 16px; font-size: 12px; }
+    footer a { word-break: break-all; }
+  }
+
+  /* ===== VERY SMALL (max 375px) ===== */
+  @media (max-width: 375px) {
+    .code-value { font-size: 24px; letter-spacing: 1px; }
+    .hero h1 { font-size: 26px; }
+    .header-badge { display: none; }
+    .logo-text { font-size: 15px; }
+    .tiers { grid-template-columns: repeat(3, 1fr); gap: 4px; }
+    .tier .t-num { font-size: 13px; }
+    .tier .t-pct { font-size: 9px; }
+    .tier .t-price { font-size: 10px; }
   }
 </style>
 </head>
 <body>
 
-<!-- ===== HEADER ===== -->
 <header class="site-header">
   <div class="logo-wrap">
     <div class="logo-mark">
@@ -246,9 +366,7 @@
   </div>
 </header>
 
-<!-- ===== HERO ===== -->
 <div class="hero">
-  
   <div class="container">
     <div class="hero-eyebrow">⭐ PILOT MEMBER</div>
     <h1>Welcome to<br><em>BrightBe</em> Learning!</h1>
@@ -257,7 +375,6 @@
   </div>
 </div>
 
-<!-- CODE CARD -->
 <div class="code-wrap">
   <div class="code-card">
     <div class="code-label">あなたの特別コード</div>
@@ -271,7 +388,6 @@
 </div>
 <div class="navy-spacer"></div>
 
-<!-- TOC -->
 <div class="toc-wrap">
   <div class="container">
     <div class="toc">
@@ -285,7 +401,8 @@
     </div>
   </div>
 </div>
-<section>
+
+<section id="preview">
   <div class="container">
     <div class="section-label">モニター限定</div>
     <h2 class="section-title">✨ 先行体験クラス</h2>
@@ -313,7 +430,6 @@
 
 <div class="divider"></div>
 
-<!-- STEPS -->
 <div id="enroll"></div>
 <section>
   <div class="container">
@@ -364,7 +480,6 @@
 
 <div class="divider"></div>
 
-<!-- SIBLING -->
 <div id="sibling"></div>
 <section>
   <div class="container">
@@ -387,10 +502,18 @@
         <div class="sib-step"><div class="snum">1</div><p>ログインして <strong>ダッシュボード</strong> を開く</p></div>
         <div class="sib-step"><div class="snum">2</div><p><strong>「+ Add Student」</strong> をクリック</p></div>
         <div class="sib-step"><div class="snum">3</div><p>お子さまの情報を入力する</p></div>
-        <div class="sib-step"><div class="snum">4</div>
-          <div>
-            <p style="margin-bottom:10px;"><strong>「Have a code from BrightBe?」</strong> → <span class="code-chip">PILOT2026</span> を入力</p>
-            <p><strong>「Have a code from a friend?」</strong> → 先に登録した兄弟・姉妹のリファーラルコードを入力して完了！</p>
+        <div class="sib-step">
+          <div class="snum">4</div>
+          <div class="sib-step-content">
+            <div class="sib-code-block">
+              <div class="sib-code-label">「Have a code from BrightBe?」</div>
+              <div class="sib-code-answer"><span class="sib-arrow">→</span><span class="code-chip">PILOT2026</span><span class="sib-suffix">を入力</span></div>
+            </div>
+            <div class="sib-code-block">
+              <div class="sib-code-label">「Have a code from a friend?」</div>
+              <div class="sib-code-answer sib-code-answer--text"><span class="sib-arrow">→</span><span>先に登録した兄弟・姉妹のリファーラルコードを入力して完了！</span></div>
+            </div>
+            <div class="warn-note">⚠️ コードは登録時にのみ入力できます。登録後の適用はできませんのでご注意ください。</div>
           </div>
         </div>
       </div>
@@ -400,7 +523,6 @@
 
 <div class="divider"></div>
 
-<!-- REFERRAL -->
 <div id="referral"></div>
 <section>
   <div class="container">
@@ -440,7 +562,7 @@
 
 <footer>
   <p>© 2026 MERCY GLOBAL EDUCATION LLC · BrightBe Learning</p>
-  <p><a href="https://www.brightbelearning.com/login?tab=signup">brightbelearning.com</a> · <a href="/cdn-cgi/l/email-protection#f69e939a9a99b694849f919e8294939a939784989f9891d895999b"><span class="__cf_email__" data-cfemail="81e9e4ededeec1e3f3e8e6e9f5e3e4ede4e0f3efe8efe6afe2eeec">[email&#160;protected]</span></a></p>
+  <p><a href="https://www.brightbelearning.com/login?tab=signup">brightbelearning.com</a> · <a href="mailto:hello@brightbelearning.com">hello@brightbelearning.com</a></p>
 </footer>
 
 <script>
