@@ -205,14 +205,7 @@
             position: relative;
             overflow: hidden;
         }
-        .campaign-card::before {
-            content: '🎁';
-            position: absolute;
-            right: -10px;
-            top: -10px;
-            font-size: 5rem;
-            opacity: 0.08;
-        }
+
         .campaign-card-badge {
             display: inline-flex;
             align-items: center;
@@ -566,7 +559,6 @@
         .fixed-cta-btn:hover { box-shadow: 0 8px 28px rgba(29,78,216,0.4); }
         .fixed-cta-note { font-size: 0.72rem; color: rgba(255,255,255,0.6); }
 
-        /* ===== SESSION CARDS & COUNTDOWN ===== */
         /* ===== PULSE ===== */
         @keyframes gentle-pulse {
             0%, 100% { box-shadow: 0 8px 28px rgba(29,78,216,0.3); }
@@ -698,7 +690,7 @@
     <!-- Campaign Banner -->
     <div class="campaign-banner">
         <div class="campaign-banner-inner">
-            <span class="campaign-banner-text">🎁 &nbsp;入会費半額クーポン配布中 &nbsp;—&nbsp; 3/10まで</span>
+            <span class="campaign-banner-text">🎁 &nbsp;入会費無料クーポン配布中 &nbsp;—&nbsp; 4/13まで</span>
         </div>
     </div>
 
@@ -722,11 +714,10 @@
                     <!-- Campaign Card -->
                     <div class="campaign-card">
                         <div class="campaign-card-badge">🔥 期間限定キャンペーン</div>
-                        <div class="campaign-card-title">LINE登録で<br>入会費半額<em>クーポン</em>プレゼント！</div>
-                        <div class="campaign-card-sub">通常50ドルの入会費が<strong style="color:#1D4ED8;">25ドル引き</strong>になるクーポンをお渡しします。資料請求もLINEから無料でできます。</div>
+                        <div class="campaign-card-title">LINE登録で<br>入会費<em>無料</em>クーポンプレゼント！</div>
+                        <div class="campaign-card-sub">通常50ドルの入会費が<strong style="color:#1D4ED8;">無料（100%OFF）</strong>になるクーポンをお渡しします。資料請求もLINEから無料でできます。</div>
                         <div class="campaign-deadline">
-                            ⏰ 終了まで：
-                            <div class="campaign-deadline-cd" id="campaignDeadlineCd"></div>
+                            🚀 新規クール4月6日スタート！
                         </div>
                     </div>
 
@@ -846,23 +837,22 @@
 
             <div class="inline-cta">
                 <div class="inline-cta-badge">🎁 期間限定・無料特典</div>
-                <h4>LINE登録で<br>入会費半額クーポンをゲット！</h4>
+                <h4>LINE登録で<br>入会費無料クーポンをゲット！</h4>
                 
                 <!-- Campaign Highlight -->
                 <div class="campaign-highlight-box">
-                    <div class="chb-label">⏰ キャンペーン終了まで</div>
-                    <div class="chb-main" id="inlineCampaignCd">計算中...</div>
-                    <div class="chb-sub">3月10日（火）23:59まで｜LINE登録でクーポンをお渡しします</div>
+                    <div class="chb-main">🚀 新規クール4月6日スタート！</div>
+                    <div class="chb-sub">LINE登録でクーポンをお渡しします</div>
                 </div>
                 <div class="inline-cta-list">
-                    <p><span>✓</span> 入会費半額クーポン配布（25ドル相当）※入会時に使用</p>
+                    <p><span>✓</span> 入会費無料クーポン配布（50ドル相当）※入会時に使用</p>
                     <p><span>✓</span> レッスン内容・料金・スケジュールがわかる資料</p>
                     <p><span>✓</span> LINEでいつでも質問OK</p>
                 </div>
                 <button class="btn-campaign pulse-btn" onclick="event.preventDefault(); trackLineClick(); setTimeout(function(){window.open('https://line.me/R/ti/p/@359fnsdb','_blank');},300);" style="width:100%;">
                     🎁 今すぐ特典だけをゲット
                 </button>
-                <p class="note">※ 登録無料・いつでも解除OK｜キャンペーン終了：3/10まで</p>
+                <p class="note">※ 登録無料・いつでも解除OK｜キャンペーン終了：4/13まで</p>
             </div>
         </div>
     </section>
@@ -988,12 +978,12 @@
                 </div>
             </div>
             <div class="entry-fee-box">
-                <p>入会費　<s style="opacity:0.5;font-size:1rem;">50 USD</s>　→　<span style="color:#1D4ED8;">25 USD</span></p>
-                <p class="sub">🎁 期間限定キャンペーン中（〜3/10）｜LINE登録で半額クーポンを配布中</p>
+                <p>入会費　<s style="opacity:0.5;font-size:1rem;">50 USD</s>　→　<span style="color:#1D4ED8;">無料（0 USD）</span></p>
+                <p class="sub">🎁 期間限定キャンペーン中（〜4/13）｜LINE登録で無料クーポンを配布中</p>
             </div>
             <div class="campaign-pricing-note">
-                <p>🔥 今すぐLINE登録で<span style="color:#1D4ED8;">25ドル引き</span>クーポンをゲット！</p>
-                <p class="cpn-sub">キャンペーンは3月10日（火）23:59まで。お早めに。</p>
+                <p>🔥 今すぐLINE登録で<span style="color:#1D4ED8;">入会費無料（100%OFF）</span>クーポンをゲット！</p>
+                <p class="cpn-sub">キャンペーンは4月13日（月）23:59まで。お早めに。</p>
             </div>
         </div>
     </section>
@@ -1002,17 +992,16 @@
     <section class="final-cta">
         <div class="final-cta-inner">
             <div class="final-cta-card">
-                <div class="inline-cta-badge">🎁 入会費半額クーポン配布中</div>
-                <h3>LINE登録で<br>25ドル分のクーポンをゲット！</h3>
+                <div class="inline-cta-badge">🎁 入会費無料クーポン配布中</div>
+                <h3>LINE登録で<br>入会費無料クーポンをゲット！</h3>
                 
                 <!-- Campaign highlight -->
                 <div class="campaign-highlight-box" style="margin-bottom:20px;">
-                    <div class="chb-label">⏰ キャンペーン終了まで</div>
-                    <div class="chb-main" id="finalCampaignCd">計算中...</div>
-                    <div class="chb-sub">3月10日（火）23:59まで</div>
+                    <div class="chb-main">🚀 新規クール4月6日スタート！</div>
+                    <div class="chb-sub">4月6日（日）スタート｜お申し込みはお早めに</div>
                 </div>
                 <div class="inline-cta-list">
-                    <p><span>✓</span> 入会費半額クーポン配布（25ドル相当）※入会時に使用</p>
+                    <p><span>✓</span> 入会費無料クーポン配布（50ドル相当）※入会時に使用</p>
                     <p><span>✓</span> レッスン内容がわかる資料</p>
                     <p><span>✓</span> 料金・スケジュールもひと目で確認</p>
                     <p><span>✓</span> LINEでいつでも質問OK</p>
@@ -1021,7 +1010,7 @@
                 <button id="lineRegButton2" class="btn-campaign pulse-btn" onclick="event.preventDefault(); trackLineClick(); setTimeout(function(){window.open('https://line.me/R/ti/p/@359fnsdb','_blank');},300);" style="width: 100%;">
                     🎁 今すぐ特典だけをゲット
                 </button>
-                <p style="font-size: 0.75rem; color: var(--gray-400); margin-top: 12px;">※ 登録無料・いつでも解除OK｜キャンペーンは3/10まで</p>
+                <p style="font-size: 0.75rem; color: var(--gray-400); margin-top: 12px;">※ 登録無料・いつでも解除OK｜キャンペーンは4/13まで</p>
                 
                 <div class="email-divider">
                     <p class="email-label">📧 LINEが使えない方はメールで</p>
@@ -1055,7 +1044,7 @@
         <a href="https://line.me/R/ti/p/@359fnsdb" onclick="event.preventDefault(); trackLineClick(); var url=this.href; setTimeout(function(){window.open(url,'_blank');},300); return false;" target="_blank" style="text-decoration: none; width: 100%; max-width: 400px;">
             <button class="fixed-cta-btn">🎁 今すぐ特典だけをゲット</button>
         </a>
-        <p class="fixed-cta-note">入会費半額クーポン配布中｜終了まで：<span id="fixedCtaNext"></span></p>
+        <p class="fixed-cta-note">入会費無料クーポン配布中｜新規クール4月6日スタート！</p>
     </div>
 
     <!-- Tracking Script -->
@@ -1091,68 +1080,7 @@
     })();
     </script>
 
-    <!-- Countdown Timer Script -->
-    <script>
-    (function() {
-      // Campaign deadline: March 10, 2026 23:59 JST = March 10 14:59 UTC
-      var CAMPAIGN_END = new Date('2026-03-10T14:59:00Z');
-      function getTimeLeft(target) {
-        var diff = target.getTime() - Date.now();
-        if (diff <= 0) return null;
-        return {
-          d: Math.floor(diff / 86400000),
-          h: Math.floor((diff % 86400000) / 3600000),
-          m: Math.floor((diff % 3600000) / 60000),
-          s: Math.floor((diff % 60000) / 1000)
-        };
-      }
-
-      function formatCampaignCountdown(tl) {
-        if (!tl) return '終了しました';
-        return tl.d + '日 ' + String(tl.h).padStart(2,'0') + ':' + String(tl.m).padStart(2,'0') + ':' + String(tl.s).padStart(2,'0');
-      }
-
-      function renderMiniCd(tl) {
-        if (!tl) return '<span style="color:#1D4ED8;">終了しました</span>';
-        return '<span class="cd-mini">' + tl.d + '日</span>' +
-               '<span class="cd-mini-sep">:</span>' +
-               '<span class="cd-mini">' + String(tl.h).padStart(2,'0') + 'h</span>' +
-               '<span class="cd-mini-sep">:</span>' +
-               '<span class="cd-mini">' + String(tl.m).padStart(2,'0') + 'm</span>' +
-               '<span class="cd-mini-sep">:</span>' +
-               '<span class="cd-mini">' + String(tl.s).padStart(2,'0') + 's</span>';
-      }
-      function update() {
-        var ctl = getTimeLeft(CAMPAIGN_END);
-        // Campaign banner countdown
-        var bannerEl = document.getElementById('bannerCountdown');
-        if (bannerEl) bannerEl.textContent = ctl ? '残り ' + formatCampaignCountdown(ctl) : 'キャンペーン終了';
-
-        // Campaign deadline in hero
-        var cdEl = document.getElementById('campaignDeadlineCd');
-        if (cdEl) cdEl.innerHTML = renderMiniCd(ctl);
-
-        // Final CTA campaign countdown
-        var inlineEl = document.getElementById('inlineCampaignCd');
-        if (inlineEl) inlineEl.textContent = ctl ? formatCampaignCountdown(ctl) : '終了しました';
-
-        var finalEl = document.getElementById('finalCampaignCd');
-        if (finalEl) finalEl.textContent = ctl ? formatCampaignCountdown(ctl) : '終了しました';
-        // Fixed CTA
-        var fixedEl = document.getElementById('fixedCtaNext');
-        if (fixedEl) {
-          if (ctl) {
-            fixedEl.textContent = ctl.d + '日' + ctl.h + '時間' + ctl.m + '分';
-          } else {
-            fixedEl.textContent = '終了しました';
-          }
-        }
-      }
-
-      update();
-      setInterval(update, 1000);
-    })();
-    </script>
+    <!-- Countdown removed -->
 
 
     <script>
