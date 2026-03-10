@@ -515,8 +515,92 @@
         .entry-fee-box p { font-family: 'Noto Sans JP', sans-serif; font-size: 1.3rem; font-weight: 900; }
         .entry-fee-box .sub { font-size: 0.9rem; font-weight: 400; color: var(--gray-600); margin-top: 4px; }
 
-        /* Campaign pricing badge */
-        .campaign-pricing-note {
+        /* ===== ENTRY CAMPAIGN BLOCK ===== */
+        .entry-campaign-block {
+            max-width: 500px;
+            margin: 40px auto 0;
+            background: linear-gradient(135deg, #EFF6FF 0%, #DBEAFE 100%);
+            border: 2px solid #3B82F6;
+            border-radius: var(--radius-lg);
+            padding: 28px 28px 24px;
+            text-align: center;
+        }
+        .entry-fee-row {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 10px;
+            margin-bottom: 16px;
+            flex-wrap: wrap;
+        }
+        .entry-fee-label {
+            font-family: 'Noto Sans JP', sans-serif;
+            font-size: 1rem;
+            font-weight: 700;
+            color: #1E3A8A;
+        }
+        .entry-fee-price s {
+            font-size: 1rem;
+            color: #94A3B8;
+            font-weight: 500;
+        }
+        .entry-fee-arrow {
+            font-size: 1.1rem;
+            color: #3B82F6;
+            font-weight: 700;
+        }
+        .entry-fee-free {
+            font-family: 'Noto Sans JP', sans-serif;
+            font-size: 1.5rem;
+            font-weight: 900;
+            color: #1D4ED8;
+        }
+        .entry-campaign-pill {
+            display: inline-block;
+            background: #1D4ED8;
+            color: white;
+            font-size: 0.78rem;
+            font-weight: 700;
+            padding: 5px 16px;
+            border-radius: 50px;
+            margin-bottom: 12px;
+        }
+        .entry-campaign-desc {
+            font-family: 'Noto Sans JP', sans-serif;
+            font-size: 1rem;
+            font-weight: 700;
+            color: #1E3A8A;
+            margin-bottom: 6px;
+            line-height: 1.5;
+        }
+        .entry-campaign-desc strong {
+            color: #1D4ED8;
+        }
+        .entry-campaign-sub {
+            font-size: 0.8rem;
+            color: #1E40AF;
+            font-weight: 500;
+        }
+
+        @media (max-width: 768px) {
+            .entry-campaign-block {
+                margin: 32px 0 0;
+                padding: 22px 20px 20px;
+                border-radius: var(--radius-md);
+            }
+            .entry-fee-row {
+                gap: 8px;
+                margin-bottom: 14px;
+            }
+            .entry-fee-free {
+                font-size: 1.3rem;
+            }
+            .entry-campaign-desc {
+                font-size: 0.95rem;
+            }
+        }
+
+
             max-width: 500px; margin: 16px auto 0;
             background: linear-gradient(135deg, #EFF6FF, #DBEAFE);
             border: 2px solid #3B82F6;
@@ -977,13 +1061,16 @@
                     <p class="price-detail">1コマ25分 月4回</p>
                 </div>
             </div>
-            <div class="entry-fee-box">
-                <p>入会費　<s style="opacity:0.5;font-size:1rem;">50 USD</s>　→　<span style="color:#1D4ED8;">無料（0 USD）</span></p>
-                <p class="sub">🎁 期間限定キャンペーン中（〜4/13）｜LINE登録で無料クーポンを配布中</p>
-            </div>
-            <div class="campaign-pricing-note">
-                <p>🔥 今すぐLINE登録で<span style="color:#1D4ED8;">入会費無料（100%OFF）</span>クーポンをゲット！</p>
-                <p class="cpn-sub">キャンペーンは4月13日（月）23:59まで。お早めに。</p>
+            <div class="entry-campaign-block">
+                <div class="entry-fee-row">
+                    <span class="entry-fee-label">入会費</span>
+                    <span class="entry-fee-price"><s>50 USD</s></span>
+                    <span class="entry-fee-arrow">→</span>
+                    <span class="entry-fee-free">無料（0 USD）</span>
+                </div>
+                <div class="entry-campaign-pill">🎁 期間限定キャンペーン中（〜4/13）</div>
+                <p class="entry-campaign-desc">今すぐLINE登録で<strong>入会費無料（100%OFF）</strong>クーポンをゲット！</p>
+                <p class="entry-campaign-sub">キャンペーンは4月13日（月）23:59まで。お早めに。</p>
             </div>
         </div>
     </section>
@@ -998,7 +1085,7 @@
                 <!-- Campaign highlight -->
                 <div class="campaign-highlight-box" style="margin-bottom:20px;">
                     <div class="chb-main">🚀 新規クール4月6日スタート！</div>
-                    <div class="chb-sub">4月6日（日）スタート｜お申し込みはお早めに</div>
+                    <div class="chb-sub">お申し込みはお早めに</div>
                 </div>
                 <div class="inline-cta-list">
                     <p><span>✓</span> 入会費無料クーポン配布（50ドル相当）※入会時に使用</p>
