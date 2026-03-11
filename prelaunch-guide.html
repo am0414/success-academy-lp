@@ -155,117 +155,130 @@
   .cta-sub a { color: var(--blue); }
   footer { background: var(--navy); color: rgba(255,255,255,0.4); text-align: center; padding: 36px 24px; font-size: 13px; line-height: 2; }
   footer a { color: rgba(255,255,255,0.55); text-decoration: none; }
-
-  /* ===== SIBLING STEP 4 ===== */
   .sib-step-content { display: flex; flex-direction: column; gap: 12px; flex: 1; }
-  .sib-code-block {
-    background: var(--bg);
-    border: 1.5px solid rgba(15,23,42,0.08);
-    border-radius: 12px;
-    padding: 12px 16px;
-    display: flex;
-    flex-direction: column;
-    gap: 8px;
-  }
+  .sib-code-block { background: var(--bg); border: 1.5px solid rgba(15,23,42,0.08); border-radius: 12px; padding: 12px 16px; display: flex; flex-direction: column; gap: 8px; }
   .sib-code-label { font-size: 13px; font-weight: 700; color: var(--navy); line-height: 1.4; }
   .sib-code-answer { display: flex; align-items: center; gap: 8px; flex-wrap: wrap; }
   .sib-code-answer--text { align-items: flex-start; }
   .sib-arrow { font-size: 14px; color: var(--gold-dark); font-weight: 700; flex-shrink: 0; }
   .sib-suffix { font-size: 13px; color: var(--muted); }
   .sib-code-answer--text span:last-child { font-size: 13px; color: var(--text); line-height: 1.6; }
-
-  /* ===== GLOBAL MOBILE SAFETY ===== */
   html, body { overflow-x: hidden; }
   * { -webkit-tap-highlight-color: transparent; }
 
-  /* ===== TABLET ===== */
   @media (max-width: 768px) {
     .tiers { grid-template-columns: repeat(3, 1fr); gap: 8px; }
-    .tier { width: 100%; }
+    .preview-days { grid-template-columns: 1fr; gap: 10px; }
+    .toc-items { grid-template-columns: 1fr; gap: 8px; }
+    .sibling-card { padding: 24px 20px; }
+    .ref-section { padding: 32px 24px; }
   }
 
-  /* ===== MOBILE ===== */
   @media (max-width: 560px) {
+    /* Header */
     .site-header { padding: 0 16px; height: 56px; }
     .header-star { display: none; }
     .logo-text { font-size: 16px; }
     .logo-mark { width: 30px; height: 30px; border-radius: 8px; }
     .logo-mark span { font-size: 18px !important; }
     .header-badge { font-size: 10px; padding: 5px 10px; letter-spacing: 0.8px; }
-    .hero { padding: 40px 20px 48px; }
-    .hero h1 { font-size: 30px; }
+
+    /* Hero */
+    .hero { padding: 36px 16px 44px; }
+    .hero h1 { font-size: 28px; }
     .hero p { font-size: 14px; }
     .hero-eyebrow { font-size: 11px; padding: 4px 13px; }
+
+    /* Layout */
     .container { padding: 0 16px; }
-    section { padding: 40px 0; }
+    section { padding: 36px 0; }
     .section-title { font-size: 22px; }
-    .section-sub { font-size: 14px; margin-bottom: 24px; }
-    .code-wrap { padding: 28px 16px 0; }
+    .section-sub { font-size: 14px; margin-bottom: 20px; }
+
+    /* Code card */
+    .code-wrap { padding: 24px 16px 0; }
     .code-card { padding: 28px 20px; border-radius: 18px; }
-    .code-value { font-size: 28px; letter-spacing: 2px; }
+    .code-value { font-size: 26px; letter-spacing: 2px; }
     .code-price { font-size: 13px; }
     .copy-btn { width: 100%; justify-content: center; font-size: 14px; padding: 14px 20px; border-radius: 14px; min-height: 48px; }
-    .navy-spacer { height: 36px; }
-    .toc-wrap { padding: 0 16px 32px; }
+
+    /* Registration button */
+    .code-card a[href*="signup"] { display: block !important; width: 100%; text-align: center; font-size: 15px !important; padding: 14px 20px !important; border-radius: 14px !important; box-sizing: border-box; }
+
+    /* Spacer & TOC */
+    .navy-spacer { height: 32px; }
+    .toc-wrap { padding: 0 16px 28px; }
     .toc { padding: 18px 16px; border-radius: 14px; }
     .toc-items { grid-template-columns: 1fr; gap: 8px; }
     .toc-item { padding: 11px 14px; font-size: 13px; min-height: 44px; }
-    .preview-box { padding: 22px 18px; border-radius: 16px; }
+
+    /* Preview */
+    .preview-box { padding: 22px 16px; border-radius: 16px; }
     .preview-box h3 { font-size: 16px; margin-bottom: 16px; }
     .preview-days { grid-template-columns: 1fr; gap: 10px; }
-    .preview-day { padding: 16px 18px; }
+    .preview-day { padding: 16px; }
     .pday-date { font-size: 18px; }
-    .pday-subject { font-size: 14px; }
+    .pday-subject { font-size: 13px; }
     .preview-note { font-size: 12px; }
+
+    /* Steps */
     .step { gap: 14px; }
     .step-num { width: 36px; height: 36px; font-size: 14px; flex-shrink: 0; }
     .step:not(:last-child)::after { left: 17px; }
     .step-body { padding-bottom: 24px; }
     .step-body h4 { font-size: 14px; margin-top: 6px; }
     .step-body p { font-size: 13px; }
-    .code-chip { font-size: 15px; padding: 6px 14px; margin-top: 8px; }
+    .code-chip { font-size: 15px; padding: 6px 14px; }
     .warn-note { font-size: 12px; padding: 9px 12px; }
-    .sibling-card { padding: 22px 16px; border-radius: 16px; }
+
+    /* Sibling */
+    .sibling-card { padding: 20px 16px; border-radius: 16px; }
     .sibling-card h3 { font-size: 17px; }
-    .sibling-card > p { font-size: 13px; margin-bottom: 18px; }
+    .sibling-card > p { font-size: 13px; margin-bottom: 16px; }
     .snum { width: 26px; height: 26px; font-size: 12px; }
     .sib-step p { font-size: 13px; }
     .sib-code-block { padding: 10px 12px; }
     .sib-code-label { font-size: 12px; }
-    .sib-code-answer--text span:last-child { font-size: 12px; }
-    .memo-box { padding: 14px 14px; border-radius: 12px; }
-    .memo-label { font-size: 12px; }
-    .ref-section { padding: 26px 18px; border-radius: 18px; }
+    .memo-box { padding: 14px; border-radius: 12px; }
+
+    /* Referral section note */
+    .sibling-card + div p, section p[style*="border-left"] {
+      font-size: 14px !important;
+      padding: 12px 14px !important;
+    }
+
+    /* Referral */
+    .ref-section { padding: 24px 16px; border-radius: 18px; }
     .ref-section h3 { font-size: 20px; }
-    .ref-section > p { font-size: 13px; margin-bottom: 20px; }
-    .ref-how { padding: 16px 18px; border-radius: 12px; }
+    .ref-section > p { font-size: 13px; margin-bottom: 18px; }
+    .ref-how { padding: 16px; border-radius: 12px; }
     .ref-how-item { font-size: 13px; }
     .ref-icon { width: 28px; height: 28px; font-size: 13px; }
-    .tiers { grid-template-columns: repeat(3, 1fr); gap: 6px; margin-bottom: 16px; }
+    .tiers { grid-template-columns: repeat(3, 1fr); gap: 6px; margin-bottom: 14px; }
     .tier { padding: 12px 4px; border-radius: 10px; }
-    .tier .t-num { font-size: 14px; margin-bottom: 2px; }
-    .tier .t-pct { font-size: 10px; margin-bottom: 4px; }
+    .tier .t-num { font-size: 14px; }
+    .tier .t-pct { font-size: 10px; }
     .tier .t-price { font-size: 11px; }
     .ref-note { font-size: 11px; }
-    .cta-section { padding: 48px 0; }
+
+    /* CTA */
+    .cta-section { padding: 44px 0; }
     .cta-section h3 { font-size: 24px; }
     .deadline-badge { font-size: 13px; padding: 7px 16px; }
     .cta-btn { display: block; width: 100%; font-size: 16px; padding: 16px 20px; border-radius: 14px; text-align: center; min-height: 52px; }
     .cta-sub { font-size: 12px; }
     .cta-sub a { display: inline-block; word-break: break-all; }
+
     footer { padding: 28px 16px; font-size: 12px; }
     footer a { word-break: break-all; }
   }
 
-  /* ===== VERY SMALL ===== */
   @media (max-width: 375px) {
-    .code-value { font-size: 24px; letter-spacing: 1px; }
-    .hero h1 { font-size: 26px; }
+    .code-value { font-size: 22px; letter-spacing: 1px; }
+    .hero h1 { font-size: 24px; }
     .header-badge { display: none; }
-    .logo-text { font-size: 15px; }
     .tiers { grid-template-columns: repeat(3, 1fr); gap: 4px; }
-    .tier .t-num { font-size: 13px; }
-    .tier .t-pct { font-size: 9px; }
+    .tier .t-num { font-size: 12px; }
     .tier .t-price { font-size: 10px; }
   }
 </style>
@@ -289,7 +302,7 @@
   <div class="container">
     <div class="hero-eyebrow">⭐ PRE-LAUNCH MEMBER</div>
     <h1>Welcome to<br><em>BrightBe</em> Learning!</h1>
-    <p>先行エントリーいただき、ありがとうございます。<br>7日間の無料トライアル付きでスタートできます。以下の手順で登録を進めてください。</p>
+    <p>7日間の無料トライアル付きでスタートできます。以下の手順で登録を進めてください。</p>
     <div style="margin-top:20px; display:inline-block; background:var(--navy); border-radius:100px; padding:8px 20px; font-size:14px; font-weight:700; color:var(--gold); position:relative; z-index:1;">📅 登録締め切り：3月31日</div>
   </div>
 </div>
@@ -303,6 +316,9 @@
       <span id="copyIcon">📋</span>
       <span id="copyLabel">コードをコピー</span>
     </button>
+    <div style="margin-top: 16px;">
+      <a href="https://www.brightbelearning.com/login?tab=signup" target="_blank" style="display: inline-block; background: white; color: var(--navy); font-family: 'DM Sans', sans-serif; font-size: 17px; font-weight: 700; padding: 16px 44px; border-radius: 100px; text-decoration: none; box-shadow: 0 4px 20px rgba(0,0,0,0.18); transition: transform 0.2s;">コードをコピーしたらここから登録</a>
+    </div>
   </div>
 </div>
 <div class="navy-spacer"></div>
@@ -325,7 +341,7 @@
   <div class="container">
     <div class="section-label">プレオープン特典</div>
     <h2 class="section-title">✨ 7日間 無料トライアル</h2>
-    <p class="section-sub">クラス本番（4月6日）の前に、プレオープン会員だけの特別体験会があります。ぜひご参加ください！</p>
+    <p class="section-sub">4月6日から1週間はトライアルです。</p>
     <div class="preview-box">
       <h3>🎉 7日間 無料トライアル</h3>
       <div class="preview-days">
@@ -367,7 +383,7 @@
         <div class="step-num">2</div>
         <div class="step-body">
           <h4>アカウントを作成</h4>
-          <p>お名前・メールアドレス・パスワードを入力します。確認メールが届いたら、リンクをクリックして認証してください。</p>
+          <p>保護者様のお名前・メールアドレス・パスワードを入力します。確認メールが届いたら、リンクをクリックして認証してください。</p>
         </div>
       </div>
       <div class="step">
@@ -404,9 +420,10 @@
   <div class="container">
     <div class="section-label">兄弟・姉妹の登録</div>
     <h2 class="section-title">2人目以降のお子さまを追加するには</h2>
-    <p class="section-sub">同じコードを使えば、兄弟・姉妹も全員プレオープン料金（$100/月）で受講できます。</p>
+    <p style="font-size: 17px; font-weight: 700; color: var(--navy); background: var(--gold-light); border-left: 4px solid var(--gold-dark); border-radius: 8px; padding: 14px 18px; margin-bottom: 28px; line-height: 1.7;">🎁 BrightBe Referral Program の紹介割引は、<br>兄弟・姉妹への登録にも適用できます。</p>
+    <p class="section-sub"></p>
     <div class="sibling-card">
-      <h3>👨‍👩‍👧‍👦 2人目・3人目の登録方法</h3>
+      <h3>👨‍👩‍👧‍👦 2人目以降の登録方法</h3>
       <p>1人目の登録が完了すると、ダッシュボードに<strong>その子専用のリファーラルコード</strong>が発行されます。2人目以降を追加するときは、そのコードを使ってください。</p>
       <div class="memo-box">
         <div class="memo-label">📝 1人目のリファーラルコードをメモしておこう</div>
@@ -473,13 +490,13 @@
     <h3>さっそく登録しよう</h3>
     <p>クラスは4月6日スタート。今すぐプレオープン枠を確保してください。</p>
     <a href="https://www.brightbelearning.com/login?tab=signup" class="cta-btn">今すぐ登録する →</a>
-    <p class="cta-sub">ご不明な点は <a href="mailto:hello@brightbelearning.com">hello@brightbelearning.com</a> までお気軽に</p>
+    <p class="cta-sub">ご不明な点は <a href="/cdn-cgi/l/email-protection#4e262b2222210e2c3c2729263a2c2b222b2f3c20272029602d2123"><span class="__cf_email__" data-cfemail="167e737a7a795674647f717e6274737a737764787f78713875797b">[email&#160;protected]</span></a> までお気軽に</p>
   </div>
 </div>
 
 <footer>
   <p>© 2026 MERCY GLOBAL EDUCATION LLC · BrightBe Learning</p>
-  <p><a href="https://www.brightbelearning.com/login?tab=signup">brightbelearning.com</a> · <a href="mailto:hello@brightbelearning.com">hello@brightbelearning.com</a></p>
+  <p><a href="https://www.brightbelearning.com/login?tab=signup">brightbelearning.com</a> · <a href="/cdn-cgi/l/email-protection#69010c050506290b1b000e011d0b0c050c081b0700070e470a0604"><span class="__cf_email__" data-cfemail="b6ded3dadad9f6d4c4dfd1dec2d4d3dad3d7c4d8dfd8d198d5d9db">[email&#160;protected]</span></a></p>
 </footer>
 
 <script>
@@ -508,7 +525,38 @@ function showCopied() {
   setTimeout(() => {
     document.getElementById('copyLabel').textContent = 'コードをコピー';
     document.getElementById('copyIcon').textContent = '📋';
-  }, 2000);
+  }, 2500);
+
+  const toast = document.createElement('div');
+  toast.textContent = '✅ コードをコピーしました！';
+  toast.style.cssText = `
+    position: fixed;
+    bottom: 32px;
+    left: 50%;
+    transform: translateX(-50%) translateY(20px);
+    background: #0F172A;
+    color: #FBBF24;
+    font-family: 'DM Sans', sans-serif;
+    font-size: 15px;
+    font-weight: 700;
+    padding: 14px 28px;
+    border-radius: 100px;
+    box-shadow: 0 8px 32px rgba(0,0,0,0.25);
+    z-index: 9999;
+    opacity: 0;
+    transition: opacity 0.3s, transform 0.3s;
+    white-space: nowrap;
+  `;
+  document.body.appendChild(toast);
+  requestAnimationFrame(() => {
+    toast.style.opacity = '1';
+    toast.style.transform = 'translateX(-50%) translateY(0)';
+  });
+  setTimeout(() => {
+    toast.style.opacity = '0';
+    toast.style.transform = 'translateX(-50%) translateY(10px)';
+    setTimeout(() => toast.remove(), 300);
+  }, 2500);
 }
 </script>
 </body>
