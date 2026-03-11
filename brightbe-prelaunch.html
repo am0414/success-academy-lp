@@ -6,176 +6,161 @@
     <title>BrightBe Learning プレオープン会員募集</title>
     <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@300;400;500;700&family=Poppins:wght@600;700&display=swap" rel="stylesheet">
     <style>
+        :root {
+            --navy: #0F172A;
+            --navy2: #1E293B;
+            --gold: #FBBF24;
+            --gold-dark: #D97706;
+            --gold-light: #FEF3C7;
+        }
         * { margin: 0; padding: 0; box-sizing: border-box; }
         body { font-family: 'Noto Sans JP', sans-serif; background: linear-gradient(135deg, #f5f7fa 0%, #e4e8ec 100%); min-height: 100vh; padding: 40px 20px; line-height: 1.8; }
         .container { max-width: 650px; margin: 0 auto; }
         .card { background: white; border-radius: 20px; box-shadow: 0 10px 40px rgba(0,0,0,0.1); overflow: hidden; }
-        .header { background: linear-gradient(135deg, #2563eb 0%, #3b82f6 50%, #60a5fa 100%); padding: 50px 30px; text-align: center; color: white; position: relative; overflow: hidden; }
-        .header::before { content: ''; position: absolute; top: -50%; left: -50%; width: 200%; height: 200%; background: radial-gradient(circle, rgba(255,255,255,0.2) 0%, transparent 50%); }
+
+        /* HEADER */
+        .header { background: linear-gradient(135deg, var(--navy) 0%, var(--navy2) 100%); padding: 50px 30px; text-align: center; color: white; position: relative; overflow: hidden; }
+        .header::before { content: ''; position: absolute; top: -50%; left: -50%; width: 200%; height: 200%; background: radial-gradient(circle, rgba(251,191,36,0.15) 0%, transparent 50%); }
         .header > * { position: relative; z-index: 1; }
         .lang-switcher { position: absolute; top: 15px; right: 15px; z-index: 10; display: flex; gap: 5px; }
-        .lang-btn { padding: 6px 12px; border: 2px solid rgba(255,255,255,0.5); background: transparent; color: white; border-radius: 20px; cursor: pointer; font-size: 12px; font-weight: 600; transition: all 0.3s; }
-        .lang-btn.active { background: white; color: #1d4ed8; border-color: white; }
-        .open-badge-big { display: inline-block; background: white; color: #1d4ed8; padding: 12px 35px; border-radius: 10px; font-family: 'Poppins', sans-serif; font-size: 24px; font-weight: 700; letter-spacing: 3px; margin-bottom: 15px; box-shadow: 0 4px 15px rgba(0,0,0,0.15); }
-        .badge { display: inline-block; background: white; padding: 10px 25px; border-radius: 50px; font-size: 14px; font-weight: 600; letter-spacing: 1px; color: #1d4ed8; box-shadow: 0 4px 15px rgba(0,0,0,0.1); }
-        .subtitle { font-size: 28px; margin-top: 18px; letter-spacing: 6px; color: white; font-weight: 700; text-shadow: 0 2px 10px rgba(0,0,0,0.2); }
+        .lang-btn { padding: 6px 12px; border: 2px solid rgba(251,191,36,0.5); background: transparent; color: white; border-radius: 20px; cursor: pointer; font-size: 12px; font-weight: 600; transition: all 0.3s; }
+        .lang-btn.active { background: var(--gold); color: var(--navy); border-color: var(--gold); }
+        .open-badge-big { display: inline-block; background: var(--gold); color: var(--navy); padding: 12px 35px; border-radius: 10px; font-family: 'Poppins', sans-serif; font-size: 24px; font-weight: 700; letter-spacing: 3px; margin-bottom: 15px; box-shadow: 0 4px 15px rgba(251,191,36,0.3); }
+        .badge { display: inline-block; background: rgba(251,191,36,0.15); border: 1.5px solid rgba(251,191,36,0.4); padding: 10px 25px; border-radius: 50px; font-size: 14px; font-weight: 600; letter-spacing: 1px; color: var(--gold); }
+        .subtitle { font-size: 28px; margin-top: 18px; letter-spacing: 6px; color: white; font-weight: 700; }
+
+        /* CONTENT */
         .content { padding: 40px 35px; }
-        .intro { background: #f8f9fa; border-left: 4px solid #2563eb; padding: 20px; margin-bottom: 30px; border-radius: 0 12px 12px 0; }
+        .intro { background: #f8f9fa; border-left: 4px solid var(--gold); padding: 20px; margin-bottom: 30px; border-radius: 0 12px 12px 0; }
         .intro p { color: #555; font-size: 15px; }
         .section { margin-bottom: 30px; }
-        .section-title { font-size: 18px; font-weight: 700; color: #2563eb; margin-bottom: 15px; display: flex; align-items: center; gap: 10px; }
-        .section-title::before { content: ''; width: 4px; height: 20px; background: linear-gradient(135deg, #2563eb, #60a5fa); border-radius: 2px; }
-        @keyframes priceGlow { 0%, 100% { box-shadow: 0 0 20px rgba(37,99,235,0.3), 0 8px 32px rgba(37,99,235,0.15); } 50% { box-shadow: 0 0 35px rgba(37,99,235,0.5), 0 8px 40px rgba(37,99,235,0.25); } }
+        .section-title { font-size: 18px; font-weight: 700; color: var(--navy); margin-bottom: 15px; display: flex; align-items: center; gap: 10px; }
+        .section-title::before { content: ''; width: 4px; height: 20px; background: linear-gradient(135deg, var(--navy), var(--gold)); border-radius: 2px; }
+
+        /* PRICE BOX */
+        @keyframes priceGlow { 0%, 100% { box-shadow: 0 0 20px rgba(251,191,36,0.3), 0 8px 32px rgba(251,191,36,0.15); } 50% { box-shadow: 0 0 35px rgba(251,191,36,0.5), 0 8px 40px rgba(251,191,36,0.25); } }
         @keyframes shimmer { 0% { background-position: -200% center; } 100% { background-position: 200% center; } }
         @keyframes badgePulse { 0%, 100% { transform: scale(1); } 50% { transform: scale(1.05); } }
-        .price-box { background: linear-gradient(135deg, #1d4ed8 0%, #2563eb 40%, #3b82f6 70%, #60a5fa 100%); border: 3px solid #1d4ed8; border-radius: 20px; padding: 35px 25px; text-align: center; margin-bottom: 30px; position: relative; overflow: hidden; animation: priceGlow 3s ease-in-out infinite; }
-        .price-box::before { content: ''; position: absolute; top: -50%; left: -50%; width: 200%; height: 200%; background: radial-gradient(circle, rgba(255,255,255,0.15) 0%, transparent 50%); pointer-events: none; }
+        .price-box { background: linear-gradient(135deg, var(--navy) 0%, var(--navy2) 100%); border: 2px solid var(--gold-dark); border-radius: 20px; padding: 35px 25px; text-align: center; margin-bottom: 30px; position: relative; overflow: hidden; animation: priceGlow 3s ease-in-out infinite; }
+        .price-box::before { content: ''; position: absolute; top: -50%; left: -50%; width: 200%; height: 200%; background: radial-gradient(circle, rgba(251,191,36,0.1) 0%, transparent 50%); pointer-events: none; }
         .price-box > * { position: relative; z-index: 1; }
         .price-label { font-size: 15px; color: rgba(255,255,255,0.85); margin-bottom: 8px; font-weight: 500; letter-spacing: 2px; text-transform: uppercase; }
-        .price { font-family: 'Poppins', sans-serif; font-size: 72px; font-weight: 700; color: white; background: linear-gradient(90deg, #fff 0%, #e0eaff 25%, #fff 50%, #e0eaff 75%, #fff 100%); background-size: 200% auto; -webkit-background-clip: text; -webkit-text-fill-color: transparent; background-clip: text; animation: shimmer 4s linear infinite; line-height: 1.1; text-shadow: none; filter: drop-shadow(0 2px 8px rgba(0,0,0,0.2)); }
+        .price { font-family: 'Poppins', sans-serif; font-size: 72px; font-weight: 700; color: var(--gold); line-height: 1.1; }
         .price span { font-size: 24px; }
-        .discount-badge { display: inline-block; background: #fbbf24; color: #92400e; padding: 6px 18px; border-radius: 50px; font-size: 16px; font-weight: 700; margin-top: 8px; letter-spacing: 1px; animation: badgePulse 2s ease-in-out infinite; }
+        .discount-badge { display: inline-block; background: var(--gold); color: var(--navy); padding: 6px 18px; border-radius: 50px; font-size: 16px; font-weight: 700; margin-top: 8px; letter-spacing: 1px; animation: badgePulse 2s ease-in-out infinite; }
         .price-note { font-size: 15px; color: rgba(255,255,255,0.9); margin-top: 12px; }
-        .regular-price { text-decoration: line-through; color: rgba(255,255,255,0.7); font-size: 16px; }
+        .regular-price { text-decoration: line-through; color: rgba(255,255,255,0.6); font-size: 16px; }
         .price-sub { font-size: 13px; color: rgba(255,255,255,0.75); margin-top: 14px; }
-        .lock-badge { display: inline-block; background: white; color: #1d4ed8; padding: 10px 22px; border-radius: 50px; font-size: 14px; font-weight: 700; margin-top: 18px; box-shadow: 0 4px 15px rgba(0,0,0,0.15); }
+        .lock-badge { display: inline-block; background: rgba(251,191,36,0.15); border: 1.5px solid var(--gold); color: var(--gold); padding: 10px 22px; border-radius: 50px; font-size: 14px; font-weight: 700; margin-top: 18px; }
+
+        /* CTA BUTTON */
+        .mini-cta { text-align: center; margin: 5px 0 20px; }
+        .mini-cta a { display: inline-block; background: var(--gold); color: var(--navy); padding: 14px 35px; border-radius: 50px; font-weight: 700; text-decoration: none; font-size: 16px; box-shadow: 0 4px 20px rgba(251,191,36,0.4); transition: all 0.3s; }
+        .mini-cta a:hover { background: var(--gold-dark); transform: translateY(-2px); }
+
+        /* FEATURES */
         .features { display: grid; gap: 12px; }
-        .feature-item { display: flex; align-items: flex-start; gap: 12px; padding: 12px 15px; background: #f8f9fa; border-radius: 10px; border-left: 3px solid #2563eb; }
+        .feature-item { display: flex; align-items: flex-start; gap: 12px; padding: 12px 15px; background: #f8f9fa; border-radius: 10px; border-left: 3px solid var(--gold); }
         .feature-icon { font-size: 20px; flex-shrink: 0; }
         .feature-text { font-size: 15px; color: #444; }
+
+        /* SCHEDULE */
         .schedule-table { width: 100%; border-collapse: collapse; margin-top: 10px; }
         .schedule-table th, .schedule-table td { padding: 12px 15px; text-align: left; border-bottom: 1px solid #eee; font-size: 14px; }
-        .schedule-table th { background: #2563eb; font-weight: 600; color: white; }
+        .schedule-table th { background: var(--navy); font-weight: 600; color: white; }
         .tz-btn-wrap { display: flex; flex-wrap: wrap; justify-content: center; gap: 5px; }
         .tz-btn { padding: 8px 14px; border: 2px solid #ddd; background: white; color: #666; border-radius: 20px; cursor: pointer; font-size: 13px; transition: all 0.2s; }
-        .tz-btn.active { background: #2563eb; color: white; border-color: #2563eb; font-weight: 600; }
+        .tz-btn.active { background: var(--navy); color: white; border-color: var(--navy); font-weight: 600; }
         .tt-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 14px; }
         .tt-block { border-radius: 12px; overflow: hidden; border: 1px solid #eee; }
         .tt-header { display: flex; align-items: center; gap: 10px; padding: 14px 16px; color: white; font-size: 15px; }
         .tt-header span:first-child { font-size: 20px; }
         .tt-header strong { display: block; font-size: 15px; }
         .tt-days { font-size: 12px; opacity: 0.85; font-weight: 400; }
-        .math-header { background: linear-gradient(135deg, #2563eb, #60a5fa); }
-        .eng-header { background: linear-gradient(135deg, #ff7e33, #ffb347); }
+        .math-header { background: linear-gradient(135deg, var(--navy), var(--navy2)); }
+        .eng-header { background: linear-gradient(135deg, #D97706, #F59E0B); }
         .tt-rows { background: white; }
         .tt-row { display: flex; justify-content: space-between; align-items: center; padding: 11px 16px; border-bottom: 1px solid #f0f0f0; font-size: 13px; }
         .tt-row:last-child { border-bottom: none; }
         .tt-time { color: #888; font-weight: 500; min-width: 70px; }
         .tt-label { font-weight: 600; color: #333; text-align: right; }
         .tt-legend { background: #fffdf5; }
-        .tt-legend .tt-label { color: #f39c12; }
-        .quarter-box { background: linear-gradient(135deg, #f0f4ff 0%, #e8f0fe 100%); border: 2px solid #2563eb; border-radius: 16px; padding: 30px 25px; text-align: center; }
+        .tt-legend .tt-label { color: var(--gold-dark); }
+
+        /* QUARTER BOX */
+        .quarter-box { background: linear-gradient(135deg, #F8FAFC 0%, #EEF2F7 100%); border: 2px solid var(--navy); border-radius: 16px; padding: 30px 25px; text-align: center; }
         .quarter-icon { font-size: 32px; margin-bottom: 10px; }
-        .quarter-title { font-size: 18px; font-weight: 700; color: #1d4ed8; margin-bottom: 10px; }
+        .quarter-title { font-size: 18px; font-weight: 700; color: var(--navy); margin-bottom: 10px; }
         .quarter-lead { font-size: 14px; color: #666; margin-bottom: 24px; line-height: 1.7; }
         .quarter-steps { display: grid; gap: 14px; text-align: left; }
         .quarter-step { display: flex; align-items: flex-start; gap: 14px; background: white; border-radius: 12px; padding: 16px; box-shadow: 0 2px 8px rgba(0,0,0,0.04); }
-        .step-num { background: #2563eb; color: white; width: 28px; height: 28px; border-radius: 50%; display: flex; align-items: center; justify-content: center; font-weight: 700; font-size: 14px; flex-shrink: 0; }
+        .step-num { background: var(--navy); color: var(--gold); width: 28px; height: 28px; border-radius: 50%; display: flex; align-items: center; justify-content: center; font-weight: 700; font-size: 14px; flex-shrink: 0; }
         .step-text { font-size: 14px; color: #444; line-height: 1.7; }
-        .step-text strong { color: #333; }
+
+        /* CURRICULUM */
         .curr-tabs { display: flex; gap: 6px; margin-bottom: 16px; }
         .curr-tab { flex: 1; padding: 10px; border-radius: 10px; border: 2px solid #eee; background: white; text-align: center; font-weight: 600; font-size: 14px; cursor: pointer; transition: all 0.3s; color: #888; }
-        .curr-tab.active-math { border-color: #2563eb; color: #2563eb; background: #f0f4ff; }
-        .curr-tab.active-reading { border-color: #ff7e33; color: #ff7e33; background: #fff8f3; }
+        .curr-tab.active-math { border-color: var(--navy); color: var(--navy); background: #F0F4FF; }
+        .curr-tab.active-reading { border-color: var(--gold-dark); color: var(--gold-dark); background: #FFFBEB; }
         .curr-panel { display: none; }
         .curr-panel.active { display: block; }
-        .level-item { padding: 14px 16px; margin-bottom: 8px; border-radius: 10px; background: #f8f9fa; border-left: 3px solid #2563eb; }
-        .level-item.reading { border-left-color: #ff7e33; }
+        .level-item { padding: 14px 16px; margin-bottom: 8px; border-radius: 10px; background: #f8f9fa; border-left: 3px solid var(--navy); }
+        .level-item.reading { border-left-color: var(--gold-dark); }
         .level-name { font-weight: 700; font-size: 14px; color: #333; margin-bottom: 4px; }
         .level-desc { font-size: 13px; color: #666; line-height: 1.6; }
-        .faq-list { display: grid; gap: 15px; }
-        .faq-item { background: #f8f9fa; border-radius: 10px; padding: 15px 20px; border-left: 3px solid #2563eb; cursor: pointer; transition: background 0.2s; }
-        .faq-item:hover { background: #f0f4ff; }
-        .faq-q { font-weight: 600; color: #333; font-size: 15px; display: flex; justify-content: space-between; align-items: flex-start; gap: 10px; }
-        .faq-q::after { content: '＋'; color: #2563eb; font-size: 20px; font-weight: 700; flex-shrink: 0; line-height: 1; }
-        .faq-item.open .faq-q::after { content: '－'; }
-        .faq-a { color: #555; font-size: 14px; line-height: 1.7; display: none; margin-top: 8px; }
-        .faq-item.open .faq-a { display: block; }
-        .cta-section { background: #f8f9fa; padding: 30px; text-align: center; color: #333; border-top: 3px solid #2563eb; }
-        .cta-text { font-size: 16px; margin-bottom: 15px; color: #333; }
-        .cta-btn { display: inline-block; background: #2563eb; color: white; padding: 18px 50px; border-radius: 50px; font-weight: 700; text-decoration: none; margin: 15px 0; font-size: 18px; box-shadow: 0 4px 15px rgba(37,99,235,0.4); transition: all 0.3s; }
-        .cta-btn:hover { background: #1d4ed8; transform: translateY(-2px); box-shadow: 0 6px 20px rgba(37,99,235,0.5); }
-        .cta-note { font-size: 13px; color: #666; }
-        .footer { padding: 25px; text-align: center; background: #f8f9fa; border-top: 1px solid #e9ecef; }
-        .footer-text { font-size: 13px; color: #666; }
-        .footer-btn { display: inline-block; color: white; padding: 10px 25px; border-radius: 25px; text-decoration: none; font-weight: 600; font-size: 14px; margin: 5px; }
-        .highlight { background: #e8f0fe; padding: 2px 6px; border-radius: 4px; }
+
+        /* ACCORDION */
         .accordion-header { display: flex; justify-content: space-between; align-items: center; cursor: pointer; user-select: none; padding: 4px 0; transition: opacity 0.2s; }
         .accordion-header:hover { opacity: 0.75; }
         .accordion-header .section-title { margin-bottom: 0; }
-        .accordion-arrow { width: 28px; height: 28px; background: #e8f0fe; color: #2563eb; border-radius: 50%; display: flex; align-items: center; justify-content: center; font-size: 14px; font-weight: 700; transition: transform 0.3s; flex-shrink: 0; }
+        .accordion-arrow { width: 28px; height: 28px; background: var(--gold-light); color: var(--navy); border-radius: 50%; display: flex; align-items: center; justify-content: center; font-size: 14px; font-weight: 700; transition: transform 0.3s; flex-shrink: 0; }
         .accordion-arrow.open { transform: rotate(180deg); }
         .accordion-body { overflow: hidden; max-height: 0; transition: max-height 0.4s ease; }
         .accordion-body.open { max-height: 2000px; padding-top: 16px; }
-        .mini-cta { text-align: center; margin: 5px 0 20px; }
-        .mini-cta a { display: inline-block; background: white; color: #2563eb; padding: 14px 35px; border-radius: 50px; font-weight: 700; text-decoration: none; font-size: 16px; border: 2px solid white; box-shadow: 0 4px 15px rgba(0,0,0,0.15); transition: all 0.3s; }
-        .mini-cta a:hover { background: #e8f0fe; }
-        /* ESA STATES */
+
+        /* FAQ */
+        .faq-list { display: grid; gap: 15px; }
+        .faq-item { background: #f8f9fa; border-radius: 10px; padding: 15px 20px; border-left: 3px solid var(--navy); cursor: pointer; transition: background 0.2s; }
+        .faq-item:hover { background: var(--gold-light); }
+        .faq-q { font-weight: 600; color: #333; font-size: 15px; display: flex; justify-content: space-between; align-items: flex-start; gap: 10px; }
+        .faq-q::after { content: '＋'; color: var(--navy); font-size: 20px; font-weight: 700; flex-shrink: 0; line-height: 1; }
+        .faq-item.open .faq-q::after { content: '－'; }
+        .faq-a { color: #555; font-size: 14px; line-height: 1.7; display: none; margin-top: 8px; }
+        .faq-item.open .faq-a { display: block; }
+
+        /* CTA SECTION */
+        .cta-section { background: var(--navy); padding: 30px; text-align: center; color: white; border-top: 3px solid var(--gold); }
+        .cta-text { font-size: 16px; margin-bottom: 15px; color: rgba(255,255,255,0.85); }
+        .cta-btn { display: inline-block; background: var(--gold); color: var(--navy); padding: 18px 50px; border-radius: 50px; font-weight: 700; text-decoration: none; margin: 15px 0; font-size: 18px; box-shadow: 0 4px 20px rgba(251,191,36,0.4); transition: all 0.3s; }
+        .cta-btn:hover { background: var(--gold-dark); transform: translateY(-2px); }
+        .cta-note { font-size: 13px; color: rgba(255,255,255,0.6); }
+
+        /* FOOTER */
+        .footer { padding: 25px; text-align: center; background: #f8f9fa; border-top: 1px solid #e9ecef; }
+        .footer-text { font-size: 13px; color: #666; }
+        .footer-btn { display: inline-block; color: white; padding: 10px 25px; border-radius: 25px; text-decoration: none; font-weight: 600; font-size: 14px; margin: 5px; }
+
+        /* ESA */
         .esa-states-grid { display: grid; grid-template-columns: 1fr 1fr 1fr; gap: 12px; margin-top: 14px; }
         .esa-state-card { background: white; border-radius: 12px; padding: 18px 12px; text-align: center; border: 1.5px solid #e5e7eb; box-shadow: 0 2px 8px rgba(0,0,0,0.04); }
         .esa-state-name { font-weight: 700; font-size: 15px; color: #333; margin-bottom: 6px; }
         .esa-state-program { font-size: 12px; color: #666; line-height: 1.5; }
         .esa-approved-badge { display: inline-block; background: #dcfce7; color: #16a34a; padding: 3px 12px; border-radius: 20px; font-size: 11px; font-weight: 700; margin-top: 8px; }
+
         @media (max-width: 600px) {
             body { padding: 10px 8px; }
-            .container { max-width: 100%; }
             .content { padding: 20px 16px; }
-            .section { margin-bottom: 24px; }
             .header { padding: 48px 16px 28px; }
-            .lang-switcher { top: 10px; right: 10px; }
-            .lang-btn { padding: 5px 10px; font-size: 11px; }
             .open-badge-big { font-size: 15px; padding: 8px 18px; letter-spacing: 1px; }
             .badge { font-size: 12px; padding: 6px 14px; }
             .subtitle { font-size: 18px; letter-spacing: 2px; margin-top: 12px; }
-            .intro { padding: 16px; }
-            .intro p { font-size: 14px; }
-            .price-box { padding: 24px 16px; border-radius: 16px; }
-            .price-label { font-size: 12px; letter-spacing: 1px; }
             .price { font-size: 56px; }
             .price span { font-size: 20px; }
-            .discount-badge { font-size: 13px; padding: 5px 14px; }
-            .lock-badge { font-size: 12px; padding: 8px 16px; margin-top: 14px; }
-            .price-sub { font-size: 12px; margin-top: 10px; }
-            .section-title { font-size: 15px; gap: 8px; }
-            .section-title::before { height: 18px; }
-            .feature-item { padding: 10px 12px; gap: 10px; }
-            .feature-icon { font-size: 18px; }
-            .feature-text { font-size: 13px; }
             .esa-states-grid { grid-template-columns: 1fr; gap: 8px; }
-            .esa-state-card { padding: 14px 10px; border-radius: 10px; }
-            .esa-state-name { font-size: 13px; margin-bottom: 4px; }
-            .esa-state-program { font-size: 11px; }
-            .esa-approved-badge { font-size: 10px; padding: 3px 8px; }
-            .quarter-box { padding: 20px 14px; border-radius: 14px; }
-            .quarter-icon { font-size: 26px; }
-            .quarter-title { font-size: 15px; }
-            .quarter-lead { font-size: 13px; margin-bottom: 18px; }
-            .quarter-step { padding: 12px; gap: 10px; border-radius: 10px; }
-            .step-num { width: 26px; height: 26px; font-size: 13px; }
-            .step-text { font-size: 13px; }
-            .schedule-table th, .schedule-table td { padding: 10px 10px; font-size: 13px; }
             .tt-grid { grid-template-columns: 1fr; gap: 10px; }
-            .tt-header { padding: 12px 14px; }
-            .tt-header strong { font-size: 14px; }
-            .tt-days { font-size: 11px; }
-            .tt-row { font-size: 12px; padding: 9px 12px; }
-            .tt-time { min-width: 55px; }
-            .tz-btn { padding: 6px 10px; font-size: 12px; }
-            .curr-tab { font-size: 12px; padding: 8px 4px; }
-            .level-item { padding: 10px 12px; }
-            .level-name { font-size: 13px; }
-            .level-desc { font-size: 12px; }
-            .accordion-arrow { width: 26px; height: 26px; font-size: 13px; }
-            .faq-item { padding: 13px 14px; }
-            .faq-q { font-size: 14px; }
-            .faq-a { font-size: 13px; }
+            .section-title { font-size: 15px; }
             .mini-cta a { display: block; padding: 14px 20px; font-size: 15px; border-radius: 40px; }
-            .cta-section { padding: 24px 16px; }
-            .cta-text { font-size: 14px; }
             .cta-btn { display: block; padding: 16px 20px !important; font-size: 16px !important; margin: 12px 0; border-radius: 40px; }
-            .cta-note { font-size: 12px; }
-            .footer { padding: 20px 16px; }
-            .footer-btn { padding: 10px 18px; font-size: 13px; }
         }
     </style>
 </head>
@@ -202,16 +187,51 @@
     <div class="price-box">
         <p class="price-label" data-ja="プレオープン特別価格" data-en="Pre-Launch Special Offer">プレオープン特別価格</p>
         <p class="price">$100<span data-ja="/月" data-en="/mo">/月</span></p>
-        <div class="discount-badge">67% OFF</div>
-        <p class="price-note"><span class="regular-price" data-ja="通常価格 $300/月" data-en="Regular $300/month">通常価格 $300/月</span></p>
+        <div class="discount-badge" style="font-size: 14px; padding: 8px 22px;" data-ja="入会費＄50無料 ＋ レッスン価格67% OFF" data-en="$50 Enrollment Fee Waived + 67% OFF Lessons">入会費＄50無料 ＋ レッスン価格67% OFF</div>
+        <p class="price-note"><span class="regular-price" data-ja="通常レッスン価格 $300/月" data-en="Regular Lesson Price $300/month">通常レッスン価格 $300/月</span></p>
         <div class="lock-badge" data-ja="🔒 在籍中ずっとこの価格" data-en="🔒 Lifetime Price Guarantee — your rate will never increase as long as you maintain your enrollment.">🔒 在籍中ずっとこの価格</div>
         <p class="price-sub" data-ja="✅ 最初の1週間は体験期間（通常通りのレッスンに参加できます）" data-en="✅ First week is a trial period — experience full access to our regular curriculum.">✅ 最初の1週間は体験期間（通常通りのレッスンに参加できます）</p>
         <p class="price-sub" data-ja="※退会後の再入会時はプレオープン価格の適用外となります" data-en="※Pre-launch pricing will not apply if you re-enroll after cancellation">※退会後の再入会時はプレオープン価格の適用外となります</p>
     </div>
 
-    <div class="mini-cta">
-        <a href="https://docs.google.com/forms/d/e/1FAIpQLSe1aW1hSKlwsio_5Q_rI3tsPUYl1fFN3dkljlViEvSVogy6hg/viewform?usp=dialog" target="_blank" data-ja="📩 先行エントリーする" data-en="📩 Join the Pre-Launch">📩 先行エントリーする</a>
-    </div>
+    <!-- BUTTON + REFERRAL SECTION -->
+    <div style="margin-bottom: 30px; text-align: center;">
+        <a href="https://www.successacademyworld.com/prelaunch-guide" target="_blank" style="display: inline-block; background: var(--gold); color: var(--navy); padding: 18px 44px; border-radius: 50px; font-weight: 700; text-decoration: none; font-size: 18px; box-shadow: 0 4px 24px rgba(251,191,36,0.45); transition: all 0.3s;" data-ja="🎟️ 特別価格になるコードを取得" data-en="🎟️ Get Your Exclusive Discount Code">🎟️ 特別価格になるコードを取得</a>
+        <div style="background: linear-gradient(135deg, var(--navy) 0%, var(--navy2) 100%); border-radius: 20px; padding: 28px 20px 24px; border: 1.5px solid rgba(251,191,36,0.35); box-shadow: 0 8px 30px rgba(15,23,42,0.12); margin-top: 20px;">
+        <p style="font-size: 11px; font-weight: 700; letter-spacing: 2px; color: var(--gold); margin-bottom: 8px; text-transform: uppercase;">REFERRAL PROGRAM</p>
+        <p style="font-size: 20px; font-weight: 700; color: white; margin-bottom: 8px;" data-ja="👫 紹介して、さらにお得に" data-en="👫 Refer Friends, Save Even More">👫 紹介して、さらにお得に</p>
+        <p style="font-size: 15px; font-weight: 600; color: white; background: rgba(251,191,36,0.12); border: 1px solid rgba(251,191,36,0.3); border-radius: 12px; padding: 14px 16px; margin-bottom: 18px; line-height: 1.8;" data-ja="紹介したお友達がお支払いを続けている限り、あなたの割引もずっと継続！<br>5人紹介すれば完全無料になります。" data-en="As long as your referred friends keep their subscription, your discount keeps going!<br>Refer 5 and it's completely free.">紹介したお友達がお支払いを続けている限り、あなたの割引もずっと継続！<br>5人紹介すれば完全無料になります。</p>
+        <div style="display: grid; grid-template-columns: repeat(5, 1fr); gap: 6px; margin-bottom: 16px;">
+            <div style="background: rgba(255,255,255,0.07); border-radius: 10px; padding: 10px 4px; border: 1px solid rgba(251,191,36,0.2);">
+                <div style="font-size: 16px; font-weight: 800; color: var(--gold);" data-ja="1人" data-en="1">1人</div>
+                <div style="font-size: 10px; color: rgba(255,255,255,0.55); margin: 2px 0;">20% off</div>
+                <div style="font-size: 12px; font-weight: 700; color: white;">$80<span style="font-size:10px;">/月</span></div>
+            </div>
+            <div style="background: rgba(255,255,255,0.07); border-radius: 10px; padding: 10px 4px; border: 1px solid rgba(251,191,36,0.2);">
+                <div style="font-size: 16px; font-weight: 800; color: var(--gold);" data-ja="2人" data-en="2">2人</div>
+                <div style="font-size: 10px; color: rgba(255,255,255,0.55); margin: 2px 0;">40% off</div>
+                <div style="font-size: 12px; font-weight: 700; color: white;">$60<span style="font-size:10px;">/月</span></div>
+            </div>
+            <div style="background: rgba(255,255,255,0.07); border-radius: 10px; padding: 10px 4px; border: 1px solid rgba(251,191,36,0.2);">
+                <div style="font-size: 16px; font-weight: 800; color: var(--gold);" data-ja="3人" data-en="3">3人</div>
+                <div style="font-size: 10px; color: rgba(255,255,255,0.55); margin: 2px 0;">60% off</div>
+                <div style="font-size: 12px; font-weight: 700; color: white;">$40<span style="font-size:10px;">/月</span></div>
+            </div>
+            <div style="background: rgba(255,255,255,0.07); border-radius: 10px; padding: 10px 4px; border: 1px solid rgba(251,191,36,0.2);">
+                <div style="font-size: 16px; font-weight: 800; color: var(--gold);" data-ja="4人" data-en="4">4人</div>
+                <div style="font-size: 10px; color: rgba(255,255,255,0.55); margin: 2px 0;">80% off</div>
+                <div style="font-size: 12px; font-weight: 700; color: white;">$20<span style="font-size:10px;">/月</span></div>
+            </div>
+            <div style="background: rgba(251,191,36,0.15); border-radius: 10px; padding: 10px 4px; border: 1.5px solid var(--gold);">
+                <div style="font-size: 16px; font-weight: 800; color: var(--gold);" data-ja="5人+" data-en="5+">5人+</div>
+                <div style="font-size: 10px; color: rgba(255,255,255,0.55); margin: 2px 0;">100% off</div>
+                <div style="font-size: 12px; font-weight: 700; color: var(--gold);" data-ja="無料🎉" data-en="Free🎉">無料🎉</div>
+            </div>
+        </div>
+        <p style="font-size: 11px; color: rgba(255,255,255,0.45);" data-ja="※お友達があなたの紹介コードを使って登録すると、割引が自動で適用されます。紹介コードは登録後にダッシュボードに表示されます。割引はお友達がアクティブ（お支払い中）の間継続します。" data-en="※When your friend signs up using your referral code, the discount is applied automatically. Your referral code appears in your dashboard after enrollment. Discount continues while referrals remain active.">※お友達があなたの紹介コードを使って登録すると、割引が自動で適用されます。紹介コードは登録後にダッシュボードに表示されます。割引はお友達がアクティブ（お支払い中）の間継続します。</p>
+        <p style="font-size: 16px; font-weight: 700; color: white; background: rgba(251,191,36,0.12); border: 1px solid rgba(251,191,36,0.3); border-radius: 12px; padding: 14px 16px; margin-top: 12px; line-height: 1.8;" data-ja="🎯 友達も一緒に $100 スタート。紹介するなら今。" data-en="🎯 Friends can start at $100 too. Refer them now.">🎯 友達も一緒に $100 スタート。紹介するなら今。</p>
+        </div><!-- inner card -->
+    </div><!-- outer wrapper -->
 
     <div class="section">
         <h2 class="section-title" data-ja="BrightBe Learningとは" data-en="About BrightBe Learning">BrightBe Learningとは</h2>
@@ -224,28 +244,15 @@
         </div>
     </div>
 
-    <!-- ESA SECTION - Updated with Alabama -->
     <div class="section">
         <div style="background: linear-gradient(135deg, #f0faf4, #e6f4ee); border: 2px solid #22c55e; border-radius: 16px; padding: 28px 24px; text-align: center;">
             <div style="font-size: 32px; margin-bottom: 10px;">✅</div>
             <h3 style="font-size: 20px; font-weight: 700; color: #16a34a; margin-bottom: 8px;" data-ja="教育資金支援プログラム対応" data-en="Education Funding Programs Accepted">教育資金支援プログラム対応</h3>
             <p style="font-size: 14px; color: #555; margin-bottom: 4px;" data-ja="以下の州の教育資金支援プログラムにてBrightBe Learningをご利用いただけます。" data-en="BrightBe Learning is an approved provider in the following state education funding programs.">以下の州の教育資金支援プログラムにてBrightBe Learningをご利用いただけます。</p>
             <div class="esa-states-grid">
-                <div class="esa-state-card">
-                    <div class="esa-state-name">Arizona</div>
-                    <div class="esa-state-program" data-ja="Empowerment Scholarship Account<br>ClassWallet経由でお支払い可能" data-en="Empowerment Scholarship Account<br>Pay via ClassWallet">Empowerment Scholarship Account<br>ClassWallet経由でお支払い可能</div>
-                    <div class="esa-approved-badge">✓ Approved</div>
-                </div>
-                <div class="esa-state-card">
-                    <div class="esa-state-name">New Hampshire</div>
-                    <div class="esa-state-program" data-ja="Education Freedom Account<br>CSF NH プログラム対応<br>ClassWallet経由でお支払い可能" data-en="Education Freedom Account<br>CSF NH Program<br>Pay via ClassWallet">Education Freedom Account<br>CSF NH プログラム対応<br>ClassWallet経由でお支払い可能</div>
-                    <div class="esa-approved-badge">✓ Approved</div>
-                </div>
-                <div class="esa-state-card">
-                    <div class="esa-state-name">Alabama</div>
-                    <div class="esa-state-program" data-ja="CHOOSE Act Alabama<br>ClassWallet経由でお支払い可能" data-en="CHOOSE Act Alabama<br>Pay via ClassWallet">CHOOSE Act Alabama<br>ClassWallet経由でお支払い可能</div>
-                    <div class="esa-approved-badge">✓ Approved</div>
-                </div>
+                <div class="esa-state-card"><div class="esa-state-name">Arizona</div><div class="esa-state-program" data-ja="Empowerment Scholarship Account<br>ClassWallet経由でお支払い可能" data-en="Empowerment Scholarship Account<br>Pay via ClassWallet">Empowerment Scholarship Account<br>ClassWallet経由でお支払い可能</div><div class="esa-approved-badge">✓ Approved</div></div>
+                <div class="esa-state-card"><div class="esa-state-name">New Hampshire</div><div class="esa-state-program" data-ja="Education Freedom Account<br>CSF NH プログラム対応<br>ClassWallet経由でお支払い可能" data-en="Education Freedom Account<br>CSF NH Program<br>Pay via ClassWallet">Education Freedom Account<br>CSF NH プログラム対応<br>ClassWallet経由でお支払い可能</div><div class="esa-approved-badge">✓ Approved</div></div>
+                <div class="esa-state-card"><div class="esa-state-name">Alabama</div><div class="esa-state-program" data-ja="CHOOSE Act Alabama<br>ClassWallet経由でお支払い可能" data-en="CHOOSE Act Alabama<br>Pay via ClassWallet">CHOOSE Act Alabama<br>ClassWallet経由でお支払い可能</div><div class="esa-approved-badge">✓ Approved</div></div>
             </div>
             <p style="font-size: 13px; color: #666; background: white; border-radius: 10px; padding: 10px 16px; display: inline-block; margin-top: 16px;" data-ja="※教育資金支援プログラムご利用の方は通常価格$300/月が適用されます。<br>ご利用希望の方はお気軽にご連絡ください。" data-en="※Regular price of $300/month applies for education funding program families.<br>Please contact us directly to get started.">※教育資金支援プログラムご利用の方は通常価格$300/月が適用されます。<br>ご利用希望の方はお気軽にご連絡ください。</p>
         </div>
@@ -336,7 +343,7 @@
                 <div class="level-item reading"><div class="level-name">Level 1（Elementary K）</div><div class="level-desc" data-ja="アルファベット26文字 ＋ 短母音の導入" data-en="Letter Recognition &amp; Phonics Foundations">アルファベット26文字 ＋ 短母音の導入</div></div>
                 <div class="level-item reading"><div class="level-name">Level 2（Advanced K）</div><div class="level-desc" data-ja="ブレンド・ダイグラフ・サイレントe・母音チーム・Rコントロール" data-en="Blends, Digraphs, Silent-E, Vowel Teams &amp; R-Controlled Vowels">ブレンド・ダイグラフ・サイレントe・母音チーム・Rコントロール</div></div>
                 <div class="level-item reading"><div class="level-name">Level 3（Grade 1–2）</div><div class="level-desc" data-ja="フィクション＆ノンフィクション読解 ＋ 語彙・サイトワード（Lexile 200–500L）" data-en="Fiction &amp; nonfiction reading + vocabulary &amp; sight words (Lexile 200–500L)">フィクション＆ノンフィクション読解 ＋ 語彙・サイトワード（Lexile 200–500L）</div></div>
-                <div class="level-item reading" style="border-left-color: #f39c12; background: #fffdf5;"><div class="level-name" data-ja="🌟 偉人クラス（全学年）" data-en="🌟 Biographies &amp; Historical Leaders (All Grades)">🌟 偉人クラス（全学年）</div><div class="level-desc" data-ja="偉人の生き方を英語で学び、道徳心と考える力を育てます。ディスカッション中心のAll Englishクラス。" data-en="Learn from the lives of great historical figures in English. A discussion-based, All English class that builds character and critical thinking.">偉人の生き方を英語で学び、道徳心と考える力を育てます。ディスカッション中心のAll Englishクラス。</div></div>
+                <div class="level-item reading" style="border-left-color: #D97706; background: #fffdf5;"><div class="level-name" data-ja="🌟 偉人クラス（全学年）" data-en="🌟 Biographies &amp; Historical Leaders (All Grades)">🌟 偉人クラス（全学年）</div><div class="level-desc" data-ja="偉人の生き方を英語で学び、道徳心と考える力を育てます。ディスカッション中心のAll Englishクラス。" data-en="Learn from the lives of great historical figures in English. A discussion-based, All English class that builds character and critical thinking.">偉人の生き方を英語で学び、道徳心と考える力を育てます。ディスカッション中心のAll Englishクラス。</div></div>
                 <div class="level-item reading"><div class="level-name">Level 4（Grade 3–4）</div><div class="level-desc" data-ja="比喩・ラテン語の語根・慣用句を学びながら読解力を深める（Lexile 500–800L）" data-en="Similes, Latin roots, idioms with deeper comprehension (Lexile 500–800L)">比喩・ラテン語の語根・慣用句を学びながら読解力を深める（Lexile 500–800L）</div></div>
                 <div class="level-item reading"><div class="level-name">Level 5（Grade 5–6）</div><div class="level-desc" data-ja="ギリシャ語・ラテン語の語根、高度な修辞表現、中学準備の読解（Lexile 750–1000L）" data-en="Greek &amp; Latin roots, advanced figurative language, middle-school prep (Lexile 750–1000L)">ギリシャ語・ラテン語の語根、高度な修辞表現、中学準備の読解（Lexile 750–1000L）</div></div>
                 <p style="font-size: 12px; color: #888; margin-top: 12px; text-align: center;" data-ja="各レベル12週間（1クール）× 年4回 ｜ SELテーマ統合" data-en="Each level = 12 weeks × 4 quarters/year | SEL themes integrated">各レベル12週間（1クール）× 年4回 ｜ SELテーマ統合</p>
@@ -358,16 +365,16 @@
 </div>
 
 <div class="cta-section">
-    <p class="cta-text" data-ja="ご興味のある方は下記フォームより先行エントリーください" data-en="Interested? Join the pre-launch below">ご興味のある方は下記フォームより先行エントリーください</p>
-    <a href="https://docs.google.com/forms/d/e/1FAIpQLSe1aW1hSKlwsio_5Q_rI3tsPUYl1fFN3dkljlViEvSVogy6hg/viewform?usp=dialog" target="_blank" class="cta-btn" data-ja="📩 先行エントリーする" data-en="📩 Join the Pre-Launch">📩 先行エントリーする</a>
-    <p class="cta-note" data-ja="※エントリー後、プレオープン特別価格の入会案内をメールでお送りします。4月6日（月）レッスン開始。4月第1週目は体験期間です。<br><strong style='color: #2563eb;'>エントリー締切：2026年3月中旬</strong>" data-en="※After entering, you will receive pre-launch pricing and enrollment details by email. Lessons begin Monday, April 6. The first week of April is a trial period.<br><strong style='color: #2563eb;'>Entry Deadline: Mid-March 2026</strong>">※エントリー後、プレオープン特別価格の入会案内をメールでお送りします。4月6日（月）レッスン開始。4月第1週目は体験期間です。<br><strong style="color: #2563eb;">エントリー締切：2026年3月中旬</strong></p>
+    <p class="cta-text" data-ja="プレオープン特別価格でスタートしよう" data-en="Start at the Pre-Launch Special Price">プレオープン特別価格でスタートしよう</p>
+    <a href="https://www.successacademyworld.com/prelaunch-guide" target="_blank" class="cta-btn" data-ja="🎟️ 特別価格になるコードを取得" data-en="🎟️ Get Your Exclusive Discount Code">🎟️ 特別価格になるコードを取得</a>
+    <p class="cta-note" data-ja="4月6日（月）レッスン開始。4月第1週目は体験期間です。<br><strong style='color: var(--gold);'>登録締切：2026年3月31日</strong>" data-en="Lessons begin Monday, April 6. The first week of April is a trial period.<br><strong style='color: #FBBF24;'>Enrollment Deadline: March 31, 2026</strong>">4月6日（月）レッスン開始。4月第1週目は体験期間です。<br><strong style="color: #FBBF24;">登録締切：2026年3月31日</strong></p>
 </div>
 
 <div class="footer">
     <p class="footer-text" data-ja="ご質問はお気軽にどうぞ" data-en="Questions? Feel free to contact us">ご質問はお気軽にどうぞ</p>
     <p style="margin: 15px 0;">
         <a href="https://lin.ee/KtZdAoc" target="_blank" class="footer-btn" style="background: #06C755;" data-ja="💬 公式LINE" data-en="💬 LINE">💬 公式LINE</a>
-        <a href="#" onclick="copyEmail(event)" class="footer-btn" style="background: #2563eb;" data-ja="✉️ メール" data-en="✉️ Email">✉️ メール</a>
+        <a href="#" onclick="copyEmail(event)" class="footer-btn" style="background: var(--navy);" data-ja="✉️ メール" data-en="✉️ Email">✉️ メール</a>
         <span id="email-copied" style="display:none; font-size:12px; color:#22c55e; margin-left:8px;">コピーしました！</span>
     </p>
     <p class="footer-text" style="margin-top: 15px;">BrightBe Learning<br>Operated by Mercy Global Education LLC</p>
@@ -376,7 +383,7 @@
 </div>
 </div>
 <script>
-function copyEmail(e) { e.preventDefault(); navigator.clipboard.writeText('info@mercy-education.com').then(() => { const msg = document.getElementById('email-copied'); msg.style.display = 'inline'; setTimeout(() => { msg.style.display = 'none'; }, 2000); }); }
+function copyEmail(e) { e.preventDefault(); navigator.clipboard.writeText('hello@brightbelearning.com').then(() => { const msg = document.getElementById('email-copied'); msg.style.display = 'inline'; setTimeout(() => { msg.style.display = 'none'; }, 2000); }); }
 function toggleAccordion(id, header) { const body = document.getElementById(id); const arrow = header.querySelector('.accordion-arrow'); body.classList.toggle('open'); arrow.classList.toggle('open'); }
 function toggleFaq(item) { item.classList.toggle('open'); }
 function setLang(lang) { document.querySelectorAll('[data-ja][data-en]').forEach(el => { el.innerHTML = el.dataset[lang]; }); document.getElementById('btn-ja').classList.toggle('active', lang === 'ja'); document.getElementById('btn-en').classList.toggle('active', lang === 'en'); document.title = lang === 'ja' ? 'BrightBe Learning プレオープン会員募集' : 'BrightBe Learning - Pre-Launch Enrollment'; }
