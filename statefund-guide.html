@@ -4,268 +4,212 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>BrightBe Learning — State Fund 利用ガイド</title>
-<link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@300;400;500;600;700&family=Outfit:wght@700;800;900&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Outfit:wght@700;800;900&display=swap" rel="stylesheet">
 <style>
   :root {
-    --navy: #0F172A; --gold: #FBBF24; --gold-light: #FEF3C7; --gold-dark: #D97706;
-    --bg: #F8FAFC; --white: #FFFFFF; --text: #1E293B; --muted: #64748B;
-    --green: #16A34A; --blue: #2563EB; --teal: #0891B2; --teal-light: #E0F7FA;
+    --navy: #0F172A; --gold: #FBBF24; --gold-dark: #D97706; --gold-light: #FEF3C7;
+    --bg: #F8FAFC; --white: #fff; --text: #1E293B; --muted: #64748B;
+    --teal: #0891B2; --teal-light: #E0F7FA;
   }
-  * { margin: 0; padding: 0; box-sizing: border-box; -webkit-tap-highlight-color: transparent; }
+  * { margin: 0; padding: 0; box-sizing: border-box; }
   html, body { overflow-x: hidden; }
   body { font-family: 'DM Sans', sans-serif; background: var(--bg); color: var(--text); line-height: 1.6; }
 
-  /* Header */
-  .site-header { background: var(--white); border-bottom: 1px solid rgba(15,23,42,0.08); padding: 0 32px; display: flex; align-items: center; justify-content: space-between; height: 68px; position: sticky; top: 0; z-index: 100; box-shadow: 0 1px 12px rgba(0,0,0,0.06); }
+  .site-header { background: var(--white); border-bottom: 1px solid rgba(15,23,42,0.08); padding: 0 24px; display: flex; align-items: center; justify-content: space-between; height: 64px; position: sticky; top: 0; z-index: 100; box-shadow: 0 1px 10px rgba(0,0,0,0.06); }
   .logo-wrap { display: flex; align-items: center; gap: 10px; }
-  .logo-mark { width: 38px; height: 38px; background: var(--navy); border-radius: 12px; display: flex; align-items: center; justify-content: center; }
-  .logo-text { font-family: 'Outfit', sans-serif; font-size: 21px; color: var(--navy); }
+  .logo-mark { width: 36px; height: 36px; background: var(--navy); border-radius: 10px; display: flex; align-items: center; justify-content: center; }
+  .logo-text { font-family: 'Outfit', sans-serif; font-size: 20px; color: var(--navy); }
   .logo-text span { color: var(--gold-dark); }
-  .header-badge { background: var(--teal); color: var(--white); font-size: 11px; font-weight: 700; letter-spacing: 1.5px; text-transform: uppercase; padding: 6px 16px; border-radius: 100px; }
+  .header-badge { background: var(--teal); color: var(--white); font-size: 11px; font-weight: 700; letter-spacing: 1.5px; text-transform: uppercase; padding: 5px 14px; border-radius: 100px; }
 
-  /* Hero */
-  .hero { background: #F0FDFF; padding: 64px 24px 72px; text-align: center; position: relative; overflow: hidden; border-bottom: 3px solid var(--teal); }
-  .hero::before { content: ''; position: absolute; width: 500px; height: 500px; background: radial-gradient(circle, rgba(8,145,178,0.15) 0%, transparent 65%); top: -100px; right: -100px; border-radius: 50%; pointer-events: none; }
-  .hero::after  { content: ''; position: absolute; width: 350px; height: 350px; background: radial-gradient(circle, rgba(251,191,36,0.12) 0%, transparent 65%); bottom: -80px; left: -60px; border-radius: 50%; pointer-events: none; }
-  .hero-eyebrow { display: inline-flex; align-items: center; gap: 8px; font-size: 12px; font-weight: 700; letter-spacing: 1.5px; color: var(--teal); margin-bottom: 20px; background: var(--white); border: 1.5px solid var(--teal); padding: 5px 16px; border-radius: 100px; position: relative; z-index: 1; }
-  .hero h1 { font-family: 'Outfit', sans-serif; font-size: clamp(32px, 7vw, 52px); color: var(--navy); line-height: 1.1; margin-bottom: 18px; position: relative; z-index: 1; }
+  .hero { background: #F0FDFF; padding: 52px 24px 56px; text-align: center; border-bottom: 3px solid var(--teal); }
+  .hero-eyebrow { display: inline-block; font-size: 12px; font-weight: 700; letter-spacing: 1.5px; color: var(--teal); margin-bottom: 16px; background: var(--white); border: 1.5px solid var(--teal); padding: 4px 14px; border-radius: 100px; }
+  .hero h1 { font-family: 'Outfit', sans-serif; font-size: clamp(28px, 6vw, 46px); color: var(--navy); line-height: 1.15; margin-bottom: 14px; }
   .hero h1 em { font-style: italic; color: var(--teal); }
-  .hero p { font-size: 17px; color: var(--muted); max-width: 460px; margin: 0 auto; position: relative; z-index: 1; line-height: 1.7; }
-  .container { max-width: 680px; margin: 0 auto; padding: 0 24px; }
+  .hero p { font-size: 16px; color: var(--muted); max-width: 420px; margin: 0 auto; }
 
-  /* ESA summary card */
-  .card-wrap { background: var(--bg); padding: 48px 24px 0; }
-  .esa-card { max-width: 680px; margin: 0 auto; background: var(--navy); border-radius: 24px; padding: 40px 44px; box-shadow: 0 16px 48px rgba(15,23,42,0.18); position: relative; overflow: hidden; }
-  .esa-card::before { content: ''; position: absolute; width: 350px; height: 350px; background: radial-gradient(circle, rgba(8,145,178,0.2) 0%, transparent 65%); top: -80px; right: -60px; border-radius: 50%; }
-  .esa-label { font-size: 11px; font-weight: 700; letter-spacing: 2.5px; text-transform: uppercase; color: rgba(255,255,255,0.45); margin-bottom: 14px; position: relative; z-index: 1; }
-  .esa-title { font-family: 'Outfit', sans-serif; font-size: 22px; color: var(--white); margin-bottom: 6px; position: relative; z-index: 1; }
-  .esa-sub { font-size: 14px; color: rgba(255,255,255,0.55); margin-bottom: 28px; line-height: 1.7; position: relative; z-index: 1; }
-  .esa-points { display: grid; grid-template-columns: 1fr 1fr; gap: 12px; position: relative; z-index: 1; }
-  .esa-pt { background: rgba(255,255,255,0.07); border: 1px solid rgba(255,255,255,0.1); border-radius: 14px; padding: 16px 18px; }
-  .esa-pt.gold { background: rgba(251,191,36,0.12); border-color: rgba(251,191,36,0.3); }
-  .ep-icon { font-size: 22px; margin-bottom: 8px; }
-  .ep-lbl { font-size: 11px; font-weight: 700; color: rgba(255,255,255,0.45); letter-spacing: 1px; text-transform: uppercase; margin-bottom: 4px; }
-  .ep-val { font-size: 14px; color: var(--white); font-weight: 600; line-height: 1.5; }
-  .ep-val.accent { color: var(--gold); }
-  .navy-spacer { background: var(--bg); height: 56px; }
+  .container { max-width: 660px; margin: 0 auto; padding: 0 24px; }
 
-  /* TOC */
-  .toc-wrap { background: var(--bg); padding: 0 24px 48px; }
-  .toc { max-width: 680px; margin: 0 auto; background: var(--white); border: 1.5px solid rgba(15,23,42,0.08); border-radius: 18px; padding: 24px 28px; }
-  .toc-title { font-size: 12px; font-weight: 700; letter-spacing: 1.5px; text-transform: uppercase; color: var(--muted); margin-bottom: 16px; }
-  .toc-items { display: grid; grid-template-columns: 1fr 1fr; gap: 10px; }
-  .toc-item { display: flex; align-items: center; gap: 10px; text-decoration: none; color: var(--text); font-size: 14px; font-weight: 600; background: var(--bg); border-radius: 10px; padding: 10px 14px; transition: background 0.15s; }
-  .toc-item:hover { background: var(--gold-light); }
-  .toc-num { width: 24px; height: 24px; background: var(--navy); color: var(--gold); border-radius: 50%; font-size: 12px; font-weight: 700; display: flex; align-items: center; justify-content: center; flex-shrink: 0; }
+  .states-wrap { padding: 32px 24px 0; }
+  .states-card { max-width: 660px; margin: 0 auto; background: var(--white); border: 2px solid var(--gold); border-radius: 18px; padding: 24px 28px; }
+  .states-label { font-size: 11px; font-weight: 700; letter-spacing: 1.5px; color: var(--gold-dark); text-transform: uppercase; margin-bottom: 8px; }
+  .states-title { font-size: 16px; font-weight: 700; color: var(--navy); margin-bottom: 14px; }
+  .states-list { display: flex; flex-wrap: wrap; gap: 8px; }
+  .state-badge { background: #F0FDF4; border: 1.5px solid #86EFAC; border-radius: 8px; padding: 7px 14px; font-size: 13px; font-weight: 600; color: #166534; }
 
-  /* Sections */
-  section { padding: 60px 0; }
-  .section-label { font-size: 11px; font-weight: 700; letter-spacing: 2px; text-transform: uppercase; color: var(--gold-dark); margin-bottom: 10px; }
-  .section-title { font-family: 'Outfit', sans-serif; font-size: 30px; color: var(--navy); margin-bottom: 8px; line-height: 1.2; }
-  .section-sub { color: var(--muted); font-size: 15px; margin-bottom: 36px; line-height: 1.7; }
+  .summary-wrap { padding: 24px 24px 40px; }
+  .summary-card { max-width: 660px; margin: 0 auto; background: var(--navy); border-radius: 20px; padding: 32px 36px; }
+  .sum-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 10px; }
+  .sum-pt { background: rgba(255,255,255,0.07); border: 1px solid rgba(255,255,255,0.1); border-radius: 12px; padding: 14px 16px; }
+  .sum-pt.gold { background: rgba(251,191,36,0.12); border-color: rgba(251,191,36,0.3); }
+  .sum-icon { font-size: 20px; margin-bottom: 6px; }
+  .sum-lbl { font-size: 11px; font-weight: 700; color: rgba(255,255,255,0.4); letter-spacing: 1px; text-transform: uppercase; margin-bottom: 4px; }
+  .sum-val { font-size: 14px; color: var(--white); font-weight: 600; line-height: 1.5; }
+  .sum-val.accent { color: var(--gold); }
 
-  /* Steps */
+  section { padding: 52px 0; }
+  .section-label { font-size: 11px; font-weight: 700; letter-spacing: 2px; text-transform: uppercase; color: var(--gold-dark); margin-bottom: 8px; }
+  .section-title { font-family: 'Outfit', sans-serif; font-size: 26px; color: var(--navy); margin-bottom: 6px; }
+  .section-sub { color: var(--muted); font-size: 14px; margin-bottom: 28px; line-height: 1.7; }
   .steps { display: flex; flex-direction: column; }
-  .step { display: flex; gap: 20px; position: relative; }
-  .step:not(:last-child)::after { content: ''; position: absolute; left: 19px; top: 46px; bottom: 0; width: 2px; background: linear-gradient(to bottom, rgba(8,145,178,0.4), rgba(8,145,178,0.05)); }
-  .step-num { width: 40px; height: 40px; border-radius: 50%; background: var(--teal); color: var(--white); font-weight: 700; font-size: 15px; display: flex; align-items: center; justify-content: center; flex-shrink: 0; box-shadow: 0 4px 14px rgba(8,145,178,0.35); position: relative; z-index: 1; }
-  .step-body { padding-bottom: 36px; flex: 1; }
-  .step-body h4 { font-size: 16px; font-weight: 700; color: var(--navy); margin-bottom: 6px; margin-top: 8px; }
+  .step { display: flex; gap: 18px; position: relative; }
+  .step:not(:last-child)::after { content: ''; position: absolute; left: 17px; top: 42px; bottom: 0; width: 2px; background: linear-gradient(to bottom, rgba(8,145,178,0.35), transparent); }
+  .step-num { width: 36px; height: 36px; border-radius: 50%; background: var(--teal); color: var(--white); font-weight: 700; font-size: 14px; display: flex; align-items: center; justify-content: center; flex-shrink: 0; position: relative; z-index: 1; }
+  .step-body { padding-bottom: 28px; flex: 1; }
+  .step-body h4 { font-size: 15px; font-weight: 700; color: var(--navy); margin-bottom: 4px; margin-top: 6px; }
   .step-body p { font-size: 14px; color: var(--muted); line-height: 1.7; }
   .step-body p strong { color: var(--text); }
-  a.inline-link { color: var(--blue); font-weight: 600; text-decoration: none; border-bottom: 1px solid var(--blue); }
-  .warn-note { margin-top: 12px; background: #FFF1F1; border: 1.5px solid #FCA5A5; border-radius: 10px; padding: 10px 14px; font-size: 13px; color: #B91C1C; font-weight: 500; line-height: 1.6; }
-  .info-note { margin-top: 12px; background: var(--teal-light); border: 1.5px solid #67E8F9; border-radius: 10px; padding: 10px 14px; font-size: 13px; color: #0E7490; font-weight: 500; line-height: 1.6; }
-  .ok-note   { margin-top: 12px; background: #F0FDF4; border: 1.5px solid #86EFAC; border-radius: 10px; padding: 10px 14px; font-size: 13px; color: #166534; font-weight: 500; line-height: 1.6; }
+  a.inline-link { color: #2563EB; font-weight: 600; text-decoration: none; border-bottom: 1px solid #2563EB; }
 
-  /* Invoice box */
-  .invoice-box { background: var(--white); border: 2px solid rgba(15,23,42,0.08); border-radius: 18px; padding: 28px 32px; margin-top: 16px; }
-  .inv-table { width: 100%; }
-  .inv-row { display: flex; justify-content: space-between; align-items: center; padding: 10px 0; border-bottom: 1px solid rgba(15,23,42,0.07); font-size: 14px; }
+  .warn-note { margin-top: 10px; background: #FFF1F1; border: 1.5px solid #FCA5A5; border-radius: 10px; padding: 10px 14px; font-size: 13px; color: #B91C1C; font-weight: 500; line-height: 1.6; }
+  .info-note { margin-top: 10px; background: var(--teal-light); border: 1.5px solid #67E8F9; border-radius: 10px; padding: 10px 14px; font-size: 13px; color: #0E7490; font-weight: 500; line-height: 1.6; }
+  .ok-note   { margin-top: 10px; background: #F0FDF4; border: 1.5px solid #86EFAC; border-radius: 10px; padding: 10px 14px; font-size: 13px; color: #166534; font-weight: 500; line-height: 1.6; }
+
+  .invoice-box { background: var(--white); border: 2px solid rgba(15,23,42,0.08); border-radius: 16px; padding: 22px 26px; margin-top: 14px; }
+  .inv-row { display: flex; justify-content: space-between; padding: 8px 0; border-bottom: 1px solid rgba(15,23,42,0.07); font-size: 14px; }
   .inv-row:last-of-type { border-bottom: none; }
   .inv-row .desc { color: var(--muted); }
-  .inv-row .amt { font-weight: 700; color: var(--text); }
-  .inv-row .amt.free { color: var(--green); }
-  .inv-total-row { display: flex; justify-content: space-between; align-items: center; margin-top: 14px; padding-top: 14px; border-top: 2px solid rgba(15,23,42,0.12); }
+  .inv-row .amt { font-weight: 700; }
+  .inv-row .amt.free { color: #16A34A; }
+  .inv-total-row { display: flex; justify-content: space-between; align-items: center; margin-top: 12px; padding-top: 12px; border-top: 2px solid rgba(15,23,42,0.12); }
   .inv-total-row .total-label { font-size: 14px; font-weight: 700; color: var(--navy); }
-  .inv-total-row .total-amt { font-family: 'Outfit', sans-serif; font-size: 32px; font-weight: 800; color: var(--navy); }
-  .inv-next { margin-top: 14px; background: var(--bg); border-radius: 10px; padding: 12px 16px; display: flex; justify-content: space-between; align-items: center; font-size: 14px; }
+  .inv-total-row .total-amt { font-family: 'Outfit', sans-serif; font-size: 28px; font-weight: 800; color: var(--navy); }
+  .inv-next { margin-top: 12px; background: var(--bg); border-radius: 8px; padding: 10px 14px; display: flex; justify-content: space-between; font-size: 14px; }
   .inv-next .n-label { color: var(--muted); }
-  .inv-next .n-amt { font-weight: 800; color: var(--navy); font-size: 16px; }
+  .inv-next .n-amt { font-weight: 800; color: var(--navy); }
 
-  /* Submission box (申請内容) */
-  .submission-box { background: var(--navy); border-radius: 18px; padding: 28px 32px; margin-top: 16px; }
-  .sb-title { font-size: 12px; font-weight: 700; letter-spacing: 2px; text-transform: uppercase; color: var(--gold); margin-bottom: 18px; }
-  .sb-field { margin-bottom: 14px; }
-  .sb-label { font-size: 11px; font-weight: 700; color: rgba(255,255,255,0.4); letter-spacing: 1px; text-transform: uppercase; margin-bottom: 5px; }
-  .sb-value { font-size: 14px; font-weight: 600; color: var(--white); background: rgba(255,255,255,0.08); border: 1px solid rgba(255,255,255,0.12); border-radius: 8px; padding: 10px 14px; font-family: monospace; line-height: 1.6; }
-  .sb-value.gold { color: var(--gold); font-family: 'Outfit', sans-serif; font-size: 20px; font-weight: 800; background: rgba(251,191,36,0.1); border-color: rgba(251,191,36,0.3); }
-  .sb-note { font-size: 12px; color: rgba(255,255,255,0.35); margin-top: 12px; line-height: 1.6; }
+  .submission-box { background: var(--navy); border-radius: 14px; padding: 22px 26px; margin-top: 14px; }
+  .sb-title { font-size: 11px; font-weight: 700; letter-spacing: 2px; text-transform: uppercase; color: var(--gold); margin-bottom: 14px; }
+  .sb-field { margin-bottom: 12px; }
+  .sb-label { font-size: 11px; font-weight: 700; color: rgba(255,255,255,0.4); letter-spacing: 1px; text-transform: uppercase; margin-bottom: 4px; }
+  .sb-value { font-size: 13px; font-weight: 600; color: var(--white); background: rgba(255,255,255,0.08); border: 1px solid rgba(255,255,255,0.12); border-radius: 7px; padding: 8px 12px; font-family: monospace; }
+  .sb-value.gold { color: var(--gold); font-family: 'Outfit', sans-serif; font-size: 18px; font-weight: 800; background: rgba(251,191,36,0.1); border-color: rgba(251,191,36,0.3); }
   .sb-field:last-child { margin-bottom: 0; }
 
-  /* Lock Timeline */
-  .lock-phases { display: flex; flex-direction: column; gap: 12px; margin-top: 8px; }
-  .lock-phase { display: flex; align-items: flex-start; gap: 16px; border-radius: 14px; padding: 16px 20px; }
-  .lock-icon { font-size: 22px; flex-shrink: 0; width: 32px; text-align: center; margin-top: 2px; }
+  .lock-phases { display: flex; flex-direction: column; gap: 10px; margin-top: 8px; }
+  .lock-phase { display: flex; align-items: flex-start; gap: 14px; border-radius: 12px; padding: 14px 18px; }
+  .lock-icon { font-size: 20px; flex-shrink: 0; width: 28px; text-align: center; margin-top: 2px; }
   .lock-content { flex: 1; }
-  .lock-dates { font-size: 14px; font-weight: 800; color: var(--navy); margin-bottom: 3px; }
-  .lock-desc  { font-size: 13px; color: var(--muted); line-height: 1.6; }
-  .lp-trial  { background: #F0FFF4; border: 1.5px solid #86EFAC; }
-  .lp-grace  { background: #F0FDFF; border: 1.5px solid #67E8F9; }
-  .lp-soft   { background: #FFF7ED; border: 1.5px solid #FCD34D; }
-  .lp-hard   { background: #FEF2F2; border: 1.5px solid #F87171; }
-  .lp-trial .lock-dates { color: #166534; }
-  .lp-grace .lock-dates { color: #0E7490; }
-  .lp-soft  .lock-dates { color: #92400E; }
-  .lp-hard  .lock-dates { color: #991B1B; }
+  .lock-dates { font-size: 14px; font-weight: 800; margin-bottom: 2px; }
+  .lock-desc  { font-size: 13px; color: var(--muted); }
+  .lp-trial { background: #F0FFF4; border: 1.5px solid #86EFAC; } .lp-trial .lock-dates { color: #166534; }
+  .lp-grace { background: #F0FDFF; border: 1.5px solid #67E8F9; } .lp-grace .lock-dates { color: #0E7490; }
+  .lp-soft  { background: #FFF7ED; border: 1.5px solid #FCD34D; } .lp-soft  .lock-dates { color: #92400E; }
+  .lp-hard  { background: #FEF2F2; border: 1.5px solid #F87171; } .lp-hard  .lock-dates { color: #991B1B; }
 
-  /* Sibling card */
-  .sibling-card { background: var(--white); border: 2px solid var(--gold); border-radius: 22px; padding: 36px 40px; }
-  .sibling-card h3 { font-family: 'Outfit', sans-serif; font-size: 22px; color: var(--navy); margin-bottom: 10px; }
-  .sibling-card > p { font-size: 15px; color: var(--muted); margin-bottom: 24px; line-height: 1.7; }
-  .sib-steps { display: flex; flex-direction: column; gap: 14px; }
-  .sib-step { display: flex; align-items: flex-start; gap: 12px; }
-  .snum { width: 28px; height: 28px; background: var(--navy); color: var(--gold); border-radius: 50%; font-size: 13px; font-weight: 700; display: flex; align-items: center; justify-content: center; flex-shrink: 0; margin-top: 2px; }
-  .sib-step p { margin: 0; font-size: 14px; color: var(--text); line-height: 1.6; }
-  .memo-box { background: var(--gold-light); border: 1.5px dashed var(--gold-dark); border-radius: 14px; padding: 18px 22px; margin-bottom: 24px; }
-  .memo-label { font-size: 13px; font-weight: 700; color: var(--gold-dark); margin-bottom: 10px; }
-  .memo-line { height: 1px; background: var(--gold-dark); opacity: 0.35; margin-top: 18px; }
+  .faq-list { display: flex; flex-direction: column; gap: 12px; }
+  .faq-item { background: var(--white); border: 1.5px solid rgba(15,23,42,0.08); border-radius: 12px; padding: 18px 22px; }
+  .faq-q { font-size: 14px; font-weight: 700; color: var(--navy); margin-bottom: 6px; }
+  .faq-q::before { content: 'Q. '; color: var(--teal); }
+  .faq-a { font-size: 13px; color: var(--muted); line-height: 1.7; }
 
-  /* Divider */
   .divider { height: 1px; background: linear-gradient(to right, transparent, rgba(15,23,42,0.1), transparent); }
 
-  /* FAQ */
-  .faq-list { display: flex; flex-direction: column; gap: 14px; }
-  .faq-item { background: var(--white); border: 1.5px solid rgba(15,23,42,0.08); border-radius: 14px; padding: 20px 24px; }
-  .faq-q { font-size: 15px; font-weight: 700; color: var(--navy); margin-bottom: 8px; }
-  .faq-q::before { content: 'Q. '; color: var(--teal); }
-  .faq-a { font-size: 14px; color: var(--muted); line-height: 1.7; }
-
-  /* CTA */
-  .cta-section { background: var(--navy); padding: 72px 24px; text-align: center; }
-  .deadline-badge { display: inline-block; background: rgba(251,191,36,0.15); border: 1.5px solid rgba(251,191,36,0.4); color: var(--gold); font-size: 13px; font-weight: 700; padding: 8px 20px; border-radius: 100px; margin-bottom: 20px; }
-  .cta-section h3 { font-family: 'Outfit', sans-serif; font-size: 32px; color: var(--white); margin-bottom: 10px; }
-  .cta-section p { font-size: 16px; color: rgba(255,255,255,0.55); margin-bottom: 32px; }
-  .cta-btn { display: inline-block; background: var(--gold); color: var(--navy); font-size: 16px; font-weight: 700; padding: 16px 44px; border-radius: 100px; text-decoration: none; box-shadow: 0 8px 28px rgba(251,191,36,0.4); }
-  .cta-sub { font-size: 13px; color: rgba(255,255,255,0.35); margin-top: 20px; }
-  .cta-sub a { color: rgba(255,255,255,0.5); }
-  footer { background: var(--bg); border-top: 1px solid rgba(15,23,42,0.08); padding: 28px 24px; text-align: center; }
-  footer p { font-size: 13px; color: var(--muted); margin-bottom: 4px; }
+  .cta-section { background: var(--navy); padding: 60px 24px; text-align: center; }
+  .deadline-badge { display: inline-block; background: rgba(251,191,36,0.15); border: 1.5px solid rgba(251,191,36,0.4); color: var(--gold); font-size: 12px; font-weight: 700; padding: 6px 18px; border-radius: 100px; margin-bottom: 18px; }
+  .cta-section h3 { font-family: 'Outfit', sans-serif; font-size: 28px; color: var(--white); margin-bottom: 8px; }
+  .cta-section p { font-size: 15px; color: rgba(255,255,255,0.5); margin-bottom: 28px; }
+  .cta-btn { display: inline-block; background: var(--gold); color: var(--navy); font-size: 16px; font-weight: 700; padding: 15px 40px; border-radius: 100px; text-decoration: none; box-shadow: 0 8px 28px rgba(251,191,36,0.4); }
+  footer { background: var(--bg); border-top: 1px solid rgba(15,23,42,0.08); padding: 24px; text-align: center; font-size: 13px; color: var(--muted); }
   footer a { color: var(--muted); text-decoration: none; }
 
-  /* Mobile */
   @media (max-width: 560px) {
-    .site-header { padding: 0 16px; }
-    .hero { padding: 44px 16px 52px; }
-    .card-wrap { padding: 32px 16px 0; }
-    .esa-card { padding: 28px 22px; }
-    .esa-points { grid-template-columns: 1fr; }
-    .toc-wrap { padding: 0 16px 36px; }
-    .toc-items { grid-template-columns: 1fr; }
-    section { padding: 44px 0; }
-    .section-title { font-size: 24px; }
-    .submission-box { padding: 20px 18px; }
-    .sibling-card { padding: 24px 18px; }
-    .cta-section { padding: 52px 16px; }
-    .cta-btn { width: 100%; min-height: 52px; display: block; }
-    .header-badge { display: none; }
+    .site-header { padding: 0 16px; } .header-badge { display: none; }
+    .hero { padding: 40px 16px 44px; }
+    .states-wrap, .summary-wrap { padding-left: 16px; padding-right: 16px; }
+    .sum-grid { grid-template-columns: 1fr; }
+    section { padding: 40px 0; }
+    .section-title { font-size: 22px; }
+    .cta-btn { width: 100%; display: block; }
   }
 </style>
 </head>
 <body>
 
-<!-- Header -->
 <header class="site-header">
   <div class="logo-wrap">
     <div class="logo-mark">
-      <span style="font-family:'Outfit',sans-serif;font-size:24px;font-weight:800;color:#FBBF24;line-height:1;">B</span></svg>
+      <span style="font-family:'Outfit',sans-serif;font-size:24px;font-weight:800;color:#FBBF24;line-height:1;">B</span>
     </div>
     <div class="logo-text"><span>BrightBe</span> Learning</div>
   </div>
   <div class="header-badge">🏛️ State Fund</div>
 </header>
 
-<!-- Hero -->
 <div class="hero">
   <div class="hero-eyebrow">🏛️ STATE FUND MEMBER GUIDE</div>
   <h1>州の教育資金で<br><em>BrightBeを使う方へ</em></h1>
-  <p>先行エントリーいただき、ありがとうございます。クレジットカード不要。State fund portal からの申請だけで、お子さまのクラスをスタートできます。</p>
+  <p>クレジットカード不要。State fund portal からの申請だけでお子さまのクラスをスタートできます。</p>
 </div>
 
-<!-- ESA summary card -->
-<div class="card-wrap">
-  <div class="esa-card">
-    <div class="esa-label">State Fund とは？</div>
-    <div class="esa-title">州の教育資金で受講できます</div>
-    <div class="esa-points">
-      <div class="esa-pt gold">
-        <div class="ep-icon">💳</div>
-        <div class="ep-lbl">お支払い方法</div>
-        <div class="ep-val accent">クレジットカード不要！<br>State fund portal<br>から申請するだけ</div>
-      </div>
-      <div class="esa-pt">
-        <div class="ep-icon">💰</div>
-        <div class="ep-lbl">月額</div>
-        <div class="ep-val">$300 / 月（固定）<br>割引・日割りなし</div>
-      </div>
-      <div class="esa-pt">
-        <div class="ep-icon">🎉</div>
-        <div class="ep-lbl">無料体験</div>
-        <div class="ep-val">4月6日〜10日<br>（5日間）</div>
-      </div>
-      <div class="esa-pt">
-        <div class="ep-icon">📅</div>
-        <div class="ep-lbl">登録締め切り</div>
-        <div class="ep-val">3月31日まで<br>（クール途中入学不可）</div>
-      </div>
-    </div>
-  </div>
-</div>
-<div class="navy-spacer"></div>
-
-<!-- TOC -->
-<div class="toc-wrap">
-  <div class="toc">
-    <div class="toc-title">このガイドの内容</div>
-    <div class="toc-items">
-      <a href="#register"  class="toc-item"><div class="toc-num">1</div>BrightBe に登録する</a>
-      <a href="#trial"     class="toc-item"><div class="toc-num">2</div>無料体験期間（4/6–10）</a>
-      <a href="#submit"    class="toc-item"><div class="toc-num">3</div>State Fund に申請する</a>
-      <a href="#timeline"  class="toc-item"><div class="toc-num">4</div>ロックスケジュール</a>
-      <a href="#sibling"   class="toc-item"><div class="toc-num">5</div>兄弟・姉妹の追加</a>
-      <a href="#faq"       class="toc-item"><div class="toc-num">6</div>よくある質問</a>
+<div class="states-wrap">
+  <div class="states-card">
+    <div class="states-label">対応している教育資金</div>
+    <div class="states-title">以下の州の教育資金が使えます</div>
+    <div class="states-list">
+      <div class="state-badge">✅ Arizona — ESA</div>
+      <div class="state-badge">✅ New Hampshire — EFA</div>
+      <div class="state-badge">✅ Alabama — CHOOSE Act</div>
     </div>
   </div>
 </div>
 
-<!-- Section 1: Register -->
+<div class="summary-wrap">
+  <div class="summary-card">
+    <div class="sum-grid">
+      <div class="sum-pt gold">
+        <div class="sum-icon">💳</div>
+        <div class="sum-lbl">お支払い</div>
+        <div class="sum-val accent">クレジットカード不要<br>ポータルから申請のみ</div>
+      </div>
+      <div class="sum-pt">
+        <div class="sum-icon">💰</div>
+        <div class="sum-lbl">月額</div>
+        <div class="sum-val">$300 / 月（固定）</div>
+      </div>
+      <div class="sum-pt">
+        <div class="sum-icon">🎉</div>
+        <div class="sum-lbl">無料体験</div>
+        <div class="sum-val">4/6〜4/10（5日間）</div>
+      </div>
+      <div class="sum-pt">
+        <div class="sum-icon">📅</div>
+        <div class="sum-lbl">登録締め切り</div>
+        <div class="sum-val">3月31日まで</div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<div class="divider"></div>
+
 <div id="register"></div>
 <section>
   <div class="container">
     <div class="section-label">Step 1</div>
     <h2 class="section-title">BrightBe に登録する</h2>
-    <p class="section-sub">まず BrightBe のアカウントを作成します。クレジットカードの入力は不要です。</p>
+    <p class="section-sub">クレジットカード不要で登録できます。</p>
     <div class="steps">
       <div class="step">
         <div class="step-num">1</div>
         <div class="step-body">
           <h4>アカウントを作成する</h4>
-          <p><a href="https://www.brightbelearning.com/login?tab=signup" class="inline-link">こちらから</a>アクセスし、<strong>「Sign Up」</strong>をクリック。メールアドレスとパスワードを入力して登録します。</p>
+          <p><a href="https://www.brightbelearning.com/login?tab=signup" class="inline-link">こちらから</a>保護者様のお名前・メールアドレス・パスワードを入力して登録します。</p>
         </div>
       </div>
       <div class="step">
         <div class="step-num">2</div>
         <div class="step-body">
-          <h4>確認メールを開く</h4>
-          <p>登録したメールアドレスに確認メールが届きます。<strong>「Confirm my email →」</strong>をクリックして、メールアドレスを認証してください。</p>
-          <div class="info-note">📬 メールが届かない場合は、迷惑メールフォルダをご確認ください。</div>
+          <h4>メールアドレスを認証する</h4>
+          <p>届いた確認メールのリンクをクリックして認証してください。</p>
+          <div class="info-note">📬 メールが届かない場合は迷惑メールフォルダをご確認ください。</div>
         </div>
       </div>
       <div class="step">
         <div class="step-num">3</div>
         <div class="step-body">
           <h4>お子さまの情報を入力する</h4>
-          <p>ダッシュボードの <strong>「+ Add Student」</strong> をクリックします。画面上部の <strong>「Credit Card」「State Fund」</strong> から <strong>「State Fund」</strong> を選択し、お子さまの名前・生年月日を入力して登録を完了します。クレジットカードの入力は不要です。</p>
+          <p>認証後、自動的にプロフィール記入欄へ進みます。画面上部の <strong>「State Fund」</strong> を選択し、お子さまの情報を入力して完了。</p>
           <div class="ok-note">✅ 登録完了！4月6日のクラス開始を待つだけです。</div>
         </div>
       </div>
@@ -275,66 +219,18 @@
 
 <div class="divider"></div>
 
-<!-- Section 2: Trial -->
-<div id="trial"></div>
-<section>
-  <div class="container">
-    <div class="section-label">Step 2</div>
-    <h2 class="section-title">🎉 無料体験期間（4月6日〜10日）</h2>
-    <p class="section-sub">4月6日〜10日の5日間は無料体験期間です。クラスに参加しながら、この期間中に State fund portal での申請を進めてください。</p>
-    <div class="steps">
-      <div class="step">
-        <div class="step-num">1</div>
-        <div class="step-body">
-          <h4>ダッシュボードからクラスを予約する</h4>
-          <p>Calendar からお子さまに合ったクラスを予約して、Zoom で参加してください。</p>
-        </div>
-      </div>
-      <div class="step">
-        <div class="step-num">2</div>
-        <div class="step-body">
-          <h4>体験期間中に申請を完了する（重要）</h4>
-          <p>体験期間（4/6–10）の間に、下記「Step 3」の手順で State fund portal への申請を完了してください。<strong>4月11日からが通常授業期間です。</strong></p>
-          <div class="warn-note">⚠️ 申請が遅れるとアクセスに制限がかかります。体験期間中の申請完了を強くお勧めします（詳細は「ロックスケジュール」参照）。</div>
-        </div>
-      </div>
-      <div class="step">
-        <div class="step-num">3</div>
-        <div class="step-body">
-          <h4>続けない場合は「Withdraw」ボタンから退会</h4>
-          <p>体験期間中（4/10まで）にダッシュボードに表示される <strong>「Withdraw」</strong> ボタンから退会できます。<strong>この期間中は費用はかかりません。</strong></p>
-          <div class="info-note">💡 体験後に続けない場合は、必ず 4月10日までに Withdraw してください。</div>
-        </div>
-      </div>
-    </div>
-  </div>
-</section>
-
-<div class="divider"></div>
-
-<!-- Section 3: Submit -->
 <div id="submit"></div>
 <section>
   <div class="container">
-    <div class="section-label">Step 3</div>
+    <div class="section-label">Step 2</div>
     <h2 class="section-title">State Fund ポータルに申請する</h2>
-    <p class="section-sub">体験期間中（4/6–10）に、ご利用の State fund portal にログインして申請を行ってください。</p>
+    <p class="section-sub">体験期間中（4/6–10）に、ご利用の State fund portal で申請を行ってください。</p>
 
-    <!-- Invoice breakdown -->
     <div class="invoice-box">
-      <div style="font-size:13px; font-weight:700; color:var(--navy); margin-bottom:16px;">📄 4月の申請金額（初回のみ）</div>
-      <div class="inv-row">
-        <span class="desc">🎉 Free Trial（Apr 6–10）</span>
-        <span class="amt free">$0.00</span>
-      </div>
-      <div class="inv-row">
-        <span class="desc">📚 Tuition（Apr 11–30）</span>
-        <span class="amt">$250.00</span>
-      </div>
-      <div class="inv-row">
-        <span class="desc">🏫 Enrollment Fee（初回のみ）</span>
-        <span class="amt">$50.00</span>
-      </div>
+      <div style="font-size:13px;font-weight:700;color:var(--navy);margin-bottom:14px;">📄 4月の申請金額（初回のみ）</div>
+      <div class="inv-row"><span class="desc">🎉 Free Trial（Apr 6–10）</span><span class="amt free">$0</span></div>
+      <div class="inv-row"><span class="desc">📚 Tuition（Apr 11–30）</span><span class="amt">$250</span></div>
+      <div class="inv-row"><span class="desc">🏫 Enrollment Fee（初回のみ）</span><span class="amt">$50</span></div>
       <div class="inv-total-row">
         <span class="total-label">4月合計 / 申請額</span>
         <span class="total-amt">$300</span>
@@ -345,59 +241,34 @@
       </div>
     </div>
 
-    <!-- Steps -->
-    <div style="margin-top:36px;">
+    <div style="margin-top:28px;">
       <div class="steps">
         <div class="step">
           <div class="step-num">1</div>
           <div class="step-body">
-            <h4>State Fund ポータルにログインする</h4>
-            <p>ご利用の州の State fund portal にログインしてください。</p>
+            <h4>ポータルにログインし、BrightBe Learning を検索・選択する</h4>
+            <p>「BrightBe Learning」または「MERCY GLOBAL EDUCATION LLC」で検索してください。</p>
           </div>
         </div>
         <div class="step">
           <div class="step-num">2</div>
           <div class="step-body">
-            <h4>BrightBe Learning を検索・選択する</h4>
-            <p>ポータル内で <strong>「BrightBe Learning」</strong> または <strong>「MERCY GLOBAL EDUCATION LLC」</strong> を検索して選択してください。</p>
+            <h4>以下の内容で申請を送信する</h4>
+            <div class="submission-box">
+              <div class="sb-title">Application Details</div>
+              <div class="sb-field"><div class="sb-label">Service Name</div><div class="sb-value">BrightBe Learning</div></div>
+              <div class="sb-field"><div class="sb-label">Amount</div><div class="sb-value gold">$300</div></div>
+              <div class="sb-field"><div class="sb-label">Provider</div><div class="sb-value">MERCY GLOBAL EDUCATION LLC</div></div>
+            </div>
+            <div style="font-size:12px;color:var(--muted);margin-top:10px;">📄 5月以降も毎月同じ内容（$300）で申請してください。</div>
           </div>
         </div>
         <div class="step">
           <div class="step-num">3</div>
           <div class="step-body">
-            <h4>以下の内容で申請を送信する</h4>
-            <div class="submission-box">
-              <div class="sb-title">Application Details</div>
-              <div class="sb-field">
-                <div class="sb-label">Service Name</div>
-                <div class="sb-value">BrightBe Learning</div>
-              </div>
-              <div class="sb-field">
-                <div class="sb-label">Amount</div>
-                <div class="sb-value gold">$300</div>
-              </div>
-              <div class="sb-field">
-                <div class="sb-label">Provider</div>
-                <div class="sb-value">MERCY GLOBAL EDUCATION LLC</div>
-              </div>
-              <div class="sb-note">📄 5月以降も毎月同じ内容で申請してください。金額は常に $300 固定です。</div>
-            </div>
-          </div>
-        </div>
-        <div class="step">
-          <div class="step-num">4</div>
-          <div class="step-body">
-            <h4>申請後、ダッシュボードで「I've Applied」をタップ</h4>
-            <p>portal で申請が完了したら、BrightBe ダッシュボードの申請バナーにある <strong>「I've Applied」</strong> ボタンをタップしてください。BrightBe チームが確認・承認します。</p>
+            <h4>ダッシュボードで「I've Applied」をタップ</h4>
+            <p>申請完了後、BrightBe ダッシュボードのバナーにある <strong>「I've Applied」</strong> ボタンをタップ。BrightBe チームが確認・承認します。</p>
             <div class="ok-note">✅ 体験期間中（4/6–10）に申請が確認されれば、そのままスムーズに続けられます。</div>
-          </div>
-        </div>
-        <div class="step">
-          <div class="step-num">5</div>
-          <div class="step-body">
-            <h4>翌月以降も毎月申請する（5月以降）</h4>
-            <p>毎月、State fund portal で <strong>$300</strong> の申請を行ってください。<strong>毎月10日が申請締め切り</strong>です。</p>
-            <div class="info-note">📅 毎月1日にダッシュボードへ翌月分の申請案内が表示されます。</div>
           </div>
         </div>
       </div>
@@ -407,83 +278,56 @@
 
 <div class="divider"></div>
 
-<!-- Section 4: Lock Timeline -->
 <div id="timeline"></div>
 <section>
   <div class="container">
     <div class="section-label">申請期限</div>
     <h2 class="section-title">⏰ 申請はお早めに</h2>
-    <div class="ok-note" style="margin-bottom:14px;">🎉 <strong>4月：</strong>体験期間中（4/6–10）にポータルでの入会申請を完了してください。</div>
-    <div class="ok-note" style="margin-bottom:14px;">📅 <strong>5月以降：</strong>毎月 <strong>10日まで</strong> に申請してください。</div>
-    <div class="info-note">期限を過ぎるとアクセスが制限される場合があります。ご不明な点は <a href="/cdn-cgi/l/email-protection#bdd5d8d1d1d2fddfcfd4dad5c9dfd8d1d8dccfd3d4d3da93ded2d0" class="inline-link"><span class="__cf_email__" data-cfemail="1b737e7777745b7969727c736f797e777e7a697572757c35787476">[email&#160;protected]</span></a> までご連絡ください。</div>
+    <div class="ok-note">🎉 <strong>4月：</strong>体験期間中（4/6–10）にポータルでの入会申請を完了してください。</div>
+    <div class="info-note" style="margin-top:10px;">📅 <strong>5月以降も継続する場合は、</strong>毎月10日までにポータルで申請してください。</div>
   </div>
 </section>
 
 <div class="divider"></div>
 
-<!-- Section 5: Sibling -->
-<div id="sibling"></div>
-<section>
-  <div class="container">
-    <div class="section-label">兄弟・姉妹の登録</div>
-    <h2 class="section-title">2人目以降のお子さまを追加するには</h2>
-    <p class="section-sub">2人目以降もダッシュボードから追加できます。お子さまごとに State fund portal で申請を行ってください。</p>
-    <div class="sibling-card">
-      <h3>👨‍👩‍👧‍👦 2人目・3人目の登録方法</h3>
-      <p>ダッシュボードから「+ Add Student」をクリックするだけで追加できます。お子さまごとに State fund portal での申請が必要です。</p>
-      <div class="sib-steps">
-        <div class="sib-step"><div class="snum">1</div><p>ログインして <strong>ダッシュボード</strong> を開く</p></div>
-        <div class="sib-step"><div class="snum">2</div><p><strong>「+ Add Student」</strong> をクリック</p></div>
-        <div class="sib-step"><div class="snum">3</div><p><strong>「Payment Method」</strong> で <strong>「State Fund」</strong> を選択し、お子さまの情報を入力して登録を完了する</p></div>
-        <div class="sib-step"><div class="snum">4</div><p>2人目の子も State fund portal で <strong>別途申請</strong>を行ってください（お子さま1人につき1申請）</p></div>
-      </div>
-    </div>
-  </div>
-</section>
-
-<div class="divider"></div>
-
-<!-- Section 6: FAQ -->
 <div id="faq"></div>
 <section>
   <div class="container">
     <div class="section-label">よくある質問</div>
     <h2 class="section-title">❓ Q&amp;A</h2>
-    <p class="section-sub">ご不明な点は <a href="/cdn-cgi/l/email-protection#f098959c9c9fb092829997988492959c9591829e999e97de939f9d" class="inline-link"><span class="__cf_email__" data-cfemail="036b666f6f6c4361716a646b7761666f6662716d6a6d642d606c6e">[email&#160;protected]</span></a> までお気軽にどうぞ。</p>
     <div class="faq-list">
       <div class="faq-item">
+        <div class="faq-q">2人目のお子さまを追加するには？</div>
+        <div class="faq-a">ダッシュボードの「+ Add Student」から追加できます。お子さまごとにポータルでの申請が必要です。</div>
+      </div>
+      <div class="faq-item">
         <div class="faq-q">申請したのにカレンダーが使えない</div>
-        <div class="faq-a">ダッシュボードの申請バナーにある <strong>「I've Applied」</strong> ボタンを押しましたか？portal での申請完了後、このボタンを押すことでBrightBe チームが確認作業を開始します。確認後すぐにカレンダーが復帰します。</div>
-      </div>
-      <div class="faq-item">
-        <div class="faq-q">いくら申請すればいいですか？</div>
-        <div class="faq-a">4月は <strong>$300</strong>（Free Trial $0 + Tuition $250 + Enrollment Fee $50）、5月以降は毎月 <strong>$300</strong> です。日割りはありません。</div>
-      </div>
-      <div class="faq-item">
-        <div class="faq-q">申請が却下（Denied）になった場合は？</div>
-        <div class="faq-a">BrightBe からメールで却下理由と再申請の手順をお知らせします。メールの内容に従って再申請してください。</div>
-      </div>
-      <div class="faq-item">
-        <div class="faq-q">4月6日以降に登録したい</div>
-        <div class="faq-a">State Fund ご利用の場合、クール途中入学はできません。次のクール（Q3：7月スタート）のウェイトリストにご登録ください。Q3 の受付開始は 6月を予定しています。</div>
-      </div>
-      <div class="faq-item">
-        <div class="faq-q">入金はいつ頃になりますか？</div>
-        <div class="faq-a">保護者の方が申請 → BrightBe が承認 → 州が審査 → ACH 振込という流れになります。通常、BrightBe の銀行口座への入金は申請から <strong>2〜10 営業日</strong>かかります。「申請済み」であれば入金前でも授業に参加できます。</div>
+        <div class="faq-a">ダッシュボードのバナーにある <strong>「I've Applied」</strong> ボタンを押しましたか？このボタンを押すことで確認作業が始まります。</div>
       </div>
       <div class="faq-item">
         <div class="faq-q">体験後に続けない場合は？</div>
-        <div class="faq-a">体験期間中（4月10日まで）にダッシュボードの <strong>「Withdraw」</strong> ボタンから退会できます。この期間中は費用はかかりません。</div>
+        <div class="faq-a">体験期間中（4/10まで）にダッシュボードの <strong>「Withdraw」</strong> ボタンから退会できます。費用はかかりません。</div>
+      </div>
+      <div class="faq-item">
+        <div class="faq-q">4月6日以降に登録したい</div>
+        <div class="faq-a">State Fund の場合、クール途中入学はできません。次のクール（Q3・7月スタート）のウェイトリストにご登録ください。</div>
       </div>
     </div>
+    <p style="margin-top:20px;font-size:13px;color:var(--muted);">ご不明な点は <a href="mailto:hello@brightbelearning.com" class="inline-link">hello@brightbelearning.com</a> までお気軽にどうぞ。</p>
   </div>
 </section>
 
-<!-- CTA -->
 <div class="cta-section">
-  <div class="container">
-    <div class="deadline-badge">📅 登録締め切り：3月31日</div>
-    <h3>さっそく登録しよう</h3>
-    <p>クラスは4月6日スタート。クレジットカード不要で今すぐ登録できます。</p>
-    <a href="https://www.brightbelearning.com/login?tab=signup" class="cta-btn">今すぐ登録する →</a>
-    <p class="cta-sub">ご不明な点は <a href="/cdn-cgi/l/email-protection#6b030e0707042b0919020c031f090e070e0a
+  <div class="deadline-badge">📅 登録締め切り：3月31日</div>
+  <h3>さっそく登録しよう</h3>
+  <p>クラスは4月6日スタート。クレジットカード不要で今すぐ登録できます。</p>
+  <a href="https://www.brightbelearning.com/login?tab=signup" class="cta-btn">無料で登録する →</a>
+</div>
+
+<footer>
+  <p>© 2026 BrightBe Learning / MERCY GLOBAL EDUCATION LLC</p>
+  <p><a href="mailto:hello@brightbelearning.com">hello@brightbelearning.com</a></p>
+</footer>
+
+</body>
+</html>
