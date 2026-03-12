@@ -3,7 +3,7 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>BrightBe Learning — プレオープン会員ガイド</title>
+<title>BrightBe Learning — Pre-Launch Member Guide</title>
 <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@300;400;500;600;700&family=Outfit:wght@700;800;900&display=swap" rel="stylesheet">
 <style>
   :root {
@@ -39,7 +39,9 @@
   .logo-text span { color: var(--gold-dark); }
   .header-right { display: flex; align-items: center; gap: 8px; }
   .header-badge { background: var(--gold); color: var(--navy); font-size: 11px; font-weight: 700; letter-spacing: 1.5px; text-transform: uppercase; padding: 6px 16px; border-radius: 100px; box-shadow: 0 2px 8px rgba(251,191,36,0.35); }
-  .header-star { font-size: 18px; }
+  .lang-toggle { display: flex; align-items: center; background: var(--bg); border: 1.5px solid rgba(15,23,42,0.12); border-radius: 100px; padding: 3px; gap: 2px; }
+  .lang-btn { font-family: 'DM Sans', sans-serif; font-size: 12px; font-weight: 700; padding: 5px 12px; border-radius: 100px; border: none; cursor: pointer; transition: all 0.2s; background: transparent; color: var(--muted); }
+  .lang-btn.active { background: var(--navy); color: var(--gold); }
   .hero {
     background: #FFFDF5;
     padding: 64px 24px 72px;
@@ -48,32 +50,9 @@
     overflow: hidden;
     border-bottom: 3px solid var(--gold);
   }
-  .hero::before {
-    content: '';
-    position: absolute;
-    width: 500px; height: 500px;
-    background: radial-gradient(circle, rgba(251,191,36,0.25) 0%, transparent 65%);
-    top: -100px; right: -100px;
-    border-radius: 50%; pointer-events: none;
-  }
-  .hero::after {
-    content: '';
-    position: absolute;
-    width: 350px; height: 350px;
-    background: radial-gradient(circle, rgba(251,191,36,0.15) 0%, transparent 65%);
-    bottom: -80px; left: -60px;
-    border-radius: 50%; pointer-events: none;
-  }
-  .hero-eyebrow {
-    display: inline-flex; align-items: center; gap: 8px;
-    font-size: 12px; font-weight: 700; letter-spacing: 1.5px;
-    color: var(--gold-dark); margin-bottom: 20px;
-    background: var(--white);
-    border: 1.5px solid var(--gold);
-    padding: 5px 16px; border-radius: 100px;
-    position: relative; z-index: 1;
-    box-shadow: 0 2px 8px rgba(251,191,36,0.2);
-  }
+  .hero::before { content: ''; position: absolute; width: 500px; height: 500px; background: radial-gradient(circle, rgba(251,191,36,0.25) 0%, transparent 65%); top: -100px; right: -100px; border-radius: 50%; pointer-events: none; }
+  .hero::after { content: ''; position: absolute; width: 350px; height: 350px; background: radial-gradient(circle, rgba(251,191,36,0.15) 0%, transparent 65%); bottom: -80px; left: -60px; border-radius: 50%; pointer-events: none; }
+  .hero-eyebrow { display: inline-flex; align-items: center; gap: 8px; font-size: 12px; font-weight: 700; letter-spacing: 1.5px; color: var(--gold-dark); margin-bottom: 20px; background: var(--white); border: 1.5px solid var(--gold); padding: 5px 16px; border-radius: 100px; position: relative; z-index: 1; box-shadow: 0 2px 8px rgba(251,191,36,0.2); }
   .hero h1 { font-family: 'Outfit', sans-serif; font-size: clamp(36px, 7vw, 58px); color: var(--navy); line-height: 1.1; margin-bottom: 18px; position: relative; z-index: 1; }
   .hero h1 em { font-style: italic; color: var(--gold-dark); }
   .hero p { font-size: 17px; color: var(--muted); max-width: 440px; margin: 0 auto; position: relative; z-index: 1; line-height: 1.7; }
@@ -173,46 +152,32 @@
     .sibling-card { padding: 24px 20px; }
     .ref-section { padding: 32px 24px; }
   }
-
   @media (max-width: 560px) {
-    /* Header */
     .site-header { padding: 0 16px; height: 56px; }
     .header-star { display: none; }
     .logo-text { font-size: 16px; }
     .logo-mark { width: 30px; height: 30px; border-radius: 8px; }
     .logo-mark span { font-size: 18px !important; }
-    .header-badge { font-size: 10px; padding: 5px 10px; letter-spacing: 0.8px; }
-
-    /* Hero */
+    .header-badge { display: none; }
+    .lang-btn { font-size: 11px; padding: 4px 10px; }
     .hero { padding: 36px 16px 44px; }
     .hero h1 { font-size: 28px; }
     .hero p { font-size: 14px; }
-    .hero-eyebrow { font-size: 11px; padding: 4px 13px; }
-
-    /* Layout */
     .container { padding: 0 16px; }
     section { padding: 36px 0; }
     .section-title { font-size: 22px; }
     .section-sub { font-size: 14px; margin-bottom: 20px; }
-
-    /* Code card */
     .code-wrap { padding: 24px 16px 0; }
     .code-card { padding: 28px 20px; border-radius: 18px; }
     .code-value { font-size: 26px; letter-spacing: 2px; }
     .code-price { font-size: 13px; }
     .copy-btn { width: 100%; justify-content: center; font-size: 14px; padding: 14px 20px; border-radius: 14px; min-height: 48px; }
-
-    /* Registration button */
     .code-card a[href*="signup"] { display: block !important; width: 100%; text-align: center; font-size: 15px !important; padding: 14px 20px !important; border-radius: 14px !important; box-sizing: border-box; }
-
-    /* Spacer & TOC */
     .navy-spacer { height: 32px; }
     .toc-wrap { padding: 0 16px 28px; }
     .toc { padding: 18px 16px; border-radius: 14px; }
     .toc-items { grid-template-columns: 1fr; gap: 8px; }
     .toc-item { padding: 11px 14px; font-size: 13px; min-height: 44px; }
-
-    /* Preview */
     .preview-box { padding: 22px 16px; border-radius: 16px; }
     .preview-box h3 { font-size: 16px; margin-bottom: 16px; }
     .preview-days { grid-template-columns: 1fr; gap: 10px; }
@@ -220,8 +185,6 @@
     .pday-date { font-size: 18px; }
     .pday-subject { font-size: 13px; }
     .preview-note { font-size: 12px; }
-
-    /* Steps */
     .step { gap: 14px; }
     .step-num { width: 36px; height: 36px; font-size: 14px; flex-shrink: 0; }
     .step:not(:last-child)::after { left: 17px; }
@@ -230,8 +193,6 @@
     .step-body p { font-size: 13px; }
     .code-chip { font-size: 15px; padding: 6px 14px; }
     .warn-note { font-size: 12px; padding: 9px 12px; }
-
-    /* Sibling */
     .sibling-card { padding: 20px 16px; border-radius: 16px; }
     .sibling-card h3 { font-size: 17px; }
     .sibling-card > p { font-size: 13px; margin-bottom: 16px; }
@@ -240,14 +201,6 @@
     .sib-code-block { padding: 10px 12px; }
     .sib-code-label { font-size: 12px; }
     .memo-box { padding: 14px; border-radius: 12px; }
-
-    /* Referral section note */
-    .sibling-card + div p, section p[style*="border-left"] {
-      font-size: 14px !important;
-      padding: 12px 14px !important;
-    }
-
-    /* Referral */
     .ref-section { padding: 24px 16px; border-radius: 18px; }
     .ref-section h3 { font-size: 20px; }
     .ref-section > p { font-size: 13px; margin-bottom: 18px; }
@@ -260,23 +213,17 @@
     .tier .t-pct { font-size: 10px; }
     .tier .t-price { font-size: 11px; }
     .ref-note { font-size: 11px; }
-
-    /* CTA */
     .cta-section { padding: 44px 0; }
     .cta-section h3 { font-size: 24px; }
     .deadline-badge { font-size: 13px; padding: 7px 16px; }
     .cta-btn { display: block; width: 100%; font-size: 16px; padding: 16px 20px; border-radius: 14px; text-align: center; min-height: 52px; }
     .cta-sub { font-size: 12px; }
-    .cta-sub a { display: inline-block; word-break: break-all; }
-
     footer { padding: 28px 16px; font-size: 12px; }
     footer a { word-break: break-all; }
   }
-
   @media (max-width: 375px) {
     .code-value { font-size: 22px; letter-spacing: 1px; }
     .hero h1 { font-size: 24px; }
-    .header-badge { display: none; }
     .tiers { grid-template-columns: repeat(3, 1fr); gap: 4px; }
     .tier .t-num { font-size: 12px; }
     .tier .t-price { font-size: 10px; }
@@ -295,6 +242,10 @@
   <div class="header-right">
     <span class="header-star">🚀</span>
     <div class="header-badge">PRE-LAUNCH MEMBER</div>
+    <div class="lang-toggle">
+      <button class="lang-btn active" data-lang="ja" onclick="setLang('ja')">日本語</button>
+      <button class="lang-btn" data-lang="en" onclick="setLang('en')">English</button>
+    </div>
   </div>
 </header>
 
@@ -302,22 +253,22 @@
   <div class="container">
     <div class="hero-eyebrow">⭐ PRE-LAUNCH MEMBER</div>
     <h1>Welcome to<br><em>BrightBe</em> Learning!</h1>
-    <p>7日間の無料トライアル付きでスタートできます。以下の手順で登録を進めてください。</p>
-    <div style="margin-top:20px; display:inline-block; background:var(--navy); border-radius:100px; padding:8px 20px; font-size:14px; font-weight:700; color:var(--gold); position:relative; z-index:1;">📅 登録締め切り：3月31日</div>
+    <p data-ja="7日間の無料トライアル付きでスタートできます。以下の手順で登録を進めてください。" data-en="Your 7-day free trial begins on April 6. Follow the steps below to complete your registration.">7日間の無料トライアル付きでスタートできます。以下の手順で登録を進めてください。</p>
+    <div style="margin-top:20px; display:inline-block; background:var(--navy); border-radius:100px; padding:8px 20px; font-size:14px; font-weight:700; color:var(--gold); position:relative; z-index:1;" data-ja="📅 登録締め切り：3月31日" data-en="📅 Registration Deadline: March 31">📅 登録締め切り：3月31日</div>
   </div>
 </div>
 
 <div class="code-wrap">
   <div class="code-card">
-    <div class="code-label">あなたの特別コード</div>
+    <div class="code-label" data-ja="あなたの特別コード" data-en="Your Special Code">あなたの特別コード</div>
     <div class="code-value">PREOPEN2026</div>
-    <div class="code-price">月額 $100 ／ 在籍中ずっとこの料金が続きます</div>
+    <div class="code-price" data-ja="月額 $100 ／ 在籍中ずっとこの料金が続きます" data-en="$100/month — rate locked for the life of your enrollment">月額 $100 ／ 在籍中ずっとこの料金が続きます</div>
     <button class="copy-btn" onclick="copyCode()">
       <span id="copyIcon">📋</span>
-      <span id="copyLabel">コードをコピー</span>
+      <span id="copyLabel" data-ja="コードをコピー" data-en="Copy Code">コードをコピー</span>
     </button>
     <div style="margin-top: 16px;">
-      <a href="https://www.brightbelearning.com/login?tab=signup" target="_blank" style="display: inline-block; background: white; color: var(--navy); font-family: 'DM Sans', sans-serif; font-size: 17px; font-weight: 700; padding: 16px 44px; border-radius: 100px; text-decoration: none; box-shadow: 0 4px 20px rgba(0,0,0,0.18); transition: transform 0.2s;">コードをコピーしたらここから登録</a>
+      <a href="https://www.brightbelearning.com/login?tab=signup" target="_blank" style="display: inline-block; background: white; color: var(--navy); font-family: 'DM Sans', sans-serif; font-size: 17px; font-weight: 700; padding: 16px 44px; border-radius: 100px; text-decoration: none; box-shadow: 0 4px 20px rgba(0,0,0,0.18); transition: transform 0.2s;" data-ja="コードをコピーしたらここから登録" data-en="Once you've copied your code, register here">コードをコピーしたらここから登録</a>
     </div>
   </div>
 </div>
@@ -326,12 +277,12 @@
 <div class="toc-wrap">
   <div class="container">
     <div class="toc">
-      <div class="toc-title">📋 このガイドの内容</div>
+      <div class="toc-title" data-ja="📋 このガイドの内容" data-en="📋 Contents">📋 このガイドの内容</div>
       <div class="toc-items">
-        <a href="#preview" class="toc-item"><span class="toc-num">1</span>7日間無料トライアル</a>
-        <a href="#enroll" class="toc-item"><span class="toc-num">2</span>登録方法</a>
-        <a href="#sibling" class="toc-item"><span class="toc-num">3</span>兄弟・姉妹の登録</a>
-        <a href="#referral" class="toc-item"><span class="toc-num">4</span>お得に参加しよう</a>
+        <a href="#preview" class="toc-item"><span class="toc-num">1</span><span data-ja="7日間無料トライアル" data-en="7-Day Free Trial">7日間無料トライアル</span></a>
+        <a href="#enroll" class="toc-item"><span class="toc-num">2</span><span data-ja="登録方法" data-en="How to Register">登録方法</span></a>
+        <a href="#sibling" class="toc-item"><span class="toc-num">3</span><span data-ja="兄弟・姉妹の登録" data-en="Adding Siblings">兄弟・姉妹の登録</span></a>
+        <a href="#referral" class="toc-item"><span class="toc-num">4</span><span data-ja="お得に参加しよう" data-en="Referral Program">お得に参加しよう</span></a>
       </div>
     </div>
   </div>
@@ -339,26 +290,26 @@
 
 <section id="preview">
   <div class="container">
-    <div class="section-label">プレオープン特典</div>
-    <h2 class="section-title">✨ 7日間 無料トライアル</h2>
-    <p class="section-sub">4月6日から1週間はトライアルです。</p>
+    <div class="section-label" data-ja="プレオープン特典" data-en="Pre-Launch Benefit">プレオープン特典</div>
+    <h2 class="section-title" data-ja="✨ 7日間 無料トライアル" data-en="✨ 7-Day Free Trial">✨ 7日間 無料トライアル</h2>
+    <p class="section-sub" data-ja="4月6日から1週間はトライアルです。" data-en="Your 7-day free trial begins on April 6.">4月6日から1週間はトライアルです。</p>
     <div class="preview-box">
-      <h3>🎉 7日間 無料トライアル</h3>
+      <h3 data-ja="🎉 7日間 無料トライアル" data-en="🎉 7-Day Free Trial">🎉 7日間 無料トライアル</h3>
       <div class="preview-days">
         <div class="preview-day">
-          <div class="pday-week">クラス開始</div>
-          <div class="pday-date">4月6日</div>
-          <div class="pday-subject">📖 ELA・🔢 算数 クラス開始</div>
-          <div class="pday-time">🇺🇸 午後4時〜（アメリカ EST）</div>
+          <div class="pday-week" data-ja="クラス開始" data-en="Classes Begin">クラス開始</div>
+          <div class="pday-date" data-ja="4月6日" data-en="April 6">4月6日</div>
+          <div class="pday-subject" data-ja="📖 ELA・🔢 算数 クラス開始" data-en="📖 ELA & 🔢 Math Classes Begin">📖 ELA・🔢 算数 クラス開始</div>
+          <div class="pday-time" data-ja="🇺🇸 午後4時〜（アメリカ EST）" data-en="🇺🇸 4:00 PM EST (US Eastern Time)">🇺🇸 午後4時〜（アメリカ EST）</div>
         </div>
         <div class="preview-day">
-          <div class="pday-week">初回請求日</div>
-          <div class="pday-date">4月13日</div>
-          <div class="pday-subject">💳 $100 請求（4/6前登録の場合）</div>
-          <div class="pday-time">4月13日までにキャンセルすれば費用ゼロ</div>
+          <div class="pday-week" data-ja="初回請求日" data-en="First Billing Date">初回請求日</div>
+          <div class="pday-date" data-ja="4月13日" data-en="April 13">4月13日</div>
+          <div class="pday-subject" data-ja="💳 $100 請求（4/6前登録の場合）" data-en="💳 $100 monthly subscription begins (for pre-launch sign-ups)">💳 $100 請求（4/6前登録の場合）</div>
+          <div class="pday-time" data-ja="4月13日までにキャンセルすれば費用ゼロ" data-en="Cancel before April 13 — you won't be charged">4月13日までにキャンセルすれば費用ゼロ</div>
         </div>
       </div>
-      <div class="preview-note">⏰ 時間・ZoomリンクはマイページのCalendarから確認できます</div>
+      <div class="preview-note" data-ja="⏰ 時間・ZoomリンクはマイページのCalendarから確認できます" data-en="⏰ Check class times and Zoom links in the Calendar on your dashboard.">⏰ 時間・ZoomリンクはマイページのCalendarから確認できます</div>
     </div>
   </div>
 </section>
@@ -368,45 +319,45 @@
 <div id="enroll"></div>
 <section>
   <div class="container">
-    <div class="section-label">登録の流れ</div>
-    <h2 class="section-title">登録方法</h2>
-    <p class="section-sub">以下のステップで登録を完了してください。</p>
+    <div class="section-label" data-ja="登録の流れ" data-en="Registration Steps">登録の流れ</div>
+    <h2 class="section-title" data-ja="登録方法" data-en="How to Register">登録方法</h2>
+    <p class="section-sub" data-ja="以下のステップで登録を完了してください。" data-en="Complete your registration by following these steps.">以下のステップで登録を完了してください。</p>
     <div class="steps">
       <div class="step">
         <div class="step-num">1</div>
         <div class="step-body">
-          <h4>登録ページにアクセス</h4>
-          <p><a class="inline-link" href="https://www.brightbelearning.com/login?tab=signup" target="_blank">こちらのリンク</a>から直接登録ページが開きます。</p>
+          <h4 data-ja="登録ページにアクセス" data-en="Go to the Registration Page">登録ページにアクセス</h4>
+          <p data-ja='<a class="inline-link" href="https://www.brightbelearning.com/login?tab=signup" target="_blank">こちらのリンク</a>から直接登録ページが開きます。' data-en='Open the registration page using <a class="inline-link" href="https://www.brightbelearning.com/login?tab=signup" target="_blank">this link</a>.'><a class="inline-link" href="https://www.brightbelearning.com/login?tab=signup" target="_blank">こちらのリンク</a>から直接登録ページが開きます。</p>
         </div>
       </div>
       <div class="step">
         <div class="step-num">2</div>
         <div class="step-body">
-          <h4>アカウントを作成</h4>
-          <p>保護者様のお名前・メールアドレス・パスワードを入力します。確認メールが届いたら、リンクをクリックして認証してください。</p>
+          <h4 data-ja="アカウントを作成" data-en="Create Your Account">アカウントを作成</h4>
+          <p data-ja="保護者様のお名前・メールアドレス・パスワードを入力します。確認メールが届いたら、リンクをクリックして認証してください。" data-en="Enter the parent's name, email address, and password. Once you receive a confirmation email, click the link to verify your account.">保護者様のお名前・メールアドレス・パスワードを入力します。確認メールが届いたら、リンクをクリックして認証してください。</p>
         </div>
       </div>
       <div class="step">
         <div class="step-num">3</div>
         <div class="step-body">
-          <h4>お子さまの情報を入力 ← ここ重要！</h4>
-          <p>お子さまの名前・学年を入力します。<br><strong>「Have a code from BrightBe?」</strong>という欄が出てきたら、このコードを入力：</p>
+          <h4 data-ja="お子さまの情報を入力 ← ここ重要！" data-en="Enter Your Child's Info ← Important!">お子さまの情報を入力 ← ここ重要！</h4>
+          <p data-ja="お子さまの名前・学年を入力します。<br><strong>「Have a code from BrightBe?」</strong>という欄が出てきたら、このコードを入力：" data-en="Enter your child's name and grade. When you see the field <strong>&quot;Have a code from BrightBe?&quot;</strong>, enter the following code:">お子さまの名前・学年を入力します。<br><strong>「Have a code from BrightBe?」</strong>という欄が出てきたら、このコードを入力：</p>
           <span class="code-chip">PREOPEN2026</span>
-          <div class="warn-note">⚠️ コードは登録時にのみ入力できます。登録後の適用はできませんのでご注意ください。</div>
+          <div class="warn-note" data-ja="⚠️ コードは登録時にのみ入力できます。登録後の適用はできませんのでご注意ください。" data-en="⚠️ The code can only be applied at registration. It cannot be added after enrollment.">⚠️ コードは登録時にのみ入力できます。登録後の適用はできませんのでご注意ください。</div>
         </div>
       </div>
       <div class="step">
         <div class="step-num">4</div>
         <div class="step-body">
-          <h4>お支払い情報を入力</h4>
-          <p>クレジットカード情報を入力します。<strong>この時点では請求されません。</strong>トライアルは4月6日スタート、初回請求は4月13日（$100）です。4月13日までにキャンセルすれば費用ゼロです。</p>
+          <h4 data-ja="お支払い情報を入力" data-en="Enter Payment Info">お支払い情報を入力</h4>
+          <p data-ja="クレジットカード情報を入力します。<strong>この時点では請求されません。</strong>トライアルは4月6日スタート、初回請求は4月13日（$100）です。4月13日までにキャンセルすれば費用ゼロです。" data-en="Enter your credit card details. <strong>You will not be charged now.</strong> Your trial starts on April 6. Your first charge will be on April 13 ($100). Cancel before April 13 and you won't be charged.">クレジットカード情報を入力します。<strong>この時点では請求されません。</strong>トライアルは4月6日スタート、初回請求は4月13日（$100）です。4月13日までにキャンセルすれば費用ゼロです。</p>
         </div>
       </div>
       <div class="step">
         <div class="step-num">5</div>
         <div class="step-body">
-          <h4>4月6日、クラス開始 🎉</h4>
-          <p>ダッシュボードからクラスを予約して、ZoomでJoinするだけ。一緒に頑張りましょう！</p>
+          <h4 data-ja="4月6日、クラス開始 🎉" data-en="April 6 — Classes Start 🎉">4月6日、クラス開始 🎉</h4>
+          <p data-ja="ダッシュボードからクラスを予約して、ZoomでJoinするだけ。一緒に頑張りましょう！" data-en="Book your classes in the dashboard and join on Zoom. We can't wait to see you!">ダッシュボードからクラスを予約して、ZoomでJoinするだけ。一緒に頑張りましょう！</p>
         </div>
       </div>
     </div>
@@ -418,36 +369,36 @@
 <div id="sibling"></div>
 <section>
   <div class="container">
-    <div class="section-label">兄弟・姉妹の登録</div>
-    <h2 class="section-title">2人目以降のお子さまを追加するには</h2>
-    <p style="font-size: 17px; font-weight: 700; color: var(--navy); background: var(--gold-light); border-left: 4px solid var(--gold-dark); border-radius: 8px; padding: 14px 18px; margin-bottom: 28px; line-height: 1.7;">🎁 BrightBe Referral Program の紹介割引は、<br>兄弟・姉妹への登録にも適用できます。</p>
+    <div class="section-label" data-ja="兄弟・姉妹の登録" data-en="Adding Siblings">兄弟・姉妹の登録</div>
+    <h2 class="section-title" data-ja="2人目以降のお子さまを追加するには" data-en="How to Enroll Siblings">2人目以降のお子さまを追加するには</h2>
+    <p style="font-size: 17px; font-weight: 700; color: var(--navy); background: var(--gold-light); border-left: 4px solid var(--gold-dark); border-radius: 8px; padding: 14px 18px; margin-bottom: 28px; line-height: 1.7;" data-ja="🎁 BrightBe Referral Program の紹介割引は、<br>兄弟・姉妹への登録にも適用できます。" data-en="🎁 BrightBe Referral Program discounts can also be applied when enrolling siblings.">🎁 BrightBe Referral Program の紹介割引は、<br>兄弟・姉妹への登録にも適用できます。</p>
     <p class="section-sub"></p>
     <div class="sibling-card">
-      <h3>👨‍👩‍👧‍👦 2人目以降の登録方法</h3>
-      <p>1人目の登録が完了すると、ダッシュボードに<strong>その子専用のリファーラルコード</strong>が発行されます。2人目以降を追加するときは、そのコードを使ってください。</p>
+      <h3 data-ja="👨‍👩‍👧‍👦 2人目以降の登録方法" data-en="👨‍👩‍👧‍👦 How to Enroll Additional Children">👨‍👩‍👧‍👦 2人目以降の登録方法</h3>
+      <p data-ja="1人目の登録が完了すると、ダッシュボードに<strong>その子専用のリファーラルコード</strong>が発行されます。2人目以降を追加するときは、そのコードを使ってください。" data-en="Once your first child is enrolled, a <strong>unique referral code</strong> for that child will appear in your dashboard. Use that code when adding additional children.">1人目の登録が完了すると、ダッシュボードに<strong>その子専用のリファーラルコード</strong>が発行されます。2人目以降を追加するときは、そのコードを使ってください。</p>
       <div class="memo-box">
-        <div class="memo-label">📝 1人目のリファーラルコードをメモしておこう</div>
+        <div class="memo-label" data-ja="📝 1人目のリファーラルコードをメモしておこう" data-en="📝 Keep a note of your first child's referral code">📝 1人目のリファーラルコードをメモしておこう</div>
         <div class="memo-input-wrap">
-          <span class="memo-input-hint">例：SA2K7M9P</span>
+          <span class="memo-input-hint" data-ja="例：SA2K7M9P" data-en="e.g. SA2K7M9P">例：SA2K7M9P</span>
           <div class="memo-line"></div>
         </div>
       </div>
       <div class="sib-steps">
-        <div class="sib-step"><div class="snum">1</div><p>ログインして <strong>ダッシュボード</strong> を開く</p></div>
-        <div class="sib-step"><div class="snum">2</div><p><strong>「+ Add Student」</strong> をクリック</p></div>
-        <div class="sib-step"><div class="snum">3</div><p>お子さまの情報を入力する</p></div>
+        <div class="sib-step"><div class="snum">1</div><p data-ja="ログインして <strong>ダッシュボード</strong> を開く" data-en="Log in and open your <strong>Dashboard</strong>">ログインして <strong>ダッシュボード</strong> を開く</p></div>
+        <div class="sib-step"><div class="snum">2</div><p data-ja='<strong>「+ Add Student」</strong> をクリック' data-en='Click <strong>"+ Add Student"</strong>'><strong>「+ Add Student」</strong> をクリック</p></div>
+        <div class="sib-step"><div class="snum">3</div><p data-ja="お子さまの情報を入力する" data-en="Enter your child's information">お子さまの情報を入力する</p></div>
         <div class="sib-step">
           <div class="snum">4</div>
           <div class="sib-step-content">
             <div class="sib-code-block">
               <div class="sib-code-label">「Have a code from BrightBe?」</div>
-              <div class="sib-code-answer"><span class="sib-arrow">→</span><span class="code-chip">PREOPEN2026</span><span class="sib-suffix">を入力</span></div>
+              <div class="sib-code-answer"><span class="sib-arrow">→</span><span class="code-chip">PREOPEN2026</span><span class="sib-suffix" data-ja="を入力" data-en="enter this">を入力</span></div>
             </div>
             <div class="sib-code-block">
               <div class="sib-code-label">「Have a code from a friend?」</div>
-              <div class="sib-code-answer sib-code-answer--text"><span class="sib-arrow">→</span><span>先に登録した兄弟・姉妹のリファーラルコードを入力して完了！</span></div>
+              <div class="sib-code-answer sib-code-answer--text"><span class="sib-arrow">→</span><span data-ja="先に登録した兄弟・姉妹のリファーラルコードを入力して完了！" data-en="Enter the referral code from the previously enrolled sibling — done!">先に登録した兄弟・姉妹のリファーラルコードを入力して完了！</span></div>
             </div>
-            <div class="warn-note">⚠️ コードは登録時にのみ入力できます。登録後の適用はできませんのでご注意ください。</div>
+            <div class="warn-note" data-ja="⚠️ コードは登録時にのみ入力できます。登録後の適用はできませんのでご注意ください。" data-en="⚠️ Codes can only be applied at registration. They cannot be added afterward.">⚠️ コードは登録時にのみ入力できます。登録後の適用はできませんのでご注意ください。</div>
           </div>
         </div>
       </div>
@@ -460,46 +411,68 @@
 <div id="referral"></div>
 <section>
   <div class="container">
-    <div class="section-label">紹介プログラム</div>
-    <h2 class="section-title">🎁 お得に参加しよう</h2>
-    <p class="section-sub">登録後、ダッシュボードにあなた専用の紹介コードが発行されます。お友達を紹介するたびに月謝が自動で割引されます。</p>
+    <div class="section-label" data-ja="紹介プログラム" data-en="Referral Program">紹介プログラム</div>
+    <h2 class="section-title" data-ja="🎁 お得に参加しよう" data-en="🎁 Save More with Referrals">🎁 お得に参加しよう</h2>
+    <p class="section-sub" data-ja="登録後、ダッシュボードにあなた専用の紹介コードが発行されます。お友達を紹介するたびに月謝が自動で割引されます。" data-en="After enrollment, your personal referral code appears in your dashboard. Each friend you refer automatically lowers your monthly tuition.">登録後、ダッシュボードにあなた専用の紹介コードが発行されます。お友達を紹介するたびに月謝が自動で割引されます。</p>
     <div class="ref-section">
       <div class="ref-eyebrow">BrightBe Referral Program</div>
-      <h3>友達紹介で最大無料に</h3>
-      <p>紹介したお友達がお支払いを続けている限り、あなたの割引もずっと継続！5人紹介すれば完全無料になります。</p>
+      <h3 data-ja="友達紹介で最大無料に" data-en="Refer Friends — Get Up to 100% Off Your Tuition">友達紹介で最大無料に</h3>
+      <p data-ja="紹介したお友達がお支払いを続けている限り、あなたの割引もずっと継続！5人紹介すれば完全無料になります。" data-en="As long as your referred friends stay enrolled, your discount continues. Refer 5 friends and your tuition is completely free.">紹介したお友達がお支払いを続けている限り、あなたの割引もずっと継続！5人紹介すれば完全無料になります。</p>
       <div class="ref-how">
-        <div class="ref-how-item"><div class="ref-icon">👤</div><span>お友達があなたの紹介コードで登録</span></div>
-        <div class="ref-how-item"><div class="ref-icon">✅</div><span>お友達の初回お支払いが確認される</span></div>
-        <div class="ref-how-item"><div class="ref-icon">💰</div><span>あなたの月謝が自動で20%オフに！</span></div>
+        <div class="ref-how-item"><div class="ref-icon">👤</div><span data-ja="お友達があなたの紹介コードで登録" data-en="A friend signs up with your referral code">お友達があなたの紹介コードで登録</span></div>
+        <div class="ref-how-item"><div class="ref-icon">✅</div><span data-ja="お友達の初回お支払いが確認される" data-en="Their first payment is processed">お友達の初回お支払いが確認される</span></div>
+        <div class="ref-how-item"><div class="ref-icon">💰</div><span data-ja="あなたの月謝が自動で20%オフに！" data-en="Your monthly fee is automatically reduced by 20%!">あなたの月謝が自動で20%オフに！</span></div>
       </div>
       <div class="tiers">
-        <div class="tier"><span class="t-num">1人</span><span class="t-pct">20% off</span><span class="t-price">$80/月</span></div>
-        <div class="tier"><span class="t-num">2人</span><span class="t-pct">40% off</span><span class="t-price">$60/月</span></div>
-        <div class="tier"><span class="t-num">3人</span><span class="t-pct">60% off</span><span class="t-price">$40/月</span></div>
-        <div class="tier"><span class="t-num">4人</span><span class="t-pct">80% off</span><span class="t-price">$20/月</span></div>
-        <div class="tier is-free"><span class="t-num">5人+</span><span class="t-pct">100% off</span><span class="t-price">無料🎉</span></div>
+        <div class="tier"><span class="t-num" data-ja="1人" data-en="1">1人</span><span class="t-pct">20% off</span><span class="t-price">$80<span data-ja="/月" data-en="/mo">/月</span></span></div>
+        <div class="tier"><span class="t-num" data-ja="2人" data-en="2">2人</span><span class="t-pct">40% off</span><span class="t-price">$60<span data-ja="/月" data-en="/mo">/月</span></span></div>
+        <div class="tier"><span class="t-num" data-ja="3人" data-en="3">3人</span><span class="t-pct">60% off</span><span class="t-price">$40<span data-ja="/月" data-en="/mo">/月</span></span></div>
+        <div class="tier"><span class="t-num" data-ja="4人" data-en="4">4人</span><span class="t-pct">80% off</span><span class="t-price">$20<span data-ja="/月" data-en="/mo">/月</span></span></div>
+        <div class="tier is-free"><span class="t-num" data-ja="5人+" data-en="5+">5人+</span><span class="t-pct">100% off</span><span class="t-price" data-ja="無料🎉" data-en="Free🎉">無料🎉</span></div>
       </div>
-      <p class="ref-note">※ 紹介コードは登録完了後にダッシュボードに表示されます。割引はお友達がアクティブ（お支払い中）の間ずっと継続されます。お友達がキャンセルした場合は割引も終了します。</p>
+      <p class="ref-note" data-ja="※ 紹介コードは登録完了後にダッシュボードに表示されます。割引はお友達がアクティブ（お支払い中）の間ずっと継続されます。お友達がキャンセルした場合は割引も終了します。" data-en="※ Your referral code appears in your dashboard after enrollment. Discounts remain active as long as your referrals maintain their subscription. If a referral cancels, the discount ends.">※ 紹介コードは登録完了後にダッシュボードに表示されます。割引はお友達がアクティブ（お支払い中）の間ずっと継続されます。お友達がキャンセルした場合は割引も終了します。</p>
     </div>
   </div>
 </section>
 
 <div class="cta-section">
   <div class="container">
-    <div class="deadline-badge">📅 登録締め切り：3月31日</div>
-    <h3>さっそく登録しよう</h3>
-    <p>クラスは4月6日スタート。今すぐプレオープン枠を確保してください。</p>
-    <a href="https://www.brightbelearning.com/login?tab=signup" class="cta-btn">今すぐ登録する →</a>
-    <p class="cta-sub">ご不明な点は <a href="mailto:hello@brightbelearning.com">hello@brightbelearning.com</a> までお気軽に</p>
+    <div class="deadline-badge" data-ja="📅 登録締め切り：3月31日" data-en="📅 Registration Deadline: March 31">📅 登録締め切り：3月31日</div>
+    <h3 data-ja="さっそく登録しよう" data-en="Register Now">さっそく登録しよう</h3>
+    <p data-ja="クラスは4月6日スタート。今すぐプレオープン枠を確保してください。" data-en="Classes start April 6. Reserve your pre-launch spot today.">クラスは4月6日スタート。今すぐプレオープン枠を確保してください。</p>
+    <a href="https://www.brightbelearning.com/login?tab=signup" class="cta-btn" data-ja="今すぐ登録する →" data-en="Get Started →">今すぐ登録する →</a>
+    <p class="cta-sub" data-ja='ご不明な点は <a href="mailto:hello@brightbelearning.com">hello@brightbelearning.com</a> までお気軽に' data-en='Questions? Email us at <a href="mailto:hello@brightbelearning.com">hello@brightbelearning.com</a>'>ご不明な点は <a href="mailto:hello@brightbelearning.com">hello@brightbelearning.com</a> までお気軽に</p>
   </div>
 </div>
 
 <footer>
   <p>© 2026 MERCY GLOBAL EDUCATION LLC · BrightBe Learning</p>
-  <p><a href="https://www.brightbelearning.com/login?tab=signup">brightbelearning.com</a> · <a href="mailto:hello@brightbelearning.com">hello@brightbelearning.com</a></p>
+  <p><a href="https://www.brightbelearning.com/login?tab=signup">brightbelearning.com</a> · <a href="/cdn-cgi/l/email-protection#9ef6fbf2f2f1defcecf7f9f6eafcfbf2fbffecf0f7f0f9b0fdf1f3"><span class="__cf_email__" data-cfemail="88e0ede4e4e7c8eafae1efe0fceaede4ede9fae6e1e6efa6ebe7e5">[email&#160;protected]</span></a></p>
 </footer>
 
 <script>
+let currentLang = 'ja';
+
+function setLang(lang) {
+  currentLang = lang;
+  document.querySelectorAll('.lang-btn').forEach(btn => {
+    btn.classList.toggle('active', btn.getAttribute('data-lang') === lang);
+  });
+  document.documentElement.lang = lang;
+
+  document.querySelectorAll('[data-ja][data-en]').forEach(el => {
+    const text = el.getAttribute('data-' + lang);
+    if (text !== null) el.innerHTML = text;
+  });
+
+  const copyLabel = document.getElementById('copyLabel');
+  if (copyLabel) {
+    if (!copyLabel.textContent.includes('コピーしました') && !copyLabel.textContent.includes('Copied')) {
+      copyLabel.textContent = lang === 'ja' ? 'コードをコピー' : 'Copy Code';
+    }
+  }
+}
+
 function copyCode() {
   const code = 'PREOPEN2026';
   if (navigator.clipboard && window.isSecureContext) {
@@ -508,6 +481,7 @@ function copyCode() {
     fallbackCopy(code);
   }
 }
+
 function fallbackCopy(text) {
   const el = document.createElement('textarea');
   el.value = text;
@@ -519,34 +493,29 @@ function fallbackCopy(text) {
   try { document.execCommand('copy'); showCopied(); } catch(e) {}
   document.body.removeChild(el);
 }
+
 function showCopied() {
-  document.getElementById('copyLabel').textContent = 'コピーしました！';
+  const isEn = currentLang === 'en';
+  document.getElementById('copyLabel').textContent = isEn ? 'Copied!' : 'コピーしました！';
   document.getElementById('copyIcon').textContent = '✅';
   setTimeout(() => {
-    document.getElementById('copyLabel').textContent = 'コードをコピー';
+    document.getElementById('copyLabel').textContent = isEn ? 'Copy Code' : 'コードをコピー';
     document.getElementById('copyIcon').textContent = '📋';
   }, 2500);
 
   const toast = document.createElement('div');
-  toast.textContent = '✅ コードをコピーしました！';
-  toast.style.cssText = `
-    position: fixed;
-    bottom: 32px;
-    left: 50%;
-    transform: translateX(-50%) translateY(20px);
-    background: #0F172A;
-    color: #FBBF24;
-    font-family: 'DM Sans', sans-serif;
-    font-size: 15px;
-    font-weight: 700;
-    padding: 14px 28px;
-    border-radius: 100px;
-    box-shadow: 0 8px 32px rgba(0,0,0,0.25);
-    z-index: 9999;
-    opacity: 0;
-    transition: opacity 0.3s, transform 0.3s;
-    white-space: nowrap;
-  `;
+  toast.textContent = isEn ? '✅ Code copied!' : '✅ コードをコピーしました！';
+  toast.style.cssText = [
+    'position:fixed', 'bottom:32px', 'left:50%',
+    'transform:translateX(-50%) translateY(20px)',
+    'background:#0F172A', 'color:#FBBF24',
+    "font-family:'DM Sans',sans-serif", 'font-size:15px', 'font-weight:700',
+    'padding:14px 28px', 'border-radius:100px',
+    'box-shadow:0 8px 32px rgba(0,0,0,0.25)',
+    'z-index:9999', 'opacity:0',
+    'transition:opacity 0.3s,transform 0.3s',
+    'white-space:nowrap'
+  ].join(';');
   document.body.appendChild(toast);
   requestAnimationFrame(() => {
     toast.style.opacity = '1';
@@ -561,4 +530,3 @@ function showCopied() {
 </script>
 </body>
 </html>
-　
