@@ -427,50 +427,173 @@
         .pulse-btn { animation: gentle-pulse 2.5s ease-in-out infinite; }
 
         /* MOBILE */
+        /* ============ TABLET ============ */
         @media (max-width: 900px) {
             .features-grid { grid-template-columns: 1fr 1fr; }
-            .pricing-grid { grid-template-columns: 1fr; max-width: 400px; }
+            .pricing-grid { grid-template-columns: 1fr; max-width: 420px; }
             .price-card.featured { transform: none; }
         }
+
+        /* ============ MOBILE ============ */
         @media (max-width: 768px) {
-            .hero { padding: calc(var(--banner-h, 40px) + var(--header-h, 60px) + 28px) 20px 48px; }
-            .hero-grid, .problem-grid, .solution-grid, .testi-grid { grid-template-columns: 1fr; gap: 28px; }
-            .hero-grid { text-align: center; }
-            .hero-visual { order: -1; }
-            .hero-badge { position: relative; bottom: auto; left: auto; justify-content: center; margin: -24px auto 0; display: inline-flex; }
-            .hero h1 { font-size: 1.85rem; }
-            .hero-sub { font-size: 1rem; }
-            .hero-cta-group { max-width: 100%; }
-            .proof-items { display: grid; grid-template-columns: repeat(4, 1fr); gap: 8px; }
-            .proof-number { font-size: 1.5rem; }
-            .section-label h2 { font-size: 1.5rem; }
-            .testi-img { order: -1; text-align: center; }
-            .testi-img img { max-width: 75%; }
-            .schedule-row { padding: 12px 16px; gap: 10px; }
-            .schedule-time { min-width: 60px; font-size: 0.75rem; }
-            .schedule-activity { font-size: 0.88rem; }
-            .comp-table-wrap { overflow-x: auto; margin: 0 -20px; }
-            .comp-table { min-width: 600px; }
-            .comp-swipe-hint { display: block; }
-            .inline-cta { margin: 48px 0 0; }
-            .features-grid { grid-template-columns: 1fr 1fr; gap: 14px; }
-            .feature-card { padding: 20px 16px; }
-            .feature-card p { font-size: 0.8rem; }
-            .influencer-track-wrapper { overflow-x: auto; padding: 0 20px 16px; scroll-snap-type: x mandatory; }
-            .influencer-track { animation: none; gap: 16px; width: max-content; }
-            .inf-card { min-width: 280px; scroll-snap-align: start; }
-            .pricing-grid { max-width: 100%; }
-            .final-cta-card { padding: 28px 22px; }
-            .final-cta-card h3 { font-size: 1.3rem; }
-            .email-form-row { flex-direction: column; }
-            .site-footer { padding-bottom: 110px; }
-            .inline-countdown { flex-direction: column; gap: 6px; }
-        }
-        @media (max-width: 480px) {
-            .hero h1 { font-size: 1.6rem; }
-            .proof-items { grid-template-columns: repeat(2, 1fr); }
-            .proof-item { background: white; padding: 14px 8px; border-radius: 12px; }
+
+            /* --- 全体 --- */
+            body { padding-bottom: 80px; }
+            .container { padding: 0 16px; }
+
+            /* --- バナー：1行コンパクト --- */
+            .campaign-banner { padding: 5px 10px; }
+            .campaign-banner > div { flex-direction: row !important; gap: 6px !important; flex-wrap: wrap; justify-content: center; align-items: center; }
+            .campaign-banner > div > span:first-child { font-size: 0.7rem !important; }
             .banner-countdown { gap: 3px; }
+            .banner-countdown .cd-num { font-size: 0.75rem; }
+            .banner-countdown .cd-label { font-size: 0.46rem; }
+            .banner-countdown .cd-sep { font-size: 0.68rem; margin-bottom: 4px; }
+
+            /* --- ヘッダー --- */
+            .logo { font-size: 1.1rem; }
+            .header-cta { padding: 8px 14px; font-size: 0.75rem; }
+
+            /* --- ヒーロー --- */
+            .hero { padding: calc(var(--banner-h, 36px) + var(--header-h, 56px) + 20px) 16px 40px; }
+            .hero-grid { grid-template-columns: 1fr; gap: 20px; text-align: center; }
+            .hero-visual { order: -1; }
+            .hero-visual img { max-height: 220px; object-fit: cover; width: 100%; }
+            .hero-badge { position: relative; bottom: auto; left: auto; justify-content: center; margin: -16px auto 0; display: inline-flex; padding: 10px 16px; }
+            .hero-badge-number { font-size: 1.5rem; }
+            .hero-eyebrow { font-size: 0.72rem; padding: 6px 12px; text-align: left; }
+            .hero h1 { font-size: 1.65rem; margin-bottom: 12px; }
+            .hero-sub { font-size: 0.9rem; margin-bottom: 20px; }
+            .campaign-card { padding: 16px; margin-bottom: 16px; }
+            .campaign-card-title { font-size: 1.05rem; }
+            .campaign-card-title em { font-size: 1.25rem; }
+            .campaign-card-sub { font-size: 0.8rem; }
+            .inline-countdown { flex-direction: row; flex-wrap: wrap; justify-content: center; gap: 6px; padding: 10px 12px; }
+            .inline-countdown .cd-label-main { width: 100%; text-align: center; font-size: 0.72rem; }
+            .inline-countdown .cd-block { min-width: 30px; padding: 3px 6px; }
+            .inline-countdown .cd-block .n { font-size: 0.95rem; }
+            .inline-countdown .cd-colon { font-size: 0.9rem; margin-bottom: 6px; }
+            .hero-cta-group { max-width: 100%; gap: 8px; }
+            .btn-campaign { font-size: 0.95rem; padding: 14px 24px; }
+
+            /* --- Proof bar --- */
+            .proof-bar { padding: 24px 16px; }
+            .proof-items { display: grid; grid-template-columns: repeat(2, 1fr); gap: 12px; }
+            .proof-item { background: white; border-radius: 12px; padding: 14px 8px; box-shadow: var(--shadow-soft); }
+            .proof-number { font-size: 1.6rem; }
+            .proof-label { font-size: 0.72rem; }
+
+            /* --- セクション共通 --- */
+            .section-label { margin-bottom: 28px; }
+            .section-label h2 { font-size: 1.35rem; line-height: 1.5; }
+            .section-label p { font-size: 0.88rem; }
+
+            /* --- 動画 --- */
+            .video-section { padding: 40px 16px; }
+            .video-label h2 { font-size: 1.2rem; }
+            .video-label p { font-size: 0.85rem; }
+
+            /* --- 体験談 --- */
+            .testimonials-section { padding: 48px 16px; }
+            .testi-grid { grid-template-columns: 1fr; gap: 20px; }
+            .testi-img { order: -1; text-align: center; }
+            .testi-img img { max-width: 70%; }
+            .testi-card { padding: 16px; }
+            .testi-card p { font-size: 0.88rem; }
+            .testi-highlight { font-size: 1.05rem; margin-top: 20px; }
+
+            /* --- スケジュール --- */
+            .schedule-section { padding: 48px 16px; }
+            .schedule-intro p { font-size: 0.88rem; }
+            .schedule-row { padding: 10px 14px; gap: 8px; }
+            .schedule-time { min-width: 52px; font-size: 0.72rem; }
+            .schedule-activity { font-size: 0.82rem; }
+            .schedule-tag { font-size: 0.65rem; padding: 3px 8px; }
+            .schedule-note { font-size: 0.8rem; }
+
+            /* --- お悩みセクション --- */
+            .problem-section { padding: 48px 16px; }
+            .problem-grid { grid-template-columns: 1fr; gap: 20px; }
+            .problem-img { display: none; } /* モバイルでは画像非表示でスッキリ */
+            .problem-text h3 { font-size: 1.2rem; }
+            .problem-text p { font-size: 0.9rem; }
+            .pain-list li { padding: 12px 16px; font-size: 0.88rem; gap: 10px; }
+            .problem-answer p { font-size: 0.95rem; }
+
+            /* --- 比較表 --- */
+            .comparison-section { padding: 48px 16px; }
+            .comp-table-wrap { overflow-x: auto; margin: 0 -16px; padding: 0 16px; }
+            .comp-table { min-width: 560px; }
+            .comp-swipe-hint { display: block; }
+            .comp-table thead th { padding: 14px 12px; font-size: 0.8rem; }
+            .comp-table tbody td { padding: 14px 12px; font-size: 0.82rem; }
+            .comp-icon { font-size: 1.2rem; }
+            .comp-main { font-size: 0.88rem; }
+            .comp-sub { font-size: 0.72rem; }
+            .inline-cta { margin: 32px 0 0; padding: 24px 16px; }
+            .inline-cta h4 { font-size: 1.15rem; }
+            .inline-cta-list p { font-size: 0.85rem; }
+
+            /* --- ソリューション --- */
+            .solution-section { padding: 48px 16px; }
+            .solution-grid { grid-template-columns: 1fr; gap: 20px; }
+            .solution-img { display: none; } /* モバイルでは画像省略 */
+            .solution-text h2 { font-size: 1.3rem; }
+            .solution-text p { font-size: 0.9rem; }
+            .solution-text .emphasis { font-size: 0.95rem; padding: 14px; }
+
+            /* --- 特長 --- */
+            .features-section { padding: 48px 16px; }
+            .features-grid { grid-template-columns: 1fr 1fr; gap: 10px; }
+            .feature-card { padding: 16px 14px; }
+            .feature-card .icon { font-size: 1.8rem; margin-bottom: 10px; }
+            .feature-card h3 { font-size: 0.9rem; margin-bottom: 6px; }
+            .feature-card p { font-size: 0.75rem; line-height: 1.6; }
+            .features-tagline { margin-top: 32px; }
+            .features-tagline p { font-size: 1rem; }
+
+            /* --- インフルエンサー --- */
+            .influencer-section { padding: 48px 0; }
+            .influencer-section .container { padding: 0 16px; }
+            .influencer-track-wrapper { overflow-x: auto; padding: 0 16px 16px; scroll-snap-type: x mandatory; -webkit-overflow-scrolling: touch; }
+            .influencer-track { animation: none; gap: 12px; width: max-content; }
+            .inf-card { min-width: 260px; max-width: 260px; scroll-snap-align: start; padding: 20px 16px; }
+            .inf-card h4 { font-size: 0.82rem; }
+            .inf-card p { font-size: 0.75rem; }
+            .anniversary-badge { font-size: 1.1rem; padding: 0 16px; }
+
+            /* --- 料金 --- */
+            .pricing-section { padding: 48px 16px; }
+            .pricing-grid { grid-template-columns: 1fr; max-width: 100%; gap: 16px; }
+            .price-card { padding: 24px 18px; }
+            .price-amount { font-size: 2rem; }
+            .entry-campaign-block { padding: 20px 16px; }
+
+            /* --- ファイナルCTA --- */
+            .final-cta { padding: 48px 16px; }
+            .final-cta-card { padding: 24px 16px; }
+            .final-cta-card h3 { font-size: 1.2rem; margin-bottom: 16px; }
+            .inline-cta-list p { font-size: 0.85rem; }
+            .email-form-row { flex-direction: column; }
+
+            /* --- フッター --- */
+            .site-footer { padding: 40px 16px 100px; }
+
+            /* --- 固定CTA --- */
+            .fixed-cta { padding: 8px 14px; gap: 2px; }
+            .fixed-cta-btn { padding: 10px 18px; font-size: 0.88rem; max-width: 100%; }
+            .fixed-cta-countdown { font-size: 0.6rem; gap: 3px; flex-wrap: wrap; justify-content: center; }
+            .fixed-cd-val { font-size: 0.7rem; }
+        }
+
+        /* ============ 小型スマホ ============ */
+        @media (max-width: 390px) {
+            .hero h1 { font-size: 1.45rem; }
+            .hero-eyebrow { font-size: 0.65rem; }
+            .features-grid { grid-template-columns: 1fr; }
+            .proof-items { grid-template-columns: repeat(2, 1fr); gap: 8px; }
+            .section-label h2 { font-size: 1.2rem; }
+            .comp-table { min-width: 480px; }
         }
     </style>
 </head>
@@ -543,19 +666,7 @@
         </div>
     </section>
 
-    <!-- Social Proof Bar -->
-    <div class="proof-bar">
-        <div class="container">
-            <div class="proof-items">
-                <div class="proof-item"><div class="proof-number">1,000+</div><div class="proof-label">累計生徒数</div></div>
-                <div class="proof-item"><div class="proof-number">20</div><div class="proof-label">カ国</div></div>
-                <div class="proof-item"><div class="proof-number">92.5%</div><div class="proof-label">継続率</div></div>
-                <div class="proof-item"><div class="proof-number">6年</div><div class="proof-label">運営実績</div></div>
-            </div>
-        </div>
-    </div>
-
-    <!-- ★ VIDEO（一番上に移動） -->
+    <!-- ★ VIDEO（一番上） -->
     <section class="video-section">
         <div class="video-wrapper">
             <div class="video-label">
@@ -567,6 +678,18 @@
             </div>
         </div>
     </section>
+
+    <!-- Social Proof Bar -->
+    <div class="proof-bar">
+        <div class="container">
+            <div class="proof-items">
+                <div class="proof-item"><div class="proof-number">1,000+</div><div class="proof-label">累計生徒数</div></div>
+                <div class="proof-item"><div class="proof-number">20</div><div class="proof-label">カ国</div></div>
+                <div class="proof-item"><div class="proof-number">92.5%</div><div class="proof-label">継続率</div></div>
+                <div class="proof-item"><div class="proof-number">6年</div><div class="proof-label">運営実績</div></div>
+            </div>
+        </div>
+    </div>
 
     <!-- 体験談 -->
     <section class="testimonials-section">
