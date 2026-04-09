@@ -87,6 +87,16 @@
         }
         .campaign-banner-text { color: white; font-size: 0.9rem; font-weight: 700; }
 
+        /* COUNTDOWN in banner */
+        .banner-countdown {
+            display: inline-flex; align-items: center; gap: 6px;
+            font-size: 0.8rem; font-weight: 700; color: #FCD34D;
+        }
+        .banner-countdown .cd-unit { display: inline-flex; flex-direction: column; align-items: center; }
+        .banner-countdown .cd-num { font-size: 1rem; font-weight: 900; line-height: 1; }
+        .banner-countdown .cd-label { font-size: 0.58rem; opacity: 0.85; }
+        .banner-countdown .cd-sep { font-size: 0.9rem; font-weight: 900; margin-bottom: 6px; }
+
         /* HEADER */
         .site-header {
             background: rgba(251,248,243,0.92);
@@ -153,6 +163,20 @@
         .campaign-card-title em { font-style: normal; color: #1D4ED8; font-size: 1.5rem; }
         .campaign-card-sub { font-size: 0.88rem; color: #1E40AF; line-height: 1.6; margin-bottom: 14px; }
         .campaign-deadline { font-size: 0.8rem; color: #1D4ED8; font-weight: 700; }
+
+        /* INLINE COUNTDOWN */
+        .inline-countdown {
+            display: flex; align-items: center; justify-content: center; gap: 8px;
+            background: #1E3A8A; border-radius: var(--radius-sm);
+            padding: 12px 16px; margin-top: 10px;
+        }
+        .inline-countdown .cd-label-main { color: #FCD34D; font-size: 0.78rem; font-weight: 700; white-space: nowrap; }
+        .inline-countdown .cd-blocks { display: flex; align-items: center; gap: 4px; }
+        .inline-countdown .cd-block { display: flex; flex-direction: column; align-items: center; background: rgba(255,255,255,0.12); border-radius: 6px; padding: 4px 8px; min-width: 36px; }
+        .inline-countdown .cd-block .n { font-size: 1.1rem; font-weight: 900; color: white; line-height: 1; }
+        .inline-countdown .cd-block .l { font-size: 0.55rem; color: rgba(255,255,255,0.7); margin-top: 2px; }
+        .inline-countdown .cd-colon { color: #FCD34D; font-size: 1.1rem; font-weight: 900; margin-bottom: 8px; }
+
         .hero-visual { position: relative; }
         .hero-visual img { width: 100%; border-radius: var(--radius-lg); box-shadow: var(--shadow-lg); }
         .hero-badge {
@@ -176,7 +200,16 @@
         .section-label h2 { font-size: 2.2rem; font-weight: 900; color: var(--charcoal); line-height: 1.4; letter-spacing: -0.01em; }
         .section-label p { font-size: 1rem; color: var(--gray-600); margin-top: 12px; }
 
-        /* TESTIMONIALS — moved up */
+        /* VIDEO */
+        .video-section { padding: 80px 24px; background: var(--warm-white); }
+        .video-wrapper { max-width: 720px; margin: 0 auto; }
+        .video-label { text-align: center; margin-bottom: 24px; }
+        .video-label h2 { font-size: 1.6rem; font-weight: 700; color: var(--charcoal); margin-bottom: 8px; }
+        .video-label p { font-size: 0.95rem; color: var(--gray-600); }
+        .video-embed { position: relative; padding-bottom: 56.25%; height: 0; overflow: hidden; border-radius: var(--radius-lg); box-shadow: var(--shadow-lg); }
+        .video-embed iframe { position: absolute; top: 0; left: 0; width: 100%; height: 100%; border: 0; border-radius: var(--radius-lg); }
+
+        /* TESTIMONIALS */
         .testimonials-section { padding: 80px 24px; background: white; }
         .testi-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 60px; align-items: center; }
         .testi-content h2 { font-size: 2rem; font-weight: 900; line-height: 1.5; margin-bottom: 32px; color: var(--charcoal); }
@@ -186,7 +219,7 @@
         .testi-highlight { margin-top: 32px; font-size: 1.3rem; font-weight: 700; color: var(--charcoal); line-height: 1.6; }
         .testi-img img { width: 100%; max-width: 450px; border-radius: var(--radius-lg); box-shadow: var(--shadow-md); }
 
-        /* SCHEDULE TABLE — new section */
+        /* SCHEDULE TABLE */
         .schedule-section { padding: 80px 24px; background: var(--cream); }
         .schedule-wrap { max-width: 720px; margin: 0 auto; }
         .schedule-intro { text-align: center; margin-bottom: 36px; }
@@ -300,15 +333,6 @@
         .features-tagline { text-align: center; margin-top: 56px; position: relative; z-index: 1; }
         .features-tagline p { font-size: 1.3rem; font-weight: 700; color: rgba(255,255,255,0.85); line-height: 1.6; }
 
-        /* VIDEO */
-        .video-section { padding: 80px 24px; background: var(--warm-white); }
-        .video-wrapper { max-width: 720px; margin: 0 auto; }
-        .video-label { text-align: center; margin-bottom: 24px; }
-        .video-label h2 { font-size: 1.6rem; font-weight: 700; color: var(--charcoal); margin-bottom: 8px; }
-        .video-label p { font-size: 0.95rem; color: var(--gray-600); }
-        .video-embed { position: relative; padding-bottom: 56.25%; height: 0; overflow: hidden; border-radius: var(--radius-lg); box-shadow: var(--shadow-lg); }
-        .video-embed iframe { position: absolute; top: 0; left: 0; width: 100%; height: 100%; border: 0; border-radius: var(--radius-lg); }
-
         /* INFLUENCER */
         .influencer-section { padding: 100px 24px; background: var(--cream); overflow: hidden; }
         .influencer-track-wrapper { overflow: hidden; margin: 48px 0; }
@@ -393,6 +417,8 @@
         @keyframes slideUpCTA { to { transform: translateY(0); } }
         .fixed-cta-btn { width: 100%; max-width: 400px; background: linear-gradient(135deg, #1D4ED8, #3B82F6); color: white; border: none; padding: 14px 28px; border-radius: 50px; font-size: 1.05rem; font-weight: 800; cursor: pointer; transition: all 0.2s; font-family: inherit; display: flex; align-items: center; justify-content: center; gap: 8px; }
         .fixed-cta-note { font-size: 0.72rem; color: rgba(255,255,255,0.6); }
+        .fixed-cta-countdown { display: flex; align-items: center; gap: 6px; font-size: 0.72rem; color: #FCD34D; font-weight: 700; }
+        .fixed-cd-val { font-weight: 900; font-size: 0.85rem; }
 
         @keyframes gentle-pulse {
             0%, 100% { box-shadow: 0 8px 28px rgba(29,78,216,0.3); }
@@ -438,11 +464,13 @@
             .final-cta-card h3 { font-size: 1.3rem; }
             .email-form-row { flex-direction: column; }
             .site-footer { padding-bottom: 110px; }
+            .inline-countdown { flex-direction: column; gap: 6px; }
         }
         @media (max-width: 480px) {
             .hero h1 { font-size: 1.6rem; }
             .proof-items { grid-template-columns: repeat(2, 1fr); }
             .proof-item { background: white; padding: 14px 8px; border-radius: 12px; }
+            .banner-countdown { gap: 3px; }
         }
     </style>
 </head>
@@ -451,8 +479,16 @@
     <!-- Campaign Banner -->
     <div class="campaign-banner">
         <div style="display:flex;flex-direction:column;align-items:center;justify-content:center;gap:4px;">
-            <span style="color:white;font-size:1.05rem;font-weight:900;letter-spacing:0.01em;">🚀 新規クール開始直前 — 今が一番お得に始めやすい</span>
-            <span class="campaign-banner-text" style="font-size:0.78rem;font-weight:500;opacity:0.9;">🎁 入会費無料クーポン配布中 &nbsp;|&nbsp; 4/13まで</span>
+            <span style="color:white;font-size:0.95rem;font-weight:900;letter-spacing:0.01em;">🎁 入会費無料クーポン配布中 — 終了まで</span>
+            <div class="banner-countdown">
+                <span class="cd-unit"><span class="cd-num" id="b-days">00</span><span class="cd-label">日</span></span>
+                <span class="cd-sep">:</span>
+                <span class="cd-unit"><span class="cd-num" id="b-hours">00</span><span class="cd-label">時間</span></span>
+                <span class="cd-sep">:</span>
+                <span class="cd-unit"><span class="cd-num" id="b-mins">00</span><span class="cd-label">分</span></span>
+                <span class="cd-sep">:</span>
+                <span class="cd-unit"><span class="cd-num" id="b-secs">00</span><span class="cd-label">秒</span></span>
+            </div>
         </div>
     </div>
 
@@ -476,7 +512,18 @@
                         <div class="campaign-card-badge">🔥 期間限定キャンペーン</div>
                         <div class="campaign-card-title">LINE登録で<br>入会費<em>無料</em>クーポンプレゼント！</div>
                         <div class="campaign-card-sub">通常50ドルの入会費が<strong style="color:#1D4ED8;">無料（100%OFF）</strong>になるクーポンをお渡しします。資料請求もLINEから無料でできます。</div>
-                        <div class="campaign-deadline">🚀 新規クール4月6日スタート！</div>
+                        <div class="inline-countdown">
+                            <span class="cd-label-main">⏰ キャンペーン終了まで</span>
+                            <div class="cd-blocks">
+                                <span class="cd-block"><span class="n" id="c-days">00</span><span class="l">日</span></span>
+                                <span class="cd-colon">:</span>
+                                <span class="cd-block"><span class="n" id="c-hours">00</span><span class="l">時間</span></span>
+                                <span class="cd-colon">:</span>
+                                <span class="cd-block"><span class="n" id="c-mins">00</span><span class="l">分</span></span>
+                                <span class="cd-colon">:</span>
+                                <span class="cd-block"><span class="n" id="c-secs">00</span><span class="l">秒</span></span>
+                            </div>
+                        </div>
                     </div>
                     <div class="hero-cta-group">
                         <button class="btn-campaign pulse-btn" onclick="event.preventDefault(); trackLineClick(); setTimeout(function(){window.open('https://line.me/R/ti/p/@359fnsdb','_blank');},300);">
@@ -508,7 +555,20 @@
         </div>
     </div>
 
-    <!-- ★ 体験談（上に移動） -->
+    <!-- ★ VIDEO（一番上に移動） -->
+    <section class="video-section">
+        <div class="video-wrapper">
+            <div class="video-label">
+                <h2>8分でわかる、サクセスアカデミー</h2>
+                <p>海外で日本語教育に悩むご家族へ</p>
+            </div>
+            <div class="video-embed">
+                <iframe src="https://drive.google.com/file/d/1Zjjw6kLgMjZGcor4nLbJtcs60NWYh5QR/preview" allow="autoplay; encrypted-media" allowfullscreen title="Success Academy 紹介動画" loading="lazy"></iframe>
+            </div>
+        </div>
+    </section>
+
+    <!-- 体験談 -->
     <section class="testimonials-section">
         <div class="container">
             <div class="section-label">
@@ -527,7 +587,7 @@
         </div>
     </section>
 
-    <!-- ★ 生活スケジュール表（新規追加） -->
+    <!-- 生活スケジュール表 -->
     <section class="schedule-section">
         <div class="container">
             <div class="section-label">
@@ -539,7 +599,6 @@
                     <p>「忙しくて続かない」と思っていたのに、<br>気づけば毎日の習慣になっていた——<br>それがサクセスアカデミーの25分です。</p>
                 </div>
 
-                <!-- 平日パターン -->
                 <div class="schedule-table-outer" style="margin-bottom: 20px;">
                     <div class="schedule-day-label">🗓️ 平日（現地校がある日）のスケジュール例</div>
                     <div class="schedule-rows">
@@ -576,7 +635,6 @@
                     </div>
                 </div>
 
-                <!-- 朝パターン -->
                 <div class="schedule-table-outer">
                     <div class="schedule-day-label" style="background: #059669;">🌅 朝に受講するパターン（時差対応）</div>
                     <div class="schedule-rows">
@@ -682,8 +740,8 @@
                 <div class="inline-cta-badge">🎁 期間限定・無料特典</div>
                 <h4>LINE登録で<br>入会費無料クーポンをゲット！</h4>
                 <div class="campaign-highlight-box">
-                    <div class="chb-main">🚀 新規クール4月6日スタート！</div>
-                    <div class="chb-sub">LINE登録でクーポンをお渡しします</div>
+                    <div class="chb-main">⏰ キャンペーン終了まであとわずか！</div>
+                    <div class="chb-sub">4月13日（月）23:59までにLINE登録でクーポンをお渡しします</div>
                 </div>
                 <div class="inline-cta-list">
                     <p><span>✓</span> 入会費無料クーポン配布（50ドル相当）※入会時に使用</p>
@@ -736,19 +794,6 @@
         </div>
     </section>
 
-    <!-- Video（下に移動） -->
-    <section class="video-section">
-        <div class="video-wrapper">
-            <div class="video-label">
-                <h2>8分でわかる、サクセスアカデミー</h2>
-                <p>海外で日本語教育に悩むご家族へ</p>
-            </div>
-            <div class="video-embed">
-                <iframe src="https://drive.google.com/file/d/1Zjjw6kLgMjZGcor4nLbJtcs60NWYh5QR/preview" allow="autoplay; encrypted-media" allowfullscreen title="Success Academy 紹介動画" loading="lazy"></iframe>
-            </div>
-        </div>
-    </section>
-
     <!-- Influencer -->
     <section class="influencer-section">
         <div class="container">
@@ -763,7 +808,6 @@
                 <div class="inf-card"><div class="inf-card-header"><img src="https://i.imgur.com/A84WSkj.png" alt="ブラウンファミリーの大冒険"><div><div class="inf-name">ブラウンファミリーの大冒険 様</div><div class="inf-details">YouTube 1.03万人 | アメリカ在住</div></div></div><div class="inf-body"><h4>学びとコミュニケーションが同時に育つ場</h4><p>子どもは楽しそうに参加しており、特に偉人のクラスは親子の会話を広げてくれます。送迎不要で自宅から安心して受講できます。</p></div></div>
                 <div class="inf-card"><div class="inf-card-header"><img src="https://i.imgur.com/sZbmDlv.png" alt="Trilingual Family"><div><div class="inf-name">Trilingual Family 様</div><div class="inf-details">YouTube 3.75万人 | ドイツ在住</div></div></div><div class="inf-body"><h4>送迎不要で親も子も大満足</h4><p>子どもは楽しんで受講しており、特に偉人のクラスはとても気に入っています。送迎が不要で、親としても安心して利用できます。</p></div></div>
                 <div class="inf-card"><div class="inf-card-header"><img src="https://i.imgur.com/S4cjBqL.png" alt="かおり"><div><div class="inf-name">かおり 様</div><div class="inf-details">Instagram 2.9万人 | イギリス在住</div></div></div><div class="inf-body"><h4>国語も算数も少しずつ自信に</h4><p>発言が苦手な長女も国語や偉人クラスを楽しめるようになり、次女は計算が速くなりました。少しずつ場に慣れ、自信がつきました。</p></div></div>
-                <!-- duplicates -->
                 <div class="inf-card"><div class="inf-card-header"><img src="https://i.imgur.com/ye4vAGS.png" alt="Mrs. Cross"><div><div class="inf-name">Mrs. Cross 様</div><div class="inf-details">YouTube 16.4万人 | アメリカ在住</div></div></div><div class="inf-body"><h4>日本滞在中や移動中でも学べる柔軟さ</h4><p>最初は集中が難しかった算数も、今では楽しんで取り組めています。先生が丁寧に教えてくれるので安心です。ネット環境があれば日本滞在中や移動中でも受講でき、25分の短い授業で子どもは遊ぶ時間も確保可能。</p></div></div>
                 <div class="inf-card"><div class="inf-card-header"><img src="https://i.imgur.com/A84WSkj.png" alt="ブラウンファミリーの大冒険"><div><div class="inf-name">ブラウンファミリーの大冒険 様</div><div class="inf-details">YouTube 1.03万人 | アメリカ在住</div></div></div><div class="inf-body"><h4>学びとコミュニケーションが同時に育つ場</h4><p>子どもは楽しそうに参加しており、特に偉人のクラスは親子の会話を広げてくれます。送迎不要で自宅から安心して受講できます。</p></div></div>
                 <div class="inf-card"><div class="inf-card-header"><img src="https://i.imgur.com/sZbmDlv.png" alt="Trilingual Family"><div><div class="inf-name">Trilingual Family 様</div><div class="inf-details">YouTube 3.75万人 | ドイツ在住</div></div></div><div class="inf-body"><h4>送迎不要で親も子も大満足</h4><p>子どもは楽しんで受講しており、特に偉人のクラスはとても気に入っています。送迎が不要で、親としても安心して利用できます。</p></div></div>
@@ -833,8 +877,8 @@
                 <div class="inline-cta-badge">🎁 入会費無料クーポン配布中</div>
                 <h3>LINE登録で<br>入会費無料クーポンをゲット！</h3>
                 <div class="campaign-highlight-box" style="margin-bottom:20px;">
-                    <div class="chb-main">🚀 新規クール4月6日スタート！</div>
-                    <div class="chb-sub">お申し込みはお早めに</div>
+                    <div class="chb-main">⏰ キャンペーン終了まであとわずか！</div>
+                    <div class="chb-sub">4月13日（月）23:59までにお申し込みを</div>
                 </div>
                 <div class="inline-cta-list">
                     <p><span>✓</span> 入会費無料クーポン配布（50ドル相当）※入会時に使用</p>
@@ -877,10 +921,67 @@
         <a href="https://line.me/R/ti/p/@359fnsdb" onclick="event.preventDefault(); trackLineClick(); var url=this.href; setTimeout(function(){window.open(url,'_blank');},300); return false;" target="_blank" style="text-decoration:none;width:100%;max-width:400px;">
             <button class="fixed-cta-btn">🎁 今すぐ特典だけをゲット</button>
         </a>
-        <p class="fixed-cta-note">入会費無料クーポン配布中｜新規クール4月6日スタート！</p>
+        <div class="fixed-cta-countdown">
+            ⏰ 入会費無料クーポン終了まで：
+            <span class="fixed-cd-val" id="f-days">00</span>日
+            <span class="fixed-cd-val" id="f-hours">00</span>時間
+            <span class="fixed-cd-val" id="f-mins">00</span>分
+            <span class="fixed-cd-val" id="f-secs">00</span>秒
+        </div>
     </div>
 
     <script>
+    // ===== COUNTDOWN =====
+    // Target: April 13, 2026, 23:59:59 JST (UTC+9)
+    var deadline = new Date('2026-04-13T23:59:59+09:00').getTime();
+
+    function pad(n) { return String(n).padStart(2, '0'); }
+
+    function updateCountdowns() {
+        var now = Date.now();
+        var diff = deadline - now;
+        if (diff < 0) diff = 0;
+
+        var days  = Math.floor(diff / (1000 * 60 * 60 * 24));
+        var hours = Math.floor((diff % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+        var mins  = Math.floor((diff % (1000 * 60 * 60)) / (1000 * 60));
+        var secs  = Math.floor((diff % (1000 * 60)) / 1000);
+
+        // Banner
+        var bd = document.getElementById('b-days');
+        var bh = document.getElementById('b-hours');
+        var bm = document.getElementById('b-mins');
+        var bs = document.getElementById('b-secs');
+        if (bd) bd.textContent = pad(days);
+        if (bh) bh.textContent = pad(hours);
+        if (bm) bm.textContent = pad(mins);
+        if (bs) bs.textContent = pad(secs);
+
+        // Hero card inline
+        var cd = document.getElementById('c-days');
+        var ch = document.getElementById('c-hours');
+        var cm = document.getElementById('c-mins');
+        var cs = document.getElementById('c-secs');
+        if (cd) cd.textContent = pad(days);
+        if (ch) ch.textContent = pad(hours);
+        if (cm) cm.textContent = pad(mins);
+        if (cs) cs.textContent = pad(secs);
+
+        // Fixed footer
+        var fd = document.getElementById('f-days');
+        var fh = document.getElementById('f-hours');
+        var fm = document.getElementById('f-mins');
+        var fs = document.getElementById('f-secs');
+        if (fd) fd.textContent = pad(days);
+        if (fh) fh.textContent = pad(hours);
+        if (fm) fm.textContent = pad(mins);
+        if (fs) fs.textContent = pad(secs);
+    }
+
+    updateCountdowns();
+    setInterval(updateCountdowns, 1000);
+
+    // ===== LINE TRACKING =====
     var lastTrackTime = 0;
     function trackLineClick() {
       var now = Date.now();
@@ -889,6 +990,8 @@
       if (typeof fbq === 'function') fbq('trackCustom', 'LineRegistrationClick_EN', {});
       if (typeof gtag === 'function') gtag('event', 'line_registration_click', {'event_category': 'engagement'});
     }
+
+    // ===== OFFSETS =====
     (function() {
         function setOffsets() {
             var banner = document.querySelector('.campaign-banner');
