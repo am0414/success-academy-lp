@@ -73,7 +73,6 @@
         }
         .container { max-width: 1100px; margin: 0 auto; padding: 0 24px; }
 
-        /* CAMPAIGN BANNER */
         .campaign-banner {
             position: fixed; top: 0; left: 0; right: 0; z-index: 200;
             background: linear-gradient(90deg, #1D4ED8 0%, #3B82F6 50%, #1D4ED8 100%);
@@ -85,9 +84,6 @@
             0%, 100% { background-position: 0% 50%; }
             50% { background-position: 100% 50%; }
         }
-        .campaign-banner-text { color: white; font-size: 0.9rem; font-weight: 700; }
-
-        /* COUNTDOWN in banner */
         .banner-countdown {
             display: inline-flex; align-items: center; gap: 6px;
             font-size: 0.8rem; font-weight: 700; color: #FCD34D;
@@ -97,7 +93,6 @@
         .banner-countdown .cd-label { font-size: 0.58rem; opacity: 0.85; }
         .banner-countdown .cd-sep { font-size: 0.9rem; font-weight: 900; margin-bottom: 6px; }
 
-        /* HEADER */
         .site-header {
             background: rgba(251,248,243,0.92);
             backdrop-filter: blur(16px);
@@ -117,7 +112,6 @@
         }
         .header-cta:hover { transform: translateY(-1px); box-shadow: 0 8px 24px rgba(29,78,216,0.35); }
 
-        /* HERO */
         .hero {
             padding: calc(var(--banner-h, 44px) + var(--header-h, 68px) + 40px) 24px 80px;
             background: var(--cream); position: relative; overflow: hidden;
@@ -162,9 +156,7 @@
         .campaign-card-title { font-size: 1.25rem; font-weight: 900; color: #1E3A8A; margin-bottom: 8px; line-height: 1.4; }
         .campaign-card-title em { font-style: normal; color: #1D4ED8; font-size: 1.5rem; }
         .campaign-card-sub { font-size: 0.88rem; color: #1E40AF; line-height: 1.6; margin-bottom: 14px; }
-        .campaign-deadline { font-size: 0.8rem; color: #1D4ED8; font-weight: 700; }
 
-        /* INLINE COUNTDOWN */
         .inline-countdown {
             display: flex; align-items: center; justify-content: center; gap: 8px;
             background: #1E3A8A; border-radius: var(--radius-sm);
@@ -187,20 +179,17 @@
         .hero-badge-number { font-size: 2rem; font-weight: 900; color: var(--orange-600); line-height: 1; }
         .hero-badge-label { font-size: 0.75rem; color: var(--gray-600); font-weight: 600; line-height: 1.3; }
 
-        /* PROOF BAR */
         .proof-bar { background: white; padding: 40px 24px; border-top: 1px solid var(--gray-200); border-bottom: 1px solid var(--gray-200); }
         .proof-items { display: flex; justify-content: center; gap: 48px; flex-wrap: wrap; }
         .proof-item { text-align: center; }
         .proof-number { font-size: 2.2rem; font-weight: 900; color: var(--orange-600); line-height: 1; margin-bottom: 6px; }
         .proof-label { font-size: 0.8rem; color: var(--gray-600); font-weight: 500; }
 
-        /* SECTION TITLES */
         .section-label { text-align: center; margin-bottom: 48px; }
         .section-label .eyebrow { display: inline-block; font-size: 0.8rem; font-weight: 700; color: var(--orange-600); background: var(--orange-50); padding: 6px 16px; border-radius: 50px; margin-bottom: 16px; letter-spacing: 0.05em; }
         .section-label h2 { font-size: 2.2rem; font-weight: 900; color: var(--charcoal); line-height: 1.4; letter-spacing: -0.01em; }
         .section-label p { font-size: 1rem; color: var(--gray-600); margin-top: 12px; }
 
-        /* VIDEO */
         .video-section { padding: 80px 24px; background: var(--warm-white); }
         .video-wrapper { max-width: 720px; margin: 0 auto; }
         .video-label { text-align: center; margin-bottom: 24px; }
@@ -209,7 +198,6 @@
         .video-embed { position: relative; padding-bottom: 56.25%; height: 0; overflow: hidden; border-radius: var(--radius-lg); box-shadow: var(--shadow-lg); }
         .video-embed iframe { position: absolute; top: 0; left: 0; width: 100%; height: 100%; border: 0; border-radius: var(--radius-lg); }
 
-        /* TESTIMONIALS */
         .testimonials-section { padding: 80px 24px; background: white; }
         .testi-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 60px; align-items: center; }
         .testi-content h2 { font-size: 2rem; font-weight: 900; line-height: 1.5; margin-bottom: 32px; color: var(--charcoal); }
@@ -219,50 +207,26 @@
         .testi-highlight { margin-top: 32px; font-size: 1.3rem; font-weight: 700; color: var(--charcoal); line-height: 1.6; }
         .testi-img img { width: 100%; max-width: 450px; border-radius: var(--radius-lg); box-shadow: var(--shadow-md); }
 
-        /* SCHEDULE TABLE */
         .schedule-section { padding: 80px 24px; background: var(--cream); }
         .schedule-wrap { max-width: 720px; margin: 0 auto; }
         .schedule-intro { text-align: center; margin-bottom: 36px; }
         .schedule-intro p { font-size: 1rem; color: var(--gray-600); line-height: 1.8; }
         .schedule-table-outer { background: white; border-radius: var(--radius-lg); box-shadow: var(--shadow-md); overflow: hidden; }
-        .schedule-day-label {
-            background: #1D4ED8; color: white;
-            padding: 12px 24px; font-size: 0.85rem; font-weight: 700;
-            display: flex; align-items: center; gap: 8px;
-        }
+        .schedule-day-label { background: #1D4ED8; color: white; padding: 12px 24px; font-size: 0.85rem; font-weight: 700; display: flex; align-items: center; gap: 8px; }
         .schedule-rows { padding: 8px 0; }
-        .schedule-row {
-            display: flex; align-items: center;
-            padding: 14px 24px; gap: 16px;
-            border-bottom: 1px solid var(--gray-200);
-            transition: background 0.15s;
-        }
+        .schedule-row { display: flex; align-items: center; padding: 14px 24px; gap: 16px; border-bottom: 1px solid var(--gray-200); transition: background 0.15s; }
         .schedule-row:last-child { border-bottom: none; }
         .schedule-row:hover { background: var(--orange-50); }
-        .schedule-time {
-            font-size: 0.82rem; font-weight: 700; color: var(--gray-400);
-            min-width: 72px; flex-shrink: 0;
-        }
-        .schedule-activity {
-            flex: 1; font-size: 0.95rem; font-weight: 500; color: var(--charcoal);
-        }
-        .schedule-tag {
-            font-size: 0.72rem; font-weight: 800; padding: 4px 12px;
-            border-radius: 50px; white-space: nowrap; flex-shrink: 0;
-        }
+        .schedule-time { font-size: 0.82rem; font-weight: 700; color: var(--gray-400); min-width: 72px; flex-shrink: 0; }
+        .schedule-activity { flex: 1; font-size: 0.95rem; font-weight: 500; color: var(--charcoal); }
+        .schedule-tag { font-size: 0.72rem; font-weight: 800; padding: 4px 12px; border-radius: 50px; white-space: nowrap; flex-shrink: 0; }
         .tag-success { background: #DBEAFE; color: #1D4ED8; }
         .tag-normal { background: var(--gray-200); color: var(--gray-600); }
-        .schedule-highlight-row {
-            background: linear-gradient(90deg, #EFF6FF, #DBEAFE);
-        }
+        .schedule-highlight-row { background: linear-gradient(90deg, #EFF6FF, #DBEAFE); }
         .schedule-highlight-row .schedule-activity { font-weight: 700; color: #1E3A8A; }
-        .schedule-note {
-            text-align: center; margin-top: 20px;
-            font-size: 0.88rem; color: var(--gray-600); line-height: 1.7;
-        }
+        .schedule-note { text-align: center; margin-top: 20px; font-size: 0.88rem; color: var(--gray-600); line-height: 1.7; }
         .schedule-note strong { color: var(--orange-600); }
 
-        /* PROBLEM SECTION */
         .problem-section { padding: 100px 24px; background: var(--warm-white); }
         .problem-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 60px; align-items: center; }
         .problem-img img { width: 100%; max-width: 450px; border-radius: var(--radius-lg); box-shadow: var(--shadow-md); }
@@ -276,7 +240,6 @@
         .problem-answer { background: var(--orange-50); padding: 24px; border-radius: var(--radius-md); margin-top: 28px; border-left: 4px solid var(--orange-500); }
         .problem-answer p { font-weight: 600; color: var(--charcoal); font-size: 1.1rem; }
 
-        /* COMPARISON */
         .comparison-section { padding: 100px 24px; background: white; }
         .comp-table-wrap { max-width: 900px; margin: 0 auto; overflow-x: auto; -webkit-overflow-scrolling: touch; }
         .comp-table { width: 100%; min-width: 700px; border-collapse: separate; border-spacing: 0; border-radius: var(--radius-lg); overflow: hidden; box-shadow: var(--shadow-lg); }
@@ -294,7 +257,6 @@
         .comp-sub { font-size: 0.82rem; display: block; opacity: 0.85; line-height: 1.5; }
         .comp-swipe-hint { display: none; text-align: center; margin-top: 10px; font-size: 0.75rem; color: var(--gray-400); }
 
-        /* INLINE CTA */
         .inline-cta {
             max-width: 480px; margin: 60px auto 0;
             background: white; border: 3px solid var(--green-500);
@@ -311,7 +273,6 @@
         .campaign-highlight-box .chb-main { font-size: 1.15rem; font-weight: 900; color: #1E3A8A; line-height: 1.3; }
         .campaign-highlight-box .chb-sub { font-size: 0.78rem; color: #1E40AF; margin-top: 4px; }
 
-        /* SOLUTION */
         .solution-section { padding: 100px 24px; background: var(--cream); }
         .solution-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 60px; align-items: center; }
         .solution-text h2 { font-size: 2rem; font-weight: 900; margin-bottom: 28px; line-height: 1.5; color: var(--charcoal); }
@@ -319,7 +280,6 @@
         .solution-text .emphasis { font-weight: 700; color: var(--charcoal); font-size: 1.1rem; margin-top: 24px; padding: 20px; background: var(--orange-50); border-radius: var(--radius-sm); border-left: 4px solid var(--orange-500); }
         .solution-img img { width: 100%; max-width: 450px; border-radius: var(--radius-lg); box-shadow: var(--shadow-md); }
 
-        /* FEATURES */
         .features-section { padding: 100px 24px; background: var(--charcoal); position: relative; overflow: hidden; }
         .features-section::before { content: ''; position: absolute; inset: 0; background: radial-gradient(circle at 20% 80%, rgba(37,99,235,0.15) 0%, transparent 50%), radial-gradient(circle at 80% 20%, rgba(37,99,235,0.08) 0%, transparent 50%); }
         .features-section .section-label h2 { color: white; }
@@ -333,7 +293,6 @@
         .features-tagline { text-align: center; margin-top: 56px; position: relative; z-index: 1; }
         .features-tagline p { font-size: 1.3rem; font-weight: 700; color: rgba(255,255,255,0.85); line-height: 1.6; }
 
-        /* INFLUENCER */
         .influencer-section { padding: 100px 24px; background: var(--cream); overflow: hidden; }
         .influencer-track-wrapper { overflow: hidden; margin: 48px 0; }
         .influencer-track { display: flex; gap: 28px; animation: scrollCards 45s linear infinite; }
@@ -350,7 +309,6 @@
         .inf-card .inf-body { background: var(--cream); padding: 16px; border-radius: var(--radius-sm); }
         .anniversary-badge { text-align: center; margin-top: 48px; font-size: 1.5rem; font-weight: 900; color: var(--charcoal); }
 
-        /* PRICING */
         .pricing-section { padding: 100px 24px; background: white; }
         .pricing-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 24px; max-width: 960px; margin: 0 auto; }
         .price-card { background: var(--cream); border: 2px solid var(--gray-200); border-radius: var(--radius-lg); padding: 36px 24px; text-align: center; transition: all 0.3s; position: relative; }
@@ -365,37 +323,36 @@
         .price-name { font-size: 1.2rem; font-weight: 900; margin-bottom: 6px; }
         .price-target { font-size: 0.75rem; color: var(--gray-400); margin-bottom: 10px; }
         .price-desc { font-size: 0.85rem; color: var(--gray-600); margin-bottom: 20px; min-height: 40px; line-height: 1.5; }
-        .price-amount { font-size: 2.6rem; font-weight: 900; color: var(--orange-600); line-height: 1; margin-bottom: 16px; }
+        .price-amount { font-size: 2.6rem; font-weight: 900; color: var(--orange-600); line-height: 1; margin-bottom: 6px; }
         .price-amount span { font-size: 1.1rem; }
+        .price-new-amount { font-size: 0.82rem; color: var(--gray-600); font-weight: 600; margin-bottom: 16px; }
         .price-trial { display: inline-block; padding: 6px 16px; border-radius: 50px; font-size: 0.8rem; font-weight: 700; color: white; margin-bottom: 14px; }
         .price-trial.orange { background: var(--orange-600); }
         .price-trial.amber { background: #D97706; }
         .price-trial.gold { background: #B8935A; }
         .price-detail { font-size: 0.82rem; color: var(--gray-600); line-height: 1.5; }
+        .price-lock-note { font-size: 0.78rem; color: #059669; font-weight: 600; margin-top: 10px; display: flex; align-items: center; justify-content: center; gap: 4px; }
         .entry-campaign-block {
-            max-width: 500px; margin: 40px auto 0;
+            max-width: 560px; margin: 40px auto 0;
             background: linear-gradient(135deg, #EFF6FF 0%, #DBEAFE 100%);
             border: 2px solid #3B82F6; border-radius: var(--radius-lg);
             padding: 28px 28px 24px; text-align: center;
         }
         .entry-fee-row { display: flex; align-items: center; justify-content: center; gap: 10px; margin-bottom: 16px; flex-wrap: wrap; }
         .entry-fee-label { font-size: 1rem; font-weight: 700; color: #1E3A8A; }
-        .entry-fee-price s { font-size: 1rem; color: #94A3B8; font-weight: 500; }
-        .entry-fee-arrow { font-size: 1.1rem; color: #3B82F6; font-weight: 700; }
         .entry-fee-free { font-size: 1.5rem; font-weight: 900; color: #1D4ED8; }
         .entry-campaign-pill { display: inline-block; background: #1D4ED8; color: white; font-size: 0.78rem; font-weight: 700; padding: 5px 16px; border-radius: 50px; margin-bottom: 12px; }
         .entry-campaign-desc { font-size: 1rem; font-weight: 700; color: #1E3A8A; margin-bottom: 6px; line-height: 1.5; }
         .entry-campaign-desc strong { color: #1D4ED8; }
         .entry-campaign-sub { font-size: 0.8rem; color: #1E40AF; font-weight: 500; }
+        .system-note { font-size: 0.72rem; color: var(--gray-400); margin-top: 12px; line-height: 1.5; }
 
-        /* FINAL CTA */
         .final-cta { padding: 100px 24px; background: linear-gradient(135deg, var(--orange-500) 0%, #1E3A8A 100%); position: relative; overflow: hidden; }
         .final-cta::before { content: ''; position: absolute; inset: 0; background: radial-gradient(circle at 30% 50%, rgba(255,255,255,0.1) 0%, transparent 50%); }
         .final-cta-inner { max-width: 500px; margin: 0 auto; position: relative; z-index: 1; }
         .final-cta-card { background: white; border-radius: var(--radius-lg); padding: 44px 32px; text-align: center; border: 4px solid var(--green-500); box-shadow: 0 20px 50px rgba(0,0,0,0.15); }
         .final-cta-card h3 { font-size: 1.7rem; font-weight: 900; margin-bottom: 24px; line-height: 1.4; }
 
-        /* EMAIL FORM */
         .email-divider { margin-top: 24px; padding-top: 24px; border-top: 2px dashed var(--gray-200); }
         .email-divider .email-label { font-size: 0.85rem; color: var(--gray-400); margin-bottom: 12px; font-weight: 600; }
         .email-form-row { display: flex; gap: 8px; }
@@ -404,7 +361,6 @@
         .email-btn { padding: 12px 24px; background: var(--orange-600); color: white; border: none; border-radius: 50px; font-size: 0.85rem; font-weight: 700; cursor: pointer; transition: all 0.2s; white-space: nowrap; font-family: inherit; }
         .email-btn:hover { background: var(--orange-700); }
 
-        /* FOOTER */
         .site-footer { background: var(--charcoal); padding: 60px 24px; text-align: center; color: rgba(255,255,255,0.5); }
         .footer-logo { font-size: 1.3rem; font-weight: 900; color: white; margin-bottom: 12px; }
         .site-footer p { font-size: 0.85rem; line-height: 1.7; margin-bottom: 20px; }
@@ -412,11 +368,9 @@
         .footer-line-btn:hover { box-shadow: var(--shadow-green); }
         .footer-copy { padding-top: 20px; border-top: 1px solid rgba(255,255,255,0.08); font-size: 0.75rem; }
 
-        /* FIXED CTA */
         .fixed-cta { position: fixed; bottom: 0; left: 0; right: 0; background: rgba(28,25,23,0.95); backdrop-filter: blur(12px); padding: 14px 20px; z-index: 1000; display: flex; flex-direction: column; align-items: center; gap: 6px; transform: translateY(100%); animation: slideUpCTA 0.5s ease-out 2s forwards; }
         @keyframes slideUpCTA { to { transform: translateY(0); } }
         .fixed-cta-btn { width: 100%; max-width: 400px; background: linear-gradient(135deg, #1D4ED8, #3B82F6); color: white; border: none; padding: 14px 28px; border-radius: 50px; font-size: 1.05rem; font-weight: 800; cursor: pointer; transition: all 0.2s; font-family: inherit; display: flex; align-items: center; justify-content: center; gap: 8px; }
-        .fixed-cta-note { font-size: 0.72rem; color: rgba(255,255,255,0.6); }
         .fixed-cta-countdown { display: flex; align-items: center; gap: 6px; font-size: 0.72rem; color: #FCD34D; font-weight: 700; }
         .fixed-cd-val { font-weight: 900; font-size: 0.85rem; }
 
@@ -426,183 +380,54 @@
         }
         .pulse-btn { animation: gentle-pulse 2.5s ease-in-out infinite; }
 
-        /* MOBILE */
-        /* ============ TABLET ============ */
         @media (max-width: 900px) {
             .features-grid { grid-template-columns: 1fr 1fr; }
             .pricing-grid { grid-template-columns: 1fr; max-width: 420px; }
             .price-card.featured { transform: none; }
         }
-
-        /* ============ MOBILE ============ */
         @media (max-width: 768px) {
-
-            /* --- 全体 --- */
             body { padding-bottom: 80px; }
             .container { padding: 0 16px; }
-
-            /* --- バナー：1行コンパクト --- */
             .campaign-banner { padding: 5px 10px; }
             .campaign-banner > div { flex-direction: row !important; gap: 6px !important; flex-wrap: wrap; justify-content: center; align-items: center; }
             .campaign-banner > div > span:first-child { font-size: 0.7rem !important; }
-            .banner-countdown { gap: 3px; }
-            .banner-countdown .cd-num { font-size: 0.75rem; }
-            .banner-countdown .cd-label { font-size: 0.46rem; }
-            .banner-countdown .cd-sep { font-size: 0.68rem; margin-bottom: 4px; }
-
-            /* --- ヘッダー --- */
-            .logo { font-size: 1.1rem; }
-            .header-cta { padding: 8px 14px; font-size: 0.75rem; }
-
-            /* --- ヒーロー --- */
+            .banner-countdown { gap: 3px; } .banner-countdown .cd-num { font-size: 0.75rem; } .banner-countdown .cd-label { font-size: 0.46rem; } .banner-countdown .cd-sep { font-size: 0.68rem; margin-bottom: 4px; }
+            .logo { font-size: 1.1rem; } .header-cta { padding: 8px 14px; font-size: 0.75rem; }
             .hero { padding: calc(var(--banner-h, 36px) + var(--header-h, 56px) + 20px) 16px 40px; }
             .hero-grid { grid-template-columns: 1fr; gap: 20px; text-align: center; }
-            .hero-visual { order: -1; }
-            .hero-visual img { max-height: 220px; object-fit: cover; width: 100%; }
-            .hero-badge { position: relative; bottom: auto; left: auto; justify-content: center; margin: -16px auto 0; display: inline-flex; padding: 10px 16px; }
-            .hero-badge-number { font-size: 1.5rem; }
+            .hero-visual { order: -1; } .hero-visual img { max-height: 220px; object-fit: cover; width: 100%; }
+            .hero-badge { position: relative; bottom: auto; left: auto; justify-content: center; margin: -16px auto 0; display: inline-flex; padding: 10px 16px; } .hero-badge-number { font-size: 1.5rem; }
             .hero-eyebrow { font-size: 0.72rem; padding: 6px 12px; text-align: left; }
-            .hero h1 { font-size: 1.65rem; margin-bottom: 12px; }
-            .hero-sub { font-size: 0.9rem; margin-bottom: 20px; }
-            .campaign-card { padding: 16px; margin-bottom: 16px; }
-            .campaign-card-title { font-size: 1.05rem; }
-            .campaign-card-title em { font-size: 1.25rem; }
-            .campaign-card-sub { font-size: 0.8rem; }
-            .inline-countdown { flex-direction: row; flex-wrap: wrap; justify-content: center; gap: 6px; padding: 10px 12px; }
-            .inline-countdown .cd-label-main { width: 100%; text-align: center; font-size: 0.72rem; }
-            .inline-countdown .cd-block { min-width: 30px; padding: 3px 6px; }
-            .inline-countdown .cd-block .n { font-size: 0.95rem; }
-            .inline-countdown .cd-colon { font-size: 0.9rem; margin-bottom: 6px; }
-            .hero-cta-group { max-width: 100%; gap: 8px; }
-            .btn-campaign { font-size: 0.95rem; padding: 14px 24px; }
-
-            /* --- Proof bar --- */
-            .proof-bar { padding: 24px 16px; }
-            .proof-items { display: grid; grid-template-columns: repeat(2, 1fr); gap: 12px; }
-            .proof-item { background: white; border-radius: 12px; padding: 14px 8px; box-shadow: var(--shadow-soft); }
-            .proof-number { font-size: 1.6rem; }
-            .proof-label { font-size: 0.72rem; }
-
-            /* --- セクション共通 --- */
-            .section-label { margin-bottom: 28px; }
-            .section-label h2 { font-size: 1.35rem; line-height: 1.5; }
-            .section-label p { font-size: 0.88rem; }
-
-            /* --- 動画 --- */
-            .video-section { padding: 40px 16px; }
-            .video-label h2 { font-size: 1.2rem; }
-            .video-label p { font-size: 0.85rem; }
-
-            /* --- 体験談 --- */
-            .testimonials-section { padding: 48px 16px; }
-            .testi-grid { grid-template-columns: 1fr; gap: 20px; }
-            .testi-img { order: -1; text-align: center; }
-            .testi-img img { max-width: 70%; }
-            .testi-card { padding: 16px; }
-            .testi-card p { font-size: 0.88rem; }
-            .testi-highlight { font-size: 1.05rem; margin-top: 20px; }
-
-            /* --- スケジュール --- */
-            .schedule-section { padding: 48px 16px; }
-            .schedule-intro p { font-size: 0.88rem; }
-            .schedule-row { padding: 10px 14px; gap: 8px; }
-            .schedule-time { min-width: 52px; font-size: 0.72rem; }
-            .schedule-activity { font-size: 0.82rem; }
-            .schedule-tag { font-size: 0.65rem; padding: 3px 8px; }
-            .schedule-note { font-size: 0.8rem; }
-
-            /* --- お悩みセクション --- */
-            .problem-section { padding: 48px 16px; }
-            .problem-grid { grid-template-columns: 1fr; gap: 20px; }
-            .problem-img { display: none; } /* モバイルでは画像非表示でスッキリ */
-            .problem-text h3 { font-size: 1.2rem; }
-            .problem-text p { font-size: 0.9rem; }
-            .pain-list li { padding: 12px 16px; font-size: 0.88rem; gap: 10px; }
-            .problem-answer p { font-size: 0.95rem; }
-
-            /* --- 比較表 --- */
-            .comparison-section { padding: 48px 16px; }
-            .comp-table-wrap { overflow-x: auto; margin: 0 -16px; padding: 0 16px; }
-            .comp-table { min-width: 560px; }
-            .comp-swipe-hint { display: block; }
-            .comp-table thead th { padding: 14px 12px; font-size: 0.8rem; }
-            .comp-table tbody td { padding: 14px 12px; font-size: 0.82rem; }
-            .comp-icon { font-size: 1.2rem; }
-            .comp-main { font-size: 0.88rem; }
-            .comp-sub { font-size: 0.72rem; }
-            .inline-cta { margin: 32px 0 0; padding: 24px 16px; }
-            .inline-cta h4 { font-size: 1.15rem; }
-            .inline-cta-list p { font-size: 0.85rem; }
-
-            /* --- ソリューション --- */
-            .solution-section { padding: 48px 16px; }
-            .solution-grid { grid-template-columns: 1fr; gap: 20px; }
-            .solution-img { display: none; } /* モバイルでは画像省略 */
-            .solution-text h2 { font-size: 1.3rem; }
-            .solution-text p { font-size: 0.9rem; }
-            .solution-text .emphasis { font-size: 0.95rem; padding: 14px; }
-
-            /* --- 特長 --- */
-            .features-section { padding: 48px 16px; }
-            .features-grid { grid-template-columns: 1fr 1fr; gap: 10px; }
-            .feature-card { padding: 16px 14px; }
-            .feature-card .icon { font-size: 1.8rem; margin-bottom: 10px; }
-            .feature-card h3 { font-size: 0.9rem; margin-bottom: 6px; }
-            .feature-card p { font-size: 0.75rem; line-height: 1.6; }
-            .features-tagline { margin-top: 32px; }
-            .features-tagline p { font-size: 1rem; }
-
-            /* --- インフルエンサー --- */
-            .influencer-section { padding: 48px 0; }
-            .influencer-section .container { padding: 0 16px; }
-            .influencer-track-wrapper { overflow-x: auto; padding: 0 16px 16px; scroll-snap-type: x mandatory; -webkit-overflow-scrolling: touch; }
-            .influencer-track { animation: none; gap: 12px; width: max-content; }
-            .inf-card { min-width: 260px; max-width: 260px; scroll-snap-align: start; padding: 20px 16px; }
-            .inf-card h4 { font-size: 0.82rem; }
-            .inf-card p { font-size: 0.75rem; }
-            .anniversary-badge { font-size: 1.1rem; padding: 0 16px; }
-
-            /* --- 料金 --- */
-            .pricing-section { padding: 48px 16px; }
-            .pricing-grid { grid-template-columns: 1fr; max-width: 100%; gap: 16px; }
-            .price-card { padding: 24px 18px; }
-            .price-amount { font-size: 2rem; }
-            .entry-campaign-block { padding: 20px 16px; }
-
-            /* --- ファイナルCTA --- */
-            .final-cta { padding: 48px 16px; }
-            .final-cta-card { padding: 24px 16px; }
-            .final-cta-card h3 { font-size: 1.2rem; margin-bottom: 16px; }
-            .inline-cta-list p { font-size: 0.85rem; }
-            .email-form-row { flex-direction: column; }
-
-            /* --- フッター --- */
+            .hero h1 { font-size: 1.65rem; margin-bottom: 12px; } .hero-sub { font-size: 0.9rem; margin-bottom: 20px; }
+            .campaign-card { padding: 16px; margin-bottom: 16px; } .campaign-card-title { font-size: 1.05rem; } .campaign-card-title em { font-size: 1.25rem; } .campaign-card-sub { font-size: 0.8rem; }
+            .inline-countdown { flex-direction: row; flex-wrap: wrap; justify-content: center; gap: 6px; padding: 10px 12px; } .inline-countdown .cd-label-main { width: 100%; text-align: center; font-size: 0.72rem; } .inline-countdown .cd-block { min-width: 30px; padding: 3px 6px; } .inline-countdown .cd-block .n { font-size: 0.95rem; } .inline-countdown .cd-colon { font-size: 0.9rem; margin-bottom: 6px; }
+            .hero-cta-group { max-width: 100%; gap: 8px; } .btn-campaign { font-size: 0.95rem; padding: 14px 24px; }
+            .proof-bar { padding: 24px 16px; } .proof-items { display: grid; grid-template-columns: repeat(2, 1fr); gap: 12px; } .proof-item { background: white; border-radius: 12px; padding: 14px 8px; box-shadow: var(--shadow-soft); } .proof-number { font-size: 1.6rem; } .proof-label { font-size: 0.72rem; }
+            .section-label { margin-bottom: 28px; } .section-label h2 { font-size: 1.35rem; line-height: 1.5; } .section-label p { font-size: 0.88rem; }
+            .video-section { padding: 40px 16px; } .video-label h2 { font-size: 1.2rem; } .video-label p { font-size: 0.85rem; }
+            .testimonials-section { padding: 48px 16px; } .testi-grid { grid-template-columns: 1fr; gap: 20px; } .testi-img { order: -1; text-align: center; } .testi-img img { max-width: 70%; } .testi-card { padding: 16px; } .testi-card p { font-size: 0.88rem; } .testi-highlight { font-size: 1.05rem; margin-top: 20px; }
+            .schedule-section { padding: 48px 16px; } .schedule-intro p { font-size: 0.88rem; } .schedule-row { padding: 10px 14px; gap: 8px; } .schedule-time { min-width: 52px; font-size: 0.72rem; } .schedule-activity { font-size: 0.82rem; } .schedule-tag { font-size: 0.65rem; padding: 3px 8px; } .schedule-note { font-size: 0.8rem; }
+            .problem-section { padding: 48px 16px; } .problem-grid { grid-template-columns: 1fr; gap: 20px; } .problem-img { display: none; } .problem-text h3 { font-size: 1.2rem; } .problem-text p { font-size: 0.9rem; } .pain-list li { padding: 12px 16px; font-size: 0.88rem; gap: 10px; } .problem-answer p { font-size: 0.95rem; }
+            .comparison-section { padding: 48px 16px; } .comp-table-wrap { overflow-x: auto; margin: 0 -16px; padding: 0 16px; } .comp-table { min-width: 560px; } .comp-swipe-hint { display: block; } .comp-table thead th { padding: 14px 12px; font-size: 0.8rem; } .comp-table tbody td { padding: 14px 12px; font-size: 0.82rem; } .comp-icon { font-size: 1.2rem; } .comp-main { font-size: 0.88rem; } .comp-sub { font-size: 0.72rem; }
+            .inline-cta { margin: 32px 0 0; padding: 24px 16px; } .inline-cta h4 { font-size: 1.15rem; } .inline-cta-list p { font-size: 0.85rem; }
+            .solution-section { padding: 48px 16px; } .solution-grid { grid-template-columns: 1fr; gap: 20px; } .solution-img { display: none; } .solution-text h2 { font-size: 1.3rem; } .solution-text p { font-size: 0.9rem; } .solution-text .emphasis { font-size: 0.95rem; padding: 14px; }
+            .features-section { padding: 48px 16px; } .features-grid { grid-template-columns: 1fr 1fr; gap: 10px; } .feature-card { padding: 16px 14px; } .feature-card .icon { font-size: 1.8rem; margin-bottom: 10px; } .feature-card h3 { font-size: 0.9rem; margin-bottom: 6px; } .feature-card p { font-size: 0.75rem; line-height: 1.6; } .features-tagline { margin-top: 32px; } .features-tagline p { font-size: 1rem; }
+            .influencer-section { padding: 48px 0; } .influencer-section .container { padding: 0 16px; } .influencer-track-wrapper { overflow-x: auto; padding: 0 16px 16px; scroll-snap-type: x mandatory; -webkit-overflow-scrolling: touch; } .influencer-track { animation: none; gap: 12px; width: max-content; } .inf-card { min-width: 260px; max-width: 260px; scroll-snap-align: start; padding: 20px 16px; } .inf-card h4 { font-size: 0.82rem; } .inf-card p { font-size: 0.75rem; } .anniversary-badge { font-size: 1.1rem; padding: 0 16px; }
+            .pricing-section { padding: 48px 16px; } .pricing-grid { grid-template-columns: 1fr; max-width: 100%; gap: 16px; } .price-card { padding: 24px 18px; } .price-amount { font-size: 2rem; } .entry-campaign-block { padding: 20px 16px; }
+            .final-cta { padding: 48px 16px; } .final-cta-card { padding: 24px 16px; } .final-cta-card h3 { font-size: 1.2rem; margin-bottom: 16px; } .inline-cta-list p { font-size: 0.85rem; } .email-form-row { flex-direction: column; }
             .site-footer { padding: 40px 16px 100px; }
-
-            /* --- 固定CTA --- */
-            .fixed-cta { padding: 8px 14px; gap: 2px; }
-            .fixed-cta-btn { padding: 10px 18px; font-size: 0.88rem; max-width: 100%; }
-            .fixed-cta-countdown { font-size: 0.6rem; gap: 3px; flex-wrap: wrap; justify-content: center; }
-            .fixed-cd-val { font-size: 0.7rem; }
+            .fixed-cta { padding: 8px 14px; gap: 2px; } .fixed-cta-btn { padding: 10px 18px; font-size: 0.88rem; max-width: 100%; } .fixed-cta-countdown { font-size: 0.6rem; gap: 3px; flex-wrap: wrap; justify-content: center; } .fixed-cd-val { font-size: 0.7rem; }
         }
-
-        /* ============ 小型スマホ ============ */
         @media (max-width: 390px) {
-            .hero h1 { font-size: 1.45rem; }
-            .hero-eyebrow { font-size: 0.65rem; }
-            .features-grid { grid-template-columns: 1fr; }
-            .proof-items { grid-template-columns: repeat(2, 1fr); gap: 8px; }
-            .section-label h2 { font-size: 1.2rem; }
-            .comp-table { min-width: 480px; }
+            .hero h1 { font-size: 1.45rem; } .hero-eyebrow { font-size: 0.65rem; } .features-grid { grid-template-columns: 1fr; } .proof-items { grid-template-columns: repeat(2, 1fr); gap: 8px; } .section-label h2 { font-size: 1.2rem; } .comp-table { min-width: 480px; }
         }
     </style>
 </head>
 <body>
 
-    <!-- Campaign Banner -->
     <div class="campaign-banner">
         <div style="display:flex;flex-direction:column;align-items:center;justify-content:center;gap:4px;">
-            <span style="color:white;font-size:0.95rem;font-weight:900;letter-spacing:0.01em;">🎁 入会費無料クーポン配布中 — 終了まで</span>
+            <span style="color:white;font-size:0.95rem;font-weight:900;letter-spacing:0.01em;">🚨 7月料金改定 — 旧料金での入会は残り</span>
             <div class="banner-countdown">
                 <span class="cd-unit"><span class="cd-num" id="b-days">00</span><span class="cd-label">日</span></span>
                 <span class="cd-sep">:</span>
@@ -615,15 +440,13 @@
         </div>
     </div>
 
-    <!-- Header -->
     <header class="site-header">
         <div class="container header-inner">
             <div class="logo">Success Academy</div>
-            <a href="https://line.me/R/ti/p/@359fnsdb" onclick="event.preventDefault(); trackLineClick(); var url=this.href; setTimeout(function(){window.open(url,'_blank');},300); return false;" target="_blank" class="header-cta">今すぐ特典だけをゲット 🎁</a>
+            <a href="https://line.me/R/ti/p/@359fnsdb" onclick="event.preventDefault(); trackLineClick(); var url=this.href; setTimeout(function(){window.open(url,'_blank');},300); return false;" target="_blank" class="header-cta">旧料金で今すぐ入会 🎁</a>
         </div>
     </header>
 
-    <!-- Hero -->
     <section class="hero">
         <div class="container">
             <div class="hero-grid">
@@ -632,11 +455,11 @@
                     <h1>海外にいても、<br>お子さまの<em>「日本語」</em>は<br>伸ばせる。</h1>
                     <p class="hero-sub">継続率92.5%が証明する、海外っ子のための日本語スクール。<br>1日たった25分・送迎なし・宿題なしで、<br>毎日の小さな「できた！」が日本語への自信に変わります。</p>
                     <div class="campaign-card">
-                        <div class="campaign-card-badge">🔥 期間限定キャンペーン</div>
-                        <div class="campaign-card-title">LINE登録で<br>入会費<em>無料</em>クーポンプレゼント！</div>
-                        <div class="campaign-card-sub">通常50ドルの入会費が<strong style="color:#1D4ED8;">無料（100%OFF）</strong>になるクーポンをお渡しします。資料請求もLINEから無料でできます。</div>
+                        <div class="campaign-card-badge">🚨 7月から料金改定</div>
+                        <div class="campaign-card-title">今の料金で入会できるのは<br><em>5月4日まで</em></div>
+                        <div class="campaign-card-sub">7月より料金改定を予定しています。<strong style="color:#1D4ED8;">5月4日までに入会すれば、退会しない限りずっと現在の料金</strong>で受講いただけます。</div>
                         <div class="inline-countdown">
-                            <span class="cd-label-main">⏰ キャンペーン終了まで</span>
+                            <span class="cd-label-main">⏰ 旧料金での入会締切まで</span>
                             <div class="cd-blocks">
                                 <span class="cd-block"><span class="n" id="c-days">00</span><span class="l">日</span></span>
                                 <span class="cd-colon">:</span>
@@ -649,37 +472,26 @@
                         </div>
                     </div>
                     <div class="hero-cta-group">
-                        <button class="btn-campaign pulse-btn" onclick="event.preventDefault(); trackLineClick(); setTimeout(function(){window.open('https://line.me/R/ti/p/@359fnsdb','_blank');},300);">
-                            🎁 今すぐ特典だけをゲット
-                        </button>
-                        <p class="btn-micro">※ 登録無料・いつでも解除OK</p>
+                        <button class="btn-campaign pulse-btn" onclick="event.preventDefault(); trackLineClick(); setTimeout(function(){window.open('https://line.me/R/ti/p/@359fnsdb','_blank');},300);">🎁 旧料金で今すぐ入会する</button>
+                        <p class="btn-micro">※ 登録無料・いつでも解除OK｜まずはLINEで詳細を確認</p>
+                        <p class="system-note">※ システム移行に伴い、入会後に新しい会員ページへの移行手続きをお願いする場合がございます。詳細はLINEにてご案内いたします。</p>
                     </div>
                 </div>
                 <div class="hero-visual">
                     <img src="https://i.imgur.com/l48QbXM.png" alt="Success Academyで学ぶ子供たち" loading="eager">
-                    <div class="hero-badge">
-                        <div class="hero-badge-number">92.5%</div>
-                        <div class="hero-badge-label">継続率</div>
-                    </div>
+                    <div class="hero-badge"><div class="hero-badge-number">92.5%</div><div class="hero-badge-label">継続率</div></div>
                 </div>
             </div>
         </div>
     </section>
 
-    <!-- ★ VIDEO（一番上） -->
     <section class="video-section">
         <div class="video-wrapper">
-            <div class="video-label">
-                <h2>8分でわかる、サクセスアカデミー</h2>
-                <p>海外で日本語教育に悩むご家族へ</p>
-            </div>
-            <div class="video-embed">
-                <iframe src="https://drive.google.com/file/d/1Zjjw6kLgMjZGcor4nLbJtcs60NWYh5QR/preview" allow="autoplay; encrypted-media" allowfullscreen title="Success Academy 紹介動画" loading="lazy"></iframe>
-            </div>
+            <div class="video-label"><h2>8分でわかる、サクセスアカデミー</h2><p>海外で日本語教育に悩むご家族へ</p></div>
+            <div class="video-embed"><iframe src="https://drive.google.com/file/d/1Zjjw6kLgMjZGcor4nLbJtcs60NWYh5QR/preview" allow="autoplay; encrypted-media" allowfullscreen title="Success Academy 紹介動画" loading="lazy"></iframe></div>
         </div>
     </section>
 
-    <!-- Social Proof Bar -->
     <div class="proof-bar">
         <div class="container">
             <div class="proof-items">
@@ -691,13 +503,9 @@
         </div>
     </div>
 
-    <!-- 体験談 -->
     <section class="testimonials-section">
         <div class="container">
-            <div class="section-label">
-                <span class="eyebrow">体験談</span>
-                <h2>92.5%の継続率が証明する<br>"子どもが続けたくなる学び"</h2>
-            </div>
+            <div class="section-label"><span class="eyebrow">体験談</span><h2>92.5%の継続率が証明する<br>"子どもが続けたくなる学び"</h2></div>
             <div class="testi-grid">
                 <div class="testi-content">
                     <div class="testi-card"><p>「終わったあとでも友達と遊べるので、帰ってすぐ授業に参加し始めるようになりました。」</p><p class="author">— アメリカ在住・Mさん（8歳ママ）</p></div>
@@ -710,95 +518,40 @@
         </div>
     </section>
 
-    <!-- 生活スケジュール表 -->
     <section class="schedule-section">
         <div class="container">
-            <div class="section-label">
-                <span class="eyebrow">📅 1日のスケジュール例</span>
-                <h2>たった25分。<br>毎日の生活に、自然と溶け込む。</h2>
-            </div>
+            <div class="section-label"><span class="eyebrow">📅 1日のスケジュール例</span><h2>たった25分。<br>毎日の生活に、自然と溶け込む。</h2></div>
             <div class="schedule-wrap">
-                <div class="schedule-intro">
-                    <p>「忙しくて続かない」と思っていたのに、<br>気づけば毎日の習慣になっていた——<br>それがサクセスアカデミーの25分です。</p>
-                </div>
-
+                <div class="schedule-intro"><p>「忙しくて続かない」と思っていたのに、<br>気づけば毎日の習慣になっていた——<br>それがサクセスアカデミーの25分です。</p></div>
                 <div class="schedule-table-outer" style="margin-bottom: 20px;">
                     <div class="schedule-day-label">🗓️ 平日（現地校がある日）のスケジュール例</div>
                     <div class="schedule-rows">
-                        <div class="schedule-row">
-                            <span class="schedule-time">7:00</span>
-                            <span class="schedule-activity">起床・朝食</span>
-                            <span class="schedule-tag tag-normal">日常</span>
-                        </div>
-                        <div class="schedule-row">
-                            <span class="schedule-time">8:00</span>
-                            <span class="schedule-activity">現地校 登校</span>
-                            <span class="schedule-tag tag-normal">学校</span>
-                        </div>
-                        <div class="schedule-row">
-                            <span class="schedule-time">15:30</span>
-                            <span class="schedule-activity">帰宅・おやつ</span>
-                            <span class="schedule-tag tag-normal">日常</span>
-                        </div>
-                        <div class="schedule-row schedule-highlight-row">
-                            <span class="schedule-time">16:00</span>
-                            <span class="schedule-activity">✨ サクセスアカデミー（25分）</span>
-                            <span class="schedule-tag tag-success">日本語・算数</span>
-                        </div>
-                        <div class="schedule-row">
-                            <span class="schedule-time">16:30</span>
-                            <span class="schedule-activity">友達と遊ぶ・習い事・家族の時間</span>
-                            <span class="schedule-tag tag-normal">自由時間</span>
-                        </div>
-                        <div class="schedule-row">
-                            <span class="schedule-time">19:00</span>
-                            <span class="schedule-activity">夕食・入浴・就寝準備</span>
-                            <span class="schedule-tag tag-normal">日常</span>
-                        </div>
+                        <div class="schedule-row"><span class="schedule-time">7:00</span><span class="schedule-activity">起床・朝食</span><span class="schedule-tag tag-normal">日常</span></div>
+                        <div class="schedule-row"><span class="schedule-time">8:00</span><span class="schedule-activity">現地校 登校</span><span class="schedule-tag tag-normal">学校</span></div>
+                        <div class="schedule-row"><span class="schedule-time">15:30</span><span class="schedule-activity">帰宅・おやつ</span><span class="schedule-tag tag-normal">日常</span></div>
+                        <div class="schedule-row schedule-highlight-row"><span class="schedule-time">16:00</span><span class="schedule-activity">✨ サクセスアカデミー（25分）</span><span class="schedule-tag tag-success">日本語・算数</span></div>
+                        <div class="schedule-row"><span class="schedule-time">16:30</span><span class="schedule-activity">友達と遊ぶ・習い事・家族の時間</span><span class="schedule-tag tag-normal">自由時間</span></div>
+                        <div class="schedule-row"><span class="schedule-time">19:00</span><span class="schedule-activity">夕食・入浴・就寝準備</span><span class="schedule-tag tag-normal">日常</span></div>
                     </div>
                 </div>
-
                 <div class="schedule-table-outer">
                     <div class="schedule-day-label" style="background: #059669;">🌅 朝に受講するパターン（時差対応）</div>
                     <div class="schedule-rows">
-                        <div class="schedule-row schedule-highlight-row">
-                            <span class="schedule-time">7:00</span>
-                            <span class="schedule-activity">✨ サクセスアカデミー（25分）</span>
-                            <span class="schedule-tag tag-success">日本語・算数</span>
-                        </div>
-                        <div class="schedule-row">
-                            <span class="schedule-time">7:30</span>
-                            <span class="schedule-activity">朝食・支度</span>
-                            <span class="schedule-tag tag-normal">日常</span>
-                        </div>
-                        <div class="schedule-row">
-                            <span class="schedule-time">8:30</span>
-                            <span class="schedule-activity">現地校 登校</span>
-                            <span class="schedule-tag tag-normal">学校</span>
-                        </div>
+                        <div class="schedule-row schedule-highlight-row"><span class="schedule-time">7:00</span><span class="schedule-activity">✨ サクセスアカデミー（25分）</span><span class="schedule-tag tag-success">日本語・算数</span></div>
+                        <div class="schedule-row"><span class="schedule-time">7:30</span><span class="schedule-activity">朝食・支度</span><span class="schedule-tag tag-normal">日常</span></div>
+                        <div class="schedule-row"><span class="schedule-time">8:30</span><span class="schedule-activity">現地校 登校</span><span class="schedule-tag tag-normal">学校</span></div>
                     </div>
                 </div>
-
-                <p class="schedule-note">
-                    4つのタイムゾーンに対応しているので、<br>
-                    <strong>アメリカ・ヨーロッパ・アジア・オセアニア</strong>、どこからでも参加できます。<br>
-                    宿題なし・送迎なし。終わったらすぐ遊べるから、子どもが嫌がらない。
-                </p>
+                <p class="schedule-note">4つのタイムゾーンに対応しているので、<br><strong>アメリカ・ヨーロッパ・アジア・オセアニア</strong>、どこからでも参加できます。<br>宿題なし・送迎なし。終わったらすぐ遊べるから、子どもが嫌がらない。</p>
             </div>
         </div>
     </section>
 
-    <!-- お悩みセクション -->
     <section class="problem-section">
         <div class="container">
-            <div class="section-label">
-                <span class="eyebrow">お悩み</span>
-                <h2>気づけば、お子さまが<br>日本語を話さなくなっていませんか？</h2>
-            </div>
+            <div class="section-label"><span class="eyebrow">お悩み</span><h2>気づけば、お子さまが<br>日本語を話さなくなっていませんか？</h2></div>
             <div class="problem-grid">
-                <div class="problem-img">
-                    <img src="https://i.imgur.com/orOzHda.png" alt="海外での日本語教育に悩む親子" loading="lazy">
-                </div>
+                <div class="problem-img"><img src="https://i.imgur.com/orOzHda.png" alt="海外での日本語教育に悩む親子" loading="lazy"></div>
                 <div class="problem-text">
                     <h3>「もっと日本語を教えなきゃ…」<br>そう思うほど、うまくいかない。</h3>
                     <p>それは、<span class="highlight">あなただけではありません。</span></p>
@@ -809,77 +562,47 @@
                         <li>補習校のペースや内容が、子どもに合わない</li>
                     </ul>
                     <p>でも本当の原因は「勉強が嫌い」なのではなく——</p>
-                    <div class="problem-answer">
-                        <p>「できた！」という<span class="highlight">成功体験</span>が、まだ足りていないだけ。</p>
-                    </div>
+                    <div class="problem-answer"><p>「できた！」という<span class="highlight">成功体験</span>が、まだ足りていないだけ。</p></div>
                 </div>
             </div>
         </div>
     </section>
 
-    <!-- 比較表 -->
     <section class="comparison-section">
         <div class="container">
-            <div class="section-label">
-                <span class="eyebrow">⚡ 徹底比較</span>
-                <h2>日本語教育のお悩み、<br>サクセスが解決します</h2>
-                <p>一目で分かる、圧倒的な違い</p>
-            </div>
+            <div class="section-label"><span class="eyebrow">⚡ 徹底比較</span><h2>日本語教育のお悩み、<br>サクセスが解決します</h2><p>一目で分かる、圧倒的な違い</p></div>
             <div class="comp-table-wrap">
                 <table class="comp-table">
-                    <thead>
-                        <tr>
-                            <th>比較項目</th>
-                            <th>😰 補習校の課題</th>
-                            <th>✅ サクセスの解決策</th>
-                        </tr>
-                    </thead>
+                    <thead><tr><th>比較項目</th><th>😰 補習校の課題</th><th>✅ サクセスの解決策</th></tr></thead>
                     <tbody>
-                        <tr>
-                            <td><span class="comp-icon">🚗</span>送迎</td>
-                            <td><span class="comp-main">毎週の送迎が大変</span><span class="comp-sub">土日の貴重な時間が送迎で消える</span></td>
-                            <td><span class="comp-main">🏠 送迎完全不要！</span><span class="comp-sub">自宅からオンラインで参加、移動時間ゼロ</span></td>
-                        </tr>
-                        <tr>
-                            <td><span class="comp-icon">💰</span>費用</td>
-                            <td><span class="comp-main">年間数十万円</span><span class="comp-sub">授業料・教材費・施設費で家計に負担</span></td>
-                            <td><span class="comp-main">💵 月額50USD～</span><span class="comp-sub">補習校の1/3以下で週5日学び放題</span></td>
-                        </tr>
-                        <tr>
-                            <td><span class="comp-icon">📚</span>宿題</td>
-                            <td><span class="comp-main">宿題が多すぎる</span><span class="comp-sub">大量の宿題で親子にストレス</span></td>
-                            <td><span class="comp-main">⏱️ 25分で完結</span><span class="comp-sub">宿題なし！現地校との両立も楽々</span></td>
-                        </tr>
-                        <tr>
-                            <td><span class="comp-icon">📖</span>レベル</td>
-                            <td><span class="comp-main">学年が上がると難しい</span><span class="comp-sub">ついていけず自信を失う</span></td>
-                            <td><span class="comp-main">🎯 レベル別クラス</span><span class="comp-sub">お子様に合った学年で「できた！」を増やす</span></td>
-                        </tr>
+                        <tr><td><span class="comp-icon">🚗</span>送迎</td><td><span class="comp-main">毎週の送迎が大変</span><span class="comp-sub">土日の貴重な時間が送迎で消える</span></td><td><span class="comp-main">🏠 送迎完全不要！</span><span class="comp-sub">自宅からオンラインで参加、移動時間ゼロ</span></td></tr>
+                        <tr><td><span class="comp-icon">💰</span>費用</td><td><span class="comp-main">年間数十万円</span><span class="comp-sub">授業料・教材費・施設費で家計に負担</span></td><td><span class="comp-main">💵 月額50USD～</span><span class="comp-sub">補習校の1/3以下で週5日学び放題</span></td></tr>
+                        <tr><td><span class="comp-icon">📚</span>宿題</td><td><span class="comp-main">宿題が多すぎる</span><span class="comp-sub">大量の宿題で親子にストレス</span></td><td><span class="comp-main">⏱️ 25分で完結</span><span class="comp-sub">宿題なし！現地校との両立も楽々</span></td></tr>
+                        <tr><td><span class="comp-icon">📖</span>レベル</td><td><span class="comp-main">学年が上がると難しい</span><span class="comp-sub">ついていけず自信を失う</span></td><td><span class="comp-main">🎯 レベル別クラス</span><span class="comp-sub">お子様に合った学年で「できた！」を増やす</span></td></tr>
                     </tbody>
                 </table>
             </div>
             <div class="comp-swipe-hint">← 横にスワイプ →</div>
             <div class="inline-cta">
-                <div class="inline-cta-badge">🎁 期間限定・無料特典</div>
-                <h4>LINE登録で<br>入会費無料クーポンをゲット！</h4>
+                <div class="inline-cta-badge">🚨 7月料金改定前の最終チャンス</div>
+                <h4>今の料金で入会できるのは<br>5月4日まで！</h4>
                 <div class="campaign-highlight-box">
-                    <div class="chb-main">⏰ キャンペーン終了まであとわずか！</div>
-                    <div class="chb-sub">4月13日（月）23:59までにLINE登録でクーポンをお渡しします</div>
+                    <div class="chb-main">⏰ 旧料金での入会締切まであとわずか！</div>
+                    <div class="chb-sub">5月4日（月）23:59までにLINE登録で詳細をお伝えします</div>
                 </div>
                 <div class="inline-cta-list">
-                    <p><span>✓</span> 入会費無料クーポン配布（50ドル相当）※入会時に使用</p>
+                    <p><span>✓</span> 7月値上げ前の旧料金で入会可能</p>
+                    <p><span>✓</span> 退会しない限り、ずっと旧料金で受講OK</p>
                     <p><span>✓</span> レッスン内容・料金・スケジュールがわかる資料</p>
                     <p><span>✓</span> LINEでいつでも質問OK</p>
                 </div>
-                <button class="btn-campaign pulse-btn" onclick="event.preventDefault(); trackLineClick(); setTimeout(function(){window.open('https://line.me/R/ti/p/@359fnsdb','_blank');},300);" style="width:100%;">
-                    🎁 今すぐ特典だけをゲット
-                </button>
-                <p class="note">※ 登録無料・いつでも解除OK｜キャンペーン終了：4/13まで</p>
+                <button class="btn-campaign pulse-btn" onclick="event.preventDefault(); trackLineClick(); setTimeout(function(){window.open('https://line.me/R/ti/p/@359fnsdb','_blank');},300);" style="width:100%;">🎁 旧料金で今すぐ入会する</button>
+                <p class="note">※ 登録無料・いつでも解除OK｜締切：5/4まで</p>
+                <p class="system-note">※ システム移行に伴い、入会後に新しい会員ページへの移行手続きをお願いする場合がございます。詳細はLINEにてご案内いたします。</p>
             </div>
         </div>
     </section>
 
-    <!-- Solution -->
     <section class="solution-section">
         <div class="container">
             <div class="solution-grid">
@@ -890,20 +613,14 @@
                     <p>小さな「できた！」を積み重ねるには、手軽で続けやすい環境がいちばん大切です。</p>
                     <p class="emphasis">サクセスアカデミーは、<br>その"続けられる仕組み"をデザインしています。</p>
                 </div>
-                <div class="solution-img">
-                    <img src="https://i.imgur.com/k1xTmNg.png" alt="オンライン学習の様子" loading="lazy">
-                </div>
+                <div class="solution-img"><img src="https://i.imgur.com/k1xTmNg.png" alt="オンライン学習の様子" loading="lazy"></div>
             </div>
         </div>
     </section>
 
-    <!-- Features -->
     <section class="features-section">
         <div class="container">
-            <div class="section-label">
-                <span class="eyebrow">特長</span>
-                <h2>世界中のご家族に選ばれる<br>5つの理由</h2>
-            </div>
+            <div class="section-label"><span class="eyebrow">特長</span><h2>世界中のご家族に選ばれる<br>5つの理由</h2></div>
             <div class="features-grid">
                 <div class="feature-card"><span class="icon">🌍</span><h3>世界20カ国から参加</h3><p>4つのタイムゾーンで毎日授業。世界中の仲間と一緒に学べます。</p></div>
                 <div class="feature-card"><span class="icon">👨‍🏫</span><h3>有資格の講師が多数在籍</h3><p>教員免許・小学校教員資格など、プロの講師が丁寧に指導します。</p></div>
@@ -911,19 +628,13 @@
                 <div class="feature-card"><span class="icon">🚗</span><h3>送迎は一切不要</h3><p>全クラスオンライン。LINEで担当講師といつでも連絡が取れます。</p></div>
                 <div class="feature-card"><span class="icon">⏰</span><h3>25分 × 平日毎日</h3><p>時差に対応した授業時間。短いから、遊びや家族の時間も確保できます。</p></div>
             </div>
-            <div class="features-tagline">
-                <p>家でもなく、学校でもない。<br>子どもが"自分から学びたくなる"第3の場所。</p>
-            </div>
+            <div class="features-tagline"><p>家でもなく、学校でもない。<br>子どもが"自分から学びたくなる"第3の場所。</p></div>
         </div>
     </section>
 
-    <!-- Influencer -->
     <section class="influencer-section">
         <div class="container">
-            <div class="section-label">
-                <span class="eyebrow">推薦</span>
-                <h2>海外で活躍するインフルエンサーが<br>自信を持っておすすめ</h2>
-            </div>
+            <div class="section-label"><span class="eyebrow">推薦</span><h2>海外で活躍するインフルエンサーが<br>自信を持っておすすめ</h2></div>
         </div>
         <div class="influencer-track-wrapper">
             <div class="influencer-track">
@@ -937,18 +648,12 @@
                 <div class="inf-card"><div class="inf-card-header"><img src="https://i.imgur.com/S4cjBqL.png" alt="かおり"><div><div class="inf-name">かおり 様</div><div class="inf-details">Instagram 2.9万人 | イギリス在住</div></div></div><div class="inf-body"><h4>国語も算数も少しずつ自信に</h4><p>発言が苦手な長女も国語や偉人クラスを楽しめるようになり、次女は計算が速くなりました。少しずつ場に慣れ、自信がつきました。</p></div></div>
             </div>
         </div>
-        <div class="container">
-            <p class="anniversary-badge">今年で6年目 —— 多くのご家族と共に成長してきました</p>
-        </div>
+        <div class="container"><p class="anniversary-badge">今年で6年目 —— 多くのご家族と共に成長してきました</p></div>
     </section>
 
-    <!-- Pricing -->
     <section class="pricing-section">
         <div class="container">
-            <div class="section-label">
-                <span class="eyebrow">料金</span>
-                <h2>安心の料金プラン</h2>
-            </div>
+            <div class="section-label"><span class="eyebrow">料金</span><h2>安心の料金プラン<br><span style="font-size:0.6em;color:#1D4ED8;">※ 7月より料金改定予定｜今なら旧料金で入会可能</span></h2></div>
             <div class="pricing-grid">
                 <div class="price-card featured">
                     <div class="price-crown">👑</div>
@@ -957,8 +662,10 @@
                     <p class="price-target">対象：4歳〜中学生</p>
                     <p class="price-desc">日本語/国語/算数<br>月額定額で受け放題</p>
                     <div class="price-amount">50<span>USD/月</span></div>
+                    <p class="price-new-amount">7月以降の新料金 → 値上げ予定</p>
                     <span class="price-trial orange">14日間 無料体験</span>
                     <p class="price-detail">週5日 25分レッスン<br>※未就学児コースは +月10USD</p>
+                    <p class="price-lock-note">🔒 今入会すれば、退会しない限りずっとこの料金</p>
                 </div>
                 <div class="price-card">
                     <span class="price-badge amber">プライベートレッスン</span>
@@ -966,8 +673,10 @@
                     <p class="price-target">対象：4歳〜中学生</p>
                     <p class="price-desc">担当講師による学習管理<br>自由な時間で振替も柔軟に対応</p>
                     <div class="price-amount">78<span>USD/月</span></div>
+                    <p class="price-new-amount">7月以降の新料金 → 値上げ予定</p>
                     <span class="price-trial amber">無料で初回お試し</span>
                     <p class="price-detail">1コマ25分 月4回</p>
+                    <p class="price-lock-note">🔒 今入会すれば、退会しない限りずっとこの料金</p>
                 </div>
                 <div class="price-card">
                     <span class="price-badge gold">プライベートレッスン</span>
@@ -975,45 +684,45 @@
                     <p class="price-target">対象：4歳〜中学生</p>
                     <p class="price-desc">宿題・試験・漢検など<br>完全オーダーメイド対応</p>
                     <div class="price-amount">122<span>USD/月</span></div>
+                    <p class="price-new-amount">7月以降の新料金 → 値上げ予定</p>
                     <span class="price-trial gold">完全オーダーメイド</span>
                     <p class="price-detail">1コマ25分 月4回</p>
+                    <p class="price-lock-note">🔒 今入会すれば、退会しない限りずっとこの料金</p>
                 </div>
             </div>
             <div class="entry-campaign-block">
+                <div class="entry-campaign-pill">🚨 7月料金改定前の最終チャンス</div>
                 <div class="entry-fee-row">
-                    <span class="entry-fee-label">入会費</span>
-                    <span class="entry-fee-price"><s>50 USD</s></span>
-                    <span class="entry-fee-arrow">→</span>
-                    <span class="entry-fee-free">無料（0 USD）</span>
+                    <span class="entry-fee-label">旧料金での入会締切：</span>
+                    <span class="entry-fee-free">5月4日（月）23:59まで</span>
                 </div>
-                <div class="entry-campaign-pill">🎁 期間限定キャンペーン中（〜4/13）</div>
-                <p class="entry-campaign-desc">今すぐLINE登録で<strong>入会費無料（100%OFF）</strong>クーポンをゲット！</p>
-                <p class="entry-campaign-sub">キャンペーンは4月13日（月）23:59まで。お早めに。</p>
+                <p class="entry-campaign-desc">5月4日までに入会すれば<br><strong>退会しない限り、ずっと現在の料金</strong>で受講いただけます。</p>
+                <p class="entry-campaign-sub">7月以降の新規入会は新料金が適用されます。</p>
+                <p class="system-note">※ システム移行に伴い、入会後に新しい会員ページへの移行手続きをお願いする場合がございます。詳細はLINEにてご案内いたします。</p>
             </div>
         </div>
     </section>
 
-    <!-- Final CTA -->
     <section class="final-cta">
         <div class="final-cta-inner">
             <div class="final-cta-card">
-                <div class="inline-cta-badge">🎁 入会費無料クーポン配布中</div>
-                <h3>LINE登録で<br>入会費無料クーポンをゲット！</h3>
+                <div class="inline-cta-badge" style="background:var(--green-500);">🚨 旧料金での入会は5/4まで</div>
+                <h3>7月の料金改定前に<br>今の料金で入会しませんか？</h3>
                 <div class="campaign-highlight-box" style="margin-bottom:20px;">
-                    <div class="chb-main">⏰ キャンペーン終了まであとわずか！</div>
-                    <div class="chb-sub">4月13日（月）23:59までにお申し込みを</div>
+                    <div class="chb-main">⏰ 旧料金での入会締切まであとわずか！</div>
+                    <div class="chb-sub">5月4日（月）23:59までにお申し込みを</div>
                 </div>
                 <div class="inline-cta-list">
-                    <p><span>✓</span> 入会費無料クーポン配布（50ドル相当）※入会時に使用</p>
+                    <p><span>✓</span> 7月値上げ前の旧料金で入会できる</p>
+                    <p><span>✓</span> 退会しなければ、ずっと今の料金で受講OK</p>
                     <p><span>✓</span> レッスン内容がわかる資料</p>
                     <p><span>✓</span> 料金・スケジュールもひと目で確認</p>
                     <p><span>✓</span> LINEでいつでも質問OK</p>
                 </div>
-                <p style="font-size: 0.85rem; color: var(--orange-600); font-weight: 600; margin-bottom: 16px;">📲 LINEから簡単に受け取れます</p>
-                <button id="lineRegButton2" class="btn-campaign pulse-btn" onclick="event.preventDefault(); trackLineClick(); setTimeout(function(){window.open('https://line.me/R/ti/p/@359fnsdb','_blank');},300);" style="width: 100%;">
-                    🎁 今すぐ特典だけをゲット
-                </button>
-                <p style="font-size: 0.75rem; color: var(--gray-400); margin-top: 12px;">※ 登録無料・いつでも解除OK｜キャンペーンは4/13まで</p>
+                <p style="font-size: 0.85rem; color: var(--orange-600); font-weight: 600; margin-bottom: 16px;">📲 LINEから簡単にお申し込みできます</p>
+                <button id="lineRegButton2" class="btn-campaign pulse-btn" onclick="event.preventDefault(); trackLineClick(); setTimeout(function(){window.open('https://line.me/R/ti/p/@359fnsdb','_blank');},300);" style="width: 100%;">🎁 旧料金で今すぐ入会する</button>
+                <p style="font-size: 0.75rem; color: var(--gray-400); margin-top: 12px;">※ 登録無料・いつでも解除OK｜締切は5/4まで</p>
+                <p class="system-note">※ システム移行に伴い、入会後に新しい会員ページへの移行手続きをお願いする場合がございます。詳細はLINEにてご案内いたします。</p>
                 <div class="email-divider">
                     <p class="email-label">📧 LINEが使えない方はメールで</p>
                     <div>
@@ -1029,23 +738,21 @@
         </div>
     </section>
 
-    <!-- Footer -->
     <footer class="site-footer">
         <div class="container">
             <div class="footer-logo">サクセスアカデミー</div>
             <p>海外在住のご家族向けに、<br>オンラインで日本語教育を提供しています。</p>
-            <a href="https://line.me/R/ti/p/@359fnsdb" onclick="event.preventDefault(); trackLineClick(); var url=this.href; setTimeout(function(){window.open(url,'_blank');},300); return false;" target="_blank" class="footer-line-btn">🎁 今すぐ特典だけをゲット</a>
+            <a href="https://line.me/R/ti/p/@359fnsdb" onclick="event.preventDefault(); trackLineClick(); var url=this.href; setTimeout(function(){window.open(url,'_blank');},300); return false;" target="_blank" class="footer-line-btn">🎁 旧料金で今すぐ入会する</a>
             <div class="footer-copy"><p>© 2026 サクセスアカデミー All rights reserved.</p></div>
         </div>
     </footer>
 
-    <!-- Fixed CTA -->
     <div class="fixed-cta">
         <a href="https://line.me/R/ti/p/@359fnsdb" onclick="event.preventDefault(); trackLineClick(); var url=this.href; setTimeout(function(){window.open(url,'_blank');},300); return false;" target="_blank" style="text-decoration:none;width:100%;max-width:400px;">
-            <button class="fixed-cta-btn">🎁 今すぐ特典だけをゲット</button>
+            <button class="fixed-cta-btn">🎁 旧料金で今すぐ入会する</button>
         </a>
         <div class="fixed-cta-countdown">
-            ⏰ 入会費無料クーポン終了まで：
+            ⏰ 旧料金での入会終了まで：
             <span class="fixed-cd-val" id="f-days">00</span>日
             <span class="fixed-cd-val" id="f-hours">00</span>時間
             <span class="fixed-cd-val" id="f-mins">00</span>分
@@ -1054,78 +761,33 @@
     </div>
 
     <script>
-    // ===== COUNTDOWN =====
-    // Target: April 13, 2026, 23:59:59 JST (UTC+9)
-    var deadline = new Date('2026-04-13T23:59:59+09:00').getTime();
-
+    var deadline = new Date('2026-05-04T23:59:59+09:00').getTime();
     function pad(n) { return String(n).padStart(2, '0'); }
-
     function updateCountdowns() {
-        var now = Date.now();
-        var diff = deadline - now;
-        if (diff < 0) diff = 0;
-
-        var days  = Math.floor(diff / (1000 * 60 * 60 * 24));
-        var hours = Math.floor((diff % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
-        var mins  = Math.floor((diff % (1000 * 60 * 60)) / (1000 * 60));
-        var secs  = Math.floor((diff % (1000 * 60)) / 1000);
-
-        // Banner
-        var bd = document.getElementById('b-days');
-        var bh = document.getElementById('b-hours');
-        var bm = document.getElementById('b-mins');
-        var bs = document.getElementById('b-secs');
-        if (bd) bd.textContent = pad(days);
-        if (bh) bh.textContent = pad(hours);
-        if (bm) bm.textContent = pad(mins);
-        if (bs) bs.textContent = pad(secs);
-
-        // Hero card inline
-        var cd = document.getElementById('c-days');
-        var ch = document.getElementById('c-hours');
-        var cm = document.getElementById('c-mins');
-        var cs = document.getElementById('c-secs');
-        if (cd) cd.textContent = pad(days);
-        if (ch) ch.textContent = pad(hours);
-        if (cm) cm.textContent = pad(mins);
-        if (cs) cs.textContent = pad(secs);
-
-        // Fixed footer
-        var fd = document.getElementById('f-days');
-        var fh = document.getElementById('f-hours');
-        var fm = document.getElementById('f-mins');
-        var fs = document.getElementById('f-secs');
-        if (fd) fd.textContent = pad(days);
-        if (fh) fh.textContent = pad(hours);
-        if (fm) fm.textContent = pad(mins);
-        if (fs) fs.textContent = pad(secs);
+        var now = Date.now(), diff = Math.max(deadline - now, 0);
+        var d = Math.floor(diff / 864e5), h = Math.floor((diff % 864e5) / 36e5), m = Math.floor((diff % 36e5) / 6e4), s = Math.floor((diff % 6e4) / 1e3);
+        ['b','c','f'].forEach(function(p){
+            var de=document.getElementById(p+'-days'), he=document.getElementById(p+'-hours'), me=document.getElementById(p+'-mins'), se=document.getElementById(p+'-secs');
+            if(de)de.textContent=pad(d); if(he)he.textContent=pad(h); if(me)me.textContent=pad(m); if(se)se.textContent=pad(s);
+        });
     }
+    updateCountdowns(); setInterval(updateCountdowns, 1000);
 
-    updateCountdowns();
-    setInterval(updateCountdowns, 1000);
-
-    // ===== LINE TRACKING =====
     var lastTrackTime = 0;
     function trackLineClick() {
-      var now = Date.now();
-      if (now - lastTrackTime < 2000) return;
-      lastTrackTime = now;
+      var now = Date.now(); if (now - lastTrackTime < 2000) return; lastTrackTime = now;
       if (typeof fbq === 'function') fbq('trackCustom', 'LineRegistrationClick_EN', {});
       if (typeof gtag === 'function') gtag('event', 'line_registration_click', {'event_category': 'engagement'});
     }
 
-    // ===== OFFSETS =====
     (function() {
         function setOffsets() {
-            var banner = document.querySelector('.campaign-banner');
-            var header = document.querySelector('.site-header');
+            var banner = document.querySelector('.campaign-banner'), header = document.querySelector('.site-header');
             var bh = banner ? banner.getBoundingClientRect().height : 44;
             document.documentElement.style.setProperty('--banner-h', bh + 'px');
             if (header) document.documentElement.style.setProperty('--header-h', header.getBoundingClientRect().height + 'px');
         }
-        setOffsets();
-        window.addEventListener('resize', setOffsets);
-        window.addEventListener('load', setOffsets);
+        setOffsets(); window.addEventListener('resize', setOffsets); window.addEventListener('load', setOffsets);
     })();
     </script>
 </body>
