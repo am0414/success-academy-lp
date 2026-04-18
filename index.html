@@ -156,6 +156,7 @@
         .campaign-card-title { font-size: 1.25rem; font-weight: 900; color: #1E3A8A; margin-bottom: 8px; line-height: 1.4; }
         .campaign-card-title em { font-style: normal; color: #1D4ED8; font-size: 1.5rem; }
         .campaign-card-sub { font-size: 0.88rem; color: #1E40AF; line-height: 1.6; margin-bottom: 14px; }
+        .campaign-card-note { font-size: 0.75rem; color: #1E40AF; margin-top: 8px; opacity: 0.85; }
 
         .inline-countdown {
             display: flex; align-items: center; justify-content: center; gap: 8px;
@@ -331,7 +332,8 @@
         .price-trial.amber { background: #D97706; }
         .price-trial.gold { background: #B8935A; }
         .price-detail { font-size: 0.82rem; color: var(--gray-600); line-height: 1.5; }
-        .price-lock-note { font-size: 0.78rem; color: #059669; font-weight: 600; margin-top: 10px; display: flex; align-items: center; justify-content: center; gap: 4px; }
+        .price-lock-note { font-size: 0.78rem; color: #059669; font-weight: 600; margin-top: 10px; display: flex; align-items: center; justify-content: center; gap: 4px; line-height: 1.4; }
+        .price-lock-sub { font-size: 0.68rem; color: var(--gray-400); font-weight: 500; margin-top: 4px; text-align: center; line-height: 1.4; }
         .entry-campaign-block {
             max-width: 560px; margin: 40px auto 0;
             background: linear-gradient(135deg, #EFF6FF 0%, #DBEAFE 100%);
@@ -345,6 +347,7 @@
         .entry-campaign-desc { font-size: 1rem; font-weight: 700; color: #1E3A8A; margin-bottom: 6px; line-height: 1.5; }
         .entry-campaign-desc strong { color: #1D4ED8; }
         .entry-campaign-sub { font-size: 0.8rem; color: #1E40AF; font-weight: 500; }
+        .entry-campaign-note { font-size: 0.78rem; color: #1E40AF; font-weight: 500; margin-top: 6px; opacity: 0.85; }
         .system-note { font-size: 0.72rem; color: var(--gray-400); margin-top: 12px; line-height: 1.5; }
 
         .final-cta { padding: 100px 24px; background: linear-gradient(135deg, var(--orange-500) 0%, #1E3A8A 100%); position: relative; overflow: hidden; }
@@ -427,7 +430,7 @@
 
     <div class="campaign-banner">
         <div style="display:flex;flex-direction:column;align-items:center;justify-content:center;gap:4px;">
-            <span style="color:white;font-size:0.95rem;font-weight:900;letter-spacing:0.01em;">🚨 7月料金改定 — 旧料金での入会は残り</span>
+            <span style="color:white;font-size:0.95rem;font-weight:900;letter-spacing:0.01em;">🚨 7月料金改定まで残り</span>
             <div class="banner-countdown">
                 <span class="cd-unit"><span class="cd-num" id="b-days">00</span><span class="cd-label">日</span></span>
                 <span class="cd-sep">:</span>
@@ -443,7 +446,7 @@
     <header class="site-header">
         <div class="container header-inner">
             <div class="logo">Success Academy</div>
-            <a href="https://line.me/R/ti/p/@359fnsdb" onclick="event.preventDefault(); trackLineClick(); var url=this.href; setTimeout(function(){window.open(url,'_blank');},300); return false;" target="_blank" class="header-cta">旧料金で今すぐ入会 🎁</a>
+            <a href="https://line.me/R/ti/p/@359fnsdb" onclick="event.preventDefault(); trackLineClick(); var url=this.href; setTimeout(function(){window.open(url,'_blank');},300); return false;" target="_blank" class="header-cta">📩 無料で資料請求する</a>
         </div>
     </header>
 
@@ -451,15 +454,16 @@
         <div class="container">
             <div class="hero-grid">
                 <div class="hero-text-col">
-                    <div class="hero-eyebrow">🌍 世界20カ国・累計1,000人以上の家族が選ぶオンライン日本語スクール</div>
+                    <div class="hero-eyebrow">🌍 世界34カ国・累計1,400人以上の家族が選ぶオンライン日本語スクール</div>
                     <h1>海外にいても、<br>お子さまの<em>「日本語」</em>は<br>伸ばせる。</h1>
                     <p class="hero-sub">継続率92.5%が証明する、海外っ子のための日本語スクール。<br>1日たった25分・送迎なし・宿題なしで、<br>毎日の小さな「できた！」が日本語への自信に変わります。</p>
                     <div class="campaign-card">
                         <div class="campaign-card-badge">🚨 7月から料金改定</div>
-                        <div class="campaign-card-title">今の料金で入会できるのは<br><em>5月4日まで</em></div>
-                        <div class="campaign-card-sub">7月より料金改定を予定しています。<strong style="color:#1D4ED8;">5月4日までに入会すれば、退会しない限りずっと現在の料金</strong>で受講いただけます。</div>
+                        <div class="campaign-card-title">まずは<em>無料で資料請求</em><br>旧料金キャンペーンは5月4日まで</div>
+                        <div class="campaign-card-sub">7月より料金改定を予定しています。<strong style="color:#1D4ED8;">5月4日までにお申し込みいただければ、ずっとお得な料金で受講可能。</strong>まずは無料の資料で詳細をご確認ください。</div>
+                        <div class="campaign-card-note">※退会後は新料金での再入会となります</div>
                         <div class="inline-countdown">
-                            <span class="cd-label-main">⏰ 旧料金での入会締切まで</span>
+                            <span class="cd-label-main">⏰ 旧料金キャンペーン締切まで</span>
                             <div class="cd-blocks">
                                 <span class="cd-block"><span class="n" id="c-days">00</span><span class="l">日</span></span>
                                 <span class="cd-colon">:</span>
@@ -472,9 +476,9 @@
                         </div>
                     </div>
                     <div class="hero-cta-group">
-                        <button class="btn-campaign pulse-btn" onclick="event.preventDefault(); trackLineClick(); setTimeout(function(){window.open('https://line.me/R/ti/p/@359fnsdb','_blank');},300);">🎁 旧料金で今すぐ入会する</button>
+                        <button class="btn-campaign pulse-btn" onclick="event.preventDefault(); trackLineClick(); setTimeout(function(){window.open('https://line.me/R/ti/p/@359fnsdb','_blank');},300);">📩 無料で資料請求する</button>
                         <p class="btn-micro">※ 登録無料・いつでも解除OK｜まずはLINEで詳細を確認</p>
-                        <p class="system-note">※ システム移行に伴い、入会後に新しい会員ページへの移行手続きをお願いする場合がございます。詳細はLINEにてご案内いたします。</p>
+                        <p class="system-note">※ システム移行に伴い、お申し込み後に新しい会員ページへの移行手続きをお願いする場合がございます。詳細はLINEにてご案内いたします。</p>
                     </div>
                 </div>
                 <div class="hero-visual">
@@ -495,8 +499,8 @@
     <div class="proof-bar">
         <div class="container">
             <div class="proof-items">
-                <div class="proof-item"><div class="proof-number">1,000+</div><div class="proof-label">累計生徒数</div></div>
-                <div class="proof-item"><div class="proof-number">20</div><div class="proof-label">カ国</div></div>
+                <div class="proof-item"><div class="proof-number">1,400+</div><div class="proof-label">累計生徒数</div></div>
+                <div class="proof-item"><div class="proof-number">34</div><div class="proof-label">カ国</div></div>
                 <div class="proof-item"><div class="proof-number">92.5%</div><div class="proof-label">継続率</div></div>
                 <div class="proof-item"><div class="proof-number">6年</div><div class="proof-label">運営実績</div></div>
             </div>
@@ -585,20 +589,20 @@
             <div class="comp-swipe-hint">← 横にスワイプ →</div>
             <div class="inline-cta">
                 <div class="inline-cta-badge">🚨 7月料金改定前の最終チャンス</div>
-                <h4>今の料金で入会できるのは<br>5月4日まで！</h4>
+                <h4>まずは無料で資料請求！<br>旧料金キャンペーンは5月4日まで</h4>
                 <div class="campaign-highlight-box">
-                    <div class="chb-main">⏰ 旧料金での入会締切まであとわずか！</div>
+                    <div class="chb-main">⏰ 無料資料請求で旧料金をGET！</div>
                     <div class="chb-sub">5月4日（月）23:59までにLINE登録で詳細をお伝えします</div>
                 </div>
                 <div class="inline-cta-list">
-                    <p><span>✓</span> 7月値上げ前の旧料金で入会可能</p>
-                    <p><span>✓</span> 退会しない限り、ずっと旧料金で受講OK</p>
+                    <p><span>✓</span> 7月値上げ前の旧料金でスタートできる</p>
+                    <p><span>✓</span> ずっとお得な料金で受講OK</p>
                     <p><span>✓</span> レッスン内容・料金・スケジュールがわかる資料</p>
                     <p><span>✓</span> LINEでいつでも質問OK</p>
                 </div>
-                <button class="btn-campaign pulse-btn" onclick="event.preventDefault(); trackLineClick(); setTimeout(function(){window.open('https://line.me/R/ti/p/@359fnsdb','_blank');},300);" style="width:100%;">🎁 旧料金で今すぐ入会する</button>
+                <button class="btn-campaign pulse-btn" onclick="event.preventDefault(); trackLineClick(); setTimeout(function(){window.open('https://line.me/R/ti/p/@359fnsdb','_blank');},300);" style="width:100%;">📩 無料で資料請求する</button>
                 <p class="note">※ 登録無料・いつでも解除OK｜締切：5/4まで</p>
-                <p class="system-note">※ システム移行に伴い、入会後に新しい会員ページへの移行手続きをお願いする場合がございます。詳細はLINEにてご案内いたします。</p>
+                <p class="system-note">※ 退会後は新料金での再入会となります。システム移行に伴い、お申し込み後に新しい会員ページへの移行手続きをお願いする場合がございます。詳細はLINEにてご案内いたします。</p>
             </div>
         </div>
     </section>
@@ -622,7 +626,7 @@
         <div class="container">
             <div class="section-label"><span class="eyebrow">特長</span><h2>世界中のご家族に選ばれる<br>5つの理由</h2></div>
             <div class="features-grid">
-                <div class="feature-card"><span class="icon">🌍</span><h3>世界20カ国から参加</h3><p>4つのタイムゾーンで毎日授業。世界中の仲間と一緒に学べます。</p></div>
+                <div class="feature-card"><span class="icon">🌍</span><h3>世界34カ国から参加</h3><p>4つのタイムゾーンで毎日授業。世界中の仲間と一緒に学べます。</p></div>
                 <div class="feature-card"><span class="icon">👨‍🏫</span><h3>有資格の講師が多数在籍</h3><p>教員免許・小学校教員資格など、プロの講師が丁寧に指導します。</p></div>
                 <div class="feature-card"><span class="icon">📚</span><h3>日本語・国語・算数、すべて月額定額</h3><p>追加料金なし。日本語はもちろん、国語・算数もお子様のレベルに合った学年で自由に受講できます。</p></div>
                 <div class="feature-card"><span class="icon">🚗</span><h3>送迎は一切不要</h3><p>全クラスオンライン。LINEで担当講師といつでも連絡が取れます。</p></div>
@@ -653,7 +657,7 @@
 
     <section class="pricing-section">
         <div class="container">
-            <div class="section-label"><span class="eyebrow">料金</span><h2>安心の料金プラン<br><span style="font-size:0.6em;color:#1D4ED8;">※ 7月より料金改定予定｜今なら旧料金で入会可能</span></h2></div>
+            <div class="section-label"><span class="eyebrow">料金</span><h2>安心の料金プラン<br><span style="font-size:0.6em;color:#1D4ED8;">※ 7月より料金改定予定｜今なら旧料金でスタート可能</span></h2></div>
             <div class="pricing-grid">
                 <div class="price-card featured">
                     <div class="price-crown">👑</div>
@@ -665,7 +669,8 @@
                     <p class="price-new-amount">7月以降の新料金 → 値上げ予定</p>
                     <span class="price-trial orange">14日間 無料体験</span>
                     <p class="price-detail">週5日 25分レッスン<br>※未就学児コースは +月10USD</p>
-                    <p class="price-lock-note">🔒 今入会すれば、退会しない限りずっとこの料金</p>
+                    <p class="price-lock-note">🔒 今なら旧料金で、ずっとお得に受講可能</p>
+                    <p class="price-lock-sub">※退会後は新料金での再入会となります</p>
                 </div>
                 <div class="price-card">
                     <span class="price-badge amber">プライベートレッスン</span>
@@ -676,7 +681,8 @@
                     <p class="price-new-amount">7月以降の新料金 → 値上げ予定</p>
                     <span class="price-trial amber">無料で初回お試し</span>
                     <p class="price-detail">1コマ25分 月4回</p>
-                    <p class="price-lock-note">🔒 今入会すれば、退会しない限りずっとこの料金</p>
+                    <p class="price-lock-note">🔒 今なら旧料金で、ずっとお得に受講可能</p>
+                    <p class="price-lock-sub">※退会後は新料金での再入会となります</p>
                 </div>
                 <div class="price-card">
                     <span class="price-badge gold">プライベートレッスン</span>
@@ -687,18 +693,20 @@
                     <p class="price-new-amount">7月以降の新料金 → 値上げ予定</p>
                     <span class="price-trial gold">完全オーダーメイド</span>
                     <p class="price-detail">1コマ25分 月4回</p>
-                    <p class="price-lock-note">🔒 今入会すれば、退会しない限りずっとこの料金</p>
+                    <p class="price-lock-note">🔒 今なら旧料金で、ずっとお得に受講可能</p>
+                    <p class="price-lock-sub">※退会後は新料金での再入会となります</p>
                 </div>
             </div>
             <div class="entry-campaign-block">
                 <div class="entry-campaign-pill">🚨 7月料金改定前の最終チャンス</div>
                 <div class="entry-fee-row">
-                    <span class="entry-fee-label">旧料金での入会締切：</span>
+                    <span class="entry-fee-label">旧料金キャンペーン締切：</span>
                     <span class="entry-fee-free">5月4日（月）23:59まで</span>
                 </div>
-                <p class="entry-campaign-desc">5月4日までに入会すれば<br><strong>退会しない限り、ずっと現在の料金</strong>で受講いただけます。</p>
-                <p class="entry-campaign-sub">7月以降の新規入会は新料金が適用されます。</p>
-                <p class="system-note">※ システム移行に伴い、入会後に新しい会員ページへの移行手続きをお願いする場合がございます。詳細はLINEにてご案内いたします。</p>
+                <p class="entry-campaign-desc">5月4日までにお申し込みいただければ<br><strong>ずっとお得な料金</strong>で受講可能。</p>
+                <p class="entry-campaign-note">※退会後は新料金での再入会となります</p>
+                <p class="entry-campaign-sub" style="margin-top:10px;">7月以降のお申し込みは新料金が適用されます。</p>
+                <p class="system-note">※ システム移行に伴い、お申し込み後に新しい会員ページへの移行手続きをお願いする場合がございます。詳細はLINEにてご案内いたします。</p>
             </div>
         </div>
     </section>
@@ -706,23 +714,23 @@
     <section class="final-cta">
         <div class="final-cta-inner">
             <div class="final-cta-card">
-                <div class="inline-cta-badge" style="background:var(--green-500);">🚨 旧料金での入会は5/4まで</div>
-                <h3>7月の料金改定前に<br>今の料金で入会しませんか？</h3>
+                <div class="inline-cta-badge" style="background:var(--green-500);">🚨 旧料金キャンペーンは5/4まで</div>
+                <h3>7月の料金改定前に<br>まずは無料で資料請求</h3>
                 <div class="campaign-highlight-box" style="margin-bottom:20px;">
-                    <div class="chb-main">⏰ 旧料金での入会締切まであとわずか！</div>
+                    <div class="chb-main">⏰ 旧料金キャンペーン締切まであとわずか！</div>
                     <div class="chb-sub">5月4日（月）23:59までにお申し込みを</div>
                 </div>
                 <div class="inline-cta-list">
-                    <p><span>✓</span> 7月値上げ前の旧料金で入会できる</p>
-                    <p><span>✓</span> 退会しなければ、ずっと今の料金で受講OK</p>
+                    <p><span>✓</span> 7月値上げ前の旧料金でスタートできる</p>
+                    <p><span>✓</span> ずっとお得な料金で受講OK</p>
                     <p><span>✓</span> レッスン内容がわかる資料</p>
                     <p><span>✓</span> 料金・スケジュールもひと目で確認</p>
                     <p><span>✓</span> LINEでいつでも質問OK</p>
                 </div>
-                <p style="font-size: 0.85rem; color: var(--orange-600); font-weight: 600; margin-bottom: 16px;">📲 LINEから簡単にお申し込みできます</p>
-                <button id="lineRegButton2" class="btn-campaign pulse-btn" onclick="event.preventDefault(); trackLineClick(); setTimeout(function(){window.open('https://line.me/R/ti/p/@359fnsdb','_blank');},300);" style="width: 100%;">🎁 旧料金で今すぐ入会する</button>
+                <p style="font-size: 0.85rem; color: var(--orange-600); font-weight: 600; margin-bottom: 16px;">📲 LINEから簡単に資料請求できます</p>
+                <button id="lineRegButton2" class="btn-campaign pulse-btn" onclick="event.preventDefault(); trackLineClick(); setTimeout(function(){window.open('https://line.me/R/ti/p/@359fnsdb','_blank');},300);" style="width: 100%;">📩 無料で資料請求する</button>
                 <p style="font-size: 0.75rem; color: var(--gray-400); margin-top: 12px;">※ 登録無料・いつでも解除OK｜締切は5/4まで</p>
-                <p class="system-note">※ システム移行に伴い、入会後に新しい会員ページへの移行手続きをお願いする場合がございます。詳細はLINEにてご案内いたします。</p>
+                <p class="system-note">※ 退会後は新料金での再入会となります。システム移行に伴い、お申し込み後に新しい会員ページへの移行手続きをお願いする場合がございます。詳細はLINEにてご案内いたします。</p>
                 <div class="email-divider">
                     <p class="email-label">📧 LINEが使えない方はメールで</p>
                     <div>
@@ -742,17 +750,17 @@
         <div class="container">
             <div class="footer-logo">サクセスアカデミー</div>
             <p>海外在住のご家族向けに、<br>オンラインで日本語教育を提供しています。</p>
-            <a href="https://line.me/R/ti/p/@359fnsdb" onclick="event.preventDefault(); trackLineClick(); var url=this.href; setTimeout(function(){window.open(url,'_blank');},300); return false;" target="_blank" class="footer-line-btn">🎁 旧料金で今すぐ入会する</a>
+            <a href="https://line.me/R/ti/p/@359fnsdb" onclick="event.preventDefault(); trackLineClick(); var url=this.href; setTimeout(function(){window.open(url,'_blank');},300); return false;" target="_blank" class="footer-line-btn">📩 無料で資料請求する</a>
             <div class="footer-copy"><p>© 2026 サクセスアカデミー All rights reserved.</p></div>
         </div>
     </footer>
 
     <div class="fixed-cta">
         <a href="https://line.me/R/ti/p/@359fnsdb" onclick="event.preventDefault(); trackLineClick(); var url=this.href; setTimeout(function(){window.open(url,'_blank');},300); return false;" target="_blank" style="text-decoration:none;width:100%;max-width:400px;">
-            <button class="fixed-cta-btn">🎁 旧料金で今すぐ入会する</button>
+            <button class="fixed-cta-btn">📩 無料で資料請求する</button>
         </a>
         <div class="fixed-cta-countdown">
-            ⏰ 旧料金での入会終了まで：
+            ⏰ 旧料金キャンペーン終了まで：
             <span class="fixed-cd-val" id="f-days">00</span>日
             <span class="fixed-cd-val" id="f-hours">00</span>時間
             <span class="fixed-cd-val" id="f-mins">00</span>分
@@ -792,4 +800,3 @@
     </script>
 </body>
 </html>
-　
