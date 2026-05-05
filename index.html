@@ -318,7 +318,7 @@
         .anniversary-badge { text-align: center; margin-top: 48px; font-size: 1.5rem; font-weight: 900; color: var(--charcoal); }
 
         .pricing-section { padding: 100px 24px; background: white; }
-        .pricing-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 24px; max-width: 960px; margin: 0 auto; }
+        .pricing-grid { display: grid; grid-template-columns: 1fr; gap: 24px; max-width: 460px; margin: 0 auto; }
         .price-card { background: var(--cream); border: 2px solid var(--gray-200); border-radius: var(--radius-lg); padding: 36px 24px; text-align: center; transition: all 0.3s; position: relative; }
         .price-card:hover { transform: translateY(-6px); box-shadow: var(--shadow-lg); }
         .price-card.featured { border-color: var(--orange-600); background: white; transform: scale(1.04); box-shadow: 0 12px 40px rgba(37,99,235,0.12); }
@@ -472,6 +472,10 @@
                         <div class="campaign-card-badge">🎉 当ページ限定で延長決定！</div>
                         <div class="campaign-card-title">旧料金キャンペーン<br><em>5月11日まで延長！</em></div>
                         <div class="campaign-card-sub">ご好評につき延長決定！<strong style="color:#1D4ED8;">当ページからLINE登録された方限定</strong>で、5月11日までにお申し込みいただければ、ずっとお得な旧料金で受講可能です。</div>
+                        <div style="background: linear-gradient(135deg, #FEF3C7 0%, #FDE68A 100%); border: 2px solid #F59E0B; border-radius: 12px; padding: 12px 14px; margin: 12px 0; text-align: center;">
+                            <div style="font-size: 0.72rem; font-weight: 700; color: #92400E; margin-bottom: 2px;">💰 当ページ限定の特別価格で</div>
+                            <div style="font-size: 1.4rem; font-weight: 900; color: #B45309; line-height: 1.2;">月150USDお得！</div>
+                        </div>
                         <div class="campaign-card-note">※退会後は新料金での再入会となります</div>
                         <div class="inline-countdown">
                             <span class="cd-label-main">⏰ 旧料金キャンペーン締切まで</span>
@@ -606,6 +610,7 @@
                     <div class="chb-sub">5月11日（月）23:59までに当ページからLINE登録した方限定</div>
                 </div>
                 <div class="inline-cta-list">
+                    <p><span>💰</span> <strong>月150USDお得！</strong></p>
                     <p><span>✓</span> 当ページからのLINE登録者だけの特別価格</p>
                     <p><span>✓</span> 7月値上げ前の旧料金でスタートできる</p>
                     <p><span>✓</span> ずっとお得な料金で受講OK</p>
@@ -671,8 +676,7 @@
         <div class="container">
             <div class="section-label"><span class="eyebrow">料金</span><h2>安心の料金プラン<br><span style="font-size:0.6em;color:#1D4ED8;">※ 7月より料金改定予定｜当ページ限定で延長中・今なら旧料金でスタート可能</span></h2></div>
             <div class="pricing-grid">
-                <div class="price-card featured">
-                    <div class="price-crown">👑</div>
+                <div class="price-card">
                     <span class="price-badge orange">グループレッスン</span>
                     <h3 class="price-name">フリーレッスン</h3>
                     <p class="price-target">対象：4歳〜中学生</p>
@@ -684,30 +688,6 @@
                     <p class="price-lock-note">🔒 今なら旧料金で、ずっとお得に受講可能</p>
                     <p class="price-lock-sub">※退会後は新料金での再入会となります</p>
                 </div>
-                <div class="price-card">
-                    <span class="price-badge amber">プライベートレッスン</span>
-                    <h3 class="price-name">プライベートライト</h3>
-                    <p class="price-target">対象：4歳〜中学生</p>
-                    <p class="price-desc">担当講師による学習管理<br>自由な時間で振替も柔軟に対応</p>
-                    <div class="price-amount">78<span>USD/月</span></div>
-                    <p class="price-new-amount">7月以降の新料金 → 値上げ予定</p>
-                    <span class="price-trial amber">無料で初回お試し</span>
-                    <p class="price-detail">1コマ25分 月4回</p>
-                    <p class="price-lock-note">🔒 今なら旧料金で、ずっとお得に受講可能</p>
-                    <p class="price-lock-sub">※退会後は新料金での再入会となります</p>
-                </div>
-                <div class="price-card">
-                    <span class="price-badge gold">プライベートレッスン</span>
-                    <h3 class="price-name">プライベートプレミアム</h3>
-                    <p class="price-target">対象：4歳〜中学生</p>
-                    <p class="price-desc">宿題・試験・漢検など<br>完全オーダーメイド対応</p>
-                    <div class="price-amount">122<span>USD/月</span></div>
-                    <p class="price-new-amount">7月以降の新料金 → 値上げ予定</p>
-                    <span class="price-trial gold">完全オーダーメイド</span>
-                    <p class="price-detail">1コマ25分 月4回</p>
-                    <p class="price-lock-note">🔒 今なら旧料金で、ずっとお得に受講可能</p>
-                    <p class="price-lock-sub">※退会後は新料金での再入会となります</p>
-                </div>
             </div>
             <div class="entry-campaign-block">
                 <div class="entry-campaign-pill">🎉 当ページ限定で延長決定！</div>
@@ -716,6 +696,10 @@
                     <span class="entry-fee-free">5月11日（月）23:59まで</span>
                 </div>
                 <p class="entry-campaign-desc">当ページからLINE登録した方限定！<br>5月11日までにお申し込みで<strong>ずっとお得な旧料金</strong>で受講可能。</p>
+                <div style="background: linear-gradient(135deg, #FEF3C7 0%, #FDE68A 100%); border: 2px solid #F59E0B; border-radius: 12px; padding: 14px 18px; margin: 14px 0; text-align: center;">
+                    <div style="font-size: 0.78rem; font-weight: 700; color: #92400E; margin-bottom: 4px;">💰 当ページ限定の特別価格で</div>
+                    <div style="font-size: 1.6rem; font-weight: 900; color: #B45309; line-height: 1.2;">月150USDお得！</div>
+                </div>
                 <p class="entry-campaign-note">※退会後は新料金での再入会となります</p>
                 <p class="entry-campaign-sub" style="margin-top:10px;">7月以降のお申し込みは新料金が適用されます。</p>
                 <p class="system-note">※ システム移行に伴い、お申し込み後に新しい会員ページへの移行手続きをお願いする場合がございます。詳細はLINEにてご案内いたします。</p>
@@ -733,6 +717,7 @@
                     <div class="chb-sub">5月11日（月）23:59までにLINE登録した方だけの特別価格</div>
                 </div>
                 <div class="inline-cta-list">
+                    <p><span>💰</span> <strong>月150USDお得！</strong></p>
                     <p><span>✓</span> 当ページからのLINE登録者だけの特別価格</p>
                     <p><span>✓</span> 7月値上げ前の旧料金でスタートできる</p>
                     <p><span>✓</span> ずっとお得な料金で受講OK</p>
