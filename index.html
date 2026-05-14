@@ -10,8 +10,8 @@
     <!-- End Google Tag Manager -->
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>海外在住者向けオンライン日本語スクール Success Academy | 日本語・国語・算数 月50ドル取り放題</title>
-    <meta name="description" content="北米・アジア・欧州の海外在住日本人家族向けオンライン日本語スクール。日本語・国語・算数が月50ドル取り放題。帰国子女、インター生、バイリンガル教育に最適。25分授業で継続率92.5%。14日間無料体験実施中。">
+    <title>海外在住者向けオンライン日本語スクール Success Academy | 日本語・国語・算数 毎日取り放題</title>
+    <meta name="description" content="北米・アジア・欧州の海外在住日本人家族向けオンライン日本語スクール。日本語・国語・算数が月額定額で毎日受け放題。帰国子女、インター生、バイリンガル教育に最適。25分授業で継続率92.5%。14日間無料体験実施中。">
     <script>
     !function(f,b,e,v,n,t,s)
     {if(f.fbq)return;n=f.fbq=function(){n.callMethod?
@@ -80,6 +80,14 @@
         }
         .container { max-width: 1100px; margin: 0 auto; padding: 0 24px; }
 
+        /* SVG Icon system */
+        .icon { display: inline-block; vertical-align: middle; flex-shrink: 0; }
+        .icon-sm { width: 14px; height: 14px; }
+        .icon-md { width: 18px; height: 18px; }
+        .icon-lg { width: 28px; height: 28px; }
+        .icon-xl { width: 36px; height: 36px; }
+        .icon-inline { vertical-align: -3px; margin-right: 6px; }
+
         .campaign-banner {
             position: fixed; top: 0; left: 0; right: 0; z-index: 200;
             background: linear-gradient(90deg, #1D4ED8 0%, #3B82F6 50%, #1D4ED8 100%);
@@ -92,7 +100,7 @@
             50% { background-position: 100% 50%; }
         }
         .banner-inner { display: flex; align-items: center; justify-content: center; gap: 10px; flex-wrap: wrap; }
-        .banner-main { color: white; font-size: 0.95rem; font-weight: 900; letter-spacing: 0.01em; }
+        .banner-main { color: white; font-size: 0.95rem; font-weight: 900; letter-spacing: 0.01em; display: inline-flex; align-items: center; gap: 8px; }
         .banner-sub { color: #FCD34D; font-size: 0.8rem; font-weight: 700; }
 
         .site-header {
@@ -160,44 +168,6 @@
         .campaign-card-sub { font-size: 0.88rem; color: #1E40AF; line-height: 1.7; }
         .campaign-card-sub strong { color: #1D4ED8; }
 
-        .date-strip {
-            display: flex; align-items: stretch; gap: 6px; margin: 14px 0 12px;
-        }
-        .date-strip-box {
-            flex: 1; background: white; border-radius: 10px;
-            padding: 10px 8px; text-align: center;
-            border: 2px solid transparent;
-        }
-        .date-strip-box.recommend {
-            border-color: #1D4ED8;
-            background: linear-gradient(135deg, #EFF6FF, #DBEAFE);
-            box-shadow: 0 4px 12px rgba(29,78,216,0.18);
-            position: relative;
-        }
-        .date-strip-box.recommend::before {
-            content: "👑 おすすめ";
-            position: absolute;
-            top: -10px; left: 50%;
-            transform: translateX(-50%);
-            background: #1D4ED8; color: white;
-            font-size: 0.6rem; font-weight: 800;
-            padding: 3px 10px; border-radius: 50px;
-            white-space: nowrap;
-            box-shadow: 0 2px 6px rgba(29,78,216,0.3);
-        }
-        .date-strip-box.start { border-color: #10B981; }
-        .date-strip-box.end { border-color: #F59E0B; }
-        .date-strip-box.next { border-color: #94A3B8; background: #F1F5F9; }
-        .date-strip-date { font-size: 1rem; font-weight: 900; color: #0F172A; line-height: 1.2; }
-        .date-strip-date.muted { color: #64748B; }
-        .date-strip-date.accent { color: #1D4ED8; }
-        .date-strip-label { font-size: 0.68rem; font-weight: 700; margin-top: 4px; }
-        .date-strip-label.recommend { color: #1D4ED8; }
-        .date-strip-label.start { color: #059669; }
-        .date-strip-label.end { color: #D97706; }
-        .date-strip-label.next { color: #64748B; }
-        .date-strip-arrow { display: flex; align-items: center; color: #94A3B8; font-size: 0.9rem; font-weight: 900; }
-
         .hero-visual { position: relative; }
         .hero-visual img { width: 100%; border-radius: var(--radius-lg); box-shadow: var(--shadow-lg); }
         .hero-badge {
@@ -215,7 +185,7 @@
         .proof-label { font-size: 0.8rem; color: var(--gray-600); font-weight: 500; }
 
         .section-label { text-align: center; margin-bottom: 48px; }
-        .section-label .eyebrow { display: inline-block; font-size: 0.8rem; font-weight: 700; color: var(--orange-600); background: var(--orange-50); padding: 6px 16px; border-radius: 50px; margin-bottom: 16px; letter-spacing: 0.05em; }
+        .section-label .eyebrow { display: inline-flex; align-items: center; gap: 6px; font-size: 0.8rem; font-weight: 700; color: var(--orange-600); background: var(--orange-50); padding: 6px 16px; border-radius: 50px; margin-bottom: 16px; letter-spacing: 0.05em; }
         .section-label h2 { font-size: 2.2rem; font-weight: 900; color: var(--charcoal); line-height: 1.4; letter-spacing: -0.01em; }
         .section-label p { font-size: 1rem; color: var(--gray-600); margin-top: 12px; }
 
@@ -247,7 +217,7 @@
         .schedule-row:last-child { border-bottom: none; }
         .schedule-row:hover { background: var(--orange-50); }
         .schedule-time { font-size: 0.82rem; font-weight: 700; color: var(--gray-400); min-width: 72px; flex-shrink: 0; }
-        .schedule-activity { flex: 1; font-size: 0.95rem; font-weight: 500; color: var(--charcoal); }
+        .schedule-activity { flex: 1; font-size: 0.95rem; font-weight: 500; color: var(--charcoal); display: flex; align-items: center; gap: 8px; }
         .schedule-tag { font-size: 0.72rem; font-weight: 800; padding: 4px 12px; border-radius: 50px; white-space: nowrap; flex-shrink: 0; }
         .tag-success { background: #DBEAFE; color: #1D4ED8; }
         .tag-normal { background: var(--gray-200); color: var(--gray-600); }
@@ -276,13 +246,15 @@
         .comp-table thead th:first-child { background: var(--charcoal); color: white; width: 22%; }
         .comp-table thead th:nth-child(2) { background: #64748B; color: white; width: 39%; }
         .comp-table thead th:nth-child(3) { background: #059669; color: white; width: 39%; }
+        .comp-table thead th .th-inner { display: inline-flex; align-items: center; gap: 6px; }
         .comp-table tbody td { padding: 24px 20px; text-align: center; border-bottom: 1px solid var(--gray-200); font-size: 0.95rem; vertical-align: middle; }
         .comp-table tbody td:first-child { font-weight: 800; background: #FAFAF9; border-right: 1px solid var(--gray-200); }
         .comp-table tbody td:nth-child(2) { color: var(--gray-600); background: #FAFAF9; border-right: 1px solid var(--gray-200); }
         .comp-table tbody td:nth-child(3) { background: #ECFDF5; color: #047857; font-weight: 600; }
         .comp-table tbody tr:last-child td { border-bottom: none; }
-        .comp-icon { font-size: 1.6rem; display: block; margin-bottom: 6px; }
-        .comp-main { font-weight: 700; display: block; margin-bottom: 4px; font-size: 1rem; }
+        .comp-icon-wrap { display: flex; justify-content: center; margin-bottom: 8px; color: var(--orange-600); }
+        .comp-table tbody td:nth-child(3) .comp-icon-wrap { color: #047857; }
+        .comp-main { font-weight: 700; display: block; margin-bottom: 4px; font-size: 1rem; display: inline-flex; align-items: center; gap: 6px; }
         .comp-sub { font-size: 0.82rem; display: block; opacity: 0.85; line-height: 1.5; }
         .comp-swipe-hint { display: none; text-align: center; margin-top: 10px; font-size: 0.75rem; color: var(--gray-400); }
 
@@ -292,14 +264,14 @@
             border-radius: var(--radius-lg); padding: 36px 28px;
             text-align: center; box-shadow: var(--shadow-md);
         }
-        .inline-cta-badge { display: inline-block; background: var(--green-500); color: white; padding: 6px 18px; border-radius: 50px; font-size: 0.8rem; font-weight: 700; margin-bottom: 16px; }
+        .inline-cta-badge { display: inline-flex; align-items: center; gap: 6px; background: var(--green-500); color: white; padding: 6px 18px; border-radius: 50px; font-size: 0.8rem; font-weight: 700; margin-bottom: 16px; }
         .inline-cta h4 { font-size: 1.4rem; font-weight: 900; margin-bottom: 20px; line-height: 1.4; }
         .inline-cta-list { background: var(--orange-50); padding: 18px 20px; border-radius: var(--radius-sm); text-align: left; margin-bottom: 20px; }
         .inline-cta-list p { font-size: 0.95rem; padding: 6px 0; display: flex; align-items: center; gap: 10px; }
-        .inline-cta-list p span { color: var(--green-500); font-weight: 700; }
+        .inline-cta-list p .check-icon { color: var(--green-500); flex-shrink: 0; }
         .inline-cta .note { font-size: 0.75rem; color: var(--gray-400); margin-top: 12px; }
         .campaign-highlight-box { background: linear-gradient(135deg, #EFF6FF, #DBEAFE); border: 2px dashed #3B82F6; border-radius: var(--radius-sm); padding: 14px 18px; margin-bottom: 16px; text-align: center; }
-        .campaign-highlight-box .chb-main { font-size: 1.15rem; font-weight: 900; color: #1E3A8A; line-height: 1.3; }
+        .campaign-highlight-box .chb-main { font-size: 1.15rem; font-weight: 900; color: #1E3A8A; line-height: 1.3; display: inline-flex; align-items: center; gap: 8px; }
         .campaign-highlight-box .chb-sub { font-size: 0.78rem; color: #1E40AF; margin-top: 4px; }
 
         .solution-section { padding: 100px 24px; background: var(--cream); }
@@ -316,27 +288,55 @@
         .features-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 24px; position: relative; z-index: 1; }
         .feature-card { background: rgba(255,255,255,0.06); backdrop-filter: blur(10px); border: 1px solid rgba(255,255,255,0.08); border-radius: var(--radius-md); padding: 36px 28px; transition: all 0.3s; }
         .feature-card:hover { background: rgba(255,255,255,0.1); transform: translateY(-4px); border-color: rgba(37,99,235,0.3); }
-        .feature-card .icon { font-size: 2.4rem; margin-bottom: 16px; display: block; }
+        .feature-card .feature-icon { color: var(--orange-400); margin-bottom: 16px; display: flex; }
         .feature-card h3 { font-size: 1.15rem; font-weight: 700; color: white; margin-bottom: 10px; }
         .feature-card p { font-size: 0.9rem; color: rgba(255,255,255,0.65); line-height: 1.7; }
         .features-tagline { text-align: center; margin-top: 56px; position: relative; z-index: 1; }
         .features-tagline p { font-size: 1.3rem; font-weight: 700; color: rgba(255,255,255,0.85); line-height: 1.6; }
 
         .influencer-section { padding: 100px 24px; background: var(--cream); overflow: hidden; }
-        .influencer-track-wrapper { overflow: hidden; margin: 48px 0; }
-        .influencer-track { display: flex; gap: 28px; animation: scrollCards 45s linear infinite; }
+        .influencer-track-wrapper { overflow: hidden; margin: 56px 0 32px; padding: 16px 0; }
+        .influencer-track { display: flex; gap: 32px; animation: scrollCards 60s linear infinite; }
         .influencer-track:hover { animation-play-state: paused; }
         @keyframes scrollCards { 0% { transform: translateX(0); } 100% { transform: translateX(-50%); } }
-        .inf-card { min-width: 320px; max-width: 320px; background: white; border-radius: var(--radius-md); padding: 32px 24px; box-shadow: var(--shadow-soft); flex-shrink: 0; transition: transform 0.3s; }
-        .inf-card:hover { transform: translateY(-4px); }
-        .inf-card-header { display: flex; align-items: center; gap: 14px; margin-bottom: 16px; }
-        .inf-card-header img { width: 56px; height: 56px; border-radius: 50%; object-fit: cover; }
-        .inf-name { font-size: 0.95rem; font-weight: 700; }
-        .inf-details { font-size: 0.75rem; color: var(--gray-400); }
-        .inf-card h4 { font-size: 0.9rem; font-weight: 700; color: var(--charcoal); margin-bottom: 10px; }
-        .inf-card p { font-size: 0.82rem; color: var(--gray-600); line-height: 1.6; }
-        .inf-card .inf-body { background: var(--cream); padding: 16px; border-radius: var(--radius-sm); }
+        .inf-card { min-width: 420px; max-width: 420px; background: white; border-radius: var(--radius-md); padding: 36px 32px; box-shadow: var(--shadow-md); flex-shrink: 0; transition: all 0.3s; border: 1px solid var(--gray-200); position: relative; }
+        .inf-card::before { content: '"'; position: absolute; top: 8px; right: 20px; font-size: 5rem; line-height: 1; color: #DBEAFE; font-family: Georgia, serif; font-weight: 700; pointer-events: none; }
+        .inf-card:hover { transform: translateY(-6px); box-shadow: var(--shadow-lg); border-color: #BFDBFE; }
+        .inf-card-header { display: flex; align-items: center; gap: 16px; margin-bottom: 20px; position: relative; z-index: 1; }
+        .inf-card-header img { width: 72px; height: 72px; border-radius: 50%; object-fit: cover; border: 3px solid white; box-shadow: 0 4px 14px rgba(0,0,0,0.12); }
+        .inf-name { font-size: 1.05rem; font-weight: 800; color: var(--charcoal); }
+        .inf-details { font-size: 0.78rem; color: var(--gray-400); font-weight: 500; margin-top: 3px; }
+        .inf-card h4 { font-size: 1.05rem; font-weight: 700; color: var(--charcoal); margin-bottom: 12px; line-height: 1.55; }
+        .inf-card p { font-size: 0.92rem; color: var(--gray-600); line-height: 1.8; }
+        .inf-card .inf-body { background: var(--orange-50); padding: 20px; border-radius: var(--radius-sm); border-left: 3px solid var(--orange-500); }
         .anniversary-badge { text-align: center; margin-top: 48px; font-size: 1.5rem; font-weight: 900; color: var(--charcoal); }
+
+        /* Industry comparison */
+        .industry-section { padding: 100px 24px; background: var(--warm-white); }
+        .industry-table-wrap { max-width: 980px; margin: 0 auto; overflow-x: auto; -webkit-overflow-scrolling: touch; }
+        .industry-table { width: 100%; min-width: 720px; border-collapse: separate; border-spacing: 0; background: white; border-radius: 20px; overflow: hidden; box-shadow: var(--shadow-lg); }
+        .industry-table thead th { background: var(--charcoal); color: white; padding: 18px 14px; font-size: 0.85rem; font-weight: 800; }
+        .industry-table thead th.left { text-align: left; }
+        .industry-table thead th.center { text-align: center; }
+        .industry-table tbody td { padding: 18px 14px; font-size: 0.92rem; border-bottom: 1px solid var(--gray-200); }
+        .industry-table tbody td:first-child { font-weight: 700; color: var(--charcoal); font-size: 0.95rem; }
+        .industry-table tbody td:first-child .row-icon-wrap { display: inline-flex; align-items: center; gap: 8px; }
+        .industry-table tbody td.center { text-align: center; color: var(--gray-600); }
+        .industry-table tbody td.unit { color: #DC2626; font-weight: 800; font-size: 1rem; }
+        .industry-table tbody td.no-live { color: var(--gray-400); font-size: 0.85rem; }
+        .industry-table tbody tr.sa-row { background: linear-gradient(90deg, #EFF6FF, #DBEAFE); border-top: 3px solid #1D4ED8; }
+        .industry-table tbody tr.sa-row td:first-child { font-weight: 900; color: #1E3A8A; font-size: 1rem; padding: 22px 14px; }
+        .industry-table tbody tr.sa-row td.center { font-weight: 900; color: #1D4ED8; font-size: 1.15rem; padding: 22px 14px; }
+        .industry-table tbody tr.sa-row td.unit { font-weight: 900; color: #059669; font-size: 1.5rem; padding: 22px 14px; }
+        .industry-table tbody tr.sa-row .sa-sub { font-size: 0.72rem; font-weight: 700; color: #1D4ED8; display: block; margin-top: 2px; }
+        .industry-table tbody tr.sa-row .sa-sub-light { font-size: 0.72rem; font-weight: 700; color: #1D4ED8; display: block; margin-top: 2px; }
+        .industry-note { text-align: center; margin-top: 14px; font-size: 0.72rem; color: var(--gray-400); line-height: 1.6; }
+        .industry-summary { max-width: 760px; margin: 36px auto 0; padding: 28px; background: white; border-radius: 16px; border-left: 4px solid var(--orange-500); box-shadow: var(--shadow-soft); }
+        .industry-summary p { font-size: 0.95rem; color: var(--gray-600); font-weight: 500; line-height: 1.7; margin-bottom: 10px; }
+        .industry-summary p.main { font-size: 1.1rem; font-weight: 700; color: var(--charcoal); margin-bottom: 14px; display: flex; align-items: flex-start; gap: 10px; }
+        .industry-summary p.main strong { color: var(--orange-600); }
+        .industry-summary p.main .icon-bulb { color: var(--orange-500); flex-shrink: 0; margin-top: 3px; }
+        .industry-summary p strong { color: var(--charcoal); }
 
         .pricing-section { padding: 100px 24px; background: white; }
         .pricing-grid { display: grid; grid-template-columns: 1fr; gap: 24px; max-width: 460px; margin: 0 auto; }
@@ -359,7 +359,7 @@
             border: 2px solid #3B82F6; border-radius: var(--radius-lg);
             padding: 28px 28px 24px; text-align: center;
         }
-        .entry-campaign-pill { display: inline-block; background: #1D4ED8; color: white; font-size: 0.78rem; font-weight: 700; padding: 5px 16px; border-radius: 50px; margin-bottom: 14px; }
+        .entry-campaign-pill { display: inline-flex; align-items: center; gap: 6px; background: #1D4ED8; color: white; font-size: 0.78rem; font-weight: 700; padding: 5px 16px; border-radius: 50px; margin-bottom: 14px; }
         .entry-campaign-title { font-size: 1.3rem; font-weight: 900; color: #1E3A8A; margin-bottom: 14px; line-height: 1.4; }
         .entry-campaign-desc { font-size: 0.95rem; font-weight: 600; color: #1E3A8A; line-height: 1.7; }
         .entry-campaign-desc strong { color: #1D4ED8; }
@@ -372,7 +372,7 @@
         .final-cta-card h3 { font-size: 1.7rem; font-weight: 900; margin-bottom: 24px; line-height: 1.4; }
 
         .email-divider { margin-top: 24px; padding-top: 24px; border-top: 2px dashed var(--gray-200); }
-        .email-divider .email-label { font-size: 0.85rem; color: var(--gray-400); margin-bottom: 12px; font-weight: 600; }
+        .email-divider .email-label { font-size: 0.85rem; color: var(--gray-400); margin-bottom: 12px; font-weight: 600; display: inline-flex; align-items: center; gap: 6px; }
         .email-form-row { display: flex; gap: 8px; }
         .email-input { flex: 1; padding: 12px 18px; border: 2px solid var(--gray-200); border-radius: 50px; font-size: 0.9rem; font-family: inherit; transition: border-color 0.2s; }
         .email-input:focus { outline: none; border-color: var(--orange-500); }
@@ -389,7 +389,7 @@
         .fixed-cta { position: fixed; bottom: 0; left: 0; right: 0; background: rgba(28,25,23,0.95); backdrop-filter: blur(12px); padding: 14px 20px; z-index: 1000; display: flex; flex-direction: column; align-items: center; gap: 6px; transform: translateY(100%); animation: slideUpCTA 0.5s ease-out 2s forwards; }
         @keyframes slideUpCTA { to { transform: translateY(0); } }
         .fixed-cta-btn { width: 100%; max-width: 400px; background: linear-gradient(135deg, #1D4ED8, #3B82F6); color: white; border: none; padding: 14px 28px; border-radius: 50px; font-size: 1.05rem; font-weight: 800; cursor: pointer; transition: all 0.2s; font-family: inherit; display: flex; align-items: center; justify-content: center; gap: 8px; }
-        .fixed-cta-note { font-size: 0.72rem; color: #FCD34D; font-weight: 700; }
+        .fixed-cta-note { font-size: 0.72rem; color: #FCD34D; font-weight: 700; display: inline-flex; align-items: center; gap: 6px; }
 
         @keyframes gentle-pulse {
             0%, 100% { box-shadow: 0 8px 28px rgba(29,78,216,0.3); }
@@ -416,11 +416,6 @@
             .hero-eyebrow { font-size: 0.72rem; padding: 6px 12px; text-align: left; }
             .hero h1 { font-size: 1.65rem; margin-bottom: 12px; } .hero-sub { font-size: 0.9rem; margin-bottom: 20px; }
             .campaign-card { padding: 16px; margin-bottom: 16px; } .campaign-card-title { font-size: 1.05rem; } .campaign-card-title em { font-size: 1.25rem; } .campaign-card-sub { font-size: 0.82rem; }
-            .date-strip { gap: 4px; }
-            .date-strip-box { padding: 8px 6px; }
-            .date-strip-date { font-size: 0.85rem; }
-            .date-strip-label { font-size: 0.62rem; }
-            .date-strip-arrow { font-size: 0.75rem; }
             .hero-cta-group { max-width: 100%; gap: 8px; } .btn-campaign { font-size: 0.95rem; padding: 14px 24px; }
             .proof-bar { padding: 24px 16px; } .proof-items { display: grid; grid-template-columns: repeat(2, 1fr); gap: 12px; } .proof-item { background: white; border-radius: 12px; padding: 14px 8px; box-shadow: var(--shadow-soft); } .proof-number { font-size: 1.6rem; } .proof-label { font-size: 0.72rem; }
             .section-label { margin-bottom: 28px; } .section-label h2 { font-size: 1.35rem; line-height: 1.5; } .section-label p { font-size: 0.88rem; }
@@ -428,22 +423,62 @@
             .testimonials-section { padding: 48px 16px; } .testi-grid { grid-template-columns: 1fr; gap: 20px; } .testi-img { order: -1; text-align: center; } .testi-img img { max-width: 70%; } .testi-card { padding: 16px; } .testi-card p { font-size: 0.88rem; } .testi-highlight { font-size: 1.05rem; margin-top: 20px; }
             .schedule-section { padding: 48px 16px; } .schedule-intro p { font-size: 0.88rem; } .schedule-row { padding: 10px 14px; gap: 8px; } .schedule-time { min-width: 52px; font-size: 0.72rem; } .schedule-activity { font-size: 0.82rem; } .schedule-tag { font-size: 0.65rem; padding: 3px 8px; } .schedule-note { font-size: 0.8rem; }
             .problem-section { padding: 48px 16px; } .problem-grid { grid-template-columns: 1fr; gap: 20px; } .problem-img { display: none; } .problem-text h3 { font-size: 1.2rem; } .problem-text p { font-size: 0.9rem; } .pain-list li { padding: 12px 16px; font-size: 0.88rem; gap: 10px; } .problem-answer p { font-size: 0.95rem; }
-            .comparison-section { padding: 48px 16px; } .comp-table-wrap { overflow-x: auto; margin: 0 -16px; padding: 0 16px; } .comp-table { min-width: 560px; } .comp-swipe-hint { display: block; } .comp-table thead th { padding: 14px 12px; font-size: 0.8rem; } .comp-table tbody td { padding: 14px 12px; font-size: 0.82rem; } .comp-icon { font-size: 1.2rem; } .comp-main { font-size: 0.88rem; } .comp-sub { font-size: 0.72rem; }
+            .comparison-section { padding: 48px 16px; } .comp-table-wrap { overflow-x: auto; margin: 0 -16px; padding: 0 16px; } .comp-table { min-width: 560px; } .comp-swipe-hint { display: block; } .comp-table thead th { padding: 14px 12px; font-size: 0.8rem; } .comp-table tbody td { padding: 14px 12px; font-size: 0.82rem; } .comp-main { font-size: 0.88rem; } .comp-sub { font-size: 0.72rem; }
             .inline-cta { margin: 32px 0 0; padding: 24px 16px; } .inline-cta h4 { font-size: 1.15rem; } .inline-cta-list p { font-size: 0.85rem; }
             .solution-section { padding: 48px 16px; } .solution-grid { grid-template-columns: 1fr; gap: 20px; } .solution-img { display: none; } .solution-text h2 { font-size: 1.3rem; } .solution-text p { font-size: 0.9rem; } .solution-text .emphasis { font-size: 0.95rem; padding: 14px; }
-            .features-section { padding: 48px 16px; } .features-grid { grid-template-columns: 1fr 1fr; gap: 10px; } .feature-card { padding: 16px 14px; } .feature-card .icon { font-size: 1.8rem; margin-bottom: 10px; } .feature-card h3 { font-size: 0.9rem; margin-bottom: 6px; } .feature-card p { font-size: 0.75rem; line-height: 1.6; } .features-tagline { margin-top: 32px; } .features-tagline p { font-size: 1rem; }
-            .influencer-section { padding: 48px 0; } .influencer-section .container { padding: 0 16px; } .influencer-track-wrapper { overflow-x: auto; padding: 0 16px 16px; scroll-snap-type: x mandatory; -webkit-overflow-scrolling: touch; } .influencer-track { animation: none; gap: 12px; width: max-content; } .inf-card { min-width: 260px; max-width: 260px; scroll-snap-align: start; padding: 20px 16px; } .inf-card h4 { font-size: 0.82rem; } .inf-card p { font-size: 0.75rem; } .anniversary-badge { font-size: 1.1rem; padding: 0 16px; }
+            .features-section { padding: 48px 16px; } .features-grid { grid-template-columns: 1fr 1fr; gap: 10px; } .feature-card { padding: 16px 14px; } .feature-card .feature-icon { margin-bottom: 10px; } .feature-card h3 { font-size: 0.9rem; margin-bottom: 6px; } .feature-card p { font-size: 0.75rem; line-height: 1.6; } .features-tagline { margin-top: 32px; } .features-tagline p { font-size: 1rem; }
+            .influencer-section { padding: 48px 0; } .influencer-section .container { padding: 0 16px; } .influencer-track-wrapper { overflow-x: auto; padding: 16px; scroll-snap-type: x mandatory; -webkit-overflow-scrolling: touch; margin: 32px -16px 24px; } .influencer-track { animation: none; gap: 16px; width: max-content; padding: 0 16px; } .inf-card { min-width: 320px; max-width: 320px; scroll-snap-align: start; padding: 28px 22px; } .inf-card::before { font-size: 4rem; top: 4px; right: 16px; } .inf-card-header img { width: 60px; height: 60px; } .inf-name { font-size: 0.95rem; } .inf-details { font-size: 0.72rem; } .inf-card h4 { font-size: 0.95rem; } .inf-card p { font-size: 0.82rem; } .inf-card .inf-body { padding: 16px; } .anniversary-badge { font-size: 1.1rem; padding: 0 16px; }
+            .industry-section { padding: 48px 16px; }
+            .industry-table-wrap { margin: 0 -16px; padding: 0 16px; }
+            .industry-table { min-width: 600px; }
+            .industry-table thead th { padding: 12px 10px; font-size: 0.78rem; }
+            .industry-table tbody td { padding: 14px 10px; font-size: 0.82rem; }
+            .industry-table tbody tr.sa-row td:first-child { font-size: 0.88rem; padding: 16px 10px; }
+            .industry-table tbody tr.sa-row td.center { font-size: 1rem; padding: 16px 10px; }
+            .industry-table tbody tr.sa-row td.unit { font-size: 1.25rem; padding: 16px 10px; }
+            .industry-summary { padding: 20px 16px; } .industry-summary p.main { font-size: 0.95rem; }
             .pricing-section { padding: 48px 16px; } .pricing-grid { grid-template-columns: 1fr; max-width: 100%; gap: 16px; } .price-card { padding: 24px 18px; } .price-amount { font-size: 2rem; } .entry-campaign-block { padding: 20px 16px; } .entry-campaign-title { font-size: 1.1rem; } .entry-campaign-desc { font-size: 0.88rem; }
             .final-cta { padding: 48px 16px; } .final-cta-card { padding: 24px 16px; } .final-cta-card h3 { font-size: 1.2rem; margin-bottom: 16px; } .inline-cta-list p { font-size: 0.85rem; } .email-form-row { flex-direction: column; }
             .site-footer { padding: 40px 16px 100px; }
             .fixed-cta { padding: 8px 14px; gap: 2px; } .fixed-cta-btn { padding: 10px 18px; font-size: 0.88rem; max-width: 100%; } .fixed-cta-note { font-size: 0.65rem; }
         }
         @media (max-width: 390px) {
-            .hero h1 { font-size: 1.45rem; } .hero-eyebrow { font-size: 0.65rem; } .features-grid { grid-template-columns: 1fr; } .proof-items { grid-template-columns: repeat(2, 1fr); gap: 8px; } .section-label h2 { font-size: 1.2rem; } .comp-table { min-width: 480px; }
+            .hero h1 { font-size: 1.45rem; } .hero-eyebrow { font-size: 0.65rem; } .features-grid { grid-template-columns: 1fr; } .proof-items { grid-template-columns: repeat(2, 1fr); gap: 8px; } .section-label h2 { font-size: 1.2rem; } .comp-table { min-width: 480px; } .industry-table { min-width: 500px; }
         }
     </style>
 </head>
 <body>
+    <!-- SVG Icon Definitions (hidden, referenced via <use>) -->
+    <svg width="0" height="0" style="position:absolute;" aria-hidden="true">
+        <defs>
+            <symbol id="i-calendar" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="4" width="18" height="18" rx="2" ry="2"/><line x1="16" y1="2" x2="16" y2="6"/><line x1="8" y1="2" x2="8" y2="6"/><line x1="3" y1="10" x2="21" y2="10"/></symbol>
+            <symbol id="i-globe" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><line x1="2" y1="12" x2="22" y2="12"/><path d="M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z"/></symbol>
+            <symbol id="i-graduation" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 10v6M2 10l10-5 10 5-10 5z"/><path d="M6 12v5c3 3 9 3 12 0v-5"/></symbol>
+            <symbol id="i-book" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M2 3h6a4 4 0 0 1 4 4v14a3 3 0 0 0-3-3H2z"/><path d="M22 3h-6a4 4 0 0 0-4 4v14a3 3 0 0 1 3-3h7z"/></symbol>
+            <symbol id="i-car" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M19 17h2c.6 0 1-.4 1-1v-3c0-.9-.7-1.7-1.5-1.9L18.4 7.8c-.4-1.1-1.4-1.8-2.6-1.8H6.5C5.4 6 4.4 6.7 4 7.8L2.5 11.1C1.7 11.3 1 12.1 1 13v3c0 .6.4 1 1 1h2"/><circle cx="7" cy="17" r="2"/><path d="M9 17h6"/><circle cx="17" cy="17" r="2"/></symbol>
+            <symbol id="i-clock" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></symbol>
+            <symbol id="i-home" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M3 9l9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"/><polyline points="9 22 9 12 15 12 15 22"/></symbol>
+            <symbol id="i-dollar" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="12" y1="1" x2="12" y2="23"/><path d="M17 5H9.5a3.5 3.5 0 0 0 0 7h5a3.5 3.5 0 0 1 0 7H6"/></symbol>
+            <symbol id="i-wallet" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M20 12V8H6a2 2 0 0 1-2-2c0-1.1.9-2 2-2h12v4"/><path d="M4 6v12c0 1.1.9 2 2 2h14v-4"/><path d="M18 12a2 2 0 0 0-2 2c0 1.1.9 2 2 2h4v-4z"/></symbol>
+            <symbol id="i-target" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><circle cx="12" cy="12" r="6"/><circle cx="12" cy="12" r="2"/></symbol>
+            <symbol id="i-timer" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="10" y1="2" x2="14" y2="2"/><line x1="12" y1="14" x2="15" y2="11"/><circle cx="12" cy="14" r="8"/></symbol>
+            <symbol id="i-sparkles" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 3l1.5 4.5L18 9l-4.5 1.5L12 15l-1.5-4.5L6 9l4.5-1.5z"/><path d="M19 14l.6 1.8L21.5 16.5l-1.9.7L19 19l-.6-1.8L16.5 16.5l1.9-.7z"/><path d="M5 16l.4 1.2L6.5 17.5l-1.1.3L5 19l-.4-1.2L3.5 17.5l1.1-.3z"/></symbol>
+            <symbol id="i-sunrise" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M17 18a5 5 0 0 0-10 0"/><line x1="12" y1="2" x2="12" y2="9"/><line x1="4.22" y1="10.22" x2="5.64" y2="11.64"/><line x1="1" y1="18" x2="3" y2="18"/><line x1="21" y1="18" x2="23" y2="18"/><line x1="18.36" y1="11.64" x2="19.78" y2="10.22"/><line x1="23" y1="22" x2="1" y2="22"/><polyline points="8 6 12 2 16 6"/></symbol>
+            <symbol id="i-alert" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><line x1="12" y1="8" x2="12" y2="12"/><line x1="12" y1="16" x2="12.01" y2="16"/></symbol>
+            <symbol id="i-check-circle" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"/><polyline points="22 4 12 14.01 9 11.01"/></symbol>
+            <symbol id="i-zap" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polygon points="13 2 3 14 12 14 11 22 21 10 12 10 13 2"/></symbol>
+            <symbol id="i-scale" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M16 16.6c0 .3.2.5.5.5h2c.3 0 .5-.2.5-.5l-1-3.6c-.6-2.2-1-3.4-1.5-3.4-.5 0-.9 1.2-1.5 3.4l-1 3.6c0 .3.2.5.5.5z"/><path d="M3 16.6c0 .3.2.5.5.5h2c.3 0 .5-.2.5-.5l-1-3.6C4.4 10.8 4 9.6 3.5 9.6 3 9.6 2.6 10.8 2 13l-1 3.6c0 .3.2.5.5.5z"/><line x1="7" y1="21" x2="17" y2="21"/><line x1="12" y1="3" x2="12" y2="21"/></symbol>
+            <symbol id="i-school" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 10v6M2 10l10-5 10 5-10 5z"/><path d="M6 12v5c3 3 9 3 12 0v-5"/></symbol>
+            <symbol id="i-user" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"/><circle cx="12" cy="7" r="4"/></symbol>
+            <symbol id="i-monitor" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="3" width="20" height="14" rx="2" ry="2"/><line x1="8" y1="21" x2="16" y2="21"/><line x1="12" y1="17" x2="12" y2="21"/></symbol>
+            <symbol id="i-star" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></symbol>
+            <symbol id="i-bulb" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M9 18h6"/><path d="M10 22h4"/><path d="M15.09 14c.18-.98.65-1.74 1.41-2.5A4.65 4.65 0 0 0 18 8 6 6 0 0 0 6 8c0 1 .23 2.23 1.5 3.5A4.61 4.61 0 0 1 8.91 14"/></symbol>
+            <symbol id="i-phone" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="5" y="2" width="14" height="20" rx="2" ry="2"/><line x1="12" y1="18" x2="12.01" y2="18"/></symbol>
+            <symbol id="i-check" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></symbol>
+            <symbol id="i-mail" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,13 2,6"/></symbol>
+        </defs>
+    </svg>
+
     <!-- Google Tag Manager (noscript) -->
     <noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-MRBZFQZ9"
     height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
@@ -451,8 +486,8 @@
 
     <div class="campaign-banner">
         <div class="banner-inner">
-            <span class="banner-main">📅 次回クール 7/6（月）開始！</span>
-            <span class="banner-sub">6月末までの登録がおすすめ｜LINEで先行配信中</span>
+            <span class="banner-main"><svg class="icon icon-sm" aria-hidden="true"><use href="#i-calendar"/></svg>次回クール 7/6（月）開始</span>
+            <span class="banner-sub">LINEで詳細・特別案内を配信中</span>
         </div>
     </div>
 
@@ -467,17 +502,17 @@
         <div class="container">
             <div class="hero-grid">
                 <div class="hero-text-col">
-                    <div class="hero-eyebrow">🌍 世界34カ国・累計1,400人以上の家族が選ぶオンライン日本語スクール</div>
+                    <div class="hero-eyebrow"><svg class="icon icon-sm" aria-hidden="true"><use href="#i-globe"/></svg>世界34カ国・累計1,400人以上の家族が選ぶオンライン日本語スクール</div>
                     <h1>海外にいても、<br>お子さまの<em>「日本語」</em>は<br>伸ばせる。</h1>
                     <p class="hero-sub">継続率92.5%が証明する、海外っ子のための日本語スクール。<br>1日たった25分・送迎なし・宿題なしで、<br>毎日の小さな「できた！」が日本語への自信に変わります。</p>
                     <div class="campaign-card">
-                        <div class="campaign-card-badge">📅 次回クールのお知らせ</div>
-                        <div class="campaign-card-title">次回クールは<br><em>7月6日（月）から開始！</em></div>
-                        <div class="campaign-card-sub"><strong>6月末までの登録がおすすめ。</strong>お得なキャンペーン情報はLINEで先行配信中！</div>
+                        <div class="campaign-card-badge"><svg class="icon icon-sm" aria-hidden="true"><use href="#i-calendar"/></svg>次回クールのお知らせ</div>
+                        <div class="campaign-card-title">次回クールは<br><em>7月6日（月）から開始</em></div>
+                        <div class="campaign-card-sub">クラスの詳細やお申込みは、<strong>LINEより資料請求</strong>をお願いいたします。LINE限定の特別案内も配信中です。</div>
                     </div>
                     <div class="hero-cta-group">
                         <button class="btn-campaign pulse-btn" onclick="event.preventDefault(); trackLineClick(); setTimeout(function(){window.open('https://line.me/R/ti/p/@359fnsdb','_blank');},300);">資料請求はこちら</button>
-                        <p class="btn-micro">※ 登録無料・いつでも解除OK｜LINE登録でお得なキャンペーン情報も配信中</p>
+                        <p class="btn-micro">※ 登録無料・いつでも解除OK｜LINEで詳細をご案内します</p>
                     </div>
                 </div>
                 <div class="hero-visual">
@@ -523,24 +558,24 @@
 
     <section class="schedule-section">
         <div class="container">
-            <div class="section-label"><span class="eyebrow">📅 1日のスケジュール例</span><h2>たった25分。<br>毎日の生活に、自然と溶け込む。</h2></div>
+            <div class="section-label"><span class="eyebrow"><svg class="icon icon-sm" aria-hidden="true"><use href="#i-calendar"/></svg>1日のスケジュール例</span><h2>たった25分。<br>毎日の生活に、自然と溶け込む。</h2></div>
             <div class="schedule-wrap">
                 <div class="schedule-intro"><p>「忙しくて続かない」と思っていたのに、<br>気づけば毎日の習慣になっていた——<br>それがサクセスアカデミーの25分です。</p></div>
                 <div class="schedule-table-outer" style="margin-bottom: 20px;">
-                    <div class="schedule-day-label">🗓️ 平日（現地校がある日）のスケジュール例</div>
+                    <div class="schedule-day-label"><svg class="icon icon-md" aria-hidden="true"><use href="#i-calendar"/></svg>平日（現地校がある日）のスケジュール例</div>
                     <div class="schedule-rows">
                         <div class="schedule-row"><span class="schedule-time">7:00</span><span class="schedule-activity">起床・朝食</span><span class="schedule-tag tag-normal">日常</span></div>
                         <div class="schedule-row"><span class="schedule-time">8:00</span><span class="schedule-activity">現地校 登校</span><span class="schedule-tag tag-normal">学校</span></div>
                         <div class="schedule-row"><span class="schedule-time">15:30</span><span class="schedule-activity">帰宅・おやつ</span><span class="schedule-tag tag-normal">日常</span></div>
-                        <div class="schedule-row schedule-highlight-row"><span class="schedule-time">16:00</span><span class="schedule-activity">✨ サクセスアカデミー（25分）</span><span class="schedule-tag tag-success">日本語・算数</span></div>
+                        <div class="schedule-row schedule-highlight-row"><span class="schedule-time">16:00</span><span class="schedule-activity"><svg class="icon icon-md" style="color:#1D4ED8" aria-hidden="true"><use href="#i-sparkles"/></svg>サクセスアカデミー（25分）</span><span class="schedule-tag tag-success">日本語・算数</span></div>
                         <div class="schedule-row"><span class="schedule-time">16:30</span><span class="schedule-activity">友達と遊ぶ・習い事・家族の時間</span><span class="schedule-tag tag-normal">自由時間</span></div>
                         <div class="schedule-row"><span class="schedule-time">19:00</span><span class="schedule-activity">夕食・入浴・就寝準備</span><span class="schedule-tag tag-normal">日常</span></div>
                     </div>
                 </div>
                 <div class="schedule-table-outer">
-                    <div class="schedule-day-label" style="background: #059669;">🌅 朝に受講するパターン（時差対応）</div>
+                    <div class="schedule-day-label" style="background: #059669;"><svg class="icon icon-md" aria-hidden="true"><use href="#i-sunrise"/></svg>朝に受講するパターン（時差対応）</div>
                     <div class="schedule-rows">
-                        <div class="schedule-row schedule-highlight-row"><span class="schedule-time">7:00</span><span class="schedule-activity">✨ サクセスアカデミー（25分）</span><span class="schedule-tag tag-success">日本語・算数</span></div>
+                        <div class="schedule-row schedule-highlight-row"><span class="schedule-time">7:00</span><span class="schedule-activity"><svg class="icon icon-md" style="color:#1D4ED8" aria-hidden="true"><use href="#i-sparkles"/></svg>サクセスアカデミー（25分）</span><span class="schedule-tag tag-success">日本語・算数</span></div>
                         <div class="schedule-row"><span class="schedule-time">7:30</span><span class="schedule-activity">朝食・支度</span><span class="schedule-tag tag-normal">日常</span></div>
                         <div class="schedule-row"><span class="schedule-time">8:30</span><span class="schedule-activity">現地校 登校</span><span class="schedule-tag tag-normal">学校</span></div>
                     </div>
@@ -573,31 +608,51 @@
 
     <section class="comparison-section">
         <div class="container">
-            <div class="section-label"><span class="eyebrow">⚡ 徹底比較</span><h2>日本語教育のお悩み、<br>サクセスが解決します</h2><p>一目で分かる、圧倒的な違い</p></div>
+            <div class="section-label"><span class="eyebrow"><svg class="icon icon-sm" aria-hidden="true"><use href="#i-zap"/></svg>徹底比較</span><h2>日本語教育のお悩み、<br>サクセスが解決します</h2><p>一目で分かる、圧倒的な違い</p></div>
             <div class="comp-table-wrap">
                 <table class="comp-table">
-                    <thead><tr><th>比較項目</th><th>😰 補習校の課題</th><th>✅ サクセスの解決策</th></tr></thead>
+                    <thead><tr><th>比較項目</th><th><span class="th-inner"><svg class="icon icon-sm" aria-hidden="true"><use href="#i-alert"/></svg>補習校の課題</span></th><th><span class="th-inner"><svg class="icon icon-sm" aria-hidden="true"><use href="#i-check-circle"/></svg>サクセスの解決策</span></th></tr></thead>
                     <tbody>
-                        <tr><td><span class="comp-icon">🚗</span>送迎</td><td><span class="comp-main">毎週の送迎が大変</span><span class="comp-sub">土日の貴重な時間が送迎で消える</span></td><td><span class="comp-main">🏠 送迎完全不要！</span><span class="comp-sub">自宅からオンラインで参加、移動時間ゼロ</span></td></tr>
-                        <tr><td><span class="comp-icon">💰</span>費用</td><td><span class="comp-main">年間数十万円</span><span class="comp-sub">授業料・教材費・施設費で家計に負担</span></td><td><span class="comp-main">💵 月額50USD～</span><span class="comp-sub">補習校の1/3以下で週5日学び放題</span></td></tr>
-                        <tr><td><span class="comp-icon">📚</span>宿題</td><td><span class="comp-main">宿題が多すぎる</span><span class="comp-sub">大量の宿題で親子にストレス</span></td><td><span class="comp-main">⏱️ 25分で完結</span><span class="comp-sub">宿題なし！現地校との両立も楽々</span></td></tr>
-                        <tr><td><span class="comp-icon">📖</span>レベル</td><td><span class="comp-main">学年が上がると難しい</span><span class="comp-sub">ついていけず自信を失う</span></td><td><span class="comp-main">🎯 レベル別クラス</span><span class="comp-sub">お子様に合った学年で「できた！」を増やす</span></td></tr>
+                        <tr>
+                            <td><div class="comp-icon-wrap"><svg class="icon icon-lg" aria-hidden="true"><use href="#i-car"/></svg></div>送迎</td>
+                            <td><span class="comp-main">毎週の送迎が大変</span><span class="comp-sub">土日の貴重な時間が送迎で消える</span></td>
+                            <td><span class="comp-main"><svg class="icon icon-sm" aria-hidden="true"><use href="#i-home"/></svg>送迎完全不要！</span><span class="comp-sub">自宅からオンラインで参加、移動時間ゼロ</span></td>
+                        </tr>
+                        <tr>
+                            <td><div class="comp-icon-wrap"><svg class="icon icon-lg" aria-hidden="true"><use href="#i-calendar"/></svg></div>学習頻度</td>
+                            <td><span class="comp-main">週1日・月4日</span><span class="comp-sub">期間が空き、習った内容を忘れてしまう</span></td>
+                            <td><span class="comp-main"><svg class="icon icon-sm" aria-hidden="true"><use href="#i-star"/></svg>毎日・月20日</span><span class="comp-sub">1日複数クラス受講もOK（補習校の5倍以上）</span></td>
+                        </tr>
+                        <tr>
+                            <td><div class="comp-icon-wrap"><svg class="icon icon-lg" aria-hidden="true"><use href="#i-wallet"/></svg></div>費用</td>
+                            <td><span class="comp-main">年間数十万円</span><span class="comp-sub">月4日分で授業料・教材費・施設費</span></td>
+                            <td><span class="comp-main"><svg class="icon icon-sm" aria-hidden="true"><use href="#i-dollar"/></svg>月額200USD・1日$10</span><span class="comp-sub">全学年アクセス可能・追加料金一切なし</span></td>
+                        </tr>
+                        <tr>
+                            <td><div class="comp-icon-wrap"><svg class="icon icon-lg" aria-hidden="true"><use href="#i-book"/></svg></div>宿題</td>
+                            <td><span class="comp-main">宿題が多すぎる</span><span class="comp-sub">大量の宿題で親子にストレス</span></td>
+                            <td><span class="comp-main"><svg class="icon icon-sm" aria-hidden="true"><use href="#i-timer"/></svg>25分で完結</span><span class="comp-sub">宿題なし！現地校との両立も楽々</span></td>
+                        </tr>
+                        <tr>
+                            <td><div class="comp-icon-wrap"><svg class="icon icon-lg" aria-hidden="true"><use href="#i-book"/></svg></div>レベル</td>
+                            <td><span class="comp-main">学年が上がると難しい</span><span class="comp-sub">ついていけず自信を失う</span></td>
+                            <td><span class="comp-main"><svg class="icon icon-sm" aria-hidden="true"><use href="#i-target"/></svg>レベル別クラス</span><span class="comp-sub">お子様に合った学年で「できた！」を増やす</span></td>
+                        </tr>
                     </tbody>
                 </table>
             </div>
             <div class="comp-swipe-hint">← 横にスワイプ →</div>
             <div class="inline-cta">
-                <div class="inline-cta-badge">📅 次回クールのお知らせ</div>
-                <h4>次回クールは<br>7月6日（月）から開始！</h4>
+                <div class="inline-cta-badge"><svg class="icon icon-sm" aria-hidden="true"><use href="#i-calendar"/></svg>次回クールのお知らせ</div>
+                <h4>次回クールは<br>7月6日（月）から開始</h4>
                 <div class="campaign-highlight-box">
-                    <div class="chb-main">📲 LINE登録でキャンペーン情報をGET！</div>
-                    <div class="chb-sub">最新キャンペーン・特別価格をLINEで先行配信中</div>
+                    <div class="chb-main"><svg class="icon icon-md" aria-hidden="true"><use href="#i-phone"/></svg>LINEで詳細・特別案内を配信中</div>
+                    <div class="chb-sub">クラス内容・料金・体験申込はLINEから</div>
                 </div>
                 <div class="inline-cta-list">
-                    <p><span>👑</span> <strong>6月末までの登録がおすすめ</strong></p>
-                    <p><span>✓</span> お得なキャンペーン情報をLINEで先行配信</p>
-                    <p><span>✓</span> レッスン内容・料金・スケジュールがわかる資料</p>
-                    <p><span>✓</span> LINEでいつでも質問OK</p>
+                    <p><svg class="icon icon-sm check-icon" aria-hidden="true"><use href="#i-check"/></svg>レッスン内容・料金・スケジュールがわかる資料</p>
+                    <p><svg class="icon icon-sm check-icon" aria-hidden="true"><use href="#i-check"/></svg>LINE限定の特別案内をお届け</p>
+                    <p><svg class="icon icon-sm check-icon" aria-hidden="true"><use href="#i-check"/></svg>LINEでいつでも質問OK</p>
                 </div>
                 <button class="btn-campaign pulse-btn" onclick="event.preventDefault(); trackLineClick(); setTimeout(function(){window.open('https://line.me/R/ti/p/@359fnsdb','_blank');},300);" style="width:100%;">資料請求はこちら</button>
                 <p class="note">※ 登録無料・いつでも解除OK</p>
@@ -624,11 +679,11 @@
         <div class="container">
             <div class="section-label"><span class="eyebrow">特長</span><h2>世界中のご家族に選ばれる<br>5つの理由</h2></div>
             <div class="features-grid">
-                <div class="feature-card"><span class="icon">🌍</span><h3>世界34カ国から参加</h3><p>4つのタイムゾーンで毎日授業。世界中の仲間と一緒に学べます。</p></div>
-                <div class="feature-card"><span class="icon">👨‍🏫</span><h3>有資格の講師が多数在籍</h3><p>教員免許・小学校教員資格など、プロの講師が丁寧に指導します。</p></div>
-                <div class="feature-card"><span class="icon">📚</span><h3>日本語・国語・算数、すべて月額定額</h3><p>追加料金なし。日本語はもちろん、国語・算数もお子様のレベルに合った学年で自由に受講できます。</p></div>
-                <div class="feature-card"><span class="icon">🚗</span><h3>送迎は一切不要</h3><p>全クラスオンライン。LINEで担当講師といつでも連絡が取れます。</p></div>
-                <div class="feature-card"><span class="icon">⏰</span><h3>25分 × 平日毎日</h3><p>時差に対応した授業時間。短いから、遊びや家族の時間も確保できます。</p></div>
+                <div class="feature-card"><div class="feature-icon"><svg class="icon icon-xl" aria-hidden="true"><use href="#i-globe"/></svg></div><h3>世界34カ国から参加</h3><p>4つのタイムゾーンで毎日授業。世界中の仲間と一緒に学べます。</p></div>
+                <div class="feature-card"><div class="feature-icon"><svg class="icon icon-xl" aria-hidden="true"><use href="#i-graduation"/></svg></div><h3>有資格の講師が多数在籍</h3><p>教員免許・小学校教員資格など、プロの講師が丁寧に指導します。</p></div>
+                <div class="feature-card"><div class="feature-icon"><svg class="icon icon-xl" aria-hidden="true"><use href="#i-book"/></svg></div><h3>日本語・国語・算数、すべて月額定額</h3><p>追加料金なし。日本語はもちろん、国語・算数もお子様のレベルに合った学年で自由に受講できます。</p></div>
+                <div class="feature-card"><div class="feature-icon"><svg class="icon icon-xl" aria-hidden="true"><use href="#i-home"/></svg></div><h3>送迎は一切不要</h3><p>全クラスオンライン。LINEで担当講師といつでも連絡が取れます。</p></div>
+                <div class="feature-card"><div class="feature-icon"><svg class="icon icon-xl" aria-hidden="true"><use href="#i-clock"/></svg></div><h3>25分 × 平日毎日</h3><p>時差に対応した授業時間。短いから、遊びや家族の時間も確保できます。</p></div>
             </div>
             <div class="features-tagline"><p>家でもなく、学校でもない。<br>子どもが"自分から学びたくなる"第3の場所。</p></div>
         </div>
@@ -653,6 +708,69 @@
         <div class="container"><p class="anniversary-badge">今年で6年目 —— 多くのご家族と共に成長してきました</p></div>
     </section>
 
+    <section class="industry-section">
+        <div class="container">
+            <div class="section-label">
+                <span class="eyebrow"><svg class="icon icon-sm" aria-hidden="true"><use href="#i-scale"/></svg>業界比較</span>
+                <h2>同じ$200の月予算で、<br>5倍学べる。</h2>
+                <p>補習校、家庭教師、他のオンラインスクール…<br>あらゆる選択肢と比べてください。</p>
+            </div>
+
+            <div class="industry-table-wrap">
+                <table class="industry-table">
+                    <thead>
+                        <tr>
+                            <th class="left">サービス形態</th>
+                            <th class="center">月の<br>学習日数</th>
+                            <th class="center">月額目安</th>
+                            <th class="center">1日あたり<br>単価</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td><span class="row-icon-wrap"><svg class="icon icon-md" style="color:var(--orange-600)" aria-hidden="true"><use href="#i-school"/></svg>北米の補習校（週末対面）</span></td>
+                            <td class="center">月4日</td>
+                            <td class="center">$80〜250</td>
+                            <td class="center unit">$20〜60</td>
+                        </tr>
+                        <tr>
+                            <td><span class="row-icon-wrap"><svg class="icon icon-md" style="color:var(--orange-600)" aria-hidden="true"><use href="#i-user"/></svg>海外子女向け個別チューター</span></td>
+                            <td class="center">月4〜8日</td>
+                            <td class="center">$200〜500</td>
+                            <td class="center unit">$50〜80</td>
+                        </tr>
+                        <tr>
+                            <td><span class="row-icon-wrap"><svg class="icon icon-md" style="color:var(--orange-600)" aria-hidden="true"><use href="#i-monitor"/></svg>他のオンライン日本語スクール</span></td>
+                            <td class="center">月8〜12日</td>
+                            <td class="center">$200〜400</td>
+                            <td class="center unit">$25〜40</td>
+                        </tr>
+                        <tr>
+                            <td><span class="row-icon-wrap"><svg class="icon icon-md" style="color:var(--orange-600)" aria-hidden="true"><use href="#i-book"/></svg>自習型オンライン教材</span></td>
+                            <td class="center">自分次第</td>
+                            <td class="center">$50〜100</td>
+                            <td class="center no-live">ライブ授業なし</td>
+                        </tr>
+                        <tr class="sa-row">
+                            <td><span class="row-icon-wrap"><svg class="icon icon-md" style="color:#1D4ED8" aria-hidden="true"><use href="#i-star"/></svg>サクセスアカデミー</span><span class="sa-sub">※1日複数クラス受講OK</span></td>
+                            <td class="center">月20日<span class="sa-sub-light">（平日毎日）</span></td>
+                            <td class="center">$200</td>
+                            <td class="center unit">$10</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+
+            <p class="industry-note">※各サービスの料金は北米相場の当社調べ参考値です（2026年5月時点）。実際の料金は各サービスにご確認ください。</p>
+
+            <div class="industry-summary">
+                <p class="main"><svg class="icon icon-md icon-bulb" aria-hidden="true"><use href="#i-bulb"/></svg><span><strong>同じ$200の月予算でも</strong>、補習校なら月4日。サクセスアカデミーなら<strong>月20日（5倍）</strong>学べます。</span></p>
+                <p>しかも、1日に複数クラス受講もOK。日本語クラス・国語クラス・算数クラスを組み合わせれば、<strong>月20回どころか、もっと多く受けられる</strong>のがサクセスの特長です。</p>
+                <p>1日あたり約$10という業界でも珍しい価格設定で、毎日の積み重ねが、お子さまの「できた！」を増やします。</p>
+            </div>
+        </div>
+    </section>
+
     <section class="pricing-section">
         <div class="container">
             <div class="section-label"><span class="eyebrow">料金</span><h2>安心の料金プラン</h2></div>
@@ -662,15 +780,15 @@
                     <h3 class="price-name">フリーレッスン</h3>
                     <p class="price-target">対象：4歳〜中学生</p>
                     <p class="price-desc">日本語/国語/算数<br>月額定額で受け放題</p>
-                    <div class="price-amount">50<span>USD/月</span></div>
+                    <div class="price-amount">200<span>USD/月</span></div>
                     <span class="price-trial orange">14日間 無料体験</span>
-                    <p class="price-detail">週5日 25分レッスン<br>※未就学児コースは +月10USD</p>
+                    <p class="price-detail">平日毎日（月20日）・1日あたり約$10<br><strong style="color: var(--orange-600);">全学年アクセス可能</strong>・1日複数クラス受講OK</p>
                 </div>
             </div>
             <div class="entry-campaign-block">
-                <div class="entry-campaign-pill">📅 次回クールのお知らせ</div>
+                <div class="entry-campaign-pill"><svg class="icon icon-sm" aria-hidden="true"><use href="#i-calendar"/></svg>次回クールのお知らせ</div>
                 <div class="entry-campaign-title">次回クールは7月6日（月）から開始</div>
-                <p class="entry-campaign-desc"><strong>6月末までの登録がおすすめ。</strong><br>お得なキャンペーン情報はLINEで先行配信中！</p>
+                <p class="entry-campaign-desc">クラス詳細・体験のお申込みは<strong>LINEより資料請求</strong>へ。<br>LINE限定の特別案内も配信しています。</p>
             </div>
         </div>
     </section>
@@ -678,23 +796,22 @@
     <section class="final-cta">
         <div class="final-cta-inner">
             <div class="final-cta-card">
-                <div class="inline-cta-badge" style="background:var(--green-500);">📅 次回クールのお知らせ</div>
-                <h3>次回クールは<br>7月6日（月）から開始！</h3>
+                <div class="inline-cta-badge" style="background:var(--green-500);"><svg class="icon icon-sm" aria-hidden="true"><use href="#i-calendar"/></svg>次回クールのお知らせ</div>
+                <h3>次回クールは<br>7月6日（月）から開始</h3>
                 <div class="campaign-highlight-box" style="margin-bottom:20px;">
-                    <div class="chb-main">📲 LINE登録でキャンペーン情報をGET！</div>
-                    <div class="chb-sub">最新キャンペーン・特別価格をLINEで先行配信</div>
+                    <div class="chb-main"><svg class="icon icon-md" aria-hidden="true"><use href="#i-phone"/></svg>LINEで詳細・特別案内を配信中</div>
+                    <div class="chb-sub">クラス内容・料金・体験申込はLINEから</div>
                 </div>
                 <div class="inline-cta-list">
-                    <p><span>👑</span> <strong>6月末までの登録がおすすめ</strong></p>
-                    <p><span>✓</span> お得なキャンペーン情報をLINEで先行配信</p>
-                    <p><span>✓</span> レッスン内容・料金・スケジュールがわかる資料</p>
-                    <p><span>✓</span> LINEでいつでも質問OK</p>
+                    <p><svg class="icon icon-sm check-icon" aria-hidden="true"><use href="#i-check"/></svg>レッスン内容・料金・スケジュールがわかる資料</p>
+                    <p><svg class="icon icon-sm check-icon" aria-hidden="true"><use href="#i-check"/></svg>LINE限定の特別案内をお届け</p>
+                    <p><svg class="icon icon-sm check-icon" aria-hidden="true"><use href="#i-check"/></svg>LINEでいつでも質問OK</p>
                 </div>
-                <p style="font-size: 0.85rem; color: var(--orange-600); font-weight: 600; margin-bottom: 16px;">📲 LINEから簡単に資料請求できます</p>
+                <p style="font-size: 0.85rem; color: var(--orange-600); font-weight: 600; margin-bottom: 16px; display: inline-flex; align-items: center; gap: 6px;"><svg class="icon icon-sm" aria-hidden="true"><use href="#i-phone"/></svg>LINEから簡単に資料請求できます</p>
                 <button id="lineRegButton2" class="btn-campaign pulse-btn" onclick="event.preventDefault(); trackLineClick(); setTimeout(function(){window.open('https://line.me/R/ti/p/@359fnsdb','_blank');},300);" style="width: 100%;">資料請求はこちら</button>
                 <p style="font-size: 0.75rem; color: var(--gray-400); margin-top: 12px;">※ 登録無料・いつでも解除OK</p>
                 <div class="email-divider">
-                    <p class="email-label">📧 LINEが使えない方はメールで</p>
+                    <p class="email-label"><svg class="icon icon-sm" aria-hidden="true"><use href="#i-mail"/></svg>LINEが使えない方はメールで</p>
                     <div>
                         <form action="https://mercy-education.us10.list-manage.com/subscribe/post?u=3fc0ca0518c0063b0701b969e&amp;id=0e737d1946&amp;f_id=004f27e2f0" method="post" class="email-form-row" target="_blank">
                             <input type="email" name="EMAIL" class="email-input" placeholder="メールアドレスを入力" required>
@@ -721,7 +838,7 @@
         <a href="https://line.me/R/ti/p/@359fnsdb" onclick="event.preventDefault(); trackLineClick(); var url=this.href; setTimeout(function(){window.open(url,'_blank');},300); return false;" target="_blank" style="text-decoration:none;width:100%;max-width:400px;">
             <button class="fixed-cta-btn">資料請求はこちら</button>
         </a>
-        <div class="fixed-cta-note">📅 次回クール7/6（月）開始｜6月末までの登録がおすすめ</div>
+        <div class="fixed-cta-note"><svg class="icon icon-sm" aria-hidden="true"><use href="#i-calendar"/></svg>次回クール7/6（月）開始｜LINEで特別案内を配信中</div>
     </div>
 
     <script>
