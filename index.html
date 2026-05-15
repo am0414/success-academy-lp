@@ -294,22 +294,28 @@
         .features-tagline { text-align: center; margin-top: 56px; position: relative; z-index: 1; }
         .features-tagline p { font-size: 1.3rem; font-weight: 700; color: rgba(255,255,255,0.85); line-height: 1.6; }
 
-        .influencer-section { padding: 100px 24px; background: var(--cream); overflow: hidden; }
-        .influencer-track-wrapper { overflow: hidden; margin: 56px 0 32px; padding: 16px 0; }
+        .influencer-section { padding: 100px 24px; background: linear-gradient(180deg, #E7F0E1 0%, #C5D5B8 50%, #A6BD93 100%); overflow: hidden; position: relative; }
+        .influencer-section::before { content: '"'; position: absolute; top: -30px; left: 5%; font-size: 18rem; line-height: 1; color: rgba(255,255,255,0.5); font-family: Georgia, serif; font-weight: 700; pointer-events: none; z-index: 0; }
+        .influencer-section::after { content: '"'; position: absolute; bottom: -100px; right: 5%; font-size: 18rem; line-height: 1; color: rgba(255,255,255,0.5); font-family: Georgia, serif; font-weight: 700; pointer-events: none; z-index: 0; }
+        .influencer-section .container { position: relative; z-index: 1; }
+        .influencer-section .section-label .eyebrow { background: var(--charcoal); color: white; font-weight: 800; padding: 8px 22px; box-shadow: var(--shadow-md); }
+        .influencer-section .section-label h2 { color: var(--charcoal); text-shadow: 0 2px 0 rgba(255,255,255,0.4); }
+        .influencer-track-wrapper { overflow: hidden; margin: 56px 0 32px; padding: 16px 0; position: relative; z-index: 1; }
         .influencer-track { display: flex; gap: 32px; animation: scrollCards 60s linear infinite; }
         .influencer-track:hover { animation-play-state: paused; }
         @keyframes scrollCards { 0% { transform: translateX(0); } 100% { transform: translateX(-50%); } }
-        .inf-card { min-width: 420px; max-width: 420px; background: white; border-radius: var(--radius-md); padding: 36px 32px; box-shadow: var(--shadow-md); flex-shrink: 0; transition: all 0.3s; border: 1px solid var(--gray-200); position: relative; }
-        .inf-card::before { content: '"'; position: absolute; top: 8px; right: 20px; font-size: 5rem; line-height: 1; color: #DBEAFE; font-family: Georgia, serif; font-weight: 700; pointer-events: none; }
-        .inf-card:hover { transform: translateY(-6px); box-shadow: var(--shadow-lg); border-color: #BFDBFE; }
+        .inf-card { min-width: 420px; max-width: 420px; background: white; border-radius: var(--radius-md); padding: 36px 32px; box-shadow: 0 12px 32px rgba(0,0,0,0.12); flex-shrink: 0; transition: all 0.3s; border: 1px solid white; position: relative; }
+        .inf-card::before { content: '"'; position: absolute; top: 8px; right: 20px; font-size: 5rem; line-height: 1; color: var(--orange-100); font-family: Georgia, serif; font-weight: 700; pointer-events: none; }
+        .inf-card:hover { transform: translateY(-6px); box-shadow: 0 20px 44px rgba(0,0,0,0.18); }
         .inf-card-header { display: flex; align-items: center; gap: 16px; margin-bottom: 20px; position: relative; z-index: 1; }
-        .inf-card-header img { width: 72px; height: 72px; border-radius: 50%; object-fit: cover; border: 3px solid white; box-shadow: 0 4px 14px rgba(0,0,0,0.12); }
+        .inf-card-header img { width: 72px; height: 72px; border-radius: 50%; object-fit: cover; border: 3px solid white; box-shadow: 0 4px 14px rgba(0,0,0,0.15); }
         .inf-name { font-size: 1.05rem; font-weight: 800; color: var(--charcoal); }
         .inf-details { font-size: 0.78rem; color: var(--gray-400); font-weight: 500; margin-top: 3px; }
         .inf-card h4 { font-size: 1.05rem; font-weight: 700; color: var(--charcoal); margin-bottom: 12px; line-height: 1.55; }
         .inf-card p { font-size: 0.92rem; color: var(--gray-600); line-height: 1.8; }
         .inf-card .inf-body { background: var(--orange-50); padding: 20px; border-radius: var(--radius-sm); border-left: 3px solid var(--orange-500); }
-        .anniversary-badge { text-align: center; margin-top: 48px; font-size: 1.5rem; font-weight: 900; color: var(--charcoal); }
+        .anniversary-badge { text-align: center; margin-top: 32px; font-size: 1.5rem; font-weight: 900; color: var(--charcoal); position: relative; z-index: 1; padding: 16px 24px; background: white; border-radius: 50px; display: inline-block; box-shadow: var(--shadow-md); }
+        .anniversary-wrap { text-align: center; margin-top: 32px; position: relative; z-index: 1; }
 
         /* Industry comparison */
         .industry-section { padding: 100px 24px; background: var(--warm-white); }
@@ -523,6 +529,27 @@
         </div>
     </section>
 
+    <section class="problem-section">
+        <div class="container">
+            <div class="section-label"><span class="eyebrow">お悩み</span><h2>気づけば、お子さまが<br>日本語を話さなくなっていませんか？</h2></div>
+            <div class="problem-grid">
+                <div class="problem-img"><img src="https://i.imgur.com/orOzHda.png" alt="海外での日本語教育に悩む親子" loading="lazy"></div>
+                <div class="problem-text">
+                    <h3>「もっと日本語を教えなきゃ…」<br>そう思うほど、うまくいかない。</h3>
+                    <p>それは、<span class="highlight">あなただけではありません。</span></p>
+                    <ul class="pain-list">
+                        <li>日本語で話す機会がどんどん減っている</li>
+                        <li>補習校の宿題を嫌がるようになった</li>
+                        <li>親が教えようとするとケンカになる</li>
+                        <li>補習校のペースや内容が、子どもに合わない</li>
+                    </ul>
+                    <p>でも本当の原因は「勉強が嫌い」なのではなく——</p>
+                    <div class="problem-answer"><p>「できた！」という<span class="highlight">成功体験</span>が、まだ足りていないだけ。</p></div>
+                </div>
+            </div>
+        </div>
+    </section>
+
     <section class="video-section">
         <div class="video-wrapper">
             <div class="video-label"><h2>8分でわかる、サクセスアカデミー</h2><p>海外で日本語教育に悩むご家族へ</p></div>
@@ -581,27 +608,6 @@
                     </div>
                 </div>
                 <p class="schedule-note">4つのタイムゾーンに対応しているので、<br><strong>アメリカ・ヨーロッパ・アジア・オセアニア</strong>、どこからでも参加できます。<br>宿題なし・送迎なし。終わったらすぐ遊べるから、子どもが嫌がらない。</p>
-            </div>
-        </div>
-    </section>
-
-    <section class="problem-section">
-        <div class="container">
-            <div class="section-label"><span class="eyebrow">お悩み</span><h2>気づけば、お子さまが<br>日本語を話さなくなっていませんか？</h2></div>
-            <div class="problem-grid">
-                <div class="problem-img"><img src="https://i.imgur.com/orOzHda.png" alt="海外での日本語教育に悩む親子" loading="lazy"></div>
-                <div class="problem-text">
-                    <h3>「もっと日本語を教えなきゃ…」<br>そう思うほど、うまくいかない。</h3>
-                    <p>それは、<span class="highlight">あなただけではありません。</span></p>
-                    <ul class="pain-list">
-                        <li>日本語で話す機会がどんどん減っている</li>
-                        <li>補習校の宿題を嫌がるようになった</li>
-                        <li>親が教えようとするとケンカになる</li>
-                        <li>補習校のペースや内容が、子どもに合わない</li>
-                    </ul>
-                    <p>でも本当の原因は「勉強が嫌い」なのではなく——</p>
-                    <div class="problem-answer"><p>「できた！」という<span class="highlight">成功体験</span>が、まだ足りていないだけ。</p></div>
-                </div>
             </div>
         </div>
     </section>
@@ -705,7 +711,7 @@
                 <div class="inf-card"><div class="inf-card-header"><img src="https://i.imgur.com/S4cjBqL.png" alt="かおり"><div><div class="inf-name">かおり 様</div><div class="inf-details">Instagram 2.9万人 | イギリス在住</div></div></div><div class="inf-body"><h4>国語も算数も少しずつ自信に</h4><p>発言が苦手な長女も国語や偉人クラスを楽しめるようになり、次女は計算が速くなりました。少しずつ場に慣れ、自信がつきました。</p></div></div>
             </div>
         </div>
-        <div class="container"><p class="anniversary-badge">今年で6年目 —— 多くのご家族と共に成長してきました</p></div>
+        <div class="container"><div class="anniversary-wrap"><p class="anniversary-badge">今年で6年目 —— 多くのご家族と共に成長してきました</p></div></div>
     </section>
 
     <section class="industry-section">
@@ -784,11 +790,6 @@
                     <span class="price-trial orange">14日間 無料体験</span>
                     <p class="price-detail">平日毎日（月20日）・1日あたり約$10<br><strong style="color: var(--orange-600);">全学年アクセス可能</strong>・1日複数クラス受講OK</p>
                 </div>
-            </div>
-            <div class="entry-campaign-block">
-                <div class="entry-campaign-pill"><svg class="icon icon-sm" aria-hidden="true"><use href="#i-calendar"/></svg>次回クールのお知らせ</div>
-                <div class="entry-campaign-title">次回クールは7月6日（月）から開始</div>
-                <p class="entry-campaign-desc">クラス詳細・体験のお申込みは<strong>LINEより資料請求</strong>へ。<br>LINE限定の特別案内も配信しています。</p>
             </div>
         </div>
     </section>
