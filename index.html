@@ -42,785 +42,811 @@
     <meta name="google-site-verification" content="HxIvAN8v2t9vDEpxbNbZVvE85oAkrOtumMdTzO4Y4WE" />
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Zen+Kaku+Gothic+New:wght@400;500;700;900&family=Zen+Maru+Gothic:wght@500;700;900&family=Outfit:wght@400;500;600;700;800&display=swap" rel="stylesheet">
     <style>
-        :root {
-            --cream: #F7F9FC;
-            --warm-white: #FBFCFE;
-            --orange-50: #EFF6FF;
-            --orange-100: #DBEAFE;
-            --orange-400: #60A5FA;
-            --orange-500: #3B82F6;
-            --orange-600: #2563EB;
-            --orange-700: #1D4ED8;
-            --green-500: #06C755;
-            --charcoal: #0F172A;
-            --gray-600: #475569;
-            --gray-400: #94A3B8;
-            --gray-200: #E2E8F0;
-            --radius-sm: 12px;
-            --radius-md: 20px;
-            --radius-lg: 28px;
-            --shadow-soft: 0 4px 24px rgba(28,25,23,0.06);
-            --shadow-md: 0 8px 32px rgba(28,25,23,0.08);
-            --shadow-lg: 0 16px 48px rgba(28,25,23,0.10);
-            --shadow-green: 0 8px 28px rgba(6,199,85,0.3);
+        :root{
+          --paper:#FFFDF7;--paper2:#FFFFFF;--cream:#FFF7E9;--cream2:#FFF0D6;
+          --ink:#2A2520;--inksoft:#5C5349;--muted:#A39A8A;--line:#EFE7D8;--line2:#F4EEE1;
+          --coral:#F2663C;--coral-d:#E2521F;--coralsoft:#FFE6DC;
+          --yellow:#FAC22B;--yellowsoft:#FFF0C4;--blue:#2F7BD6;--bluesoft:#E4EFFC;
+          --green:#06C755;--green-d:#05B14C;
+          --radius:14px;--radius-lg:22px;
+          --shadow-soft:0 4px 18px rgba(42,37,32,0.06);--shadow-md:0 14px 36px rgba(42,37,32,0.10);--shadow-lg:0 26px 60px rgba(42,37,32,0.14);
+          --maxw:1120px;
         }
-        * { margin: 0; padding: 0; box-sizing: border-box; }
-        html { scroll-behavior: smooth; }
-        body {
-            font-family: 'Noto Sans JP', sans-serif;
-            background: var(--cream);
-            color: var(--charcoal);
-            line-height: 1.8;
-            font-weight: 400;
-            overflow-x: hidden;
-            -webkit-font-smoothing: antialiased;
-            padding-bottom: 90px;
+        *{margin:0;padding:0;box-sizing:border-box;}
+        html{scroll-behavior:smooth;-webkit-text-size-adjust:100%;}
+        body{font-family:'Zen Kaku Gothic New',sans-serif;background:var(--paper);color:var(--ink);line-height:1.85;font-weight:400;overflow-x:hidden;-webkit-font-smoothing:antialiased;padding-bottom:84px;}
+        .maru{font-family:'Zen Maru Gothic',sans-serif;} .outfit{font-family:'Outfit',sans-serif;}
+        .container{max-width:var(--maxw);margin:0 auto;padding:0 26px;}
+        .icon{display:inline-block;vertical-align:middle;flex-shrink:0;}
+        .icon-sm{width:15px;height:15px;}.icon-md{width:19px;height:19px;}.icon-lg{width:26px;height:26px;}
+        .reveal{opacity:0;transform:translateY(22px);transition:opacity .85s cubic-bezier(.16,1,.3,1),transform .85s cubic-bezier(.16,1,.3,1);}
+        .reveal.in{opacity:1;transform:none;}
+        @media (prefers-reduced-motion:reduce){.reveal{opacity:1;transform:none;transition:none;}}
+        .btn-line{display:inline-flex;align-items:center;justify-content:center;gap:10px;background:var(--green);color:#fff;border:none;padding:17px 32px;border-radius:50px;font-family:'Zen Kaku Gothic New',sans-serif;font-size:1.02rem;font-weight:700;letter-spacing:0.02em;cursor:pointer;text-decoration:none;transition:all .22s ease;box-shadow:0 12px 26px rgba(6,199,85,0.3);}
+        .btn-line:hover{background:var(--green-d);transform:translateY(-2px);box-shadow:0 16px 34px rgba(6,199,85,0.4);}
+        .lineico{fill:currentColor;}
+
+        .notice{position:fixed;top:0;left:0;right:0;z-index:200;background:var(--coral);color:#fff;padding:9px 18px;text-align:center;}
+        .notice-inner{display:flex;align-items:center;justify-content:center;gap:9px;flex-wrap:wrap;font-size:0.82rem;letter-spacing:0.02em;}
+        .notice strong{font-weight:700;}
+        .notice .y{color:var(--yellow);font-weight:700;}
+
+        .site-header{position:fixed;top:var(--notice-h,38px);left:0;right:0;z-index:100;background:rgba(255,253,247,0.9);backdrop-filter:blur(14px);border-bottom:1px solid var(--line);padding:15px 0;transition:padding .3s ease,box-shadow .3s ease;}
+        .site-header.shrink{padding:9px 0;box-shadow:var(--shadow-soft);}
+        .header-inner{display:flex;justify-content:space-between;align-items:center;}
+        .logo{display:flex;flex-direction:column;line-height:1.05;}
+        .logo .en{font-family:'Outfit',sans-serif;font-weight:800;font-size:1.4rem;color:var(--ink);letter-spacing:-0.01em;}
+        .logo .ja{font-size:0.58rem;letter-spacing:0.4em;color:var(--muted);font-weight:500;padding-left:1px;}
+        .header-cta{background:var(--green);color:#fff;border:none;padding:11px 22px;border-radius:50px;font-size:0.82rem;font-weight:700;cursor:pointer;text-decoration:none;display:inline-flex;align-items:center;gap:7px;transition:all .22s;box-shadow:0 6px 16px rgba(6,199,85,0.26);}
+        .header-cta:hover{background:var(--green-d);transform:translateY(-1px);}
+
+        /* hero */
+        .hero{padding:calc(var(--notice-h,38px) + var(--header-h,68px)) 0 0;}
+        .hero-grid{display:grid;grid-template-columns:1.02fr 0.98fr;min-height:600px;}
+        .hero-left{position:relative;padding:46px 50px 38px;display:flex;flex-direction:column;}
+        .grain{position:absolute;inset:0;pointer-events:none;opacity:0.16;mix-blend-mode:soft-light;background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='160' height='160'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='2'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E");}
+        .masthead{display:flex;justify-content:space-between;align-items:flex-start;border-bottom:3px solid var(--ink);padding-bottom:14px;}
+        .masthead .ml .en{font-family:'Outfit',sans-serif;font-weight:800;font-size:1.5rem;color:var(--ink);}
+        .masthead .ml .ja{font-size:0.58rem;letter-spacing:0.38em;color:var(--muted);display:block;margin-top:1px;}
+        .masthead .issue{text-align:right;font-family:'Outfit',sans-serif;color:var(--muted);font-size:0.85rem;line-height:1.5;font-weight:500;}
+        .hero-body{flex:1;display:flex;flex-direction:column;justify-content:center;padding:34px 0 16px;position:relative;z-index:1;}
+        .cat{display:inline-flex;align-self:flex-start;gap:7px;align-items:center;background:var(--coralsoft);color:var(--coral-d);font-size:0.74rem;font-weight:700;letter-spacing:0.04em;padding:6px 15px;border-radius:50px;margin-bottom:22px;}
+        .hero h1{font-weight:900;font-size:3.15rem;line-height:1.46;letter-spacing:0.01em;color:var(--ink);}
+        .hero h1 .co{color:var(--coral);}
+        .mk{position:relative;white-space:nowrap;}
+        .mk::after{content:"";position:absolute;left:0;right:0;bottom:4px;height:13px;background:var(--yellow);z-index:-1;border-radius:3px;}
+        .hero .lede{font-size:1rem;color:var(--inksoft);line-height:2;margin:24px 0 30px;max-width:450px;}
+        .hero-ctas{display:flex;align-items:center;gap:18px;flex-wrap:wrap;}
+        .micro{font-size:0.74rem;color:var(--muted);line-height:1.5;}
+        .campaign-flag{display:flex;align-items:center;gap:9px;background:var(--yellowsoft);border:1px dashed var(--yellow);color:var(--ink);font-size:0.86rem;font-weight:600;padding:10px 14px;border-radius:12px;margin-bottom:16px;max-width:460px;line-height:1.5;}
+        .campaign-flag strong{color:var(--coral-d);font-weight:800;}
+        .campaign-flag .cf-badge{background:var(--coral);color:#fff;font-size:0.7rem;font-weight:800;padding:4px 11px;border-radius:50px;flex-shrink:0;}
+        .campaign-flag .cf-text{flex:1 1 auto;min-width:0;line-height:1.55;}
+        .board .was{font-size:0.95rem;color:var(--muted);margin-bottom:0;}
+        .board .was s{color:var(--muted);}
+        .footrule{margin-top:auto;display:flex;gap:26px;border-top:1px solid var(--line);padding-top:16px;position:relative;z-index:1;}
+        .footrule .it .n{font-family:'Outfit',sans-serif;font-weight:800;font-size:1.5rem;color:var(--coral);line-height:1;}
+        .footrule .it .l{font-size:0.68rem;color:var(--muted);font-weight:500;margin-top:3px;}
+        .hero-right{position:relative;background:var(--cream);overflow:hidden;}
+        .hero-right img{width:100%;height:100%;object-fit:cover;min-height:420px;}
+        .hero-right .tape{position:absolute;top:24px;right:-46px;transform:rotate(38deg);background:var(--yellow);color:var(--ink);font-weight:800;font-size:0.76rem;letter-spacing:0.06em;padding:8px 58px;box-shadow:0 6px 16px rgba(0,0,0,0.1);}
+        .hero-chip{position:absolute;background:#fff;border-radius:14px;box-shadow:var(--shadow-md);padding:11px 16px;display:flex;align-items:center;gap:10px;}
+        .hero-chip .n{font-family:'Outfit',sans-serif;font-weight:800;font-size:1.4rem;color:var(--coral);line-height:1;}
+        .hero-chip .l{font-size:0.68rem;color:var(--muted);line-height:1.3;font-weight:500;}
+        .hero-chip.one{top:24px;left:24px;}
+        .hero-chip.two{bottom:26px;right:24px;}
+
+        .vstrip{background:var(--cream2);padding:26px;}
+        .vstrip-inner{max-width:var(--maxw);margin:0 auto;display:flex;align-items:stretch;justify-content:center;gap:14px;flex-wrap:wrap;}
+        .vs-card{background:#fff;border-radius:var(--radius);padding:16px 26px;display:flex;align-items:center;gap:14px;box-shadow:var(--shadow-soft);flex:1;min-width:200px;}
+        .vs-card .vi{width:42px;height:42px;border-radius:12px;background:var(--coralsoft);color:var(--coral);display:flex;align-items:center;justify-content:center;flex-shrink:0;}
+        .vs-card .big{font-weight:900;font-size:1.05rem;color:var(--ink);}
+        .vs-card .big em{font-style:normal;color:var(--coral);}
+        .vs-card .small{font-size:0.74rem;color:var(--muted);}
+
+        .sec{padding:90px 26px;}
+        .sec-head{text-align:center;max-width:720px;margin:0 auto 56px;}
+        .sec-num{font-family:'Outfit',sans-serif;font-weight:700;font-style:italic;font-size:1rem;color:var(--coral);display:block;margin-bottom:8px;}
+        .sec-eyebrow{display:inline-flex;align-items:center;gap:8px;font-size:0.74rem;font-weight:700;letter-spacing:0.1em;color:var(--coral-d);background:var(--coralsoft);padding:6px 16px;border-radius:50px;margin-bottom:16px;}
+        .sec-title{font-weight:900;font-size:2.05rem;line-height:1.55;color:var(--ink);letter-spacing:0.01em;}
+        .sec-lead{font-size:0.98rem;color:var(--muted);margin-top:14px;line-height:1.9;}
+
+        /* problem collage */
+        .problem{background:var(--paper2);position:relative;overflow:hidden;}
+        .problem .blob{position:absolute;top:80px;right:-70px;width:240px;height:240px;background:var(--yellowsoft);border-radius:50%;opacity:0.55;}
+        .collage{position:relative;max-width:920px;margin:0 auto;display:grid;grid-template-columns:repeat(2,1fr);gap:22px 30px;}
+        .note{background:#fff;border:1px solid var(--line);border-radius:16px;padding:22px 24px;box-shadow:var(--shadow-soft);position:relative;}
+        .note::before{content:"";position:absolute;top:-9px;left:50%;transform:translateX(-50%);width:54px;height:16px;background:var(--yellow);border-radius:3px;opacity:0.85;box-shadow:0 2px 6px rgba(0,0,0,0.1);}
+        .note:nth-child(1){transform:rotate(-1.5deg);} .note:nth-child(2){transform:rotate(1.5deg);margin-top:18px;}
+        .note:nth-child(3){transform:rotate(1deg);} .note:nth-child(4){transform:rotate(-1.5deg);margin-top:18px;}
+        .note .face{width:34px;height:34px;border-radius:50%;background:var(--coralsoft);display:inline-flex;align-items:center;justify-content:center;font-size:1.05rem;margin-bottom:10px;}
+        .note p{font-size:1.02rem;font-weight:500;color:var(--ink);line-height:1.7;}
+        .note .who{font-size:0.74rem;color:var(--muted);margin-top:8px;}
+        .answer{max-width:680px;margin:40px auto 0;text-align:center;background:var(--coral);color:#fff;border-radius:20px;padding:30px;box-shadow:0 16px 40px rgba(242,102,60,0.3);}
+        .answer .small{font-size:0.92rem;opacity:0.92;}
+        .answer .big{font-weight:900;font-size:1.45rem;line-height:1.5;margin-top:6px;}
+        .answer .hl{background:var(--yellow);color:var(--ink);padding:0 8px;border-radius:5px;}
+
+        /* video */
+        .video-sec{background:var(--paper);}
+        .video-wrap{max-width:760px;margin:0 auto;}
+        .video-embed{position:relative;padding-bottom:56.25%;height:0;overflow:hidden;border-radius:var(--radius-lg);box-shadow:var(--shadow-lg);border:4px solid #fff;}
+        .video-embed iframe{position:absolute;inset:0;width:100%;height:100%;border:0;}
+
+        /* proof */
+        .proof{background:var(--coral);padding:46px 26px;}
+        .proof-items{max-width:880px;margin:0 auto;display:flex;justify-content:space-between;gap:24px;flex-wrap:wrap;}
+        .proof-item{text-align:center;flex:1;min-width:120px;}
+        .proof-item .n{font-family:'Outfit',sans-serif;font-weight:800;font-size:2.6rem;color:#fff;line-height:1;}
+        .proof-item .n small{font-size:1.3rem;}
+        .proof-item .l{font-size:0.78rem;color:rgba(255,255,255,0.85);letter-spacing:0.04em;margin-top:8px;}
+
+        /* testimonials */
+        .testi{background:var(--paper2);}
+        .testi-grid{display:grid;grid-template-columns:1.1fr 0.9fr;gap:54px;align-items:center;}
+        .testi-card{background:var(--cream);padding:22px 26px;border-radius:var(--radius);margin-bottom:13px;position:relative;}
+        .testi-card .q{font-family:'Outfit',sans-serif;font-weight:800;font-size:2.6rem;color:var(--coralsoft);position:absolute;top:2px;right:18px;line-height:1;}
+        .testi-card p{font-size:0.97rem;color:var(--ink);line-height:1.85;position:relative;}
+        .testi-card .author{font-size:0.8rem;color:var(--muted);margin-top:9px;}
+        .testi-highlight{margin-top:24px;font-weight:900;font-size:1.25rem;color:var(--ink);line-height:1.7;}
+        .testi-img img{width:100%;max-width:410px;border-radius:var(--radius-lg);box-shadow:var(--shadow-md);}
+
+        /* schedule timeline */
+        .schedule{background:var(--cream);}
+        .sched-toggle{display:flex;justify-content:center;gap:10px;margin-bottom:20px;}
+        .sched-toggle .t{padding:9px 22px;border-radius:50px;font-size:0.86rem;font-weight:700;border:1.5px solid var(--coral);background:transparent;color:var(--coral);cursor:pointer;font-family:inherit;transition:all .2s;}
+        .sched-toggle .t.on{background:var(--coral);color:#fff;}
+        .timeline{display:none;position:relative;max-width:940px;margin:0 auto;padding:50px 10px 30px;}
+        .timeline.show{display:block;}
+        .timeline .rail{position:absolute;left:24px;right:24px;top:50%;height:4px;background:var(--line);border-radius:4px;}
+        .stops{position:relative;display:flex;justify-content:space-between;}
+        .stop{flex:1;text-align:center;position:relative;}
+        .stop .time{font-family:'Outfit',sans-serif;font-weight:700;font-size:0.95rem;color:var(--muted);margin-bottom:44px;}
+        .stop .dot{position:absolute;top:50%;left:50%;transform:translate(-50%,-50%);width:14px;height:14px;border-radius:50%;background:#fff;border:3px solid var(--muted);z-index:2;}
+        .stop .lab2{margin-top:44px;font-size:0.82rem;color:var(--inksoft);line-height:1.4;}
+        .stop.key .dot{width:24px;height:24px;border:4px solid var(--coral);background:var(--coral);box-shadow:0 0 0 6px var(--coralsoft);}
+        .stop.key .time{color:var(--coral);font-size:1.05rem;}
+        .stop.key .card{margin-top:40px;display:inline-block;background:#fff;border:2px solid var(--coral);border-radius:14px;padding:12px 16px;box-shadow:var(--shadow-md);}
+        .stop.key .card .h{font-weight:900;color:var(--coral-d);font-size:0.95rem;display:flex;align-items:center;gap:6px;justify-content:center;}
+        .stop.key .card .s{font-size:0.74rem;color:var(--muted);margin-top:2px;}
+        .sched-note{text-align:center;margin-top:24px;font-size:0.9rem;color:var(--inksoft);line-height:1.8;}
+        .sched-note strong{color:var(--coral);}
+        .tz{display:inline-flex;gap:8px;flex-wrap:wrap;justify-content:center;margin-top:14px;}
+        .tz span{background:#fff;border:1px solid var(--line);border-radius:50px;padding:6px 16px;font-size:0.8rem;font-weight:600;color:var(--inksoft);}
+
+        /* comparison vs cards */
+        .compare{background:var(--paper2);}
+        .vs-wrap{max-width:960px;margin:0 auto;display:grid;grid-template-columns:1fr 1fr;gap:18px;position:relative;align-items:start;}
+        .vs-badge{position:absolute;top:34px;left:50%;transform:translate(-50%,-50%);z-index:3;width:54px;height:54px;border-radius:50%;background:var(--ink);color:#fff;font-family:'Outfit',sans-serif;font-weight:800;font-style:italic;font-size:1.1rem;display:flex;align-items:center;justify-content:center;box-shadow:0 8px 20px rgba(0,0,0,0.2);}
+        .vs-col{border-radius:var(--radius-lg);overflow:hidden;}
+        .vs-col .vh{padding:20px;text-align:center;font-weight:900;font-size:1.15rem;}
+        .vs-col .vlist{padding:8px 22px 22px;}
+        .vs-col .vrow{display:flex;gap:12px;align-items:flex-start;padding:14px 0;border-bottom:1px dashed rgba(0,0,0,0.08);}
+        .vs-col .vrow:last-child{border-bottom:none;}
+        .vs-col .vrow .ic{width:24px;height:24px;border-radius:50%;display:flex;align-items:center;justify-content:center;flex-shrink:0;margin-top:2px;}
+        .vs-col .vrow .tt{font-weight:700;font-size:0.95rem;}
+        .vs-col .vrow .ss{font-size:0.8rem;line-height:1.5;}
+        /* left = juku (muted) */
+        .vs-col.bad{background:#F3EFE7;border:1px solid var(--line);}
+        .vs-col.bad .vh{background:#B7AE9D;color:#fff;}
+        .vs-col.bad .vrow .ic{background:#E3DCCD;color:#9A8F7B;}
+        .vs-col.bad .tt{color:var(--inksoft);} .vs-col.bad .ss{color:var(--muted);}
+        /* right = SA (coral, elevated) */
+        .vs-col.good{background:#fff;border:2px solid var(--coral);box-shadow:var(--shadow-md);}
+        .vs-col.good .vh{background:var(--coral);color:#fff;}
+        .vs-col.good .vrow .ic{background:var(--coralsoft);color:var(--coral);}
+        .vs-col.good .tt{color:var(--ink);} .vs-col.good .ss{color:var(--inksoft);}
+
+        /* solution */
+        .solution{background:var(--paper);}
+        .solution-grid{display:grid;grid-template-columns:1.1fr 0.9fr;gap:58px;align-items:center;}
+        .solution-text h2{font-weight:900;font-size:2rem;margin-bottom:24px;line-height:1.6;color:var(--ink);}
+        .solution-text p{font-size:1.02rem;color:var(--inksoft);margin-bottom:13px;line-height:1.95;}
+        .solution-text .emphasis{font-weight:700;color:var(--ink);font-size:1.06rem;margin-top:22px;padding:22px;background:var(--coralsoft);border-radius:var(--radius);border-left:4px solid var(--coral);}
+        .solution-img img{width:100%;max-width:420px;border-radius:var(--radius-lg);box-shadow:var(--shadow-md);}
+
+        /* features zigzag */
+        .features{background:var(--cream);}
+        .feat-list{max-width:880px;margin:0 auto;display:flex;flex-direction:column;gap:14px;}
+        .feat-row{display:flex;align-items:center;gap:28px;background:#fff;border:1px solid var(--line);border-radius:var(--radius-lg);padding:26px 32px;box-shadow:var(--shadow-soft);transition:transform .25s ease,box-shadow .25s ease;}
+        .feat-row:hover{transform:translateY(-3px);box-shadow:var(--shadow-md);}
+        .feat-row:nth-child(even){flex-direction:row-reverse;text-align:right;background:var(--paper2);}
+        .feat-row .fnum{font-family:'Outfit',sans-serif;font-weight:800;font-size:3.4rem;line-height:1;color:var(--coralsoft);flex-shrink:0;width:80px;text-align:center;}
+        .feat-row:nth-child(even) .fnum{color:var(--yellowsoft);}
+        .feat-row .ficon{width:54px;height:54px;border-radius:16px;background:var(--coralsoft);color:var(--coral);display:flex;align-items:center;justify-content:center;flex-shrink:0;}
+        .feat-row .ftext{flex:1;}
+        .feat-row .ftext h3{font-weight:900;font-size:1.18rem;color:var(--ink);margin-bottom:5px;}
+        .feat-row .ftext p{font-size:0.92rem;color:var(--inksoft);line-height:1.8;}
+        .features-tagline{text-align:center;margin-top:46px;}
+        .features-tagline p{font-weight:900;font-size:1.3rem;color:var(--ink);line-height:1.7;}
+        .features-tagline .mk::after{height:11px;}
+
+        /* influencers */
+        .influencer{background:var(--paper2);overflow:hidden;}
+        .inf-track-wrap{overflow:hidden;margin-top:50px;padding:12px 0;}
+        .inf-track{display:flex;gap:24px;animation:scrollCards 70s linear infinite;}
+        .inf-track:hover{animation-play-state:paused;}
+        @keyframes scrollCards{0%{transform:translateX(0);}100%{transform:translateX(-50%);}}
+        .inf-card{min-width:400px;max-width:400px;background:var(--cream);border-radius:var(--radius);padding:30px 28px;border:1px solid var(--line);flex-shrink:0;position:relative;}
+        .inf-card .q{font-family:'Outfit',sans-serif;font-weight:800;position:absolute;top:8px;right:22px;font-size:3rem;color:var(--coralsoft);line-height:1;}
+        .inf-head{display:flex;align-items:center;gap:15px;margin-bottom:18px;position:relative;z-index:1;}
+        .inf-head img{width:62px;height:62px;border-radius:50%;object-fit:cover;border:3px solid #fff;box-shadow:0 4px 12px rgba(0,0,0,0.1);}
+        .inf-name{font-size:1rem;font-weight:700;color:var(--ink);}
+        .inf-detail{font-size:0.74rem;color:var(--muted);margin-top:3px;}
+        .inf-card h4{font-weight:900;font-size:1.02rem;color:var(--ink);margin-bottom:11px;line-height:1.6;}
+        .inf-body{background:#fff;padding:18px;border-radius:var(--radius);border-left:3px solid var(--coral);}
+        .inf-body p{font-size:0.89rem;color:var(--inksoft);line-height:1.85;}
+        .anniversary{text-align:center;margin-top:34px;}
+        .anniversary span{font-weight:900;font-size:1.25rem;color:var(--ink);padding:13px 30px;background:var(--cream);border-radius:50px;display:inline-block;}
+
+        /* industry */
+        .industry{background:var(--paper);}
+        .ind-wrap{max-width:960px;margin:0 auto;overflow-x:auto;-webkit-overflow-scrolling:touch;}
+        .ind-table{width:100%;min-width:700px;border-collapse:separate;border-spacing:0;background:#fff;border-radius:var(--radius-lg);overflow:hidden;box-shadow:var(--shadow-md);}
+        .ind-table thead th{background:var(--ink);color:#fff;padding:16px 14px;font-size:0.84rem;font-weight:700;}
+        .ind-table thead th.left{text-align:left;} .ind-table thead th.center{text-align:center;}
+        .ind-table td{padding:16px 14px;font-size:0.9rem;border-bottom:1px solid var(--line2);}
+        .ind-table td:first-child{font-weight:600;color:var(--ink);}
+        .ind-table td .ri{display:inline-flex;align-items:center;gap:9px;}
+        .ind-table td.center{text-align:center;color:var(--muted);}
+        .ind-table td.unit{color:var(--coral);font-weight:700;text-align:center;}
+        .ind-table td.no-live{color:var(--muted);font-size:0.84rem;text-align:center;}
+        .ind-table tr.sa{background:var(--coralsoft);border-top:3px solid var(--coral);}
+        .ind-table tr.sa td:first-child{font-weight:800;color:var(--coral-d);}
+        .ind-table tr.sa td.center{font-weight:800;color:var(--coral-d);font-size:1.05rem;}
+        .ind-table tr.sa td.unit{font-family:'Outfit',sans-serif;font-weight:800;color:var(--coral);font-size:1.55rem;}
+        .ind-table tr.sa .sub{font-size:0.7rem;font-weight:600;color:var(--coral-d);display:block;margin-top:2px;}
+        .ind-note{text-align:center;margin-top:14px;font-size:0.72rem;color:var(--muted);line-height:1.6;}
+        .ind-summary{max-width:760px;margin:32px auto 0;padding:28px 30px;background:#fff;border-radius:var(--radius);border-left:4px solid var(--yellow);box-shadow:var(--shadow-soft);}
+        .ind-summary p{font-size:0.96rem;color:var(--inksoft);line-height:1.85;margin-bottom:10px;}
+        .ind-summary p.main{font-weight:900;font-size:1.12rem;color:var(--ink);margin-bottom:14px;}
+        .ind-summary strong{color:var(--coral);}
+
+        /* pricing signboard */
+        .pricing{background:var(--cream);}
+        .board{max-width:560px;margin:0 auto;background:#fff;border:3px solid var(--ink);border-radius:var(--radius-lg);box-shadow:0 18px 0 -3px var(--coral),0 30px 50px rgba(42,37,32,0.16);overflow:hidden;}
+        .board .btop{background:var(--ink);color:#fff;text-align:center;padding:12px;font-weight:900;letter-spacing:0.04em;font-size:0.95rem;display:flex;align-items:center;justify-content:center;gap:8px;}
+        .board .btop .pin{color:var(--yellow);}
+        .board-inner{padding:34px 32px 36px;text-align:center;}
+        .board .lead{font-size:0.9rem;color:var(--muted);font-weight:600;margin-bottom:4px;}
+        .board .board-price{position:relative;display:inline-flex;align-items:flex-start;justify-content:center;margin:2px 0 14px;}
+        .board .board-price .cur{font-family:'Outfit',sans-serif;font-weight:800;font-size:2.2rem;color:var(--coral);margin-top:14px;}
+        .board .board-price .amt{font-family:'Outfit',sans-serif;font-weight:800;font-size:6rem;line-height:0.9;color:var(--coral);letter-spacing:-0.03em;}
+        .board .board-price .per{align-self:flex-end;font-weight:900;font-size:1.15rem;color:var(--ink);margin-bottom:12px;margin-left:5px;}
+        .board .board-price::before{content:"";position:absolute;width:200px;height:200px;background:var(--yellowsoft);border-radius:50%;z-index:-1;top:-6px;}
+        .board .perday-pill{display:inline-block;background:var(--coralsoft);color:var(--coral-d);font-weight:700;padding:9px 22px;border-radius:50px;font-size:0.96rem;margin-bottom:8px;}
+        .board .perday-pill strong{font-family:'Outfit',sans-serif;font-size:1.12rem;}
+        .board .nofee{font-size:0.82rem;color:var(--muted);margin-bottom:20px;}
+        .board-feat{list-style:none;text-align:left;max-width:340px;margin:0 auto 22px;}
+        .board-feat li{display:flex;align-items:flex-start;gap:10px;font-size:0.93rem;color:var(--inksoft);padding:8px 0;border-bottom:1px dashed var(--line);}
+        .board-feat li:last-child{border-bottom:none;}
+        .board-feat li .ck{color:var(--green);flex-shrink:0;margin-top:3px;}
+        .board .trial{display:inline-block;background:var(--yellow);color:var(--ink);padding:8px 20px;border-radius:50px;font-size:0.85rem;font-weight:800;margin-bottom:18px;}
+
+        /* referral */
+        .referral{background:var(--cream);}
+        .philosophy{max-width:680px;margin:0 auto 42px;display:flex;gap:14px;align-items:flex-start;justify-content:center;background:#fff;border:1px dashed var(--coral);border-radius:var(--radius);padding:22px 28px;}
+        .philosophy p{font-size:1rem;color:var(--ink);line-height:1.9;font-weight:500;}
+        .philosophy strong{color:var(--coral-d);}
+        .ladder-cap{text-align:center;font-size:0.92rem;color:var(--inksoft);margin:0 auto 18px;line-height:1.7;}
+        .ladder-cap strong{color:var(--coral-d);font-weight:800;}
+        .ladder{display:flex;gap:10px;max-width:980px;margin:0 auto;align-items:stretch;}
+        .step{flex:1;background:#fff;border:1px solid var(--line);border-radius:14px;padding:18px 8px;text-align:center;display:flex;flex-direction:column;justify-content:center;gap:5px;box-shadow:var(--shadow-soft);}
+        .step .who{font-size:0.76rem;color:var(--inksoft);font-weight:700;}
+        .step .off{font-size:0.72rem;color:var(--coral);font-weight:800;font-family:'Outfit',sans-serif;}
+        .step .amt{font-family:'Outfit',sans-serif;font-weight:800;font-size:1.45rem;color:var(--ink);}
+        .step.free{background:var(--coral);border-color:var(--coral);box-shadow:0 14px 30px rgba(242,102,60,0.32);transform:scale(1.05);}
+        .step.free .who,.step.free .off{color:#fff;}
+        .step.free .amt{color:#fff;font-size:1.7rem;}
+        .step.free .amt span{display:block;font-family:'Zen Kaku Gothic New',sans-serif;font-size:0.78rem;font-weight:800;margin-top:2px;}
+        .ref-note{max-width:700px;margin:26px auto 0;text-align:center;font-size:0.84rem;color:var(--inksoft);line-height:1.8;}
+        .ref-note strong{color:var(--coral-d);}
+        .ref-cta{text-align:center;margin-top:28px;}
+
+        /* final */
+        .final{background:var(--coral);position:relative;overflow:hidden;}
+        .final::before{content:"";position:absolute;top:-100px;right:-80px;width:360px;height:360px;background:rgba(255,255,255,0.1);border-radius:50%;}
+        .final::after{content:"";position:absolute;bottom:-120px;left:-60px;width:300px;height:300px;background:var(--yellow);opacity:0.25;border-radius:50%;}
+        .final-inner{max-width:520px;margin:0 auto;position:relative;z-index:1;}
+        .final-card{background:#fff;border-radius:var(--radius-lg);padding:44px 34px;text-align:center;box-shadow:var(--shadow-lg);}
+        .final-eyebrow{display:inline-flex;align-items:center;gap:8px;background:var(--coralsoft);color:var(--coral-d);padding:6px 16px;border-radius:50px;font-size:0.74rem;font-weight:700;margin-bottom:18px;}
+        .final-card h3{font-weight:900;font-size:1.65rem;margin-bottom:14px;line-height:1.55;}
+        .final-card .cool{font-size:0.95rem;color:var(--muted);margin-bottom:24px;}
+        .final-list{background:var(--cream);border-radius:var(--radius);padding:18px 22px;text-align:left;margin-bottom:22px;}
+        .final-list p{font-size:0.93rem;padding:6px 0;display:flex;align-items:center;gap:10px;color:var(--inksoft);}
+        .final-list p .ck{color:var(--green);flex-shrink:0;}
+        .final-note{font-size:0.74rem;color:var(--muted);margin-top:12px;}
+        .email-divider{margin-top:26px;padding-top:24px;border-top:1px dashed var(--line);}
+        .email-label{font-size:0.82rem;color:var(--muted);margin-bottom:12px;display:inline-flex;align-items:center;gap:7px;}
+        .email-row{display:flex;gap:8px;}
+        .email-input{flex:1;padding:13px 18px;border:1px solid var(--line);border-radius:50px;font-size:0.9rem;font-family:inherit;background:var(--paper);transition:border-color .2s;}
+        .email-input:focus{outline:none;border-color:var(--coral);}
+        .email-btn{padding:13px 24px;background:var(--ink);color:#fff;border:none;border-radius:50px;font-size:0.84rem;font-weight:700;cursor:pointer;white-space:nowrap;font-family:inherit;transition:background .2s;}
+        .email-btn:hover{background:#000;}
+
+        .site-footer{background:var(--ink);padding:54px 26px;text-align:center;color:rgba(255,253,247,0.55);}
+        .footer-logo{font-family:'Outfit',sans-serif;font-weight:800;font-size:1.5rem;color:#fff;}
+        .footer-logo .ja{font-family:'Zen Kaku Gothic New',sans-serif;font-size:0.6rem;letter-spacing:0.4em;display:block;margin-top:4px;color:rgba(255,253,247,0.45);}
+        .site-footer p{font-size:0.84rem;line-height:1.8;margin:16px 0 24px;}
+        .footer-line{display:inline-flex;align-items:center;gap:9px;background:var(--green);color:#fff;padding:13px 30px;border-radius:50px;font-size:0.9rem;font-weight:700;text-decoration:none;transition:all .2s;margin-bottom:28px;}
+        .footer-line:hover{background:var(--green-d);}
+        .footer-copy{padding-top:22px;border-top:1px solid rgba(255,255,255,0.08);font-size:0.74rem;}
+
+        .fixed-cta{position:fixed;bottom:0;left:0;right:0;background:#fff;box-shadow:0 -6px 24px rgba(42,37,32,0.12);padding:12px 20px;z-index:1000;display:flex;flex-direction:column;align-items:center;gap:4px;transform:translateY(110%);transition:transform .5s cubic-bezier(.16,1,.3,1);}
+        .fixed-cta.show{transform:translateY(0);}
+        .fixed-cta a{width:100%;max-width:420px;text-decoration:none;}
+        .fixed-cta-btn{width:100%;background:var(--green);color:#fff;border:none;padding:14px 28px;border-radius:50px;font-size:1.02rem;font-weight:700;cursor:pointer;font-family:inherit;display:flex;align-items:center;justify-content:center;gap:9px;transition:background .2s;}
+        .fixed-cta-btn:hover{background:var(--green-d);}
+        .fixed-cta-note{font-size:0.7rem;color:var(--coral);font-weight:700;display:inline-flex;align-items:center;gap:6px;}
+
+        @media(max-width:920px){.vs-wrap{gap:14px;}}
+        @media(max-width:768px){
+            body{padding-bottom:78px;line-height:1.8;}
+            .container{padding:0 18px;}
+            .notice{padding:7px 12px;} .notice-inner{font-size:0.72rem;gap:6px;}
+            .logo .en{font-size:1.25rem;} .header-cta{padding:9px 16px;font-size:0.74rem;}
+            .hero-grid{grid-template-columns:1fr;min-height:0;}
+            .hero-right{min-height:280px;order:-1;} .hero-left{padding:24px 18px 30px;}
+            .hero h1{font-size:2rem;} .footrule{flex-wrap:wrap;gap:18px;}
+            .vstrip-inner{flex-direction:column;} .vs-card{min-width:0;}
+            .sec{padding:56px 18px;} .sec-head{margin-bottom:38px;} .sec-title{font-size:1.5rem;line-height:1.6;}
+            .collage{grid-template-columns:1fr;} .note:nth-child(n){transform:none;margin-top:0;}
+            .answer .big{font-size:1.2rem;}
+            .testi-grid,.solution-grid{grid-template-columns:1fr;gap:28px;}
+            .testi-img,.solution-img{display:none;}
+            .proof-items{gap:16px;} .proof-item{min-width:40%;} .proof-item .n{font-size:2rem;}
+            .testi-highlight{font-size:1.1rem;}
+            .timeline{padding:10px 0;}
+            .timeline .rail{display:none;}
+            .stops{flex-direction:column;gap:0;}
+            .stop{display:flex;align-items:center;gap:14px;text-align:left;border-left:3px solid var(--line);padding:12px 0 12px 22px;margin-left:8px;}
+            .stop .time{margin:0;min-width:54px;} .stop .dot{position:absolute;left:-9px;top:50%;}
+            .stop .lab2,.stop .card{margin-top:0;} .stop.key{border-left-color:var(--coral);}
+            .vs-wrap{grid-template-columns:1fr;gap:36px;} .vs-badge{top:auto;left:50%;top:calc(50% - 0px);display:none;}
+            .vs-col.good{order:-1;}
+            .solution-text h2{font-size:1.5rem;}
+            .feat-row,.feat-row:nth-child(even){flex-direction:column;text-align:center;gap:10px;padding:24px;}
+            .feat-row .fnum{width:auto;font-size:2.6rem;}
+            .inf-track-wrap{overflow-x:auto;scroll-snap-type:x mandatory;-webkit-overflow-scrolling:touch;}
+            .inf-track{animation:none;width:max-content;gap:14px;}
+            .inf-card{min-width:300px;max-width:300px;scroll-snap-align:start;padding:26px 22px;}
+            .anniversary span{font-size:1.05rem;padding:11px 22px;}
+            .comp-wrap{overflow-x:auto;}
+            .ind-wrap{margin:0 -18px;padding:0 18px;}
+            .board .board-price .amt{font-size:5rem;} .board .board-price::before{width:150px;height:150px;}
+            .final-card{padding:32px 22px;} .final-card h3{font-size:1.35rem;}
+            .email-row{flex-direction:column;}
+            .site-footer{padding:44px 18px;}
+            .fixed-cta-btn{font-size:0.92rem;padding:12px 20px;}
         }
-        .container { max-width: 1100px; margin: 0 auto; padding: 0 24px; }
-
-        /* SVG Icon system */
-        .icon { display: inline-block; vertical-align: middle; flex-shrink: 0; }
-        .icon-sm { width: 14px; height: 14px; }
-        .icon-md { width: 18px; height: 18px; }
-        .icon-lg { width: 28px; height: 28px; }
-        .icon-xl { width: 36px; height: 36px; }
-        .icon-inline { vertical-align: -3px; margin-right: 6px; }
-
-        .campaign-banner {
-            position: fixed; top: 0; left: 0; right: 0; z-index: 200;
-            background: linear-gradient(90deg, #1D4ED8 0%, #3B82F6 50%, #1D4ED8 100%);
-            background-size: 200% 100%;
-            animation: bannerShimmer 3s ease-in-out infinite;
-            padding: 10px 20px; text-align: center;
+        @media(max-width:400px){.hero h1{font-size:1.7rem;}.sec-title{font-size:1.32rem;}.ind-table{min-width:560px;}.board .board-price .amt{font-size:4.2rem;}}
+        /* === mobile refinements === */
+        @media(max-width:768px){
+            .btn-line{width:100%;padding:16px 24px;}
+            .hero-ctas{width:100%;} .hero-ctas .micro{text-align:center;width:100%;}
+            .footrule{display:grid;grid-template-columns:1fr 1fr;gap:14px 10px;}
+            .hero-right img{min-height:240px;}
+            .hero-chip{padding:8px 12px;} .hero-chip .n{font-size:1.12rem;} .hero-chip .l{font-size:0.62rem;}
+            .hero-chip.one{top:14px;left:14px;} .hero-chip.two{bottom:14px;right:14px;}
+            .hero-right .tape{font-size:0.64rem;padding:7px 48px;top:16px;right:-50px;}
+            .masthead .issue{font-size:0.7rem;}
+            .notice-inner{line-height:1.45;}
+            .board{box-shadow:0 12px 0 -3px var(--coral),0 18px 36px rgba(42,37,32,0.14);}
+            .sched-toggle{flex-wrap:wrap;}
+            .answer{padding:24px 18px;}
+            .vstrip{padding:18px;}
+            .campaign-flag{max-width:100%;font-size:0.8rem;}
+            .philosophy{flex-direction:column;align-items:center;text-align:center;gap:8px;padding:20px;}
+            .ladder{flex-direction:column;gap:8px;max-width:420px;}
+            .step{flex-direction:row;justify-content:space-between;align-items:center;text-align:left;padding:13px 16px;gap:10px;}
+            .step .who{font-size:0.86rem;flex:1;}
+            .step .off{font-size:0.78rem;}
+            .step .amt{font-size:1.35rem;}
+            .step.free{transform:none;}
+            .step.free .amt{font-size:1.5rem;display:flex;align-items:baseline;gap:6px;}
+            .step.free .amt span{display:inline;font-size:0.85rem;margin-top:0;}
+            .sec-title br{display:none;}
+            .problem .blob{display:none;}
+            .sched-toggle .t{flex:1 1 auto;}
+            .hero-left{text-align:center;}
+            .hero-body .cat{align-self:center;}
+            .campaign-flag{margin-left:auto;margin-right:auto;justify-content:center;}
+            .hero .lede{margin-left:auto;margin-right:auto;}
+            .hero-ctas{justify-content:center;}
+            .footrule{justify-content:center;}
+            .footrule .it{text-align:center;}
         }
-        @keyframes bannerShimmer {
-            0%, 100% { background-position: 0% 50%; }
-            50% { background-position: 100% 50%; }
-        }
-        .banner-inner { display: flex; align-items: center; justify-content: center; gap: 10px; flex-wrap: wrap; }
-        .banner-main { color: white; font-size: 0.95rem; font-weight: 900; letter-spacing: 0.01em; display: inline-flex; align-items: center; gap: 8px; }
-        .banner-sub { color: #FCD34D; font-size: 0.8rem; font-weight: 700; }
-
-        .site-header {
-            background: rgba(251,248,243,0.92);
-            backdrop-filter: blur(16px);
-            padding: 16px 0;
-            position: fixed;
-            top: var(--banner-h, 44px);
-            left: 0; right: 0; z-index: 100;
-            border-bottom: 1px solid rgba(0,0,0,0.04);
-        }
-        .header-inner { display: flex; justify-content: space-between; align-items: center; }
-        .logo { font-size: 1.4rem; font-weight: 900; color: var(--orange-600); }
-        .header-cta {
-            background: #1D4ED8; color: white; border: none;
-            padding: 10px 24px; border-radius: 50px;
-            font-size: 0.85rem; font-weight: 700; cursor: pointer;
-            transition: all 0.2s; text-decoration: none; display: inline-block;
-        }
-        .header-cta:hover { transform: translateY(-1px); box-shadow: 0 8px 24px rgba(29,78,216,0.35); }
-
-        .hero {
-            padding: calc(var(--banner-h, 44px) + var(--header-h, 68px) + 40px) 24px 80px;
-            background: var(--cream); position: relative; overflow: hidden;
-        }
-        .hero::before {
-            content: ''; position: absolute; top: -200px; right: -200px;
-            width: 600px; height: 600px;
-            background: radial-gradient(circle, rgba(37,99,235,0.08) 0%, transparent 70%);
-            border-radius: 50%;
-        }
-        .hero-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 60px; align-items: center; position: relative; z-index: 1; }
-        .hero-eyebrow {
-            display: inline-flex; align-items: center; gap: 8px;
-            background: var(--orange-100); color: var(--orange-700);
-            padding: 8px 20px; border-radius: 50px;
-            font-size: 0.85rem; font-weight: 700; margin-bottom: 24px;
-        }
-        .hero h1 { font-size: 2.8rem; font-weight: 900; line-height: 1.35; color: var(--charcoal); margin-bottom: 20px; letter-spacing: -0.02em; }
-        .hero h1 em { font-style: normal; color: var(--orange-600); }
-        .hero-sub { font-size: 1.1rem; color: var(--gray-600); line-height: 1.8; margin-bottom: 28px; }
-        .hero-cta-group { display: flex; flex-direction: column; gap: 12px; max-width: 380px; }
-        .btn-campaign {
-            display: flex; align-items: center; justify-content: center; gap: 10px;
-            background: linear-gradient(135deg, #1D4ED8, #3B82F6);
-            color: white; border: none; padding: 18px 36px; border-radius: 60px;
-            font-size: 1.1rem; font-weight: 800; cursor: pointer;
-            transition: all 0.25s; box-shadow: 0 8px 28px rgba(29,78,216,0.35);
-            position: relative; overflow: hidden; text-decoration: none; width: 100%;
-        }
-        .btn-campaign:hover { transform: translateY(-2px); box-shadow: 0 12px 36px rgba(29,78,216,0.5); }
-        .btn-micro { font-size: 0.8rem; color: var(--gray-400); text-align: center; }
-        .campaign-card {
-            background: linear-gradient(135deg, #EFF6FF 0%, #DBEAFE 100%);
-            border: 2px solid #3B82F6; border-radius: var(--radius-md);
-            padding: 24px 28px; margin-bottom: 24px;
-        }
-        .campaign-card-badge {
-            display: inline-flex; align-items: center; gap: 6px;
-            background: #1D4ED8; color: white; padding: 5px 14px;
-            border-radius: 50px; font-size: 0.75rem; font-weight: 800; margin-bottom: 12px;
-        }
-        .campaign-card-title { font-size: 1.25rem; font-weight: 900; color: #1E3A8A; margin-bottom: 8px; line-height: 1.4; }
-        .campaign-card-title em { font-style: normal; color: #1D4ED8; font-size: 1.5rem; }
-        .campaign-card-sub { font-size: 0.88rem; color: #1E40AF; line-height: 1.7; }
-        .campaign-card-sub strong { color: #1D4ED8; }
-
-        .hero-visual { position: relative; }
-        .hero-visual img { width: 100%; border-radius: var(--radius-lg); box-shadow: var(--shadow-lg); }
-        .hero-badge {
-            position: absolute; bottom: -16px; left: -16px;
-            background: white; padding: 14px 22px; border-radius: var(--radius-md);
-            box-shadow: var(--shadow-md); display: flex; align-items: center; gap: 12px;
-        }
-        .hero-badge-number { font-size: 2rem; font-weight: 900; color: var(--orange-600); line-height: 1; }
-        .hero-badge-label { font-size: 0.75rem; color: var(--gray-600); font-weight: 600; line-height: 1.3; }
-
-        .proof-bar { background: white; padding: 40px 24px; border-top: 1px solid var(--gray-200); border-bottom: 1px solid var(--gray-200); }
-        .proof-items { display: flex; justify-content: center; gap: 48px; flex-wrap: wrap; }
-        .proof-item { text-align: center; }
-        .proof-number { font-size: 2.2rem; font-weight: 900; color: var(--orange-600); line-height: 1; margin-bottom: 6px; }
-        .proof-label { font-size: 0.8rem; color: var(--gray-600); font-weight: 500; }
-
-        .section-label { text-align: center; margin-bottom: 48px; }
-        .section-label .eyebrow { display: inline-flex; align-items: center; gap: 6px; font-size: 0.8rem; font-weight: 700; color: var(--orange-600); background: var(--orange-50); padding: 6px 16px; border-radius: 50px; margin-bottom: 16px; letter-spacing: 0.05em; }
-        .section-label h2 { font-size: 2.2rem; font-weight: 900; color: var(--charcoal); line-height: 1.4; letter-spacing: -0.01em; }
-        .section-label p { font-size: 1rem; color: var(--gray-600); margin-top: 12px; }
-
-        .video-section { padding: 80px 24px; background: var(--warm-white); }
-        .video-wrapper { max-width: 720px; margin: 0 auto; }
-        .video-label { text-align: center; margin-bottom: 24px; }
-        .video-label h2 { font-size: 1.6rem; font-weight: 700; color: var(--charcoal); margin-bottom: 8px; }
-        .video-label p { font-size: 0.95rem; color: var(--gray-600); }
-        .video-embed { position: relative; padding-bottom: 56.25%; height: 0; overflow: hidden; border-radius: var(--radius-lg); box-shadow: var(--shadow-lg); }
-        .video-embed iframe { position: absolute; top: 0; left: 0; width: 100%; height: 100%; border: 0; border-radius: var(--radius-lg); }
-
-        .testimonials-section { padding: 80px 24px; background: white; }
-        .testi-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 60px; align-items: center; }
-        .testi-content h2 { font-size: 2rem; font-weight: 900; line-height: 1.5; margin-bottom: 32px; color: var(--charcoal); }
-        .testi-card { background: var(--cream); padding: 24px; border-radius: var(--radius-md); margin-bottom: 16px; border-left: 4px solid var(--orange-500); }
-        .testi-card p { font-size: 0.95rem; color: var(--charcoal); line-height: 1.7; }
-        .testi-card .author { font-size: 0.82rem; color: var(--gray-400); margin-top: 10px; font-weight: 500; }
-        .testi-highlight { margin-top: 32px; font-size: 1.3rem; font-weight: 700; color: var(--charcoal); line-height: 1.6; }
-        .testi-img img { width: 100%; max-width: 450px; border-radius: var(--radius-lg); box-shadow: var(--shadow-md); }
-
-        .schedule-section { padding: 80px 24px; background: var(--cream); }
-        .schedule-wrap { max-width: 720px; margin: 0 auto; }
-        .schedule-intro { text-align: center; margin-bottom: 36px; }
-        .schedule-intro p { font-size: 1rem; color: var(--gray-600); line-height: 1.8; }
-        .schedule-table-outer { background: white; border-radius: var(--radius-lg); box-shadow: var(--shadow-md); overflow: hidden; }
-        .schedule-day-label { background: #1D4ED8; color: white; padding: 12px 24px; font-size: 0.85rem; font-weight: 700; display: flex; align-items: center; gap: 8px; }
-        .schedule-rows { padding: 8px 0; }
-        .schedule-row { display: flex; align-items: center; padding: 14px 24px; gap: 16px; border-bottom: 1px solid var(--gray-200); transition: background 0.15s; }
-        .schedule-row:last-child { border-bottom: none; }
-        .schedule-row:hover { background: var(--orange-50); }
-        .schedule-time { font-size: 0.82rem; font-weight: 700; color: var(--gray-400); min-width: 72px; flex-shrink: 0; }
-        .schedule-activity { flex: 1; font-size: 0.95rem; font-weight: 500; color: var(--charcoal); display: flex; align-items: center; gap: 8px; }
-        .schedule-tag { font-size: 0.72rem; font-weight: 800; padding: 4px 12px; border-radius: 50px; white-space: nowrap; flex-shrink: 0; }
-        .tag-success { background: #DBEAFE; color: #1D4ED8; }
-        .tag-normal { background: var(--gray-200); color: var(--gray-600); }
-        .schedule-highlight-row { background: linear-gradient(90deg, #EFF6FF, #DBEAFE); }
-        .schedule-highlight-row .schedule-activity { font-weight: 700; color: #1E3A8A; }
-        .schedule-note { text-align: center; margin-top: 20px; font-size: 0.88rem; color: var(--gray-600); line-height: 1.7; }
-        .schedule-note strong { color: var(--orange-600); }
-
-        .problem-section { padding: 100px 24px; background: var(--warm-white); }
-        .problem-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 60px; align-items: center; }
-        .problem-img img { width: 100%; max-width: 450px; border-radius: var(--radius-lg); box-shadow: var(--shadow-md); }
-        .problem-text h3 { font-size: 1.5rem; font-weight: 700; margin-bottom: 20px; line-height: 1.5; }
-        .problem-text p { font-size: 1.05rem; color: var(--gray-600); margin-bottom: 16px; line-height: 1.8; }
-        .problem-text .highlight { color: #DC2626; font-weight: 700; }
-        .pain-list { list-style: none; margin: 28px 0; padding: 0; }
-        .pain-list li { background: white; padding: 18px 24px; border-radius: var(--radius-sm); margin-bottom: 12px; font-size: 1rem; font-weight: 500; display: flex; align-items: center; gap: 14px; box-shadow: var(--shadow-soft); transition: transform 0.2s; }
-        .pain-list li:hover { transform: translateX(4px); }
-        .pain-list li::before { content: ''; width: 4px; height: 28px; background: var(--orange-500); border-radius: 4px; flex-shrink: 0; }
-        .problem-answer { background: var(--orange-50); padding: 24px; border-radius: var(--radius-md); margin-top: 28px; border-left: 4px solid var(--orange-500); }
-        .problem-answer p { font-weight: 600; color: var(--charcoal); font-size: 1.1rem; }
-
-        .comparison-section { padding: 100px 24px; background: white; }
-        .comp-table-wrap { max-width: 900px; margin: 0 auto; overflow-x: auto; -webkit-overflow-scrolling: touch; }
-        .comp-table { width: 100%; min-width: 700px; border-collapse: separate; border-spacing: 0; border-radius: var(--radius-lg); overflow: hidden; box-shadow: var(--shadow-lg); }
-        .comp-table thead th { padding: 24px 20px; font-size: 0.95rem; font-weight: 800; text-align: center; }
-        .comp-table thead th:first-child { background: var(--charcoal); color: white; width: 22%; }
-        .comp-table thead th:nth-child(2) { background: #64748B; color: white; width: 39%; }
-        .comp-table thead th:nth-child(3) { background: #059669; color: white; width: 39%; }
-        .comp-table thead th .th-inner { display: inline-flex; align-items: center; gap: 6px; }
-        .comp-table tbody td { padding: 24px 20px; text-align: center; border-bottom: 1px solid var(--gray-200); font-size: 0.95rem; vertical-align: middle; }
-        .comp-table tbody td:first-child { font-weight: 800; background: #FAFAF9; border-right: 1px solid var(--gray-200); }
-        .comp-table tbody td:nth-child(2) { color: var(--gray-600); background: #FAFAF9; border-right: 1px solid var(--gray-200); }
-        .comp-table tbody td:nth-child(3) { background: #ECFDF5; color: #047857; font-weight: 600; }
-        .comp-table tbody tr:last-child td { border-bottom: none; }
-        .comp-icon-wrap { display: flex; justify-content: center; margin-bottom: 8px; color: var(--orange-600); }
-        .comp-table tbody td:nth-child(3) .comp-icon-wrap { color: #047857; }
-        .comp-main { font-weight: 700; display: block; margin-bottom: 4px; font-size: 1rem; display: inline-flex; align-items: center; gap: 6px; }
-        .comp-sub { font-size: 0.82rem; display: block; opacity: 0.85; line-height: 1.5; }
-        .comp-swipe-hint { display: none; text-align: center; margin-top: 10px; font-size: 0.75rem; color: var(--gray-400); }
-
-        .inline-cta {
-            max-width: 480px; margin: 60px auto 0;
-            background: white; border: 3px solid var(--green-500);
-            border-radius: var(--radius-lg); padding: 36px 28px;
-            text-align: center; box-shadow: var(--shadow-md);
-        }
-        .inline-cta-badge { display: inline-flex; align-items: center; gap: 6px; background: var(--green-500); color: white; padding: 6px 18px; border-radius: 50px; font-size: 0.8rem; font-weight: 700; margin-bottom: 16px; }
-        .inline-cta h4 { font-size: 1.4rem; font-weight: 900; margin-bottom: 20px; line-height: 1.4; }
-        .inline-cta-list { background: var(--orange-50); padding: 18px 20px; border-radius: var(--radius-sm); text-align: left; margin-bottom: 20px; }
-        .inline-cta-list p { font-size: 0.95rem; padding: 6px 0; display: flex; align-items: center; gap: 10px; }
-        .inline-cta-list p .check-icon { color: var(--green-500); flex-shrink: 0; }
-        .inline-cta .note { font-size: 0.75rem; color: var(--gray-400); margin-top: 12px; }
-        .campaign-highlight-box { background: linear-gradient(135deg, #EFF6FF, #DBEAFE); border: 2px dashed #3B82F6; border-radius: var(--radius-sm); padding: 14px 18px; margin-bottom: 16px; text-align: center; }
-        .campaign-highlight-box .chb-main { font-size: 1.15rem; font-weight: 900; color: #1E3A8A; line-height: 1.3; display: inline-flex; align-items: center; gap: 8px; }
-        .campaign-highlight-box .chb-sub { font-size: 0.78rem; color: #1E40AF; margin-top: 4px; }
-
-        .solution-section { padding: 100px 24px; background: var(--cream); }
-        .solution-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 60px; align-items: center; }
-        .solution-text h2 { font-size: 2rem; font-weight: 900; margin-bottom: 28px; line-height: 1.5; color: var(--charcoal); }
-        .solution-text p { font-size: 1.05rem; color: var(--gray-600); margin-bottom: 16px; line-height: 1.8; }
-        .solution-text .emphasis { font-weight: 700; color: var(--charcoal); font-size: 1.1rem; margin-top: 24px; padding: 20px; background: var(--orange-50); border-radius: var(--radius-sm); border-left: 4px solid var(--orange-500); }
-        .solution-img img { width: 100%; max-width: 450px; border-radius: var(--radius-lg); box-shadow: var(--shadow-md); }
-
-        .features-section { padding: 100px 24px; background: var(--charcoal); position: relative; overflow: hidden; }
-        .features-section::before { content: ''; position: absolute; inset: 0; background: radial-gradient(circle at 20% 80%, rgba(37,99,235,0.15) 0%, transparent 50%), radial-gradient(circle at 80% 20%, rgba(37,99,235,0.08) 0%, transparent 50%); }
-        .features-section .section-label h2 { color: white; }
-        .features-section .section-label .eyebrow { background: rgba(37,99,235,0.2); color: var(--orange-400); }
-        .features-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 24px; position: relative; z-index: 1; }
-        .feature-card { background: rgba(255,255,255,0.06); backdrop-filter: blur(10px); border: 1px solid rgba(255,255,255,0.08); border-radius: var(--radius-md); padding: 36px 28px; transition: all 0.3s; }
-        .feature-card:hover { background: rgba(255,255,255,0.1); transform: translateY(-4px); border-color: rgba(37,99,235,0.3); }
-        .feature-card .feature-icon { color: var(--orange-400); margin-bottom: 16px; display: flex; }
-        .feature-card h3 { font-size: 1.15rem; font-weight: 700; color: white; margin-bottom: 10px; }
-        .feature-card p { font-size: 0.9rem; color: rgba(255,255,255,0.65); line-height: 1.7; }
-        .features-tagline { text-align: center; margin-top: 56px; position: relative; z-index: 1; }
-        .features-tagline p { font-size: 1.3rem; font-weight: 700; color: rgba(255,255,255,0.85); line-height: 1.6; }
-
-        .influencer-section { padding: 100px 24px; background: linear-gradient(180deg, #E7F0E1 0%, #C5D5B8 50%, #A6BD93 100%); overflow: hidden; position: relative; }
-        .influencer-section::before { content: '"'; position: absolute; top: -30px; left: 5%; font-size: 18rem; line-height: 1; color: rgba(255,255,255,0.5); font-family: Georgia, serif; font-weight: 700; pointer-events: none; z-index: 0; }
-        .influencer-section::after { content: '"'; position: absolute; bottom: -100px; right: 5%; font-size: 18rem; line-height: 1; color: rgba(255,255,255,0.5); font-family: Georgia, serif; font-weight: 700; pointer-events: none; z-index: 0; }
-        .influencer-section .container { position: relative; z-index: 1; }
-        .influencer-section .section-label .eyebrow { background: var(--charcoal); color: white; font-weight: 800; padding: 8px 22px; box-shadow: var(--shadow-md); }
-        .influencer-section .section-label h2 { color: var(--charcoal); text-shadow: 0 2px 0 rgba(255,255,255,0.4); }
-        .influencer-track-wrapper { overflow: hidden; margin: 56px 0 32px; padding: 16px 0; position: relative; z-index: 1; }
-        .influencer-track { display: flex; gap: 32px; animation: scrollCards 60s linear infinite; }
-        .influencer-track:hover { animation-play-state: paused; }
-        @keyframes scrollCards { 0% { transform: translateX(0); } 100% { transform: translateX(-50%); } }
-        .inf-card { min-width: 420px; max-width: 420px; background: white; border-radius: var(--radius-md); padding: 36px 32px; box-shadow: 0 12px 32px rgba(0,0,0,0.12); flex-shrink: 0; transition: all 0.3s; border: 1px solid white; position: relative; }
-        .inf-card::before { content: '"'; position: absolute; top: 8px; right: 20px; font-size: 5rem; line-height: 1; color: var(--orange-100); font-family: Georgia, serif; font-weight: 700; pointer-events: none; }
-        .inf-card:hover { transform: translateY(-6px); box-shadow: 0 20px 44px rgba(0,0,0,0.18); }
-        .inf-card-header { display: flex; align-items: center; gap: 16px; margin-bottom: 20px; position: relative; z-index: 1; }
-        .inf-card-header img { width: 72px; height: 72px; border-radius: 50%; object-fit: cover; border: 3px solid white; box-shadow: 0 4px 14px rgba(0,0,0,0.15); }
-        .inf-name { font-size: 1.05rem; font-weight: 800; color: var(--charcoal); }
-        .inf-details { font-size: 0.78rem; color: var(--gray-400); font-weight: 500; margin-top: 3px; }
-        .inf-card h4 { font-size: 1.05rem; font-weight: 700; color: var(--charcoal); margin-bottom: 12px; line-height: 1.55; }
-        .inf-card p { font-size: 0.92rem; color: var(--gray-600); line-height: 1.8; }
-        .inf-card .inf-body { background: var(--orange-50); padding: 20px; border-radius: var(--radius-sm); border-left: 3px solid var(--orange-500); }
-        .anniversary-badge { text-align: center; margin-top: 32px; font-size: 1.5rem; font-weight: 900; color: var(--charcoal); position: relative; z-index: 1; padding: 16px 24px; background: white; border-radius: 50px; display: inline-block; box-shadow: var(--shadow-md); }
-        .anniversary-wrap { text-align: center; margin-top: 32px; position: relative; z-index: 1; }
-
-        /* Industry comparison */
-        .industry-section { padding: 100px 24px; background: var(--warm-white); }
-        .industry-table-wrap { max-width: 980px; margin: 0 auto; overflow-x: auto; -webkit-overflow-scrolling: touch; }
-        .industry-table { width: 100%; min-width: 720px; border-collapse: separate; border-spacing: 0; background: white; border-radius: 20px; overflow: hidden; box-shadow: var(--shadow-lg); }
-        .industry-table thead th { background: var(--charcoal); color: white; padding: 18px 14px; font-size: 0.85rem; font-weight: 800; }
-        .industry-table thead th.left { text-align: left; }
-        .industry-table thead th.center { text-align: center; }
-        .industry-table tbody td { padding: 18px 14px; font-size: 0.92rem; border-bottom: 1px solid var(--gray-200); }
-        .industry-table tbody td:first-child { font-weight: 700; color: var(--charcoal); font-size: 0.95rem; }
-        .industry-table tbody td:first-child .row-icon-wrap { display: inline-flex; align-items: center; gap: 8px; }
-        .industry-table tbody td.center { text-align: center; color: var(--gray-600); }
-        .industry-table tbody td.unit { color: #DC2626; font-weight: 800; font-size: 1rem; }
-        .industry-table tbody td.no-live { color: var(--gray-400); font-size: 0.85rem; }
-        .industry-table tbody tr.sa-row { background: linear-gradient(90deg, #EFF6FF, #DBEAFE); border-top: 3px solid #1D4ED8; }
-        .industry-table tbody tr.sa-row td:first-child { font-weight: 900; color: #1E3A8A; font-size: 1rem; padding: 22px 14px; }
-        .industry-table tbody tr.sa-row td.center { font-weight: 900; color: #1D4ED8; font-size: 1.15rem; padding: 22px 14px; }
-        .industry-table tbody tr.sa-row td.unit { font-weight: 900; color: #059669; font-size: 1.5rem; padding: 22px 14px; }
-        .industry-table tbody tr.sa-row .sa-sub { font-size: 0.72rem; font-weight: 700; color: #1D4ED8; display: block; margin-top: 2px; }
-        .industry-table tbody tr.sa-row .sa-sub-light { font-size: 0.72rem; font-weight: 700; color: #1D4ED8; display: block; margin-top: 2px; }
-        .industry-note { text-align: center; margin-top: 14px; font-size: 0.72rem; color: var(--gray-400); line-height: 1.6; }
-        .industry-summary { max-width: 760px; margin: 36px auto 0; padding: 28px; background: white; border-radius: 16px; border-left: 4px solid var(--orange-500); box-shadow: var(--shadow-soft); }
-        .industry-summary p { font-size: 0.95rem; color: var(--gray-600); font-weight: 500; line-height: 1.7; margin-bottom: 10px; }
-        .industry-summary p.main { font-size: 1.1rem; font-weight: 700; color: var(--charcoal); margin-bottom: 14px; display: flex; align-items: flex-start; gap: 10px; }
-        .industry-summary p.main strong { color: var(--orange-600); }
-        .industry-summary p.main .icon-bulb { color: var(--orange-500); flex-shrink: 0; margin-top: 3px; }
-        .industry-summary p strong { color: var(--charcoal); }
-
-        .pricing-section { padding: 100px 24px; background: white; }
-        .pricing-grid { display: grid; grid-template-columns: 1fr; gap: 24px; max-width: 460px; margin: 0 auto; }
-        .price-card { background: var(--cream); border: 2px solid var(--gray-200); border-radius: var(--radius-lg); padding: 36px 24px; text-align: center; transition: all 0.3s; position: relative; }
-        .price-card:hover { transform: translateY(-6px); box-shadow: var(--shadow-lg); }
-        .price-badge { display: inline-block; padding: 5px 14px; border-radius: 50px; font-size: 0.75rem; font-weight: 700; color: white; margin-bottom: 12px; }
-        .price-badge.orange { background: var(--orange-600); }
-        .price-name { font-size: 1.2rem; font-weight: 900; margin-bottom: 6px; }
-        .price-target { font-size: 0.75rem; color: var(--gray-400); margin-bottom: 10px; }
-        .price-desc { font-size: 0.85rem; color: var(--gray-600); margin-bottom: 20px; min-height: 40px; line-height: 1.5; }
-        .price-amount { font-size: 2.6rem; font-weight: 900; color: var(--orange-600); line-height: 1; margin-bottom: 6px; }
-        .price-amount span { font-size: 1.1rem; }
-        .price-trial { display: inline-block; padding: 6px 16px; border-radius: 50px; font-size: 0.8rem; font-weight: 700; color: white; margin-bottom: 14px; }
-        .price-trial.orange { background: var(--orange-600); }
-        .price-detail { font-size: 0.82rem; color: var(--gray-600); line-height: 1.5; }
-
-        .entry-campaign-block {
-            max-width: 560px; margin: 40px auto 0;
-            background: linear-gradient(135deg, #EFF6FF 0%, #DBEAFE 100%);
-            border: 2px solid #3B82F6; border-radius: var(--radius-lg);
-            padding: 28px 28px 24px; text-align: center;
-        }
-        .entry-campaign-pill { display: inline-flex; align-items: center; gap: 6px; background: #1D4ED8; color: white; font-size: 0.78rem; font-weight: 700; padding: 5px 16px; border-radius: 50px; margin-bottom: 14px; }
-        .entry-campaign-title { font-size: 1.3rem; font-weight: 900; color: #1E3A8A; margin-bottom: 14px; line-height: 1.4; }
-        .entry-campaign-desc { font-size: 0.95rem; font-weight: 600; color: #1E3A8A; line-height: 1.7; }
-        .entry-campaign-desc strong { color: #1D4ED8; }
-        .entry-campaign-note { font-size: 0.78rem; color: #1E40AF; font-weight: 500; margin-top: 10px; opacity: 0.85; line-height: 1.6; }
-
-        .final-cta { padding: 100px 24px; background: linear-gradient(135deg, var(--orange-500) 0%, #1E3A8A 100%); position: relative; overflow: hidden; }
-        .final-cta::before { content: ''; position: absolute; inset: 0; background: radial-gradient(circle at 30% 50%, rgba(255,255,255,0.1) 0%, transparent 50%); }
-        .final-cta-inner { max-width: 500px; margin: 0 auto; position: relative; z-index: 1; }
-        .final-cta-card { background: white; border-radius: var(--radius-lg); padding: 44px 32px; text-align: center; border: 4px solid var(--green-500); box-shadow: 0 20px 50px rgba(0,0,0,0.15); }
-        .final-cta-card h3 { font-size: 1.7rem; font-weight: 900; margin-bottom: 24px; line-height: 1.4; }
-
-        .email-divider { margin-top: 24px; padding-top: 24px; border-top: 2px dashed var(--gray-200); }
-        .email-divider .email-label { font-size: 0.85rem; color: var(--gray-400); margin-bottom: 12px; font-weight: 600; display: inline-flex; align-items: center; gap: 6px; }
-        .email-form-row { display: flex; gap: 8px; }
-        .email-input { flex: 1; padding: 12px 18px; border: 2px solid var(--gray-200); border-radius: 50px; font-size: 0.9rem; font-family: inherit; transition: border-color 0.2s; }
-        .email-input:focus { outline: none; border-color: var(--orange-500); }
-        .email-btn { padding: 12px 24px; background: var(--orange-600); color: white; border: none; border-radius: 50px; font-size: 0.85rem; font-weight: 700; cursor: pointer; transition: all 0.2s; white-space: nowrap; font-family: inherit; }
-        .email-btn:hover { background: var(--orange-700); }
-
-        .site-footer { background: var(--charcoal); padding: 60px 24px; text-align: center; color: rgba(255,255,255,0.5); }
-        .footer-logo { font-size: 1.3rem; font-weight: 900; color: white; margin-bottom: 12px; }
-        .site-footer p { font-size: 0.85rem; line-height: 1.7; margin-bottom: 20px; }
-        .footer-line-btn { display: inline-flex; align-items: center; gap: 8px; background: var(--green-500); color: white; padding: 12px 28px; border-radius: 50px; font-size: 0.9rem; font-weight: 700; text-decoration: none; border: none; cursor: pointer; transition: all 0.2s; margin-bottom: 28px; }
-        .footer-line-btn:hover { box-shadow: var(--shadow-green); }
-        .footer-copy { padding-top: 20px; border-top: 1px solid rgba(255,255,255,0.08); font-size: 0.75rem; }
-
-        .fixed-cta { position: fixed; bottom: 0; left: 0; right: 0; background: rgba(28,25,23,0.95); backdrop-filter: blur(12px); padding: 14px 20px; z-index: 1000; display: flex; flex-direction: column; align-items: center; gap: 6px; transform: translateY(100%); animation: slideUpCTA 0.5s ease-out 2s forwards; }
-        @keyframes slideUpCTA { to { transform: translateY(0); } }
-        .fixed-cta-btn { width: 100%; max-width: 400px; background: linear-gradient(135deg, #1D4ED8, #3B82F6); color: white; border: none; padding: 14px 28px; border-radius: 50px; font-size: 1.05rem; font-weight: 800; cursor: pointer; transition: all 0.2s; font-family: inherit; display: flex; align-items: center; justify-content: center; gap: 8px; }
-        .fixed-cta-note { font-size: 0.72rem; color: #FCD34D; font-weight: 700; display: inline-flex; align-items: center; gap: 6px; }
-
-        @keyframes gentle-pulse {
-            0%, 100% { box-shadow: 0 8px 28px rgba(29,78,216,0.3); }
-            50% { box-shadow: 0 8px 36px rgba(29,78,216,0.55); }
-        }
-        .pulse-btn { animation: gentle-pulse 2.5s ease-in-out infinite; }
-
-        @media (max-width: 900px) {
-            .features-grid { grid-template-columns: 1fr 1fr; }
-            .pricing-grid { grid-template-columns: 1fr; max-width: 420px; }
-        }
-        @media (max-width: 768px) {
-            body { padding-bottom: 80px; }
-            .container { padding: 0 16px; }
-            .campaign-banner { padding: 6px 10px; }
-            .banner-inner { gap: 4px; }
-            .banner-main { font-size: 0.78rem; }
-            .banner-sub { font-size: 0.68rem; }
-            .logo { font-size: 1.1rem; } .header-cta { padding: 8px 14px; font-size: 0.75rem; }
-            .hero { padding: calc(var(--banner-h, 36px) + var(--header-h, 56px) + 20px) 16px 40px; }
-            .hero-grid { grid-template-columns: 1fr; gap: 20px; text-align: center; }
-            .hero-visual { order: -1; } .hero-visual img { max-height: 220px; object-fit: cover; width: 100%; }
-            .hero-badge { position: relative; bottom: auto; left: auto; justify-content: center; margin: -16px auto 0; display: inline-flex; padding: 10px 16px; } .hero-badge-number { font-size: 1.5rem; }
-            .hero-eyebrow { font-size: 0.72rem; padding: 6px 12px; text-align: left; }
-            .hero h1 { font-size: 1.65rem; margin-bottom: 12px; } .hero-sub { font-size: 0.9rem; margin-bottom: 20px; }
-            .campaign-card { padding: 16px; margin-bottom: 16px; } .campaign-card-title { font-size: 1.05rem; } .campaign-card-title em { font-size: 1.25rem; } .campaign-card-sub { font-size: 0.82rem; }
-            .hero-cta-group { max-width: 100%; gap: 8px; } .btn-campaign { font-size: 0.95rem; padding: 14px 24px; }
-            .proof-bar { padding: 24px 16px; } .proof-items { display: grid; grid-template-columns: repeat(2, 1fr); gap: 12px; } .proof-item { background: white; border-radius: 12px; padding: 14px 8px; box-shadow: var(--shadow-soft); } .proof-number { font-size: 1.6rem; } .proof-label { font-size: 0.72rem; }
-            .section-label { margin-bottom: 28px; } .section-label h2 { font-size: 1.35rem; line-height: 1.5; } .section-label p { font-size: 0.88rem; }
-            .video-section { padding: 40px 16px; } .video-label h2 { font-size: 1.2rem; } .video-label p { font-size: 0.85rem; }
-            .testimonials-section { padding: 48px 16px; } .testi-grid { grid-template-columns: 1fr; gap: 20px; } .testi-img { order: -1; text-align: center; } .testi-img img { max-width: 70%; } .testi-card { padding: 16px; } .testi-card p { font-size: 0.88rem; } .testi-highlight { font-size: 1.05rem; margin-top: 20px; }
-            .schedule-section { padding: 48px 16px; } .schedule-intro p { font-size: 0.88rem; } .schedule-row { padding: 10px 14px; gap: 8px; } .schedule-time { min-width: 52px; font-size: 0.72rem; } .schedule-activity { font-size: 0.82rem; } .schedule-tag { font-size: 0.65rem; padding: 3px 8px; } .schedule-note { font-size: 0.8rem; }
-            .problem-section { padding: 48px 16px; } .problem-grid { grid-template-columns: 1fr; gap: 20px; } .problem-img { display: none; } .problem-text h3 { font-size: 1.2rem; } .problem-text p { font-size: 0.9rem; } .pain-list li { padding: 12px 16px; font-size: 0.88rem; gap: 10px; } .problem-answer p { font-size: 0.95rem; }
-            .comparison-section { padding: 48px 16px; } .comp-table-wrap { overflow-x: auto; margin: 0 -16px; padding: 0 16px; } .comp-table { min-width: 560px; } .comp-swipe-hint { display: block; } .comp-table thead th { padding: 14px 12px; font-size: 0.8rem; } .comp-table tbody td { padding: 14px 12px; font-size: 0.82rem; } .comp-main { font-size: 0.88rem; } .comp-sub { font-size: 0.72rem; }
-            .inline-cta { margin: 32px 0 0; padding: 24px 16px; } .inline-cta h4 { font-size: 1.15rem; } .inline-cta-list p { font-size: 0.85rem; }
-            .solution-section { padding: 48px 16px; } .solution-grid { grid-template-columns: 1fr; gap: 20px; } .solution-img { display: none; } .solution-text h2 { font-size: 1.3rem; } .solution-text p { font-size: 0.9rem; } .solution-text .emphasis { font-size: 0.95rem; padding: 14px; }
-            .features-section { padding: 48px 16px; } .features-grid { grid-template-columns: 1fr 1fr; gap: 10px; } .feature-card { padding: 16px 14px; } .feature-card .feature-icon { margin-bottom: 10px; } .feature-card h3 { font-size: 0.9rem; margin-bottom: 6px; } .feature-card p { font-size: 0.75rem; line-height: 1.6; } .features-tagline { margin-top: 32px; } .features-tagline p { font-size: 1rem; }
-            .influencer-section { padding: 48px 0; } .influencer-section .container { padding: 0 16px; } .influencer-track-wrapper { overflow-x: auto; padding: 16px; scroll-snap-type: x mandatory; -webkit-overflow-scrolling: touch; margin: 32px -16px 24px; } .influencer-track { animation: none; gap: 16px; width: max-content; padding: 0 16px; } .inf-card { min-width: 320px; max-width: 320px; scroll-snap-align: start; padding: 28px 22px; } .inf-card::before { font-size: 4rem; top: 4px; right: 16px; } .inf-card-header img { width: 60px; height: 60px; } .inf-name { font-size: 0.95rem; } .inf-details { font-size: 0.72rem; } .inf-card h4 { font-size: 0.95rem; } .inf-card p { font-size: 0.82rem; } .inf-card .inf-body { padding: 16px; } .anniversary-badge { font-size: 1.1rem; padding: 0 16px; }
-            .industry-section { padding: 48px 16px; }
-            .industry-table-wrap { margin: 0 -16px; padding: 0 16px; }
-            .industry-table { min-width: 600px; }
-            .industry-table thead th { padding: 12px 10px; font-size: 0.78rem; }
-            .industry-table tbody td { padding: 14px 10px; font-size: 0.82rem; }
-            .industry-table tbody tr.sa-row td:first-child { font-size: 0.88rem; padding: 16px 10px; }
-            .industry-table tbody tr.sa-row td.center { font-size: 1rem; padding: 16px 10px; }
-            .industry-table tbody tr.sa-row td.unit { font-size: 1.25rem; padding: 16px 10px; }
-            .industry-summary { padding: 20px 16px; } .industry-summary p.main { font-size: 0.95rem; }
-            .pricing-section { padding: 48px 16px; } .pricing-grid { grid-template-columns: 1fr; max-width: 100%; gap: 16px; } .price-card { padding: 24px 18px; } .price-amount { font-size: 2rem; } .entry-campaign-block { padding: 20px 16px; } .entry-campaign-title { font-size: 1.1rem; } .entry-campaign-desc { font-size: 0.88rem; }
-            .final-cta { padding: 48px 16px; } .final-cta-card { padding: 24px 16px; } .final-cta-card h3 { font-size: 1.2rem; margin-bottom: 16px; } .inline-cta-list p { font-size: 0.85rem; } .email-form-row { flex-direction: column; }
-            .site-footer { padding: 40px 16px 100px; }
-            .fixed-cta { padding: 8px 14px; gap: 2px; } .fixed-cta-btn { padding: 10px 18px; font-size: 0.88rem; max-width: 100%; } .fixed-cta-note { font-size: 0.65rem; }
-        }
-        @media (max-width: 390px) {
-            .hero h1 { font-size: 1.45rem; } .hero-eyebrow { font-size: 0.65rem; } .features-grid { grid-template-columns: 1fr; } .proof-items { grid-template-columns: repeat(2, 1fr); gap: 8px; } .section-label h2 { font-size: 1.2rem; } .comp-table { min-width: 480px; } .industry-table { min-width: 500px; }
+        @media(max-width:380px){
+            .hero h1{font-size:1.55rem;}
+            .hero-chip.two{display:none;}
+            .vstrip-inner{gap:10px;}
+            .proof-item{min-width:45%;}
+            .feat-row .fnum{font-size:2.2rem;}
         }
     </style>
 </head>
 <body>
-    <!-- SVG Icon Definitions (hidden, referenced via <use>) -->
-    <svg width="0" height="0" style="position:absolute;" aria-hidden="true">
-        <defs>
-            <symbol id="i-calendar" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="4" width="18" height="18" rx="2" ry="2"/><line x1="16" y1="2" x2="16" y2="6"/><line x1="8" y1="2" x2="8" y2="6"/><line x1="3" y1="10" x2="21" y2="10"/></symbol>
-            <symbol id="i-globe" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><line x1="2" y1="12" x2="22" y2="12"/><path d="M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z"/></symbol>
-            <symbol id="i-graduation" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 10v6M2 10l10-5 10 5-10 5z"/><path d="M6 12v5c3 3 9 3 12 0v-5"/></symbol>
-            <symbol id="i-book" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M2 3h6a4 4 0 0 1 4 4v14a3 3 0 0 0-3-3H2z"/><path d="M22 3h-6a4 4 0 0 0-4 4v14a3 3 0 0 1 3-3h7z"/></symbol>
-            <symbol id="i-car" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M19 17h2c.6 0 1-.4 1-1v-3c0-.9-.7-1.7-1.5-1.9L18.4 7.8c-.4-1.1-1.4-1.8-2.6-1.8H6.5C5.4 6 4.4 6.7 4 7.8L2.5 11.1C1.7 11.3 1 12.1 1 13v3c0 .6.4 1 1 1h2"/><circle cx="7" cy="17" r="2"/><path d="M9 17h6"/><circle cx="17" cy="17" r="2"/></symbol>
-            <symbol id="i-clock" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></symbol>
-            <symbol id="i-home" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M3 9l9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"/><polyline points="9 22 9 12 15 12 15 22"/></symbol>
-            <symbol id="i-dollar" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="12" y1="1" x2="12" y2="23"/><path d="M17 5H9.5a3.5 3.5 0 0 0 0 7h5a3.5 3.5 0 0 1 0 7H6"/></symbol>
-            <symbol id="i-wallet" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M20 12V8H6a2 2 0 0 1-2-2c0-1.1.9-2 2-2h12v4"/><path d="M4 6v12c0 1.1.9 2 2 2h14v-4"/><path d="M18 12a2 2 0 0 0-2 2c0 1.1.9 2 2 2h4v-4z"/></symbol>
-            <symbol id="i-target" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><circle cx="12" cy="12" r="6"/><circle cx="12" cy="12" r="2"/></symbol>
-            <symbol id="i-timer" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="10" y1="2" x2="14" y2="2"/><line x1="12" y1="14" x2="15" y2="11"/><circle cx="12" cy="14" r="8"/></symbol>
-            <symbol id="i-sparkles" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 3l1.5 4.5L18 9l-4.5 1.5L12 15l-1.5-4.5L6 9l4.5-1.5z"/><path d="M19 14l.6 1.8L21.5 16.5l-1.9.7L19 19l-.6-1.8L16.5 16.5l1.9-.7z"/><path d="M5 16l.4 1.2L6.5 17.5l-1.1.3L5 19l-.4-1.2L3.5 17.5l1.1-.3z"/></symbol>
-            <symbol id="i-sunrise" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M17 18a5 5 0 0 0-10 0"/><line x1="12" y1="2" x2="12" y2="9"/><line x1="4.22" y1="10.22" x2="5.64" y2="11.64"/><line x1="1" y1="18" x2="3" y2="18"/><line x1="21" y1="18" x2="23" y2="18"/><line x1="18.36" y1="11.64" x2="19.78" y2="10.22"/><line x1="23" y1="22" x2="1" y2="22"/><polyline points="8 6 12 2 16 6"/></symbol>
-            <symbol id="i-alert" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><line x1="12" y1="8" x2="12" y2="12"/><line x1="12" y1="16" x2="12.01" y2="16"/></symbol>
-            <symbol id="i-check-circle" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"/><polyline points="22 4 12 14.01 9 11.01"/></symbol>
-            <symbol id="i-zap" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polygon points="13 2 3 14 12 14 11 22 21 10 12 10 13 2"/></symbol>
-            <symbol id="i-scale" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M16 16.6c0 .3.2.5.5.5h2c.3 0 .5-.2.5-.5l-1-3.6c-.6-2.2-1-3.4-1.5-3.4-.5 0-.9 1.2-1.5 3.4l-1 3.6c0 .3.2.5.5.5z"/><path d="M3 16.6c0 .3.2.5.5.5h2c.3 0 .5-.2.5-.5l-1-3.6C4.4 10.8 4 9.6 3.5 9.6 3 9.6 2.6 10.8 2 13l-1 3.6c0 .3.2.5.5.5z"/><line x1="7" y1="21" x2="17" y2="21"/><line x1="12" y1="3" x2="12" y2="21"/></symbol>
-            <symbol id="i-school" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 10v6M2 10l10-5 10 5-10 5z"/><path d="M6 12v5c3 3 9 3 12 0v-5"/></symbol>
-            <symbol id="i-user" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"/><circle cx="12" cy="7" r="4"/></symbol>
-            <symbol id="i-monitor" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="3" width="20" height="14" rx="2" ry="2"/><line x1="8" y1="21" x2="16" y2="21"/><line x1="12" y1="17" x2="12" y2="21"/></symbol>
-            <symbol id="i-star" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></symbol>
-            <symbol id="i-bulb" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M9 18h6"/><path d="M10 22h4"/><path d="M15.09 14c.18-.98.65-1.74 1.41-2.5A4.65 4.65 0 0 0 18 8 6 6 0 0 0 6 8c0 1 .23 2.23 1.5 3.5A4.61 4.61 0 0 1 8.91 14"/></symbol>
-            <symbol id="i-phone" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="5" y="2" width="14" height="20" rx="2" ry="2"/><line x1="12" y1="18" x2="12.01" y2="18"/></symbol>
-            <symbol id="i-check" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></symbol>
-            <symbol id="i-mail" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,13 2,6"/></symbol>
-        </defs>
-    </svg>
+    <svg width="0" height="0" style="position:absolute" aria-hidden="true"><defs>
+        <symbol id="i-line" viewBox="0 0 24 24" fill="currentColor"><path d="M12 2C6.48 2 2 5.64 2 10.13c0 4.02 3.55 7.39 8.36 8.03.32.07.77.21.88.49.1.25.07.64.03.9l-.14.86c-.04.25-.2 1 .87.55 1.08-.46 5.8-3.42 7.92-5.85C21.36 13.5 22 11.9 22 10.13 22 5.64 17.52 2 12 2zM8.13 12.4H6.2a.42.42 0 0 1-.42-.42V8.36a.42.42 0 0 1 .84 0v3.2h1.5a.42.42 0 0 1 0 .84zm1.64-.42a.42.42 0 0 1-.84 0V8.36a.42.42 0 0 1 .84 0v3.62zm4.3 0a.42.42 0 0 1-.29.4h-.13a.42.42 0 0 1-.34-.17l-1.85-2.5v2.27a.42.42 0 0 1-.84 0V8.36a.42.42 0 0 1 .29-.4h.13c.13 0 .26.07.34.17l1.85 2.5V8.36a.42.42 0 0 1 .84 0v3.62zm2.96-2.23a.42.42 0 0 1 0 .84h-1.5v.74h1.5a.42.42 0 0 1 0 .85h-1.92a.42.42 0 0 1-.42-.42V8.36a.42.42 0 0 1 .42-.42h1.92a.42.42 0 0 1 0 .84h-1.5v.74h1.5z"/></symbol>
+        <symbol id="i-calendar" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="4" width="18" height="18" rx="2"/><line x1="16" y1="2" x2="16" y2="6"/><line x1="8" y1="2" x2="8" y2="6"/><line x1="3" y1="10" x2="21" y2="10"/></symbol>
+        <symbol id="i-globe" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><line x1="2" y1="12" x2="22" y2="12"/><path d="M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z"/></symbol>
+        <symbol id="i-cap" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M22 10v6M2 10l10-5 10 5-10 5z"/><path d="M6 12v5c3 3 9 3 12 0v-5"/></symbol>
+        <symbol id="i-book" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M2 3h6a4 4 0 0 1 4 4v14a3 3 0 0 0-3-3H2z"/><path d="M22 3h-6a4 4 0 0 0-4 4v14a3 3 0 0 1 3-3h7z"/></symbol>
+        <symbol id="i-car" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M19 17h2c.6 0 1-.4 1-1v-3c0-.9-.7-1.7-1.5-1.9L18.4 7.8c-.4-1.1-1.4-1.8-2.6-1.8H6.5C5.4 6 4.4 6.7 4 7.8L2.5 11.1C1.7 11.3 1 12.1 1 13v3c0 .6.4 1 1 1h2"/><circle cx="7" cy="17" r="2"/><path d="M9 17h6"/><circle cx="17" cy="17" r="2"/></symbol>
+        <symbol id="i-clock" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></symbol>
+        <symbol id="i-home" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M3 9l9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"/><polyline points="9 22 9 12 15 12 15 22"/></symbol>
+        <symbol id="i-coin" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="9"/><path d="M14.5 9.2c-.4-.9-1.3-1.3-2.5-1.3-1.5 0-2.5.7-2.5 1.9 0 2.6 5 1.3 5 3.9 0 1.2-1 2-2.6 2-1.3 0-2.2-.5-2.6-1.4"/><line x1="12" y1="6" x2="12" y2="18"/></symbol>
+        <symbol id="i-target" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="9"/><circle cx="12" cy="12" r="5"/><circle cx="12" cy="12" r="1.5"/></symbol>
+        <symbol id="i-timer" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><line x1="10" y1="2" x2="14" y2="2"/><line x1="12" y1="14" x2="15" y2="11"/><circle cx="12" cy="14" r="8"/></symbol>
+        <symbol id="i-sun" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M17 18a5 5 0 0 0-10 0"/><line x1="12" y1="2" x2="12" y2="9"/><line x1="4.2" y1="10.2" x2="5.6" y2="11.6"/><line x1="1" y1="18" x2="3" y2="18"/><line x1="21" y1="18" x2="23" y2="18"/><line x1="18.4" y1="11.6" x2="19.8" y2="10.2"/><line x1="23" y1="22" x2="1" y2="22"/><polyline points="8 6 12 2 16 6"/></symbol>
+        <symbol id="i-sparkle" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M12 3l1.6 4.8L18 9l-4.4 1.5L12 15l-1.6-4.5L6 9l4.4-1.2z"/></symbol>
+        <symbol id="i-check" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></symbol>
+        <symbol id="i-x" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><line x1="6" y1="6" x2="18" y2="18"/><line x1="18" y1="6" x2="6" y2="18"/></symbol>
+        <symbol id="i-mail" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="4" width="20" height="16" rx="2"/><polyline points="22,6 12,13 2,6"/></symbol>
+        <symbol id="i-user" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"/><circle cx="12" cy="7" r="4"/></symbol>
+        <symbol id="i-monitor" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="3" width="20" height="14" rx="2"/><line x1="8" y1="21" x2="16" y2="21"/><line x1="12" y1="17" x2="12" y2="21"/></symbol>
+        <symbol id="i-school" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M22 10v6M2 10l10-5 10 5-10 5z"/><path d="M6 12v5c3 3 9 3 12 0v-5"/></symbol>
+        <symbol id="i-bulb" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M9 18h6"/><path d="M10 22h4"/><path d="M15 14c.2-1 .7-1.8 1.4-2.5A4.7 4.7 0 0 0 18 8 6 6 0 0 0 6 8c0 1 .2 2.2 1.5 3.5.7.7 1.2 1.5 1.4 2.5"/></symbol>
+        <symbol id="i-heart" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M20.8 4.6a5.5 5.5 0 0 0-7.8 0L12 5.7l-1-1.1a5.5 5.5 0 0 0-7.8 7.8l1 1L12 21l7.8-7.6 1-1a5.5 5.5 0 0 0 0-7.8z"/></symbol>
+    </defs></svg>
 
-    <!-- Google Tag Manager (noscript) -->
-    <noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-MRBZFQZ9"
-    height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
-    <!-- End Google Tag Manager (noscript) -->
+    <noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-MRBZFQZ9" height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
 
-    <div class="campaign-banner">
-        <div class="banner-inner">
-            <span class="banner-main"><svg class="icon icon-sm" aria-hidden="true"><use href="#i-calendar"/></svg>次回クール 7/6（月）開始</span>
-            <span class="banner-sub">LINEで詳細・特別案内を配信中</span>
+    <div class="notice">
+        <div class="notice-inner">
+            <span class="y">🎟️ クーポン配布中</span>
+            <span>通常$200 → <strong>LINEクーポンで毎月$150</strong>｜次回クール7/6開講</span>
         </div>
     </div>
 
-    <header class="site-header">
+    <header class="site-header" id="siteHeader">
         <div class="container header-inner">
-            <div class="logo">Success Academy</div>
-            <a href="https://line.me/R/ti/p/@359fnsdb" onclick="event.preventDefault(); trackLineClick(); var url=this.href; setTimeout(function(){window.open(url,'_blank');},300); return false;" target="_blank" class="header-cta">今すぐ資料請求する</a>
+            <div class="logo"><span class="en">Success Academy</span><span class="ja">サクセスアカデミー</span></div>
+            <a href="https://line.me/R/ti/p/@359fnsdb" onclick="event.preventDefault(); trackLineClick(); var url=this.href; setTimeout(function(){window.open(url,'_blank');},300); return false;" target="_blank" class="header-cta"><svg class="icon icon-sm lineico"><use href="#i-line"/></svg>$150クーポンをGET</a>
         </div>
     </header>
 
+    <!-- hero -->
     <section class="hero">
-        <div class="container">
-            <div class="hero-grid">
-                <div class="hero-text-col">
-                    <div class="hero-eyebrow"><svg class="icon icon-sm" aria-hidden="true"><use href="#i-globe"/></svg>世界34カ国・累計1,400人以上の家族が選ぶオンライン日本語スクール</div>
-                    <h1>海外にいても、<br>お子さまの<em>「日本語」</em>は<br>伸ばせる。</h1>
-                    <p class="hero-sub">継続率92.5%が証明する、海外っ子のための日本語スクール。<br>1日たった25分・送迎なし・宿題なしで、<br>毎日の小さな「できた！」が日本語への自信に変わります。</p>
-                    <div class="campaign-card">
-                        <div class="campaign-card-badge"><svg class="icon icon-sm" aria-hidden="true"><use href="#i-calendar"/></svg>次回クールのお知らせ</div>
-                        <div class="campaign-card-title">次回クールは<br><em>7月6日（月）から開始</em></div>
-                        <div class="campaign-card-sub">クラスの詳細やお申込みは、<strong>LINEより資料請求</strong>をお願いいたします。LINE限定の特別案内も配信中です。</div>
+        <div class="hero-grid">
+            <div class="hero-left">
+                <div class="grain"></div>
+                <div class="masthead">
+                    <div class="ml"><span class="en">Success Academy</span><span class="ja">サクセスアカデミー</span></div>
+                    <div class="issue">Since 2020<br>世界34カ国</div>
+                </div>
+                <div class="hero-body reveal">
+                    <span class="cat"><svg class="icon icon-sm"><use href="#i-globe"/></svg>海外子女のための日本語スクール</span>
+                    <h1>海外にいても、<br>子どもの<span class="mk">日本語</span>は、<br><span class="co">ちゃんと続く。</span></h1>
+                    <p class="lede">継続率92.5%・世界34カ国の家族が選ぶオンライン日本語スクール。1日たった25分、送迎なし・宿題なし。月額$200で全教科・平日毎日、受け放題。</p>
+                    <div class="campaign-flag"><span class="cf-badge">今だけ</span><span class="cf-text">通常$200 → 🎟️LINEクーポンで <strong>毎月$150</strong></span></div>
+                    <div class="hero-ctas">
+                        <a href="https://line.me/R/ti/p/@359fnsdb" onclick="event.preventDefault(); trackLineClick(); var url=this.href; setTimeout(function(){window.open(url,'_blank');},300); return false;" target="_blank" class="btn-line"><svg class="icon icon-md lineico"><use href="#i-line"/></svg>LINEで $150 クーポンを受け取る</a>
+                        <span class="micro">登録無料・いつでも解除OK｜7日間 無料体験つき</span>
                     </div>
-                    <div class="hero-cta-group">
-                        <button class="btn-campaign pulse-btn" onclick="event.preventDefault(); trackLineClick(); setTimeout(function(){window.open('https://line.me/R/ti/p/@359fnsdb','_blank');},300);">今すぐ資料請求する</button>
-                        <p class="btn-micro">※ 登録無料・いつでも解除OK｜LINEで詳細をご案内します</p>
-                    </div>
                 </div>
-                <div class="hero-visual">
-                    <img src="https://i.imgur.com/l48QbXM.png" alt="Success Academyで学ぶ子供たち" loading="eager">
-                    <div class="hero-badge"><div class="hero-badge-number">92.5%</div><div class="hero-badge-label">継続率</div></div>
+                <div class="footrule reveal">
+                    <div class="it"><div class="n">92.5%</div><div class="l">継続率</div></div>
+                    <div class="it"><div class="n">1,400+</div><div class="l">累計受講者</div></div>
+                    <div class="it"><div class="n">$10<span style="font-size:0.9rem">/日</span></div><div class="l">全教科・毎日</div></div>
+                    <div class="it"><div class="n">7/6</div><div class="l">次回クール開講</div></div>
                 </div>
+            </div>
+            <div class="hero-right">
+                <img src="https://i.imgur.com/l48QbXM.png" alt="Success Academyで学ぶ子供たち" loading="eager">
+                <div class="tape">7日間 無料体験</div>
+                <div class="hero-chip one"><div class="n">25<span style="font-size:0.85rem">分</span></div><div class="l">1レッスン<br>毎日続く</div></div>
+                <div class="hero-chip two"><div class="n">92.5%</div><div class="l">続けたくなる<br>継続率</div></div>
             </div>
         </div>
     </section>
 
-    <section class="problem-section">
+    <!-- referral -->
+    <section class="sec referral">
         <div class="container">
-            <div class="section-label"><span class="eyebrow">お悩み</span><h2>気づけば、お子さまが<br>日本語を話さなくなっていませんか？</h2></div>
-            <div class="problem-grid">
-                <div class="problem-img"><img src="https://i.imgur.com/orOzHda.png" alt="海外での日本語教育に悩む親子" loading="lazy"></div>
-                <div class="problem-text">
-                    <h3>「もっと日本語を教えなきゃ…」<br>そう思うほど、うまくいかない。</h3>
-                    <p>それは、<span class="highlight">あなただけではありません。</span></p>
-                    <ul class="pain-list">
-                        <li>日本語で話す機会がどんどん減っている</li>
-                        <li>補習校の宿題を嫌がるようになった</li>
-                        <li>親が教えようとするとケンカになる</li>
-                        <li>補習校のペースや内容が、子どもに合わない</li>
-                    </ul>
-                    <p>でも本当の原因は「勉強が嫌い」なのではなく——</p>
-                    <div class="problem-answer"><p>「できた！」という<span class="highlight">成功体験</span>が、まだ足りていないだけ。</p></div>
-                </div>
+            <div class="sec-head reveal">
+                <span class="sec-num">★ — Free Chance</span>
+                <span class="sec-eyebrow">紹介制度</span>
+                <h2 class="sec-title">お友達・兄弟を紹介すると、月謝が<br>どんどん下がる。最大<span class="mk">“無料”</span>に。</h2>
+            </div>
+            <div class="philosophy reveal">
+                <svg class="icon icon-md" style="color:var(--coral)"><use href="#i-heart"/></svg>
+                <p>私たちは、もっと多くの子どもに日本語教育を届けたい。<br>だから——<strong>少しの努力で、月謝が下がる</strong>仕組みにしました。</p>
+            </div>
+            <p class="ladder-cap reveal">通常 <strong>$200/月</strong> → LINEクーポンで <strong>毎月$150</strong> → お友達紹介でさらに ↓</p>
+            <div class="ladder reveal">
+                <div class="step"><div class="who">クーポンで</div><div class="off">毎月</div><div class="amt">$150</div></div>
+                <div class="step"><div class="who">1人 紹介</div><div class="off">20%OFF</div><div class="amt">$120</div></div>
+                <div class="step"><div class="who">2人</div><div class="off">40%OFF</div><div class="amt">$90</div></div>
+                <div class="step"><div class="who">3人</div><div class="off">60%OFF</div><div class="amt">$60</div></div>
+                <div class="step"><div class="who">4人</div><div class="off">80%OFF</div><div class="amt">$30</div></div>
+                <div class="step free"><div class="who">5人 紹介で</div><div class="off">100%OFF</div><div class="amt">$0<span>無料！</span></div></div>
+            </div>
+            <p class="ref-note reveal">※ 通常は月額$200。LINEで配布中のクーポンを使うと<strong>毎月$150</strong>で受講できます。さらに、紹介されたご家族が体験終了後に<strong>本入会（お支払い開始）</strong>した時点で、紹介者の月謝が20%オフ。最大5名まで＝最大で<strong>毎月無料</strong>で受けられます。</p>
+            <div class="ref-cta reveal">
+                <a href="https://line.me/R/ti/p/@359fnsdb" onclick="event.preventDefault(); trackLineClick(); var url=this.href; setTimeout(function(){window.open(url,'_blank');},300); return false;" target="_blank" class="btn-line"><svg class="icon icon-md lineico"><use href="#i-line"/></svg>LINEで $150 クーポンを受け取る</a>
             </div>
         </div>
     </section>
 
-    <section class="video-section">
-        <div class="video-wrapper">
-            <div class="video-label"><h2>8分でわかる、サクセスアカデミー</h2><p>海外で日本語教育に悩むご家族へ</p></div>
-            <div class="video-embed"><iframe src="https://drive.google.com/file/d/1Zjjw6kLgMjZGcor4nLbJtcs60NWYh5QR/preview" allow="autoplay; encrypted-media" allowfullscreen title="Success Academy 紹介動画" loading="lazy"></iframe></div>
-        </div>
-    </section>
-
-    <div class="proof-bar">
-        <div class="container">
-            <div class="proof-items">
-                <div class="proof-item"><div class="proof-number">1,400+</div><div class="proof-label">累計生徒数</div></div>
-                <div class="proof-item"><div class="proof-number">34</div><div class="proof-label">カ国</div></div>
-                <div class="proof-item"><div class="proof-number">92.5%</div><div class="proof-label">継続率</div></div>
-                <div class="proof-item"><div class="proof-number">6年</div><div class="proof-label">運営実績</div></div>
-            </div>
+    <!-- value strip -->
+    <div class="vstrip">
+        <div class="vstrip-inner">
+            <div class="vs-card reveal"><div class="vi"><svg class="icon icon-md"><use href="#i-coin"/></svg></div><div><div class="big">今だけ <em>LINEクーポンで毎月$150</em></div><div class="small">通常$200／クーポンは入会時に適用</div></div></div>
+            <div class="vs-card reveal"><div class="vi"><svg class="icon icon-md"><use href="#i-calendar"/></svg></div><div><div class="big">平日<em>毎日</em>受け放題</div><div class="small">1レッスン25分・月20日</div></div></div>
+            <div class="vs-card reveal"><div class="vi"><svg class="icon icon-md"><use href="#i-heart"/></svg></div><div><div class="big"><em>7日間</em>無料体験</div><div class="small">まずは実際の授業を体験</div></div></div>
         </div>
     </div>
 
-    <section class="testimonials-section">
+    <!-- problem collage -->
+    <section class="sec problem">
+        <div class="blob"></div>
         <div class="container">
-            <div class="section-label"><span class="eyebrow">体験談</span><h2>92.5%の継続率が証明する<br>"子どもが続けたくなる学び"</h2></div>
+            <div class="sec-head reveal">
+                <span class="sec-num">01 — Worry</span>
+                <span class="sec-eyebrow">お悩み</span>
+                <h2 class="sec-title">気づけば、お子さまが<br>日本語を話さなくなっていませんか？</h2>
+            </div>
+            <div class="collage reveal">
+                <div class="note"><span class="face">😟</span><p>日本語で話す機会が、どんどん減ってきた…</p><div class="who">— アメリカ在住・5歳ママ</div></div>
+                <div class="note"><span class="face">😣</span><p>補習校の宿題を、嫌がるようになった。</p><div class="who">— ドイツ在住・8歳ママ</div></div>
+                <div class="note"><span class="face">😢</span><p>親が教えようとすると、ケンカになる。</p><div class="who">— イギリス在住・7歳ママ</div></div>
+                <div class="note"><span class="face">😔</span><p>補習校のペースや内容が、うちの子に合わない。</p><div class="who">— オーストラリア在住・6歳ママ</div></div>
+            </div>
+            <div class="answer reveal">
+                <div class="small">でも本当の原因は「勉強が嫌い」じゃなく——</div>
+                <div class="big">「できた！」という<span class="hl">成功体験</span>が、<br>まだ足りていないだけ。</div>
+            </div>
+        </div>
+    </section>
+
+    <!-- video -->
+    <section class="sec video-sec">
+        <div class="container">
+            <div class="sec-head reveal">
+                <span class="sec-num">02 — Story</span>
+                <h2 class="sec-title">8分でわかる、サクセスアカデミー</h2>
+                <p class="sec-lead">海外で日本語教育に悩むご家族へ</p>
+            </div>
+            <div class="video-wrap reveal">
+                <div class="video-embed"><iframe src="https://drive.google.com/file/d/1Zjjw6kLgMjZGcor4nLbJtcs60NWYh5QR/preview" allow="autoplay; encrypted-media" allowfullscreen title="Success Academy 紹介動画" loading="lazy"></iframe></div>
+            </div>
+        </div>
+    </section>
+
+    <!-- proof -->
+    <div class="proof">
+        <div class="proof-items reveal">
+            <div class="proof-item"><div class="n">1,400<small>+</small></div><div class="l">累計生徒数</div></div>
+            <div class="proof-item"><div class="n">34</div><div class="l">カ国</div></div>
+            <div class="proof-item"><div class="n">92.5<small>%</small></div><div class="l">継続率</div></div>
+            <div class="proof-item"><div class="n">6<small>年</small></div><div class="l">運営実績</div></div>
+        </div>
+    </div>
+
+    <!-- testimonials -->
+    <section class="sec testi">
+        <div class="container">
+            <div class="sec-head reveal">
+                <span class="sec-num">03 — Voices</span>
+                <span class="sec-eyebrow">体験談</span>
+                <h2 class="sec-title">92.5%の継続率が証明する<br>“子どもが続けたくなる学び”</h2>
+            </div>
             <div class="testi-grid">
-                <div class="testi-content">
-                    <div class="testi-card"><p>「終わったあとでも友達と遊べるので、帰ってすぐ授業に参加し始めるようになりました。」</p><p class="author">— アメリカ在住・Mさん（8歳ママ）</p></div>
-                    <div class="testi-card"><p>「祖父母と日本語で話せるようになって、家族全員が感動しました。」</p><p class="author">— オーストラリア在住・Kさん（7歳の子供のママ）</p></div>
-                    <div class="testi-card"><p>「4歳の娘が小学校入学前に引き算・足し算ができるようになりました。」</p><p class="author">— ドイツ在住・Rさん（6歳のママ）</p></div>
+                <div class="testi-content reveal">
+                    <div class="testi-card"><span class="q">”</span><p>終わったあとでも友達と遊べるので、帰ってすぐ授業に参加し始めるようになりました。</p><p class="author">— アメリカ在住・Mさん（8歳ママ）</p></div>
+                    <div class="testi-card"><span class="q">”</span><p>祖父母と日本語で話せるようになって、家族全員が感動しました。</p><p class="author">— オーストラリア在住・Kさん（7歳の子供のママ）</p></div>
+                    <div class="testi-card"><span class="q">”</span><p>4歳の娘が小学校入学前に引き算・足し算ができるようになりました。</p><p class="author">— ドイツ在住・Rさん（6歳のママ）</p></div>
                     <p class="testi-highlight">気づけば月500分以上——<br>自宅で自然と学ぶお子さまに。</p>
                 </div>
-                <div class="testi-img"><img src="https://i.imgur.com/tiP4hQv.png" alt="学習する子供" loading="lazy"></div>
+                <div class="testi-img reveal"><img src="https://i.imgur.com/tiP4hQv.png" alt="学習する子供" loading="lazy"></div>
             </div>
         </div>
     </section>
 
-    <section class="schedule-section">
+    <!-- schedule timeline -->
+    <section class="sec schedule">
         <div class="container">
-            <div class="section-label"><span class="eyebrow"><svg class="icon icon-sm" aria-hidden="true"><use href="#i-calendar"/></svg>1日のスケジュール例</span><h2>たった25分。<br>毎日の生活に、自然と溶け込む。</h2></div>
-            <div class="schedule-wrap">
-                <div class="schedule-intro"><p>「忙しくて続かない」と思っていたのに、<br>気づけば毎日の習慣になっていた——<br>それがサクセスアカデミーの25分です。</p></div>
-                <div class="schedule-table-outer" style="margin-bottom: 20px;">
-                    <div class="schedule-day-label"><svg class="icon icon-md" aria-hidden="true"><use href="#i-calendar"/></svg>平日（現地校がある日）のスケジュール例</div>
-                    <div class="schedule-rows">
-                        <div class="schedule-row"><span class="schedule-time">7:00</span><span class="schedule-activity">起床・朝食</span><span class="schedule-tag tag-normal">日常</span></div>
-                        <div class="schedule-row"><span class="schedule-time">8:00</span><span class="schedule-activity">現地校 登校</span><span class="schedule-tag tag-normal">学校</span></div>
-                        <div class="schedule-row"><span class="schedule-time">15:30</span><span class="schedule-activity">帰宅・おやつ</span><span class="schedule-tag tag-normal">日常</span></div>
-                        <div class="schedule-row schedule-highlight-row"><span class="schedule-time">16:00</span><span class="schedule-activity"><svg class="icon icon-md" style="color:#1D4ED8" aria-hidden="true"><use href="#i-sparkles"/></svg>サクセスアカデミー（25分）</span><span class="schedule-tag tag-success">日本語・算数</span></div>
-                        <div class="schedule-row"><span class="schedule-time">16:30</span><span class="schedule-activity">友達と遊ぶ・習い事・家族の時間</span><span class="schedule-tag tag-normal">自由時間</span></div>
-                        <div class="schedule-row"><span class="schedule-time">19:00</span><span class="schedule-activity">夕食・入浴・就寝準備</span><span class="schedule-tag tag-normal">日常</span></div>
+            <div class="sec-head reveal">
+                <span class="sec-num">04 — A Day</span>
+                <span class="sec-eyebrow">1日のスケジュール例</span>
+                <h2 class="sec-title">たった25分。毎日の生活に、<br>自然と溶け込む。</h2>
+            </div>
+            <div class="sched-toggle reveal">
+                <button class="t on" data-mode="after">放課後に受講</button>
+                <button class="t" data-mode="morning">朝に受講（時差対応）</button>
+            </div>
+            <div class="timeline show" data-mode="after">
+                <div class="rail"></div>
+                <div class="stops">
+                    <div class="stop"><div class="time">7:00</div><div class="dot"></div><div class="lab2">起床・朝食</div></div>
+                    <div class="stop"><div class="time">8:00</div><div class="dot"></div><div class="lab2">現地校へ</div></div>
+                    <div class="stop"><div class="time">15:30</div><div class="dot"></div><div class="lab2">帰宅・おやつ</div></div>
+                    <div class="stop key"><div class="time">16:00</div><div class="dot"></div><div class="card"><div class="h"><svg class="icon icon-sm"><use href="#i-sparkle"/></svg>サクセス 25分</div><div class="s">日本語・算数</div></div></div>
+                    <div class="stop"><div class="time">16:30</div><div class="dot"></div><div class="lab2">遊び・家族の時間</div></div>
+                    <div class="stop"><div class="time">19:00</div><div class="dot"></div><div class="lab2">夕食・就寝</div></div>
+                </div>
+            </div>
+            <div class="timeline" data-mode="morning">
+                <div class="rail"></div>
+                <div class="stops">
+                    <div class="stop key"><div class="time">7:00</div><div class="dot"></div><div class="card"><div class="h"><svg class="icon icon-sm"><use href="#i-sparkle"/></svg>サクセス 25分</div><div class="s">日本語・算数</div></div></div>
+                    <div class="stop"><div class="time">7:30</div><div class="dot"></div><div class="lab2">朝食・支度</div></div>
+                    <div class="stop"><div class="time">8:30</div><div class="dot"></div><div class="lab2">現地校へ</div></div>
+                    <div class="stop"><div class="time">15:30</div><div class="dot"></div><div class="lab2">帰宅・おやつ</div></div>
+                    <div class="stop"><div class="time">16:30</div><div class="dot"></div><div class="lab2">遊び・家族の時間</div></div>
+                    <div class="stop"><div class="time">19:00</div><div class="dot"></div><div class="lab2">夕食・就寝</div></div>
+                </div>
+            </div>
+            <div class="sched-note reveal">
+                宿題なし・送迎なし。終わったらすぐ遊べるから、<strong>子どもが嫌がらない</strong>。<br>
+                <span class="tz"><span>🇺🇸 アメリカ</span><span>🇪🇺 ヨーロッパ</span><span>🇸🇬 アジア</span><span>🇦🇺 オセアニア</span></span>
+            </div>
+        </div>
+    </section>
+
+    <!-- comparison vs cards -->
+    <section class="sec compare">
+        <div class="container">
+            <div class="sec-head reveal">
+                <span class="sec-num">05 — Difference</span>
+                <span class="sec-eyebrow">徹底比較</span>
+                <h2 class="sec-title">補習校 <span style="color:var(--muted)">vs</span> サクセス</h2>
+                <p class="sec-lead">同じ「日本語教育」でも、続けやすさがこんなに違う。</p>
+            </div>
+            <div class="vs-wrap reveal">
+                <div class="vs-badge">VS</div>
+                <div class="vs-col bad">
+                    <div class="vh">一般的な補習校</div>
+                    <div class="vlist">
+                        <div class="vrow"><span class="ic"><svg class="icon icon-sm"><use href="#i-x"/></svg></span><div><div class="tt">毎週の送迎が大変</div><div class="ss">土日の貴重な時間が送迎で消える</div></div></div>
+                        <div class="vrow"><span class="ic"><svg class="icon icon-sm"><use href="#i-x"/></svg></span><div><div class="tt">週1日・月4日だけ</div><div class="ss">間が空き、習った内容を忘れてしまう</div></div></div>
+                        <div class="vrow"><span class="ic"><svg class="icon icon-sm"><use href="#i-x"/></svg></span><div><div class="tt">年間数十万円</div><div class="ss">授業料・教材費・施設費がかさむ</div></div></div>
+                        <div class="vrow"><span class="ic"><svg class="icon icon-sm"><use href="#i-x"/></svg></span><div><div class="tt">宿題が多すぎる</div><div class="ss">大量の宿題で親子にストレス</div></div></div>
+                        <div class="vrow"><span class="ic"><svg class="icon icon-sm"><use href="#i-x"/></svg></span><div><div class="tt">学年が上がると難しい</div><div class="ss">ついていけず自信を失う</div></div></div>
                     </div>
                 </div>
-                <div class="schedule-table-outer">
-                    <div class="schedule-day-label" style="background: #059669;"><svg class="icon icon-md" aria-hidden="true"><use href="#i-sunrise"/></svg>朝に受講するパターン（時差対応）</div>
-                    <div class="schedule-rows">
-                        <div class="schedule-row schedule-highlight-row"><span class="schedule-time">7:00</span><span class="schedule-activity"><svg class="icon icon-md" style="color:#1D4ED8" aria-hidden="true"><use href="#i-sparkles"/></svg>サクセスアカデミー（25分）</span><span class="schedule-tag tag-success">日本語・算数</span></div>
-                        <div class="schedule-row"><span class="schedule-time">7:30</span><span class="schedule-activity">朝食・支度</span><span class="schedule-tag tag-normal">日常</span></div>
-                        <div class="schedule-row"><span class="schedule-time">8:30</span><span class="schedule-activity">現地校 登校</span><span class="schedule-tag tag-normal">学校</span></div>
+                <div class="vs-col good">
+                    <div class="vh">サクセスアカデミー</div>
+                    <div class="vlist">
+                        <div class="vrow"><span class="ic"><svg class="icon icon-sm"><use href="#i-check"/></svg></span><div><div class="tt">送迎は完全不要</div><div class="ss">自宅からオンライン、移動時間ゼロ</div></div></div>
+                        <div class="vrow"><span class="ic"><svg class="icon icon-sm"><use href="#i-check"/></svg></span><div><div class="tt">毎日・月20日 受け放題</div><div class="ss">1日複数クラスもOK（補習校の5倍以上）</div></div></div>
+                        <div class="vrow"><span class="ic"><svg class="icon icon-sm"><use href="#i-check"/></svg></span><div><div class="tt">月額200USD・1日$10</div><div class="ss">全学年アクセス・追加料金一切なし</div></div></div>
+                        <div class="vrow"><span class="ic"><svg class="icon icon-sm"><use href="#i-check"/></svg></span><div><div class="tt">25分で完結・宿題なし</div><div class="ss">現地校との両立も楽々</div></div></div>
+                        <div class="vrow"><span class="ic"><svg class="icon icon-sm"><use href="#i-check"/></svg></span><div><div class="tt">レベル別クラス</div><div class="ss">合った学年で「できた！」を増やす</div></div></div>
                     </div>
                 </div>
-                <p class="schedule-note">4つのタイムゾーンに対応しているので、<br><strong>アメリカ・ヨーロッパ・アジア・オセアニア</strong>、どこからでも参加できます。<br>宿題なし・送迎なし。終わったらすぐ遊べるから、子どもが嫌がらない。</p>
             </div>
         </div>
     </section>
 
-    <section class="comparison-section">
-        <div class="container">
-            <div class="section-label"><span class="eyebrow"><svg class="icon icon-sm" aria-hidden="true"><use href="#i-zap"/></svg>徹底比較</span><h2>日本語教育のお悩み、<br>サクセスが解決します</h2><p>一目で分かる、圧倒的な違い</p></div>
-            <div class="comp-table-wrap">
-                <table class="comp-table">
-                    <thead><tr><th>比較項目</th><th><span class="th-inner"><svg class="icon icon-sm" aria-hidden="true"><use href="#i-alert"/></svg>補習校の課題</span></th><th><span class="th-inner"><svg class="icon icon-sm" aria-hidden="true"><use href="#i-check-circle"/></svg>サクセスの解決策</span></th></tr></thead>
-                    <tbody>
-                        <tr>
-                            <td><div class="comp-icon-wrap"><svg class="icon icon-lg" aria-hidden="true"><use href="#i-car"/></svg></div>送迎</td>
-                            <td><span class="comp-main">毎週の送迎が大変</span><span class="comp-sub">土日の貴重な時間が送迎で消える</span></td>
-                            <td><span class="comp-main"><svg class="icon icon-sm" aria-hidden="true"><use href="#i-home"/></svg>送迎完全不要！</span><span class="comp-sub">自宅からオンラインで参加、移動時間ゼロ</span></td>
-                        </tr>
-                        <tr>
-                            <td><div class="comp-icon-wrap"><svg class="icon icon-lg" aria-hidden="true"><use href="#i-calendar"/></svg></div>学習頻度</td>
-                            <td><span class="comp-main">週1日・月4日</span><span class="comp-sub">期間が空き、習った内容を忘れてしまう</span></td>
-                            <td><span class="comp-main"><svg class="icon icon-sm" aria-hidden="true"><use href="#i-star"/></svg>毎日・月20日</span><span class="comp-sub">1日複数クラス受講もOK（補習校の5倍以上）</span></td>
-                        </tr>
-                        <tr>
-                            <td><div class="comp-icon-wrap"><svg class="icon icon-lg" aria-hidden="true"><use href="#i-wallet"/></svg></div>費用</td>
-                            <td><span class="comp-main">年間数十万円</span><span class="comp-sub">月4日分で授業料・教材費・施設費</span></td>
-                            <td><span class="comp-main"><svg class="icon icon-sm" aria-hidden="true"><use href="#i-dollar"/></svg>月額200USD・1日$10</span><span class="comp-sub">全学年アクセス可能・追加料金一切なし</span></td>
-                        </tr>
-                        <tr>
-                            <td><div class="comp-icon-wrap"><svg class="icon icon-lg" aria-hidden="true"><use href="#i-book"/></svg></div>宿題</td>
-                            <td><span class="comp-main">宿題が多すぎる</span><span class="comp-sub">大量の宿題で親子にストレス</span></td>
-                            <td><span class="comp-main"><svg class="icon icon-sm" aria-hidden="true"><use href="#i-timer"/></svg>25分で完結</span><span class="comp-sub">宿題なし！現地校との両立も楽々</span></td>
-                        </tr>
-                        <tr>
-                            <td><div class="comp-icon-wrap"><svg class="icon icon-lg" aria-hidden="true"><use href="#i-book"/></svg></div>レベル</td>
-                            <td><span class="comp-main">学年が上がると難しい</span><span class="comp-sub">ついていけず自信を失う</span></td>
-                            <td><span class="comp-main"><svg class="icon icon-sm" aria-hidden="true"><use href="#i-target"/></svg>レベル別クラス</span><span class="comp-sub">お子様に合った学年で「できた！」を増やす</span></td>
-                        </tr>
-                    </tbody>
-                </table>
-            </div>
-            <div class="comp-swipe-hint">← 横にスワイプ →</div>
-            <div class="inline-cta">
-                <div class="inline-cta-badge"><svg class="icon icon-sm" aria-hidden="true"><use href="#i-calendar"/></svg>次回クールのお知らせ</div>
-                <h4>次回クールは<br>7月6日（月）から開始</h4>
-                <div class="campaign-highlight-box">
-                    <div class="chb-main"><svg class="icon icon-md" aria-hidden="true"><use href="#i-phone"/></svg>LINEで詳細・特別案内を配信中</div>
-                    <div class="chb-sub">クラス内容・料金・体験申込はLINEから</div>
-                </div>
-                <div class="inline-cta-list">
-                    <p><svg class="icon icon-sm check-icon" aria-hidden="true"><use href="#i-check"/></svg>レッスン内容・料金・スケジュールがわかる資料</p>
-                    <p><svg class="icon icon-sm check-icon" aria-hidden="true"><use href="#i-check"/></svg>LINE限定の特別案内をお届け</p>
-                    <p><svg class="icon icon-sm check-icon" aria-hidden="true"><use href="#i-check"/></svg>LINEでいつでも質問OK</p>
-                </div>
-                <button class="btn-campaign pulse-btn" onclick="event.preventDefault(); trackLineClick(); setTimeout(function(){window.open('https://line.me/R/ti/p/@359fnsdb','_blank');},300);" style="width:100%;">今すぐ資料請求する</button>
-                <p class="note">※ 登録無料・いつでも解除OK</p>
-            </div>
-        </div>
-    </section>
-
-    <section class="solution-section">
+    <!-- solution -->
+    <section class="sec solution">
         <div class="container">
             <div class="solution-grid">
-                <div class="solution-text">
-                    <h2>日本語を"教えられるもの"から<br>"使いたいもの"へ。</h2>
-                    <p>送り迎えも、準備もいりません。<br>パソコンを開くだけで、日本語の時間が始まります。</p>
+                <div class="solution-text reveal">
+                    <span class="sec-num">06 — Why it lasts</span>
+                    <h2>日本語を“教えられるもの”から<br>“使いたいもの”へ。</h2>
+                    <p>送り迎えも、準備もいりません。パソコンを開くだけで、日本語の時間が始まります。</p>
                     <p>たった25分だから、どんな日でも無理なく続けられる。</p>
                     <p>小さな「できた！」を積み重ねるには、手軽で続けやすい環境がいちばん大切です。</p>
-                    <p class="emphasis">サクセスアカデミーは、<br>その"続けられる仕組み"をデザインしています。</p>
+                    <p class="emphasis">サクセスアカデミーは、その“続けられる仕組み”をデザインしています。</p>
                 </div>
-                <div class="solution-img"><img src="https://i.imgur.com/k1xTmNg.png" alt="オンライン学習の様子" loading="lazy"></div>
+                <div class="solution-img reveal"><img src="https://i.imgur.com/k1xTmNg.png" alt="オンライン学習の様子" loading="lazy"></div>
             </div>
         </div>
     </section>
 
-    <section class="features-section">
+    <!-- features zigzag -->
+    <section class="sec features">
         <div class="container">
-            <div class="section-label"><span class="eyebrow">特長</span><h2>世界中のご家族に選ばれる<br>5つの理由</h2></div>
-            <div class="features-grid">
-                <div class="feature-card"><div class="feature-icon"><svg class="icon icon-xl" aria-hidden="true"><use href="#i-globe"/></svg></div><h3>世界34カ国から参加</h3><p>4つのタイムゾーンで毎日授業。世界中の仲間と一緒に学べます。</p></div>
-                <div class="feature-card"><div class="feature-icon"><svg class="icon icon-xl" aria-hidden="true"><use href="#i-graduation"/></svg></div><h3>有資格の講師が多数在籍</h3><p>教員免許・小学校教員資格など、プロの講師が丁寧に指導します。</p></div>
-                <div class="feature-card"><div class="feature-icon"><svg class="icon icon-xl" aria-hidden="true"><use href="#i-book"/></svg></div><h3>日本語・国語・算数、すべて月額定額</h3><p>追加料金なし。日本語はもちろん、国語・算数もお子様のレベルに合った学年で自由に受講できます。</p></div>
-                <div class="feature-card"><div class="feature-icon"><svg class="icon icon-xl" aria-hidden="true"><use href="#i-home"/></svg></div><h3>送迎は一切不要</h3><p>全クラスオンライン。LINEで担当講師といつでも連絡が取れます。</p></div>
-                <div class="feature-card"><div class="feature-icon"><svg class="icon icon-xl" aria-hidden="true"><use href="#i-clock"/></svg></div><h3>25分 × 平日毎日</h3><p>時差に対応した授業時間。短いから、遊びや家族の時間も確保できます。</p></div>
+            <div class="sec-head reveal">
+                <span class="sec-num">07 — Reasons</span>
+                <span class="sec-eyebrow">特長</span>
+                <h2 class="sec-title">世界中のご家族に選ばれる<br>5つの理由</h2>
             </div>
-            <div class="features-tagline"><p>家でもなく、学校でもない。<br>子どもが"自分から学びたくなる"第3の場所。</p></div>
+            <div class="feat-list">
+                <div class="feat-row reveal"><div class="fnum">01</div><div class="ficon"><svg class="icon icon-lg"><use href="#i-globe"/></svg></div><div class="ftext"><h3>世界34カ国から参加</h3><p>4つのタイムゾーンで毎日授業。世界中の仲間と一緒に学べます。</p></div></div>
+                <div class="feat-row reveal"><div class="fnum">02</div><div class="ficon"><svg class="icon icon-lg"><use href="#i-cap"/></svg></div><div class="ftext"><h3>有資格の講師が多数在籍</h3><p>教員免許・小学校教員資格など、プロの講師が丁寧に指導します。</p></div></div>
+                <div class="feat-row reveal"><div class="fnum">03</div><div class="ficon"><svg class="icon icon-lg"><use href="#i-book"/></svg></div><div class="ftext"><h3>日本語・国語・算数が定額</h3><p>追加料金なし。お子様のレベルに合った学年で自由に受講できます。</p></div></div>
+                <div class="feat-row reveal"><div class="fnum">04</div><div class="ficon"><svg class="icon icon-lg"><use href="#i-home"/></svg></div><div class="ftext"><h3>送迎は一切不要</h3><p>全クラスオンライン。LINEで担当講師といつでも連絡が取れます。</p></div></div>
+                <div class="feat-row reveal"><div class="fnum">05</div><div class="ficon"><svg class="icon icon-lg"><use href="#i-clock"/></svg></div><div class="ftext"><h3>25分 × 平日毎日</h3><p>時差に対応した授業時間。短いから、遊びや家族の時間も確保できます。</p></div></div>
+            </div>
+            <div class="features-tagline reveal"><p>家でもなく、学校でもない。<br>子どもが<span class="mk">“自分から学びたくなる”</span>第3の場所。</p></div>
         </div>
     </section>
 
-    <section class="influencer-section">
+    <!-- influencers -->
+    <section class="sec influencer">
         <div class="container">
-            <div class="section-label"><span class="eyebrow">推薦</span><h2>海外で活躍するインフルエンサーが<br>自信を持っておすすめ</h2></div>
-        </div>
-        <div class="influencer-track-wrapper">
-            <div class="influencer-track">
-                <div class="inf-card"><div class="inf-card-header"><img src="https://i.imgur.com/ye4vAGS.png" alt="Mrs. Cross"><div><div class="inf-name">Mrs. Cross 様</div><div class="inf-details">YouTube 16.4万人 | アメリカ在住</div></div></div><div class="inf-body"><h4>日本滞在中や移動中でも学べる柔軟さ</h4><p>最初は集中が難しかった算数も、今では楽しんで取り組めています。先生が丁寧に教えてくれるので安心です。ネット環境があれば日本滞在中や移動中でも受講でき、25分の短い授業で子どもは遊ぶ時間も確保可能。</p></div></div>
-                <div class="inf-card"><div class="inf-card-header"><img src="https://i.imgur.com/A84WSkj.png" alt="ブラウンファミリーの大冒険"><div><div class="inf-name">ブラウンファミリーの大冒険 様</div><div class="inf-details">YouTube 1.03万人 | アメリカ在住</div></div></div><div class="inf-body"><h4>学びとコミュニケーションが同時に育つ場</h4><p>子どもは楽しそうに参加しており、特に偉人のクラスは親子の会話を広げてくれます。送迎不要で自宅から安心して受講できます。</p></div></div>
-                <div class="inf-card"><div class="inf-card-header"><img src="https://i.imgur.com/sZbmDlv.png" alt="Trilingual Family"><div><div class="inf-name">Trilingual Family 様</div><div class="inf-details">YouTube 3.75万人 | ドイツ在住</div></div></div><div class="inf-body"><h4>送迎不要で親も子も大満足</h4><p>子どもは楽しんで受講しており、特に偉人のクラスはとても気に入っています。送迎が不要で、親としても安心して利用できます。</p></div></div>
-                <div class="inf-card"><div class="inf-card-header"><img src="https://i.imgur.com/S4cjBqL.png" alt="かおり"><div><div class="inf-name">かおり 様</div><div class="inf-details">Instagram 2.9万人 | イギリス在住</div></div></div><div class="inf-body"><h4>国語も算数も少しずつ自信に</h4><p>発言が苦手な長女も国語や偉人クラスを楽しめるようになり、次女は計算が速くなりました。少しずつ場に慣れ、自信がつきました。</p></div></div>
-                <div class="inf-card"><div class="inf-card-header"><img src="https://i.imgur.com/ye4vAGS.png" alt="Mrs. Cross"><div><div class="inf-name">Mrs. Cross 様</div><div class="inf-details">YouTube 16.4万人 | アメリカ在住</div></div></div><div class="inf-body"><h4>日本滞在中や移動中でも学べる柔軟さ</h4><p>最初は集中が難しかった算数も、今では楽しんで取り組めています。先生が丁寧に教えてくれるので安心です。ネット環境があれば日本滞在中や移動中でも受講でき、25分の短い授業で子どもは遊ぶ時間も確保可能。</p></div></div>
-                <div class="inf-card"><div class="inf-card-header"><img src="https://i.imgur.com/A84WSkj.png" alt="ブラウンファミリーの大冒険"><div><div class="inf-name">ブラウンファミリーの大冒険 様</div><div class="inf-details">YouTube 1.03万人 | アメリカ在住</div></div></div><div class="inf-body"><h4>学びとコミュニケーションが同時に育つ場</h4><p>子どもは楽しそうに参加しており、特に偉人のクラスは親子の会話を広げてくれます。送迎不要で自宅から安心して受講できます。</p></div></div>
-                <div class="inf-card"><div class="inf-card-header"><img src="https://i.imgur.com/sZbmDlv.png" alt="Trilingual Family"><div><div class="inf-name">Trilingual Family 様</div><div class="inf-details">YouTube 3.75万人 | ドイツ在住</div></div></div><div class="inf-body"><h4>送迎不要で親も子も大満足</h4><p>子どもは楽しんで受講しており、特に偉人のクラスはとても気に入っています。送迎が不要で、親としても安心して利用できます。</p></div></div>
-                <div class="inf-card"><div class="inf-card-header"><img src="https://i.imgur.com/S4cjBqL.png" alt="かおり"><div><div class="inf-name">かおり 様</div><div class="inf-details">Instagram 2.9万人 | イギリス在住</div></div></div><div class="inf-body"><h4>国語も算数も少しずつ自信に</h4><p>発言が苦手な長女も国語や偉人クラスを楽しめるようになり、次女は計算が速くなりました。少しずつ場に慣れ、自信がつきました。</p></div></div>
+            <div class="sec-head reveal">
+                <span class="sec-num">08 — Endorsed</span>
+                <span class="sec-eyebrow">推薦</span>
+                <h2 class="sec-title">海外で活躍するインフルエンサーが<br>自信を持っておすすめ</h2>
             </div>
         </div>
-        <div class="container"><div class="anniversary-wrap"><p class="anniversary-badge">今年で6年目 —— 多くのご家族と共に成長してきました</p></div></div>
+        <div class="inf-track-wrap">
+            <div class="inf-track">
+                <div class="inf-card"><span class="q">”</span><div class="inf-head"><img src="https://i.imgur.com/ye4vAGS.png" alt="Mrs. Cross"><div><div class="inf-name">Mrs. Cross 様</div><div class="inf-detail">YouTube 16.4万人 | アメリカ在住</div></div></div><h4>日本滞在中や移動中でも学べる柔軟さ</h4><div class="inf-body"><p>最初は集中が難しかった算数も、今では楽しんで取り組めています。先生が丁寧に教えてくれるので安心です。ネット環境があれば移動中でも受講でき、25分の短い授業で遊ぶ時間も確保可能。</p></div></div>
+                <div class="inf-card"><span class="q">”</span><div class="inf-head"><img src="https://i.imgur.com/A84WSkj.png" alt="ブラウンファミリーの大冒険"><div><div class="inf-name">ブラウンファミリーの大冒険 様</div><div class="inf-detail">YouTube 1.03万人 | アメリカ在住</div></div></div><h4>学びとコミュニケーションが同時に育つ場</h4><div class="inf-body"><p>子どもは楽しそうに参加しており、特に偉人のクラスは親子の会話を広げてくれます。送迎不要で自宅から安心して受講できます。</p></div></div>
+                <div class="inf-card"><span class="q">”</span><div class="inf-head"><img src="https://i.imgur.com/sZbmDlv.png" alt="Trilingual Family"><div><div class="inf-name">Trilingual Family 様</div><div class="inf-detail">YouTube 3.75万人 | ドイツ在住</div></div></div><h4>送迎不要で親も子も大満足</h4><div class="inf-body"><p>子どもは楽しんで受講しており、特に偉人のクラスはとても気に入っています。送迎が不要で、親としても安心して利用できます。</p></div></div>
+                <div class="inf-card"><span class="q">”</span><div class="inf-head"><img src="https://i.imgur.com/S4cjBqL.png" alt="かおり"><div><div class="inf-name">かおり 様</div><div class="inf-detail">Instagram 2.9万人 | イギリス在住</div></div></div><h4>国語も算数も少しずつ自信に</h4><div class="inf-body"><p>発言が苦手な長女も国語や偉人クラスを楽しめるようになり、次女は計算が速くなりました。少しずつ場に慣れ、自信がつきました。</p></div></div>
+                <div class="inf-card"><span class="q">”</span><div class="inf-head"><img src="https://i.imgur.com/ye4vAGS.png" alt="Mrs. Cross"><div><div class="inf-name">Mrs. Cross 様</div><div class="inf-detail">YouTube 16.4万人 | アメリカ在住</div></div></div><h4>日本滞在中や移動中でも学べる柔軟さ</h4><div class="inf-body"><p>最初は集中が難しかった算数も、今では楽しんで取り組めています。先生が丁寧に教えてくれるので安心です。25分の短い授業で遊ぶ時間も確保可能。</p></div></div>
+                <div class="inf-card"><span class="q">”</span><div class="inf-head"><img src="https://i.imgur.com/A84WSkj.png" alt="ブラウンファミリーの大冒険"><div><div class="inf-name">ブラウンファミリーの大冒険 様</div><div class="inf-detail">YouTube 1.03万人 | アメリカ在住</div></div></div><h4>学びとコミュニケーションが同時に育つ場</h4><div class="inf-body"><p>子どもは楽しそうに参加しており、特に偉人のクラスは親子の会話を広げてくれます。送迎不要で自宅から安心して受講できます。</p></div></div>
+                <div class="inf-card"><span class="q">”</span><div class="inf-head"><img src="https://i.imgur.com/sZbmDlv.png" alt="Trilingual Family"><div><div class="inf-name">Trilingual Family 様</div><div class="inf-detail">YouTube 3.75万人 | ドイツ在住</div></div></div><h4>送迎不要で親も子も大満足</h4><div class="inf-body"><p>子どもは楽しんで受講しており、特に偉人のクラスはとても気に入っています。送迎が不要で、親としても安心して利用できます。</p></div></div>
+                <div class="inf-card"><span class="q">”</span><div class="inf-head"><img src="https://i.imgur.com/S4cjBqL.png" alt="かおり"><div><div class="inf-name">かおり 様</div><div class="inf-detail">Instagram 2.9万人 | イギリス在住</div></div></div><h4>国語も算数も少しずつ自信に</h4><div class="inf-body"><p>発言が苦手な長女も国語や偉人クラスを楽しめるようになり、次女は計算が速くなりました。少しずつ場に慣れ、自信がつきました。</p></div></div>
+            </div>
+        </div>
+        <div class="container"><div class="anniversary reveal"><span>今年で6年目 —— 多くのご家族と共に 🌱</span></div></div>
     </section>
 
-    <section class="industry-section">
+    <!-- industry -->
+    <section class="sec industry">
         <div class="container">
-            <div class="section-label">
-                <span class="eyebrow"><svg class="icon icon-sm" aria-hidden="true"><use href="#i-scale"/></svg>業界比較</span>
-                <h2>同じ$200の月予算で、<br>5倍学べる。</h2>
-                <p>補習校、家庭教師、他のオンラインスクール…<br>あらゆる選択肢と比べてください。</p>
+            <div class="sec-head reveal">
+                <span class="sec-num">09 — Value</span>
+                <span class="sec-eyebrow">業界比較</span>
+                <h2 class="sec-title">同じ$200の月予算で、<br>5倍学べる。</h2>
+                <p class="sec-lead">補習校、家庭教師、他のオンラインスクール…あらゆる選択肢と比べてください。</p>
             </div>
-
-            <div class="industry-table-wrap">
-                <table class="industry-table">
-                    <thead>
-                        <tr>
-                            <th class="left">サービス形態</th>
-                            <th class="center">月の<br>学習日数</th>
-                            <th class="center">月額目安</th>
-                            <th class="center">1日あたり<br>単価</th>
-                        </tr>
-                    </thead>
+            <div class="ind-wrap reveal">
+                <table class="ind-table">
+                    <thead><tr><th class="left">サービス形態</th><th class="center">月の<br>学習日数</th><th class="center">月額目安</th><th class="center">1日あたり<br>単価</th></tr></thead>
                     <tbody>
-                        <tr>
-                            <td><span class="row-icon-wrap"><svg class="icon icon-md" style="color:var(--orange-600)" aria-hidden="true"><use href="#i-school"/></svg>北米の補習校（週末対面）</span></td>
-                            <td class="center">月4日</td>
-                            <td class="center">$80〜250</td>
-                            <td class="center unit">$20〜60</td>
-                        </tr>
-                        <tr>
-                            <td><span class="row-icon-wrap"><svg class="icon icon-md" style="color:var(--orange-600)" aria-hidden="true"><use href="#i-user"/></svg>海外子女向け個別チューター</span></td>
-                            <td class="center">月4〜8日</td>
-                            <td class="center">$200〜500</td>
-                            <td class="center unit">$50〜80</td>
-                        </tr>
-                        <tr>
-                            <td><span class="row-icon-wrap"><svg class="icon icon-md" style="color:var(--orange-600)" aria-hidden="true"><use href="#i-monitor"/></svg>他のオンライン日本語スクール</span></td>
-                            <td class="center">月8〜12日</td>
-                            <td class="center">$200〜400</td>
-                            <td class="center unit">$25〜40</td>
-                        </tr>
-                        <tr>
-                            <td><span class="row-icon-wrap"><svg class="icon icon-md" style="color:var(--orange-600)" aria-hidden="true"><use href="#i-book"/></svg>自習型オンライン教材</span></td>
-                            <td class="center">自分次第</td>
-                            <td class="center">$50〜100</td>
-                            <td class="center no-live">ライブ授業なし</td>
-                        </tr>
-                        <tr class="sa-row">
-                            <td><span class="row-icon-wrap"><svg class="icon icon-md" style="color:#1D4ED8" aria-hidden="true"><use href="#i-star"/></svg>サクセスアカデミー</span><span class="sa-sub">※1日複数クラス受講OK</span></td>
-                            <td class="center">月20日<span class="sa-sub-light">（平日毎日）</span></td>
-                            <td class="center">$200</td>
-                            <td class="center unit">$10</td>
-                        </tr>
+                        <tr><td><span class="ri"><svg class="icon icon-md" style="color:var(--muted)"><use href="#i-school"/></svg>北米の補習校（週末対面）</span></td><td class="center">月4日</td><td class="center">$80〜250</td><td class="unit">$20〜60</td></tr>
+                        <tr><td><span class="ri"><svg class="icon icon-md" style="color:var(--muted)"><use href="#i-user"/></svg>海外子女向け個別チューター</span></td><td class="center">月4〜8日</td><td class="center">$200〜500</td><td class="unit">$50〜80</td></tr>
+                        <tr><td><span class="ri"><svg class="icon icon-md" style="color:var(--muted)"><use href="#i-monitor"/></svg>他のオンライン日本語スクール</span></td><td class="center">月8〜12日</td><td class="center">$200〜400</td><td class="unit">$25〜40</td></tr>
+                        <tr><td><span class="ri"><svg class="icon icon-md" style="color:var(--muted)"><use href="#i-book"/></svg>自習型オンライン教材</span></td><td class="center">自分次第</td><td class="center">$50〜100</td><td class="no-live">ライブ授業なし</td></tr>
+                        <tr class="sa"><td><span class="ri"><svg class="icon icon-md" style="color:var(--coral)"><use href="#i-sparkle"/></svg>サクセスアカデミー</span><span class="sub">※1日複数クラス受講OK</span></td><td class="center">月20日<span class="sub">（平日毎日）</span></td><td class="center">$200</td><td class="unit">$10</td></tr>
                     </tbody>
                 </table>
             </div>
-
-            <p class="industry-note">※各サービスの料金は北米相場の当社調べ参考値です（2026年5月時点）。実際の料金は各サービスにご確認ください。</p>
-
-            <div class="industry-summary">
-                <p class="main"><svg class="icon icon-md icon-bulb" aria-hidden="true"><use href="#i-bulb"/></svg><span><strong>同じ$200の月予算でも</strong>、補習校なら月4日。サクセスアカデミーなら<strong>月20日（5倍）</strong>学べます。</span></p>
-                <p>しかも、1日に複数クラス受講もOK。日本語クラス・国語クラス・算数クラスを組み合わせれば、<strong>月20回どころか、もっと多く受けられる</strong>のがサクセスの特長です。</p>
-                <p>1日あたり約$10という業界でも珍しい価格設定で、毎日の積み重ねが、お子さまの「できた！」を増やします。</p>
+            <p class="ind-note">※各サービスの料金は北米相場の当社調べ参考値です（2026年5月時点）。実際の料金は各サービスにご確認ください。</p>
+            <div class="ind-summary reveal">
+                <p class="main"><svg class="icon icon-md" style="color:var(--yellow)"><use href="#i-bulb"/></svg> 同じ$200の月予算でも、補習校なら月4日。サクセスなら<strong>月20日（5倍）</strong>学べます。</p>
+                <p>しかも1日に複数クラス受講もOK。日本語・国語・算数を組み合わせれば、<strong>月20回どころか、もっと多く</strong>受けられるのがサクセスの特長です。</p>
+                <p>1日あたり約<strong>$10</strong>という価格設定で、毎日の積み重ねが、お子さまの「できた！」を増やします。</p>
             </div>
         </div>
     </section>
 
-    <section class="pricing-section">
+    <!-- pricing signboard -->
+    <section class="sec pricing">
         <div class="container">
-            <div class="section-label"><span class="eyebrow">料金</span><h2>安心の料金プラン</h2></div>
-            <div class="pricing-grid">
-                <div class="price-card">
-                    <span class="price-badge orange">グループレッスン</span>
-                    <h3 class="price-name">フリーレッスン</h3>
-                    <p class="price-target">対象：4歳〜中学生</p>
-                    <p class="price-desc">日本語/国語/算数<br>月額定額で受け放題</p>
-                    <div class="price-amount">200<span>USD/月</span></div>
-                    <span class="price-trial orange">7日間 無料体験</span>
-                    <p class="price-detail">平日毎日（月20日）・1日あたり約$10<br><strong style="color: var(--orange-600);">全学年アクセス可能</strong>・1日複数クラス受講OK</p>
+            <div class="sec-head reveal">
+                <span class="sec-num">10 — Plan</span>
+                <span class="sec-eyebrow">料金</span>
+                <h2 class="sec-title">安心の、シンプルな料金</h2>
+                <p class="sec-lead">学年が上がっても、料金は変わりません。</p>
+            </div>
+            <div class="board reveal">
+                <div class="btop"><span class="pin">🎟️</span>今だけ LINEクーポンで 毎月$150<span class="pin">🎟️</span></div>
+                <div class="board-inner">
+                    <div class="lead">月額定額・全教科 受け放題</div>
+                    <div class="was">通常 <s>$200/月</s> のところ →</div>
+                    <div class="board-price"><span class="cur">$</span><span class="amt">150</span><span class="per">USD / 月</span></div>
+                    <div class="perday-pill">LINEで配布中の<strong>割引クーポン</strong>を入会時に適用</div>
+                    <div class="nofee">1日あたり約 $7.5／追加料金なし ・ <strong style="color:var(--coral)">さらに紹介で最大 $0（無料）</strong></div>
+                    <ul class="board-feat">
+                        <li><svg class="icon icon-sm ck"><use href="#i-check"/></svg>平日毎日・1レッスン25分の受け放題</li>
+                        <li><svg class="icon icon-sm ck"><use href="#i-check"/></svg>日本語・国語・算数すべて定額</li>
+                        <li><svg class="icon icon-sm ck"><use href="#i-check"/></svg>全学年アクセス可能・1日複数クラスOK</li>
+                        <li><svg class="icon icon-sm ck"><use href="#i-check"/></svg>偉人クラス・新聞ディベートも含む</li>
+                        <li><svg class="icon icon-sm ck"><use href="#i-check"/></svg>追加料金・教材費・施設費は一切なし</li>
+                    </ul>
+                    <div class="trial">🎁 7日間 無料体験つき／いつでも解約OK</div>
+                    <div class="hero-ctas" style="justify-content:center;">
+                        <a href="https://line.me/R/ti/p/@359fnsdb" onclick="event.preventDefault(); trackLineClick(); var url=this.href; setTimeout(function(){window.open(url,'_blank');},300); return false;" target="_blank" class="btn-line"><svg class="icon icon-md lineico"><use href="#i-line"/></svg>LINEで $150 クーポンを受け取る</a>
+                    </div>
                 </div>
             </div>
         </div>
     </section>
 
-    <section class="final-cta">
-        <div class="final-cta-inner">
-            <div class="final-cta-card">
-                <div class="inline-cta-badge" style="background:var(--green-500);"><svg class="icon icon-sm" aria-hidden="true"><use href="#i-calendar"/></svg>次回クールのお知らせ</div>
-                <h3>次回クールは<br>7月6日（月）から開始</h3>
-                <div class="campaign-highlight-box" style="margin-bottom:20px;">
-                    <div class="chb-main"><svg class="icon icon-md" aria-hidden="true"><use href="#i-phone"/></svg>LINEで詳細・特別案内を配信中</div>
-                    <div class="chb-sub">クラス内容・料金・体験申込はLINEから</div>
+    <!-- final -->
+    <section class="sec final">
+        <div class="final-inner">
+            <div class="final-card reveal">
+                <span class="final-eyebrow"><svg class="icon icon-sm"><use href="#i-calendar"/></svg>期間限定キャンペーン</span>
+                <h3>今だけ、LINEで<br>月額$150 割引クーポンを配布中🎟️</h3>
+                <p class="cool">通常$200のところ、クーポン適用で毎月$150｜次回クール 7/6 開講</p>
+                <div class="final-list">
+                    <p><svg class="icon icon-sm ck"><use href="#i-check"/></svg>通常$200 → クーポン適用で毎月$150</p>
+                    <p><svg class="icon icon-sm ck"><use href="#i-check"/></svg>紹介すれば最大“無料”まで月謝が下がる</p>
+                    <p><svg class="icon icon-sm ck"><use href="#i-check"/></svg>レッスン内容・料金がわかる資料＋7日間無料体験</p>
                 </div>
-                <div class="inline-cta-list">
-                    <p><svg class="icon icon-sm check-icon" aria-hidden="true"><use href="#i-check"/></svg>レッスン内容・料金・スケジュールがわかる資料</p>
-                    <p><svg class="icon icon-sm check-icon" aria-hidden="true"><use href="#i-check"/></svg>LINE限定の特別案内をお届け</p>
-                    <p><svg class="icon icon-sm check-icon" aria-hidden="true"><use href="#i-check"/></svg>LINEでいつでも質問OK</p>
-                </div>
-                <p style="font-size: 0.85rem; color: var(--orange-600); font-weight: 600; margin-bottom: 16px; display: inline-flex; align-items: center; gap: 6px;"><svg class="icon icon-sm" aria-hidden="true"><use href="#i-phone"/></svg>LINEから簡単に資料請求できます</p>
-                <button id="lineRegButton2" class="btn-campaign pulse-btn" onclick="event.preventDefault(); trackLineClick(); setTimeout(function(){window.open('https://line.me/R/ti/p/@359fnsdb','_blank');},300);" style="width: 100%;">今すぐ資料請求する</button>
-                <p style="font-size: 0.75rem; color: var(--gray-400); margin-top: 12px;">※ 登録無料・いつでも解除OK</p>
+                <a href="https://line.me/R/ti/p/@359fnsdb" onclick="event.preventDefault(); trackLineClick(); var url=this.href; setTimeout(function(){window.open(url,'_blank');},300); return false;" target="_blank" class="btn-line" style="width:100%;"><svg class="icon icon-md lineico"><use href="#i-line"/></svg>今すぐLINEで $150 クーポンを受け取る</a>
+                <p class="final-note">※ 登録無料・いつでも解除OK</p>
                 <div class="email-divider">
-                    <p class="email-label"><svg class="icon icon-sm" aria-hidden="true"><use href="#i-mail"/></svg>LINEが使えない方はメールで</p>
-                    <div>
-                        <form action="https://mercy-education.us10.list-manage.com/subscribe/post?u=3fc0ca0518c0063b0701b969e&amp;id=0e737d1946&amp;f_id=004f27e2f0" method="post" class="email-form-row" target="_blank">
-                            <input type="email" name="EMAIL" class="email-input" placeholder="メールアドレスを入力" required>
-                            <div hidden><input type="hidden" name="tags" value="14567839"></div>
-                            <div style="position: absolute; left: -5000px;" aria-hidden="true"><input type="text" name="b_3fc0ca0518c0063b0701b969e_0e737d1946" tabindex="-1" value=""></div>
-                            <button type="submit" class="email-btn">登録</button>
-                        </form>
-                    </div>
+                    <p class="email-label"><svg class="icon icon-sm"><use href="#i-mail"/></svg>LINEが使えない方はメールで</p>
+                    <form action="https://mercy-education.us10.list-manage.com/subscribe/post?u=3fc0ca0518c0063b0701b969e&amp;id=0e737d1946&amp;f_id=004f27e2f0" method="post" class="email-row" target="_blank">
+                        <input type="email" name="EMAIL" class="email-input" placeholder="メールアドレスを入力" required>
+                        <div hidden><input type="hidden" name="tags" value="14567839"></div>
+                        <div style="position:absolute;left:-5000px;" aria-hidden="true"><input type="text" name="b_3fc0ca0518c0063b0701b969e_0e737d1946" tabindex="-1" value=""></div>
+                        <button type="submit" class="email-btn">登録</button>
+                    </form>
                 </div>
             </div>
         </div>
@@ -828,18 +854,18 @@
 
     <footer class="site-footer">
         <div class="container">
-            <div class="footer-logo">サクセスアカデミー</div>
+            <div class="footer-logo outfit">Success Academy<span class="ja">サクセスアカデミー</span></div>
             <p>海外在住のご家族向けに、<br>オンラインで日本語教育を提供しています。</p>
-            <a href="https://line.me/R/ti/p/@359fnsdb" onclick="event.preventDefault(); trackLineClick(); var url=this.href; setTimeout(function(){window.open(url,'_blank');},300); return false;" target="_blank" class="footer-line-btn">今すぐ資料請求する</a>
+            <a href="https://line.me/R/ti/p/@359fnsdb" onclick="event.preventDefault(); trackLineClick(); var url=this.href; setTimeout(function(){window.open(url,'_blank');},300); return false;" target="_blank" class="footer-line"><svg class="icon icon-sm lineico"><use href="#i-line"/></svg>LINEで $150 クーポンを受け取る</a>
             <div class="footer-copy"><p>© 2026 サクセスアカデミー All rights reserved.</p></div>
         </div>
     </footer>
 
-    <div class="fixed-cta">
-        <a href="https://line.me/R/ti/p/@359fnsdb" onclick="event.preventDefault(); trackLineClick(); var url=this.href; setTimeout(function(){window.open(url,'_blank');},300); return false;" target="_blank" style="text-decoration:none;width:100%;max-width:400px;">
-            <button class="fixed-cta-btn">今すぐ資料請求する</button>
+    <div class="fixed-cta" id="fixedCta">
+        <a href="https://line.me/R/ti/p/@359fnsdb" onclick="event.preventDefault(); trackLineClick(); var url=this.href; setTimeout(function(){window.open(url,'_blank');},300); return false;" target="_blank">
+            <button class="fixed-cta-btn"><svg class="icon icon-sm lineico"><use href="#i-line"/></svg>LINEで $150 クーポンを受け取る</button>
         </a>
-        <div class="fixed-cta-note"><svg class="icon icon-sm" aria-hidden="true"><use href="#i-calendar"/></svg>次回クール7/6（月）開始｜LINEで特別案内を配信中</div>
+        <div class="fixed-cta-note">🎟️ 通常$200 → クーポンで毎月$150</div>
     </div>
 
     <script>
@@ -849,15 +875,35 @@
       if (typeof fbq === 'function') fbq('trackCustom', 'LineRegistrationClick_EN', {});
       if (typeof gtag === 'function') gtag('event', 'line_registration_click', {'event_category': 'engagement'});
     }
-
     (function() {
         function setOffsets() {
-            var banner = document.querySelector('.campaign-banner'), header = document.querySelector('.site-header');
-            var bh = banner ? banner.getBoundingClientRect().height : 44;
-            document.documentElement.style.setProperty('--banner-h', bh + 'px');
+            var notice = document.querySelector('.notice'), header = document.querySelector('.site-header');
+            var nh = notice ? notice.getBoundingClientRect().height : 38;
+            document.documentElement.style.setProperty('--notice-h', nh + 'px');
             if (header) document.documentElement.style.setProperty('--header-h', header.getBoundingClientRect().height + 'px');
         }
         setOffsets(); window.addEventListener('resize', setOffsets); window.addEventListener('load', setOffsets);
+        var header = document.getElementById('siteHeader');
+        var fixed = document.getElementById('fixedCta');
+        window.addEventListener('scroll', function(){
+            if (window.scrollY > 40) header.classList.add('shrink'); else header.classList.remove('shrink');
+            if (window.scrollY > 600) fixed.classList.add('show'); else fixed.classList.remove('show');
+        });
+        // schedule toggle
+        document.querySelectorAll('.sched-toggle .t').forEach(function(btn){
+            btn.addEventListener('click', function(){
+                var mode = btn.getAttribute('data-mode');
+                document.querySelectorAll('.sched-toggle .t').forEach(function(b){ b.classList.toggle('on', b===btn); });
+                document.querySelectorAll('.timeline').forEach(function(tl){ tl.classList.toggle('show', tl.getAttribute('data-mode')===mode); });
+            });
+        });
+        var io = new IntersectionObserver(function(entries){
+            entries.forEach(function(e){ if (e.isIntersecting){ e.target.classList.add('in'); io.unobserve(e.target); } });
+        }, { threshold: 0.12, rootMargin: '0px 0px -40px 0px' });
+        document.querySelectorAll('.reveal').forEach(function(el, i){
+            el.style.transitionDelay = (Math.min(i % 3, 2) * 0.08) + 's';
+            io.observe(el);
+        });
     })();
     </script>
 </body>
