@@ -97,6 +97,15 @@
 
         .campaign-card{background:var(--cream);border:2px dashed var(--coral);border-radius:var(--radius-md);padding:20px 24px;margin-bottom:22px;}
         .campaign-card-badge{display:inline-flex;align-items:center;gap:6px;background:var(--coral);color:#fff;padding:5px 14px;border-radius:50px;font-size:0.74rem;font-weight:800;margin-bottom:10px;}
+        .cohort-strip{display:flex;align-items:center;gap:12px;background:var(--ink);color:#fff;border-radius:14px;padding:10px 14px;margin-bottom:14px;box-shadow:var(--shadow-soft);}
+        .cohort-strip .cs-cal{display:flex;flex-direction:column;align-items:center;justify-content:center;background:var(--coral);border-radius:10px;padding:5px 11px;line-height:1;flex-shrink:0;}
+        .cohort-strip .cs-cal .cs-m{font-family:'Outfit',sans-serif;font-size:0.6rem;font-weight:800;letter-spacing:0.1em;}
+        .cohort-strip .cs-cal .cs-d{font-family:'Outfit',sans-serif;font-size:1.55rem;font-weight:800;margin-top:1px;}
+        .cohort-strip .cs-text{display:flex;flex-direction:column;line-height:1.35;min-width:0;}
+        .cohort-strip .cs-text .cs-lead{font-size:0.7rem;color:var(--yellow);font-weight:800;letter-spacing:0.03em;}
+        .cohort-strip .cs-text .cs-main{font-size:1.08rem;font-weight:900;color:#fff;}
+        .cohort-strip .cs-text .cs-main em{font-style:normal;color:var(--yellow);}
+        .cohort-strip .cs-badge{margin-left:auto;background:var(--green-500);color:#fff;font-size:0.7rem;font-weight:800;padding:5px 13px;border-radius:50px;white-space:nowrap;flex-shrink:0;}
         .campaign-card-title{font-size:0.98rem;font-weight:600;color:var(--ink);line-height:1.7;}
         .campaign-card-title strong{color:var(--coral-d);font-weight:800;}
 
@@ -371,7 +380,7 @@
             .hero h1{font-size:1.7rem;margin-bottom:12px;} .hero-sub{font-size:0.92rem;margin-bottom:18px;}
             .hero-facts{justify-content:center;gap:6px;} .hero-fact{font-size:0.74rem;padding:6px 12px;}
             .price-flash{justify-content:center;} .price-flash .pf-new{font-size:1.45rem;}
-            .campaign-card{padding:16px 18px;margin-bottom:18px;} .campaign-card-title{font-size:0.92rem;}
+            .campaign-card{padding:16px 18px;margin-bottom:18px;} .campaign-card-title{font-size:0.92rem;} .cohort-strip{padding:9px 11px;gap:10px;} .cohort-strip .cs-cal .cs-d{font-size:1.35rem;} .cohort-strip .cs-text .cs-main{font-size:0.96rem;} .cohort-strip .cs-text .cs-lead{font-size:0.66rem;} .cohort-strip .cs-badge{font-size:0.64rem;padding:4px 10px;}
             .cta-block{max-width:100%;} .btn-cta{font-size:1rem;padding:16px 24px;}
             .section-label{margin-bottom:28px;} .section-label h2{font-size:1.45rem;line-height:1.55;} .section-label p{font-size:0.88rem;}
             .section-label h2 br{display:none;}
@@ -471,7 +480,11 @@
                         <span class="hero-fact"><svg class="icon icon-sm hf-em" aria-hidden="true"><use href="#i-check-circle"/></svg>運営<span class="hf-em">6年</span></span>
                     </div>
                     <div class="campaign-card">
-                        <div class="campaign-card-badge"><svg class="icon icon-sm" aria-hidden="true"><use href="#i-calendar"/></svg>新規クール 7月6日（月）開始</div>
+                        <div class="cohort-strip">
+                            <div class="cs-cal"><span class="cs-m">JUL</span><span class="cs-d">6</span></div>
+                            <div class="cs-text"><span class="cs-lead">次回 新規クール開講</span><span class="cs-main"><em>7月6日（月）</em>スタート</span></div>
+                            <span class="cs-badge">受付中</span>
+                        </div>
                         <div class="price-flash">
                             <span class="pf-old">通常 $200<span>/月</span></span>
                             <span class="pf-arrow">→</span>
@@ -865,6 +878,10 @@
                 <details class="faq-item">
                     <summary><span class="faq-q-mark">Q</span><span class="faq-q-text">割引クーポンはどうやって使えますか？</span><svg class="icon icon-md faq-chevron" aria-hidden="true"><use href="#i-chevron-down"/></svg></summary>
                     <div class="faq-answer">LINE登録すると、月額$150になる割引クーポンをお送りします。ご入会時にクーポンをご利用いただくと、通常$200のところ毎月$150で受講いただけます。使い方もLINEでご案内します。</div>
+                </details>
+                <details class="faq-item">
+                    <summary><span class="faq-q-mark">Q</span><span class="faq-q-text">以前より料金が変わりましたか？</span><svg class="icon icon-md faq-chevron" aria-hidden="true"><use href="#i-chevron-down"/></svg></summary>
+                    <div class="faq-answer">はい。7月クールより料金体系が新しくなりました。<br>これまでは、より多くの海外在住のご家庭に日本語学習を始めていただきやすい価格で提供してきました。<br>現在は、システム・サイト・受講導線を見直し、より使いやすく安心して受講を続けられる環境を整えるため、新料金に移行しています。<br>また、これまで未就学児クラスには追加料金がありましたが、現在は年齢に関係なく同じ料金で受講できます。</div>
                 </details>
                 <details class="faq-item">
                     <summary><span class="faq-q-mark">Q</span><span class="faq-q-text">途中でやめられますか？</span><svg class="icon icon-md faq-chevron" aria-hidden="true"><use href="#i-chevron-down"/></svg></summary>
