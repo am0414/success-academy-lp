@@ -101,6 +101,15 @@
         .hero-ctas{display:flex;align-items:center;gap:18px;flex-wrap:wrap;}
         .micro{font-size:0.74rem;color:var(--muted);line-height:1.5;}
         .campaign-flag{display:flex;align-items:center;gap:9px;background:var(--yellowsoft);border:1px dashed var(--yellow);color:var(--ink);font-size:0.86rem;font-weight:600;padding:10px 14px;border-radius:12px;margin-bottom:16px;max-width:460px;line-height:1.5;}
+        .cohort-strip{display:flex;align-items:center;gap:12px;background:var(--ink);color:#fff;border-radius:14px;padding:10px 14px;margin-bottom:16px;max-width:460px;box-shadow:var(--shadow-soft);}
+        .cohort-strip .cs-cal{display:flex;flex-direction:column;align-items:center;justify-content:center;background:var(--coral);border-radius:10px;padding:5px 11px;line-height:1;flex-shrink:0;}
+        .cohort-strip .cs-cal .cs-m{font-family:'Outfit',sans-serif;font-size:0.6rem;font-weight:800;letter-spacing:0.1em;}
+        .cohort-strip .cs-cal .cs-d{font-family:'Outfit',sans-serif;font-size:1.55rem;font-weight:800;margin-top:1px;}
+        .cohort-strip .cs-text{display:flex;flex-direction:column;line-height:1.35;min-width:0;}
+        .cohort-strip .cs-text .cs-lead{font-size:0.7rem;color:var(--yellow);font-weight:800;letter-spacing:0.03em;}
+        .cohort-strip .cs-text .cs-main{font-size:1.08rem;font-weight:900;color:#fff;}
+        .cohort-strip .cs-text .cs-main em{font-style:normal;color:var(--yellow);}
+        .cohort-strip .cs-badge{margin-left:auto;background:var(--green);color:#fff;font-size:0.7rem;font-weight:800;padding:5px 13px;border-radius:50px;white-space:nowrap;flex-shrink:0;}
         .campaign-flag strong{color:var(--coral-d);font-weight:800;}
         .campaign-flag .cf-badge{background:var(--coral);color:#fff;font-size:0.7rem;font-weight:800;padding:4px 11px;border-radius:50px;flex-shrink:0;}
         .campaign-flag .cf-text{flex:1 1 auto;min-width:0;line-height:1.55;}
@@ -417,7 +426,7 @@
             .sched-toggle{flex-wrap:wrap;}
             .answer{padding:24px 18px;}
             .vstrip{padding:18px;}
-            .campaign-flag{max-width:100%;font-size:0.8rem;}
+            .campaign-flag{max-width:100%;font-size:0.8rem;} .cohort-strip{max-width:100%;padding:9px 11px;gap:10px;} .cohort-strip .cs-cal .cs-d{font-size:1.35rem;} .cohort-strip .cs-text .cs-main{font-size:0.96rem;} .cohort-strip .cs-text .cs-lead{font-size:0.66rem;} .cohort-strip .cs-badge{font-size:0.64rem;padding:4px 10px;}
             .philosophy{flex-direction:column;align-items:center;text-align:center;gap:8px;padding:20px;}
             .ladder{flex-direction:column;gap:8px;max-width:420px;}
             .step{flex-direction:row;justify-content:space-between;align-items:center;text-align:left;padding:13px 16px;gap:10px;}
@@ -432,7 +441,7 @@
             .sched-toggle .t{flex:1 1 auto;}
             .hero-left{text-align:center;}
             .hero-body .cat{align-self:center;}
-            .campaign-flag{margin-left:auto;margin-right:auto;justify-content:center;}
+            .campaign-flag{margin-left:auto;margin-right:auto;justify-content:center;} .cohort-strip{margin-left:auto;margin-right:auto;}
             .hero .lede{margin-left:auto;margin-right:auto;}
             .hero-ctas{justify-content:center;}
             .footrule{justify-content:center;}
@@ -502,6 +511,11 @@
                     <h1>海外にいても、<br>子どもの<span class="mk">日本語</span>は、<br><span class="co">ちゃんと続く。</span></h1>
                     <p class="lede">継続率92.5%・世界34カ国の家族が選ぶオンライン日本語スクール。1日たった25分、送迎なし・宿題なし。月額$200で全教科・平日毎日、受け放題。</p>
                     <div class="campaign-flag"><span class="cf-badge">今だけ</span><span class="cf-text">通常$200 → 🎟️LINEクーポンで <strong>毎月$150</strong></span></div>
+                    <div class="cohort-strip">
+                        <div class="cs-cal"><span class="cs-m">JUL</span><span class="cs-d">6</span></div>
+                        <div class="cs-text"><span class="cs-lead">次回 新規クール開講</span><span class="cs-main"><em>7月6日（月）</em>スタート</span></div>
+                        <span class="cs-badge">受付中</span>
+                    </div>
                     <div class="hero-ctas">
                         <a href="https://line.me/R/ti/p/@359fnsdb" onclick="event.preventDefault(); trackLineClick(); var url=this.href; setTimeout(function(){window.open(url,'_blank');},300); return false;" target="_blank" class="btn-line"><svg class="icon icon-md lineico"><use href="#i-line"/></svg>LINEで $150 クーポンを受け取る</a>
                         <span class="micro">登録無料・いつでも解除OK｜7日間 無料体験つき</span>
