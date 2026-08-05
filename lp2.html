@@ -405,6 +405,51 @@
         @media (max-width:390px){
             .hero h1{font-size:1.5rem;} .proof-items{grid-template-columns:1fr 1fr;gap:8px;} .section-label h2{font-size:1.28rem;} .comp-table{min-width:480px;} .industry-table{min-width:500px;}
         }
+        /* === reorder & SP tuning (2026-08) === */
+        @media (max-width:768px){
+            /* --- 権威性: ヒーロー実績チップ --- */
+            .hero-facts{gap:8px;}
+            .hero-fact{font-size:0.86rem;padding:8px 14px;line-height:1.4;}
+            .hero-fact .hf-em{font-size:1.02rem;}
+            .hero-badge-number{font-size:1.7rem;}
+            .hero-badge-label{font-size:0.8rem;}
+            .hero-sub{font-size:0.98rem;line-height:1.9;}
+            .banner-main{font-size:0.8rem;line-height:1.45;}
+            .banner-sub{font-size:0.72rem;}
+
+            /* --- 実績バー --- */
+            .proof-section{padding:44px 16px;}
+            .proof-items{gap:12px;}
+            .proof-item{padding:22px 8px;}
+            .proof-number{font-size:2.35rem;}
+            .proof-label{font-size:0.84rem;line-height:1.4;}
+
+            /* --- 保護者の声 --- */
+            .testi-card{padding:20px 18px;}
+            .testi-card p{font-size:0.98rem;line-height:1.85;}
+            .testi-card .author{font-size:0.84rem;}
+            .testi-highlight{font-size:1.15rem;}
+
+            /* --- インフルエンサー --- */
+            .inf-name{font-size:1.02rem;}
+            .inf-details{font-size:0.8rem;font-weight:600;color:var(--inksoft);}
+            .inf-card h4{font-size:1rem;}
+            .anniversary-badge{font-size:1rem;padding:11px 20px;line-height:1.5;}
+
+            /* --- 比較・業界 --- */
+            .comp-main{font-size:0.94rem;}
+            .comp-sub{font-size:0.82rem;}
+            .industry-table tbody td{font-size:0.88rem;}
+
+            /* --- 共通 --- */
+            .section-label .eyebrow{font-size:0.84rem;}
+            .section-label p{font-size:0.94rem;line-height:1.8;}
+        }
+        @media (max-width:390px){
+            .hero-fact{font-size:0.8rem;padding:7px 12px;}
+            .proof-number{font-size:2rem;}
+            .testi-card p{font-size:0.94rem;}
+        }
     </style>
 </head>
 <body>
@@ -454,7 +499,7 @@
 
     <div class="campaign-banner">
         <div class="banner-inner">
-            <span class="banner-main"><svg class="icon icon-sm" aria-hidden="true"><use href="#i-calendar"/></svg>7月20日（月）まで 無料体験受付中｜通常$200 → 🎟️LINEクーポンで毎月$150</span>
+            <span class="banner-main"><svg class="icon icon-sm" aria-hidden="true"><use href="#i-calendar"/></svg>10月5日（月）新クール開始・先行受付中｜通常$200 → 🎟️LINEクーポンで毎月$150</span>
             <span class="banner-sub">7日間無料体験・入会費$50も無料</span>
         </div>
     </div>
@@ -465,6 +510,7 @@
             <a href="https://line.me/R/ti/p/@359fnsdb" onclick="event.preventDefault(); trackLineClick(); var url=this.href; setTimeout(function(){window.open(url,'_blank');},300); return false;" target="_blank" class="header-cta"><svg class="icon icon-sm" aria-hidden="true"><use href="#i-doc"/></svg>無料で資料請求</a>
         </div>
     </header>
+
 
     <!-- ===== ファーストビュー ===== -->
     <section class="hero">
@@ -481,9 +527,9 @@
                     </div>
                     <div class="campaign-card">
                         <div class="cohort-strip">
-                            <div class="cs-cal"><span class="cs-m">JUL</span><span class="cs-d">20</span></div>
-                            <div class="cs-text"><span class="cs-lead">無料体験 受付中</span><span class="cs-main"><em>7月20日（月）</em>まで</span></div>
-                            <span class="cs-badge">受付中</span>
+                            <div class="cs-cal"><span class="cs-m">OCT</span><span class="cs-d">5</span></div>
+                            <div class="cs-text"><span class="cs-lead">次回クール開始</span><span class="cs-main"><em>10月5日（月）</em>スタート</span></div>
+                            <span class="cs-badge">先行受付中</span>
                         </div>
                         <div class="price-flash">
                             <span class="pf-old">通常 $200<span>/月</span></span>
@@ -495,7 +541,7 @@
                     </div>
                     <div class="cta-block">
                         <a href="https://line.me/R/ti/p/@359fnsdb" onclick="event.preventDefault(); trackLineClick(); var url=this.href; setTimeout(function(){window.open(url,'_blank');},300); return false;" target="_blank" class="btn-cta pulse-btn"><svg class="icon icon-md" aria-hidden="true"><use href="#i-doc"/></svg>無料で資料請求する</a>
-                        <p class="cta-reassure">料金表・時間割・割引クーポン・無料説明会の日程をLINEでお送りします<span class="cr-line">登録無料・質問だけでもOK・いつでも解除OK</span></p>
+                        <p class="cta-reassure">料金表・時間割・割引クーポン・無料説明会の日程をLINEでお送りします<span class="cr-line">今ご登録いただいても、開始日まで料金はかかりません</span></p>
                     </div>
                 </div>
                 <div class="hero-visual">
@@ -505,6 +551,64 @@
                 </div>
             </div>
         </div>
+    </section>
+
+    <!-- ===== 実績・信頼 ===== -->
+    <section class="proof-section">
+        <div class="container">
+            <div class="section-label"><span class="eyebrow"><svg class="icon icon-sm" aria-hidden="true"><use href="#i-globe"/></svg>実績</span><h2>世界34カ国のご家庭に<br>選ばれています</h2></div>
+            <div class="proof-items">
+                <div class="proof-item"><div class="proof-number">1,400+</div><div class="proof-label">累計生徒数</div></div>
+                <div class="proof-item"><div class="proof-number">92.5%</div><div class="proof-label">継続率</div></div>
+                <div class="proof-item"><div class="proof-number">6年</div><div class="proof-label">運営実績</div></div>
+                <div class="proof-item"><div class="proof-number">4〜15歳</div><div class="proof-label">対象（4歳〜中学生）</div></div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ===== 保護者の声 ===== -->
+    <section class="testimonials-section">
+        <div class="container">
+            <div class="section-label"><span class="eyebrow">保護者の声</span><h2>92.5%の継続率が証明する<br>"子どもが続けたくなる学び"</h2></div>
+            <div class="testi-grid">
+                <div class="testi-card">
+                    <div class="stars"><svg class="icon icon-sm" aria-hidden="true"><use href="#i-star"/></svg><svg class="icon icon-sm" aria-hidden="true"><use href="#i-star"/></svg><svg class="icon icon-sm" aria-hidden="true"><use href="#i-star"/></svg><svg class="icon icon-sm" aria-hidden="true"><use href="#i-star"/></svg><svg class="icon icon-sm" aria-hidden="true"><use href="#i-star"/></svg></div>
+                    <p>終わったあとでも友達と遊べるので、帰ってすぐ授業に参加し始めるようになりました。</p>
+                    <p class="author">— アメリカ在住・Mさん（8歳ママ）</p>
+                </div>
+                <div class="testi-card">
+                    <div class="stars"><svg class="icon icon-sm" aria-hidden="true"><use href="#i-star"/></svg><svg class="icon icon-sm" aria-hidden="true"><use href="#i-star"/></svg><svg class="icon icon-sm" aria-hidden="true"><use href="#i-star"/></svg><svg class="icon icon-sm" aria-hidden="true"><use href="#i-star"/></svg><svg class="icon icon-sm" aria-hidden="true"><use href="#i-star"/></svg></div>
+                    <p>祖父母と日本語で話せるようになって、家族全員が感動しました。</p>
+                    <p class="author">— オーストラリア在住・Kさん（7歳のママ）</p>
+                </div>
+                <div class="testi-card">
+                    <div class="stars"><svg class="icon icon-sm" aria-hidden="true"><use href="#i-star"/></svg><svg class="icon icon-sm" aria-hidden="true"><use href="#i-star"/></svg><svg class="icon icon-sm" aria-hidden="true"><use href="#i-star"/></svg><svg class="icon icon-sm" aria-hidden="true"><use href="#i-star"/></svg><svg class="icon icon-sm" aria-hidden="true"><use href="#i-star"/></svg></div>
+                    <p>4歳の娘が小学校入学前に、引き算・足し算ができるようになりました。</p>
+                    <p class="author">— ドイツ在住・Rさん（6歳のママ）</p>
+                </div>
+            </div>
+            <p class="testi-highlight">気づけば月<em>500分以上</em>——<br>自宅で自然と学ぶお子さまに。</p>
+        </div>
+    </section>
+
+    <!-- ===== インフルエンサーの声 ===== -->
+    <section class="influencer-section">
+        <div class="container">
+            <div class="section-label"><span class="eyebrow">推薦</span><h2>海外で子育てをする<br>発信者の方にも紹介されています</h2></div>
+        </div>
+        <div class="influencer-track-wrapper">
+            <div class="influencer-track">
+                <div class="inf-card"><div class="inf-card-header"><img src="https://i.imgur.com/ye4vAGS.png" alt="Mrs. Cross"><div><div class="inf-name">Mrs. Cross 様</div><div class="inf-details">YouTube 16.4万人 | アメリカ在住</div></div></div><div class="inf-body"><h4>日本滞在中や移動中でも学べる柔軟さ</h4><p>最初は集中が難しかった算数も、今では楽しんで取り組めています。先生が丁寧に教えてくれるので安心です。ネット環境があれば日本滞在中や移動中でも受講でき、25分の短い授業で子どもは遊ぶ時間も確保可能。</p></div></div>
+                <div class="inf-card"><div class="inf-card-header"><img src="https://i.imgur.com/A84WSkj.png" alt="ブラウンファミリーの大冒険"><div><div class="inf-name">ブラウンファミリーの大冒険 様</div><div class="inf-details">YouTube 1.03万人 | アメリカ在住</div></div></div><div class="inf-body"><h4>学びとコミュニケーションが同時に育つ場</h4><p>子どもは楽しそうに参加しており、特に偉人のクラスは親子の会話を広げてくれます。送迎不要で自宅から安心して受講できます。</p></div></div>
+                <div class="inf-card"><div class="inf-card-header"><img src="https://i.imgur.com/sZbmDlv.png" alt="Trilingual Family"><div><div class="inf-name">Trilingual Family 様</div><div class="inf-details">YouTube 3.75万人 | ドイツ在住</div></div></div><div class="inf-body"><h4>送迎不要で親も子も大満足</h4><p>子どもは楽しんで受講しており、特に偉人のクラスはとても気に入っています。送迎が不要で、親としても安心して利用できます。</p></div></div>
+                <div class="inf-card"><div class="inf-card-header"><img src="https://i.imgur.com/S4cjBqL.png" alt="かおり"><div><div class="inf-name">かおり 様</div><div class="inf-details">Instagram 2.9万人 | イギリス在住</div></div></div><div class="inf-body"><h4>国語も算数も少しずつ自信に</h4><p>発言が苦手な長女も国語や偉人クラスを楽しめるようになり、次女は計算が速くなりました。少しずつ場に慣れ、自信がつきました。</p></div></div>
+                <div class="inf-card" aria-hidden="true"><div class="inf-card-header"><img src="https://i.imgur.com/ye4vAGS.png" alt=""><div><div class="inf-name">Mrs. Cross 様</div><div class="inf-details">YouTube 16.4万人 | アメリカ在住</div></div></div><div class="inf-body"><h4>日本滞在中や移動中でも学べる柔軟さ</h4><p>最初は集中が難しかった算数も、今では楽しんで取り組めています。先生が丁寧に教えてくれるので安心です。ネット環境があれば日本滞在中や移動中でも受講でき、25分の短い授業で子どもは遊ぶ時間も確保可能。</p></div></div>
+                <div class="inf-card" aria-hidden="true"><div class="inf-card-header"><img src="https://i.imgur.com/A84WSkj.png" alt=""><div><div class="inf-name">ブラウンファミリーの大冒険 様</div><div class="inf-details">YouTube 1.03万人 | アメリカ在住</div></div></div><div class="inf-body"><h4>学びとコミュニケーションが同時に育つ場</h4><p>子どもは楽しそうに参加しており、特に偉人のクラスは親子の会話を広げてくれます。送迎不要で自宅から安心して受講できます。</p></div></div>
+                <div class="inf-card" aria-hidden="true"><div class="inf-card-header"><img src="https://i.imgur.com/sZbmDlv.png" alt=""><div><div class="inf-name">Trilingual Family 様</div><div class="inf-details">YouTube 3.75万人 | ドイツ在住</div></div></div><div class="inf-body"><h4>送迎不要で親も子も大満足</h4><p>子どもは楽しんで受講しており、特に偉人のクラスはとても気に入っています。送迎が不要で、親としても安心して利用できます。</p></div></div>
+                <div class="inf-card" aria-hidden="true"><div class="inf-card-header"><img src="https://i.imgur.com/S4cjBqL.png" alt=""><div><div class="inf-name">かおり 様</div><div class="inf-details">Instagram 2.9万人 | イギリス在住</div></div></div><div class="inf-body"><h4>国語も算数も少しずつ自信に</h4><p>発言が苦手な長女も国語や偉人クラスを楽しめるようになり、次女は計算が速くなりました。少しずつ場に慣れ、自信がつきました。</p></div></div>
+            </div>
+        </div>
+        <div class="container"><div class="anniversary-wrap"><p class="anniversary-badge">今年で6年目 —— 多くのご家族と共に成長してきました</p></div></div>
     </section>
 
     <!-- ===== 悩み共感 ===== -->
@@ -559,19 +663,6 @@
         </div>
     </section>
 
-    <!-- ===== 実績・信頼 ===== -->
-    <section class="proof-section">
-        <div class="container">
-            <div class="section-label"><span class="eyebrow"><svg class="icon icon-sm" aria-hidden="true"><use href="#i-globe"/></svg>実績</span><h2>世界34カ国のご家庭に<br>選ばれています</h2></div>
-            <div class="proof-items">
-                <div class="proof-item"><div class="proof-number">1,400+</div><div class="proof-label">累計生徒数</div></div>
-                <div class="proof-item"><div class="proof-number">92.5%</div><div class="proof-label">継続率</div></div>
-                <div class="proof-item"><div class="proof-number">6年</div><div class="proof-label">運営実績</div></div>
-                <div class="proof-item"><div class="proof-number">4〜15歳</div><div class="proof-label">対象（4歳〜中学生）</div></div>
-            </div>
-        </div>
-    </section>
-
     <!-- ===== スケジュール（25分の補強） ===== -->
     <section class="schedule-section">
         <div class="container">
@@ -600,51 +691,6 @@
                 <p class="schedule-note">4つのタイムゾーンに対応。<strong>アメリカ・ヨーロッパ・アジア・オセアニア</strong>、どこからでも参加できます。<br>宿題なし・送迎なし。終わったらすぐ遊べるから、子どもが嫌がらない。</p>
             </div>
         </div>
-    </section>
-
-    <!-- ===== 保護者の声 ===== -->
-    <section class="testimonials-section">
-        <div class="container">
-            <div class="section-label"><span class="eyebrow">保護者の声</span><h2>92.5%の継続率が証明する<br>"子どもが続けたくなる学び"</h2></div>
-            <div class="testi-grid">
-                <div class="testi-card">
-                    <div class="stars"><svg class="icon icon-sm" aria-hidden="true"><use href="#i-star"/></svg><svg class="icon icon-sm" aria-hidden="true"><use href="#i-star"/></svg><svg class="icon icon-sm" aria-hidden="true"><use href="#i-star"/></svg><svg class="icon icon-sm" aria-hidden="true"><use href="#i-star"/></svg><svg class="icon icon-sm" aria-hidden="true"><use href="#i-star"/></svg></div>
-                    <p>終わったあとでも友達と遊べるので、帰ってすぐ授業に参加し始めるようになりました。</p>
-                    <p class="author">— アメリカ在住・Mさん（8歳ママ）</p>
-                </div>
-                <div class="testi-card">
-                    <div class="stars"><svg class="icon icon-sm" aria-hidden="true"><use href="#i-star"/></svg><svg class="icon icon-sm" aria-hidden="true"><use href="#i-star"/></svg><svg class="icon icon-sm" aria-hidden="true"><use href="#i-star"/></svg><svg class="icon icon-sm" aria-hidden="true"><use href="#i-star"/></svg><svg class="icon icon-sm" aria-hidden="true"><use href="#i-star"/></svg></div>
-                    <p>祖父母と日本語で話せるようになって、家族全員が感動しました。</p>
-                    <p class="author">— オーストラリア在住・Kさん（7歳のママ）</p>
-                </div>
-                <div class="testi-card">
-                    <div class="stars"><svg class="icon icon-sm" aria-hidden="true"><use href="#i-star"/></svg><svg class="icon icon-sm" aria-hidden="true"><use href="#i-star"/></svg><svg class="icon icon-sm" aria-hidden="true"><use href="#i-star"/></svg><svg class="icon icon-sm" aria-hidden="true"><use href="#i-star"/></svg><svg class="icon icon-sm" aria-hidden="true"><use href="#i-star"/></svg></div>
-                    <p>4歳の娘が小学校入学前に、引き算・足し算ができるようになりました。</p>
-                    <p class="author">— ドイツ在住・Rさん（6歳のママ）</p>
-                </div>
-            </div>
-            <p class="testi-highlight">気づけば月<em>500分以上</em>——<br>自宅で自然と学ぶお子さまに。</p>
-        </div>
-    </section>
-
-    <!-- ===== インフルエンサーの声 ===== -->
-    <section class="influencer-section">
-        <div class="container">
-            <div class="section-label"><span class="eyebrow">推薦</span><h2>海外で子育てをする<br>発信者の方にも紹介されています</h2></div>
-        </div>
-        <div class="influencer-track-wrapper">
-            <div class="influencer-track">
-                <div class="inf-card"><div class="inf-card-header"><img src="https://i.imgur.com/ye4vAGS.png" alt="Mrs. Cross"><div><div class="inf-name">Mrs. Cross 様</div><div class="inf-details">YouTube 16.4万人 | アメリカ在住</div></div></div><div class="inf-body"><h4>日本滞在中や移動中でも学べる柔軟さ</h4><p>最初は集中が難しかった算数も、今では楽しんで取り組めています。先生が丁寧に教えてくれるので安心です。ネット環境があれば日本滞在中や移動中でも受講でき、25分の短い授業で子どもは遊ぶ時間も確保可能。</p></div></div>
-                <div class="inf-card"><div class="inf-card-header"><img src="https://i.imgur.com/A84WSkj.png" alt="ブラウンファミリーの大冒険"><div><div class="inf-name">ブラウンファミリーの大冒険 様</div><div class="inf-details">YouTube 1.03万人 | アメリカ在住</div></div></div><div class="inf-body"><h4>学びとコミュニケーションが同時に育つ場</h4><p>子どもは楽しそうに参加しており、特に偉人のクラスは親子の会話を広げてくれます。送迎不要で自宅から安心して受講できます。</p></div></div>
-                <div class="inf-card"><div class="inf-card-header"><img src="https://i.imgur.com/sZbmDlv.png" alt="Trilingual Family"><div><div class="inf-name">Trilingual Family 様</div><div class="inf-details">YouTube 3.75万人 | ドイツ在住</div></div></div><div class="inf-body"><h4>送迎不要で親も子も大満足</h4><p>子どもは楽しんで受講しており、特に偉人のクラスはとても気に入っています。送迎が不要で、親としても安心して利用できます。</p></div></div>
-                <div class="inf-card"><div class="inf-card-header"><img src="https://i.imgur.com/S4cjBqL.png" alt="かおり"><div><div class="inf-name">かおり 様</div><div class="inf-details">Instagram 2.9万人 | イギリス在住</div></div></div><div class="inf-body"><h4>国語も算数も少しずつ自信に</h4><p>発言が苦手な長女も国語や偉人クラスを楽しめるようになり、次女は計算が速くなりました。少しずつ場に慣れ、自信がつきました。</p></div></div>
-                <div class="inf-card" aria-hidden="true"><div class="inf-card-header"><img src="https://i.imgur.com/ye4vAGS.png" alt=""><div><div class="inf-name">Mrs. Cross 様</div><div class="inf-details">YouTube 16.4万人 | アメリカ在住</div></div></div><div class="inf-body"><h4>日本滞在中や移動中でも学べる柔軟さ</h4><p>最初は集中が難しかった算数も、今では楽しんで取り組めています。先生が丁寧に教えてくれるので安心です。ネット環境があれば日本滞在中や移動中でも受講でき、25分の短い授業で子どもは遊ぶ時間も確保可能。</p></div></div>
-                <div class="inf-card" aria-hidden="true"><div class="inf-card-header"><img src="https://i.imgur.com/A84WSkj.png" alt=""><div><div class="inf-name">ブラウンファミリーの大冒険 様</div><div class="inf-details">YouTube 1.03万人 | アメリカ在住</div></div></div><div class="inf-body"><h4>学びとコミュニケーションが同時に育つ場</h4><p>子どもは楽しそうに参加しており、特に偉人のクラスは親子の会話を広げてくれます。送迎不要で自宅から安心して受講できます。</p></div></div>
-                <div class="inf-card" aria-hidden="true"><div class="inf-card-header"><img src="https://i.imgur.com/sZbmDlv.png" alt=""><div><div class="inf-name">Trilingual Family 様</div><div class="inf-details">YouTube 3.75万人 | ドイツ在住</div></div></div><div class="inf-body"><h4>送迎不要で親も子も大満足</h4><p>子どもは楽しんで受講しており、特に偉人のクラスはとても気に入っています。送迎が不要で、親としても安心して利用できます。</p></div></div>
-                <div class="inf-card" aria-hidden="true"><div class="inf-card-header"><img src="https://i.imgur.com/S4cjBqL.png" alt=""><div><div class="inf-name">かおり 様</div><div class="inf-details">Instagram 2.9万人 | イギリス在住</div></div></div><div class="inf-body"><h4>国語も算数も少しずつ自信に</h4><p>発言が苦手な長女も国語や偉人クラスを楽しめるようになり、次女は計算が速くなりました。少しずつ場に慣れ、自信がつきました。</p></div></div>
-            </div>
-        </div>
-        <div class="container"><div class="anniversary-wrap"><p class="anniversary-badge">今年で6年目 —— 多くのご家族と共に成長してきました</p></div></div>
     </section>
 
     <!-- ===== 補習校との比較 + CTA ===== -->
@@ -769,7 +815,7 @@
     <!-- ===== 料金 + 紹介制度 + CTA ===== -->
     <section class="pricing-section">
         <div class="container">
-            <div class="section-label"><span class="eyebrow">料金</span><h2>シンプルな料金プラン</h2><p>無料体験受付中・LINEクーポンで毎月$150</p></div>
+            <div class="section-label"><span class="eyebrow">料金</span><h2>シンプルな料金プラン</h2><p>10月5日スタート・先行受付中／LINEクーポンで毎月$150</p></div>
             <div class="pricing-grid">
                 <div class="price-card">
                     <span class="price-badge">グループレッスン（取り放題）</span>
@@ -810,7 +856,7 @@
             <div class="pricing-cta-wrap">
                 <div class="cta-block center">
                     <a href="https://line.me/R/ti/p/@359fnsdb" onclick="event.preventDefault(); trackLineClick(); var url=this.href; setTimeout(function(){window.open(url,'_blank');},300); return false;" target="_blank" class="btn-cta pulse-btn"><svg class="icon icon-md" aria-hidden="true"><use href="#i-doc"/></svg>無料で資料請求する</a>
-                    <p class="cta-reassure">料金表・時間割・割引クーポン・無料説明会の日程をLINEでお送りします<span class="cr-line">登録無料・質問だけでもOK・いつでも解除OK</span></p>
+                    <p class="cta-reassure">料金表・時間割・割引クーポン・無料説明会の日程をLINEでお送りします<span class="cr-line">今ご登録いただいても、開始日まで料金はかかりません</span></p>
                 </div>
             </div>
         </div>
@@ -897,7 +943,7 @@
     <section class="final-cta">
         <div class="final-cta-inner">
             <div class="final-cta-card">
-                <div class="fc-pill"><svg class="icon icon-sm" aria-hidden="true"><use href="#i-calendar"/></svg>7月20日（月）まで 無料体験受付中</div>
+                <div class="fc-pill"><svg class="icon icon-sm" aria-hidden="true"><use href="#i-calendar"/></svg>10月5日（月）新クール開始・先行受付中</div>
                 <h3>海外にいても、<br>日本語を毎日の習慣に。</h3>
                 <p class="fc-lead">まずはLINEで、料金表・時間割・<br>割引クーポン・無料説明会の日程をご確認ください。</p>
                 <div class="price-flash" style="justify-content:center;">
