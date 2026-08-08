@@ -470,6 +470,29 @@
             .video-facade .vf-play svg{width:24px;height:24px;}
             .video-facade .vf-time{font-size:0.72rem;padding:4px 10px;bottom:10px;right:10px;}
         }
+        /* === street interview (vertical short) === */
+        .street-section{padding:84px 24px;background:var(--cream);}
+        .street-grid{display:grid;grid-template-columns:340px 1fr;gap:44px;align-items:center;max-width:880px;margin:0 auto;}
+        .street-video{position:relative;padding-bottom:177.78%;height:0;overflow:hidden;border-radius:var(--radius-lg);box-shadow:var(--shadow-lg);border:4px solid #fff;cursor:pointer;background:var(--ink);}
+        .street-video img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;display:block;border:0;}
+        .street-video iframe{position:absolute;inset:0;width:100%;height:100%;border:0;}
+        .street-video .sv-shade{position:absolute;inset:0;background:linear-gradient(180deg,rgba(42,61,92,0.10) 0%,rgba(42,61,92,0.45) 100%);transition:background .2s;}
+        .street-video:hover .sv-shade{background:linear-gradient(180deg,rgba(42,61,92,0.04) 0%,rgba(42,61,92,0.34) 100%);}
+        .street-video .sv-play{position:absolute;top:50%;left:50%;transform:translate(-50%,-50%);width:70px;height:70px;border-radius:50%;background:var(--coral);color:#fff;display:flex;align-items:center;justify-content:center;box-shadow:0 12px 32px rgba(74,127,224,0.5);transition:transform .2s;border:none;padding:0;cursor:pointer;}
+        .street-video:hover .sv-play{transform:translate(-50%,-50%) scale(1.08);}
+        .street-video .sv-play svg{width:26px;height:26px;margin-left:4px;fill:#fff;}
+        .street-quotes{display:flex;flex-direction:column;gap:12px;}
+        .street-quote{background:#fff;border-left:4px solid var(--coral);border-radius:var(--radius-sm);padding:18px 22px;box-shadow:var(--shadow-soft);font-size:1.02rem;font-weight:600;color:var(--ink);line-height:1.75;}
+        .street-quote.dim{border-left-color:var(--muted);color:var(--inksoft);}
+        .street-who{font-size:0.86rem;color:var(--muted);font-weight:600;margin-top:6px;line-height:1.7;}
+        @media (max-width:768px){
+            .street-section{padding:52px 16px;}
+            .street-grid{grid-template-columns:1fr;gap:22px;max-width:360px;}
+            .street-video{border-width:3px;}
+            .street-video .sv-play{width:60px;height:60px;}
+            .street-quote{padding:15px 18px;font-size:0.95rem;}
+            .street-who{font-size:0.8rem;}
+        }
     </style>
 </head>
 <body>
@@ -579,6 +602,31 @@
                 <div class="proof-item"><div class="proof-number">92.5%</div><div class="proof-label">継続率</div></div>
                 <div class="proof-item"><div class="proof-number">6年</div><div class="proof-label">運営実績</div></div>
                 <div class="proof-item"><div class="proof-number">4〜15歳</div><div class="proof-label">対象（4歳〜中学生）</div></div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ===== 街の声 ===== -->
+    <section class="street-section">
+        <div class="container">
+            <div class="section-label">
+                <span class="eyebrow"><svg class="icon icon-sm" aria-hidden="true"><use href="#i-message"/></svg>街の声</span>
+                <h2>海外で育った10代に、<br>聞いてみました</h2>
+                <p>渋谷で出会った高校生。ロサンゼルス出身、ご両親は日本人。<br>ご家庭で日本語を続けてきた彼の本音です。</p>
+            </div>
+            <div class="street-grid">
+                <div class="street-video" id="streetVideo" role="button" tabindex="0" aria-label="インタビュー動画を再生する">
+                    <img src="https://customer-o366cgm5nw1c8kcu.cloudflarestream.com/00bc70df0231b33315f5f7ebca86372d/thumbnails/thumbnail.jpg?time=2s&amp;height=960" alt="渋谷での街頭インタビュー" loading="lazy" width="540" height="960">
+                    <span class="sv-shade"></span>
+                    <button class="sv-play" type="button" aria-hidden="true" tabindex="-1"><svg viewBox="0 0 24 24" aria-hidden="true"><polygon points="6 3 21 12 6 21 6 3"/></svg></button>
+                </div>
+                <div class="street-quotes">
+                    <p class="street-quote">「家では日本語を話すようにしてくれた。<br>そのおかげで話せるようになった」</p>
+                    <p class="street-quote">「日本語が話せることに感謝しています。<br>日本の文化が好きだし、日本人と話せるから」</p>
+                    <p class="street-quote dim">「でも読み書きは苦手で、<br>駅の標識が読めなかった」</p>
+                    <p class="street-quote">「今は学校の日本語クラスで、<br>読み書きも勉強しています」</p>
+                    <p class="street-who">※街頭インタビューにご協力いただいた方です</p>
+                </div>
             </div>
         </div>
     </section>
@@ -1067,6 +1115,28 @@
             f.appendChild(ifr);
             if (typeof fbq === 'function') fbq('trackCustom','VideoPlay',{});
             if (typeof gtag === 'function') gtag('event','video_play',{'event_category':'engagement'});
+        }
+        f.addEventListener('click', load);
+        f.addEventListener('keydown', function(e){ if (e.key === 'Enter' || e.key === ' ') { e.preventDefault(); load(); } });
+    })();
+    </script>
+    <script>
+    (function(){
+        var f = document.getElementById('streetVideo');
+        if (!f) return;
+        function load(){
+            if (f.dataset.loaded) return;
+            f.dataset.loaded = '1';
+            var ifr = document.createElement('iframe');
+            ifr.src = 'https://customer-o366cgm5nw1c8kcu.cloudflarestream.com/00bc70df0231b33315f5f7ebca86372d/iframe?autoplay=true&preload=none';
+            ifr.setAttribute('allow','accelerometer; gyroscope; autoplay; encrypted-media; picture-in-picture;');
+            ifr.setAttribute('allowfullscreen','true');
+            ifr.setAttribute('title','渋谷での街頭インタビュー');
+            f.innerHTML = '';
+            f.style.cursor = 'default';
+            f.appendChild(ifr);
+            if (typeof fbq === 'function') fbq('trackCustom','ShortVideoPlay',{});
+            if (typeof gtag === 'function') gtag('event','short_video_play',{'event_category':'engagement'});
         }
         f.addEventListener('click', load);
         f.addEventListener('keydown', function(e){ if (e.key === 'Enter' || e.key === ' ') { e.preventDefault(); load(); } });
