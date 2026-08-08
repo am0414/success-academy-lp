@@ -450,6 +450,26 @@
             .proof-number{font-size:2rem;}
             .testi-card p{font-size:0.94rem;}
         }
+        /* === video section (Cloudflare Stream, click-to-load) === */
+        .video-section{padding:84px 24px;background:var(--paper2);}
+        .video-wrapper{max-width:780px;margin:0 auto;}
+        .video-facade{position:relative;padding-bottom:56.25%;height:0;overflow:hidden;border-radius:var(--radius-lg);box-shadow:var(--shadow-lg);border:4px solid #fff;cursor:pointer;background:var(--ink);}
+        .video-facade img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;border:0;display:block;}
+        .video-facade iframe{position:absolute;inset:0;width:100%;height:100%;border:0;}
+        .video-facade .vf-shade{position:absolute;inset:0;background:linear-gradient(180deg,rgba(42,61,92,0.12) 0%,rgba(42,61,92,0.42) 100%);transition:background .2s;}
+        .video-facade:hover .vf-shade{background:linear-gradient(180deg,rgba(42,61,92,0.06) 0%,rgba(42,61,92,0.32) 100%);}
+        .video-facade .vf-play{position:absolute;top:50%;left:50%;transform:translate(-50%,-50%);width:82px;height:82px;border-radius:50%;background:var(--coral);color:#fff;display:flex;align-items:center;justify-content:center;box-shadow:0 12px 32px rgba(74,127,224,0.5);transition:transform .2s;border:none;padding:0;cursor:pointer;}
+        .video-facade:hover .vf-play{transform:translate(-50%,-50%) scale(1.08);}
+        .video-facade .vf-play svg{width:30px;height:30px;margin-left:5px;fill:#fff;}
+        .video-facade .vf-time{position:absolute;bottom:14px;right:16px;background:rgba(42,61,92,0.86);color:#fff;font-size:0.78rem;font-weight:800;padding:5px 12px;border-radius:50px;}
+        .video-cta-wrap{max-width:480px;margin:28px auto 0;}
+        @media (max-width:768px){
+            .video-section{padding:52px 16px;}
+            .video-facade{border-width:3px;}
+            .video-facade .vf-play{width:64px;height:64px;}
+            .video-facade .vf-play svg{width:24px;height:24px;}
+            .video-facade .vf-time{font-size:0.72rem;padding:4px 10px;bottom:10px;right:10px;}
+        }
     </style>
 </head>
 <body>
@@ -622,6 +642,31 @@
                 </ul>
                 <div class="problem-answer">
                     <p>お子さまが日本語を<span class="highlight">嫌いになったわけではありません。</span><br>必要なのは、毎日の中で無理なく続けられる環境です。</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ===== 動画で分かる ===== -->
+    <section class="video-section">
+        <div class="container">
+            <div class="section-label">
+                <span class="eyebrow"><svg class="icon icon-sm" aria-hidden="true"><use href="#i-monitor"/></svg>動画で分かる</span>
+                <h2>海外で日本語を続ける理由と、<br>その具体的な方法</h2>
+                <p>海外で日本語を続けるために大切なこと、そして私たちの取り組みについてお話しします</p>
+            </div>
+            <div class="video-wrapper">
+                <div class="video-facade" id="videoFacade" role="button" tabindex="0" aria-label="動画を再生する（約10分）">
+                    <img src="https://customer-o366cgm5nw1c8kcu.cloudflarestream.com/ca2527ab32b5835e8812b895f33582c8/thumbnails/thumbnail.jpg?time=3s&amp;height=720" alt="Success Academy 紹介動画" loading="lazy" width="1280" height="720">
+                    <span class="vf-shade"></span>
+                    <button class="vf-play" type="button" aria-hidden="true" tabindex="-1"><svg viewBox="0 0 24 24" aria-hidden="true"><polygon points="6 3 21 12 6 21 6 3"/></svg></button>
+                    <span class="vf-time">約10分</span>
+                </div>
+                <div class="video-cta-wrap">
+                    <div class="cta-block center">
+                        <a href="https://line.me/R/ti/p/@359fnsdb" onclick="event.preventDefault(); trackLineClick(); var url=this.href; setTimeout(function(){window.open(url,'_blank');},300); return false;" target="_blank" class="btn-cta"><svg class="icon icon-md" aria-hidden="true"><use href="#i-doc"/></svg>無料で資料を受け取る</a>
+                        <p class="cta-reassure">料金表・時間割・無料説明会の日程をLINEでお送りします<span class="cr-line">今ご登録いただいても、開始日まで料金はかかりません</span></p>
+                    </div>
                 </div>
             </div>
         </div>
@@ -1003,6 +1048,28 @@
             if (header) document.documentElement.style.setProperty('--header-h', header.getBoundingClientRect().height + 'px');
         }
         setOffsets(); window.addEventListener('resize', setOffsets); window.addEventListener('load', setOffsets);
+    })();
+    </script>
+    <script>
+    (function(){
+        var f = document.getElementById('videoFacade');
+        if (!f) return;
+        function load(){
+            if (f.dataset.loaded) return;
+            f.dataset.loaded = '1';
+            var ifr = document.createElement('iframe');
+            ifr.src = 'https://customer-o366cgm5nw1c8kcu.cloudflarestream.com/ca2527ab32b5835e8812b895f33582c8/iframe?autoplay=true&preload=none';
+            ifr.setAttribute('allow','accelerometer; gyroscope; autoplay; encrypted-media; picture-in-picture;');
+            ifr.setAttribute('allowfullscreen','true');
+            ifr.setAttribute('title','Success Academy 紹介動画');
+            f.innerHTML = '';
+            f.style.cursor = 'default';
+            f.appendChild(ifr);
+            if (typeof fbq === 'function') fbq('trackCustom','VideoPlay',{});
+            if (typeof gtag === 'function') gtag('event','video_play',{'event_category':'engagement'});
+        }
+        f.addEventListener('click', load);
+        f.addEventListener('keydown', function(e){ if (e.key === 'Enter' || e.key === ' ') { e.preventDefault(); load(); } });
     })();
     </script>
 </body>
