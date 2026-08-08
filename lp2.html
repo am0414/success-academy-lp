@@ -451,7 +451,7 @@
             .testi-card p{font-size:0.94rem;}
         }
         /* === video section (Cloudflare Stream, click-to-load) === */
-        .video-section{padding:84px 24px;background:var(--paper2);}
+        .video-section{padding:84px 24px;background:var(--cream);}
         .video-wrapper{max-width:780px;margin:0 auto;}
         .video-facade{position:relative;padding-bottom:56.25%;height:0;overflow:hidden;border-radius:var(--radius-lg);box-shadow:var(--shadow-lg);border:4px solid #fff;cursor:pointer;background:var(--ink);}
         .video-facade img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;border:0;display:block;}
@@ -471,7 +471,7 @@
             .video-facade .vf-time{font-size:0.72rem;padding:4px 10px;bottom:10px;right:10px;}
         }
         /* === street interview (vertical short) === */
-        .street-section{padding:84px 24px;background:var(--cream);}
+        .street-section{padding:84px 24px;background:var(--paper);}
         .street-grid{display:grid;grid-template-columns:340px 1fr;gap:44px;align-items:center;max-width:880px;margin:0 auto;}
         .street-video{position:relative;padding-bottom:177.78%;height:0;overflow:hidden;border-radius:var(--radius-lg);box-shadow:var(--shadow-lg);border:4px solid #fff;cursor:pointer;background:var(--ink);}
         .street-video img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;display:block;border:0;}
@@ -606,26 +606,26 @@
         </div>
     </section>
 
-    <!-- ===== 街の声 ===== -->
-    <section class="street-section">
+    <!-- ===== 動画で分かる ===== -->
+    <section class="video-section">
         <div class="container">
             <div class="section-label">
-                <span class="eyebrow"><svg class="icon icon-sm" aria-hidden="true"><use href="#i-message"/></svg>街の声</span>
-                <h2>海外で育った10代に、<br>聞いてみました</h2>
-                <p>渋谷で出会った高校生。ロサンゼルス出身、ご両親は日本人。<br>ご家庭で日本語を続けてきた彼の本音です。</p>
+                <span class="eyebrow"><svg class="icon icon-sm" aria-hidden="true"><use href="#i-monitor"/></svg>動画で分かる</span>
+                <h2>海外で日本語を続ける理由と、<br>その具体的な方法</h2>
+                <p>海外で日本語を続けるために大切なこと、そして私たちの取り組みについてお話しします</p>
             </div>
-            <div class="street-grid">
-                <div class="street-video" id="streetVideo" role="button" tabindex="0" aria-label="インタビュー動画を再生する">
-                    <img src="https://customer-o366cgm5nw1c8kcu.cloudflarestream.com/00bc70df0231b33315f5f7ebca86372d/thumbnails/thumbnail.jpg?time=2s&amp;height=960" alt="渋谷での街頭インタビュー" loading="lazy" width="540" height="960">
-                    <span class="sv-shade"></span>
-                    <button class="sv-play" type="button" aria-hidden="true" tabindex="-1"><svg viewBox="0 0 24 24" aria-hidden="true"><polygon points="6 3 21 12 6 21 6 3"/></svg></button>
+            <div class="video-wrapper">
+                <div class="video-facade" id="videoFacade" role="button" tabindex="0" aria-label="動画を再生する（約10分）">
+                    <img src="https://customer-o366cgm5nw1c8kcu.cloudflarestream.com/ca2527ab32b5835e8812b895f33582c8/thumbnails/thumbnail.jpg?time=3s&amp;height=720" alt="Success Academy 紹介動画" loading="lazy" width="1280" height="720">
+                    <span class="vf-shade"></span>
+                    <button class="vf-play" type="button" aria-hidden="true" tabindex="-1"><svg viewBox="0 0 24 24" aria-hidden="true"><polygon points="6 3 21 12 6 21 6 3"/></svg></button>
+                    <span class="vf-time">約10分</span>
                 </div>
-                <div class="street-quotes">
-                    <p class="street-quote">「家では日本語を話すようにしてくれた。<br>そのおかげで話せるようになった」</p>
-                    <p class="street-quote">「日本語が話せることに感謝しています。<br>日本の文化が好きだし、日本人と話せるから」</p>
-                    <p class="street-quote dim">「でも読み書きは苦手で、<br>駅の標識が読めなかった」</p>
-                    <p class="street-quote">「今は学校の日本語クラスで、<br>読み書きも勉強しています」</p>
-                    <p class="street-who">※街頭インタビューにご協力いただいた方です</p>
+                <div class="video-cta-wrap">
+                    <div class="cta-block center">
+                        <a href="https://line.me/R/ti/p/@359fnsdb" onclick="event.preventDefault(); trackLineClick(); var url=this.href; setTimeout(function(){window.open(url,'_blank');},300); return false;" target="_blank" class="btn-cta"><svg class="icon icon-md" aria-hidden="true"><use href="#i-doc"/></svg>無料で資料を受け取る</a>
+                        <p class="cta-reassure">料金表・時間割・無料説明会の日程をLINEでお送りします<span class="cr-line">今ご登録いただいても、開始日まで料金はかかりません</span></p>
+                    </div>
                 </div>
             </div>
         </div>
@@ -695,31 +695,6 @@
         </div>
     </section>
 
-    <!-- ===== 動画で分かる ===== -->
-    <section class="video-section">
-        <div class="container">
-            <div class="section-label">
-                <span class="eyebrow"><svg class="icon icon-sm" aria-hidden="true"><use href="#i-monitor"/></svg>動画で分かる</span>
-                <h2>海外で日本語を続ける理由と、<br>その具体的な方法</h2>
-                <p>海外で日本語を続けるために大切なこと、そして私たちの取り組みについてお話しします</p>
-            </div>
-            <div class="video-wrapper">
-                <div class="video-facade" id="videoFacade" role="button" tabindex="0" aria-label="動画を再生する（約10分）">
-                    <img src="https://customer-o366cgm5nw1c8kcu.cloudflarestream.com/ca2527ab32b5835e8812b895f33582c8/thumbnails/thumbnail.jpg?time=3s&amp;height=720" alt="Success Academy 紹介動画" loading="lazy" width="1280" height="720">
-                    <span class="vf-shade"></span>
-                    <button class="vf-play" type="button" aria-hidden="true" tabindex="-1"><svg viewBox="0 0 24 24" aria-hidden="true"><polygon points="6 3 21 12 6 21 6 3"/></svg></button>
-                    <span class="vf-time">約10分</span>
-                </div>
-                <div class="video-cta-wrap">
-                    <div class="cta-block center">
-                        <a href="https://line.me/R/ti/p/@359fnsdb" onclick="event.preventDefault(); trackLineClick(); var url=this.href; setTimeout(function(){window.open(url,'_blank');},300); return false;" target="_blank" class="btn-cta"><svg class="icon icon-md" aria-hidden="true"><use href="#i-doc"/></svg>無料で資料を受け取る</a>
-                        <p class="cta-reassure">料金表・時間割・無料説明会の日程をLINEでお送りします<span class="cr-line">今ご登録いただいても、開始日まで料金はかかりません</span></p>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
-
     <!-- ===== 解決策 ===== -->
     <section class="solution-section">
         <div class="container">
@@ -748,6 +723,31 @@
                 <div class="sol-card">
                     <div class="sol-icon"><svg class="icon icon-lg" aria-hidden="true"><use href="#i-target"/></svg></div>
                     <div><h3>レベルに合わせて受講できる</h3><p>お子さまに合った学年・レベルで、「できた！」を増やしていけます。</p></div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ===== 街の声 ===== -->
+    <section class="street-section">
+        <div class="container">
+            <div class="section-label">
+                <span class="eyebrow"><svg class="icon icon-sm" aria-hidden="true"><use href="#i-message"/></svg>街の声</span>
+                <h2>海外で育った10代に、<br>聞いてみました</h2>
+                <p>渋谷で出会った高校生。ロサンゼルス出身、ご両親は日本人。<br>ご家庭で日本語を続けてきた彼の本音です。</p>
+            </div>
+            <div class="street-grid">
+                <div class="street-video" id="streetVideo" role="button" tabindex="0" aria-label="インタビュー動画を再生する">
+                    <img src="https://customer-o366cgm5nw1c8kcu.cloudflarestream.com/00bc70df0231b33315f5f7ebca86372d/thumbnails/thumbnail.jpg?time=2s&amp;height=960" alt="渋谷での街頭インタビュー" loading="lazy" width="540" height="960">
+                    <span class="sv-shade"></span>
+                    <button class="sv-play" type="button" aria-hidden="true" tabindex="-1"><svg viewBox="0 0 24 24" aria-hidden="true"><polygon points="6 3 21 12 6 21 6 3"/></svg></button>
+                </div>
+                <div class="street-quotes">
+                    <p class="street-quote">「家では日本語を話すようにしてくれた。<br>そのおかげで話せるようになった」</p>
+                    <p class="street-quote">「日本語が話せることに感謝しています。<br>日本の文化が好きだし、日本人と話せるから」</p>
+                    <p class="street-quote dim">「でも読み書きは苦手で、<br>駅の標識が読めなかった」</p>
+                    <p class="street-quote">「今は学校の日本語クラスで、<br>読み書きも勉強しています」</p>
+                    <p class="street-who">※街頭インタビューにご協力いただいた方です</p>
                 </div>
             </div>
         </div>
