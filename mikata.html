@@ -469,6 +469,20 @@
             .mk-partner{display:block;width:fit-content;max-width:100%;margin:0 auto 14px;text-align:center;}
             .mk-perk{font-size:0.84rem;padding:9px 12px;}
         }
+        /* === クーポンコード枠 === */
+        .mk-cpn{background:#fff;border:2px solid var(--yellow);border-radius:14px;padding:14px 16px;margin-top:14px;text-align:center;}
+        .mk-cpn .mk-cl{font-size:0.72rem;font-weight:800;color:var(--inksoft);letter-spacing:0.06em;display:block;margin-bottom:6px;}
+        .mk-cpn .mk-cv{font-family:'Outfit',sans-serif;font-size:1.6rem;font-weight:800;letter-spacing:0.14em;color:var(--ink);background:#FFF9E6;border-radius:9px;padding:7px 18px;display:inline-block;line-height:1.2;}
+        .mk-cpn .mk-cn{font-size:0.78rem;color:var(--inksoft);font-weight:600;margin:8px 0 0;line-height:1.6;}
+        .mk-cpn-lg{max-width:560px;margin:24px auto 0;}
+        .mk-cpn-lg .mk-cv{font-size:2.1rem;padding:10px 26px;}
+        .mk-cpn-lg .mk-cn{font-size:0.84rem;}
+        @media (max-width:768px){
+            .mk-cpn{padding:12px 14px;}
+            .mk-cpn .mk-cv{font-size:1.45rem;padding:6px 15px;letter-spacing:0.1em;}
+            .mk-cpn-lg{margin-top:20px;}
+            .mk-cpn-lg .mk-cv{font-size:1.75rem;padding:8px 20px;}
+        }
         /* === モバイル最適化（2026-08 改訂） === */
         @media (max-width:768px){
             /* ヒーロー：中央寄せで整える */
@@ -635,6 +649,11 @@
                             <span class="pf-tag">読者限定</span>
                         </div>
                         <div class="campaign-card-title">全教科 受け放題。<span style="color:var(--inksoft);font-weight:600;">国語のみなら $100／算数のみなら $125。</span><br><strong>教科で選べる3プラン</strong>・10月5日まで。</div>
+                        <div class="mk-cpn">
+                            <span class="mk-cl">クーポンコード</span>
+                            <span class="mk-cv">MIKATA26</span>
+                            <p class="mk-cn">体験入会時にこのコードを入力ください</p>
+                        </div>
                     </div>
                     <div class="cta-block">
                         <a href="https://lin.ee/NfjU0g9" onclick="event.preventDefault(); trackLineClick(); var url=this.href; setTimeout(function(){window.open(url,'_blank');},300); return false;" target="_blank" class="btn-cta pulse-btn"><svg class="icon icon-md" aria-hidden="true"><use href="#i-doc"/></svg>無料で資料を受け取る</a>
@@ -1037,6 +1056,12 @@
                 <span class="sjp-fine">※ 帰国生のミカタ経由でLINE登録された方限定の価格です。LINEでご案内するコードのご入力が必要です（10月5日まで）</span>
             </p>
 
+            <div class="mk-cpn mk-cpn-lg">
+                <span class="mk-cl">帰国生のミカタ 読者限定 クーポンコード</span>
+                <span class="mk-cv">MIKATA26</span>
+                <p class="mk-cn">体験入会時にこのコードを入力ください<br>月額最大 $50 OFF ＋ 入会費 $50 無料（10月5日まで）</p>
+            </div>
+
             <!-- 個別レッスン -->
             <div class="sjp-indiv">
                 <div class="si-txt">
@@ -1066,7 +1091,7 @@
             <div class="pricing-cta-wrap">
                 <div class="cta-block center">
                     <a href="https://lin.ee/NfjU0g9" onclick="event.preventDefault(); trackLineClick(); var url=this.href; setTimeout(function(){window.open(url,'_blank');},300); return false;" target="_blank" class="btn-cta pulse-btn"><svg class="icon icon-md" aria-hidden="true"><use href="#i-doc"/></svg>無料で資料を受け取る</a>
-                    <p class="cta-reassure">料金表・時間割・無料説明会の日程をLINEでお送りします<span class="cr-line">今ご登録いただいても、開始日まで料金はかかりません</span></p>
+                    <p class="cta-reassure">お申し込み方法や無料体験について、LINEでご案内します<span class="cr-line">今ご登録いただいても、開始日まで料金はかかりません</span></p>
                 </div>
             </div>
         </div>
