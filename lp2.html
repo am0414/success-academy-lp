@@ -457,7 +457,42 @@
             .proof-number{font-size:2rem;}
             .testi-card p{font-size:0.94rem;}
         }
-        /* === video section (Cloudflare Stream, click-to-load) === */
+        /* === モバイル最適化（2026-08 改訂） === */
+        @media (max-width:768px){
+            /* ヒーロー：中央寄せで整える */
+            .hero-eyebrow{display:block;width:fit-content;max-width:100%;margin:0 auto 14px;text-align:center;line-height:1.5;}
+            .hero h1{text-align:center;}
+            .hero-sub{text-align:center;}
+            /* キャンペーンカード：全体を中央寄せ */
+            .campaign-card{text-align:center;padding:16px 14px;}
+            /* 日付ストリップ：1行に収める */
+            .cohort-strip{padding:9px 11px;gap:10px;text-align:left;}
+            .cohort-strip .cs-cal{padding:4px 9px;}
+            .cohort-strip .cs-cal .cs-m{font-size:0.55rem;}
+            .cohort-strip .cs-cal .cs-d{font-size:1.3rem;}
+            .cohort-strip .cs-text{flex:1;min-width:0;}
+            .cohort-strip .cs-text .cs-lead{font-size:0.63rem;}
+            .cohort-strip .cs-text .cs-main{font-size:0.9rem;white-space:nowrap;}
+            .cohort-strip .cs-badge{font-size:0.62rem;padding:4px 9px;}
+            /* 価格：中央寄せ、タグは改行して独立 */
+            .price-flash{justify-content:center;margin-bottom:9px;}
+            .price-flash .pf-new{font-size:1.85rem;}
+            .price-flash .pf-tag{order:99;flex-basis:100%;margin:2px auto 0;width:fit-content;}
+            .campaign-card-title{font-size:0.86rem;text-align:center;line-height:1.75;}
+            /* 料金カード：中央寄せ。リストだけ左揃えのまま中央配置 */
+            .sjp-card{text-align:center;padding:20px 16px;}
+            .sjp-card.sjp-feat{padding-top:44px;}
+            .sjp-sub{margin-bottom:14px;}
+            .sjp-price{justify-content:center;}
+            .sjp-amt{font-size:2.5rem;}
+            .sjp-tag{margin-left:auto;margin-right:auto;}
+            .sjp-feats{display:inline-block;text-align:left;}
+            .sjp-feats li{font-size:0.84rem;}
+            .sjp-linebar{flex-direction:column;gap:6px;padding:12px 14px;}
+            .sjp-linebar .sjp-lb-main{font-size:0.9rem;}
+            .sjp-indiv{flex-direction:column;align-items:stretch;text-align:center;padding:18px;}
+        }
+
         .video-section{padding:84px 24px;background:var(--cream);}
         .video-wrapper{max-width:780px;margin:0 auto;}
         .video-facade{position:relative;padding-bottom:56.25%;height:0;overflow:hidden;border-radius:var(--radius-lg);box-shadow:var(--shadow-lg);border:4px solid #fff;cursor:pointer;background:var(--ink);}
@@ -567,14 +602,9 @@
         <div class="container">
             <div class="hero-grid">
                 <div class="hero-text-col">
-                    <div class="hero-eyebrow"><svg class="icon icon-sm" aria-hidden="true"><use href="#i-globe"/></svg>海外在住・4歳〜中学生のためのオンラインスクール</div>
+                    <div class="hero-eyebrow"><svg class="icon icon-sm" aria-hidden="true"><use href="#i-globe"/></svg>海外在住・4歳〜中学生のオンラインスクール</div>
                     <h1>海外でも、日本語は<br><em>毎日の習慣</em>にできる。</h1>
-                    <p class="hero-sub">4歳〜中学生向け、オンライン日本語・国語・算数スクール。<br>1日25分・送迎なし・宿題なし。<br>海外生活の中でも、毎日の小さな「できた！」を積み重ねます。</p>
-                    <div class="hero-facts">
-                        <span class="hero-fact"><svg class="icon icon-sm hf-em" aria-hidden="true"><use href="#i-globe"/></svg>世界34カ国・累計<span class="hf-em">1,400名</span>以上</span>
-                        <span class="hero-fact"><svg class="icon icon-sm hf-em" aria-hidden="true"><use href="#i-star"/></svg>継続率<span class="hf-em">92.5%</span></span>
-                        <span class="hero-fact"><svg class="icon icon-sm hf-em" aria-hidden="true"><use href="#i-check-circle"/></svg>運営<span class="hf-em">6年</span></span>
-                    </div>
+                    <p class="hero-sub">日本語・国語・算数を、1日25分。<br>送迎なし・宿題なし。</p>
                     <div class="campaign-card">
                         <div class="cohort-strip">
                             <div class="cs-cal"><span class="cs-m">OCT</span><span class="cs-d">5</span></div>
@@ -597,7 +627,6 @@
                 <div class="hero-visual">
                     <img src="★★★ ここに元ファイルの base64 画像（data:image/jpeg;base64,...）をそのまま貼り付けてください ★★★" alt="オンラインで日本語を学ぶ親子" loading="eager">
                     <div class="tape">7日間 無料体験</div>
-                    <div class="hero-badge"><div class="hero-badge-number">92.5%</div><div class="hero-badge-label">継続率</div></div>
                 </div>
             </div>
         </div>
